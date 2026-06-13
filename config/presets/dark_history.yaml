@@ -1,0 +1,42 @@
+# ───────────────────────────────────────────────────────────────────────────
+# PRODUCTION PRESET · dark history  (v1-production, frozen)
+# Forgotten/dark true stories: scandals, disasters, weird old laws, hidden events.
+# Suspenseful true-crime / dark-history narration. Point-to-point grounding via
+# archival footage + ONE cinematic AI recreation of the pivotal moment as the hero.
+# Run:  .venv/bin/python scripts/produce.py --preset dark_history --topic "..."
+# ───────────────────────────────────────────────────────────────────────────
+name: dark_history
+channel_id: k70_history
+niche: usa_history
+
+env:
+  RENDER_BACKEND: ffmpeg
+  VISUAL_ACCURACY_MODE: strict
+  LAYERED_RENDER: "1"
+  CHARACTER_MEMORY: "1"
+  QA_ENABLED: "1"
+  AI_VIDEO_ENABLED: "0"
+  ENABLE_IMAGE_TO_VIDEO: "0"
+  COMFYUI_ENABLED: "0"
+  LAYERED_AI_STILL_BUDGET: "2"
+  LAYERED_MAX_HERO_SCENES: "1"
+  LAYERED_FFMPEG_THREADS: "4"
+  LAYERED_SUBJECT_MATTE: oval
+  LAYERED_MIN_FREE_MB: "2000"
+
+# History = archival, not a recurring character. Hero is a recreated EVENT.
+character:
+  name: ""
+  desc: ""
+  style: ""
+
+story:
+  pacing: "ominous hook → mounting dread → weighty reveal"
+  hook_style: "Nobody was supposed to find out."
+  hero_beat: "the recreated pivotal moment (the decision, the disaster, the cover-up)"
+  visual_doctrine: >
+    Historically accurate. Real archival / vintage / black-and-white footage and
+    old documents for grounded beats; ONE AI cinematic recreation for the moment
+    no camera captured. Never fabricate deaths, numbers, or events; attribute
+    contested claims. No generic 'history stock' filler.
+  music_mood: dark-historical

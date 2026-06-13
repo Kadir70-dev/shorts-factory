@@ -1,0 +1,30 @@
+id: k70_cyber
+name: K70 Network Solution
+niche: cybersecurity
+voice_provider: elevenlabs
+voice_id: Adam
+music_dir: data/assets/music/beds
+brand:
+  primary_color: "#0a1a2f"
+  accent_color: "#19c37d"
+  font: Inter
+  intro_card: true
+style_notes: >
+  CYBERSECURITY / CYBERCRIME bucket. One true (or grounded-composite) cybercrime
+  story per short: breaches, leaks, hacks, scams, insider threats, the human
+  mistake behind the headline. Dark cinematic documentary — Netflix cybercrime
+  feel: slow, suspenseful, weighty. POINT-TO-POINT visual grounding is mandatory:
+  every shot shows EXACTLY what the line says. Recreate the exact event (a
+  leaked database table, a phishing email, a SOC room, a breach timeline) when no
+  real footage exists. NO cringe hoodie-hacker / green-matrix / glowing-laptop
+  clichés unless the narration literally references a screen/terminal. Drama from
+  REAL stakes only; never fabricate victims, numbers, or named breaches —
+  attribute confirmed figures, or tell it as a representative composite.
+banned_topics:
+  - fabricated or embellished breaches
+  - made-up victim numbers
+  - doxxing or personal targeting
+  - operational hacking instructions
+  - daily war coverage
+  - conflict breaking news
+cta: "Follow K70 for the real stories behind the breach."

@@ -1,0 +1,25 @@
+id: k70_history
+name: K70 Network Solution
+niche: usa_history
+voice_provider: elevenlabs
+voice_id: Adam
+music_dir: data/assets/music/news
+brand:
+  primary_color: "#0b1f3a"
+  accent_color: "#c0392b"
+  font: Inter
+  intro_card: true
+style_notes: >
+  HISTORY / DARK HISTORY bucket. One forgotten, dark, or jaw-dropping true story
+  per short: biggest mistakes, scandals, forgotten events, weird old laws, hidden
+  stories. Evergreen by nature. Suspenseful Netflix true-crime / dark-history
+  narration — slow, weighty, ominous. Tell it as a story with momentum, not a
+  list. Drama from REAL stakes only; never fabricate deaths, numbers, or events.
+  Historically accurate; attribute contested claims.
+banned_topics:
+  - fabricated or embellished events
+  - daily war coverage
+  - conflict breaking news
+  - military speculation
+  - short-lived geopolitical news
+cta: "Follow K70 for the dark history they left out of class."

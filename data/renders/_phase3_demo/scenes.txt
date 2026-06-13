@@ -1,0 +1,4 @@
+file '/home/kadir70/shorts-factory/data/renders/_phase3_demo/scene_00.mp4'
+file '/home/kadir70/shorts-factory/data/renders/_phase3_demo/scene_01.mp4'
+file '/home/kadir70/shorts-factory/data/renders/_phase3_demo/scene_02.mp4'
+file '/home/kadir70/shorts-factory/data/renders/_phase3_demo/scene_03.mp4'

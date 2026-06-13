@@ -1,0 +1,25 @@
+id: k70_facts
+name: K70 Network Solution
+niche: usa_facts
+voice_provider: elevenlabs
+voice_id: Antoni
+music_dir: data/assets/music/news
+brand:
+  primary_color: "#0b1f3a"
+  accent_color: "#f5c518"
+  font: Inter
+  intro_card: true
+style_notes: >
+  USA FACTS bucket — "wait, why is America like this?" One hidden American
+  system per short: why Americans tip, why healthcare is so expensive, why
+  houses are wood, weird America, hidden America. Evergreen and timeless.
+  Warm, curious Vox-style explainer; make the mundane fascinating. Reveal the
+  historical/legal/economic reason behind an everyday thing. Stay neutral and
+  sourced — playful in feeling, exact in fact.
+banned_topics:
+  - unverified claims
+  - daily war coverage
+  - conflict breaking news
+  - military speculation
+  - short-lived geopolitical news
+cta: "Follow K70 for the hidden systems behind everyday America."

@@ -1,0 +1,19 @@
+id: usa_politics
+name: USA Politics Explained
+niche: usa_politics
+voice_provider: elevenlabs
+voice_id: Adam
+music_dir: data/assets/music/news
+brand:
+  primary_color: "#1d4ed8"
+  accent_color: "#f5c518"
+  font: Inter
+  intro_card: true
+style_notes: >
+  Explain how a policy/process works, not who to root for. Define one mechanism
+  per short (e.g. "how a filibuster works"). Neutral framing, attribute claims,
+  show the process visually. Avoid partisan adjectives.
+banned_topics:
+  - personal attacks
+  - unverified allegations
+cta: "Follow to actually understand US politics."

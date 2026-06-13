@@ -1,0 +1,39 @@
+# Local-first infra. 4 services: redis (queue), api (FastAPI), worker (arq
+# pipeline), remotion (warm render server). data/ is a shared bind mount so every
+# stage reads/writes the same artifact tree.
+services:
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+
+  api:
+    build: ./apps/api
+    env_file: .env
+    ports: ["8000:8000"]
+    volumes:
+      - ./data:/repo/data
+      - ./config:/repo/config
+    depends_on: [redis]
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+
+  worker:
+    build: ./apps/api
+    command: arq app.workers.tasks.WorkerSettings
+    env_file: .env
+    volumes:
+      - ./data:/repo/data
+      - ./config:/repo/config
+    depends_on: [redis, remotion]
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - REMOTION_RENDER_URL=http://remotion:3001
+
+  remotion:
+    build: ./apps/remotion
+    command: npm run server
+    ports: ["3001:3001"]
+    volumes:
+      - ./data:/repo/data
+
+  # web:  Next.js dashboard (Phase 4) — add when API is green

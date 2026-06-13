@@ -1,0 +1,21 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Outline, Shadow, Alignment, MarginV
+Style: Cap,DejaVu Sans,64,&H00FFFFFF,&H00000000,&H00000000,1,5,2,2,360
+
+[Events]
+Format: Layer, Start, End, Style, Text
+Dialogue: 0,0:00:00.00,0:00:01.29,Cap,IT STARTED WITH A
+Dialogue: 0,0:00:01.29,0:00:02.26,Cap,SINGLE LEAKED PASSWORD.
+Dialogue: 0,0:00:02.26,0:00:03.46,Cap,A LONE ANALYST TRACED
+Dialogue: 0,0:00:03.46,0:00:04.65,Cap,IT BACK THROUGH THE
+Dialogue: 0,0:00:04.65,0:00:04.95,Cap,DARK.
+Dialogue: 0,0:00:04.95,0:00:06.28,Cap,HE HAD SEEN THIS
+Dialogue: 0,0:00:06.28,0:00:07.27,Cap,BREACH PATTERN BEFORE.
+Dialogue: 0,0:00:07.27,0:00:08.64,Cap,YOUR PASSWORD COULD BE
+Dialogue: 0,0:00:08.64,0:00:10.01,Cap,NEXT. FOLLOW TO STAY
+Dialogue: 0,0:00:10.01,0:00:10.35,Cap,SAFE.

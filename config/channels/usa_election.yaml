@@ -1,0 +1,20 @@
+id: usa_election
+name: USA Election News
+niche: usa_election
+voice_provider: elevenlabs
+voice_id: Adam
+music_dir: data/assets/music/news
+brand:
+  primary_color: "#e11d2a"
+  accent_color: "#ffffff"
+  font: Inter
+  intro_card: true
+style_notes: >
+  Neutral, fast, factual election coverage. Attribute every claim to a named
+  source (AP, official results, named poll). Present multiple sides on contested
+  points. No speculation stated as fact. Use map/bar manim visuals for results
+  and polling.
+banned_topics:
+  - unverified fraud claims
+  - calls to action targeting individuals
+cta: "Follow for election updates as they break."

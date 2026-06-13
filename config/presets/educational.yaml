@@ -1,0 +1,41 @@
+# ───────────────────────────────────────────────────────────────────────────
+# PRODUCTION PRESET · educational explainer  (v1-production, frozen)
+# Clear, curiosity-driven "why/how" explainers. Hook with the surprise, then build
+# understanding. Point-to-point grounding: real footage + on-screen stats/diagrams,
+# with ONE cinematic AI hero still for the key concept. CPU-safe, ≤2 AI stills.
+# Run:  .venv/bin/python scripts/produce.py --preset educational --topic "..."
+# ───────────────────────────────────────────────────────────────────────────
+name: educational
+channel_id: k70_facts
+niche: usa_facts
+
+env:
+  RENDER_BACKEND: ffmpeg
+  VISUAL_ACCURACY_MODE: strict
+  LAYERED_RENDER: "1"
+  CHARACTER_MEMORY: "1"
+  QA_ENABLED: "1"
+  AI_VIDEO_ENABLED: "0"
+  ENABLE_IMAGE_TO_VIDEO: "0"
+  COMFYUI_ENABLED: "0"
+  LAYERED_AI_STILL_BUDGET: "2"
+  LAYERED_MAX_HERO_SCENES: "1"
+  LAYERED_FFMPEG_THREADS: "4"
+  LAYERED_SUBJECT_MATTE: oval
+  LAYERED_MIN_FREE_MB: "2000"
+
+# Explainers are concept-led, not character-led.
+character:
+  name: ""
+  desc: ""
+  style: ""
+
+story:
+  pacing: "surprising hook → one clear idea → satisfying payoff"
+  hook_style: "It's not what you think."
+  hero_beat: "the single concept made visual (the mechanism, the comparison, the reveal)"
+  visual_doctrine: >
+    Every beat shows the exact thing being explained — real footage of the subject
+    plus clear stat/diagram overlays; ONE AI cinematic still for the concept that
+    can't be filmed. Accurate, attributed, no vague 'science stock' filler.
+  music_mood: bright-curious

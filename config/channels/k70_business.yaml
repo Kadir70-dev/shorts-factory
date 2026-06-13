@@ -1,0 +1,27 @@
+id: k70_business
+name: K70 Network Solution
+niche: usa_business
+voice_provider: elevenlabs
+voice_id: Antoni
+music_dir: data/assets/music/finance
+brand:
+  primary_color: "#0b1f3a"
+  accent_color: "#f5c518"
+  font: Inter
+  intro_card: true
+style_notes: >
+  BUSINESS + TECH bucket. One business story per short: billionaires, famous
+  companies, AI, business psychology, success/failure stories. Explain the one
+  move that explains everything — the loss leader, the moat, the network effect,
+  the psychological lever. Define jargon on first use; attribute valuations and
+  claims (filings, reporting). Prefer evergreen mechanics over today's stock move.
+  Sharp, confident CNBC-meets-Vox tone — admiring of strategy without being a
+  "get rich" hype channel. Describe, never give investment advice; no buy/sell.
+banned_topics:
+  - specific stock buy/sell calls
+  - get-rich-quick or hype claims
+  - daily war coverage
+  - conflict breaking news
+  - military speculation
+  - short-lived geopolitical news
+cta: "Follow K70 for the business moves nobody explains."

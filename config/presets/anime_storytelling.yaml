@@ -1,0 +1,43 @@
+# ───────────────────────────────────────────────────────────────────────────
+# PRODUCTION PRESET · anime storytelling  (v1-production, frozen)
+# Cinematic anime cyber-thriller micro-stories with a REUSABLE character (kade).
+# The hero beat is a full layered bg▸subject(kade)▸fx stack; every other beat is
+# exact real footage. Strict point-to-point grounding, ≤2 AI stills, 1 hero, CPU-safe.
+# Run:  .venv/bin/python scripts/produce.py --preset anime_storytelling \
+#         --from-json data/demos/anime_ghost_key.json
+# ───────────────────────────────────────────────────────────────────────────
+name: anime_storytelling
+channel_id: k70_cyber
+niche: cybersecurity
+
+env:
+  RENDER_BACKEND: ffmpeg
+  VISUAL_ACCURACY_MODE: strict
+  LAYERED_RENDER: "1"
+  CHARACTER_MEMORY: "1"               # lock kade's seed+description across scenes/runs
+  QA_ENABLED: "1"
+  AI_VIDEO_ENABLED: "0"
+  ENABLE_IMAGE_TO_VIDEO: "0"
+  COMFYUI_ENABLED: "0"
+  LAYERED_AI_STILL_BUDGET: "2"        # hero bg + hero subject(kade) = the 2 stills
+  LAYERED_MAX_HERO_SCENES: "1"
+  LAYERED_FFMPEG_THREADS: "4"
+  LAYERED_SUBJECT_MATTE: oval         # CPU cutout (set =rembg only if installed)
+  LAYERED_MIN_FREE_MB: "2000"
+
+# The reusable anime protagonist. First definition wins (locked seed → consistency).
+character:
+  name: kade
+  desc: "kade, teen anime hacker, green hoodie over a black tee, messy dark hair, sharp focused eyes, fingerless gloves"
+  style: "anime, cel-shaded, cinematic, moody neon lighting, high detail"
+
+story:
+  pacing: "fast cold-open hook → slow-burn tension → one punchy turn → CTA"
+  hook_style: "One key opened every door."
+  hero_beat: "kade alone at the terminal the instant the truth lands — the single layered hero shot"
+  visual_doctrine: >
+    Tell ONE tight story. The hero beat is kade (reusable, consistent) over a
+    recreated cyber backdrop with subtle parallax + fx. Every other beat is EXACT
+    real footage of what the line says (server room, city night, typing hands,
+    breach timeline) — never random stock, never a second character still.
+  music_mood: dark-synthwave

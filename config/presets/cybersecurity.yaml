@@ -1,0 +1,43 @@
+# ───────────────────────────────────────────────────────────────────────────
+# PRODUCTION PRESET · cybersecurity documentary  (v1-production, frozen)
+# Dark Netflix-cybercrime doc: one true/grounded-composite breach story per short.
+# Point-to-point grounding (real SOC/servers/code, no hoodie/matrix clichés), ONE
+# cinematic AI recreation as the hero, everything else exact real footage.
+# Run:  .venv/bin/python scripts/produce.py --preset cybersecurity --topic "..."
+# ───────────────────────────────────────────────────────────────────────────
+name: cybersecurity
+channel_id: k70_cyber
+niche: cybersecurity
+
+# Locked v1-production env (CPU-safe, strict grounding, layered hero + QA).
+env:
+  RENDER_BACKEND: ffmpeg
+  VISUAL_ACCURACY_MODE: strict        # narration↔visual lock ON (no random stock)
+  LAYERED_RENDER: "1"                  # one layered cinematic hero
+  CHARACTER_MEMORY: "1"
+  QA_ENABLED: "1"                      # black-frame / RAM / budget audit each run
+  AI_VIDEO_ENABLED: "0"               # no AI video on a CPU box
+  ENABLE_IMAGE_TO_VIDEO: "0"
+  COMFYUI_ENABLED: "0"                # HF FLUX-schnell is the free workhorse here
+  LAYERED_AI_STILL_BUDGET: "2"        # HARD cap: ≤2 AI stills/short
+  LAYERED_MAX_HERO_SCENES: "1"        # exactly one full bg▸subject▸fx stack
+  LAYERED_FFMPEG_THREADS: "4"
+  LAYERED_SUBJECT_MATTE: oval
+  LAYERED_MIN_FREE_MB: "2000"
+
+# No fixed character for a documentary (the hero is a recreated SCENE, not a person).
+character:
+  name: ""
+  desc: ""
+  style: ""
+
+# Creative direction surfaced to the Director / used to pick the hero beat.
+story:
+  pacing: "cold-open threat → slow-burn investigation → punchy takeaway"
+  hook_style: "It wasn't a hack."          # cold, declarative, retention-first
+  hero_beat: "the exact moment of compromise (a leaked table, a phishing click, a SOC alarm)"
+  visual_doctrine: >
+    Every shot shows EXACTLY what the line says. Recreate the exact event when no
+    real footage exists; otherwise real SOC / server room / code-on-monitor /
+    analyst footage. NEVER hoodie-hacker, matrix-rain, or glowing-laptop stock.
+  music_mood: dark-suspense

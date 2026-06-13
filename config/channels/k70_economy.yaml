@@ -1,0 +1,27 @@
+id: k70_economy
+name: K70 Network Solution
+niche: usa_finance
+voice_provider: elevenlabs
+voice_id: Rachel
+music_dir: data/assets/music/finance
+brand:
+  primary_color: "#0b1f3a"
+  accent_color: "#16c784"
+  font: Inter
+  intro_card: true
+style_notes: >
+  ECONOMY EXPLAINED bucket (evergreen). Explain why money feels the way it does:
+  why groceries are expensive, why people feel broke, inflation explained, the
+  middle-class squeeze, the debt crisis, the housing crisis. Lead with the number
+  that matters; always show a chart (manim) when citing a trend; cite the source
+  (BLS, Fed, CPI) in a small overlay. Sharp analyst tone — Bloomberg/Vox, not a
+  hype channel. Describe, never advise; no buy/sell calls. Prefer the timeless
+  mechanism over today's market move.
+banned_topics:
+  - specific stock buy/sell calls
+  - crypto pump predictions
+  - daily war coverage
+  - conflict breaking news
+  - military speculation
+  - short-lived geopolitical news
+cta: "Follow K70 to finally understand the economy."

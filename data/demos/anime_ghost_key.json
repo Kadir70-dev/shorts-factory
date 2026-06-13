@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.5",
+  "meta": {
+    "video_id": "anime_ghost_key",
+    "channel_id": "k70_cyber",
+    "niche": "cybersecurity",
+    "title": "Kade and the Ghost Key: The Password That Unlocked the World",
+    "hook": "One key opened every locked door.",
+    "description": "An anime cyber-thriller. A teenage hacker named Kade finds a master key buried in a forgotten update - one that unlocks every system on Earth. He has hours to decide: destroy it, or watch the world come undone. Follow K70 for the real stories behind the breach.",
+    "tags": ["anime", "cybersecurity", "hacker story", "cyber thriller", "master key", "zero day", "anime short", "tech storytelling", "dark cyber"],
+    "hashtags": ["#anime", "#cybersecurity", "#shorts", "#hacker", "#cyberpunk"],
+    "thumbnail_text": "THE GHOST KEY"
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "One key opened every locked door on the planet.",
+      "duration_sec": 3.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["master key", "every system"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "zoom_in",
+        "query": "dark data center server room with blinking lights",
+        "broll_keywords": ["dark data center server room", "server racks blinking lights", "server room cinematic"],
+        "visual_intent": "endless rows of dark server racks, tiny status lights pulsing - the weight of every system on Earth"
+      },
+      "overlays": [
+        {"type": "headline", "text": "One key. Every door.", "emphasis": "alert", "y": 0.16}
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "A teenager found it buried in a forgotten software update.",
+      "duration_sec": 3.6,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["forgotten update", "discovery"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "pan_lr",
+        "query": "hands typing on keyboard in the dark with code on screen",
+        "broll_keywords": ["hands typing keyboard dark", "code on computer screen close up", "software update installing screen"],
+        "visual_intent": "young hands moving fast over a keyboard, lines of code reflected in the dark"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Kade realized what it could unlock - and who was already using it.",
+      "duration_sec": 4.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["kade", "realization", "hero"],
+      "visual": {
+        "type": "ai_image",
+        "strategy": "ai_image",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "anime cyber control room neon glow",
+        "broll_keywords": ["cyber control room monitors", "security operations center dark"],
+        "visual_intent": "a dark cyber control room bathed in teal and magenta neon, a wall of glowing monitors, deep cinematic shadows, anime cel-shaded backdrop",
+        "decision_reason": "the single hero beat - the instant the truth lands on Kade; full layered bg+kade+fx stack"
+      },
+      "overlays": [
+        {"type": "headline", "text": "Someone was already inside.", "emphasis": "negative", "y": 0.17}
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "Within hours, the key spread through a thousand systems.",
+      "duration_sec": 3.8,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["spread", "thousand systems"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "zoom_in",
+        "query": "network operations center monitors with global map",
+        "broll_keywords": ["network operations center monitors", "global network map visualization", "data flowing across world map"],
+        "visual_intent": "a wall of monitors lighting up node by node as the breach races across a world map"
+      },
+      "overlays": [
+        {"type": "stat", "text": "systems compromised in 6 hours", "sub": "1,000+", "emphasis": "negative", "y": 0.2}
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "He had one move left: burn the key before they traced him.",
+      "duration_sec": 3.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["last move", "destroy the key"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "zoom_in",
+        "query": "hand reaching for server power switch shutdown",
+        "broll_keywords": ["server power switch shutdown", "unplugging server cable dark", "hand on data center power"],
+        "visual_intent": "a single hand hovering over a server's power switch - one decision left"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Some doors were never meant to be opened.",
+      "duration_sec": 3.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["closing line", "cta"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "pan_lr",
+        "query": "quiet city skyline at night turning to dawn",
+        "broll_keywords": ["city skyline night cinematic", "quiet city street at night", "city lights at dawn"],
+        "visual_intent": "a silent neon city at the edge of dawn - the world none the wiser"
+      },
+      "overlays": [
+        {"type": "headline", "text": "Follow for the next breach.", "emphasis": "normal", "y": 0.8}
+      ]
+    }
+  ]
+}

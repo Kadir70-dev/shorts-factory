@@ -1,0 +1,20 @@
+id: usa_finance
+name: USA Finance & Macro
+niche: usa_finance
+voice_provider: elevenlabs
+voice_id: Rachel
+music_dir: data/assets/music/finance
+brand:
+  primary_color: "#16c784"
+  accent_color: "#f5c518"
+  font: Inter
+  intro_card: false
+style_notes: >
+  Explain macro/markets like a sharp analyst, not a hype channel. Lead with the
+  number that matters. Always show a chart (manim) when citing a trend. Cite the
+  source (BLS, Fed, BLS CPI release) in a small source overlay. No financial
+  advice; describe, don't recommend.
+banned_topics:
+  - specific stock buy/sell calls
+  - crypto pump predictions
+cta: "Follow for daily macro in 30 seconds."

@@ -10,11 +10,13 @@ import json
 from typing import Optional
 
 from fastapi import APIRouter, HTTPException, Query
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
 
 from .gemini_client import utc_day_start
 from .models import NO_SAFE_TOPIC_AVAILABLE, SelectionResult
 from .repository import TopicIntelligenceRepository
+from .review import ReviewError, TopicReviewService
 from .service import TopicIntelligenceService
 from .settings import ti_settings
 
@@ -27,6 +29,9 @@ def _service() -> TopicIntelligenceService:
 
 def _repo() -> TopicIntelligenceRepository:
     return TopicIntelligenceRepository()
+
+def _review_service() -> TopicReviewService:
+    return TopicReviewService()
 
 
 class RunRequest(BaseModel):
@@ -207,3 +212,88 @@ def run_detail(run_id: str):
             for r in repo.run_results(run_id)
         ],
     }
+
+
+class ReviewActionRequest(BaseModel):
+    actor: str = "reviewer"
+    reason: Optional[str] = None
+
+
+class SelectAlternateRequest(ReviewActionRequest):
+    topic_id: str
+    override: bool = False
+
+
+def _review_http_error(exc: ReviewError) -> HTTPException:
+    return HTTPException(status_code=exc.status_code, detail=exc.detail())
+
+
+@router.get("/reviews")
+def review_runs(channel_id: str | None = None, limit: int = Query(25, ge=1, le=100)):
+    return _review_service().list_runs(channel_id=channel_id, limit=limit)
+
+
+@router.get("/reviews/{run_id}")
+def review_detail(run_id: str):
+    try:
+        return _review_service().run_review(run_id)
+    except ReviewError as exc:
+        raise _review_http_error(exc) from exc
+
+
+@router.post("/reviews/{run_id}/approve")
+async def approve_review(run_id: str, req: ReviewActionRequest):
+    try:
+        return await _review_service().approve(run_id, actor=req.actor, reason=req.reason)
+    except ReviewError as exc:
+        raise _review_http_error(exc) from exc
+
+
+@router.post("/reviews/{run_id}/reject")
+def reject_review(run_id: str, req: ReviewActionRequest):
+    try:
+        return _review_service().reject(run_id, actor=req.actor, reason=req.reason or "")
+    except ReviewError as exc:
+        raise _review_http_error(exc) from exc
+
+
+@router.post("/reviews/{run_id}/select-alternate")
+def select_alternate_review(run_id: str, req: SelectAlternateRequest):
+    try:
+        return _review_service().select_alternate(
+            run_id, req.topic_id, actor=req.actor, reason=req.reason,
+            override=req.override,
+        )
+    except ReviewError as exc:
+        raise _review_http_error(exc) from exc
+
+
+@router.post("/reviews/{run_id}/candidates/{topic_id}/override-duplicate")
+def override_duplicate_review(run_id: str, topic_id: str, req: ReviewActionRequest):
+    try:
+        return _review_service().override_duplicate(
+            run_id, topic_id, actor=req.actor, reason=req.reason or "",
+        )
+    except ReviewError as exc:
+        raise _review_http_error(exc) from exc
+
+
+@router.get("/review", response_class=HTMLResponse, include_in_schema=False)
+def review_dashboard():
+    return HTMLResponse("""<!doctype html><html><head><meta charset="utf-8">
+<title>Topic review</title><style>
+body{font:15px system-ui;max-width:1100px;margin:auto;padding:24px;background:#101525;color:#eef}
+article{border:1px solid #394363;border-radius:8px;padding:14px;margin:12px 0}
+button,input{font:inherit;padding:8px;margin:4px}a{color:#9cf}.bad{color:#faa}
+</style></head><body><h1>Topic review</h1>
+<label>Actor <input id="actor" value="reviewer"></label><button onclick="runs()">Refresh</button>
+<main id="app">Loading...</main><script>
+const B='/topic-intelligence';let run;
+async function api(p,o={}){let r=await fetch(B+p,{headers:{'content-type':'application/json'},...o}),d=await r.json();if(!r.ok)throw Error(d.detail?.message||JSON.stringify(d.detail));return d}
+const body=r=>JSON.stringify({actor:actor.value||'reviewer',reason:r});
+async function runs(){try{let x=await api('/reviews');app.innerHTML=x.map(r=>`<article><button onclick="detail('${r.run_id}')">Review</button> <b>${r.selected_topic||r.run_id}</b> — ${r.review_status}</article>`).join('')||'No runs.'}catch(e){app.textContent=e}}
+function card(c,sel){return `<article><h3>${sel?'Selected: ':''}${c.canonical_topic}</h3><p>${c.proposed_angle||''}</p><p>Score ${c.overall_score} · ${c.score_explanation||''}</p><p class="bad">${c.rejection_reasons.join(' · ')}</p><details><summary>Evidence</summary>${c.evidence.map(e=>`<p><a href="${e.url||'#'}" target="_blank">${e.title}</a></p>`).join('')}</details>${sel?'':`<button onclick="alternate('${c.topic_id}',${!c.eligible_for_production})">Select</button>`}</article>`}
+async function detail(id){try{run=id;let d=await api('/reviews/'+id),v=d.review;app.innerHTML=`<button onclick="runs()">Back</button><h2>${id} — ${v.status}</h2><button ${v.can_approve?'':'disabled'} onclick="act('approve')">Approve & enqueue</button><button ${v.can_reject?'':'disabled'} onclick="act('reject')">Reject</button>${d.selected?card(d.selected,true):''}<h2>Alternatives</h2>${d.ranked.filter(x=>x.topic_id!==d.run.selected_topic_id).map(x=>card(x,false)).join('')}<h2>Rejected</h2>${d.rejected.map(x=>card(x,false)).join('')}<h2>Audit</h2><pre>${JSON.stringify(d.audit_trail,null,2)}</pre>`}catch(e){app.textContent=e}}
+async function act(k){let r=prompt(k==='reject'?'Reason (required)':'Note')||'';if(k==='reject'&&!r)return;try{await api(`/reviews/${run}/${k}`,{method:'POST',body:body(r)});detail(run)}catch(e){alert(e)}}
+async function alternate(t,o){let r=o?prompt('Override reason (required)'):prompt('Note')||'';if(o&&!r)return;try{await api(`/reviews/${run}/select-alternate`,{method:'POST',body:JSON.stringify({actor:actor.value,topic_id:t,reason:r,override:o})});detail(run)}catch(e){alert(e)}}
+runs()</script></body></html>""")

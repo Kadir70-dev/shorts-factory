@@ -149,6 +149,16 @@ class TopicIntelligenceService:
             clusters, channel_id=channel_id, repo=self.repo,
             override_topic_ids=override_topic_ids,
         )
+        # Candidates the dedup layer hard-blocked. They are deliberately kept out
+        # of `survivors` but scored and returned anyway so the review dashboard can
+        # show WHAT was rejected and WHY — a duplicate you cannot see is one you
+        # cannot knowingly override. Clusters merged into a stronger sibling are
+        # not rejections and stay out (they keep eligible_for_production=True).
+        kept_ids = {c.topic_id for c in survivors}
+        blocked = [
+            c for c in clusters
+            if c.topic_id not in kept_ids and not c.eligible_for_production
+        ]
         # Editorial relevance: a general news feed carries politics, war and court
         # stories. They are not unsafe, they are simply not this channel's beat.
         if self.settings.ti_require_finance_relevance:
@@ -160,7 +170,7 @@ class TopicIntelligenceService:
                         "event — outside this channel's finance/trading beat"
                     )
 
-        safety.apply(survivors)
+        safety.apply(survivors + blocked)
         scored = scoring.score_all(survivors, now=now)
 
         eligible = [
@@ -169,7 +179,7 @@ class TopicIntelligenceService:
             and c.source_count >= self.settings.ti_min_source_count
         ]
         finalists = eligible[: self.settings.ti_max_finalists]
-        return finalists, scored
+        return finalists, scored + scoring.score_all(blocked, now=now)
 
     # --------------------------------------------------------------------- rank
     async def rank(

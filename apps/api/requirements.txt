@@ -22,3 +22,13 @@ pyyaml==6.0.2
 # --- uploads (Phase 5) ---
 google-api-python-client==2.157.0
 google-auth-oauthlib==1.2.1
+
+# --- topic intelligence (Phase 2A) ---
+# Official Google Gen AI SDK, used ONLY by the topic-intelligence ranker and
+# grounding provider. Imported lazily: if it is missing the engine falls back to
+# the deterministic ranker instead of failing. The video pipeline never imports it.
+google-genai==2.14.0
+
+# --- tests ---
+pytest==8.3.4
+pytest-asyncio==0.25.2

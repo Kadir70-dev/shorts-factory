@@ -17,7 +17,12 @@ from ..schemas.video_spec import BatchRequest, VideoSpec
 router = APIRouter(prefix="/generate", tags=["generate"])
 
 
-async def _enqueue(spec: VideoSpec) -> None:
+async def enqueue_spec(spec: VideoSpec) -> None:
+    """Persist the job row and hand it to the arq worker.
+
+    Public because Phase 2A's topic-intelligence engine enqueues its selected
+    topic through this exact path — one enqueue implementation, not two.
+    """
     upsert_job(
         Job(
             id=spec.id,
@@ -30,6 +35,10 @@ async def _enqueue(spec: VideoSpec) -> None:
     )
     pool = await create_pool(RedisSettings.from_dsn(settings().redis_url))
     await pool.enqueue_job("run_pipeline", spec.id)
+
+
+# Backwards-compatible alias for the original private name.
+_enqueue = enqueue_spec
 
 
 @router.post("")

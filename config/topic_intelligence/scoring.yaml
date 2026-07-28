@@ -1,0 +1,85 @@
+# Topic-intelligence scoring configuration.
+#
+# The FINAL overall score is always recomputed in code from these weights — Gemini
+# cannot override it. Gemini may only nudge the qualitative sub-scores, and only
+# within `gemini_influence` (see GEMINI_INFLUENCE in .env).
+#
+# Weights are normalized at load time, so they do not have to sum to exactly 1.0.
+
+weights:
+  trend_momentum: 0.20
+  audience_relevance: 0.15
+  freshness: 0.12
+  cross_source_confirmation: 0.12   # folded into `credibility`
+  competition_opportunity: 0.10
+  ctr_potential: 0.10
+  retention_potential: 0.08
+  monetization_potential: 0.05
+  production_feasibility: 0.05
+  subscriber_potential: 0.03
+
+# risk_penalty is SUBTRACTIVE, applied after the weighted sum:
+#   overall = weighted_sum - risk_weight * risk_penalty
+risk_weight: 0.60
+
+# Which sub-scores Gemini is allowed to influence at all. Everything else is
+# deterministic-only and any Gemini value for it is discarded.
+gemini_adjustable:
+  - audience_relevance
+  - ctr_potential
+  - retention_potential
+  - subscriber_potential
+  - monetization_potential
+  - production_feasibility
+
+# Saturation points for log-scaled velocity metrics: the value that scores ~100.
+saturation:
+  views_per_hour: 50000
+  upvote_velocity: 400
+  comment_velocity: 300
+  mention_velocity: 800
+  engagement_velocity: 5000
+  search_interest: 100
+  competing_videos: 40
+  median_competitor_views: 500000
+  median_competitor_subscribers: 2000000
+
+# Half-life (hours) used by the freshness curve, per factual state.
+freshness_half_life_hours:
+  confirmed: 10
+  forecast: 72
+  expectation: 36
+  opinion: 48
+  rumour: 8
+  historical: 4320        # evergreen: barely decays
+  unknown: 36
+
+# US-audience relevance boosts, additive before clamping.
+audience:
+  base: 35
+  us_region_bonus: 20
+  us_macro_event_bonus: 25
+  major_asset_bonus: 12
+  recognizable_ticker_bonus: 10
+
+# Monetization: US finance advertiser relevance by asset class (0-100).
+monetization_by_asset:
+  equities: 85
+  rates: 80
+  macro: 78
+  crypto: 70
+  ai_tech: 88
+  market_structure: 72
+  gold: 65
+  oil: 62
+  forex: 60
+  unknown: 45
+
+# Production feasibility: how hard is a 30-45s explainer with our frozen pipeline?
+feasibility:
+  base: 70
+  has_number_bonus: 12          # a concrete figure anchors the visual
+  chartable_bonus: 10           # macro/price series -> manim chart
+  evergreen_bonus: 8
+  many_entities_penalty: 15     # >4 named entities is hard to explain in 40s
+  long_topic_penalty: 10        # very long canonical topic = complex story

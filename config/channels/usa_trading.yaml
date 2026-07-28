@@ -1,0 +1,26 @@
+id: usa_trading
+name: USA Trading & Markets
+niche: usa_finance
+voice_provider: elevenlabs
+voice_id: Rachel
+music_dir: data/assets/music/finance
+brand:
+  primary_color: "#16c784"
+  accent_color: "#f5c518"
+  font: Inter
+  intro_card: false
+style_notes: >
+  A US markets desk in 30 seconds: what happened, the one number that matters, and
+  why it moves money. Cover finance, trading, investing, high-frequency and quant
+  trading, market microstructure, AI in finance, US economic events, stocks,
+  bitcoin and digital assets, gold, oil, forex and Federal Reserve policy. Lead
+  with the number. Always cite the source (Fed, BLS, BEA, company filing) in a
+  small overlay. Explain the mechanism, never the trade. Describe, don't recommend.
+banned_topics:
+  - specific stock buy/sell calls
+  - price targets presented as facts
+  - crypto pump predictions
+  - guaranteed return or risk-free profit claims
+  - personalized financial advice
+  - unsupported market manipulation allegations
+cta: "Follow for US markets in 30 seconds."

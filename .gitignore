@@ -7,6 +7,11 @@ data/jobs/
 data/cache/
 data/assets/
 data/models/
+data/topic_intelligence/
+
+# local SQLite (data/factory.db and test databases)
+*.db
+*.db-journal
 
 *.mp4
 *.ckpt

@@ -82,9 +82,31 @@ open http://localhost:8000/docs
 Veo3/Seedance hero shots, TikTok/IG/FB upload, analytics, auto-scheduling,
 multi-channel rotation. All have seams; none block the spine.
 
+## Topic intelligence (Phase 2A)
+Don't know what to make today? `app/topic_intelligence/` picks the topic. It
+collects real signals (finance RSS, YouTube, Reddit, X, an economic calendar,
+Google Trends, Gemini Search grounding), clusters them into stories, rejects
+duplicates and unsafe finance framings, scores every candidate deterministically,
+and uses **Gemini** to judge angle/hook/why-now — never to invent facts or set the
+score.
+
+```bash
+cd apps/api
+python -m app.topic_intelligence status                       # what's configured
+python -m app.topic_intelligence run --channel usa_trading    # pick the next topic
+python -m app.topic_intelligence run --channel usa_trading --enqueue   # ...and queue it
+```
+
+Works with **zero keys** (free finance RSS + the deterministic ranker). Add
+`GEMINI_API_KEY` for reasoning and `YOUTUBE_DATA_API_KEY` for competition
+analysis. Every provider is optional; a Gemini outage falls back, and when
+nothing credible and safe survives it returns `NO_SAFE_TOPIC_AVAILABLE` rather
+than filler. Full docs: **[`docs/TOPIC_INTELLIGENCE.md`](docs/TOPIC_INTELLIGENCE.md)**.
+
 ## Phase map
 - **P1** skeleton + schemas + infra ✅ (this repo)
 - **P2** Director engine (`app/director/`) — structured tool-use + repair loop
+- **P2A** Gemini finance trend intelligence (`app/topic_intelligence/`) ✅ — topic selection
 - **P3** pipeline hardening (`app/pipeline/`) — manim templates, music, effects
 - **P4** Next.js dashboard (`apps/web/`)
 - **P5** upload adapters (`app/uploaders/`)

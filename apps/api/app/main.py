@@ -9,11 +9,17 @@ from fastapi.middleware.cors import CORSMiddleware
 from .config import log_provider_validation
 from .db import init_db
 from .routers import generate, jobs
+from .topic_intelligence.router import router as topic_intelligence_router
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
+    # Phase 2A: additive topic-intelligence tables. Creates only what is missing;
+    # never touches the existing Job table.
+    from .topic_intelligence.repository import init_ti_db
+
+    init_ti_db()
     log_provider_validation()       # non-fatal: warn on incomplete provider config
     yield
 
@@ -29,6 +35,7 @@ app.add_middleware(
 
 app.include_router(generate.router)
 app.include_router(jobs.router)
+app.include_router(topic_intelligence_router)
 
 
 @app.get("/health")

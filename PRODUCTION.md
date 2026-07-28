@@ -88,6 +88,28 @@ COMFYUI_ENABLED=0                 # HF FLUX-schnell is the free image workhorse 
 ```
 Plus: arq `max_jobs=1` (one render at a time) and an 8GB swapfile for headroom.
 
+## Topic selection (Phase 2A — additive, outside the frozen core)
+
+`apps/api/app/topic_intelligence/` decides *what* to make; the frozen pipeline
+still decides *how*. It is a separate package with its own settings class, its own
+`ti_*` tables, and exactly three touch points in existing code:
+
+| Touch point | Change |
+|---|---|
+| `app/main.py` | includes one router; calls `init_ti_db()` in the lifespan |
+| `app/routers/generate.py` | `_enqueue` renamed to public `enqueue_spec` (alias kept) |
+| `apps/api/requirements.txt` | adds `google-genai` (lazy import) + pytest |
+
+Nothing in `director/`, `pipeline/`, `schemas/` or `workers/` was modified. The
+selected topic enters production as a normal `VideoSpec` through the same enqueue
+path `/generate` uses, and the evidence bundle is stored on the job's
+`metadata_json`. Handing a topic to the pipeline is **opt-in**
+(`TI_AUTO_ENQUEUE=false` by default).
+
+To disable Phase 2A entirely: leave `TI_AUTO_ENQUEUE=false` and never call the
+CLI or the `/topic-intelligence/*` endpoints. Nothing in it runs on the render
+path. See `docs/TOPIC_INTELLIGENCE.md`.
+
 ## Validation harnesses (proof the frozen baseline works)
 
 - `scripts/verify_phase3_layers.py` — composer + all fallbacks, on cached stills.

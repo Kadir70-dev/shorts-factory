@@ -35,6 +35,7 @@ from datetime import datetime, timezone
 from typing import Any, Awaitable, Callable, Iterable, Optional
 
 from ..config import load_channel
+from ..db import get_job
 from .models import (
     NO_SAFE_TOPIC_AVAILABLE,
     EvidenceItem,
@@ -66,6 +67,42 @@ REVIEW_NONE = "no_topic"
 AUDIT_ACTIONS = (
     "approve", "reject", "select_alternate", "supersede", "override_duplicate",
 )
+
+_GENERATION_PROGRESS = {
+    "queued": 5, "scripting": 15, "voicing": 35, "captioning": 50,
+    "assets": 65, "rendering": 80, "post": 92, "awaiting_approval": 100,
+    "failed": 0,
+}
+
+
+def generation_job_view(job_id: str | None) -> dict[str, Any] | None:
+    """Live view of the EXISTING render Job linked by Phase 2B approval."""
+    if not job_id:
+        return None
+    try:
+        job = get_job(job_id)
+    except Exception:
+        # TI-only tests and partial local setups may not have the legacy Job
+        # table initialized yet; the ledger link is still valid and visible.
+        job = None
+    if job is None:
+        return {"job_id": job_id, "status": "queued", "progress": 5,
+                "output_mp4": None, "error": None}
+    try:
+        meta = json.loads(job.metadata_json or "{}")
+    except json.JSONDecodeError:
+        meta = {}
+    progress = meta.get("progress") if isinstance(meta, dict) else None
+    return {
+        "job_id": job.id,
+        "status": job.status,
+        "progress": progress if isinstance(progress, (int, float))
+        else _GENERATION_PROGRESS.get(job.status, 0),
+        "output_mp4": job.output_mp4,
+        "error": job.error,
+        "updated_at": job.updated_at,
+        "video_url": f"/jobs/{job.id}/video" if job.output_mp4 else None,
+    }
 
 
 def _now() -> datetime:
@@ -337,6 +374,7 @@ class TopicReviewService:
                 "selected_topic": selected.canonical_topic if selected else None,
                 "overall_score": selected.overall_score if selected else None,
                 "enqueued_job_id": run.enqueued_job_id,
+                "generation": generation_job_view(run.enqueued_job_id),
                 "cluster_count": run.cluster_count,
                 "finalist_count": run.finalist_count,
                 "estimated_usd": run.estimated_usd,
@@ -421,6 +459,9 @@ class TopicReviewService:
                 "can_select_alternate": not in_pipeline and len(views) > 0,
                 "recommended_publish_window": (
                     selected["recommended_publish_window"] if selected else None
+                ),
+                "generation": generation_job_view(
+                    run.enqueued_job_id or (ledger.job_id if ledger else None)
                 ),
             },
             "selected": selected,
@@ -913,6 +954,6 @@ def approval_bundle(
 __all__ = [
     "TopicReviewService", "ReviewError", "review_status", "candidate_view",
     "ranked_topic_from_rows", "approval_bundle", "decode_audit", "encode_audit",
-    "audit_entry", "IN_PIPELINE_STATUSES", "REVIEW_PENDING", "REVIEW_APPROVED",
+    "audit_entry", "generation_job_view", "IN_PIPELINE_STATUSES", "REVIEW_PENDING", "REVIEW_APPROVED",
     "REVIEW_REJECTED", "REVIEW_SUPERSEDED", "REVIEW_NONE",
 ]

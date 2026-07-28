@@ -11,7 +11,7 @@ from arq.connections import RedisSettings
 from fastapi import APIRouter
 
 from ..config import load_channel, settings
-from ..db import Job, upsert_job
+from ..db import Job, get_job, upsert_job
 from ..schemas.video_spec import BatchRequest, VideoSpec
 
 router = APIRouter(prefix="/generate", tags=["generate"])
@@ -23,18 +23,25 @@ async def enqueue_spec(spec: VideoSpec) -> None:
     Public because Phase 2A's topic-intelligence engine enqueues its selected
     topic through this exact path — one enqueue implementation, not two.
     """
-    upsert_job(
-        Job(
-            id=spec.id,
-            channel_id=spec.channel_id,
-            niche=spec.niche.value,
-            topic=spec.topic,
-            status="queued",
-            spec_json=spec.model_dump_json(),
+    # Stable topic-intelligence ids make approval retries idempotent. A queued
+    # row is allowed to re-submit the SAME ARQ job id so a prior Redis outage
+    # can recover; ARQ suppresses concurrent/double-click duplicates.
+    existing = get_job(spec.id)
+    if existing is not None and existing.status != "queued":
+        return
+    if existing is None:
+        upsert_job(
+            Job(
+                id=spec.id,
+                channel_id=spec.channel_id,
+                niche=spec.niche.value,
+                topic=spec.topic,
+                status="queued",
+                spec_json=spec.model_dump_json(),
+            )
         )
-    )
     pool = await create_pool(RedisSettings.from_dsn(settings().redis_url))
-    await pool.enqueue_job("run_pipeline", spec.id)
+    await pool.enqueue_job("run_pipeline", spec.id, _job_id=spec.id)
 
 
 # Backwards-compatible alias for the original private name.

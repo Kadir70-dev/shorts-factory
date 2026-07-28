@@ -10,6 +10,7 @@ This phase does NOT upload, publish or schedule anything.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 from typing import Any
 
@@ -56,7 +57,17 @@ def build_video_spec(
     *,
     evidence_bundle: dict[str, Any] | None = None,
 ) -> VideoSpec:
+    # A human approval may be retried or double-clicked. Use a stable job id for
+    # the persisted decision so every attempt targets one existing Job/ARQ task.
+    job_id = None
+    if evidence_bundle:
+        run_id = str(evidence_bundle.get("run_id") or "")
+        topic_id = str(evidence_bundle.get("topic", {}).get("topic_id") or "")
+        if run_id and topic_id:
+            digest = hashlib.sha256(f"{run_id}:{topic_id}".encode()).hexdigest()[:12]
+            job_id = f"vid_ti_{digest}"
     spec = VideoSpec(
+        **({"id": job_id} if job_id else {}),
         channel_id=channel.id,
         niche=resolve_niche(channel),
         topic=build_topic_prompt(topic),

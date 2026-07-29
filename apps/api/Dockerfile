@@ -10,6 +10,10 @@ RUN git clone --depth 1 https://github.com/ggerganov/whisper.cpp /opt/whisper.cp
  && cd /opt/whisper.cpp && make -j \
  && bash ./models/download-ggml-model.sh base.en
 
+# Existing offline voice fallback used when no paid TTS key is configured.
+RUN apt-get update && apt-get install -y --no-install-recommends espeak-ng \
+ && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt

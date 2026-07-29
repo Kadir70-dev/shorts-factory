@@ -15,7 +15,12 @@ import yaml
 from pydantic import AliasChoices, BaseModel, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-ROOT = Path(__file__).resolve().parents[3]      # repo root
+_CONFIG_FILE = Path(__file__).resolve()
+ROOT = (
+    _CONFIG_FILE.parents[3]
+    if len(_CONFIG_FILE.parents) > 3
+    else Path("/repo")
+)  # source checkout or Docker Compose mount root
 CONFIG_DIR = ROOT / "config"
 DATA_DIR = ROOT / "data"
 

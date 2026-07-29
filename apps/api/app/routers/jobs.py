@@ -3,12 +3,15 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import FileResponse
 
 from ..db import Job, get_job, list_jobs, set_status
+from ..auth.deps import optional_auth
 
-router = APIRouter(prefix="/jobs", tags=["jobs"])
+router = APIRouter(
+    prefix="/jobs", tags=["jobs"], dependencies=[Depends(optional_auth)]
+)
 
 #: A job in one of these states has finished. Rejecting one would overwrite a
 #: real outcome (and, for `failed`, discard the original error), so it is

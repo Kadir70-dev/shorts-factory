@@ -32,7 +32,7 @@ class Job(SQLModel, table=True):
 
 
 def init_db() -> None:
-    SQLModel.metadata.create_all(_engine)
+    SQLModel.metadata.create_all(_engine, tables=[Job.__table__])
 
 
 def get_session() -> Session:

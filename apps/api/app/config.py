@@ -306,6 +306,13 @@ class Settings(BaseSettings):
     # --- infra ---
     redis_url: str = "redis://localhost:6379/0"
     database_url: str = f"sqlite:///{DATA_DIR}/factory.db"
+
+    # --- authentication ---
+    auth_required: bool = True
+    auth_secret_key: str = ""
+    auth_access_token_minutes: int = 30
+    auth_refresh_token_days: int = 14
+    auth_registration_open: bool = False
     remotion_render_url: str = "http://localhost:3001"   # remotion render service
     data_dir: Path = DATA_DIR
 

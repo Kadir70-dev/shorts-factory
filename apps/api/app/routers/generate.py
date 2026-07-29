@@ -10,13 +10,16 @@ import inspect
 
 from arq import create_pool
 from arq.connections import RedisSettings
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 
+from ..auth.deps import optional_auth
 from ..config import load_channel, settings
 from ..db import Job, get_job, upsert_job
 from ..schemas.video_spec import BatchRequest, VideoSpec
 
-router = APIRouter(prefix="/generate", tags=["generate"])
+router = APIRouter(
+    prefix="/generate", tags=["generate"], dependencies=[Depends(optional_auth)]
+)
 
 
 class EnqueueError(RuntimeError):

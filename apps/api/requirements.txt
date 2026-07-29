@@ -32,3 +32,5 @@ google-genai==2.14.0
 # --- tests ---
 pytest==8.3.4
 pytest-asyncio==0.25.2
+argon2-cffi==25.1.0
+PyJWT==2.13.0

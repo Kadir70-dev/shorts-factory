@@ -9,10 +9,11 @@ from __future__ import annotations
 import json
 from typing import Optional
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
 
+from ..auth.deps import optional_auth
 from .gemini_client import utc_day_start
 from .models import NO_SAFE_TOPIC_AVAILABLE, SelectionResult
 from .repository import TopicIntelligenceRepository
@@ -20,7 +21,11 @@ from .review import ReviewError, TopicReviewService
 from .service import TopicIntelligenceService
 from .settings import ti_settings
 
-router = APIRouter(prefix="/topic-intelligence", tags=["topic-intelligence"])
+router = APIRouter(
+    prefix="/topic-intelligence",
+    tags=["topic-intelligence"],
+    dependencies=[Depends(optional_auth)],
+)
 
 
 def _service() -> TopicIntelligenceService:

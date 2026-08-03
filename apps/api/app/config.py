@@ -282,6 +282,14 @@ class Settings(BaseSettings):
     multi_source_asset_priority: str = (
         "government_public_domain,sec_regulatory,company_ir,wikimedia_commons,"
         "pexels,pixabay,ai_generation")
+    # Phase 4 deterministic Three.js finance graphics. OFF preserves asset
+    # resolution and rendering exactly.
+    threejs_visual_engine_enabled: bool = False
+    threejs_quality: str = "final"
+    threejs_browser_executable: str = ""
+    threejs_worker_url: str = ""
+    threejs_render_timeout_s: float = 180.0
+    threejs_max_frames: int = 360
 
     @property
     def strict_visuals(self) -> bool:

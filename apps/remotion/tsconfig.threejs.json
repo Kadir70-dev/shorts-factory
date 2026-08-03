@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "dist-threejs",
+    "module": "ESNext",
+    "moduleResolution": "bundler"
+  },
+  "include": ["src/threejs/worker.ts"]
+}

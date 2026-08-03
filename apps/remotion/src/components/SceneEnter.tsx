@@ -12,7 +12,8 @@ import { AbsoluteFill, Easing, interpolate, useCurrentFrame, useVideoConfig } fr
  * No exit fade: scenes hand off as clean cuts. Animated transitions are meant to
  * be rare, so most boundaries are calm — the Director picks `cut` by default.
  */
-type T = "cut" | "fade" | "slide_l" | "whip";
+type T = "cut" | "fade" | "slide_l" | "whip" | "dip_to_black" |
+  "push_up" | "crossfade";
 
 export const SceneEnter: React.FC<{
   transition: T;
@@ -46,9 +47,16 @@ export const SceneEnter: React.FC<{
       opacity = interpolate(tIn, [0, 0.6], [0, 1], { extrapolateRight: "clamp" });
       break;
     }
-    case "fade": {
+    case "fade":
+    case "dip_to_black":
+    case "crossfade": {
       transform = `scale(${interpolate(tIn, [0, 1], [1.06, 1])})`;
       opacity = tIn;
+      break;
+    }
+    case "push_up": {
+      transform = `translateY(${interpolate(tIn, [0, 1], [10, 0])}%)`;
+      opacity = interpolate(tIn, [0, 0.5], [0, 1], { extrapolateRight: "clamp" });
       break;
     }
     default: {

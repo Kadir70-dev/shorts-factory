@@ -21,6 +21,7 @@ services:
       - PROJECT_ROOT=/repo
       - DATA_DIR=/repo/data
       - DATABASE_URL=sqlite:////repo/data/factory.db
+      - THREEJS_WORKER_URL=http://remotion:3001/threejs
 
   worker:
     build: ./apps/api
@@ -36,6 +37,7 @@ services:
       - PROJECT_ROOT=/repo
       - DATA_DIR=/repo/data
       - DATABASE_URL=sqlite:////repo/data/factory.db
+      - THREEJS_WORKER_URL=http://remotion:3001/threejs
 
   remotion:
     build: ./apps/remotion

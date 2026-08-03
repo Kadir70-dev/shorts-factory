@@ -34,7 +34,7 @@ from .compliance import policy as compliance_policy
 # Locally-rendered visuals already carry the brand palette and their own motion.
 # Grading them again shifts the colours away from the palette they were drawn in,
 # and Ken Burns on an animated chart is just wobble.
-_PRERENDERED = ("dataviz", "motion_gfx", "branded")
+_PRERENDERED = ("dataviz", "motion_gfx", "branded", "threejs")
 
 
 async def render(graph: SceneGraph, out: Path) -> str:

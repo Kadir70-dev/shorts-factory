@@ -47,6 +47,7 @@ from . import motiongfx
 from . import ram
 from . import scene_director as sd
 from . import asset_engine
+from . import threejs_engine
 from .providers import (
     ai_image_generate, ai_video_generate, build_video_prompt,
     clamp_i2v_seconds, clamp_insert_seconds, manim_render, pexels_image,
@@ -138,12 +139,14 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
     # 1) decide the per-scene strategy + enforce the visual-mix budget.
     report = sd.decide(graph, spec)
     by_id = {d.scene_id: d for d in report.decisions}
+    if ((settings().multi_source_asset_engine_enabled
+         or settings().threejs_visual_engine_enabled)
+            and graph.storyboard is None):
+        from . import storyboard
+        graph.storyboard = storyboard.generate_semantic(graph, report)
+
+    enhanced: dict[str, str] = {}
     if settings().multi_source_asset_engine_enabled:
-        # Phase 3 consumes Phase 2 data. Generate it here when its standalone
-        # diagnostic gate is off, without changing render scenes or timing.
-        if graph.storyboard is None:
-            from . import storyboard
-            graph.storyboard = storyboard.generate_semantic(graph, report)
         enhanced = await asset_engine.resolve(
             graph, multi_source_candidates, download_asset_candidate)
         for record in graph.asset_provenance:
@@ -163,6 +166,44 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
             else:
                 scene.visual.asset_path = None
                 scene.visual.type = "solid"
+
+    threejs_handled: set[str] = set()
+    if settings().threejs_visual_engine_enabled and graph.storyboard is not None:
+        by_source: dict[str, list] = {}
+        for beat in graph.storyboard.scenes:
+            by_source.setdefault(beat.source_scene_id, []).append(beat)
+        for scene in graph.scenes:
+            # Official/licensed Phase 3 assets keep priority; Three.js should
+            # explain numbers, not replace strong archival evidence.
+            if scene.id in enhanced:
+                continue
+            beat = next((candidate for candidate in by_source.get(scene.id, [])
+                         if threejs_engine.map_template(candidate) is not None), None)
+            if beat is None:
+                continue
+            result = await threejs_engine.render(graph, scene, beat)
+            graph.threejs_provenance.append(result)
+            threejs_handled.add(scene.id)
+            if result.status in ("rendered", "cache_hit") and result.render_path:
+                scene.visual.asset_path = result.render_path
+                scene.visual.type = "threejs"
+                scene.visual.motion = "none"
+            else:
+                # A failed clarity-specific visual is an editorially unresolved
+                # scene, never permission to substitute unrelated stock.
+                scene.visual.asset_path = None
+                scene.visual.type = "solid"
+
+    if settings().multi_source_asset_engine_enabled:
+        return graph
+
+    if settings().threejs_visual_engine_enabled:
+        await asyncio.gather(
+            *[_resolve(s, i, graph, spec, by_id[s.id])
+              for i, s in enumerate(graph.scenes) if s.id not in threejs_handled]
+        )
+        if settings().strict_visuals:
+            await _dedupe_real_assets(graph)
         return graph
     # 2) resolve every scene to a concrete asset (concurrently).
     await asyncio.gather(

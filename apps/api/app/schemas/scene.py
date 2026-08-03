@@ -110,7 +110,7 @@ class Visual(BaseModel):
     #   image    = real stock photo (gets Ken Burns motion)
     #   solid    = flat-colour last resort
     type: Literal[
-        "broll", "ai_video", "ai_image", "dataviz", "motion_gfx", "branded",
+        "broll", "ai_video", "ai_image", "dataviz", "motion_gfx", "threejs", "branded",
         "manim", "image", "solid"
     ] = "broll"
     # search query (pexels/pixabay) OR generation prompt (veo3/seedance)
@@ -399,6 +399,30 @@ class AssetResolution(BaseModel):
     comparison: str = ""
 
 
+class ThreeJSRenderProvenance(BaseModel):
+    scene_id: str
+    storyboard_scene_id: str
+    template: Literal[
+        "number_counter", "comparison_towers", "share_ownership",
+        "dividend_cashflow", "timeline_flythrough", "compound_growth",
+    ]
+    template_version: str
+    status: Literal["rendered", "cache_hit", "unresolved"]
+    render_path: Optional[str] = None
+    cache_key: str
+    seed: int
+    fps: Literal[30, 60]
+    width: int
+    height: int
+    quality: Literal["preview", "final"]
+    brand_id: str
+    brand_fingerprint: str
+    render_ms: float = Field(ge=0)
+    peak_rss_mb: float = Field(ge=0)
+    error: str = ""
+    legacy_decision: str = ""
+
+
 class SceneGraph(BaseModel):
     """Complete, self-contained render package. Remotion's only input."""
 
@@ -416,6 +440,8 @@ class SceneGraph(BaseModel):
     storyboard: Optional[StoryboardData] = None
     # Phase 3 output; empty when the feature gate is disabled.
     asset_provenance: list[AssetResolution] = []
+    # Phase 4 output; empty when its feature gate is disabled.
+    threejs_provenance: list[ThreeJSRenderProvenance] = []
 
     # The per-video VARIETY PLAN (pipeline/variety.py): which caption animation,
     # transition palette, motion style, colour grade and CTA shape this short

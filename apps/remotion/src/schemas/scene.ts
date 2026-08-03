@@ -9,7 +9,8 @@ export const SCHEMA_VERSION = "1.5";
 
 export const Visual = z.object({
   type: z
-    .enum(["broll", "ai_video", "ai_image", "manim", "image", "solid"])
+    .enum(["broll", "ai_video", "ai_image", "manim", "dataviz", "motion_gfx",
+           "threejs", "branded", "image", "solid"])
     .default("broll"),
   query: z.string().default(""),
   // B-roll engine fields (Director-authored visual intent). Remotion ignores
@@ -28,7 +29,7 @@ export const Visual = z.object({
   // Smart Scene Decision Engine (Phase 5.5) — render-irrelevant; the asset
   // resolver consumes these. Accepted so props validate.
   strategy: z
-    .enum(["real", "ai_image", "ai_video", "motion_gfx", "hybrid"])
+    .enum(["dataviz", "real", "ai_image", "ai_video", "motion_gfx", "branded", "hybrid"])
     .default("real"),
   decision_reason: z.string().default(""),
 });
@@ -47,7 +48,8 @@ export const Scene = z.object({
   duration_sec: z.number().min(0.8).max(12),
   visual: Visual.default({}),
   overlays: z.array(Overlay).default([]),
-  transition_in: z.enum(["cut", "fade", "slide_l", "whip"]).default("cut"),
+  transition_in: z.enum(["cut", "fade", "slide_l", "whip", "dip_to_black",
+                         "push_up", "crossfade"]).default("cut"),
   keywords: z.array(z.string()).default([]),
   // factual reliability label (see scene.py). Remotion uses it to tag forecasts.
   confidence: z.enum(["confirmed", "probable", "speculative"]).default("confirmed"),
@@ -114,6 +116,14 @@ export const SceneGraph = z.object({
   audio: AudioTrack.default({}),
   captions: z.array(Caption).default([]),
   sfx: z.array(SfxCue).default([]),
+  threejs_provenance: z.array(z.object({
+    scene_id: z.string(), storyboard_scene_id: z.string(), template: z.string(),
+    template_version: z.string(), status: z.string(), render_path: z.string().nullable(),
+    cache_key: z.string(), seed: z.number(), fps: z.number(), width: z.number(),
+    height: z.number(), quality: z.string(), brand_id: z.string(),
+    brand_fingerprint: z.string(), render_ms: z.number(), peak_rss_mb: z.number(),
+    error: z.string(), legacy_decision: z.string(),
+  })).default([]),
 });
 
 export type TSceneGraph = z.infer<typeof SceneGraph>;

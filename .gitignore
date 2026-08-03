@@ -21,6 +21,7 @@ data/topic_intelligence/
 .env
 node_modules/
 apps/remotion/node_modules/
+apps/remotion/dist-threejs/
 
 # Local assistant permissions and environment backups (may contain secrets).
 .claude/

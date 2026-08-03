@@ -8,6 +8,7 @@ import { renderMedia, selectComposition } from "@remotion/renderer";
 import { createServer } from "node:http";
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import {handle as renderThreeJS} from "./src/threejs/worker";
 
 const PORT = 3001;
 let serveUrl: string;
@@ -27,7 +28,7 @@ async function boot() {
 }
 
 const server = createServer(async (req, res) => {
-  if (req.method !== "POST" || req.url !== "/render") {
+  if (req.method !== "POST" || !["/render", "/threejs"].includes(req.url || "")) {
     res.writeHead(404).end();
     return;
   }
@@ -35,6 +36,12 @@ const server = createServer(async (req, res) => {
   req.on("data", (c) => (body += c));
   req.on("end", async () => {
     try {
+      if (req.url === "/threejs") {
+        const result = await renderThreeJS(JSON.parse(body));
+        res.writeHead(200, {"content-type": "application/json"});
+        res.end(JSON.stringify(result));
+        return;
+      }
       const { props_path, out } = JSON.parse(body);
       const inputProps = JSON.parse(readFileSync(props_path, "utf8"));
       const composition = await selectComposition({

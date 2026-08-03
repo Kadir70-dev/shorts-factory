@@ -1,0 +1,316 @@
+{
+  "schema_version": "2.0",
+  "brand_id": "k70",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "meta": {
+    "video_id": "vid_nyc_gdp_v1",
+    "channel_id": "k70_economy",
+    "niche": "usa_finance",
+    "structure_id": "one_number_story",
+    "title": "New York's Economy Is Bigger Than Canada's",
+    "hook": "One metro area out-produces Canada",
+    "description": "The New York metro area produced over $2.6 trillion in 2024 \u2014 more than the entire economy of Canada. Here is why one metro area generates that much, and the number most people get wrong.",
+    "tags": [
+      "new york gdp",
+      "nyc economy",
+      "gdp explained",
+      "us economy",
+      "economics",
+      "finance",
+      "new york city"
+    ],
+    "hashtags": [
+      "#shorts",
+      "#economics",
+      "#newyork",
+      "#finance"
+    ],
+    "thumbnail_text": "BIGGER THAN CANADA"
+  },
+  "scenes": [
+    {
+      "id": "s1",
+      "beat_role": "hook",
+      "duration_sec": 3.8,
+      "narration": "New York's metro economy out-produces the entire country of Canada.",
+      "keywords": [
+        "new york skyline",
+        "manhattan"
+      ],
+      "visual": {
+        "type": "motion_gfx",
+        "scene_visual_type": "dramatic",
+        "visual_intent": "The claim itself, built on screen \u2014 no footage can show a GDP comparison",
+        "broll_keywords": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "Bigger than Canada",
+          "y": 0.2
+        }
+      ],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s2",
+      "beat_role": "context",
+      "duration_sec": 5.0,
+      "narration": "GDP is the total value of everything an economy produces in a year.",
+      "keywords": [
+        "gdp definition"
+      ],
+      "visual": {
+        "type": "motion_gfx",
+        "scene_visual_type": "abstract",
+        "visual_intent": "Definition set in type \u2014 a stock clip of a city would say nothing about what GDP means",
+        "broll_keywords": [
+          "office workers new york",
+          "manhattan commuters morning"
+        ]
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "Everything produced, in one year",
+          "y": 0.2
+        },
+        {
+          "type": "lower_third",
+          "text": "GDP",
+          "sub": "Gross Domestic Product"
+        }
+      ],
+      "transition_in": "fade"
+    },
+    {
+      "id": "s3",
+      "beat_role": "evidence",
+      "duration_sec": 5.4,
+      "narration": "In 2024, the New York metro area produced over two point six trillion dollars.",
+      "keywords": [
+        "new york metro economy"
+      ],
+      "visual": {
+        "type": "dataviz",
+        "scene_visual_type": "data_viz",
+        "visual_intent": "The hero figure, counted up",
+        "broll_keywords": []
+      },
+      "data": {
+        "kind": "counter",
+        "title": "New York metro area GDP, 2024",
+        "points": [
+          {
+            "label": "New York-Newark-Jersey City metro",
+            "value": 2600000000000,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "$",
+        "decimals": 1,
+        "abbreviate": true,
+        "source": "U.S. Bureau of Economic Analysis, 2024"
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "BEA, 2024",
+          "y": 0.07
+        }
+      ],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s4",
+      "beat_role": "contrast",
+      "duration_sec": 5.0,
+      "narration": "That's ahead of Canada and Australia, just behind Texas, and well below California.",
+      "keywords": [
+        "economy comparison"
+      ],
+      "visual": {
+        "type": "dataviz",
+        "scene_visual_type": "data_viz",
+        "visual_intent": "Direct comparison \u2014 the whole argument is the ranking",
+        "broll_keywords": []
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "Annual output, 2024",
+        "points": [
+          {
+            "label": "California",
+            "value": 4100000000000,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Texas",
+            "value": 2770000000000,
+            "emphasis": "normal"
+          },
+          {
+            "label": "NY metro",
+            "value": 2600000000000,
+            "emphasis": "primary"
+          },
+          {
+            "label": "Canada",
+            "value": 2240000000000,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Australia",
+            "value": 1750000000000,
+            "emphasis": "normal"
+          }
+        ],
+        "prefix": "$",
+        "decimals": 1,
+        "abbreviate": true,
+        "highlight": 2,
+        "source": "BEA (states, metro); World Bank (countries), 2024"
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "BEA \u00b7 World Bank, 2024",
+          "y": 0.07
+        }
+      ],
+      "transition_in": "push_up"
+    },
+    {
+      "id": "s5",
+      "beat_role": "mechanism",
+      "duration_sec": 6.5,
+      "narration": "Density is the reason. Wall Street, corporate headquarters and global media sit within a few square miles.",
+      "keywords": [
+        "manhattan density",
+        "wall street"
+      ],
+      "visual": {
+        "type": "motion_gfx",
+        "scene_visual_type": "abstract",
+        "visual_intent": "The mechanism stated in type \u2014 density of high-value industry, not a skyline shot",
+        "broll_keywords": [
+          "wall street street level",
+          "manhattan financial district crowd"
+        ]
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "Density is the mechanism",
+          "y": 0.2
+        }
+      ],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s6",
+      "beat_role": "evidence",
+      "duration_sec": 6.2,
+      "narration": "Analysts estimate finance alone drives nearly a fifth of output, ahead of professional services and tech.",
+      "keywords": [
+        "nyc industries"
+      ],
+      "visual": {
+        "type": "dataviz",
+        "scene_visual_type": "data_viz",
+        "visual_intent": "Industry ranking \u2014 which sectors actually carry the economy",
+        "broll_keywords": []
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "Share of New York economic activity",
+        "points": [
+          {
+            "label": "Finance",
+            "value": 17,
+            "emphasis": "primary"
+          },
+          {
+            "label": "Prof. svcs",
+            "value": 15,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Tech",
+            "value": 10,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Health",
+            "value": 8,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Tourism",
+            "value": 5,
+            "emphasis": "normal"
+          }
+        ],
+        "suffix": "%",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 0,
+        "source": "Industry estimates; shares approximate",
+        "note": "Estimated shares of economic activity"
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "Industry estimates",
+          "y": 0.07
+        }
+      ],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s7",
+      "beat_role": "cta",
+      "duration_sec": 7.3,
+      "narration": "Most people quote the wrong number. The five boroughs alone make one point three trillion \u2014 half the metro.",
+      "keywords": [
+        "five boroughs"
+      ],
+      "visual": {
+        "type": "dataviz",
+        "scene_visual_type": "data_viz",
+        "visual_intent": "The reveal \u2014 city proper versus metro, the distinction almost every article blurs",
+        "broll_keywords": []
+      },
+      "data": {
+        "kind": "delta",
+        "title": "City proper vs metro area",
+        "points": [
+          {
+            "label": "5 boroughs",
+            "value": 1280000000000,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Metro area",
+            "value": 2600000000000,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "$",
+        "decimals": 1,
+        "abbreviate": true,
+        "source": "NYCEDC (2023 city); BEA (2024 metro)"
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "NYCEDC \u00b7 BEA",
+          "y": 0.07
+        }
+      ],
+      "transition_in": "dip_to_black"
+    }
+  ]
+}

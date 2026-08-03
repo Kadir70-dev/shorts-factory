@@ -300,6 +300,41 @@ _NICHE_AI_LEAN: dict[str, float] = {
 }
 
 
+_BUDGET_STRATEGY = {
+    "charts": DATAVIZ, "motion_gfx": MOTION_GFX, "threejs": "threejs",
+    "official": REAL, "stock": REAL, "ai_broll": AI_IMAGE,
+}
+
+
+def _decide_from_budget(graph: SceneGraph) -> MixReport:
+    """Translate the whole-video budget allocation into resolver strategies.
+
+    `official` and `stock` both resolve as REAL footage; they differ in which
+    SOURCES the resolver is allowed to draw from, which `visual.budget_channel`
+    carries downstream.
+    """
+    decisions: list[Decision] = []
+    for s in graph.scenes:
+        ch = s.visual.budget_channel or "motion_gfx"
+        strategy = _BUDGET_STRATEGY.get(ch, MOTION_GFX)
+        s.visual.strategy = strategy
+        if ch in ("charts", "motion_gfx", "threejs"):
+            s.visual.type = {"charts": "dataviz", "motion_gfx": "motion_gfx",
+                             "threejs": "threejs"}[ch]
+        decisions.append(Decision(
+            scene_id=s.id, strategy=strategy,
+            reason=s.visual.decision_reason or f"visual budget → {ch}",
+            tier=1, ai_eligible=(ch == "ai_broll"), force_real=(ch in ("official", "stock")),
+            score=0.0, has_data=bool(s.data and s.data.valid()), concrete=True,
+        ))
+    n = len(decisions) or 1
+    counts: dict[str, int] = {}
+    for d in decisions:
+        counts[d.strategy] = counts.get(d.strategy, 0) + 1
+    return MixReport(decisions=decisions, counts=counts,
+                     pct={k: round(100 * v / n, 1) for k, v in counts.items()})
+
+
 def _cap(n: int, lo: float, hi: float) -> int:
     return int(round(n * (lo + hi) / 2))
 
@@ -500,6 +535,12 @@ def compare(graph: SceneGraph, spec: VideoSpec) -> ComparisonReport:
 
 def decide(graph: SceneGraph, spec: VideoSpec) -> MixReport:
     """Stable asset-resolver boundary; enhanced policy is opt-in and compared."""
+    # The Visual Budget Manager allocates across the WHOLE video, which is a
+    # decision this per-scene engine cannot make. When it has run, honour it:
+    # re-deriving here silently overwrote the allocation, so a correctly-planned
+    # 6-channel mix still rendered as 39% type / 61% charts.
+    if any(s.visual.budget_channel for s in graph.scenes):
+        return _decide_from_budget(graph)
     if not settings().visual_intelligence_enabled:
         report = _decide_existing(graph, spec)
     else:

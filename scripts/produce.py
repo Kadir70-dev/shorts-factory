@@ -26,6 +26,7 @@ LAYERED_AI_STILL_BUDGET (2) inside the single LAYERED_MAX_HERO_SCENES (1) hero b
 from __future__ import annotations
 
 import argparse
+import json
 import asyncio
 import os
 import resource
@@ -117,7 +118,7 @@ async def run(args) -> int:
     from app.config import load_channel, log_provider_validation, settings
     from app.director import structures
     from app.pipeline import broll, captions, compliance, music, qa, ram, \
-        render_ffmpeg, sfx, storyboard, tts, variety
+        render_ffmpeg, sfx, storyboard, tts, variety, visual_budget
     from app.schemas.video_spec import Niche, VideoSpec
     from app.voice import load_profile
 
@@ -187,8 +188,20 @@ async def run(args) -> int:
                                       style=spec.character_style)
         stage("storyboard", t)
 
-        t = time.perf_counter(); graph = await tts.synthesize(graph, spec, channel)
-        stage("voiceover", t)
+        if args.no_voice:
+            # VISUAL PREVIEW. This renders NO narration at all — it does not
+            # substitute a different voice, which the identity lock forbids and
+            # which would be a far worse outcome than silence. Scene durations
+            # stay at the authored estimates instead of being overwritten by
+            # measured audio, so the cut is timed but not locked; re-running
+            # without this flag once the clone exists retimes everything to the
+            # real voiceover.
+            print("   [voiceover    ] SKIPPED — --no-voice preview "
+                  "(silent cut; no substitute narrator)")
+            failures.append("PREVIEW ONLY: no narration — cloned voice not built yet")
+        else:
+            t = time.perf_counter(); graph = await tts.synthesize(graph, spec, channel)
+            stage("voiceover", t)
         try:
             t = time.perf_counter(); graph = await captions.transcribe(graph)
             stage("captions", t)
@@ -196,6 +209,15 @@ async def run(args) -> int:
             failures.append(f"captions skipped ({type(e).__name__})")
 
         # EXACT real footage only (no AI, no random stock — strict grounding).
+        # VISUAL BUDGET — a whole-video decision, so it runs BEFORE the resolver.
+        # Allocating per-scene is what produced an all-2D short: each beat picked
+        # a locally-correct source with no view of the finished mix.
+        t = time.perf_counter()
+        budget = visual_budget.allocate(graph)
+        graph = visual_budget.apply(graph, budget)
+        stage("visual-budget", t)
+        print("   " + budget.format().replace("\n", "\n   "))
+
         t = time.perf_counter(); graph = await broll.resolve_assets(graph, spec_real)
         stage("exact-footage", t)
         # EXACT AI hero generation — the ONLY AI source, cache-first, ≤2 stills.
@@ -221,6 +243,21 @@ async def run(args) -> int:
 
         _grounding_summary(graph)
         out_dir.joinpath("scene_graph.json").write_text(graph.model_dump_json(indent=2))
+
+        # Delivered visual-breakdown report, rebuilt from what ACTUALLY resolved
+        # rather than from the plan — a beat that fell back to another source must
+        # be counted where it landed, not where it was allocated.
+        final_budget = visual_budget.measure(graph)
+        stale = visual_budget.audit_unused(graph)
+        out_dir.joinpath("visual_breakdown.json").write_text(json.dumps(
+            {**final_budget.as_dict(), "unused_generated_assets": stale},
+            indent=2))
+        print("\n   ── delivered visual breakdown ─────────────────────────────")
+        print("   " + final_budget.format().replace("\n", "\n   "))
+        print(f"   unused generated assets: {len(stale)}"
+              + (f" — {', '.join(stale)}" if stale else " ✓"))
+        if stale:
+            failures.append(f"{len(stale)} generated asset(s) never composited")
 
         # LAYERED COMPOSITION + captions burn + audio mux (timeout-guarded).
         t = time.perf_counter()
@@ -299,6 +336,10 @@ def main() -> int:
     ap.add_argument("--topic", help="topic for the Director (omit with --from-json)")
     ap.add_argument("--from-json", help="render a fixed SceneGraph spec (skip Director)")
     ap.add_argument("--keep", action="store_true", help="keep the final MP4")
+    ap.add_argument("--no-voice", action="store_true",
+                    help="visual preview: render the cut with NO narration. Does "
+                         "not substitute another voice — use before the cloned "
+                         "voice exists, then re-run without it to lock timing.")
     args = ap.parse_args()
     if not args.topic and not args.from_json:
         ap.error("give --topic or --from-json")

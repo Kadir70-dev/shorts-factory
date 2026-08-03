@@ -152,9 +152,14 @@ class Visual(BaseModel):
     #   hybrid     — a base visual composited with on-screen graphics
     #   ai_video   — opt-in cinematic motion insert
     strategy: Literal[
-        "dataviz", "real", "ai_image", "ai_video", "motion_gfx", "branded",
-        "hybrid"
+        "dataviz", "real", "ai_image", "ai_video", "motion_gfx", "threejs",
+        "branded", "hybrid"
     ] = "real"
+    # Which visual-budget channel the whole-video allocator gave this beat
+    # (pipeline/visual_budget.py). `strategy` says how the resolver fetches;
+    # this says which share of screen time the beat was counted against, and it
+    # is what the delivered visual-breakdown report is built from.
+    budget_channel: str = ""
     # one line on WHY the engine chose this strategy (debug / verification).
     decision_reason: str = ""
     # --- CPU multi-layer cinematic stack (Phase 2/3) -------------------------
@@ -321,7 +326,7 @@ class StoryboardScene(BaseModel):
         "hopeful", "cautionary",
     ] = "neutral"
     recommended_visual_type: Literal[
-        "dataviz", "real", "ai_image", "ai_video", "motion_gfx", "branded",
+        "dataviz", "real", "ai_image", "ai_video", "motion_gfx", "threejs", "branded",
         "hybrid",
     ]
     recommended_camera_movement: Literal[

@@ -7,6 +7,7 @@ import json
 import os
 import re
 import shutil
+import subprocess
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -114,6 +115,84 @@ def cache_key(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
         "quality": quality, "seed": seed, "brand": theme.fingerprint,
     }, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(body.encode()).hexdigest()
+
+
+# Chromium links against system libraries Puppeteer does NOT bundle. When they
+# are absent the browser binary cannot even load, and the failure surfaces as a
+# generic launch error that says nothing about how to fix it. Mapping the missing
+# soname to the package that provides it turns an hour of tracing into one line.
+_SONAME_PACKAGE = {
+    "libnspr4.so": "libnspr4",
+    "libnss3.so": "libnss3",
+    "libnssutil3.so": "libnss3",
+    "libsmime3.so": "libnss3",
+    "libgbm.so": "libgbm1",
+    "libasound.so": "libasound2t64",
+    "libatk-1.0.so": "libatk1.0-0",
+    "libatk-bridge-2.0.so": "libatk-bridge2.0-0",
+    "libcups.so": "libcups2",
+    "libdrm.so": "libdrm2",
+    "libxkbcommon.so": "libxkbcommon0",
+    "libpango-1.0.so": "libpango-1.0-0",
+    "libcairo.so": "libcairo2",
+    "libatspi.so": "libatspi2.0-0",
+}
+
+_diagnosed = False
+
+
+def diagnose_launch_failure(error: str) -> str:
+    """Turn a browser launch error into an actionable remediation line, or ''.
+
+    Puppeteer downloads Chromium but not its runtime dependencies, so a working
+    install can still fail with `error while loading shared libraries`. The
+    message names the soname; this maps it to the apt package that ships it.
+    """
+    missing = {soname for soname in _SONAME_PACKAGE if soname in error}
+    if not missing:
+        return ""
+
+    # The dynamic loader aborts on the FIRST unresolved symbol, so the error
+    # names one library even when four are absent. Installing that one and
+    # re-running just surfaces the next — four round trips for one problem.
+    # `ldd` on the same binary lists them all, so the hint is right first time.
+    binary = re.search(r"(/\S+/chrome(?:-linux64/chrome)?):\s*error while loading",
+                       error)
+    if binary and Path(binary.group(1)).is_file():
+        try:
+            listing = subprocess.run(["ldd", binary.group(1)], capture_output=True,
+                                     text=True, timeout=20).stdout
+            for line in listing.splitlines():
+                if "not found" not in line:
+                    continue
+                soname = line.strip().split()[0]
+                base = soname.split(".so")[0] + ".so"
+                if base in _SONAME_PACKAGE:
+                    missing.add(base)
+        except Exception:                    # noqa: BLE001 — hint is best-effort
+            pass
+
+    packages = sorted({_SONAME_PACKAGE[soname] for soname in missing})
+    missing = sorted(missing)
+    return (f"Chromium cannot start: missing {', '.join(missing)}. "
+            f"Puppeteer downloads the browser but not its system libraries. "
+            f"Install them with:  sudo apt-get install -y {' '.join(packages)}")
+
+
+def _report_failure(scene_id: str, error: str) -> None:
+    """Log a Three.js failure once per process, with remediation when known.
+
+    Previously the error was recorded in provenance and never printed, so a
+    render silently fell back to a chart and the operator had no signal at all.
+    """
+    global _diagnosed
+    if _diagnosed:
+        return
+    _diagnosed = True
+    hint = diagnose_launch_failure(error)
+    print(f"[threejs] {scene_id}: render unresolved — {error[:200]}", flush=True)
+    if hint:
+        print(f"[threejs] {hint}", flush=True)
 
 
 async def _ensure_worker() -> asyncio.subprocess.Process:
@@ -234,9 +313,12 @@ async def render(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
     except Exception as exc:  # explicit unresolved; never unrelated stock
         shutil.rmtree(frames, ignore_errors=True)
         output.unlink(missing_ok=True)
+        detail = f"{type(exc).__name__}: {str(exc)[:240]}"
+        hint = diagnose_launch_failure(str(exc))
+        _report_failure(scene.id, detail)
         return ThreeJSRenderProvenance(**base, status="unresolved",
             render_ms=(time.perf_counter() - started) * 1000, peak_rss_mb=0,
-            error=f"{type(exc).__name__}: {str(exc)[:240]}")
+            error=f"{detail} | {hint}" if hint else detail)
 
 
 async def _stop_worker() -> None:

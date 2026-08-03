@@ -118,6 +118,32 @@ def _emotion(scene: Scene, beat: str) -> str:
     return "neutral"
 
 
+def _asset_priority_for_channel(channel: str) -> list[str] | None:
+    """Source order for a budget-allocated beat.
+
+    `official` and `stock` both resolve as real footage but must never draw from
+    the same pool: official leads with government and regulatory archives, stock
+    is support-only and never sees them. Deriving this from `strategy` alone
+    cannot express that difference, which is why the budget channel carries it.
+    """
+    # `asset_priority` is a fixed vocabulary of abstract TIERS, not provider
+    # names — the concrete provider order lives in asset_engine.source_priority().
+    # official and stock therefore share tiers here; what separates them is
+    # `visual.budget_channel`, which the resolver reads to decide whether the
+    # archive providers are in scope for the beat at all.
+    if channel in ("official", "stock"):
+        return ["exact_footage", "licensed_image", "branded_fallback"]
+    if channel == "threejs":
+        return ["local_graphics", "branded_fallback"]
+    if channel == "ai_broll":
+        return ["ai_recreation", "licensed_image", "branded_fallback"]
+    if channel == "charts":
+        return ["local_graphics", "exact_footage", "branded_fallback"]
+    if channel == "motion_gfx":
+        return ["local_graphics", "branded_fallback"]
+    return None
+
+
 def _asset_priority(strategy: str) -> list[str]:
     if strategy == "dataviz":
         return ["local_graphics", "exact_footage", "branded_fallback"]
@@ -145,6 +171,12 @@ def generate_semantic(graph: SceneGraph, decision_report) -> StoryboardData:
             location = _location(beat)
             year_match = _YEAR.search(beat)
             numbers = list(dict.fromkeys(match.group(0) for match in _FINANCIAL.finditer(beat)))
+            # A beat can state a figure in words ("nearly a fifth") while the
+            # scene holds the real series. Three.js template mapping keys off
+            # `financial_numbers`, so without this a data-rich scene reads as
+            # having no numbers and silently loses its 3D treatment.
+            if not numbers and scene.data and scene.data.valid():
+                numbers = [f"{point.value:g}" for point in scene.data.points]
             primary = company or location or (entities[0] if entities else "")
             secondary = [entity for entity in entities if entity != primary]
             objective = scene.visual.visual_intent.strip()
@@ -153,6 +185,7 @@ def generate_semantic(graph: SceneGraph, decision_report) -> StoryboardData:
             else:
                 objective = f"Make the viewer understand: {beat}"
             strategy = decision.strategy
+            channel = scene.visual.budget_channel
             confidence = 0.45
             confidence += 0.22 if decision.specific_subject else 0.0
             confidence += 0.12 if primary else 0.0
@@ -168,11 +201,21 @@ def generate_semantic(graph: SceneGraph, decision_report) -> StoryboardData:
                 financial_numbers=numbers, emotion=_emotion(scene, beat),
                 recommended_visual_type=strategy,
                 recommended_camera_movement=scene.visual.motion,
-                motion_graphics_needed=strategy in ("dataviz", "motion_gfx", "hybrid"),
-                threejs_candidate=bool(numbers or scene.visual.scene_visual_type == "abstract"
-                                       or scene.beat_role.lower() == "mechanism"),
-                ai_broll_candidate=bool(decision.ai_eligible and not decision.force_real),
-                asset_priority=_asset_priority(strategy),
+                motion_graphics_needed=(channel == "motion_gfx") if channel
+                else strategy in ("dataviz", "motion_gfx", "hybrid"),
+                # When the Visual Budget Manager has allocated this beat, IT is
+                # the authority on which channel may claim it. The heuristics
+                # below stay as the fallback for graphs that ran without a
+                # budget, but letting both decide produced beats that were
+                # simultaneously a Three.js candidate and an AI candidate — and
+                # then resolved as neither.
+                threejs_candidate=(channel == "threejs") if channel else bool(
+                    numbers or scene.visual.scene_visual_type == "abstract"
+                    or scene.beat_role.lower() == "mechanism"),
+                ai_broll_candidate=(channel == "ai_broll") if channel else bool(
+                    decision.ai_eligible and not decision.force_real),
+                asset_priority=(_asset_priority_for_channel(channel)
+                                or _asset_priority(strategy)),
                 transition=scene.transition_in if index == 1 else "cut",
                 overlay_text=[overlay.text for overlay in scene.overlays if overlay.text],
                 visual_confidence_score=min(1.0, confidence),

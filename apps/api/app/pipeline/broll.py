@@ -185,6 +185,13 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
         for index, scene in enumerate(graph.scenes):
             if scene.id in enhanced:
                 continue
+            # Engine blocks run in a fixed order and each claims what it can, so
+            # whichever runs first wins. That order predates the Visual Budget
+            # Manager and silently overrode it: motion graphics claimed every
+            # chart and 3D beat before those engines were ever consulted.
+            # When a budget has allocated the beat, only its own engine may take it.
+            if scene.visual.budget_channel not in ("", "motion_gfx"):
+                continue
             beat = next((candidate for candidate in by_source.get(scene.id, [])
                          if finance_motion.map_template(candidate) is not None), None)
             if beat is None:
@@ -226,6 +233,8 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
             # Official/licensed Phase 3 assets keep priority; Three.js should
             # explain numbers, not replace strong archival evidence.
             if scene.id in enhanced or scene.id in motion_handled:
+                continue
+            if scene.visual.budget_channel not in ("", "threejs"):
                 continue
             beat = next((candidate for candidate in by_source.get(scene.id, [])
                          if threejs_engine.map_template(candidate) is not None), None)

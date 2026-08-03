@@ -33,8 +33,14 @@ def verify_password(password: str, password_hash: str) -> bool:
         return False
 
 
+_DUMMY_HASH = hash_password(secrets.token_urlsafe(32))
+
+
 def initialize_signing_secret() -> str:
-    """Load or atomically create the persistent JWT secret."""
+    """Load or atomically create the persistent JWT secret.
+
+    The ``0600`` permission is POSIX-only and has no effect on Windows.
+    """
     global _secret_key
     configured = settings().auth_secret_key.strip()
     if configured:
@@ -42,21 +48,34 @@ def initialize_signing_secret() -> str:
         return configured
 
     path = Path(DATA_DIR) / "auth_secret.key"
+    temporary_path = path.with_name(f"{path.name}.tmp")
     try:
         path.parent.mkdir(parents=True, exist_ok=True)
-        try:
-            fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
-        except FileExistsError:
+        if path.exists():
             value = path.read_text(encoding="utf-8").strip()
+            if not value:
+                raise RuntimeError(
+                    f"signing secret file is empty at {path}; delete it to "
+                    "regenerate the secret; this invalidates existing access tokens"
+                )
         else:
             value = secrets.token_urlsafe(48)
+            fd = os.open(
+                temporary_path,
+                os.O_WRONLY | os.O_CREAT | os.O_TRUNC,
+                0o600,
+            )
             with os.fdopen(fd, "w", encoding="utf-8") as handle:
                 handle.write(value)
-        if not value:
-            raise OSError("secret file is empty")
-        os.chmod(path, 0o600)
+                handle.flush()
+                os.fsync(handle.fileno())
+            os.replace(temporary_path, path)
+        if os.name == "posix":
+            os.chmod(path, 0o600)
         _secret_key = value
         return value
+    except RuntimeError:
+        raise
     except OSError as exc:
         if settings().auth_required:
             raise RuntimeError(

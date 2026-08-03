@@ -36,10 +36,14 @@ import asyncio
 
 from pathlib import Path
 
+from ..brand import load_theme
+from ..brand.theme import BrandTheme
 from ..config import settings
 from ..schemas.scene import Layer, Scene, SceneGraph
 from ..schemas.video_spec import VideoSpec
 from . import character as char
+from . import dataviz
+from . import motiongfx
 from . import ram
 from . import scene_director as sd
 from .providers import (
@@ -100,6 +104,34 @@ _INTENT_MOTION: dict[str, str] = {
 }
 
 
+def _theme(graph: SceneGraph) -> BrandTheme:
+    return load_theme(graph.brand_id or "k70")
+
+
+def _local_asset(video_id: str, scene_id: str, name: str) -> Path:
+    """Where a locally-RENDERED visual (chart, kinetic type, branded plate) goes.
+    Kept beside the job rather than in the shared media cache: these are unique to
+    one video's numbers and wording, so caching them across shorts would be wrong."""
+    d = settings().data_dir / "jobs" / video_id / "visuals"
+    d.mkdir(parents=True, exist_ok=True)
+    return d / f"{scene_id}_{name}"
+
+
+async def _branded_plate(scene: Scene, graph: SceneGraph) -> str | None:
+    """TIER 4 — the floor. A beat with nothing specific to show gets a branded
+    plate rather than an unrelated stock clip, so even the weakest beat still
+    looks like this channel instead of like everyone else's B-roll."""
+    try:
+        out = _local_asset(graph.meta.video_id, scene.id, "plate.mp4")
+        return str(await motiongfx.plate(
+            _theme(graph), out, graph.width, graph.height, graph.fps,
+            max(2.5, scene.duration_sec), seed=abs(hash(scene.id)) % 9973))
+    except Exception as e:                       # noqa: BLE001
+        print(f"[visual] {scene.id}: branded plate failed ({type(e).__name__})",
+              flush=True)
+        return None
+
+
 async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
     # 1) decide the per-scene strategy + enforce the visual-mix budget.
     report = sd.decide(graph, spec)
@@ -151,17 +183,68 @@ async def _resolve(scene: Scene, idx: int, graph: SceneGraph, spec: VideoSpec,
     min_dur = max(2.0, scene.duration_sec)
     strat = decision.strategy
 
-    # D) MOTION GRAPHICS — render the chart locally (free). Falls through on fail.
-    if strat == sd.MOTION_GFX or v.type == "manim":
+    # ── TIER 4: BRANDED PLATE (chosen up front, not fallen into) ──────────────
+    # The decision engine already established this beat has nothing specific to
+    # show. Reaching for stock here is exactly the habit being removed.
+    if strat == sd.BRANDED or v.type == "branded":
+        plate = await _branded_plate(scene, graph)
+        if plate:
+            v.asset_path, v.type, v.motion = plate, "branded", "none"
+            return
+
+    # ── TIER 3: ANIMATED CHART ────────────────────────────────────────────────
+    # The beat states a real figure, so the figure IS the visual. Rendered locally
+    # from the numbers the Director authored — no network, no Manim, and crucially
+    # no placeholder data: `dataviz.render` refuses a chart it has no values for.
+    if strat == sd.DATAVIZ or v.type == "dataviz":
+        viz = scene.data or dataviz.from_scene(scene)
+        if viz and viz.valid():
+            try:
+                out = _local_asset(graph.meta.video_id, scene.id, "chart.mp4")
+                v.asset_path = str(await dataviz.render(
+                    viz, _theme(graph), out, graph.width, graph.height,
+                    graph.fps, max(2.5, scene.duration_sec)))
+                v.type = "dataviz"
+                scene.data = viz
+                print(f"[visual] {scene.id}: chart — {dataviz.summarize(viz)}",
+                      flush=True)
+                return
+            except Exception as e:               # noqa: BLE001
+                print(f"[visual] {scene.id}: chart failed ({type(e).__name__}: "
+                      f"{str(e)[:80]}) → next tier", flush=True)
+        # no usable numbers → this was never really a data beat; fall through.
+
+    # ── TIER 2: MOTION GRAPHICS ───────────────────────────────────────────────
+    # No filmable subject: build the claim itself on screen in the channel's type.
+    if strat == sd.MOTION_GFX or v.type == "motion_gfx":
+        try:
+            headline = next((o.text for o in scene.overlays
+                             if o.type == "headline"), "") or v.visual_intent \
+                or scene.narration
+            kicker = next((o.text for o in scene.overlays
+                           if o.type == "lower_third"), "")
+            source = next((o.text for o in scene.overlays
+                           if o.type == "source"), "")
+            out = _local_asset(graph.meta.video_id, scene.id, "gfx.mp4")
+            v.asset_path = str(await motiongfx.kinetic(
+                _theme(graph), out, graph.width, graph.height, graph.fps,
+                max(2.5, scene.duration_sec), headline=headline, kicker=kicker,
+                source=source, seed=abs(hash(scene.id)) % 9973))
+            v.type = "motion_gfx"
+            return
+        except Exception as e:                   # noqa: BLE001
+            print(f"[visual] {scene.id}: motion graphics failed "
+                  f"({type(e).__name__}) → next tier", flush=True)
+
+    # Legacy Manim path — only when manim is installed AND the beat has real data.
+    if v.type == "manim":
         try:
             v.asset_path = await manim_render(v.query or v.visual_intent,
                                               graph.meta.video_id, scene.id)
         except Exception:
             v.asset_path = None
         if v.asset_path:
-            v.type = "manim"
             return
-        # chart engine missing → fall through to real footage below.
 
     # C) AI VIDEO — a SHORT cinematic motion clip on a hero / high-emotion beat.
     #    Two engines, config-selected (AI_VIDEO_PROVIDER):
@@ -249,7 +332,13 @@ async def _resolve(scene: Scene, idx: int, graph: SceneGraph, spec: VideoSpec,
         # Tier 3 — CINEMATIC SUPPORTING footage (curated, on-topic niche shots).
         if await _try(_supporting_terms(scene, graph)):
             return
-        # Tier 4 — generic role filler: AVOID, but it's the non-black safety net.
+        # Tier 4 — generic role filler. Demoted BELOW the branded plate: a clip
+        # that says nothing about this beat is worse than an honest branded frame,
+        # and it is what made every upload look like the same stock library.
+        plate = await _branded_plate(scene, graph)
+        if plate:
+            v.asset_path, v.type, v.motion = plate, "branded", "none"
+            return
         if await _try(_generic_terms(scene)):
             return
         v.type = "solid"
@@ -268,7 +357,12 @@ async def _resolve(scene: Scene, idx: int, graph: SceneGraph, spec: VideoSpec,
         v.motion = _INTENT_MOTION.get(v.scene_visual_type, "ken_burns")
         return
 
-    # animated gradient — motion-graphics / background last resort.
+    # Nothing on-topic was found. A branded plate before a flat colour — and
+    # before generic stock, which is the point of the whole ladder.
+    plate = await _branded_plate(scene, graph)
+    if plate:
+        v.asset_path, v.type, v.motion = plate, "branded", "none"
+        return
     v.type = "solid"
 
 

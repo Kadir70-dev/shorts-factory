@@ -10,9 +10,10 @@ import os
 import re
 
 from ..config import ChannelConfig
+from ..pipeline import compliance
 from ..schemas.scene import SceneGraph
 from ..schemas.video_spec import VideoSpec
-from . import prompts
+from . import prompts, structures
 from .backends import get_backend
 
 MAX_REPAIRS = 3
@@ -30,10 +31,22 @@ class Director:
         if self.research_enabled:
             brief = await self.backend.research(spec.topic)
 
-        system = prompts.system_prompt(self.channel)
+        # ONE story structure is drawn per video and drives the whole request: the
+        # prompt, the valid scene count, and which beats must carry a real figure.
+        # This is what replaced the fixed template — see director/structures.py.
+        choice = structures.choose(
+            video_id=spec.id, channel_id=spec.channel_id, niche=spec.niche.value,
+            forced=os.getenv("STORY_STRUCTURE", "").strip(),
+        )
+        print(f"[director] structure: {choice.structure.name} "
+              f"({choice.scene_count} scenes) · hook: {choice.hook_style}",
+              flush=True)
+
+        system = prompts.system_prompt(self.channel, choice)
         user = prompts.user_prompt(
             topic=spec.topic, tone=spec.tone, video_id=spec.id,
             channel_id=spec.channel_id, niche=spec.niche.value, research=brief,
+            structure=choice,
         )
         schema = SceneGraph.model_json_schema()
 
@@ -47,7 +60,13 @@ class Director:
             try:
                 data = _extract_json(raw)
                 graph = SceneGraph.model_validate(data)
-                _sanity(graph, spec)
+                graph.meta.structure_id = choice.id
+                _sanity(graph, spec, choice)
+                # Compliance runs INSIDE the repair loop so risky wording is
+                # rewritten by the model that wrote it, not patched after the
+                # fact. Auto-fixable phrasing is substituted here; anything that
+                # would change meaning raises and comes back as a repair note.
+                compliance.apply(graph, strict=True)
                 return graph
             except Exception as e:  # noqa: BLE001
                 last_err = f"{type(e).__name__}: {e}"
@@ -262,14 +281,37 @@ def _fact_safety(graph: SceneGraph) -> None:
                 "('according to BLS', 'the Fed said') or add a `source` overlay.")
 
 
-def _sanity(graph: SceneGraph, spec: VideoSpec) -> None:
+def _sanity(graph: SceneGraph, spec: VideoSpec,
+            choice: "structures.StructureChoice | None" = None) -> None:
     sc = graph.scenes
     n = len(sc)
     total_words = sum(_words(s.narration) for s in sc)
     est_dur = total_words / WPS
 
-    # pacing: scene count — fewer, longer beats (documentary, not rapid-fire)
-    if not (4 <= n <= 7):
+    # pacing: scene count now comes from the chosen STRUCTURE rather than one
+    # hard-coded 4–7 window. That window was the fixed template's last remnant —
+    # it silently forced every spine into the same length.
+    if choice is not None:
+        want = choice.scene_count
+        if n != want:
+            raise ValueError(
+                f"the {choice.structure.name} structure needs exactly {want} "
+                f"scenes, got {n}. Follow the numbered beats given in the prompt.")
+        # Beats the structure marked `wants_data` must actually carry a figure —
+        # they are the ones that become animated charts.
+        data_roles = set(choice.structure.data_roles())
+        if data_roles:
+            carried = {(s.beat_role or "").lower() for s in sc
+                       if s.data is not None or any(
+                           o.type == "stat" and o.sub for o in s.overlays)}
+            missing = data_roles - carried
+            if missing and not carried:
+                raise ValueError(
+                    f"the {', '.join(sorted(missing))} beat(s) must state a real, "
+                    "sourced figure — fill `data` with the actual numbers (or add "
+                    "a `stat` overlay). Those beats render as animated charts and "
+                    "cannot be invented downstream.")
+    elif not (4 <= n <= 7):
         raise ValueError(f"need 4-7 scenes for documentary pacing, got {n}")
 
     # length: real spoken estimate from word count (more honest than scene est.)

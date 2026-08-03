@@ -2,6 +2,9 @@
 from __future__ import annotations
 
 import argparse
+import getpass
+import os
+import sys
 
 from sqlmodel import select
 
@@ -46,11 +49,36 @@ def bootstrap_admin(email: str, password: str, force: bool = False) -> User:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Create the first Shorts Factory admin")
     parser.add_argument("--email", required=True)
-    parser.add_argument("--password", required=True)
+    parser.add_argument("--password")
+    parser.add_argument(
+        "--password-stdin",
+        action="store_true",
+        help="read one password line from standard input",
+    )
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args(argv)
+    if args.password_stdin:
+        password = sys.stdin.readline().rstrip("\r\n")
+        if not password:
+            parser.error("no password was provided on standard input")
+    elif os.environ.get("SHORTS_FACTORY_ADMIN_PASSWORD") is not None:
+        password = os.environ["SHORTS_FACTORY_ADMIN_PASSWORD"]
+    elif args.password is not None:
+        print(
+            "WARNING: --password exposes the password in process arguments; "
+            "use it only for non-interactive CI",
+            file=sys.stderr,
+        )
+        password = args.password
+    else:
+        password = getpass.getpass("Admin password: ")
+        confirmation = getpass.getpass("Confirm admin password: ")
+        if password != confirmation:
+            parser.error("passwords do not match")
+    if not password:
+        parser.error("password must not be empty")
     try:
-        user = bootstrap_admin(args.email, args.password, args.force)
+        user = bootstrap_admin(args.email, password, args.force)
     except RuntimeError as exc:
         parser.error(str(exc))
     print(f"admin ready: {user.email}")

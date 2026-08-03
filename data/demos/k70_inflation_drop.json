@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.5",
+  "meta": {
+    "video_id": "vid_k70_inflation_drop",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Inflation Just Dropped Hard. Here's the Part Nobody's Talking About.",
+    "hook": "Inflation just fell off a cliff.",
+    "description": "US inflation fell from 4.2% to 3.5% in June 2026 — the biggest one-month cooldown in years. Gas crashed 9.7%. But the number that actually matters is core inflation, and it came in flat for the first time outside a recession since 2017. Here's what happened, why it matters, and the date to watch next.",
+    "tags": ["inflation", "CPI", "federal reserve", "US economy", "gas prices", "interest rates", "core inflation", "economics explained"],
+    "hashtags": ["#inflation", "#economy", "#investing", "#finance", "#shorts"],
+    "thumbnail_text": "4.2% → 3.5%"
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Inflation just fell off a cliff. And it wasn't the Fed that did it.",
+      "duration_sec": 3.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["inflation drop", "federal reserve"],
+      "visual": {
+        "type": "ai_image",
+        "strategy": "ai_image",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "red inflation line chart plunging sharply downward on a trading terminal",
+        "visual_intent": "A large financial terminal screen showing a red CPI line chart plunging steeply downward, dark trading floor bokeh behind it, cinematic photoreal Bloomberg documentary look, cold blue and red light",
+        "broll_keywords": ["stock market chart falling red screen", "trading terminal close up numbers", "financial data screen dark room"],
+        "decision_reason": "exact recreation: the CPI plunge itself, hook beat, no fade-in"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "In June, US inflation dropped from four point two percent to three point five. That's the biggest one-month cooldown since twenty twenty.",
+      "duration_sec": 7.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["CPI 3.5 percent", "BLS June 2026"],
+      "visual": {
+        "type": "ai_image",
+        "strategy": "ai_image",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_right",
+        "query": "Bureau of Labor Statistics CPI report headline 3.5 percent",
+        "visual_intent": "A clean government statistics release on screen with the figure 3.5% prominent, US Bureau of Labor Statistics styling, shallow depth of field, photoreal documentary",
+        "broll_keywords": ["government economic report document", "newspaper economy headline close up", "bureau labor statistics building"],
+        "decision_reason": "exact figure from the June 2026 BLS CPI release"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "The reason? Gas. Gasoline prices crashed almost ten percent in a single month. Energy overall fell nearly six.",
+      "duration_sec": 6.8,
+      "confidence": "confirmed",
+      "transition_in": "dip",
+      "keywords": ["gasoline prices fell", "energy prices drop"],
+      "visual": {
+        "type": "footage",
+        "strategy": "real_footage",
+        "scene_visual_type": "dramatic",
+        "motion": "none",
+        "query": "gas station price sign numbers falling american",
+        "visual_intent": "An American gas station price board with prices visibly low, cars fueling, late afternoon light, real documentary footage",
+        "broll_keywords": ["gas station price sign america", "person pumping gas car", "highway gas station wide shot"],
+        "decision_reason": "everyday-realism beat: real footage, not AI"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "But here's the part almost nobody's talking about. Core inflation — everything except food and gas — came in completely flat. The lowest reading outside a recession since twenty seventeen.",
+      "duration_sec": 9.2,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["core inflation flat", "core CPI 2.6"],
+      "visual": {
+        "type": "ai_image",
+        "strategy": "ai_image",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "flat horizontal line on an economic chart, core inflation unchanged",
+        "visual_intent": "A stark economic chart where a volatile line suddenly flattens into a perfectly horizontal segment, minimal dark background, glowing white line, cinematic data documentary",
+        "broll_keywords": ["economic chart flat line screen", "analyst studying data monitor", "grocery store shelves shopper"],
+        "decision_reason": "the curiosity payoff — the real story beneath the headline number"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Even rent barely moved. Up one tenth of one percent — the smallest jump since twenty twenty-one.",
+      "duration_sec": 5.6,
+      "confidence": "confirmed",
+      "transition_in": "dip",
+      "keywords": ["shelter costs", "rent inflation"],
+      "visual": {
+        "type": "footage",
+        "strategy": "real_footage",
+        "scene_visual_type": "subtle",
+        "motion": "pan_left",
+        "query": "american apartment buildings for rent sign residential street",
+        "visual_intent": "A row of American apartment buildings with a visible 'For Rent' sign, warm evening light, real documentary footage",
+        "broll_keywords": ["apartment for rent sign america", "residential apartment building exterior", "keys apartment door handover"],
+        "decision_reason": "everyday-realism beat: real housing footage"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "So is inflation beaten? Not yet. The Fed is split — some officials still want to hike. The next report lands August twelfth. Follow K70 Network Solution so you see it first.",
+      "duration_sec": 9.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["federal reserve split", "next CPI report"],
+      "visual": {
+        "type": "ai_image",
+        "strategy": "ai_image",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "Federal Reserve Eccles Building Washington DC dramatic sky",
+        "visual_intent": "The Federal Reserve Eccles Building in Washington DC under a heavy dramatic sky, low angle, cinematic photoreal documentary, cold institutional light",
+        "broll_keywords": ["federal reserve building washington", "fed chair press conference podium", "calendar date circled close up"],
+        "decision_reason": "authority close + forward hook to the Aug 12 print"
+      }
+    }
+  ]
+}

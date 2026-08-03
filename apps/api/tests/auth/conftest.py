@@ -8,6 +8,7 @@ def auth_db(tmp_path, monkeypatch):
     from sqlmodel import SQLModel, create_engine
 
     from app import db
+    from app.auth.rate_limit import auth_limiter
     from app.auth.models import AUTH_TABLES
     from app.config import settings
 
@@ -20,6 +21,7 @@ def auth_db(tmp_path, monkeypatch):
     monkeypatch.setattr(
         settings(), "auth_secret_key", "isolated-test-secret-with-sufficient-length"
     )
+    auth_limiter.clear()
     return engine
 
 
@@ -29,7 +31,8 @@ def auth_client(auth_db):
 
     from app.main import app
 
-    return TestClient(app)
+    with TestClient(app) as client:
+        yield client
 
 
 @pytest.fixture
@@ -42,7 +45,7 @@ def make_user(auth_db):
     def _make(
         email: str = "user@example.com",
         password: str = "correct horse battery staple",
-        role: str = "user",
+        role: str = "admin",
         is_active: bool = True,
     ) -> User:
         user = User(

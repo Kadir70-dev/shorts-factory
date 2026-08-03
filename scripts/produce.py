@@ -113,10 +113,13 @@ def _grounding_summary(graph) -> None:
 # --------------------------------------------------------------------------- #
 async def run(args) -> int:
     preset = _load_preset(args.preset)
+    from app.brand import load_theme
     from app.config import load_channel, log_provider_validation, settings
-    from app.pipeline import broll, captions, music, qa, ram, \
-        render_ffmpeg, sfx, storyboard, tts
+    from app.director import structures
+    from app.pipeline import broll, captions, compliance, music, qa, ram, \
+        render_ffmpeg, sfx, storyboard, tts, variety
     from app.schemas.video_spec import Niche, VideoSpec
+    from app.voice import load_profile
 
     BAR = "═" * 70
     print(f"{BAR}\n● PRODUCE · preset={preset['name']} · v1-production (frozen)\n{BAR}")
@@ -124,6 +127,14 @@ async def run(args) -> int:
     print(f"   grounding={'strict' if settings().strict_visuals else 'normal'} · "
           f"layered={settings().layered_render} · qa={settings().qa_enabled} · "
           f"backend={settings().render_backend} · ai_budget={settings().layered_ai_still_budget}")
+
+    prof = load_profile()
+    if prof.exists and prof.cascade():
+        print(f"   voice: {prof.identity} (cloned) · "
+              f"cascade={' → '.join(prof.cascade())}")
+    else:
+        print("   voice: ⚠ STOCK — no cloned voice configured "
+              "(see docs/VOICE_CLONING.md)")
 
     if not (ROOT / "data/assets/fx/scanlines.png").exists():
         import subprocess
@@ -155,6 +166,20 @@ async def run(args) -> int:
     failures: list[str] = []
 
     try:
+        # VARIETY PLAN — drawn before anything renders so the visual engine, the
+        # music picker and the renderer all read the same decisions.
+        theme = load_theme(graph.brand_id or "k70")
+        choice = structures.choose(
+            graph.meta.video_id, graph.meta.channel_id, graph.meta.niche,
+            forced=graph.meta.structure_id or preset.get("story_structure", ""),
+            record=not graph.meta.structure_id)
+        graph.meta.structure_id = choice.id
+        plan = variety.plan(graph.meta.video_id, graph.meta.channel_id, theme,
+                            choice)
+        variety.apply(graph, plan)
+        print(f"   structure: {choice.structure.name} ({len(graph.scenes)} scenes)")
+        print(f"   variety  : {plan.summary()}")
+
         # character memory + per-scene LAYER PLAN (nominates the single hero beat).
         t = time.perf_counter()
         graph = storyboard.storyboard(graph, character_name=spec.character_name,
@@ -178,12 +203,21 @@ async def run(args) -> int:
         stage("hero-gen", t)
 
         try:
-            t = time.perf_counter(); graph = await music.add_music(graph, channel)
+            t = time.perf_counter()
+            graph = await music.add_music(graph, channel, family=plan.music_family)
             stage("music", t)
             t = time.perf_counter(); graph = await sfx.add_sound_design(graph)
             stage("sfx", t)
         except Exception as e:
             failures.append(f"audio-bed partial ({type(e).__name__})")
+
+        # Monetisation safety: rewrites, disclaimer, AI-disclosure flags.
+        t = time.perf_counter()
+        creport = compliance.apply(graph, strict=False)
+        stage("compliance", t)
+        print("   " + creport.format().replace("\n", "\n   "))
+        if creport.violations:
+            failures.append(f"{len(creport.violations)} compliance violation(s)")
 
         _grounding_summary(graph)
         out_dir.joinpath("scene_graph.json").write_text(graph.model_dump_json(indent=2))
@@ -241,6 +275,12 @@ async def run(args) -> int:
         print("\n   FAILURE POINTS:")
         for f in failures:
             print("     -", f)
+    checklist = compliance.publish_checklist(graph)
+    if checklist:
+        print("\n   ⚠ BEFORE PUBLISHING:")
+        for line in checklist:
+            print("     " + line)
+
     print(f"\n   📄 spec : {out_dir/'scene_graph.json'}")
     if out_mp4.exists():
         print(f"   🎬 MP4  : {out_mp4}  ({out_mp4.stat().st_size/1e6:.1f}MB · "

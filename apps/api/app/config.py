@@ -9,6 +9,7 @@ exists. No code change to add "usa_finance_v2".
 from __future__ import annotations
 
 import functools
+import os
 from pathlib import Path
 
 import yaml
@@ -16,11 +17,39 @@ from pydantic import AliasChoices, BaseModel, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 _CONFIG_FILE = Path(__file__).resolve()
-ROOT = (
-    _CONFIG_FILE.parents[3]
-    if len(_CONFIG_FILE.parents) > 3
-    else Path("/repo")
-)  # source checkout or Docker Compose mount root
+
+# Container fallback root. In the image, `app/` is COPYed to /app/app (see
+# apps/api/Dockerfile), so the source checkout is NOT present and config/ + data/
+# arrive only as Compose bind mounts under /repo.
+_CONTAINER_ROOT = Path("/repo")
+
+
+def _resolve_root() -> Path:
+    """Project root, resolved for the runtime we are actually in.
+
+    Order of precedence:
+      1. PROJECT_ROOT — explicit override, always wins (any runtime).
+      2. Source checkout — <root>/apps/api/app/config.py, detected by walking up
+         and confirming the sibling `apps/` directory exists. This is local WSL /
+         bare-metal dev, where the root is wherever the repo was cloned.
+      3. /repo — the Docker Compose mount root, used when the checkout layout is
+         absent (i.e. inside the image, where config.py lives at /app/app/).
+
+    Never hardcodes a user path and never invents /repo on a local box.
+    """
+    override = os.getenv("PROJECT_ROOT", "").strip()
+    if override:
+        return Path(override).expanduser().resolve()
+
+    if len(_CONFIG_FILE.parents) > 3:
+        candidate = _CONFIG_FILE.parents[3]     # <root>/apps/api/app/config.py
+        if (candidate / "apps").is_dir():       # real source checkout
+            return candidate
+
+    return _CONTAINER_ROOT
+
+
+ROOT = _resolve_root()
 CONFIG_DIR = ROOT / "config"
 DATA_DIR = ROOT / "data"
 
@@ -43,27 +72,11 @@ class Settings(BaseSettings):
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
     openrouter_model: str = "openai/gpt-4o-mini"     # default cheap backup model
 
-    # --- TTS ---
-    elevenlabs_api_key: str = ""
-    openai_api_key: str = ""
-
-    # --- Local TTS fallback stack (FREE, CPU-only) -------------------------- #
-    # Removes the hard ElevenLabs dependency. Cascade: ElevenLabs (if credits) →
-    # Kokoro (primary free local) → Piper (emergency local) → espeak → tone. The
-    # local engines run as isolated subprocesses (scripts/tts_kokoro.py / piper bin)
-    # so the worker stays light and a crash can't take down the API. TWO fixed
-    # documentary voices only: a male dark-history narrator (primary) + a secondary.
-    # Paths default to data/models/{kokoro,piper}; blank = auto-detect there.
+    # --- Local cloned-voice TTS --------------------------------------------- #
+    # Chatterbox -> Apache-2.0 OpenF5 -> the host's fine-tuned Piper model.
+    # Model identity and paths are pinned in config/voice/profile.yaml.
     tts_models_dir: Path = DATA_DIR / "models"
-    # Kokoro (kokoro-onnx). Blank → auto: <tts_models_dir>/kokoro/kokoro-v1.0.onnx.
-    kokoro_model_path: str = ""
-    kokoro_voices_path: str = ""
-    kokoro_voice_primary: str = "am_michael"     # deep American male — dark doc narrator
-    kokoro_voice_secondary: str = "am_adam"      # secondary American male
-    # Piper (self-contained binary). Blank bin → auto: <models>/piper/piper/piper or PATH.
     piper_bin: str = ""
-    piper_voice_primary: str = ""                # blank → <models>/piper/en_US-ryan-high.onnx
-    piper_voice_secondary: str = ""              # blank → <models>/piper/en_US-lessac-medium.onnx
 
     # --- assets ---
     pexels_api_key: str = ""
@@ -312,12 +325,17 @@ class Settings(BaseSettings):
     auth_secret_key: str = ""
     auth_access_token_minutes: int = 30
     auth_refresh_token_days: int = 14
-    auth_registration_open: bool = False
+    auth_rate_limit_attempts: int = 10
+    auth_rate_limit_window_seconds: int = 60
+    auth_min_password_length: int = 12
     remotion_render_url: str = "http://localhost:3001"   # remotion render service
     data_dir: Path = DATA_DIR
 
     # --- uploads ---
-    youtube_client_secret_path: str = ""
+    # Defaults under the resolved CONFIG_DIR so it follows the runtime root
+    # (checkout locally, /repo in Compose) instead of being pinned to /repo.
+    youtube_client_secret_path: str = str(
+        CONFIG_DIR / "secrets" / "youtube_client_secret.json")
 
 
 class BrandConfig(BaseModel):

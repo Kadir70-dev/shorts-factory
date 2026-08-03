@@ -1,89 +1,105 @@
 """
-Pure-FFmpeg renderer — the no-Remotion fallback.
+Pure-FFmpeg renderer — builds the finished vertical MP4 from a SceneGraph.
 
-Produces a real vertical .mp4 from a SceneGraph WITHOUT Node/Remotion: per-scene
-backgrounds (image/video/solid) + burned headline/stat overlays + ASS-styled
-captions + muxed voiceover & ducked music. Lower production value than Remotion
-(no spring physics), but it ships a finished short anywhere ffmpeg runs.
+Two things changed from the original:
 
-render.py uses this automatically when the Remotion service/CLI is unavailable.
+  BRANDED. Typography, colour grade, captions, watermark, lower thirds, intro
+  stamp and end card all come from `app.brand` rather than being hard-coded here.
+  Change config/brand/k70.yaml and every future render re-skins, which is what
+  makes a thousand Shorts look like one channel.
+
+  VARIED. Caption animation, transition palette, camera motion, zoom travel and
+  grade variant come from the per-video variety plan, so consecutive uploads
+  don't share a rhythm. The variation is bounded: it can change how a cut feels,
+  never whether the video still looks like this channel.
+
+Structural constraint worth knowing before editing: scene clips are built
+separately and concatenated with `-c copy`. That keeps the separately-built
+voiceover and captions in exact sync — but it also means a true cross-clip
+transition is impossible. Every transition is therefore expressed WITHIN a clip
+and preserves its exact duration. Breaking that rule desyncs the whole video.
 """
 from __future__ import annotations
 
 import asyncio
 from pathlib import Path
 
+from ..brand import load_theme
+from ..brand import overlays as ov
+from ..brand.theme import BrandTheme
 from ..config import settings
 from ..schemas.scene import Scene, SceneGraph
+from .compliance import policy as compliance_policy
 
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-EMPH = {"normal": "white", "alert": "#f5c518", "positive": "#16c784", "negative": "#ea3943"}
-# cinematic grade + vignette for the premium documentary look (Vox/Bloomberg)
-GRADE = "eq=contrast=1.07:saturation=1.08:brightness=-0.02,vignette=PI/5"
-
-
-def _stat_windows(graph: SceneGraph) -> list[tuple[float, float]]:
-    """[start,end] of scenes whose dominant element is a big stat — captions
-    yield to the number there (one-dominant-element rule)."""
-    out, acc = [], 0.0
-    for s in graph.scenes:
-        if any(o.type == "stat" and o.sub for o in s.overlays):
-            out.append((acc, acc + s.duration_sec))
-        acc += s.duration_sec
-    return out
+# Locally-rendered visuals already carry the brand palette and their own motion.
+# Grading them again shifts the colours away from the palette they were drawn in,
+# and Ken Burns on an animated chart is just wobble.
+_PRERENDERED = ("dataviz", "motion_gfx", "branded")
 
 
 async def render(graph: SceneGraph, out: Path) -> str:
     work = out.parent
     work.mkdir(parents=True, exist_ok=True)
     W, H, fps = graph.width, graph.height, graph.fps
+    theme = load_theme(graph.brand_id or "k70")
+    grade = theme.grade(graph.variety.get("grade", ""))
+    zoom = _zoom_travel(graph)
 
     # 1. build each scene as its own clip (background + overlays, no audio)
     clips: list[Path] = []
     for i, scene in enumerate(graph.scenes):
         clip = work / f"scene_{i:02d}.mp4"
-        await _scene_clip(scene, clip, W, H, fps, hook=(i == 0))
+        await _scene_clip(scene, clip, W, H, fps, theme, grade, zoom,
+                          hook=(i == 0))
         clips.append(clip)
 
     # 2. concat scene clips
     concat_list = work / "scenes.txt"
-    concat_list.write_text("\n".join(f"file '{c}'" for c in clips))
+    # ABSOLUTE paths: the concat demuxer resolves relative entries against the
+    # LIST's directory, so a relative path silently becomes work/work/scene_00.mp4
+    # whenever the process cwd isn't the repo root.
+    concat_list.write_text(
+        "\n".join(f"file '{c.resolve()}'" for c in clips))
     silent = work / "silent.mp4"
     await _ff("-f", "concat", "-safe", "0", "-i", str(concat_list),
               "-c", "copy", "-y", str(silent))
 
-    # 3. burn captions (ASS) and mux audio
-    ass = work / "captions.ass"
-    ass.write_text(_build_ass(graph))
-    await _mux(graph, silent, ass, out)
+    # 3. brand furniture + captions + audio, in one pass
+    await _finish(graph, silent, out, theme)
     return str(out)
 
 
+def _zoom_travel(graph: SceneGraph) -> float:
+    from .variety import ZOOM_STYLES
+    return ZOOM_STYLES.get(graph.variety.get("zoom", "standard"), 0.15)
+
+
+# --------------------------------------------------------------------------- #
+# Scene clips
+# --------------------------------------------------------------------------- #
 async def _scene_clip(scene: Scene, out: Path, W: int, H: int, fps: int,
+                      theme: BrandTheme, grade, zoom: float,
                       hook: bool = False) -> None:
     v = scene.visual
     dur = scene.duration_sec
-    draw = _overlay_filters(scene, H, hook=hook)
+    prerendered = v.type in _PRERENDERED
 
-    # CPU multi-layer cinematic stack (Phase 3). Only when LAYERED_RENDER=1 and the
-    # Storyboard Agent populated this beat's layers. The composer reuses the SAME
-    # grade / overlay / transition fragments below so a layered scene matches the
-    # rest of the short, and returns False on too-few planes / low RAM / any ffmpeg
-    # failure → we silently continue to the simple single-asset render. Fully
-    # backward compatible: off or on-failure, the original path runs untouched.
-    if settings().layered_render and v.layers:
+    # Locally-rendered graphics already contain their own type; adding the scene
+    # overlay typography on top would double up the headline and the number.
+    draw = ("" if prerendered else
+            _join(ov.scene_overlay_filters(scene, theme, W, H, hook=hook)))
+
+    # Layered cinematic stack (opt-in). Unchanged behaviour, now grade-aware.
+    if settings().layered_render and v.layers and not prerendered:
         from . import layers as _layers
         try:
-            tail = _mblur() + _transition(dur, hook)
+            tail = _mblur() + _transition(scene.transition_in, dur, hook, H)
             if await _layers.compose(scene, out, W, H, fps, draw=draw,
-                                     grade=GRADE, tail=tail, hook=hook):
+                                     grade=grade.ffmpeg(), tail=tail, hook=hook):
                 return
-        except Exception as e:  # noqa: BLE001 — never let layering break a render
+        except Exception as e:                   # noqa: BLE001
             print(f"[layers] {scene.id}: composite error ({type(e).__name__}: "
                   f"{str(e)[:90]}) → simple render", flush=True)
-        # Composite declined/failed AND this layered beat has no single asset of its
-        # own → fall back to the BACKGROUND plane's still so the simple render below
-        # shows a real frame, never a near-black solid (Phase-4 QA stability fix).
         if not (v.asset_path and Path(v.asset_path).exists()):
             bg = next((ly for ly in v.layers if ly.role == "background"
                        and ly.asset_path and Path(ly.asset_path).exists()), None)
@@ -93,229 +109,238 @@ async def _scene_clip(scene: Scene, out: Path, W: int, H: int, fps: int,
                 if v.motion == "none":
                     v.motion = "ken_burns"
 
+    fit = (f"scale={W}:{H}:force_original_aspect_ratio=increase,"
+           f"crop={W}:{H},setsar=1,fps={fps}")
+
     if v.asset_path and Path(v.asset_path).exists():
         is_img = v.asset_path.lower().endswith((".jpg", ".jpeg", ".png", ".webp"))
-        if is_img and v.motion != "none":
-            # still photo -> Ken Burns / pan + subtle handheld shake (never static)
+        if prerendered:
+            # already 1080x1920, already branded, already animating
             inp = ["-i", v.asset_path]
-            vf = _kenburns_vf(v.motion, W, H, fps, dur) + f",{GRADE}" + draw
+            vf = f"{fit},vignette=PI/{grade.vignette}" + draw
+        elif is_img and v.motion != "none":
+            inp = ["-i", v.asset_path]
+            vf = (_kenburns_vf(v.motion, W, H, fps, dur, zoom)
+                  + f",{grade.ffmpeg()}" + draw)
         elif is_img:
             inp = ["-loop", "1", "-t", f"{dur}", "-i", v.asset_path]
-            vf = (f"scale={W}:{H}:force_original_aspect_ratio=increase,"
-                  f"crop={W}:{H},setsar=1,fps={fps},{GRADE}" + draw)
-        else:  # video: loop to fill, trim to dur
+            vf = f"{fit},{grade.ffmpeg()}" + draw
+        else:
             inp = ["-stream_loop", "-1", "-t", f"{dur}", "-i", v.asset_path]
-            vf = (f"scale={W}:{H}:force_original_aspect_ratio=increase,"
-                  f"crop={W}:{H},setsar=1,fps={fps},{GRADE}" + draw)
-    else:  # solid color background
-        color = v.fallback_color
+            vf = f"{fit},{grade.ffmpeg()}" + draw
+    else:
+        color = theme.hex("bg", v.fallback_color)
         inp = ["-f", "lavfi", "-t", f"{dur}",
                "-i", f"color=c={color}:s={W}x{H}:r={fps}"]
         vf = "setsar=1" + draw
 
-    # cinematic motion blur (optional) + duration-preserving dip transitions.
-    vf += _mblur() + _transition(dur, hook)
+    vf += _mblur() + _transition(scene.transition_in, dur, hook, H)
 
     await _ff(*inp, "-vf", vf, "-t", f"{dur}",
               "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", str(fps),
               "-an", "-y", str(out))
 
 
-def _kenburns_vf(motion: str, W: int, H: int, fps: int, dur: float) -> str:
-    """zoompan filter that animates a single still over `dur`. Pre-scales 2x so
-    the zoom/pan stays smooth (no pixel jitter), then renders WxH frames."""
+def _kenburns_vf(motion: str, W: int, H: int, fps: int, dur: float,
+                 travel: float) -> str:
+    """zoompan that animates a still over `dur`.
+
+    `travel` is the variety plan's zoom style — a restrained video moves ~8% over
+    a shot, an assertive one ~22%. Pre-scaling 2x keeps the motion smooth and
+    gives the handheld shake room to work without exposing a border.
+    """
     n = max(1, round(dur * fps))
     base = (f"scale={2*W}:{2*H}:force_original_aspect_ratio=increase,"
             f"crop={2*W}:{2*H}")
-    # Subtle handheld SHAKE baked into the crop window — a few px of sinusoidal
-    # drift on each axis. The 2x pre-scale gives ample headroom so the shake never
-    # exposes a border. Reads as a living, cinematic camera, not a static frame.
-    sx = "sin(on/4)*5"
-    sy = "cos(on/5)*5"
+    sx, sy = "sin(on/4)*5", "cos(on/5)*5"
     cx = f"x='iw/2-(iw/zoom/2)+{sx}'"
     cy = f"y='ih/2-(ih/zoom/2)+{sy}'"
-    # Gentle documentary push (matches the toned-down Remotion cameraFor): ~15%
-    # travel over the whole clip, not a fast snap.
+    t = max(0.04, min(0.35, travel))
     if motion == "zoom_out":
-        zp = (f"zoompan=z='max(1.15-0.15*on/{n},1.0)':d={n}:"
+        zp = (f"zoompan=z='max({1 + t:.3f}-{t:.3f}*on/{n},1.0)':d={n}:"
               f"{cx}:{cy}:s={W}x{H}:fps={fps}")
     elif motion == "pan_lr":
-        zp = (f"zoompan=z='1.14':d={n}:x='(iw-iw/zoom)*on/{n}+{sx}':"
+        zp = (f"zoompan=z='{1 + t * 0.9:.3f}':d={n}:x='(iw-iw/zoom)*on/{n}+{sx}':"
               f"{cy}:s={W}x{H}:fps={fps}")
-    else:  # zoom_in / ken_burns / anything else -> slow push in
-        zp = (f"zoompan=z='min(1.0+0.15*on/{n},1.15)':d={n}:"
+    else:                                        # zoom_in / ken_burns
+        zp = (f"zoompan=z='min(1.0+{t:.3f}*on/{n},{1 + t:.3f})':d={n}:"
               f"{cx}:{cy}:s={W}x{H}:fps={fps}")
     return f"{base},{zp},setsar=1"
 
 
 def _mblur() -> str:
-    """Optional cinematic motion blur via short frame-blending. OFF by default
-    (FFMPEG_MOTION_BLUR=1 to enable) — it costs CPU. Frame count is preserved."""
     return ",tmix=frames=3:weights='1 1 1'" if settings().ffmpeg_motion_blur else ""
 
 
-def _transition(dur: float, hook: bool) -> str:
-    """Duration-PRESERVING dip transitions: a short fade-in (skipped on the hook so
-    the opening hits instantly) + a short fade-out at the tail. Each clip keeps its
-    EXACT length, so the separately-built voiceover/captions stay perfectly in sync
-    while cuts read as soft cinematic dips instead of hard jumps."""
-    d = min(0.2, max(0.0, dur / 6))
-    if d <= 0:
-        return ""
-    parts = []
-    if not hook:
-        parts.append(f"fade=t=in:st=0:d={d:.2f}")
-    parts.append(f"fade=t=out:st={max(0.0, dur - d):.2f}:d={d:.2f}")
-    return "," + ",".join(parts)
+def _transition(kind: str, dur: float, hook: bool, H: int) -> str:
+    """Duration-PRESERVING transitions.
 
-
-_CHARS = {60: 18, 46: 24, 34: 32}   # chars/line that fit ~1000px at each size
-
-
-def _overlay_filters(scene: Scene, H: int, hook: bool = False) -> str:
-    """drawtext for overlays, with the ONE-dominant-element rule: a big stat is
-    the hero (else a single headline); everything else is dropped except a tiny
-    source credit. The hook may carry both a headline and the shock number.
-    Captions are added later."""
-    overlays = scene.overlays
-    stat = next((o for o in overlays if o.type == "stat" and o.sub), None)
-    headline = next((o for o in overlays if o.type == "headline"), None)
-    source = next((o for o in overlays if o.type == "source"), None)
+    Every one of these is an in-clip effect. The scene clips are concatenated with
+    `-c copy` so the separately-built voiceover and captions stay in exact sync;
+    a real cross-clip transition would consume frames and desync the whole video.
+    """
+    if hook:
+        # The hook never eases in — the opening frame has to land instantly.
+        d = min(0.18, max(0.0, dur / 6))
+        return f",fade=t=out:st={max(0.0, dur - d):.2f}:d={d:.2f}" if d else ""
 
     parts: list[str] = []
-    if headline and (hook or not stat):
-        y = int(headline.y * H)
-        col = EMPH.get(headline.emphasis, "white").replace("#", "0x")
-        parts += _dt_wrapped(headline.text, 76 if hook else 60, col, y, box=True)
-    if stat:
-        y = int(stat.y * H)
-        col = EMPH.get(stat.emphasis, "white").replace("#", "0x")
-        parts += _dt_wrapped(stat.sub, 168 if hook else 150, col, y, box=False)
-        parts += _dt_wrapped(stat.text, 46, "white", y + 180, box=False)
-    if source:                      # tiny dim attribution, top of frame
-        parts += _dt_wrapped(source.text, 30, "0xd6d6d6", int(0.065 * H), box=False)
+    short = min(0.20, max(0.05, dur / 6))
+    if kind == "dip_to_black":
+        d = min(0.34, max(0.12, dur / 5))
+        parts.append(f"fade=t=in:st=0:d={d:.2f}")
+    elif kind == "crossfade":
+        d = min(0.45, max(0.18, dur / 4))
+        parts.append(f"fade=t=in:st=0:d={d:.2f}")
+    elif kind == "push_up":
+        # crop's y accepts an expression, so the frame slides up into place from a
+        # slightly over-scaled source — motion without spending any frames.
+        rise = 0.055
+        parts.append(
+            f"scale=-1:ih*{1 + rise:.3f},"
+            f"crop=iw:ih/{1 + rise:.3f}:0:'if(lt(t,0.34),"
+            f"(ih-ih/{1 + rise:.3f})*(1-t/0.34),0)'")
+        parts.append(f"fade=t=in:st=0:d={short:.2f}")
+    elif kind == "whip":
+        parts.append(f"fade=t=in:st=0:d={min(0.12, short):.2f}")
+    elif kind == "slide_l":
+        parts.append(
+            f"crop=iw:ih:'if(lt(t,0.28),(iw*0.06)*(1-t/0.28),0)':0")
+        parts.append(f"fade=t=in:st=0:d={short:.2f}")
+    elif kind == "fade":
+        parts.append(f"fade=t=in:st=0:d={short:.2f}")
+    # `cut` adds nothing on entry
+
+    d_out = min(0.18, max(0.0, dur / 7))
+    if d_out:
+        parts.append(f"fade=t=out:st={max(0.0, dur - d_out):.2f}:d={d_out:.2f}")
     return ("," + ",".join(parts)) if parts else ""
 
 
-def _dt_wrapped(text: str, size: int, color: str, y: int, box: bool) -> list[str]:
-    """Word-wrap into stacked drawtext lines so nothing overflows the frame."""
-    import textwrap
-    lines = textwrap.wrap(text, width=_CHARS.get(size, 20)) or [text]
-    line_h = int(size * 1.25)
-    return [_dt(ln, size, color, y + i * line_h, box) for i, ln in enumerate(lines)]
+def _join(filters: list[str]) -> str:
+    return ("," + ",".join(filters)) if filters else ""
 
 
-def _dt(text: str, size: int, color: str, y: int, box: bool = False) -> str:
-    safe = text.replace(":", r"\:").replace("'", "").replace(",", r"\,")
-    b = ":box=1:boxcolor=black@0.6:boxborderw=18" if box else ""
-    return (f"drawtext=fontfile={FONT}:text='{safe}':fontsize={size}:"
-            f"fontcolor={color}:x=(w-text_w)/2:y={y}:"
-            f"borderw=4:bordercolor=black{b}")
+# --------------------------------------------------------------------------- #
+# Finish pass — brand furniture, captions, audio
+# --------------------------------------------------------------------------- #
+def _dominant_windows(graph: SceneGraph) -> list[tuple[float, float]]:
+    """Spans where something else owns the frame and captions must yield: a hero
+    stat, and kinetic-typography beats where the words are already on screen."""
+    out, acc = [], 0.0
+    for s in graph.scenes:
+        big_stat = (any(o.type == "stat" and o.sub for o in s.overlays)
+                    and s.visual.type not in _PRERENDERED)
+        if big_stat or s.visual.type == "motion_gfx":
+            out.append((acc, acc + s.duration_sec))
+        acc += s.duration_sec
+    return out
 
 
-def _build_ass(graph: SceneGraph) -> str:
-    """Styled karaoke-ish captions, centered-low, heavy outline."""
-    head = (
-        "[Script Info]\nScriptType: v4.00+\nPlayResX: %d\nPlayResY: %d\n\n"
-        "[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, "
-        "OutlineColour, BackColour, Bold, Outline, Shadow, Alignment, MarginV\n"
-        "Style: Cap,DejaVu Sans,64,&H00FFFFFF,&H00000000,&H00000000,1,5,2,2,360\n\n"
-        "[Events]\nFormat: Layer, Start, End, Style, Text\n"
-    ) % (graph.width, graph.height)
-    mute = _stat_windows(graph)
-    lines = [head]
-    for c in graph.captions:
-        # one-dominant rule: drop captions that sit under a big stat
-        mid = (c.start + c.end) / 2
-        if any(s <= mid < e for s, e in mute):
-            continue
-        lines.append(f"Dialogue: 0,{_ts(c.start)},{_ts(c.end)},Cap,"
-                     f"{c.text.upper()}\n")
-    return "".join(lines)
+async def _finish(graph: SceneGraph, silent: Path, out: Path,
+                  theme: BrandTheme) -> None:
+    """Brand furniture + captions + audio in ONE pass.
 
+    A second encode of the full timeline just to add a watermark would cost a
+    complete re-compress on every one of thousands of renders, so everything that
+    operates on absolute time is composited here together.
 
-def _ts(sec: float) -> str:
-    h = int(sec // 3600); m = int(sec % 3600 // 60)
-    s = sec % 60
-    return f"{h}:{m:02d}:{s:05.2f}"
+    Input order is deliberate: video, then brand PLATES, then audio. The overlay
+    chain builder numbers its inputs from a fixed offset, and interleaving audio
+    inputs would shift those indices out from under it.
+    """
+    from ..brand import assets as brand_assets
 
-
-_AFMT = "aformat=sample_rates=44100:channel_layouts=stereo"
-
-
-def _sfx_file(sound: str) -> Path:
-    from . import sfx as sfx_mod
-    return sfx_mod.sfx_path(sound)
-
-
-def _env_expr(envelope) -> str:
-    """Piecewise-LINEAR (in amplitude) volume expression from music keyframes,
-    for `volume=volume=<expr>:eval=frame`. Commas are escaped (\\,) so the
-    expression survives filter_complex parsing. Clamps flat outside the range —
-    so the bed swells/settles smoothly between keyframes, never an abrupt jump."""
-    pts = sorted(((k.at, _g(k.gain_db)) for k in envelope), key=lambda p: p[0])
-    if not pts:
-        return "1.0"
-    e = f"{pts[-1][1]:.5f}"                      # t >= last keyframe -> hold
-    for i in range(len(pts) - 2, -1, -1):
-        t0, a0 = pts[i]; t1, a1 = pts[i + 1]
-        dt = (t1 - t0) or 1e-6
-        seg = f"({a0:.5f}+({a1 - a0:.5f})*(t-{t0:.3f})/{dt:.3f})"
-        e = f"if(lt(t\\,{t1:.3f})\\,{seg}\\,{e})"
-    t0, a0 = pts[0]
-    return f"if(lt(t\\,{t0:.3f})\\,{a0:.5f}\\,{e})"   # t < first keyframe -> hold
-
-
-async def _mux(graph: SceneGraph, silent: Path, ass: Path, out: Path) -> None:
-    """Mux video + audio. Audio chain (premium documentary):
-      VO ─┐
-           ├─ amix(normalize=0) ─ [a]
-      music ─ sidechaincompress(keyed by VO) ──┘   (ducks under narration)
-      sfx[i] ─ adelay(cue.at) ─ volume(cue.gain) ──┘  (emphasis-only one-shots)
-    Per-stream volumes are honoured (normalize=0), so the mix is deterministic
-    and the narration always sits on top."""
+    work = out.parent
+    W, H = graph.width, graph.height
+    total = graph.total_duration_sec
     a = graph.audio
-    inputs: list[str] = ["-i", str(silent)]
-    filters: list[str] = [f"[0:v]subtitles={ass}[v]"]
-    maps: list[str] = ["-map", "[v]"]
-    idx = 1
+    pol = compliance_policy()
 
+    paths = await brand_assets.ensure_assets(theme)
+
+    # ---- collect brand elements -------------------------------------------- #
+    plates: list[ov.ImageOverlay] = []
+    draws: list[str] = []
+    mute = _dominant_windows(graph)
+
+    outro_plates, outro_draws, outro_window = ov.outro_filters(
+        theme, W, H, total, cta=_cta_text(graph),
+        disclaimer=(graph.meta.disclaimer or pol.disclaimer_short
+                    if pol.show_on_outro else ""),
+        endcard=paths.get("endcard.png"))
+    hide_wm = outro_window[0] if outro_window[1] > outro_window[0] else None
+    if outro_window[1] > outro_window[0]:
+        mute.append(outro_window)
+
+    wm_plates, wm_draws = ov.watermark_overlay(
+        theme, W, H, paths.get("watermark.png"), hide_after=hide_wm, total=total)
+    plates += wm_plates
+    draws += wm_draws
+
+    if pol.show_early and (graph.meta.disclaimer or pol.disclaimer_short):
+        dp, dd = ov.disclaimer_filters(
+            theme, W, H, graph.meta.disclaimer or pol.disclaimer_short,
+            start=1.2, duration=min(3.2, max(1.6, total * 0.14)),
+            strip=paths.get("disclaimer_strip.png"))
+        plates += dp
+        draws += dd
+
+    draws += ov.intro_filters(theme, W, H)
+    plates += outro_plates
+    draws += outro_draws
+
+    ass = work / "captions.ass"
+    ass.write_text(ov.caption_ass(
+        graph, theme, animation=graph.variety.get("caption_animation", "word_pop"),
+        mute_windows=mute))
+
+    # ---- assemble the filtergraph ------------------------------------------ #
+    inputs: list[str] = ["-i", str(silent)]
+    filters: list[str] = [f"[0:v]subtitles={_esc_path(ass)}[vsub]"]
+    label = "vsub"
+
+    plate_inputs, plate_chain, label = ov.build_image_overlay_chain(
+        plates, label, first_input_index=1)
+    inputs += plate_inputs
+    filters += plate_chain
+
+    if draws:
+        filters.append(f"[{label}]{','.join(draws)}[vout]")
+        label = "vout"
+    maps: list[str] = ["-map", f"[{label}]"]
+
+    # ---- audio -------------------------------------------------------------- #
+    idx = 1 + len(plates)
     have_vo = bool(a.voiceover_path and Path(a.voiceover_path).exists())
     have_mus = bool(a.music_path and Path(a.music_path).exists())
     duck = have_vo and have_mus and a.duck_music
 
     vo_idx = mus_idx = None
     if have_vo:
-        vo_idx = idx; inputs += ["-i", a.voiceover_path]; idx += 1
+        vo_idx = idx
+        inputs += ["-i", a.voiceover_path]
+        idx += 1
     if have_mus:
-        # loop the bed to cover the video, but BOUND it to the timeline so amix
-        # never keys `duration=first` on an unbounded stream (runaway encode).
         mus_idx = idx
-        inputs += ["-stream_loop", "-1", "-t", f"{graph.total_duration_sec:.3f}",
-                   "-i", a.music_path]
+        inputs += ["-stream_loop", "-1", "-t", f"{total:.3f}", "-i", a.music_path]
         idx += 1
 
     sfx_cues = []
     for cue in graph.sfx:
         f = _sfx_file(cue.sound)
         if f.exists():
-            sfx_cues.append((idx, cue)); inputs += ["-i", str(f)]; idx += 1
+            sfx_cues.append((idx, cue))
+            inputs += ["-i", str(f)]
+            idx += 1
 
     mix: list[str] = []
-
-    # Voiceover — split off a key copy for sidechain ducking when music ducks.
     if have_vo:
         base = f"[{vo_idx}:a]{_AFMT},volume={_g(a.voiceover_gain_db)}"
-        if duck:
-            filters.append(f"{base},asplit=2[vo][vokey]")
-        else:
-            filters.append(f"{base}[vo]")
+        filters.append(f"{base},asplit=2[vo][vokey]" if duck else f"{base}[vo]")
         mix.append("[vo]")
 
-    # Music — niche bed with the smart intensity envelope + smooth top/tail
-    # fades, then ducked under the VO so speech always stays clear.
     if have_mus:
-        total = graph.total_duration_sec
         chain = f"[{mus_idx}:a]{_AFMT}"
         if a.music_fade_in_sec > 0:
             chain += f",afade=t=in:st=0:d={a.music_fade_in_sec:.3f}"
@@ -328,15 +353,12 @@ async def _mux(graph: SceneGraph, silent: Path, ass: Path, out: Path) -> None:
             chain += f",volume={_g(a.music_gain_db)}"
         filters.append(f"{chain}[mus0]")
         if duck:
-            filters.append(
-                "[mus0][vokey]sidechaincompress=threshold=0.04:ratio=8:"
-                "attack=20:release=320[mus]"
-            )
+            filters.append("[mus0][vokey]sidechaincompress=threshold=0.04:"
+                           "ratio=8:attack=20:release=320[mus]")
             mix.append("[mus]")
         else:
             mix.append("[mus0]")
 
-    # SFX — each cue delayed to its timeline position at its own low gain.
     for j, (i, cue) in enumerate(sfx_cues):
         ms = max(0, int(round(cue.at * 1000)))
         filters.append(f"[{i}:a]{_AFMT},adelay={ms}|{ms},"
@@ -355,6 +377,47 @@ async def _mux(graph: SceneGraph, silent: Path, ass: Path, out: Path) -> None:
               "-shortest", "-movflags", "+faststart", "-y", str(out))
 
 
+def _cta_text(graph: SceneGraph) -> str:
+    """The end card's line: the closing beat's headline, else the final narration."""
+    if not graph.scenes:
+        return ""
+    last = graph.scenes[-1]
+    headline = next((o.text for o in last.overlays if o.type == "headline"), "")
+    return headline or last.narration
+
+
+def _esc_path(p: Path) -> str:
+    """Escape a path for use inside a filtergraph value (the subtitles filter)."""
+    return str(p).replace("\\", "/").replace(":", "\\:").replace("'", "\\'")
+
+
+_AFMT = "aformat=sample_rates=44100:channel_layouts=stereo"
+
+
+def _sfx_file(sound: str) -> Path:
+    from . import sfx as sfx_mod
+    return sfx_mod.sfx_path(sound)
+
+
+def _env_expr(envelope) -> str:
+    """Piecewise-linear (in amplitude) volume expression from music keyframes, for
+    `volume=volume=<expr>:eval=frame`. Commas are escaped so the expression
+    survives filter_complex parsing; the level holds flat outside the range so the
+    bed swells and settles instead of jumping."""
+    pts = sorted(((k.at, _g(k.gain_db)) for k in envelope), key=lambda p: p[0])
+    if not pts:
+        return "1.0"
+    e = f"{pts[-1][1]:.5f}"
+    for i in range(len(pts) - 2, -1, -1):
+        t0, a0 = pts[i]
+        t1, a1 = pts[i + 1]
+        dt = (t1 - t0) or 1e-6
+        seg = f"({a0:.5f}+({a1 - a0:.5f})*(t-{t0:.3f})/{dt:.3f})"
+        e = f"if(lt(t\\,{t1:.3f})\\,{seg}\\,{e})"
+    t0, a0 = pts[0]
+    return f"if(lt(t\\,{t0:.3f})\\,{a0:.5f}\\,{e})"
+
+
 def _g(db: float) -> float:
     return round(10 ** (db / 20), 4)
 
@@ -366,4 +429,5 @@ async def _ff(*args: str) -> None:
     )
     _, err = await proc.communicate()
     if proc.returncode != 0:
-        raise RuntimeError(f"ffmpeg failed: {' '.join(args)[:200]}\n{err.decode()[:600]}")
+        raise RuntimeError(f"ffmpeg failed: {' '.join(args)[:200]}\n"
+                           f"{err.decode()[:600]}")

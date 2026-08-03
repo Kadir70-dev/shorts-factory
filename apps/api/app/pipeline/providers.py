@@ -1,7 +1,6 @@
 """
-External provider adapters. ALL behind plain async functions so the pipeline
-never imports a vendor SDK directly — swap ElevenLabs->OpenAI or Pexels->Pixabay
-without touching pipeline logic. v1 ships real elevenlabs/openai/pexels/manim;
+External visual provider adapters. ALL behind plain async functions so the pipeline
+never imports a vendor SDK directly. v1 ships real pexels/pixabay/manim;
 veo3/seedance are stubs that raise unless wired (cost gate).
 """
 from __future__ import annotations
@@ -15,63 +14,6 @@ from urllib.parse import quote
 import httpx
 
 from ..config import settings
-
-
-# ----------------------------- TTS ----------------------------------------- #
-async def elevenlabs_tts(text: str, out: Path, voice) -> None:
-    url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice.voice_id}"
-    async with httpx.AsyncClient(timeout=120) as c:
-        r = await c.post(
-            url,
-            headers={"xi-api-key": settings().elevenlabs_api_key},
-            json={"text": text, "model_id": "eleven_turbo_v2_5",
-                  "voice_settings": {"stability": voice.stability,
-                                     "similarity_boost": 0.75,
-                                     "speed": voice.speed}},
-        )
-        r.raise_for_status()
-        out.write_bytes(r.content)              # mp3; ffprobe handles it
-
-
-async def openai_tts(text: str, out: Path, voice) -> None:
-    async with httpx.AsyncClient(timeout=120) as c:
-        r = await c.post(
-            "https://api.openai.com/v1/audio/speech",
-            headers={"Authorization": f"Bearer {settings().openai_api_key}"},
-            json={"model": "tts-1", "voice": voice.voice_id or "onyx",
-                  "input": text, "response_format": "wav"},
-        )
-        r.raise_for_status()
-        out.write_bytes(r.content)
-
-
-async def piper_tts(text: str, out: Path, voice) -> None:
-    """Fully local fallback (no API cost). Requires piper binary."""
-    proc = await asyncio.create_subprocess_exec(
-        "piper", "--model", f"/opt/piper/{voice.voice_id}.onnx",
-        "--output_file", str(out),
-        stdin=asyncio.subprocess.PIPE,
-    )
-    await proc.communicate(text.encode())
-
-
-async def espeak_tts(text: str, out: Path, voice) -> None:
-    """Zero-dependency local voice (apt install espeak-ng). Robotic but real."""
-    proc = await asyncio.create_subprocess_exec(
-        "espeak-ng", "-v", "en-us", "-s", "165", "-w", str(out), text,
-    )
-    await proc.wait()
-
-
-async def tone_tts(text: str, out: Path, voice) -> None:
-    """Last resort, NO speech tool at all: emit silence sized to the estimated
-    speaking time (~2.6 words/sec) so the timeline still flows for testing."""
-    secs = max(1.0, len(text.split()) / 2.6)
-    proc = await asyncio.create_subprocess_exec(
-        "ffmpeg", "-hide_banner", "-loglevel", "error", "-f", "lavfi",
-        "-i", f"anullsrc=r=44100:cl=mono", "-t", f"{secs:.2f}", "-y", str(out),
-    )
-    await proc.wait()
 
 
 # ----------------------------- B-roll -------------------------------------- #

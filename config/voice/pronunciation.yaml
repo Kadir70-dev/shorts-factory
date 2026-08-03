@@ -1,0 +1,280 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# PRONUNCIATION DICTIONARY
+#
+# Applied to a COPY of the narration immediately before synthesis. The written
+# form is never touched, so the screen still shows "NVDA" and "$4.2B" while the
+# voice says "en-vidia" and "four point two billion dollars".
+#
+# Why this file exists: neural TTS engines guess at proper nouns, and they guess
+# DIFFERENTLY from each other. Without a dictionary the same script is read one
+# way by Chatterbox and another by F5 — which is the opposite of a consistent
+# narrator. Fixing it here rather than per-engine is what keeps the voice stable
+# no matter which engine rendered a given short.
+#
+# ── Ordering ────────────────────────────────────────────────────────────────
+# Sections apply in this order, longest-match-first WITHIN each section:
+#   1. phrases    multi-word, most specific
+#   2. companies  brand and company names
+#   3. people     executives, officials, analysts
+#   4. tickers    $AAPL / NASDAQ:AAPL / bare AAPL when whitelisted
+#   5. terms      finance vocabulary and abbreviations
+#   6. letters    acronyms spoken letter-by-letter
+# A term matched by an earlier section is never re-matched by a later one.
+#
+# ── Writing replacements ────────────────────────────────────────────────────
+# Write what the voice should SAY, using ordinary spelling. Hyphens mark
+# syllable stress hints for the engines that honour them; they are harmless
+# elsewhere. Do NOT use IPA — none of these engines accept it directly.
+#   good:  "en-vidia"  "eye-triple-e"  "ee-bit-dah"
+#   bad:   "ɛnˈvɪdiə"
+# ─────────────────────────────────────────────────────────────────────────────
+version: 1
+
+# Bare uppercase tokens are only treated as tickers if listed here. Without a
+# whitelist, "CEO", "GDP" and "USA" all get read as stock symbols.
+ticker_whitelist:
+  - AAPL
+  - MSFT
+  - NVDA
+  - AMZN
+  - GOOGL
+  - GOOG
+  - META
+  - TSLA
+  - BRKB
+  - JPM
+  - V
+  - WMT
+  - COST
+  - XOM
+  - UNH
+  - JNJ
+  - PG
+  - HD
+  - KO
+  - PEP
+  - DIS
+  - NFLX
+  - AMD
+  - INTC
+  - CRM
+  - ORCL
+  - BA
+  - GE
+  - F
+  - GM
+
+# ── 1. Phrases ──────────────────────────────────────────────────────────────
+phrases:
+  "S&P 500": "S and P five hundred"
+  "S&P": "S and P"
+  "Dow Jones Industrial Average": "Dow Jones Industrial Average"
+  "Russell 2000": "Russell two thousand"
+  "Nasdaq 100": "Nasdaq one hundred"
+  "FTSE 100": "footsie one hundred"
+  "price-to-earnings": "price to earnings"
+  "P/E ratio": "P E ratio"
+  "P/E": "P E"
+  "year-over-year": "year over year"
+  "quarter-over-quarter": "quarter over quarter"
+  "10-K": "ten K"
+  "10-Q": "ten Q"
+  "8-K": "eight K"
+  "401(k)": "four oh one K"
+  "401k": "four oh one K"
+  "S-1": "S one"
+  "13F": "thirteen F"
+  "M&A": "M and A"
+  "R&D": "R and D"
+  "AT&T": "A T and T"
+  "P&L": "P and L"
+  "T-bill": "treasury bill"
+  "T-bills": "treasury bills"
+  "T-note": "treasury note"
+
+# ── 2. Companies ────────────────────────────────────────────────────────────
+companies:
+  Nvidia: "en-vidia"
+  NVIDIA: "en-vidia"
+  Nasdaq: "naz-dak"
+  NASDAQ: "naz-dak"
+  Costco: "koss-co"
+  Adobe: "a-doe-bee"
+  Nike: "nye-key"
+  Porsche: "por-shuh"
+  Hyundai: "hun-day"
+  Huawei: "hwah-way"
+  Xiaomi: "shao-mee"
+  Alibaba: "ah-lee-bah-bah"
+  Tencent: "ten-cent"
+  Baidu: "by-doo"
+  Nestle: "ness-lay"
+  Nestlé: "ness-lay"
+  Danone: "dan-own"
+  LVMH: "L V M H"
+  Hermes: "air-mez"
+  Hermès: "air-mez"
+  Anheuser: "an-hyoo-zer"
+  Roche: "roash"
+  Sanofi: "san-oh-fee"
+  Novartis: "no-var-tiss"
+  Siemens: "see-mens"
+  Deutsche: "doy-chuh"
+  Schwab: "shwob"
+  Vanguard: "van-guard"
+  BlackRock: "black rock"
+  Citadel: "sit-a-del"
+  Renaissance: "ren-a-sonce"
+  Bridgewater: "bridge-water"
+  Berkshire: "burk-sher"
+  Hathaway: "hath-a-way"
+  Moderna: "mo-dur-na"
+  Pfizer: "fye-zer"
+  Chipotle: "chi-poat-lay"
+  Levi: "lee-vye"
+  Suez: "soo-ez"
+  Maersk: "mairsk"
+  Airbus: "air-bus"
+  Qatar: "cutter"
+
+# ── 3. People ───────────────────────────────────────────────────────────────
+people:
+  "Jensen Huang": "Jensen Hwang"
+  "Satya Nadella": "Sat-ya Na-del-la"
+  "Sundar Pichai": "Soon-dar Pih-chai"
+  "Elon Musk": "Ee-lon Musk"
+  "Jerome Powell": "Jerome Pow-ell"
+  "Janet Yellen": "Janet Yell-en"
+  "Christine Lagarde": "Christine La-guard"
+  "Warren Buffett": "Warren Buff-it"
+  "Charlie Munger": "Charlie Mung-ger"
+  "Jamie Dimon": "Jamie Dye-mon"
+  "Larry Fink": "Larry Fink"
+  "Lisa Su": "Lisa Soo"
+  "Andy Jassy": "Andy Jass-ee"
+  "Tim Cook": "Tim Cook"
+  "Bernard Arnault": "Bernard Ar-no"
+  "Masayoshi Son": "Mas-a-yoshi Son"
+  "Ray Dalio": "Ray Dah-lee-oh"
+  "Cathie Wood": "Cathy Wood"
+  "Ken Griffin": "Ken Griffin"
+  "Mukesh Ambani": "Moo-kesh Am-bah-nee"
+  "Gautam Adani": "Gow-tam Ah-dah-nee"
+
+# ── 4. Tickers ──────────────────────────────────────────────────────────────
+# How a symbol should be spoken when it appears as $XXXX or NASDAQ:XXXX, or as a
+# bare token that is on the whitelist above. Anything not listed here falls back
+# to letter-by-letter, which is correct for most symbols.
+tickers:
+  AAPL: "Apple"
+  MSFT: "Microsoft"
+  NVDA: "en-vidia"
+  AMZN: "Amazon"
+  GOOGL: "Google"
+  GOOG: "Google"
+  META: "Meta"
+  TSLA: "Tesla"
+  BRKB: "Berkshire Hathaway"
+  JPM: "J P Morgan"
+  WMT: "Walmart"
+  COST: "Costco"
+  XOM: "Exxon"
+  UNH: "United Health"
+  JNJ: "Johnson and Johnson"
+  PG: "Procter and Gamble"
+  HD: "Home Depot"
+  KO: "Coca-Cola"
+  PEP: "Pepsi"
+  DIS: "Disney"
+  NFLX: "Netflix"
+  AMD: "A M D"
+  INTC: "Intel"
+  CRM: "Salesforce"
+  ORCL: "Oracle"
+  BA: "Boeing"
+  GE: "General Electric"
+
+# ── 5. Terms ────────────────────────────────────────────────────────────────
+terms:
+  EBITDA: "ee-bit-dah"
+  EBIT: "ee-bit"
+  CAGR: "cay-grr"
+  NAV: "nav"
+  ETF: "E T F"
+  ETFs: "E T Fs"
+  IPO: "I P O"
+  IPOs: "I P Os"
+  SPAC: "spack"
+  REIT: "reet"
+  REITs: "reets"
+  LIBOR: "lye-bor"
+  SOFR: "so-fer"
+  FICO: "fye-co"
+  NIKKEI: "nick-ay"
+  Nikkei: "nick-ay"
+  fintech: "fin-tech"
+  bps: "basis points"
+  YoY: "year over year"
+  QoQ: "quarter over quarter"
+  YTD: "year to date"
+  TTM: "trailing twelve months"
+  ARR: "annual recurring revenue"
+  MRR: "monthly recurring revenue"
+  CAC: "customer acquisition cost"
+  LTV: "lifetime value"
+  COGS: "cogs"
+  capex: "cap-ex"
+  CapEx: "cap-ex"
+  opex: "op-ex"
+  OpEx: "op-ex"
+  forex: "for-ex"
+  Q1: "Q one"
+  Q2: "Q two"
+  Q3: "Q three"
+  Q4: "Q four"
+  FY: "fiscal year"
+  HODL: "hoddle"
+  DeFi: "dee-fye"
+  NFT: "N F T"
+
+# ── 6. Letters ──────────────────────────────────────────────────────────────
+# Spoken letter-by-letter. Listed EXPLICITLY: a blanket rule would wreck NASA,
+# OPEC, NATO and every other acronym that is pronounced as a word.
+letters:
+  CPI: "C P I"
+  PPI: "P P I"
+  PCE: "P C E"
+  GDP: "G D P"
+  BLS: "B L S"
+  BEA: "B E A"
+  CBO: "C B O"
+  IRS: "I R S"
+  SEC: "S E C"
+  FTC: "F T C"
+  DOJ: "D O J"
+  FDIC: "F D I C"
+  FOMC: "F O M C"
+  ECB: "E C B"
+  IMF: "I M F"
+  BIS: "B I S"
+  WTI: "W T I"
+  ROI: "R O I"
+  ROE: "R O E"
+  ROIC: "R O I C"
+  APR: "A P R"
+  APY: "A P Y"
+  CEO: "C E O"
+  CFO: "C F O"
+  CTO: "C T O"
+  COO: "C O O"
+  NYSE: "N Y S E"
+  AMEX: "A M E X"
+  USD: "U S D"
+  EUR: "E U R"
+  GBP: "G B P"
+  JPY: "J P Y"
+  AI: "A I"
+  API: "A P I"
+  SaaS: "sass"
+  B2B: "B to B"
+  B2C: "B to C"

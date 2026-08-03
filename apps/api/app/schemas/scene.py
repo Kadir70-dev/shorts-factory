@@ -16,7 +16,58 @@ from __future__ import annotations
 from typing import Literal, Optional
 from pydantic import BaseModel, Field
 
-SCHEMA_VERSION = "1.5"
+SCHEMA_VERSION = "2.0"
+
+
+# --------------------------------------------------------------------------- #
+# DataViz — a REAL animated data visualisation for a beat that states a figure.
+#
+# The old pipeline paired numbers with random stock footage and had a Manim
+# template stuffed with placeholder values ([2.1, 2.4, 2.9] regardless of topic),
+# which is worse than no chart: it renders a confident-looking graph of numbers
+# nobody asserted. This model makes the data EXPLICIT and Director-authored, so
+# what animates on screen is exactly what the narration claims and what the
+# `source` overlay attributes.
+#
+# `pipeline/dataviz.py` renders these locally with numpy + ffmpeg — no Manim, no
+# network, no placeholder data. A beat with no usable figure simply gets no
+# chart; it never gets an invented one.
+# --------------------------------------------------------------------------- #
+class DataPoint(BaseModel):
+    label: str                        # "2019", "Costco", "Before" — the x axis
+    value: float
+    # colour role; `auto` lets the renderer infer up/down from the series
+    emphasis: Literal["auto", "normal", "primary", "positive", "negative"] = "auto"
+
+
+class DataViz(BaseModel):
+    kind: Literal[
+        "counter",       # one hero figure, rolled up from zero
+        "bar_compare",   # 2–6 categories side by side
+        "line_trend",    # a time series drawing left-to-right
+        "delta",         # before → after, with the change between them
+        "donut",         # one share of a whole
+        "meter",         # a percentage as a filling bar
+    ] = "counter"
+    title: str = ""                   # what the number measures
+    points: list[DataPoint] = []
+    prefix: str = ""                  # "$"
+    suffix: str = ""                  # "%", " jobs", "bps"
+    decimals: int = Field(1, ge=0, le=3)
+    abbreviate: bool = True           # 1_200_000_000 → "1.2B"
+    highlight: int = -1               # index that carries the emphasis (-1 = last)
+    source: str = ""                  # attribution burned under the chart
+    note: str = ""                    # one short clarifying line
+
+    def valid(self) -> bool:
+        """A chart is only worth rendering when it has real numbers behind it."""
+        if not self.points:
+            return False
+        if self.kind in ("counter", "meter", "donut"):
+            return len(self.points) >= 1
+        if self.kind == "delta":
+            return len(self.points) >= 2
+        return len(self.points) >= 2
 
 
 # --------------------------------------------------------------------------- #
@@ -51,10 +102,17 @@ class Visual(BaseModel):
     #   broll    = real moving footage (Pexels/Pixabay video)
     #   ai_video = short cinematic AI video insert (veo3/seedance)
     #   ai_image = AI-generated documentary still (gets Ken Burns motion) — Phase 5.5
-    #   manim    = locally-rendered chart / motion-graphic
+    #   dataviz  = locally-rendered BRANDED animated chart driven by real numbers
+    #   motion_gfx = kinetic typography over a live branded field
+    #   branded  = a branded plate (the floor, instead of unrelated stock)
+    #   manim    = legacy chart path (only used when manim is installed AND the
+    #              beat carries real data; `dataviz` supersedes it)
     #   image    = real stock photo (gets Ken Burns motion)
-    #   solid    = animated-gradient last resort
-    type: Literal["broll", "ai_video", "ai_image", "manim", "image", "solid"] = "broll"
+    #   solid    = flat-colour last resort
+    type: Literal[
+        "broll", "ai_video", "ai_image", "dataviz", "motion_gfx", "branded",
+        "manim", "image", "solid"
+    ] = "broll"
     # search query (pexels/pixabay) OR generation prompt (veo3/seedance)
     # OR manim scene name for type=="manim"
     query: str = ""
@@ -85,8 +143,17 @@ class Visual(BaseModel):
     # is surfaced in metadata / verification. real = literal footage; ai_image =
     # cinematic documentary still; ai_video = AI motion insert; motion_gfx =
     # chart/animated graphics; hybrid = AI base composited with on-screen graphics.
+    # Ladder order (see pipeline/scene_director.py):
+    #   dataviz    — the beat states a real figure → branded animated chart
+    #   real       — SUBJECT-SPECIFIC footage of the exact thing named
+    #   ai_image   — AI recreation of that exact subject (no camera could have)
+    #   motion_gfx — kinetic typography: the claim itself, moving, on brand
+    #   branded    — a branded plate; the floor, instead of unrelated stock
+    #   hybrid     — a base visual composited with on-screen graphics
+    #   ai_video   — opt-in cinematic motion insert
     strategy: Literal[
-        "real", "ai_image", "ai_video", "motion_gfx", "hybrid"
+        "dataviz", "real", "ai_image", "ai_video", "motion_gfx", "branded",
+        "hybrid"
     ] = "real"
     # one line on WHY the engine chose this strategy (debug / verification).
     decision_reason: str = ""
@@ -122,7 +189,17 @@ class Scene(BaseModel):
     duration_sec: float = Field(3.5, ge=0.8, le=12.0)
     visual: Visual = Visual()
     overlays: list[Overlay] = []
-    transition_in: Literal["cut", "fade", "slide_l", "whip"] = "cut"
+    # Real numbers for THIS beat. When present and valid, the beat renders as a
+    # branded animated chart instead of borrowing a stock clip — the "every
+    # important number gets a custom visualisation" rule.
+    data: Optional[DataViz] = None
+    # The narrative role this beat plays in the chosen story structure (hook,
+    # tension, evidence, reveal, cta, …). Set by the Director from the structure
+    # block; drives the music envelope, sound design and visual strategy.
+    beat_role: str = ""
+    transition_in: Literal[
+        "cut", "fade", "slide_l", "whip", "dip_to_black", "push_up", "crossfade"
+    ] = "cut"
     # b-roll keywords help the router when `visual.query` is too literal
     keywords: list[str] = []
     # FACTUAL RELIABILITY — the Director's honest confidence in this beat's claim:
@@ -203,6 +280,24 @@ class SceneMeta(BaseModel):
     hashtags: list[str] = []         # ["#inflation", "#shorts", ...]
     thumbnail_text: str = ""         # 2-4 word punchy overlay for the thumbnail
 
+    # --- storytelling ------------------------------------------------------- #
+    # Which narrative spine this short was built on (config/story_structures.yaml).
+    # Recorded so the rotation is auditable and a render is reproducible.
+    structure_id: str = ""
+
+    # --- compliance (pipeline/compliance.py) -------------------------------- #
+    # The educational disclaimer burned into the video AND prepended to the
+    # description. Set by the compliance stage.
+    disclaimer: str = ""
+    # Every automatic rewrite the safety pass made, so the artifact explains itself
+    # during review instead of silently changing the script.
+    compliance_notes: list[str] = []
+    # YouTube "Altered or Synthetic Content": true when the finished video contains
+    # realistic AI-generated people, places or events a viewer could mistake for
+    # real. The pipeline cannot tick that box for you — it flags it loudly.
+    requires_ai_disclosure: bool = False
+    ai_disclosure_reasons: list[str] = []
+
 
 class SceneGraph(BaseModel):
     """Complete, self-contained render package. Remotion's only input."""
@@ -217,6 +312,14 @@ class SceneGraph(BaseModel):
     audio: AudioTrack = AudioTrack()
     captions: list[Caption] = []      # empty until captioning stage
     sfx: list[SfxCue] = []            # empty until the sound-design stage
+
+    # The per-video VARIETY PLAN (pipeline/variety.py): which caption animation,
+    # transition palette, motion style, colour grade and CTA shape this short
+    # drew. Persisted so a render is reproducible and so the anti-repeat ledger
+    # can be audited against what actually shipped.
+    variety: dict[str, str] = {}
+    # Brand the short was rendered with (config/brand/<id>.yaml).
+    brand_id: str = "k70"
 
     @property
     def total_duration_sec(self) -> float:

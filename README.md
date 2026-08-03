@@ -5,27 +5,39 @@ Production-grade AI video factory for **USA politics / election / finance** Shor
 ready to approve and upload.
 
 ```
-VideoSpec → Director(Claude) → SceneGraph → TTS → Captions(whisper)
-          → Assets(pexels/manim/veo3) → Remotion render → FFmpeg post
-          → approve → upload
+VideoSpec → Director(Claude) → Story structure → SceneGraph → Compliance gate
+          → Variety plan → Cloned-voice TTS → Captions(whisper)
+          → Visual ladder (charts / graphics / footage) → Branded render
+          → FFmpeg post → approve → upload
 ```
 
-## B-roll / footage engine
-Every scene is backed by REAL moving footage — never an empty text card. The
-Director emits per-scene `visual.broll_keywords` + `scene_visual_type`, and the
-asset resolver (`app/pipeline/broll.py`) walks a priority chain:
+> **Start here if you are setting this up:**
+> **[docs/PIPELINE_UPGRADE.md](docs/PIPELINE_UPGRADE.md)** — the current
+> architecture: cloned narration, rotating story structures, the five-tier visual
+> ladder, the brand package, and the monetisation-safety gate.
+> **[docs/VOICE_CLONING.md](docs/VOICE_CLONING.md)** — the one-off setup that
+> makes every video use your own voice.
+
+## Visual ladder
+Stock footage is the LAST resort, not the default. Each beat resolves down a
+five-tier ladder (`app/pipeline/scene_director.py` decides, `broll.py` resolves):
 
 ```
-Pexels video → Pixabay video → Pexels image → Pixabay image → animated gradient
+1. subject-specific footage / AI recreation of the exact subject
+2. motion graphics  — the claim built on screen in the channel's type
+3. animated charts  — every important number, from real authored data
+4. branded plate    — the floor
+5. generic stock    — a rescue, only when it is genuinely on-topic
 ```
 
-Images get Ken Burns / pan / zoom motion (chosen by the scene's editorial role:
-`dramatic` hook, `data_viz` chart, `subtle` CTA). Downloads are content-addressed
-and de-duplicated, so footage is fetched once and reused — deterministic & fast.
+Numbers never get paired with unrelated footage: a beat carrying a figure renders
+as a branded animated chart of *that* figure, with its source attribution.
+Charts, kinetic type and plates are drawn locally with numpy + ffmpeg — no Manim,
+no network, no GPU.
 
 > Real footage needs `PEXELS_API_KEY` (and optionally `PIXABAY_API_KEY`) in
-> `.env`. Without them the pipeline still ships — it falls back to the animated
-> gradient — but you won't see the gas-station/shoppers/economy clips.
+> `.env`. Without them the pipeline still ships a fully branded video — tiers 2–4
+> need no keys at all.
 
 ## The one contract that matters
 `apps/api/app/schemas/scene.py` (Pydantic) ⇆ `apps/remotion/src/schemas/scene.ts`
@@ -60,7 +72,7 @@ fallback, so missing a key/tool degrades quality — it never breaks the pipelin
 
 ## Run (local-first, full quality)
 ```bash
-cp .env.example .env          # fill ANTHROPIC + ELEVENLABS + PEXELS keys
+cp .env.example .env          # fill ANTHROPIC + asset-provider keys
 docker compose up --build     # redis + api + worker + remotion
 make gen                      # one finance short
 make batch                    # 5 election shorts

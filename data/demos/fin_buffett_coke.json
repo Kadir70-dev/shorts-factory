@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.5",
+  "meta": {
+    "video_id": "vid_fin_buffett_coke",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Warren Buffett Gets Paid $800,000,000 a Year For a Decision He Made in 1994",
+    "hook": "This man hasn't bought a share of Coca-Cola since 1994.",
+    "description": "Warren Buffett spent $1.3 billion buying 400 million shares of Coca-Cola between 1988 and 1994 and hasn't bought a single share since. Those shares paid $75 million in dividends in 1994. By 2022 the same shares paid $704 million. Coca-Cola has raised its dividend for more than 60 consecutive years. This is dividend compounding in the real world, and why doing nothing is the hardest strategy in investing.",
+    "tags": ["warren buffett", "coca cola", "dividend investing", "berkshire hathaway", "compound interest", "long term investing", "stock market", "passive income", "investing for beginners"],
+    "hashtags": ["#warrenbuffett", "#investing", "#dividends", "#stockmarket", "#shorts"],
+    "thumbnail_text": "$800M / YEAR"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "This man hasn't bought a single share of Coca-Cola since nineteen ninety-four.",
+      "duration_sec": 4.1,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["warren buffett", "coca cola stock"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "older businessman in suit sitting alone in dark office",
+        "visual_intent": "An older man in a dark suit seated alone in a wood-panelled office, warm tungsten light, shallow depth of field, cinematic documentary",
+        "broll_keywords": ["businessman suit office window", "elderly man suit thinking desk", "wood panelled office dark warm light"],
+        "decision_reason": "hook beat: the investor himself, hard cut, no fade"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "But Coke still pays him over eight hundred million dollars a year, for doing absolutely nothing.",
+      "duration_sec": 5.1,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["coca cola dividend", "passive income"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "cold glass soda bottle condensation macro red light",
+        "visual_intent": "Extreme macro of condensation sliding down a cold glass bottle of dark soda, deep red backlight, slow motion, hyper real",
+        "broll_keywords": ["soda bottle condensation macro", "cola glass bottle ice close up", "soft drink pouring slow motion"],
+        "decision_reason": "pattern interrupt on the payout number"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Between nineteen eighty-eight and ninety-four, Warren Buffett spent one point three billion dollars buying four hundred million shares of Coca-Cola.",
+      "duration_sec": 6.7,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["berkshire hathaway 13F", "1988 stock purchase"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "vintage stock market ticker board trading floor archival",
+        "visual_intent": "A stock quote board glowing in a dim trading room, ticker numbers scrolling, archival documentary feel, film grain",
+        "broll_keywords": ["stock ticker board numbers", "trading floor traders wide shot", "stock market screen green numbers"],
+        "decision_reason": "exact figures from Berkshire shareholder letters and 13-F filings"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Then he did the hardest thing in investing. Nothing. He didn't sell in two thousand, in two thousand eight, or in twenty twenty.",
+      "duration_sec": 7.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["market crash", "buy and hold"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "none",
+        "query": "red stock market chart crashing downward screen",
+        "visual_intent": "A red stock chart collapsing on a screen, panicked market imagery, then stillness, high contrast cinematic",
+        "broll_keywords": ["stock market crash red chart", "financial crisis newspaper headline", "empty office chair still room"],
+        "decision_reason": "the three crashes he held through, then a cut to stillness"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Here's why that worked. In nineteen ninety-four, those shares paid him seventy-five million dollars in dividends. By twenty twenty-two, the same shares paid seven hundred and four million.",
+      "duration_sec": 9.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["dividend growth", "compound interest"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "coins stacking growing pile money close up",
+        "visual_intent": "Coins dropping onto a growing pile, camera craning up, volumetric light, dark background, cinematic",
+        "broll_keywords": ["coins stacking growing pile", "money counting close up", "gold coins falling slow motion"],
+        "decision_reason": "the compounding payoff, exact figures from the 2022 shareholder letter"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Coke has raised its dividend for over sixty straight years. At today's rate, that bet pays back its entire cost about every eighteen months.",
+      "duration_sec": 7.9,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["dividend king", "60 years increases"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "beverage bottling factory production line bottles",
+        "visual_intent": "An endless bottling line moving through a factory, overhead symmetrical shot, cinematic teal and orange grade",
+        "broll_keywords": ["bottling factory production line", "beverage bottles conveyor belt", "factory automation overhead shot"],
+        "decision_reason": "the machine that funds the dividend, scale visual"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "He didn't get rich picking the right stock. He got rich refusing to sell it. Follow for more.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["investing lesson", "long term"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "old hands folded calmly on desk close up",
+        "visual_intent": "Weathered hands folded calmly on a desk beside a closed newspaper, warm rim light, shallow focus, cinematic close",
+        "broll_keywords": ["hands folded desk close up", "elderly hands newspaper table", "businessman hands calm desk"],
+        "decision_reason": "authority close and CTA"
+      }
+    }
+  ]
+}

@@ -21,3 +21,27 @@ data/topic_intelligence/
 .env
 node_modules/
 apps/remotion/node_modules/
+
+# Local assistant permissions and environment backups (may contain secrets).
+.claude/
+.env.bak*
+
+# Generated runtime outputs and user-owned voice recordings.
+output/
+data/ambience/
+data/ambience_proof/
+data/renders/
+data/state/
+data/voice/
+
+# One-off machine-specific render diagnostics; reusable tooling lives in scripts/.
+/diagnose*.sh
+/finalize.sh
+/fix_*.sh
+/make_thumbs.sh
+/probe*.sh
+/run_parallel.sh
+/run_shorts.sh
+/validate*.sh
+/verify_audio.sh
+/watch_mem.sh

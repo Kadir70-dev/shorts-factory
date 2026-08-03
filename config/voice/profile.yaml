@@ -1,0 +1,42 @@
+identity: k70_host_v1
+display_name: "K70 host voice"
+locked: true
+
+prosody:
+  speed: 1.04
+  sentence_pause_ms: 180
+  paragraph_pause_ms: 320
+
+engines:
+  chatterbox:
+    enabled: true
+    reference_wav: "data/voice/k70_host_v1/reference/ref_01.wav"
+    settings:
+      python_bin: ".venv-voice/bin/python"
+      device: cuda
+      exaggeration: 0.4
+      cfg_weight: 0.5
+
+  openf5:
+    enabled: true
+    repository: "mrfakename/OpenF5-TTS-Base"
+    model_path: "data/models/openf5/model.pt"
+    config_path: "data/models/openf5/config.yaml"
+    vocab_path: "data/models/openf5/vocab.txt"
+    reference_wav: "data/voice/k70_host_v1/reference/ref_01.wav"
+    reference_text: "Replace this with the exact transcript of ref_01.wav."
+    settings:
+      python_bin: ".venv-voice/bin/python"
+      nfe_step: 32
+
+  piper:
+    enabled: true
+    model_path: "data/models/piper/k70_host/k70_host.onnx"
+    settings:
+      noise_scale: 0.667
+      noise_w: 0.8
+      sentence_silence: 0.25
+
+pronunciation:
+  lexicon: {}
+  say_as: {}

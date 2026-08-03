@@ -1,6 +1,7 @@
 """FastAPI app entry. Thin — all logic lives in routers + pipeline."""
 from __future__ import annotations
 
+import logging
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -25,10 +26,8 @@ async def lifespan(app: FastAPI):
     init_auth_db()
     initialize_signing_secret()
     if not settings().auth_required:
-        print(
-            "[auth] ⚠⚠⚠ WARNING: AUTHENTICATION IS DISABLED; PROTECTED ROUTES "
-            "ARE PUBLIC ⚠⚠⚠",
-            flush=True,
+        logging.warning(
+            "[auth] WARNING: AUTHENTICATION IS DISABLED; PROTECTED ROUTES ARE PUBLIC"
         )
     log_provider_validation()       # non-fatal: warn on incomplete provider config
     yield

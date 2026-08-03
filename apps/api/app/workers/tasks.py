@@ -11,8 +11,11 @@ from arq.connections import RedisSettings
 from ..config import load_channel, settings
 from ..db import Job, get_job, set_status, upsert_job
 from ..director import get_director
+from ..brand import load_theme
+from ..director import structures
 from ..pipeline import (
-    broll, captions, music, postprocess, render, sfx, storyboard, tts,
+    broll, captions, compliance, music, postprocess, render, sfx, storyboard,
+    tts, variety,
 )
 from ..schemas.scene import SceneGraph
 from ..schemas.video_spec import VideoSpec
@@ -32,7 +35,20 @@ async def run_pipeline(ctx, job_id: str) -> dict:
         director = get_director(channel)
         graph: SceneGraph = await director.build_scene_graph(spec)
 
-        # 5. VOICEOVER — TTS per scene, MEASURE real durations, rewrite timeline
+        # 4.5 VARIETY PLAN — this video's caption animation, transition palette,
+        #     camera motion, grade and music family, drawn with a cooldown against
+        #     the channel's recent uploads. Runs BEFORE assets so the visual
+        #     engine and renderer both see the same plan.
+        theme = load_theme(graph.brand_id or "k70")
+        choice = (structures.get(graph.meta.structure_id) and
+                  structures.choose(spec.id, spec.channel_id, spec.niche.value,
+                                    forced=graph.meta.structure_id, record=False))
+        plan = variety.plan(spec.id, spec.channel_id, theme, choice or None)
+        variety.apply(graph, plan)
+        print(f"[variety] {plan.summary()}", flush=True)
+
+        # 5. VOICEOVER — the channel's CLONED voice, measured per scene so the
+        #    timeline matches the audio that actually exists.
         set_status(job_id, "voicing")
         graph = await tts.synthesize(graph, spec, channel)
 
@@ -54,9 +70,16 @@ async def run_pipeline(ctx, job_id: str) -> dict:
                 character_desc=spec.character_desc, style=spec.character_style)
             graph = await broll.resolve_layers(graph, spec)
 
-        # 7.5 SOUND DESIGN — niche music bed + smart envelope, then retention SFX
-        graph = await music.add_music(graph, channel)
+        # 7.5 SOUND DESIGN — rotated music bed + beat-aware envelope, then SFX
+        graph = await music.add_music(graph, channel, family=plan.music_family)
         graph = await sfx.add_sound_design(graph)
+
+        # 7.6 COMPLIANCE BACKSTOP — the Director already ran this strictly inside
+        #     its repair loop. This non-strict pass catches anything introduced
+        #     downstream and attaches the disclaimer + AI-disclosure flags that the
+        #     renderer burns in and the metadata reports.
+        report = compliance.apply(graph, strict=False)
+        print(report.format(), flush=True)
 
         # persist the finalized SceneGraph (what Remotion will render)
         job = get_job(job_id)

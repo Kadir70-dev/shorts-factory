@@ -54,8 +54,11 @@ def get_current_user(
 
 
 def require_admin(user: User = Depends(get_current_user)) -> User:
-    if user.role != "admin":
-        raise HTTPException(403, "admin access required")
+    """Require authentication under the single-trust-boundary model.
+
+    Every authenticated principal is an operator; this named alias preserves
+    the security intent at user-management call sites.
+    """
     return user
 
 

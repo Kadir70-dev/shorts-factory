@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from datetime import datetime
 
+from sqlalchemy import update
 from sqlmodel import SQLModel, Session, select
 
 from .. import db
@@ -14,6 +15,11 @@ def init_auth_db() -> None:
     SQLModel.metadata.create_all(
         db._engine, tables=[table.__table__ for table in AUTH_TABLES]
     )
+    # M2.1 removes privilege separation. Normalize any accounts created by the
+    # former two-role model without changing the table shape.
+    with session() as s:
+        s.execute(update(User).where(User.role != "admin").values(role="admin"))
+        s.commit()
 
 
 def session() -> Session:
@@ -45,12 +51,13 @@ def get_api_key_by_hash(key_hash: str) -> ApiKey | None:
 
 def revoke_refresh(token_hash: str, when: datetime) -> bool:
     with session() as s:
-        row = s.exec(
-            select(RefreshToken).where(RefreshToken.token_hash == token_hash)
-        ).first()
-        if row is None or row.revoked_at is not None:
-            return False
-        row.revoked_at = when
-        s.add(row)
+        result = s.execute(
+            update(RefreshToken)
+            .where(
+                RefreshToken.token_hash == token_hash,
+                RefreshToken.revoked_at.is_(None),
+            )
+            .values(revoked_at=when)
+        )
         s.commit()
-        return True
+        return result.rowcount == 1

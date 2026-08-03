@@ -14,8 +14,13 @@ services:
       - ./data:/repo/data
       - ./config:/repo/config
     depends_on: [redis]
+    # `environment` overrides `env_file`, so container paths stay /repo even if a
+    # developer's local .env carries checkout-specific paths.
     environment:
       - REDIS_URL=redis://redis:6379/0
+      - PROJECT_ROOT=/repo
+      - DATA_DIR=/repo/data
+      - DATABASE_URL=sqlite:////repo/data/factory.db
 
   worker:
     build: ./apps/api
@@ -28,6 +33,9 @@ services:
     environment:
       - REDIS_URL=redis://redis:6379/0
       - REMOTION_RENDER_URL=http://remotion:3001
+      - PROJECT_ROOT=/repo
+      - DATA_DIR=/repo/data
+      - DATABASE_URL=sqlite:////repo/data/factory.db
 
   remotion:
     build: ./apps/remotion

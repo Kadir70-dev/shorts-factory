@@ -5,11 +5,11 @@ from datetime import datetime, timezone
 from typing import Optional
 from uuid import uuid4
 
+from sqlalchemy.orm import validates
 from sqlmodel import Field, SQLModel
 
 ROLE_ADMIN = "admin"
-ROLE_USER = "user"
-VALID_ROLES = frozenset({ROLE_ADMIN, ROLE_USER})
+VALID_ROLES = frozenset({ROLE_ADMIN})
 
 
 def utcnow() -> datetime:
@@ -24,11 +24,17 @@ class User(SQLModel, table=True):
     id: str = Field(default_factory=new_id, primary_key=True)
     email: str = Field(unique=True, index=True)
     password_hash: str
-    role: str = ROLE_USER
+    role: str = ROLE_ADMIN
     is_active: bool = True
     created_at: datetime = Field(default_factory=utcnow)
     updated_at: datetime = Field(default_factory=utcnow)
     last_login_at: Optional[datetime] = None
+
+    @validates("role")
+    def validate_role(self, _key: str, value: str) -> str:
+        if value not in VALID_ROLES:
+            raise ValueError("role must be 'admin'")
+        return value
 
 
 class RefreshToken(SQLModel, table=True):

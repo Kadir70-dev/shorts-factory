@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.5",
+  "meta": {
+    "video_id": "vid_fin_costco_hotdog",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Costco Loses Money On This $1.50 Hot Dog On Purpose. Here's The Real Business.",
+    "hook": "This hot dog has cost $1.50 since 1985.",
+    "description": "Costco's hot dog and soda combo has cost $1.50 since 1985, even though inflation pushed that same $1.50 past $4. It isn't charity. In fiscal 2024 Costco collected $4.83 billion in membership fees against $7.37 billion in total net income, meaning roughly two thirds of its profit came from members simply renewing. With a 92.9% US and Canada renewal rate, the $1.50 hot dog is one of the highest-ROI retention tools in American retail.",
+    "tags": ["costco", "costco hot dog", "business model", "loss leader", "business strategy", "how costco makes money", "retail", "economics explained", "company secrets"],
+    "hashtags": ["#costco", "#business", "#economics", "#money", "#shorts"],
+    "thumbnail_text": "$1.50 SINCE 1985"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "This hot dog has cost one dollar fifty since nineteen eighty-five.",
+      "duration_sec": 3.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["costco hot dog", "1.50 combo"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "hot dog in bun close up macro food",
+        "visual_intent": "Extreme macro of a grilled hot dog in a bun on a plain tray under bright light, steam rising, slow motion, hyper real",
+        "broll_keywords": ["hot dog bun close up", "grilled hot dog food macro", "hot dog stand food counter"],
+        "decision_reason": "hook beat: the object itself, hard cut"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Not because Costco can't raise the price. Because raising it would cost them billions.",
+      "duration_sec": 4.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["costco warehouse", "retail pricing"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "pan_lr",
+        "query": "warehouse store aisle pallet racking wide shot",
+        "visual_intent": "A cavernous warehouse store aisle with towering pallet racks, cool fluorescent light, one point perspective, cinematic",
+        "broll_keywords": ["warehouse store aisle shelves", "wholesale store interior wide", "supermarket aisle long shot"],
+        "decision_reason": "establishes the business behind the price"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Adjusted for inflation, a dollar fifty in nineteen eighty-five is over four dollars today. Costco eats that difference, deliberately.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["inflation calculator", "1985 dollars"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "dollar bills cash money burning close up dark",
+        "visual_intent": "A stack of dollar bills on a dark surface with dramatic side light, smoke curling, slow motion, cinematic",
+        "broll_keywords": ["dollar bills stack close up", "money burning flame dark", "cash counting macro shot"],
+        "decision_reason": "visualises the absorbed inflation cost, BLS CPI verified"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "When the CEO told the founder they were losing money on it, the founder's reply was blunt. Raise the hot dog, and I will kill you.",
+      "duration_sec": 8.3,
+      "confidence": "probable",
+      "transition_in": "cut",
+      "keywords": ["jim sinegal", "craig jelinek quote"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "two businessmen talking tense boardroom silhouette",
+        "visual_intent": "Two executives facing each other across a long boardroom table, hard slatted blind shadows, high contrast, cinematic thriller grade",
+        "broll_keywords": ["boardroom meeting two men talking", "office blinds shadow silhouette", "business negotiation table serious"],
+        "decision_reason": "paraphrased quote widely reported by Jelinek, marked as reported"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "But here's what nobody talks about. Costco doesn't make its money selling you things.",
+      "duration_sec": 4.4,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["membership model", "retail margin"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "membership card swipe checkout counter close up",
+        "visual_intent": "A plastic card sliding across a checkout counter into a hand, top down macro, warm retail lighting, slow motion",
+        "broll_keywords": ["credit card payment counter close up", "card swipe checkout machine", "shopper paying cashier store"],
+        "decision_reason": "the curiosity gap turn, the card is the real product"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "In fiscal twenty twenty-four, membership fees brought in four point eight billion dollars, against seven point four billion in total profit. Roughly two thirds of Costco's profit comes from people just renewing a card.",
+      "duration_sec": 10.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["costco 10-K", "membership fee revenue"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "financial data chart bars rising screen dark",
+        "visual_intent": "Glowing bar columns rising on a dark financial display, one clearly dwarfing the other, minimal cinematic render, teal and gold",
+        "broll_keywords": ["financial chart bars screen", "business data analytics monitor", "annual report document pages"],
+        "decision_reason": "exact figures from Costco FY2024 Form 10-K"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "The hot dog isn't food. It's a retention tool. And ninety-three percent of US members renew. So Costco didn't raise the price. They built their own hot dog factory instead. Follow for more.",
+      "duration_sec": 10.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["renewal rate", "vertical integration"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "food factory production line sausages machinery",
+        "visual_intent": "An industrial food line with product moving in rows through stainless steel machinery, cold clinical light, overhead tracking, documentary realism",
+        "broll_keywords": ["food factory production line", "sausage manufacturing machine", "industrial food processing plant"],
+        "decision_reason": "the vertical integration payoff and CTA"
+      }
+    }
+  ]
+}

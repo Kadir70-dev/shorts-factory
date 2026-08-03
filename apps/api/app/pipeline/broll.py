@@ -46,10 +46,12 @@ from . import dataviz
 from . import motiongfx
 from . import ram
 from . import scene_director as sd
+from . import asset_engine
 from .providers import (
     ai_image_generate, ai_video_generate, build_video_prompt,
     clamp_i2v_seconds, clamp_insert_seconds, manim_render, pexels_image,
     pexels_video, picsart_image_to_video, pixabay_image, pixabay_video,
+    multi_source_candidates, download_asset_candidate,
 )
 
 # Extra search cues appended to the Director's keywords, by editorial role.
@@ -136,6 +138,32 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
     # 1) decide the per-scene strategy + enforce the visual-mix budget.
     report = sd.decide(graph, spec)
     by_id = {d.scene_id: d for d in report.decisions}
+    if settings().multi_source_asset_engine_enabled:
+        # Phase 3 consumes Phase 2 data. Generate it here when its standalone
+        # diagnostic gate is off, without changing render scenes or timing.
+        if graph.storyboard is None:
+            from . import storyboard
+            graph.storyboard = storyboard.generate_semantic(graph, report)
+        enhanced = await asset_engine.resolve(
+            graph, multi_source_candidates, download_asset_candidate)
+        for record in graph.asset_provenance:
+            source_id = next((b.source_scene_id for b in graph.storyboard.scenes
+                              if b.scene_id == record.scene_id), "")
+            source = next((s for s in graph.scenes if s.id == source_id), None)
+            if source:
+                record.legacy_query = " | ".join(_search_terms(source, graph))
+        # An approved cached asset bypasses only external lookup. Existing render
+        # and motion semantics remain unchanged. Unresolved beats are explicit.
+        for scene in graph.scenes:
+            if scene.id in enhanced:
+                path = enhanced[scene.id]
+                scene.visual.asset_path = path
+                scene.visual.type = ("broll" if Path(path).suffix.lower() in
+                                     {".mp4", ".mov", ".webm"} else "image")
+            else:
+                scene.visual.asset_path = None
+                scene.visual.type = "solid"
+        return graph
     # 2) resolve every scene to a concrete asset (concurrently).
     await asyncio.gather(
         *[_resolve(s, i, graph, spec, by_id[s.id])

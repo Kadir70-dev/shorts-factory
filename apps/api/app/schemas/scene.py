@@ -369,6 +369,36 @@ class StoryboardData(BaseModel):
         return self
 
 
+class AssetCandidate(BaseModel):
+    """Auditable asset considered for one semantic storyboard beat."""
+    source_url: str
+    provider_institution: str
+    asset_type: Literal["video", "image", "document", "ai_request"]
+    license: str
+    commercial_use_status: Literal["allowed", "prohibited", "unclear"]
+    attribution_requirement: str = ""
+    retrieval_date: str
+    scene_id: str
+    local_cache_path: Optional[str] = None
+    relevance_score: float = Field(ge=0.0, le=1.0)
+    confidence: float = Field(ge=0.0, le=1.0)
+    synthetic_status: Literal["no", "yes", "requested"] = "no"
+    subject_specificity: float = Field(0.5, ge=0.0, le=1.0)
+    visual_quality: float = Field(0.5, ge=0.0, le=1.0)
+    originality: float = Field(0.5, ge=0.0, le=1.0)
+    mobile_readability: float = Field(0.5, ge=0.0, le=1.0)
+
+
+class AssetResolution(BaseModel):
+    scene_id: str
+    query: str
+    status: Literal["resolved", "ai_requested", "manual_review"]
+    selected_source_url: Optional[str] = None
+    candidates: list[AssetCandidate] = []
+    legacy_query: str = ""
+    comparison: str = ""
+
+
 class SceneGraph(BaseModel):
     """Complete, self-contained render package. Remotion's only input."""
 
@@ -384,6 +414,8 @@ class SceneGraph(BaseModel):
     sfx: list[SfxCue] = []            # empty until the sound-design stage
     # Optional Phase 2 output. Disabled production graphs keep this as None.
     storyboard: Optional[StoryboardData] = None
+    # Phase 3 output; empty when the feature gate is disabled.
+    asset_provenance: list[AssetResolution] = []
 
     # The per-video VARIETY PLAN (pipeline/variety.py): which caption animation,
     # transition palette, motion style, colour grade and CTA shape this short

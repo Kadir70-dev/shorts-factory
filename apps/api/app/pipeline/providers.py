@@ -8,12 +8,102 @@ from __future__ import annotations
 import asyncio
 import base64
 import hashlib
+import re
+from datetime import date
 from pathlib import Path
 from urllib.parse import quote
 
 import httpx
 
 from ..config import settings
+from ..schemas.scene import AssetCandidate, StoryboardScene
+
+
+async def multi_source_candidates(provider: str, query: str,
+                                  beat: StoryboardScene) -> list[AssetCandidate]:
+    """Discover typed candidates for the provenance-aware b-roll extension.
+
+    Official/government, SEC and company-IR collections do not expose one safe
+    universal media API, so those adapters intentionally return no result until
+    an institution-specific connector can supply explicit licence metadata.
+    They remain ahead of library sources in the resolver priority.
+    """
+    today = date.today().isoformat()
+
+    def narration_match(metadata: str) -> float:
+        stop = {"the", "a", "an", "and", "or", "at", "in", "of", "to",
+                "for", "from", "since", "its", "it", "was"}
+        wanted = {word for word in re.findall(r"[a-z0-9]+", query.lower())
+                  if len(word) > 2 and word not in stop}
+        offered = set(re.findall(r"[a-z0-9]+", metadata.lower()))
+        coverage = len(wanted & offered) / max(1, len(wanted))
+        return round(min(.96, .30 + .70 * coverage), 3)
+
+    def candidate(url: str, institution: str, license_name: str,
+                  relevance: float, quality: float = .75) -> AssetCandidate:
+        return AssetCandidate(
+            source_url=url, provider_institution=institution, asset_type="image",
+            license=license_name, commercial_use_status="allowed",
+            retrieval_date=today, scene_id=beat.scene_id,
+            relevance_score=relevance, confidence=.8,
+            subject_specificity=relevance, visual_quality=quality,
+            originality=.65, mobile_readability=.8)
+
+    if provider == "wikimedia_commons":
+        async with httpx.AsyncClient(timeout=30) as client:
+            response = await client.get("https://commons.wikimedia.org/w/api.php",
+                params={"action": "query", "generator": "search", "gsrsearch": query,
+                        "gsrnamespace": 6, "gsrlimit": 10, "prop": "imageinfo",
+                        "iiprop": "url|extmetadata", "format": "json"})
+        if response.status_code != 200:
+            return []
+        out = []
+        for page in response.json().get("query", {}).get("pages", {}).values():
+            info = (page.get("imageinfo") or [{}])[0]
+            meta = info.get("extmetadata") or {}
+            license_name = (meta.get("LicenseShortName") or {}).get("value", "")
+            url = info.get("thumburl") or info.get("url")
+            if url:
+                description = " ".join((page.get("title", ""),
+                    (meta.get("ImageDescription") or {}).get("value", "")))
+                item = candidate(url, provider, license_name,
+                                 narration_match(description))
+                item.attribution_requirement = (meta.get("Artist") or {}).get("value", "")
+                out.append(item)
+        return out
+    if provider == "pexels" and settings().pexels_api_key:
+        async with httpx.AsyncClient(timeout=30) as client:
+            response = await client.get("https://api.pexels.com/v1/search",
+                headers={"Authorization": settings().pexels_api_key},
+                params={"query": query, "orientation": "portrait", "per_page": 10})
+        if response.status_code != 200:
+            return []
+        return [candidate((p.get("src") or {}).get("portrait", ""), provider,
+                          "Pexels License", narration_match(p.get("alt", "")), .82)
+                for p in response.json().get("photos", [])
+                if (p.get("src") or {}).get("portrait")]
+    if provider == "pixabay" and settings().pixabay_api_key:
+        async with httpx.AsyncClient(timeout=30) as client:
+            response = await client.get("https://pixabay.com/api/",
+                params={"key": settings().pixabay_api_key, "q": query,
+                        "image_type": "photo", "orientation": "vertical",
+                        "safesearch": "true", "per_page": 10})
+        if response.status_code != 200:
+            return []
+        return [candidate(h.get("largeImageURL") or h.get("webformatURL"), provider,
+                          "Pixabay Content License",
+                          narration_match(h.get("tags", "")), .78)
+                for h in response.json().get("hits", [])
+                if h.get("largeImageURL") or h.get("webformatURL")]
+    return []
+
+
+async def download_asset_candidate(candidate: AssetCandidate, target: Path
+                                   ) -> Path | None:
+    """Download through the existing content-addressed provider cache."""
+    ext = target.suffix.lstrip(".") or "bin"
+    cached = Path(await _download(candidate.source_url, ext))
+    return cached if cached.is_file() else None
 
 
 # ----------------------------- B-roll -------------------------------------- #

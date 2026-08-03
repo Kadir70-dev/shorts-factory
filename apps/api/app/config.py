@@ -275,6 +275,13 @@ class Settings(BaseSettings):
     # Phase 2 structured semantic storyboard. OFF leaves SceneGraph.storyboard
     # unset and performs no splitting or extraction work.
     storyboard_engine_enabled: bool = False
+    # Phase 3 provenance-aware, narration-specific asset routing. OFF preserves
+    # the established b-roll resolver byte-for-byte.
+    multi_source_asset_engine_enabled: bool = False
+    multi_source_asset_min_match: float = 0.58
+    multi_source_asset_priority: str = (
+        "government_public_domain,sec_regulatory,company_ir,wikimedia_commons,"
+        "pexels,pixabay,ai_generation")
 
     @property
     def strict_visuals(self) -> bool:

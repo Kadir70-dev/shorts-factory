@@ -47,6 +47,7 @@ from . import motiongfx
 from . import ram
 from . import scene_director as sd
 from . import asset_engine
+from . import ai_broll
 from . import finance_motion
 from . import threejs_engine
 from .providers import (
@@ -142,15 +143,21 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
     by_id = {d.scene_id: d for d in report.decisions}
     if ((settings().multi_source_asset_engine_enabled
          or settings().threejs_visual_engine_enabled
-         or settings().motion_graphics_engine_enabled)
+         or settings().motion_graphics_engine_enabled
+         or settings().ai_broll_engine_enabled)
             and graph.storyboard is None):
         from . import storyboard
         graph.storyboard = storyboard.generate_semantic(graph, report)
 
     enhanced: dict[str, str] = {}
     if settings().multi_source_asset_engine_enabled:
+        discovery = None
+        if settings().ai_broll_engine_enabled:
+            discovery = ("government_public_domain", "sec_regulatory",
+                         "company_ir", "wikimedia_commons")
         enhanced = await asset_engine.resolve(
-            graph, multi_source_candidates, download_asset_candidate)
+            graph, multi_source_candidates, download_asset_candidate,
+            providers=discovery)
         for record in graph.asset_provenance:
             source_id = next((b.source_scene_id for b in graph.storyboard.scenes
                               if b.scene_id == record.scene_id), "")
@@ -185,12 +192,14 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
                 graph, scene, beat, quality=settings().motion_graphics_quality,
                 seed=index)
             graph.motion_graphics_provenance.append(result)
-            motion_handled.add(scene.id)
             if result.status in ("rendered", "cache_hit") and result.render_path:
+                motion_handled.add(scene.id)
                 scene.visual.asset_path = result.render_path
                 scene.visual.type = "motion_gfx"
                 scene.visual.motion = "none"
             else:
+                if not settings().ai_broll_engine_enabled:
+                    motion_handled.add(scene.id)
                 scene.visual.asset_path = None
                 scene.visual.type = "solid"
 
@@ -210,16 +219,56 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
                 continue
             result = await threejs_engine.render(graph, scene, beat)
             graph.threejs_provenance.append(result)
-            threejs_handled.add(scene.id)
             if result.status in ("rendered", "cache_hit") and result.render_path:
+                threejs_handled.add(scene.id)
                 scene.visual.asset_path = result.render_path
                 scene.visual.type = "threejs"
                 scene.visual.motion = "none"
             else:
+                if not settings().ai_broll_engine_enabled:
+                    threejs_handled.add(scene.id)
                 # A failed clarity-specific visual is an editorially unresolved
                 # scene, never permission to substitute unrelated stock.
                 scene.visual.asset_path = None
                 scene.visual.type = "solid"
+
+    ai_handled: set[str] = set()
+    if settings().ai_broll_engine_enabled and graph.storyboard is not None:
+        by_source: dict[str, list] = {}
+        for beat in graph.storyboard.scenes:
+            by_source.setdefault(beat.source_scene_id, []).append(beat)
+        local_success = motion_handled | threejs_handled
+        for scene in graph.scenes:
+            if scene.id in enhanced or scene.id in local_success:
+                continue
+            beat = next((candidate for candidate in by_source.get(scene.id, [])
+                         if candidate.ai_broll_candidate), None)
+            if beat is None:
+                continue
+            result = await ai_broll.generate(graph, scene, beat)
+            graph.ai_broll_provenance.append(result)
+            ai_handled.add(scene.id)
+            if result.status in ("rendered", "cache_hit") and result.render_path:
+                scene.visual.asset_path = result.render_path
+                scene.visual.type = "ai_video" if result.asset_type == "video" else "ai_image"
+                scene.visual.motion = "none" if result.asset_type == "video" else "ken_burns"
+            else:
+                scene.visual.asset_path = None
+                scene.visual.type = "solid"
+
+    if settings().ai_broll_engine_enabled:
+        handled = set(enhanced) | motion_handled | threejs_handled | ai_handled
+        for index, scene in enumerate(graph.scenes):
+            if scene.id in handled:
+                continue
+            if _is_support_shot(scene):
+                await _resolve_support_stock(scene, index, graph)
+            else:
+                scene.visual.asset_path = None
+                scene.visual.type = "solid"
+        if settings().strict_visuals:
+            await _dedupe_real_assets(graph)
+        return graph
 
     if settings().multi_source_asset_engine_enabled:
         return graph
@@ -244,6 +293,30 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
     if settings().strict_visuals:
         await _dedupe_real_assets(graph)
     return graph
+
+
+def _is_support_shot(scene: Scene) -> bool:
+    return (scene.beat_role.lower() in {
+        "setup", "context", "transition", "bridge", "cta", "close"
+    } or scene.visual.scene_visual_type == "subtle")
+
+
+async def _resolve_support_stock(scene: Scene, index: int,
+                                 graph: SceneGraph) -> None:
+    """Phase 6 floor: stock is permitted only as an honest support transition."""
+    terms = _strip_cliches(_exact_terms(scene) or _search_terms(scene, graph),
+                           scene.narration)
+    hit = await _video(terms, max(2.0, scene.duration_sec), index)
+    if hit:
+        scene.visual.asset_path, scene.visual.type = hit, "broll"
+        return
+    hit = await _image(terms, index)
+    if hit:
+        scene.visual.asset_path, scene.visual.type = hit, "image"
+        scene.visual.motion = "ken_burns"
+        return
+    scene.visual.asset_path = None
+    scene.visual.type = "solid"
 
 
 async def _dedupe_real_assets(graph: SceneGraph) -> None:

@@ -132,6 +132,14 @@ export const SceneGraph = z.object({
     brand_fingerprint: z.string(), render_ms: z.number(), peak_rss_mb: z.number(),
     error: z.string(), existing_decision: z.string(), clarity_reason: z.string(),
   })).default([]),
+  ai_broll_provenance: z.array(z.object({
+    scene_id: z.string(), storyboard_scene_id: z.string(), status: z.string(),
+    provider: z.string(), model: z.string(), asset_type: z.string(),
+    synthetic: z.boolean(), render_path: z.string().nullable(), cache_key: z.string(),
+    prompt_spec: z.record(z.string(), z.unknown()), quality: z.string(),
+    prompt_generation_ms: z.number(), provider_dispatch_ms: z.number(),
+    peak_rss_mb: z.number(), error: z.string(), selection_reason: z.string(),
+  })).default([]),
 });
 
 export type TSceneGraph = z.infer<typeof SceneGraph>;

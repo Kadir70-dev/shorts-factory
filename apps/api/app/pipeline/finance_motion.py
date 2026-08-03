@@ -58,6 +58,11 @@ def map_template(beat: StoryboardScene) -> MotionSpec | None:
     labels = tuple(beat.financial_numbers[:4])
     source = f"{beat.company} {beat.year or ''}".strip()
 
+    # Curved compounding over time materially benefits from the spatial camera
+    # language in Phase 4; do not flatten it into a generic single stat card.
+    if values and any(word in text for word in ("compound", "compounded", "cagr")):
+        return None
+
     if any(word in text for word in ("filing", "document", "sec report", "annual report")) \
             and (beat.company or beat.year or values):
         template, reason = "document_highlight", "A sourced document excerpt is clearer in 2D."

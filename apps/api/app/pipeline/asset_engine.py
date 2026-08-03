@@ -110,7 +110,8 @@ async def cache(candidate: AssetCandidate, cache_dir: Path,
 
 
 async def resolve(graph: SceneGraph, fetcher: Fetcher, downloader: Downloader,
-                  cache_dir: Path | None = None) -> dict[str, str]:
+                  cache_dir: Path | None = None,
+                  providers: tuple[str, ...] | None = None) -> dict[str, str]:
     """Resolve semantic beats and return source-scene paths for broll.py."""
     if graph.storyboard is None:
         return {}
@@ -122,7 +123,9 @@ async def resolve(graph: SceneGraph, fetcher: Fetcher, downloader: Downloader,
     for beat in graph.storyboard.scenes:
         query = build_query(beat)
         all_candidates: list[AssetCandidate] = []
-        for provider in (p for p in source_priority() if p != "ai_generation"):
+        search_providers = providers or tuple(
+            p for p in source_priority() if p != "ai_generation")
+        for provider in search_providers:
             try:
                 found = await fetcher(provider, query, beat)
             except Exception:  # provider isolation mirrors the established resolver

@@ -450,6 +450,42 @@ class MotionGraphicsRenderProvenance(BaseModel):
     clarity_reason: str = ""
 
 
+class AICinematicSpec(BaseModel):
+    cinematic_prompt: str
+    negative_prompt: str
+    camera_angle: str
+    focal_length: str
+    lighting: str
+    color_palette: list[str]
+    composition: str
+    movement: str
+    mood: str
+    realism_level: Literal["photorealistic", "stylized_documentary"]
+    continuity_seed: int
+    brand_style: str
+    duration: float = Field(gt=0, le=12)
+    aspect_ratio: Literal["9:16"] = "9:16"
+
+
+class AIBrollRenderProvenance(BaseModel):
+    scene_id: str
+    storyboard_scene_id: str
+    status: Literal["rendered", "cache_hit", "unresolved", "rejected"]
+    provider: str
+    model: str
+    asset_type: Literal["image", "video"]
+    synthetic: bool = True
+    render_path: Optional[str] = None
+    cache_key: str
+    prompt_spec: AICinematicSpec
+    quality: Literal["preview", "final"]
+    prompt_generation_ms: float = Field(ge=0)
+    provider_dispatch_ms: float = Field(ge=0)
+    peak_rss_mb: float = Field(ge=0)
+    error: str = ""
+    selection_reason: str = ""
+
+
 class SceneGraph(BaseModel):
     """Complete, self-contained render package. Remotion's only input."""
 
@@ -471,6 +507,8 @@ class SceneGraph(BaseModel):
     threejs_provenance: list[ThreeJSRenderProvenance] = []
     # Phase 5 output; empty when its feature gate is disabled.
     motion_graphics_provenance: list[MotionGraphicsRenderProvenance] = []
+    # Phase 6 output; empty when its feature gate is disabled.
+    ai_broll_provenance: list[AIBrollRenderProvenance] = []
 
     # The per-video VARIETY PLAN (pipeline/variety.py): which caption animation,
     # transition palette, motion style, colour grade and CTA shape this short

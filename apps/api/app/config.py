@@ -294,6 +294,12 @@ class Settings(BaseSettings):
     # selection and rendering untouched.
     motion_graphics_engine_enabled: bool = False
     motion_graphics_quality: str = "final"
+    # Phase 6 storyboard-grounded cinematic generation. Provider priority is a
+    # registry order, not a hardcoded backend choice.
+    ai_broll_engine_enabled: bool = False
+    ai_broll_provider_priority: str = "flux,stable_diffusion,wan"
+    ai_broll_quality: str = "final"
+    ai_broll_timeout_s: float = 1200.0
 
     @property
     def strict_visuals(self) -> bool:

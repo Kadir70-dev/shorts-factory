@@ -205,6 +205,12 @@ class BrandTheme:
     captions: dict
     chart: dict
     safe: dict
+    title_card: dict = field(default_factory=dict)
+    background: dict = field(default_factory=dict)
+    timeline: dict = field(default_factory=dict)
+    icons: dict = field(default_factory=dict)
+    transitions: dict = field(default_factory=dict)
+    cta: dict = field(default_factory=dict)
     grades: dict[str, GradeVariant] = field(default_factory=dict)
     fingerprint: str = ""                      # hash of the source YAML
 
@@ -290,6 +296,12 @@ def load_theme(brand_id: str = "k70") -> BrandTheme:
         captions=raw.get("captions", {}) or {},
         chart=raw.get("chart", {}) or {},
         safe=raw.get("safe", {}) or {},
+        title_card=raw.get("title_card", {}) or {},
+        background=raw.get("background", {}) or {},
+        timeline=raw.get("timeline", {}) or {},
+        icons=raw.get("icons", {}) or {},
+        transitions=raw.get("transitions", {}) or {},
+        cta=raw.get("cta", {}) or {},
         grades=grades,
         fingerprint=fingerprint,
     )

@@ -300,6 +300,8 @@ class Settings(BaseSettings):
     ai_broll_provider_priority: str = "flux,stable_diffusion,wan"
     ai_broll_quality: str = "final"
     ai_broll_timeout_s: float = 1200.0
+    # Phase 7 central visual identity. OFF preserves every existing render path.
+    brand_identity_enabled: bool = False
 
     @property
     def strict_visuals(self) -> bool:

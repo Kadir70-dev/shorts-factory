@@ -30,10 +30,24 @@ from pathlib import Path
 from ..brand import text as tx
 from ..brand.raster import Canvas, ease_out_cubic, write_video
 from ..brand.theme import BrandTheme
+from ..config import settings
 
 # Background treatments. Rotated per beat so consecutive graphic scenes in one
 # short don't share a look.
 TREATMENTS = ["grid_drift", "rule_field", "orbit", "strata", "pulse_dots"]
+
+
+def brand_treatment(theme: BrandTheme, rng: random.Random,
+                    requested: str = "") -> str:
+    if requested:
+        return requested
+    if settings().brand_identity_enabled:
+        configured = str(theme.background.get("texture", ""))
+        mapped = {"fine_grid": "grid_drift", "rules": "rule_field",
+                  "strata": "strata", "dots": "pulse_dots"}.get(configured)
+        if mapped:
+            return mapped
+    return rng.choice(TREATMENTS)
 
 
 # --------------------------------------------------------------------------- #
@@ -108,7 +122,7 @@ async def plate(theme: BrandTheme, out: Path, w: int, h: int, fps: int,
     """TIER 4 — a branded background with no message. The floor a beat lands on
     instead of unrelated stock footage."""
     rng = random.Random(seed)
-    kind = treatment or rng.choice(TREATMENTS)
+    kind = brand_treatment(theme, rng, treatment)
     base = _bg_base(theme, w, h)
     frames = max(1, int(round(duration * fps)))
 
@@ -131,7 +145,7 @@ async def kinetic(theme: BrandTheme, out: Path, w: int, h: int, fps: int,
     authored instead of like a slide.
     """
     rng = random.Random(seed)
-    kind = treatment or rng.choice(TREATMENTS)
+    kind = brand_treatment(theme, rng, treatment)
     base = _bg_base(theme, w, h)
     frames = max(1, int(round(duration * fps)))
 

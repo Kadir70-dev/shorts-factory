@@ -140,6 +140,12 @@ export const SceneGraph = z.object({
     prompt_generation_ms: z.number(), provider_dispatch_ms: z.number(),
     peak_rss_mb: z.number(), error: z.string(), selection_reason: z.string(),
   })).default([]),
+  brand_identity_provenance: z.object({
+    brand_id: z.string(), brand_fingerprint: z.string(), manager_version: z.string(),
+    enabled: z.boolean(), modules: z.array(z.string()), palette: z.record(z.string(), z.string()),
+    fonts: z.record(z.string(), z.string()), safe_margins: z.record(z.string(), z.number()),
+    consistency_checks: z.record(z.string(), z.boolean()),
+  }).nullable().optional(),
 });
 
 export type TSceneGraph = z.infer<typeof SceneGraph>;

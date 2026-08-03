@@ -282,7 +282,15 @@ def lower_third_filters(theme: BrandTheme, title: str, sub: str, width: int,
            + round(float(theme.safe.get("side", 0.055)) * width)
            + round(26 * width / 1080))
     alpha = tx.fade_alpha(start, end, fade=max(t_in, 0.2))
-    filters = [tx.drawtext(
+    # The vector plate is also expressed as filters so scene-local renderers do
+    # not need another input merely to preserve the shared lower-third style.
+    bar = round(int(lt.get("accent_bar_px", 10)) * width / 1080)
+    bg_alpha = float(lt.get("bg_opacity", .86))
+    enable = f"enable='between(t,{start:.3f},{end:.3f})'"
+    filters = [
+        f"drawbox=x=0:y={y}:w={width}:h={h}:color={theme.ff('bg_soft')}@{bg_alpha:.2f}:t=fill:{enable}",
+        f"drawbox=x=0:y={y}:w={bar}:h={h}:color={theme.ff('primary')}@1:t=fill:{enable}",
+        tx.drawtext(
         theme.body.apply_case(title), font=theme.display.path,
         size=theme.size("lower_third", height), color=theme.ff("ink"),
         x=str(pad), y=str(y + round(h * 0.20)), alpha=alpha, shadow=3,
@@ -312,12 +320,13 @@ def intro_filters(theme: BrandTheme, width: int, height: int) -> list[str]:
     # 0.44, and a brand stamp that lands on top of the first line of the video is
     # worse than no brand stamp.
     y = int(height * 0.26)
+    accent = theme.title_card.get("eyebrow_color", "primary")
     out = [
         # drawbox evaluates w per frame, so the rule genuinely wipes across.
         # `iw`, not `w`: inside drawbox's own `w` expression, `w` IS the box width
         # being computed, so referencing it is self-referential and errors out.
         f"drawbox=x=0:y={y}:w='min(iw,iw*t/{wipe:.3f})':"
-        f"h={max(4, height // 320)}:color={theme.ff('primary')}@0.95:t=fill:"
+        f"h={max(4, height // 320)}:color={theme.ff(accent)}@0.95:t=fill:"
         f"enable='between(t,0,{dur:.3f})'"
     ]
     if intro.get("show_wordmark", True) and theme.watermark.get("text"):
@@ -354,9 +363,12 @@ def outro_filters(theme: BrandTheme, width: int, height: int, total: float,
     filters: list[str] = []
     if o.get("show_cta", True) and cta:
         size = theme.size("headline", height)
+        cta_style = theme.cta
         filters += tx.drawtext_block(
-            tx.wrap(theme.display.apply_case(cta), size, width, max_lines=3),
-            font=theme.display.path, size=size, color=theme.ff("ink"),
+            tx.wrap(theme.display.apply_case(cta), size, width,
+                    max_lines=int(cta_style.get("max_lines", 3))),
+            font=theme.display.path, size=size,
+            color=theme.ff(cta_style.get("text_color", "ink")),
             y_top=int(height * 0.40), alpha=alpha, shadow=4,
         )
     if o.get("show_disclaimer", True) and disclaimer:

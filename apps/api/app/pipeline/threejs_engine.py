@@ -13,7 +13,7 @@ from pathlib import Path
 
 import httpx
 
-from ..brand import load_theme
+from ..brand import theme_for
 from ..config import ROOT, settings
 from ..schemas.scene import (Scene, SceneGraph, StoryboardScene,
                              ThreeJSRenderProvenance)
@@ -88,7 +88,7 @@ def _quality_dimensions(graph: SceneGraph, quality: str) -> tuple[int, int]:
 
 def _payload(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
              spec: RenderSpec, quality: str, seed: int, frames_dir: Path) -> dict:
-    theme = load_theme(graph.brand_id or "k70")
+    theme = theme_for(graph, "threejs")
     width, height = _quality_dimensions(graph, quality)
     fps = graph.fps if graph.fps in (30, 60) else 30
     frames = max(1, round(scene.duration_sec * fps))
@@ -105,7 +105,7 @@ def _payload(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
 
 def cache_key(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
               spec: RenderSpec, quality: str, seed: int) -> str:
-    theme = load_theme(graph.brand_id or "k70")
+    theme = theme_for(graph, "threejs")
     body = json.dumps({
         "version": TEMPLATE_VERSION, "template": spec.template,
         "storyboard": beat.model_dump(mode="json"), "duration": scene.duration_sec,
@@ -189,7 +189,7 @@ async def render(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
     fps = graph.fps if graph.fps in (30, 60) else 30
     chosen_seed = seed if seed is not None else int(hashlib.sha256(
         f"{graph.meta.video_id}:{beat.scene_id}".encode()).hexdigest()[:8], 16)
-    theme = load_theme(graph.brand_id or "k70")
+    theme = theme_for(graph, "threejs")
     mapped = map_template(beat)
     width, height = _quality_dimensions(graph, quality)
     if mapped is None:

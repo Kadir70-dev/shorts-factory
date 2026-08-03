@@ -17,5 +17,6 @@ Nothing here talks to the network and nothing here raises on a missing font or
 asset: a degraded brand is always better than a failed render.
 """
 from .theme import BrandTheme, load_theme
+from .manager import BrandManager, brand_manager, theme_for
 
-__all__ = ["BrandTheme", "load_theme"]
+__all__ = ["BrandTheme", "load_theme", "BrandManager", "brand_manager", "theme_for"]

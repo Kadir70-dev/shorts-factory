@@ -10,14 +10,14 @@ import time
 from dataclasses import dataclass
 from pathlib import Path
 
-from ..brand import load_theme
+from ..brand import theme_for
 from ..brand import text as tx
 from ..brand.raster import Canvas, ease_out_cubic, write_video
 from ..schemas.scene import (MotionGraphicsRenderProvenance, Scene, SceneGraph,
                              StoryboardScene)
 from . import dataviz, motiongfx
 
-TEMPLATE_VERSION = "1.0.0"
+TEMPLATE_VERSION = "1.1.0"
 TEMPLATES = (
     "stat_card", "bar_chart_comparison", "percentage_split", "timeline_events",
     "before_after", "revenue_profit_waterfall", "price_inflation",
@@ -105,7 +105,7 @@ def dimensions(quality: str) -> tuple[int, int]:
 
 def cache_key(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
               spec: MotionSpec, quality: str, seed: int) -> str:
-    theme = load_theme(graph.brand_id or "k70")
+    theme = theme_for(graph, "motion_graphics")
     payload = json.dumps({
         "version": TEMPLATE_VERSION, "template": spec.template,
         "beat": beat.model_dump(mode="json"), "duration": scene.duration_sec,
@@ -163,7 +163,7 @@ def _frames(theme, spec: MotionSpec, w: int, h: int, fps: int,
             duration: float, seed: int):
     count = max(1, round(fps * duration))
     rng = random.Random(seed)
-    treatment = rng.choice(motiongfx.TREATMENTS)
+    treatment = motiongfx.brand_treatment(theme, rng)
     base = motiongfx._bg_base(theme, w, h)
     for frame in range(count):
         t = frame / fps
@@ -187,11 +187,17 @@ def _frames(theme, spec: MotionSpec, w: int, h: int, fps: int,
             c.ring(w / 2, h * .47, w * .24, w * .055, theme.rgb("primary"), 1,
                    sweep=value / 100 * p)
         elif spec.template == "timeline_events":
+            from ..config import settings
+            branded = settings().brand_identity_enabled
+            line_key = theme.timeline.get("active_color", "primary") if branded else "primary"
+            line_px = float(theme.timeline.get("line_width_px", 8)) * w / 1080 \
+                if branded else w * .018
             y = h * .48; c.segment(w * .12, y, w * (.12 + .76 * p), y,
-                                   w * .018, theme.rgb("primary"))
+                                   line_px, theme.rgb(line_key))
             for i in range(min(5, max(2, len(spec.labels)))):
                 x = w * (.15 + .7 * i / max(1, min(4, len(spec.labels) - 1)))
-                c.circle(x, y, w * .025, theme.rgb("secondary" if i else "primary"))
+                marker = theme.timeline.get("active_color", "primary") if branded else "primary"
+                c.circle(x, y, w * .025, theme.rgb("secondary" if i else marker))
         elif spec.template == "before_after":
             for i in range(2):
                 x = w * (.08 + .46 * i); y = top + (1 - p) * 25
@@ -239,7 +245,7 @@ async def render(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
     spec = map_template(beat)
     if spec is None:
         raise ValueError("storyboard beat has no validated 2D finance mapping")
-    theme = load_theme(graph.brand_id or "k70")
+    theme = theme_for(graph, "motion_graphics")
     w, h = dimensions(quality)
     key = cache_key(graph, scene, beat, spec, quality, seed)
     out = settings_data_dir() / "cache" / "finance_motion" / key / "render.mp4"

@@ -11,7 +11,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Protocol
 
-from ..brand import load_theme
+from ..brand import theme_for
 from ..config import settings
 from ..schemas.scene import (AIBrollRenderProvenance, AICinematicSpec, Scene,
                              SceneGraph, StoryboardScene)
@@ -145,7 +145,7 @@ def prompt_spec(graph: SceneGraph, scene: Scene,
                 beat: StoryboardScene) -> AICinematicSpec:
     """Turn validated storyboard facts into a complete cinematic brief."""
     beat = StoryboardScene.model_validate(beat.model_dump())
-    theme = load_theme(graph.brand_id or "k70")
+    theme = theme_for(graph, "ai_broll")
     seed = _continuity_seed(graph)
     lenses = ("35mm", "50mm", "40mm anamorphic")
     angles = ("eye-level documentary medium shot", "low-angle wide establishing shot",

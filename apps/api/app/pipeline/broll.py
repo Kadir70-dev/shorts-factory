@@ -36,7 +36,7 @@ import asyncio
 
 from pathlib import Path
 
-from ..brand import load_theme
+from ..brand import theme_for
 from ..brand.theme import BrandTheme
 from ..config import settings
 from ..schemas.scene import Layer, Scene, SceneGraph
@@ -110,7 +110,7 @@ _INTENT_MOTION: dict[str, str] = {
 
 
 def _theme(graph: SceneGraph) -> BrandTheme:
-    return load_theme(graph.brand_id or "k70")
+    return theme_for(graph, "asset_composition")
 
 
 def _local_asset(video_id: str, scene_id: str, name: str) -> Path:

@@ -486,6 +486,18 @@ class AIBrollRenderProvenance(BaseModel):
     selection_reason: str = ""
 
 
+class BrandIdentityProvenance(BaseModel):
+    brand_id: str
+    brand_fingerprint: str
+    manager_version: str
+    enabled: bool = True
+    modules: list[str] = []
+    palette: dict[str, str] = {}
+    fonts: dict[str, str] = {}
+    safe_margins: dict[str, float] = {}
+    consistency_checks: dict[str, bool] = {}
+
+
 class SceneGraph(BaseModel):
     """Complete, self-contained render package. Remotion's only input."""
 
@@ -509,6 +521,8 @@ class SceneGraph(BaseModel):
     motion_graphics_provenance: list[MotionGraphicsRenderProvenance] = []
     # Phase 6 output; empty when its feature gate is disabled.
     ai_broll_provenance: list[AIBrollRenderProvenance] = []
+    # Phase 7 central brand receipt; absent when the feature gate is disabled.
+    brand_identity_provenance: Optional[BrandIdentityProvenance] = None
 
     # The per-video VARIETY PLAN (pipeline/variety.py): which caption animation,
     # transition palette, motion style, colour grade and CTA shape this short

@@ -152,3 +152,33 @@ safe:
   top: 0.09
   bottom: 0.19
   side: 0.055
+
+# ── Unified Phase 7 component language ─────────────────────────────────────
+title_card:
+  style: documentary_rule
+  eyebrow_color: primary
+  max_lines: 3
+background:
+  texture: fine_grid
+  texture_opacity: 0.10
+  panel_radius_px: 18
+timeline:
+  line_color: grid
+  active_color: primary
+  marker_style: solid_circle
+  line_width_px: 8
+icons:
+  style: outline
+  stroke_color: ink
+  accent_color: primary
+  stroke_width_px: 4
+transitions:
+  style: restrained_documentary
+  allowed: [cut, fade, dip_to_black, push_up]
+  accent_color: primary
+cta:
+  style: endcard
+  accent_color: primary
+  background_color: bg
+  text_color: ink
+  max_lines: 3

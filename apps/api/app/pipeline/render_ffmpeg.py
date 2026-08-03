@@ -24,7 +24,7 @@ from __future__ import annotations
 import asyncio
 from pathlib import Path
 
-from ..brand import load_theme
+from ..brand import brand_manager, theme_for
 from ..brand import overlays as ov
 from ..brand.theme import BrandTheme
 from ..config import settings
@@ -41,7 +41,7 @@ async def render(graph: SceneGraph, out: Path) -> str:
     work = out.parent
     work.mkdir(parents=True, exist_ok=True)
     W, H, fps = graph.width, graph.height, graph.fps
-    theme = load_theme(graph.brand_id or "k70")
+    theme = theme_for(graph, "compositor")
     grade = theme.grade(graph.variety.get("grade", ""))
     zoom = _zoom_travel(graph)
 
@@ -49,7 +49,9 @@ async def render(graph: SceneGraph, out: Path) -> str:
     clips: list[Path] = []
     for i, scene in enumerate(graph.scenes):
         clip = work / f"scene_{i:02d}.mp4"
+        transition = brand_manager.transition(graph, scene.transition_in)
         await _scene_clip(scene, clip, W, H, fps, theme, grade, zoom,
+                          transition=transition,
                           hook=(i == 0))
         clips.append(clip)
 
@@ -79,6 +81,7 @@ def _zoom_travel(graph: SceneGraph) -> float:
 # --------------------------------------------------------------------------- #
 async def _scene_clip(scene: Scene, out: Path, W: int, H: int, fps: int,
                       theme: BrandTheme, grade, zoom: float,
+                      transition: str | None = None,
                       hook: bool = False) -> None:
     v = scene.visual
     dur = scene.duration_sec
@@ -88,12 +91,19 @@ async def _scene_clip(scene: Scene, out: Path, W: int, H: int, fps: int,
     # overlay typography on top would double up the headline and the number.
     draw = ("" if prerendered else
             _join(ov.scene_overlay_filters(scene, theme, W, H, hook=hook)))
+    if settings().brand_identity_enabled and not prerendered:
+        lower = next((item for item in scene.overlays
+                      if item.type == "lower_third"), None)
+        if lower:
+            _, lower_draws = ov.lower_third_filters(
+                theme, lower.text, lower.sub or "", W, H, 0, dur)
+            draw += _join(lower_draws)
 
     # Layered cinematic stack (opt-in). Unchanged behaviour, now grade-aware.
     if settings().layered_render and v.layers and not prerendered:
         from . import layers as _layers
         try:
-            tail = _mblur() + _transition(scene.transition_in, dur, hook, H)
+            tail = _mblur() + _transition(transition or scene.transition_in, dur, hook, H)
             if await _layers.compose(scene, out, W, H, fps, draw=draw,
                                      grade=grade.ffmpeg(), tail=tail, hook=hook):
                 return
@@ -134,7 +144,7 @@ async def _scene_clip(scene: Scene, out: Path, W: int, H: int, fps: int,
                "-i", f"color=c={color}:s={W}x{H}:r={fps}"]
         vf = "setsar=1" + draw
 
-    vf += _mblur() + _transition(scene.transition_in, dur, hook, H)
+    vf += _mblur() + _transition(transition or scene.transition_in, dur, hook, H)
 
     await _ff(*inp, "-vf", vf, "-t", f"{dur}",
               "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", str(fps),

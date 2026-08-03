@@ -498,8 +498,12 @@ def build_image_overlay_chain(overlays: list[ImageOverlay], base_label: str,
         if ov.start is not None and ov.end is not None:
             enable = f":enable='between(t,{ov.start:.3f},{ov.end:.3f})'"
         out_label = f"bl{i}"
+        # shortest=1 is load-bearing. These plates come from `-loop 1 -i x.png`,
+        # so their stream is INFINITE; with shortest=0 the overlay output runs to
+        # the longest input and the finished video grows a silent tail past the
+        # end of the timeline (observed: 39.2s of content in a 54.6s file).
         chain.append(f"[{label}][bov{i}]overlay=x={ov.x}:y={ov.y}"
-                     f":shortest=0{enable}[{out_label}]")
+                     f":shortest=1{enable}[{out_label}]")
         label = out_label
         idx += 1
 

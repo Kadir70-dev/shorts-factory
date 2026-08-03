@@ -751,9 +751,22 @@ async def resolve_layers(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
     gen_cache: dict[tuple[str, int], str] = {}           # (prompt, seed) → path (reuse)
     used: set[str] = set()                               # unique generated stills
 
+    # Beats that draw their own frames. The renderer composites the clip these
+    # produce and never runs the layer stack over it, so generating a layer asset
+    # for one is pure waste: an image is fetched or synthesised, written to cache,
+    # recorded in the scene graph, and then never appears on screen. That is
+    # exactly what happened on the NYC short — a photoreal portrait generated for
+    # a kinetic-typography beat, billed and discarded.
+    SELF_RENDERING = {"motion_gfx", "threejs", "dataviz", "branded"}
+
+    skipped: list[str] = []
     for idx, scene in enumerate(graph.scenes):
         layers = scene.visual.layers
         if not layers:
+            continue
+        if scene.visual.type in SELF_RENDERING:
+            scene.visual.layers = []          # drop the plan so nothing downstream retries
+            skipped.append(scene.id)
             continue
         roles = {ly.role for ly in layers}
         is_hero = ("subject" in roles or "fx" in roles)  # full stack vs light bg
@@ -768,6 +781,10 @@ async def resolve_layers(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
         budget = await _resolve_scene_layers(scene, idx, graph, spec, budget,
                                              gen_cache, used)
 
+    if skipped:
+        print(f"[layers] skipped {len(skipped)} self-rendering beat(s) "
+              f"({', '.join(skipped)}) — they draw their own frames, so no asset "
+              "is generated for them", flush=True)
     if used:
         print(f"[layers] used {len(used)}/{s.layered_ai_still_budget} AI still "
               f"budget across the short ({len(gen_cache)} unique prompts)", flush=True)

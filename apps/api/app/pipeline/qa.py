@@ -92,9 +92,21 @@ def _yavg(mp4: str, at: float) -> float:
         return -1.0
 
 
-def _black_seconds(mp4: str, pix_th: float = 0.10) -> float:
+def _black_seconds(mp4: str, pix_th: float = 0.04) -> float:
     """Total seconds flagged as (near-)black by ffmpeg blackdetect, or -1.0 if the
-    probe couldn't run. d=0.05 → catch even brief black flashes."""
+    probe couldn't run. d=0.05 → catch even brief black flashes.
+
+    `pix_th` is a LUMA FRACTION, and it is calibrated against the brand, not
+    picked for sensitivity. This check exists to catch MISSING VIDEO — a failed
+    asset that renders pure black. It is not a brightness check.
+
+    The finance-documentary palette has a near-black base (`#0b1220`, luma ≈ 17.5
+    of 255 ≈ 0.069). At the old 0.10 threshold every correctly-rendered frame of
+    a dark-brand short counted as black: a clean render reported 56% black while
+    ffmpeg's own default-threshold blackdetect found none at all. At 0.04 only
+    pixels below luma ≈ 10 count, so genuine black (#000, luma 0) is still caught
+    while the brand's intentional darkness is not.
+    """
     try:
         r = subprocess.run(
             ["ffmpeg", "-hide_banner", "-i", mp4,

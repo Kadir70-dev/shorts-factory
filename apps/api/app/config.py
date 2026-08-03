@@ -350,6 +350,14 @@ class Settings(BaseSettings):
     qa_min_free_floor_mb: int = 800              # free RAM must never dip below this
     qa_render_budget_s: float = 900.0            # hard wall-time budget per short
     qa_consistency_min_pct: float = 95.0         # character-consistency floor (when applicable)
+    # Phase 8 production gate. Unlike legacy QA_ENABLED observability, this fails
+    # export when any required production check fails.
+    visual_qa_engine_enabled: bool = False
+    visual_qa_min_bitrate_kbps: int = 500
+    visual_qa_max_bitrate_kbps: int = 25000
+    visual_qa_loudness_min_lufs: float = -18.0
+    visual_qa_loudness_max_lufs: float = -11.0
+    visual_qa_max_silence_fraction: float = 0.18
 
     # --- infra ---
     redis_url: str = "redis://localhost:6379/0"

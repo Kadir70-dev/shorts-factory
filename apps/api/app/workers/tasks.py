@@ -6,6 +6,8 @@ Run:  arq app.workers.tasks.WorkerSettings
 """
 from __future__ import annotations
 
+from pathlib import Path
+
 from arq.connections import RedisSettings
 
 from ..config import load_channel, settings
@@ -113,6 +115,19 @@ async def run_pipeline(ctx, job_id: str) -> dict:
                 print(qa.format_report(rep), flush=True)
             except Exception as _e:  # noqa: BLE001
                 print(f"[qa] skipped ({type(_e).__name__}: {_e})", flush=True)
+
+        # Phase 8 is intentionally different from the legacy observability pass:
+        # when explicitly enabled it is a production gate and a failed report
+        # fails the job before approval/export.
+        if settings().visual_qa_engine_enabled:
+            from ..pipeline import qa
+            qa_path = str(Path(final["mp4"]).with_suffix(".qa.json"))
+            rep = qa.production_analyze(
+                graph, final["mp4"], thumbnail=final["thumbnail"],
+                metadata_path=final["metadata_path"], report_path=qa_path)
+            print(qa.format_production_report(rep), flush=True)
+            if rep.status == "FAIL":
+                raise RuntimeError(f"production visual QA failed; report={qa_path}")
 
         # 10. APPROVAL GATE — human reviews in dashboard before upload
         set_status(job_id, "awaiting_approval")

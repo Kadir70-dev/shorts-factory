@@ -39,7 +39,7 @@ async def finalize(graph: SceneGraph, raw_mp4: str, channel: ChannelConfig) -> d
     meta_path.write_text(json.dumps(metadata, indent=2))
 
     return {"mp4": str(final), "thumbnail": str(thumb),
-            "metadata_json": json.dumps(metadata)}
+            "metadata_path": str(meta_path), "metadata_json": json.dumps(metadata)}
 
 
 def _build_metadata(graph: SceneGraph, channel: ChannelConfig) -> dict:

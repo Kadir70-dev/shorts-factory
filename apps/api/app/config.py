@@ -272,6 +272,9 @@ class Settings(BaseSettings):
     # scene_director policy exactly; ON runs the enhanced policy and records a
     # side-by-side semantic score before the asset resolver sees the result.
     visual_intelligence_enabled: bool = False
+    # Phase 2 structured semantic storyboard. OFF leaves SceneGraph.storyboard
+    # unset and performs no splitting or extraction work.
+    storyboard_engine_enabled: bool = False
 
     @property
     def strict_visuals(self) -> bool:

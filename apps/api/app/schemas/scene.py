@@ -14,7 +14,7 @@ Design rules that make this robust:
 from __future__ import annotations
 
 from typing import Literal, Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 SCHEMA_VERSION = "2.0"
 
@@ -299,6 +299,76 @@ class SceneMeta(BaseModel):
     ai_disclosure_reasons: list[str] = []
 
 
+# --------------------------------------------------------------------------- #
+# Storyboard — semantic beat metadata produced after Visual Intelligence.
+# It is advisory structured data only: renderers and asset providers remain the
+# owners of pixels and files. `None` means the gated engine did not run.
+# --------------------------------------------------------------------------- #
+class StoryboardScene(BaseModel):
+    scene_id: str
+    source_scene_id: str
+    narration: str
+    duration_estimate: float = Field(ge=0.8, le=12.0)
+    visual_objective: str
+    primary_entity: str = ""
+    secondary_entities: list[str] = []
+    company: str = ""
+    location: str = ""
+    year: Optional[int] = Field(None, ge=1000, le=2200)
+    financial_numbers: list[str] = []
+    emotion: Literal[
+        "urgent", "curious", "tense", "surprising", "confident", "neutral",
+        "hopeful", "cautionary",
+    ] = "neutral"
+    recommended_visual_type: Literal[
+        "dataviz", "real", "ai_image", "ai_video", "motion_gfx", "branded",
+        "hybrid",
+    ]
+    recommended_camera_movement: Literal[
+        "none", "ken_burns", "zoom_in", "zoom_out", "pan_lr",
+    ] = "ken_burns"
+    motion_graphics_needed: bool = False
+    threejs_candidate: bool = False
+    ai_broll_candidate: bool = False
+    asset_priority: list[Literal[
+        "exact_footage", "licensed_image", "local_graphics", "ai_recreation",
+        "branded_fallback",
+    ]]
+    transition: Literal[
+        "cut", "fade", "slide_l", "whip", "dip_to_black", "push_up", "crossfade",
+    ] = "cut"
+    overlay_text: list[str] = []
+    visual_confidence_score: float = Field(ge=0.0, le=1.0)
+
+    @model_validator(mode="after")
+    def validate_required_content(self):
+        if not self.scene_id.strip() or not self.source_scene_id.strip():
+            raise ValueError("storyboard scene ids cannot be blank")
+        if not self.narration.strip():
+            raise ValueError("storyboard narration cannot be blank")
+        if not self.visual_objective.strip():
+            raise ValueError("storyboard visual objective cannot be blank")
+        if not self.asset_priority:
+            raise ValueError("storyboard asset_priority cannot be empty")
+        if len(self.asset_priority) != len(set(self.asset_priority)):
+            raise ValueError("storyboard asset_priority must not contain duplicates")
+        return self
+
+
+class StoryboardData(BaseModel):
+    version: str = "1.0"
+    scenes: list[StoryboardScene]
+
+    @model_validator(mode="after")
+    def validate_scene_ids(self):
+        ids = [scene.scene_id for scene in self.scenes]
+        if not ids:
+            raise ValueError("storyboard must contain at least one semantic beat")
+        if len(ids) != len(set(ids)):
+            raise ValueError("storyboard scene ids must be unique")
+        return self
+
+
 class SceneGraph(BaseModel):
     """Complete, self-contained render package. Remotion's only input."""
 
@@ -312,6 +382,8 @@ class SceneGraph(BaseModel):
     audio: AudioTrack = AudioTrack()
     captions: list[Caption] = []      # empty until captioning stage
     sfx: list[SfxCue] = []            # empty until the sound-design stage
+    # Optional Phase 2 output. Disabled production graphs keep this as None.
+    storyboard: Optional[StoryboardData] = None
 
     # The per-video VARIETY PLAN (pipeline/variety.py): which caption animation,
     # transition palette, motion style, colour grade and CTA shape this short

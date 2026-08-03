@@ -501,25 +501,31 @@ def compare(graph: SceneGraph, spec: VideoSpec) -> ComparisonReport:
 def decide(graph: SceneGraph, spec: VideoSpec) -> MixReport:
     """Stable asset-resolver boundary; enhanced policy is opt-in and compared."""
     if not settings().visual_intelligence_enabled:
-        return _decide_existing(graph, spec)
-    baseline_graph = copy.deepcopy(graph)
-    started = time.perf_counter()
-    baseline = _decide_existing(baseline_graph, spec)
-    baseline_ms = (time.perf_counter() - started) * 1000.0
-    started = time.perf_counter()
-    enhanced = _decide_enhanced(graph, spec)
-    enhanced_ms = (time.perf_counter() - started) * 1000.0
-    changed = tuple(
-        old.scene_id for old, new in zip(baseline.decisions, enhanced.decisions)
-        if (old.strategy, old.tier, old.concrete) !=
-           (new.strategy, new.tier, new.concrete))
-    enhanced.comparison = ComparisonReport(
-        existing=measure(baseline), enhanced=measure(enhanced),
-        changed_scenes=changed, existing_ms=round(baseline_ms, 3),
-        enhanced_ms=round(enhanced_ms, 3))
-    print("[visual-intelligence] existing "
-          f"{enhanced.comparison.existing.score:.1f} → enhanced "
-          f"{enhanced.comparison.enhanced.score:.1f} "
-          f"(Δ {enhanced.comparison.score_delta:+.1f}; "
-          f"{len(changed)} scene(s) changed)", flush=True)
-    return enhanced
+        report = _decide_existing(graph, spec)
+    else:
+        baseline_graph = copy.deepcopy(graph)
+        started = time.perf_counter()
+        baseline = _decide_existing(baseline_graph, spec)
+        baseline_ms = (time.perf_counter() - started) * 1000.0
+        started = time.perf_counter()
+        report = _decide_enhanced(graph, spec)
+        enhanced_ms = (time.perf_counter() - started) * 1000.0
+        changed = tuple(
+            old.scene_id for old, new in zip(baseline.decisions, report.decisions)
+            if (old.strategy, old.tier, old.concrete) !=
+               (new.strategy, new.tier, new.concrete))
+        report.comparison = ComparisonReport(
+            existing=measure(baseline), enhanced=measure(report),
+            changed_scenes=changed, existing_ms=round(baseline_ms, 3),
+            enhanced_ms=round(enhanced_ms, 3))
+        print("[visual-intelligence] existing "
+              f"{report.comparison.existing.score:.1f} → enhanced "
+              f"{report.comparison.enhanced.score:.1f} "
+              f"(Δ {report.comparison.score_delta:+.1f}; "
+              f"{len(changed)} scene(s) changed)", flush=True)
+    if settings().storyboard_engine_enabled:
+        from . import storyboard as storyboard_engine
+        graph.storyboard = storyboard_engine.generate_semantic(graph, report)
+        print(f"[storyboard] {len(graph.storyboard.scenes)} semantic beat(s)",
+              flush=True)
+    return report

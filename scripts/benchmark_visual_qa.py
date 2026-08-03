@@ -40,7 +40,7 @@ def main() -> None:
             "-i", "testsrc2=size=1080x1920:rate=30", "-f", "lavfi", "-i",
             "sine=frequency=440:sample_rate=48000", "-t", "1.2", "-af",
             "loudnorm=I=-14:TP=-1.5:LRA=7", "-c:v", "libx264", "-preset", "ultrafast",
-            "-crf", "24", "-c:a", "aac", "-movflags", "+faststart", "-y", str(good)], check=True)
+            "-crf", "24", "-c:a", "aac", "-ar", "48000", "-movflags", "+faststart", "-y", str(good)], check=True)
         subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-f", "lavfi",
             "-i", "color=black:size=640x360:rate=24", "-t", "1.2", "-c:v", "libx264",
             "-y", str(bad)], check=True)

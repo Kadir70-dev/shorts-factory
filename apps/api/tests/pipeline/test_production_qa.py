@@ -28,7 +28,7 @@ def qa_media(tmp_path_factory):
          "-f", "lavfi", "-i", "sine=frequency=440:sample_rate=48000",
          "-t", "1.2", "-af", "loudnorm=I=-14:TP=-1.5:LRA=7",
          "-c:v", "libx264", "-preset", "ultrafast", "-crf", "24",
-         "-pix_fmt", "yuv420p", "-c:a", "aac", "-movflags", "+faststart",
+         "-pix_fmt", "yuv420p", "-c:a", "aac", "-ar", "48000", "-movflags", "+faststart",
          "-y", str(good))
     _run("-f", "lavfi", "-i", "color=black:size=640x360:rate=24",
          "-t", "1.2", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-y", str(broken))
@@ -71,7 +71,7 @@ def test_broken_fixture_reports_actionable_failures(qa_media, monkeypatch):
     assert report.status == "FAIL"
     names = {c.check for c in report.checks if c.status == "FAIL"}
     assert {"black frames", "production resolution", "missing narration",
-            "1080x1920", "H.264 and AAC", "thumbnail"}.issubset(names)
+            "1080x1920", "H.264 and AAC-LC/48kHz", "thumbnail"}.issubset(names)
     assert all(c.reason and c.suggested_fix for c in report.checks if c.status == "FAIL")
 
 

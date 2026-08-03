@@ -62,7 +62,7 @@ async def main() -> int:
         "-vf", vf,
         "-af", "loudnorm=I=-14:TP=-1.5:LRA=7", "-c:v", "libx264", "-preset",
         "ultrafast", "-crf", "24", "-pix_fmt", "yuv420p", "-c:a", "aac",
-        "-b:a", "192k", "-movflags", "+faststart", "-y", str(final_mp4)], check=True)
+        "-ar", "48000", "-b:a", "192k", "-movflags", "+faststart", "-y", str(final_mp4)], check=True)
     subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", "0.6",
         "-i", str(final_mp4), "-frames:v", "1", "-y", str(thumb)], check=True)
     metadata.write_text(graph.meta.model_dump_json(indent=2))

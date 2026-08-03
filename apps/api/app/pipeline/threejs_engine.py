@@ -25,6 +25,7 @@ TEMPLATES = (
 )
 _worker: asyncio.subprocess.Process | None = None
 _worker_lock = asyncio.Lock()
+_worker_jobs = 0
 
 
 @dataclass(frozen=True)
@@ -153,18 +154,31 @@ async def _worker_render(payload: dict) -> dict:
             raise RuntimeError(result.get("error", "Three.js render failed"))
         return result
     async with _worker_lock:
+        global _worker_jobs
+        if (settings().production_optimizer_enabled and _worker and
+                _worker_jobs >= settings().optimizer_threejs_restart_jobs):
+            await _stop_worker()
         proc = await _ensure_worker()
-        proc.stdin.write((json.dumps(payload) + "\n").encode())
-        await proc.stdin.drain()
-        line = await asyncio.wait_for(proc.stdout.readline(),
-                                      timeout=settings().threejs_render_timeout_s)
-        if not line:
-            error = (await proc.stderr.read()).decode(errors="replace")[-1200:]
-            raise RuntimeError(error or "Three.js worker exited")
-        result = json.loads(line)
-        if not result.get("ok"):
-            raise RuntimeError(result.get("error", "Three.js render failed"))
-        return result
+        try:
+            proc.stdin.write((json.dumps(payload) + "\n").encode())
+            await proc.stdin.drain()
+            line = await asyncio.wait_for(proc.stdout.readline(),
+                                          timeout=settings().threejs_render_timeout_s)
+            if not line:
+                error = (await proc.stderr.read()).decode(errors="replace")[-1200:]
+                raise RuntimeError(error or "Three.js worker exited")
+            result = json.loads(line)
+            if not result.get("ok"):
+                raise RuntimeError(result.get("error", "Three.js render failed"))
+            _worker_jobs += 1
+            if (settings().production_optimizer_enabled and
+                    float(result.get("rssMb", 0)) >= settings().optimizer_threejs_restart_rss_mb):
+                await _stop_worker()
+            return result
+        except Exception:
+            if settings().production_optimizer_enabled:
+                await _stop_worker()
+            raise
 
 
 async def _encode(frames: Path, fps: int, output: Path) -> None:
@@ -225,9 +239,14 @@ async def render(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
             error=f"{type(exc).__name__}: {str(exc)[:240]}")
 
 
-async def close_worker() -> None:
-    global _worker
+async def _stop_worker() -> None:
+    global _worker, _worker_jobs
     if _worker and _worker.returncode is None:
         _worker.terminate()
         await _worker.wait()
     _worker = None
+    _worker_jobs = 0
+
+
+async def close_worker() -> None:
+    await _stop_worker()

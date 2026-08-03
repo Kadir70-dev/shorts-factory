@@ -7,6 +7,7 @@ Run:  arq app.workers.tasks.WorkerSettings
 from __future__ import annotations
 
 from pathlib import Path
+import json
 
 from arq.connections import RedisSettings
 
@@ -30,6 +31,12 @@ async def run_pipeline(ctx, job_id: str) -> dict:
 
     spec = VideoSpec.model_validate_json(job.spec_json)
     channel = load_channel(spec.channel_id)
+    optimizer = checkpoint = None
+    if settings().production_optimizer_enabled:
+        from ..pipeline import production_optimizer as optimizer
+        checkpoint = optimizer.CheckpointStore(job_id)
+        await optimizer.scheduler.wait_for_memory(512)
+        checkpoint.record("pipeline", "running")
 
     try:
         # 1. RESEARCH + 2. HOOK + 3. SCRIPT + 4. SCENE TIMELINE  (Phase 2)
@@ -87,6 +94,10 @@ async def run_pipeline(ctx, job_id: str) -> dict:
         job = get_job(job_id)
         job.scene_graph_json = graph.model_dump_json()
         upsert_job(job)
+        if checkpoint:
+            graph_path = checkpoint.root / "scene-graph.valid.json"
+            graph_path.write_text(job.scene_graph_json)
+            checkpoint.record("assets", "completed", artifact=str(graph_path))
 
         # 8. RENDER — hand SceneGraph to Remotion -> raw mp4
         set_status(job_id, "rendering")
@@ -103,6 +114,12 @@ async def run_pipeline(ctx, job_id: str) -> dict:
         job.output_mp4 = final["mp4"]
         job.metadata_json = final["metadata_json"]
         upsert_job(job)
+        if checkpoint:
+            raw_path, final_path = Path(raw_mp4), Path(final["mp4"])
+            if (not final_path.is_file() or not final_path.stat().st_size or
+                    final_path.stat().st_mtime < raw_path.stat().st_mtime):
+                raise RuntimeError("stale final output rejected")
+            checkpoint.record("finalization", "completed", artifact=str(final_path))
 
         # 9.5 QA (Phase 4) — non-fatal post-render audit (gated QA_ENABLED, default
         #     OFF). Reports black frames / RAM peak / wall-time budget; NEVER fails
@@ -119,7 +136,8 @@ async def run_pipeline(ctx, job_id: str) -> dict:
         # Phase 8 is intentionally different from the legacy observability pass:
         # when explicitly enabled it is a production gate and a failed report
         # fails the job before approval/export.
-        if settings().visual_qa_engine_enabled:
+        if (settings().visual_qa_engine_enabled or
+                settings().production_optimizer_enabled):
             from ..pipeline import qa
             qa_path = str(Path(final["mp4"]).with_suffix(".qa.json"))
             rep = qa.production_analyze(
@@ -128,18 +146,37 @@ async def run_pipeline(ctx, job_id: str) -> dict:
             print(qa.format_production_report(rep), flush=True)
             if rep.status == "FAIL":
                 raise RuntimeError(f"production visual QA failed; report={qa_path}")
+            if checkpoint:
+                checkpoint.record("qa", "completed", artifact=qa_path)
+
+        if checkpoint and optimizer:
+            metrics = {
+                "resources": optimizer.asdict(optimizer.detect_resources()),
+                "stage_timings_ms": dict(optimizer.scheduler.timings),
+                "cache": optimizer.graph_cache_report(graph),
+            }
+            (checkpoint.root / "optimizer-metrics.json").write_text(
+                json.dumps(metrics, indent=2))
 
         # 10. APPROVAL GATE — human reviews in dashboard before upload
         set_status(job_id, "awaiting_approval")
+        if checkpoint:
+            checkpoint.record("pipeline", "completed", artifact=final["mp4"])
         return {"job_id": job_id, "mp4": final["mp4"]}
 
     except Exception as e:  # noqa: BLE001 — top-level pipeline guard
-        set_status(job_id, "failed", error=f"{type(e).__name__}: {e}")
+        status = ("qa_blocked" if settings().production_optimizer_enabled and
+                  "QA" in str(e).upper() else "failed")
+        set_status(job_id, status, error=f"{type(e).__name__}: {e}")
+        if checkpoint:
+            checkpoint.record("pipeline", status, error=f"{type(e).__name__}: {e}")
         raise
 
 
 class WorkerSettings:
     functions = [run_pipeline]
     redis_settings = RedisSettings.from_dsn(settings().redis_url)
-    max_jobs = 2          # bound concurrent renders (CPU/GPU heavy)
+    max_jobs = (__import__("app.pipeline.production_optimizer", fromlist=["detect_resources"])
+                .detect_resources().job_concurrency
+                if settings().production_optimizer_enabled else 2)
     job_timeout = 1800    # 30 min hard cap per video

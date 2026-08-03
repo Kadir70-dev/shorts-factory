@@ -120,16 +120,32 @@ async def resolve(graph: SceneGraph, fetcher: Fetcher, downloader: Downloader,
     resolved_paths: dict[str, str] = {}
     provenance: list[AssetResolution] = []
     today = date.today().isoformat()
+    search_providers = providers or tuple(
+        p for p in source_priority() if p != "ai_generation")
+    discovered: dict[tuple[str, str], list[AssetCandidate]] = {}
+    if settings().production_optimizer_enabled:
+        from .production_optimizer import scheduler
+        jobs = [(beat, provider) for beat in graph.storyboard.scenes
+                for provider in search_providers]
+        async def discover(beat, provider):
+            try: return await fetcher(provider, build_query(beat), beat)
+            except Exception: return []
+        results = await scheduler.map("asset_discovery", [
+            (lambda beat=beat, provider=provider: discover(beat, provider))
+            for beat, provider in jobs], kind="io", memory_mb=80)
+        discovered = {(beat.scene_id, provider): found
+                      for (beat, provider), found in zip(jobs, results)}
     for beat in graph.storyboard.scenes:
         query = build_query(beat)
         all_candidates: list[AssetCandidate] = []
-        search_providers = providers or tuple(
-            p for p in source_priority() if p != "ai_generation")
         for provider in search_providers:
-            try:
-                found = await fetcher(provider, query, beat)
-            except Exception:  # provider isolation mirrors the established resolver
-                found = []
+            if settings().production_optimizer_enabled:
+                found = discovered[(beat.scene_id, provider)]
+            else:
+                try:
+                    found = await fetcher(provider, query, beat)
+                except Exception:  # provider isolation mirrors the established resolver
+                    found = []
             for candidate in found:
                 # Provider adapters cannot omit or falsify the owning beat/date.
                 candidate.scene_id = beat.scene_id

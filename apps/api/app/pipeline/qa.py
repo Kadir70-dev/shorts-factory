@@ -548,9 +548,15 @@ def production_analyze(graph: SceneGraph, mp4: str, *, thumbnail: str = "",
     add("youtube", "1080x1920", width == 1080 and height == 1920,
         "production canvas is 1080x1920", f"export is {width}x{height}",
         "Export final quality at 1080x1920.")
-    add("youtube", "H.264 and AAC", video.get("codec_name") == "h264" and audio.get("codec_name") == "aac",
-        "H.264 video with AAC audio", f"codecs {video.get('codec_name')}/{audio.get('codec_name')}",
-        "Transcode using libx264 and AAC.")
+    audio_contract = (audio.get("codec_name") == "aac" and
+                      int(audio.get("sample_rate") or 0) == 48000 and
+                      str(audio.get("profile", "")).lower() in ("lc", "aac lc"))
+    add("youtube", "H.264 and AAC-LC/48kHz",
+        video.get("codec_name") == "h264" and audio_contract,
+        "H.264 video with AAC-LC at 48 kHz",
+        f"video={video.get('codec_name')} audio={audio.get('codec_name')}/"
+        f"{audio.get('profile')}/{audio.get('sample_rate')}Hz",
+        "Transcode using libx264 and AAC-LC at 48 kHz.")
     add("youtube", "correct FPS", abs(fps-graph.fps) < .01 and graph.fps in (30,60),
         f"{fps:.2f} fps", f"unexpected {fps:.2f} fps", "Export at the SceneGraph 30 or 60 fps.")
     add("youtube", "safe bitrate", settings().visual_qa_min_bitrate_kbps <= bitrate <=

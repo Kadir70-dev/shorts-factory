@@ -358,6 +358,17 @@ class Settings(BaseSettings):
     visual_qa_loudness_min_lufs: float = -18.0
     visual_qa_loudness_max_lufs: float = -11.0
     visual_qa_max_silence_fraction: float = 0.18
+    # Phase 9 bounded production scheduler. All values are inert while disabled.
+    production_optimizer_enabled: bool = False
+    optimizer_memory_floor_mb: int = 1200
+    optimizer_memory_hard_floor_mb: int = 700
+    optimizer_max_jobs: int = 3
+    optimizer_max_retries: int = 2
+    optimizer_cache_max_gb: float = 20.0
+    optimizer_cache_max_age_days: int = 30
+    optimizer_threejs_restart_jobs: int = 12
+    optimizer_threejs_restart_rss_mb: int = 1400
+    optimizer_backpressure_timeout_s: float = 900.0
 
     # --- infra ---
     redis_url: str = "redis://localhost:6379/0"

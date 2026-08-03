@@ -22,13 +22,16 @@ async def finalize(graph: SceneGraph, raw_mp4: str, channel: ChannelConfig) -> d
     thumb = work / "thumbnail.jpg"
 
     # loudnorm + compatibility re-encode
-    await _ff(
-        "-i", raw_mp4,
-        "-af", "loudnorm=I=-14:TP=-1.5:LRA=11",
-        "-c:v", "libx264", "-profile:v", "main", "-pix_fmt", "yuv420p",
-        "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart",
-        "-y", str(final),
-    )
+    finish = ["-i", raw_mp4, "-af", "loudnorm=I=-14:TP=-1.5:LRA=11",
+              "-c:v", "libx264", "-profile:v", "main", "-pix_fmt", "yuv420p"]
+    if settings().production_optimizer_enabled:
+        finish += ["-fps_mode", "cfr", "-r", str(graph.fps),
+                   "-c:a", "aac", "-profile:a", "aac_low", "-ar", "48000",
+                   "-b:a", "192k", "-avoid_negative_ts", "make_zero"]
+    else:
+        finish += ["-c:a", "aac", "-b:a", "192k"]
+    finish += ["-movflags", "+faststart", "-y", str(final)]
+    await _ff(*finish)
 
     # thumbnail from the hook moment
     await _ff("-ss", "0.6", "-i", raw_mp4, "-frames:v", "1", "-q:v", "2",

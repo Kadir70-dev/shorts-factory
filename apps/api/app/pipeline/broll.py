@@ -181,6 +181,7 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
         by_source: dict[str, list] = {}
         for beat in graph.storyboard.scenes:
             by_source.setdefault(beat.source_scene_id, []).append(beat)
+        motion_jobs = []
         for index, scene in enumerate(graph.scenes):
             if scene.id in enhanced:
                 continue
@@ -188,9 +189,21 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
                          if finance_motion.map_template(candidate) is not None), None)
             if beat is None:
                 continue
-            result = await finance_motion.render(
+            motion_jobs.append((index, scene, beat))
+        if settings().production_optimizer_enabled and motion_jobs:
+            from .production_optimizer import scheduler
+            operations = [
+                (lambda index=index, scene=scene, beat=beat:
+                    finance_motion.render(graph, scene, beat,
+                        quality=settings().motion_graphics_quality, seed=index))
+                for index, scene, beat in motion_jobs]
+            motion_results = await scheduler.map("motion_graphics", operations,
+                                                  kind="cpu", memory_mb=380)
+        else:
+            motion_results = [await finance_motion.render(
                 graph, scene, beat, quality=settings().motion_graphics_quality,
-                seed=index)
+                seed=index) for index, scene, beat in motion_jobs]
+        for (_, scene, _), result in zip(motion_jobs, motion_results):
             graph.motion_graphics_provenance.append(result)
             if result.status in ("rendered", "cache_hit") and result.render_path:
                 motion_handled.add(scene.id)
@@ -208,6 +221,7 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
         by_source: dict[str, list] = {}
         for beat in graph.storyboard.scenes:
             by_source.setdefault(beat.source_scene_id, []).append(beat)
+        three_jobs = []
         for scene in graph.scenes:
             # Official/licensed Phase 3 assets keep priority; Three.js should
             # explain numbers, not replace strong archival evidence.
@@ -217,7 +231,16 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
                          if threejs_engine.map_template(candidate) is not None), None)
             if beat is None:
                 continue
-            result = await threejs_engine.render(graph, scene, beat)
+            three_jobs.append((scene, beat))
+        if settings().production_optimizer_enabled and three_jobs:
+            from .production_optimizer import scheduler
+            three_results = await scheduler.map("threejs", [
+                (lambda scene=scene, beat=beat: threejs_engine.render(graph, scene, beat))
+                for scene, beat in three_jobs], kind="browser", memory_mb=900)
+        else:
+            three_results = [await threejs_engine.render(graph, scene, beat)
+                             for scene, beat in three_jobs]
+        for (scene, _), result in zip(three_jobs, three_results):
             graph.threejs_provenance.append(result)
             if result.status in ("rendered", "cache_hit") and result.render_path:
                 threejs_handled.add(scene.id)
@@ -238,6 +261,7 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
         for beat in graph.storyboard.scenes:
             by_source.setdefault(beat.source_scene_id, []).append(beat)
         local_success = motion_handled | threejs_handled
+        ai_jobs = []
         for scene in graph.scenes:
             if scene.id in enhanced or scene.id in local_success:
                 continue
@@ -245,7 +269,16 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
                          if candidate.ai_broll_candidate), None)
             if beat is None:
                 continue
-            result = await ai_broll.generate(graph, scene, beat)
+            ai_jobs.append((scene, beat))
+        if settings().production_optimizer_enabled and ai_jobs:
+            from .production_optimizer import scheduler
+            ai_results = await scheduler.map("ai_broll", [
+                (lambda scene=scene, beat=beat: ai_broll.generate(graph, scene, beat))
+                for scene, beat in ai_jobs], kind="io", memory_mb=300)
+        else:
+            ai_results = [await ai_broll.generate(graph, scene, beat)
+                          for scene, beat in ai_jobs]
+        for (scene, _), result in zip(ai_jobs, ai_results):
             graph.ai_broll_provenance.append(result)
             ai_handled.add(scene.id)
             if result.status in ("rendered", "cache_hit") and result.render_path:

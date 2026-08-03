@@ -47,6 +47,7 @@ from . import motiongfx
 from . import ram
 from . import scene_director as sd
 from . import asset_engine
+from . import finance_motion
 from . import threejs_engine
 from .providers import (
     ai_image_generate, ai_video_generate, build_video_prompt,
@@ -140,7 +141,8 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
     report = sd.decide(graph, spec)
     by_id = {d.scene_id: d for d in report.decisions}
     if ((settings().multi_source_asset_engine_enabled
-         or settings().threejs_visual_engine_enabled)
+         or settings().threejs_visual_engine_enabled
+         or settings().motion_graphics_engine_enabled)
             and graph.storyboard is None):
         from . import storyboard
         graph.storyboard = storyboard.generate_semantic(graph, report)
@@ -167,6 +169,31 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
                 scene.visual.asset_path = None
                 scene.visual.type = "solid"
 
+    motion_handled: set[str] = set()
+    if settings().motion_graphics_engine_enabled and graph.storyboard is not None:
+        by_source: dict[str, list] = {}
+        for beat in graph.storyboard.scenes:
+            by_source.setdefault(beat.source_scene_id, []).append(beat)
+        for index, scene in enumerate(graph.scenes):
+            if scene.id in enhanced:
+                continue
+            beat = next((candidate for candidate in by_source.get(scene.id, [])
+                         if finance_motion.map_template(candidate) is not None), None)
+            if beat is None:
+                continue
+            result = await finance_motion.render(
+                graph, scene, beat, quality=settings().motion_graphics_quality,
+                seed=index)
+            graph.motion_graphics_provenance.append(result)
+            motion_handled.add(scene.id)
+            if result.status in ("rendered", "cache_hit") and result.render_path:
+                scene.visual.asset_path = result.render_path
+                scene.visual.type = "motion_gfx"
+                scene.visual.motion = "none"
+            else:
+                scene.visual.asset_path = None
+                scene.visual.type = "solid"
+
     threejs_handled: set[str] = set()
     if settings().threejs_visual_engine_enabled and graph.storyboard is not None:
         by_source: dict[str, list] = {}
@@ -175,7 +202,7 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
         for scene in graph.scenes:
             # Official/licensed Phase 3 assets keep priority; Three.js should
             # explain numbers, not replace strong archival evidence.
-            if scene.id in enhanced:
+            if scene.id in enhanced or scene.id in motion_handled:
                 continue
             beat = next((candidate for candidate in by_source.get(scene.id, [])
                          if threejs_engine.map_template(candidate) is not None), None)
@@ -197,10 +224,12 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
     if settings().multi_source_asset_engine_enabled:
         return graph
 
-    if settings().threejs_visual_engine_enabled:
+    if (settings().threejs_visual_engine_enabled
+            or settings().motion_graphics_engine_enabled):
+        locally_handled = threejs_handled | motion_handled
         await asyncio.gather(
             *[_resolve(s, i, graph, spec, by_id[s.id])
-              for i, s in enumerate(graph.scenes) if s.id not in threejs_handled]
+              for i, s in enumerate(graph.scenes) if s.id not in locally_handled]
         )
         if settings().strict_visuals:
             await _dedupe_real_assets(graph)

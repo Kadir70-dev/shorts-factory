@@ -124,6 +124,14 @@ export const SceneGraph = z.object({
     brand_fingerprint: z.string(), render_ms: z.number(), peak_rss_mb: z.number(),
     error: z.string(), legacy_decision: z.string(),
   })).default([]),
+  motion_graphics_provenance: z.array(z.object({
+    scene_id: z.string(), storyboard_scene_id: z.string(), template: z.string(),
+    template_version: z.string(), status: z.string(), render_path: z.string().nullable(),
+    cache_key: z.string(), seed: z.number(), fps: z.number(), width: z.number(),
+    height: z.number(), quality: z.string(), brand_id: z.string(),
+    brand_fingerprint: z.string(), render_ms: z.number(), peak_rss_mb: z.number(),
+    error: z.string(), existing_decision: z.string(), clarity_reason: z.string(),
+  })).default([]),
 });
 
 export type TSceneGraph = z.infer<typeof SceneGraph>;

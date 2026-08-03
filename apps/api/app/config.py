@@ -290,6 +290,10 @@ class Settings(BaseSettings):
     threejs_worker_url: str = ""
     threejs_render_timeout_s: float = 180.0
     threejs_max_frames: int = 360
+    # Phase 5 lightweight branded finance explainers. OFF leaves Phase 1-4
+    # selection and rendering untouched.
+    motion_graphics_engine_enabled: bool = False
+    motion_graphics_quality: str = "final"
 
     @property
     def strict_visuals(self) -> bool:

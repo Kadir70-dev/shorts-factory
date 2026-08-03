@@ -423,6 +423,33 @@ class ThreeJSRenderProvenance(BaseModel):
     legacy_decision: str = ""
 
 
+class MotionGraphicsRenderProvenance(BaseModel):
+    scene_id: str
+    storyboard_scene_id: str
+    template: Literal[
+        "stat_card", "bar_chart_comparison", "percentage_split",
+        "timeline_events", "before_after", "revenue_profit_waterfall",
+        "price_inflation", "document_highlight", "quote_card",
+        "company_ecosystem",
+    ]
+    template_version: str
+    status: Literal["rendered", "cache_hit", "unresolved"]
+    render_path: Optional[str] = None
+    cache_key: str
+    seed: int
+    fps: int
+    width: int
+    height: int
+    quality: Literal["preview", "final"]
+    brand_id: str
+    brand_fingerprint: str
+    render_ms: float = Field(ge=0)
+    peak_rss_mb: float = Field(ge=0)
+    error: str = ""
+    existing_decision: str = ""
+    clarity_reason: str = ""
+
+
 class SceneGraph(BaseModel):
     """Complete, self-contained render package. Remotion's only input."""
 
@@ -442,6 +469,8 @@ class SceneGraph(BaseModel):
     asset_provenance: list[AssetResolution] = []
     # Phase 4 output; empty when its feature gate is disabled.
     threejs_provenance: list[ThreeJSRenderProvenance] = []
+    # Phase 5 output; empty when its feature gate is disabled.
+    motion_graphics_provenance: list[MotionGraphicsRenderProvenance] = []
 
     # The per-video VARIETY PLAN (pipeline/variety.py): which caption animation,
     # transition palette, motion style, colour grade and CTA shape this short

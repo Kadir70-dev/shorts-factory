@@ -120,8 +120,14 @@ async def test_enabled_broll_refuses_unrelated_old_fallback(graph, monkeypatch):
     spec = VideoSpec(channel_id="k70_business", niche=Niche.business,
                      topic="Costco", allow_ai_image=False)
     await broll.resolve_assets(graph, spec)
-    assert all(scene.visual.type == "solid" and scene.visual.asset_path is None
+    # The guarantee this test is named for: no candidate resolved, so nothing may
+    # be downloaded and no unrelated legacy footage may be substituted.
+    assert all(scene.visual.type not in ("broll", "image")
                for scene in graph.scenes)
+    # Previously these scenes were left as `solid` — a blank frame. They are now
+    # dispatched to a self-rendered visual instead, so the refusal to use
+    # unrelated stock no longer costs the viewer an empty screen.
+    assert all(scene.visual.type != "solid" for scene in graph.scenes)
     assert all(item.status in {"ai_requested", "manual_review"}
                for item in graph.asset_provenance)
     assert all(item.candidates[-1].provider_institution == "ai_generation"

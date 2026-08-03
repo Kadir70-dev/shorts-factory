@@ -51,6 +51,14 @@ _FILE = CONFIG_DIR / "visual_budget.yaml"
 
 CHANNELS = ("motion_gfx", "threejs", "official", "ai_broll", "stock", "charts")
 
+# `unresolved` is a REPORTING bucket, never an allocation target. It exists so a
+# failed beat is visible instead of being folded into a real channel: an earlier
+# version classified every unrecognised type as motion graphics, which reported
+# 52% Motion Graphics for a render that was 39% blank frames. A breakdown that
+# hides failures is worse than no breakdown.
+UNRESOLVED = "unresolved"
+REPORT_CHANNELS = CHANNELS + (UNRESOLVED,)
+
 # Human labels for the delivered report.
 LABEL = {
     "motion_gfx": "Motion Graphics (2D)",
@@ -59,6 +67,7 @@ LABEL = {
     "ai_broll": "AI Cinematic B-roll",
     "stock": "Pexels/Pixabay",
     "charts": "Charts/Maps/Icons/Logos",
+    UNRESOLVED: "UNRESOLVED (blank)",
 }
 
 # Which `Visual.type` each channel renders as, for the downstream resolver.
@@ -247,7 +256,9 @@ class BudgetReport:
     def format(self) -> str:
         lines = [f"visual budget · {self.total_seconds:.2f}s across "
                  f"{len(self.assignments)} scenes"]
-        for ch in CHANNELS:
+        for ch in REPORT_CHANNELS:
+            if ch == UNRESOLVED and not self.seconds.get(ch):
+                continue
             pct = self.pct.get(ch, 0.0)
             b = self.bands.get(ch)
             target = f"{b.lo*100:.0f}-{b.hi*100:.0f}%" if b else "n/a"
@@ -270,7 +281,7 @@ class BudgetReport:
                      "target_lo": self.bands[ch].lo if ch in self.bands else None,
                      "target_hi": self.bands[ch].hi if ch in self.bands else None,
                      "within_band": self.within_band(ch)}
-                for ch in CHANNELS},
+                for ch in REPORT_CHANNELS},
             "assignments": [
                 {"scene_id": a.scene_id, "channel": a.channel,
                  "seconds": round(a.seconds, 3), "score": a.score,
@@ -538,16 +549,19 @@ def measure(graph: SceneGraph) -> BudgetReport:
                 ch, why = "official", "official / public-domain source"
             else:
                 ch, why = "stock", "footage of unrecorded provenance"
+        elif v.type == "solid" or not v.asset_path:
+            # No asset on disk = nothing on screen. Counted honestly.
+            ch, why = UNRESOLVED, f"no asset resolved (type={v.type})"
         else:
-            ch, why = "motion_gfx", f"fallback ({v.type})"
+            ch, why = UNRESOLVED, f"unrecognised visual type ({v.type})"
         assignments.append(Assignment(
             scene_id=s.id, channel=ch, seconds=s.duration_sec,
             score=0.0, reason=why,
             scores={"planned": v.budget_channel or "-"}))
 
     seconds = {c: round(sum(a.seconds for a in assignments if a.channel == c), 3)
-               for c in CHANNELS}
-    pct = {c: round(100.0 * seconds[c] / total, 2) for c in CHANNELS}
+               for c in REPORT_CHANNELS}
+    pct = {c: round(100.0 * seconds[c] / total, 2) for c in REPORT_CHANNELS}
 
     notes: list[str] = []
     drift = [(a.scene_id, a.scores["planned"], a.channel) for a in assignments

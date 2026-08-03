@@ -142,8 +142,14 @@ async def test_failed_ai_never_uses_stock_for_primary_scene(graph, monkeypatch):
     await broll.resolve_assets(graph, VideoSpec(
         channel_id="k70_business", niche=Niche.business, topic="Supply chain",
         allow_ai_image=True))
-    assert graph.scenes[0].visual.type == "solid"
+    # The guarantee this test is named for: a failed AI beat must NEVER be
+    # papered over with unrelated stock footage.
     assert 0 not in stock_scenes
+    assert graph.scenes[0].visual.type not in ("broll", "image")
+    # It must also not be left blank. `solid` used to be the outcome here, which
+    # shipped an empty frame; the dispatcher now falls the beat to a
+    # self-rendered visual that still explains the line.
+    assert graph.scenes[0].visual.type != "solid"
     assert graph.ai_broll_provenance[0].status == "unresolved"
 
 

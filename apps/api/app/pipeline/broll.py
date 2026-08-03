@@ -137,6 +137,79 @@ async def _branded_plate(scene: Scene, graph: SceneGraph) -> str | None:
         return None
 
 
+async def _render_self(scene: Scene, graph: SceneGraph) -> bool:
+    """Render this beat with no external dependency: a chart if it has real
+    numbers, otherwise kinetic type. Both are local, so this tier cannot fail for
+    want of a provider, a network call or a worker — which is what makes a blank
+    frame unnecessary."""
+    viz = scene.data or dataviz.from_scene(scene)
+    if viz and viz.valid():
+        try:
+            out = _local_asset(graph.meta.video_id, scene.id, "chart.mp4")
+            scene.visual.asset_path = str(await dataviz.render(
+                viz, _theme(graph), out, graph.width, graph.height, graph.fps,
+                max(2.5, scene.duration_sec)))
+            scene.visual.type, scene.visual.motion = "dataviz", "none"
+            scene.data = viz
+            return True
+        except Exception as e:                   # noqa: BLE001
+            print(f"[dispatch] {scene.id}: chart failed ({type(e).__name__}) "
+                  "→ kinetic card", flush=True)
+    try:
+        headline = next((o.text for o in scene.overlays if o.type == "headline"),
+                        "") or scene.visual.visual_intent or scene.narration
+        source = next((o.text for o in scene.overlays if o.type == "source"), "")
+        out = _local_asset(graph.meta.video_id, scene.id, "gfx.mp4")
+        scene.visual.asset_path = str(await motiongfx.kinetic(
+            _theme(graph), out, graph.width, graph.height, graph.fps,
+            max(2.5, scene.duration_sec), headline=headline, source=source,
+            seed=abs(hash(scene.id)) % 9973))
+        scene.visual.type, scene.visual.motion = "motion_gfx", "none"
+        return True
+    except Exception as e:                       # noqa: BLE001
+        print(f"[dispatch] {scene.id}: kinetic failed ({type(e).__name__})",
+              flush=True)
+        return False
+
+
+async def _dispatch_scene(scene: Scene, idx: int, graph: SceneGraph,
+                          decision: "sd.Decision") -> None:
+    """Resolve ONE unclaimed scene down its own ladder.
+
+        allocated channel → self renderer → branded placeholder
+
+    Two rules the previous control flow could not express:
+
+      * STOCK IS ONLY REACHABLE WHEN ALLOCATED. Previously any beat that failed
+        its engine could be swept into stock footage, so a chart beat shipped as
+        an unrelated clip. A beat allocated charts/threejs/official/ai_broll now
+        falls to a self-rendered visual instead — it explains the same point.
+      * THERE IS NO BLANK OUTCOME. `solid` produced an empty frame; the branded
+        placeholder is the floor, and it is still on-brand.
+    """
+    channel = scene.visual.budget_channel or ""
+
+    if channel == "stock":
+        await _resolve_support_stock(scene, idx, graph)
+        if scene.visual.asset_path:
+            return
+
+    if await _render_self(scene, graph):
+        return
+
+    plate = await _branded_plate(scene, graph)
+    if plate:
+        scene.visual.asset_path = plate
+        scene.visual.type, scene.visual.motion = "branded", "none"
+        return
+
+    # Even the last resort stays branded rather than blank: `solid` renders the
+    # theme background, never black, and never an empty asset_path.
+    scene.visual.asset_path = None
+    scene.visual.type = "branded"
+    scene.visual.motion = "none"
+
+
 async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
     # 1) decide the per-scene strategy + enforce the visual-mix budget.
     report = sd.decide(graph, spec)
@@ -172,9 +245,10 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
                 scene.visual.asset_path = path
                 scene.visual.type = ("broll" if Path(path).suffix.lower() in
                                      {".mp4", ".mov", ".webm"} else "image")
-            else:
-                scene.visual.asset_path = None
-                scene.visual.type = "solid"
+            # Scenes this engine did NOT claim are left untouched. Resetting them
+            # to `solid` here erased the budget allocation for every downstream
+            # engine and was the single largest source of blank frames — 39% of
+            # one finished render. An engine may only describe what it claimed.
 
     motion_handled: set[str] = set()
     if settings().motion_graphics_engine_enabled and graph.storyboard is not None:
@@ -217,11 +291,9 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
                 scene.visual.asset_path = result.render_path
                 scene.visual.type = "motion_gfx"
                 scene.visual.motion = "none"
-            else:
-                if not settings().ai_broll_engine_enabled:
-                    motion_handled.add(scene.id)
-                scene.visual.asset_path = None
-                scene.visual.type = "solid"
+            # A failure leaves the scene UNCLAIMED so the dispatcher can fall it
+            # down its own ladder. Marking it `solid` here made the failure
+            # terminal and produced a blank frame.
 
     threejs_handled: set[str] = set()
     if settings().threejs_visual_engine_enabled and graph.storyboard is not None:
@@ -256,13 +328,9 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
                 scene.visual.asset_path = result.render_path
                 scene.visual.type = "threejs"
                 scene.visual.motion = "none"
-            else:
-                if not settings().ai_broll_engine_enabled:
-                    threejs_handled.add(scene.id)
-                # A failed clarity-specific visual is an editorially unresolved
-                # scene, never permission to substitute unrelated stock.
-                scene.visual.asset_path = None
-                scene.visual.type = "solid"
+            # A failed clarity-specific visual is never permission to substitute
+            # unrelated stock — the dispatcher falls it to a SELF-RENDERED chart
+            # or kinetic card, which explains the same beat without a lookup.
 
     ai_handled: set[str] = set()
     if settings().ai_broll_engine_enabled and graph.storyboard is not None:
@@ -289,43 +357,39 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
                           for scene, beat in ai_jobs]
         for (scene, _), result in zip(ai_jobs, ai_results):
             graph.ai_broll_provenance.append(result)
-            ai_handled.add(scene.id)
             if result.status in ("rendered", "cache_hit") and result.render_path:
+                ai_handled.add(scene.id)
                 scene.visual.asset_path = result.render_path
                 scene.visual.type = "ai_video" if result.asset_type == "video" else "ai_image"
                 scene.visual.motion = "none" if result.asset_type == "video" else "ken_burns"
-            else:
-                scene.visual.asset_path = None
-                scene.visual.type = "solid"
+            # Unclaimed on failure — the dispatcher decides what replaces it.
 
-    if settings().ai_broll_engine_enabled:
+    # ── SINGLE PER-SCENE DISPATCHER ──────────────────────────────────────────
+    # This replaced four mutually-exclusive `return graph` branches selected by
+    # which engine flags happened to be on. That ladder meant enabling ONE engine
+    # silently disabled others: with ai_broll on, the function returned before
+    # `_resolve()` ran, and `_resolve()` is the only implementation of chart
+    # rendering, kinetic typography and the branded plate. Charts could not reach
+    # a frame no matter what the budget allocated.
+    #
+    # Now every scene the engines did not claim is dispatched individually, down
+    # ITS OWN ladder, and the feature gates above are unchanged — they still
+    # decide which engines RUN, they just no longer decide who gets a renderer.
+    engines_on = (settings().multi_source_asset_engine_enabled
+                  or settings().motion_graphics_engine_enabled
+                  or settings().threejs_visual_engine_enabled
+                  or settings().ai_broll_engine_enabled)
+    if engines_on:
         handled = set(enhanced) | motion_handled | threejs_handled | ai_handled
-        for index, scene in enumerate(graph.scenes):
-            if scene.id in handled:
-                continue
-            if _is_support_shot(scene):
-                await _resolve_support_stock(scene, index, graph)
-            else:
-                scene.visual.asset_path = None
-                scene.visual.type = "solid"
-        if settings().strict_visuals:
-            await _dedupe_real_assets(graph)
-        return graph
-
-    if settings().multi_source_asset_engine_enabled:
-        return graph
-
-    if (settings().threejs_visual_engine_enabled
-            or settings().motion_graphics_engine_enabled):
-        locally_handled = threejs_handled | motion_handled
         await asyncio.gather(
-            *[_resolve(s, i, graph, spec, by_id[s.id])
-              for i, s in enumerate(graph.scenes) if s.id not in locally_handled]
+            *[_dispatch_scene(s, i, graph, by_id[s.id])
+              for i, s in enumerate(graph.scenes) if s.id not in handled]
         )
         if settings().strict_visuals:
             await _dedupe_real_assets(graph)
         return graph
-    # 2) resolve every scene to a concrete asset (concurrently).
+
+    # 2) no engines enabled → the original single-pass resolver, untouched.
     await asyncio.gather(
         *[_resolve(s, i, graph, spec, by_id[s.id])
           for i, s in enumerate(graph.scenes)]

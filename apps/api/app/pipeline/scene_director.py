@@ -32,7 +32,9 @@ safety net under every tier.
 """
 from __future__ import annotations
 
+import copy
 import re
+import time
 from dataclasses import dataclass, field
 
 from ..config import settings
@@ -148,6 +150,30 @@ class Decision:
     concrete: bool = False        # names a specific, filmable subject
     category: str = ""
     hero: bool = False
+    specific_subject: bool = False     # Director authored a non-generic filmable phrase
+
+
+@dataclass(frozen=True)
+class DecisionMetrics:
+    """Cheap semantic-quality signals used to compare decision policies."""
+    grounded_pct: float
+    subject_match_pct: float
+    generic_real_pct: float
+    adjacent_repeat_pct: float
+    score: float
+
+
+@dataclass(frozen=True)
+class ComparisonReport:
+    existing: DecisionMetrics
+    enhanced: DecisionMetrics
+    changed_scenes: tuple[str, ...]
+    existing_ms: float
+    enhanced_ms: float
+
+    @property
+    def score_delta(self) -> float:
+        return round(self.enhanced.score - self.existing.score, 2)
 
 
 @dataclass
@@ -155,6 +181,7 @@ class MixReport:
     decisions: list[Decision]
     counts: dict[str, int] = field(default_factory=dict)
     pct: dict[str, float] = field(default_factory=dict)
+    comparison: ComparisonReport | None = None
 
     def format(self) -> str:
         parts = [f"{k} {v}" for k, v in self.counts.items() if v]
@@ -229,6 +256,12 @@ def _classify(s: Scene, niche: str) -> Decision:
         bits = ["everyday realism → real footage (AI would look fake)"]
         score = -10.0
 
+    specific_keywords = [keyword for keyword in v.broll_keywords
+                         if keyword.strip()
+                         and not _GENERIC_KEYWORDS.match(keyword.strip())]
+    specific_subject = any(
+        len(re.findall(r"[A-Za-z0-9]+", keyword)) >= 2
+        for keyword in specific_keywords)
     return Decision(
         scene_id=s.id, strategy=REAL, reason="; ".join(bits) or "literal subject",
         tier=1,
@@ -238,7 +271,26 @@ def _classify(s: Scene, niche: str) -> Decision:
         has_data=dataviz.from_scene(s) is not None,
         concrete=_is_concrete(s),
         category=matched[0] if matched else "",
+        specific_subject=specific_subject,
     )
+
+
+def _classify_enhanced(s: Scene, niche: str) -> Decision:
+    """Use precise subject phrases already authored by the Director.
+
+    The existing concreteness test requires a proper noun/year *and* a specific
+    search phrase. That can demote literal, filmable beats such as "a grocery
+    checkout" or "an oil rig" to typography. The enhanced path trusts a precise
+    multi-word b-roll phrase while retaining the generic-keyword and everyday-
+    realism safeguards. It never fetches or routes assets.
+    """
+    decision = _classify(s, niche)
+    if decision.specific_subject:
+        if not decision.concrete:
+            decision.reason = (
+                decision.reason + "; precise authored subject phrase").strip("; ")
+        decision.concrete = True
+    return decision
 
 
 _NICHE_AI_LEAN: dict[str, float] = {
@@ -253,14 +305,14 @@ def _cap(n: int, lo: float, hi: float) -> int:
 
 
 # --------------------------------------------------------------------------- #
-def decide(graph: SceneGraph, spec: VideoSpec) -> MixReport:
+def _decide_policy(graph: SceneGraph, spec: VideoSpec, classifier) -> MixReport:
     """Assign a visual tier to every scene. Mutates `scene.visual.strategy` and
     `.decision_reason`, and sets `visual.type` for the locally-rendered tiers."""
     scenes = graph.scenes
     n = len(scenes)
     if not n:
         return MixReport(decisions=[])
-    decisions = [_classify(s, graph.meta.niche) for s in scenes]
+    decisions = [classifier(s, graph.meta.niche) for s in scenes]
     by_id = {d.scene_id: d for d in decisions}
 
     # ── TIER 3 first: every important NUMBER gets its own animated chart. ──────
@@ -377,3 +429,97 @@ def decide(graph: SceneGraph, spec: VideoSpec) -> MixReport:
         counts[d.strategy] += 1
     pct = {k: round(100 * c / n, 1) for k, c in counts.items()}
     return MixReport(decisions=decisions, counts=counts, pct=pct)
+
+
+def _decide_existing(graph: SceneGraph, spec: VideoSpec) -> MixReport:
+    return _decide_policy(graph, spec, _classify)
+
+
+def _decide_enhanced(graph: SceneGraph, spec: VideoSpec) -> MixReport:
+    report = _decide_policy(graph, spec, _classify_enhanced)
+    changed = {decision.scene_id for decision in report.decisions
+               if "precise authored subject phrase" in decision.reason}
+    for scene in graph.scenes:
+        if scene.id in changed:
+            scene.visual.decision_reason += " [visual-intelligence]"
+    return report
+
+
+def measure(report: MixReport) -> DecisionMetrics:
+    """Score decision quality without resolving or rendering any assets."""
+    decisions = report.decisions
+    n = len(decisions)
+    if not n:
+        return DecisionMetrics(100.0, 100.0, 0.0, 0.0, 100.0)
+    grounded = sum(
+        decision.has_data and decision.strategy == DATAVIZ
+        or decision.force_real and decision.strategy == REAL
+        or decision.concrete and decision.strategy in (REAL, AI_IMAGE, AI_VIDEO, HYBRID)
+        or not decision.concrete and decision.strategy in (MOTION_GFX, BRANDED)
+        for decision in decisions)
+    generic_real = sum(decision.strategy == REAL and not decision.concrete
+                       for decision in decisions)
+    authored = [decision for decision in decisions if decision.specific_subject]
+    subject_matches = sum(
+        decision.strategy in (REAL, AI_IMAGE, AI_VIDEO, HYBRID)
+        for decision in authored)
+    repeats = sum(a.strategy == b.strategy
+                  for a, b in zip(decisions, decisions[1:]))
+    grounded_pct = 100.0 * grounded / n
+    generic_pct = 100.0 * generic_real / n
+    subject_match_pct = (100.0 * subject_matches / len(authored)
+                         if authored else 100.0)
+    repeat_pct = 100.0 * repeats / max(1, n - 1)
+    score = max(0.0, min(100.0,
+                        0.70 * grounded_pct + 0.30 * subject_match_pct
+                        - 0.20 * generic_pct - 0.05 * repeat_pct))
+    return DecisionMetrics(*(round(value, 2) for value in
+                             (grounded_pct, subject_match_pct, generic_pct,
+                              repeat_pct, score)))
+
+
+def compare(graph: SceneGraph, spec: VideoSpec) -> ComparisonReport:
+    """Run both pure policies on copies; never mutate the caller's graph."""
+    existing_graph = copy.deepcopy(graph)
+    enhanced_graph = copy.deepcopy(graph)
+    started = time.perf_counter()
+    existing = _decide_existing(existing_graph, spec)
+    existing_ms = (time.perf_counter() - started) * 1000.0
+    started = time.perf_counter()
+    enhanced = _decide_enhanced(enhanced_graph, spec)
+    enhanced_ms = (time.perf_counter() - started) * 1000.0
+    changed = tuple(
+        old.scene_id for old, new in zip(existing.decisions, enhanced.decisions)
+        if (old.strategy, old.tier, old.concrete) !=
+           (new.strategy, new.tier, new.concrete))
+    return ComparisonReport(
+        existing=measure(existing), enhanced=measure(enhanced),
+        changed_scenes=changed, existing_ms=round(existing_ms, 3),
+        enhanced_ms=round(enhanced_ms, 3))
+
+
+def decide(graph: SceneGraph, spec: VideoSpec) -> MixReport:
+    """Stable asset-resolver boundary; enhanced policy is opt-in and compared."""
+    if not settings().visual_intelligence_enabled:
+        return _decide_existing(graph, spec)
+    baseline_graph = copy.deepcopy(graph)
+    started = time.perf_counter()
+    baseline = _decide_existing(baseline_graph, spec)
+    baseline_ms = (time.perf_counter() - started) * 1000.0
+    started = time.perf_counter()
+    enhanced = _decide_enhanced(graph, spec)
+    enhanced_ms = (time.perf_counter() - started) * 1000.0
+    changed = tuple(
+        old.scene_id for old, new in zip(baseline.decisions, enhanced.decisions)
+        if (old.strategy, old.tier, old.concrete) !=
+           (new.strategy, new.tier, new.concrete))
+    enhanced.comparison = ComparisonReport(
+        existing=measure(baseline), enhanced=measure(enhanced),
+        changed_scenes=changed, existing_ms=round(baseline_ms, 3),
+        enhanced_ms=round(enhanced_ms, 3))
+    print("[visual-intelligence] existing "
+          f"{enhanced.comparison.existing.score:.1f} → enhanced "
+          f"{enhanced.comparison.enhanced.score:.1f} "
+          f"(Δ {enhanced.comparison.score_delta:+.1f}; "
+          f"{len(changed)} scene(s) changed)", flush=True)
+    return enhanced

@@ -268,6 +268,11 @@ class Settings(BaseSettings):
     scene_grounding: bool = False               # force per-sentence exact intent
     narration_to_visual_lock: bool = False      # ban generic/repeat; prefer exact
 
+    # Phase 1 Visual Intelligence comparison. OFF preserves the established
+    # scene_director policy exactly; ON runs the enhanced policy and records a
+    # side-by-side semantic score before the asset resolver sees the result.
+    visual_intelligence_enabled: bool = False
+
     @property
     def strict_visuals(self) -> bool:
         """True when the narration→visual grounding lock is active (any of the

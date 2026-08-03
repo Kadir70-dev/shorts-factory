@@ -324,8 +324,12 @@ def _decide_from_budget(graph: SceneGraph) -> MixReport:
         decisions.append(Decision(
             scene_id=s.id, strategy=strategy,
             reason=s.visual.decision_reason or f"visual budget → {ch}",
-            tier=1, ai_eligible=(ch == "ai_broll"), force_real=(ch in ("official", "stock")),
+            tier=1, ai_eligible=(ch == "ai_broll"),
+            force_real=(ch in ("official", "stock")),
             score=0.0, has_data=bool(s.data and s.data.valid()), concrete=True,
+            # generate_semantic() reads this to weight beat confidence; the budget
+            # only assigns a channel to a beat it judged specific enough for it.
+            specific_subject=True,
         ))
     n = len(decisions) or 1
     counts: dict[str, int] = {}
@@ -540,8 +544,11 @@ def decide(graph: SceneGraph, spec: VideoSpec) -> MixReport:
     # re-deriving here silently overwrote the allocation, so a correctly-planned
     # 6-channel mix still rendered as 39% type / 61% charts.
     if any(s.visual.budget_channel for s in graph.scenes):
-        return _decide_from_budget(graph)
-    if not settings().visual_intelligence_enabled:
+        # Falls through to the shared tail below — an early return here skipped
+        # storyboard generation, which is what starved the Three.js, official and
+        # AI-B-roll resolvers of the beat metadata they gate on.
+        report = _decide_from_budget(graph)
+    elif not settings().visual_intelligence_enabled:
         report = _decide_existing(graph, spec)
     else:
         baseline_graph = copy.deepcopy(graph)

@@ -8,7 +8,9 @@ from __future__ import annotations
 import asyncio
 import base64
 import hashlib
+import json
 import re
+import time
 from datetime import date
 from pathlib import Path
 from urllib.parse import quote
@@ -17,6 +19,13 @@ import httpx
 
 from ..config import settings
 from ..schemas.scene import AssetCandidate, StoryboardScene
+
+# Wikimedia enforces its robot policy on the anonymous API: a request without a
+# descriptive User-Agent is answered 403 (phabricator T400119), which silently
+# emptied the official/public-domain tier for every beat. Contact string per
+# https://w.wiki/4wJS.
+WIKIMEDIA_UA = ("shorts-factory/1.0 (https://github.com/Kadir70-dev/shorts-factory; "
+                "kadirab1999@gmail.com) httpx")
 
 
 async def multi_source_candidates(provider: str, query: str,
@@ -50,7 +59,8 @@ async def multi_source_candidates(provider: str, query: str,
             originality=.65, mobile_readability=.8)
 
     if provider == "wikimedia_commons":
-        async with httpx.AsyncClient(timeout=30) as client:
+        async with httpx.AsyncClient(timeout=30,
+                                     headers={"User-Agent": WIKIMEDIA_UA}) as client:
             response = await client.get("https://commons.wikimedia.org/w/api.php",
                 params={"action": "query", "generator": "search", "gsrsearch": query,
                         "gsrnamespace": 6, "gsrlimit": 10, "prop": "imageinfo",
@@ -123,20 +133,67 @@ _SEARCH_LOCKS: dict[str, asyncio.Lock] = {}
 _DL_LOCKS: dict[str, asyncio.Lock] = {}
 
 
+# Stock-library results churn slowly — a query answered today answers the same
+# tomorrow. The in-process memo only ever survived one render, so every re-run
+# paid the same API round-trips again. A day on disk is long enough to make
+# re-renders free and short enough that new uploads still surface.
+_SEARCH_TTL_SECONDS = 86_400
+
+
+def _search_cache_file(key: str) -> Path:
+    path = settings().data_dir / "cache" / "provider_search"
+    path.mkdir(parents=True, exist_ok=True)
+    return path / f"{hashlib.sha1(key.encode()).hexdigest()}.json"
+
+
+def _search_from_disk(key: str) -> list[str] | None:
+    entry = _search_cache_file(key)
+    try:
+        payload = json.loads(entry.read_text())
+    except (OSError, ValueError):
+        return None
+    if time.time() - float(payload.get("fetched_at", 0)) > _SEARCH_TTL_SECONDS:
+        return None
+    urls = payload.get("urls")
+    return urls if isinstance(urls, list) else None
+
+
+def _search_to_disk(key: str, urls: list[str]) -> None:
+    entry = _search_cache_file(key)
+    tmp = entry.with_suffix(".json.tmp")
+    try:
+        tmp.write_text(json.dumps({"key": key, "fetched_at": time.time(),
+                                   "urls": urls}))
+        tmp.replace(entry)                  # atomic: no torn read
+    except OSError as exc:                  # a cache miss is always survivable
+        tmp.unlink(missing_ok=True)
+        _log(f"search cache store failed ({type(exc).__name__}): {exc}")
+
+
 async def _cached_search(key: str, fetch) -> list[str]:
-    """Memoise a candidate-URL list per query for the lifetime of the process.
-    A per-key lock collapses concurrent identical searches into one API call."""
+    """Memoise a candidate-URL list per query, in process and on disk.
+
+    A per-key lock collapses concurrent identical searches into one API call.
+    An empty result is NOT persisted: a provider outage would otherwise be
+    cached as "this query has no assets" for a full day.
+    """
     if key in _SEARCH_CACHE:
         return _SEARCH_CACHE[key]
     lock = _SEARCH_LOCKS.setdefault(key, asyncio.Lock())
     async with lock:
         if key in _SEARCH_CACHE:
             return _SEARCH_CACHE[key]
+        stored = _search_from_disk(key)
+        if stored is not None:
+            _SEARCH_CACHE[key] = stored
+            return stored
         try:
             urls = await fetch()
         except Exception:
             urls = []
         _SEARCH_CACHE[key] = urls
+        if urls:
+            _search_to_disk(key, urls)
         return urls
 
 
@@ -1091,7 +1148,11 @@ async def _download(url: str, ext: str) -> str:
     async with lock:
         if name.exists():                       # won the race while waiting
             return str(name)
-        async with httpx.AsyncClient(timeout=180, follow_redirects=True) as c:
+        # upload.wikimedia.org enforces the same robot policy as the API, so a
+        # candidate could rank 0.96 and still never reach disk: the search
+        # succeeded, the fetch 403'd, and the beat silently fell back.
+        async with httpx.AsyncClient(timeout=180, follow_redirects=True,
+                                     headers={"User-Agent": WIKIMEDIA_UA}) as c:
             r = await c.get(url)
             r.raise_for_status()
             tmp = name.with_name(name.name + ".part")

@@ -5,7 +5,9 @@ composition, motion graphics and branding remain owned by their existing stages.
 """
 from __future__ import annotations
 
+import asyncio
 import hashlib
+import os
 import re
 import shutil
 from collections.abc import Awaitable, Callable
@@ -17,10 +19,22 @@ from ..config import settings
 from ..schemas.scene import (AssetCandidate, AssetResolution, SceneGraph,
                              StoryboardScene)
 
+# Only providers with a live adapter. government_public_domain, sec_regulatory
+# and company_ir sat at the FRONT of this chain and returned [] on every call —
+# there is no universal media API behind them that can supply explicit licence
+# metadata, so they were placeholders. Each cost a scheduled discovery job per
+# beat (3 providers x N beats of pure latency) and, worse, made the priority
+# order a lie: the first three entries could never win. They come back when an
+# institution-specific connector exists to fill them.
 SOURCE_PRIORITY = (
-    "government_public_domain", "sec_regulatory", "company_ir",
     "wikimedia_commons", "pexels", "pixabay", "ai_generation",
 )
+
+# What the compositor can actually put on screen. A PDF ranks and downloads
+# perfectly well and then fails at the ffmpeg stage, so it is rejected at
+# selection time rather than after spending the bandwidth.
+RENDERABLE_SUFFIXES = {".mp4", ".mov", ".webm", ".jpg", ".jpeg", ".png", ".webp"}
+RENDERABLE_TYPES = {"image", "video"}
 SAFE_LICENSES = {
     "public domain", "us government work", "cc0", "cc by 2.0", "cc by 3.0",
     "cc by 4.0", "cc by-sa 2.0", "cc by-sa 3.0", "cc by-sa 4.0",
@@ -39,18 +53,52 @@ def source_priority() -> tuple[str, ...]:
     return allowed + missing
 
 
+# Fashion nouns an archive actually indexes: material, process, facility and
+# supply-chain stage. A query of "Zara two weeks store data" finds nothing in
+# Wikimedia; "Zara garment factory sewing Spain" finds the real photograph.
+_FASHION_SUBJECT = re.compile(
+    r"\b(cotton|denim|leather|wool|silk|linen|cashmere|polyester|nylon|viscose|"
+    r"yarn|fabric|textile|dye|dyed|undyed|greige|loom|weaving|knitting|"
+    r"stitch\w*|sewing|seam|pattern|cutting|tailor\w*|atelier|workshop|factory|"
+    r"mill|tannery|warehouse|distribution|container|freight|shipping|port|"
+    r"logistics|sourcing|batch|sample|prototype|runway|collection|boutique|"
+    r"retail|store|garment|apparel|shoe|sneaker|inspection)\b", re.I)
+
+
 def build_query(beat: StoryboardScene) -> str:
     """Build a subject-first query from structured facts, not generic themes."""
     fields: list[str] = [beat.company, beat.primary_entity]
     fields.extend(beat.secondary_entities[:2])
     fields.extend([beat.location, str(beat.year or "")])
     fields.extend(beat.financial_numbers[:2])
-    # The narration carries the event/action that Phase 2 does not model separately.
-    event = " ".join(re.findall(r"[A-Za-z][\w'-]+", beat.narration)[:12])
+    # Concrete subject nouns ahead of the narration text, so the archive search
+    # keys off the thing being filmed rather than the sentence's grammar.
+    fields.extend(list(dict.fromkeys(
+        m.group(0).lower() for m in
+        _FASHION_SUBJECT.finditer(f"{beat.narration} {beat.visual_objective}")))[:4])
+    # The narration carries the event/action that Phase 2 does not model
+    # separately. Six words, not twelve: `narration_match` scores an archive hit
+    # by how much of THIS query it covers, so every extra grammar word lowered
+    # the score of a perfectly good photograph until it fell under the floor.
+    event = " ".join(re.findall(r"[A-Za-z][\w'-]+", beat.narration)[:6])
     fields.append(event)
     seen: set[str] = set()
     return " ".join(value.strip() for value in fields
                     if value and not (value.lower() in seen or seen.add(value.lower())))
+
+
+def subject_query(beat: StoryboardScene) -> str:
+    """Nouns only — the retry query. Brand/place/year plus the physical subject
+    (material, process, facility, supply-chain stage), with no narration grammar
+    to dilute the match score."""
+    fields = [beat.company, beat.primary_entity, beat.location,
+              str(beat.year or "")]
+    fields.extend(list(dict.fromkeys(
+        m.group(0).lower() for m in
+        _FASHION_SUBJECT.finditer(f"{beat.narration} {beat.visual_objective}")))[:3])
+    seen: set[str] = set()
+    return " ".join(v.strip() for v in fields
+                    if v and not (v.lower() in seen or seen.add(v.lower())))
 
 
 def legal(candidate: AssetCandidate) -> bool:
@@ -91,8 +139,24 @@ def cache_path(candidate: AssetCandidate, cache_dir: Path) -> Path:
     return cache_dir / f"asset_{digest}{suffix}"
 
 
+def renderable(candidate: AssetCandidate) -> bool:
+    """Can the compositor put this on screen at all?
+
+    Checked BEFORE the download so a PDF costs nothing. The URL suffix is the
+    only signal available pre-fetch; when it carries no extension the declared
+    asset_type decides, which keeps API-served images (no suffix in the URL)
+    reachable while still excluding anything typed as a document.
+    """
+    suffix = Path(urlparse(candidate.source_url).path).suffix.lower()
+    if suffix:
+        return suffix in RENDERABLE_SUFFIXES
+    return candidate.asset_type in RENDERABLE_TYPES
+
+
 async def cache(candidate: AssetCandidate, cache_dir: Path,
                 downloader: Downloader) -> Path | None:
+    if not renderable(candidate):
+        return None
     target = cache_path(candidate, cache_dir)
     if target.is_file() and target.stat().st_size:
         return target
@@ -105,7 +169,15 @@ async def cache(candidate: AssetCandidate, cache_dir: Path,
         target.unlink(missing_ok=True)
         return None
     if downloaded != target:
-        shutil.copy2(downloaded, target)
+        # The provider cache already holds these exact bytes under sha1(url);
+        # copying them again stored every asset twice. A hard link gives the
+        # second name for free and cannot drift from the first. copy2 remains
+        # the fallback for a cache on a different filesystem.
+        try:
+            target.unlink(missing_ok=True)
+            os.link(downloaded, target)
+        except OSError:
+            shutil.copy2(downloaded, target)
     return target
 
 
@@ -153,6 +225,30 @@ async def resolve(graph: SceneGraph, fetcher: Fetcher, downloader: Downloader,
             all_candidates.extend(found)
         ordered = rank(all_candidates)
         selected = next((c for c in ordered if c.source_url not in used_urls), None)
+        # ONE retry per beat, nouns only. An archive that holds the right
+        # photograph still answers "nothing" to a sentence-shaped query; this is
+        # the difference between an official asset and falling through the floor.
+        retry = subject_query(beat)
+        if selected is None and retry and retry != query:
+            # The providers are independent HTTP calls, so the retry ran N
+            # round-trips back to back for no reason. Still exactly ONE retry
+            # per beat — the fan-out is across providers, not extra attempts.
+            async def retry_one(provider: str) -> list[AssetCandidate]:
+                try:
+                    return await fetcher(provider, retry, beat)
+                except Exception:  # provider isolation, as above
+                    return []
+            for found in await asyncio.gather(
+                    *(retry_one(provider) for provider in search_providers)):
+                for candidate in found:
+                    candidate.scene_id = beat.scene_id
+                    candidate.retrieval_date = candidate.retrieval_date or today
+                all_candidates.extend(found)
+            ordered = rank(all_candidates)
+            selected = next((c for c in ordered if c.source_url not in used_urls),
+                            None)
+            if selected is not None:
+                query = f"{query} ⟲ {retry}"
         local = await cache(selected, root, downloader) if selected else None
         if selected and local:
             selected.local_cache_path = str(local)

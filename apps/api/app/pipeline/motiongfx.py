@@ -23,14 +23,47 @@ cost nothing beyond CPU and depend on nothing beyond ffmpeg.
 """
 from __future__ import annotations
 
+import hashlib
+import json
 import math
 import random
+import shutil
 from pathlib import Path
 
 from ..brand import text as tx
 from ..brand.raster import Canvas, ease_out_cubic, write_video
 from ..brand.theme import BrandTheme
 from ..config import settings
+from .util import visual_cache_path, visual_cache_store
+
+# Bump when the drawing code changes shape: it namespaces every cache entry, so
+# old frames can never be served for new geometry.
+_CACHE_VERSION = 1
+
+
+def cache_key(form: str, theme: BrandTheme, w: int, h: int, fps: int,
+              duration: float, seed: int, treatment: str, **content: object) -> str:
+    """Everything the drawn pixels depend on.
+
+    `seed` is part of the key because the treatments are driven by a seeded RNG:
+    two beats with the same text and a different seed are deliberately different
+    images, and must not collide.
+    """
+    body = json.dumps({
+        "version": _CACHE_VERSION, "form": form, "brand": theme.fingerprint,
+        "w": w, "h": h, "fps": fps, "duration": round(duration, 4),
+        "seed": seed, "treatment": treatment, **content,
+    }, sort_keys=True, separators=(",", ":"), default=str)
+    return hashlib.sha256(body.encode()).hexdigest()
+
+
+def _cached(key: str, out: Path) -> Path | None:
+    hit = visual_cache_path("motiongfx", key)
+    if hit.is_file() and hit.stat().st_size > 1024:
+        out.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(hit, out)
+        return out
+    return None
 
 # Background treatments. Rotated per beat so consecutive graphic scenes in one
 # short don't share a look.
@@ -121,6 +154,11 @@ async def plate(theme: BrandTheme, out: Path, w: int, h: int, fps: int,
                 duration: float, seed: int = 0, treatment: str = "") -> Path:
     """TIER 4 — a branded background with no message. The floor a beat lands on
     instead of unrelated stock footage."""
+    key = cache_key("plate", theme, w, h, fps, duration, seed, treatment)
+    hit = _cached(key, out)
+    if hit is not None:
+        return hit
+
     rng = random.Random(seed)
     kind = brand_treatment(theme, rng, treatment)
     base = _bg_base(theme, w, h)
@@ -132,7 +170,9 @@ async def plate(theme: BrandTheme, out: Path, w: int, h: int, fps: int,
             _draw_treatment(c, theme, kind, f / fps, w, h, rng)
             yield c
 
-    return await write_video(gen(), w, h, fps, out)
+    result = await write_video(gen(), w, h, fps, out)
+    visual_cache_store(visual_cache_path("motiongfx", key), result)
+    return result
 
 
 async def kinetic(theme: BrandTheme, out: Path, w: int, h: int, fps: int,
@@ -144,6 +184,12 @@ async def kinetic(theme: BrandTheme, out: Path, w: int, h: int, fps: int,
     while the second is still arriving, which is what makes kinetic type feel
     authored instead of like a slide.
     """
+    key = cache_key("kinetic", theme, w, h, fps, duration, seed, treatment,
+                    headline=headline, kicker=kicker, source=source)
+    hit = _cached(key, out)
+    if hit is not None:
+        return hit
+
     rng = random.Random(seed)
     kind = brand_treatment(theme, rng, treatment)
     base = _bg_base(theme, w, h)
@@ -197,5 +243,7 @@ async def kinetic(theme: BrandTheme, out: Path, w: int, h: int, fps: int,
             y=str(rule_y + int(h * 0.045)),
             alpha=tx.fade_alpha(build * 0.6, duration + 1.0, fade=0.3), shadow=2))
 
-    return await write_video(gen(), w, h, fps, out,
-                             vf=",".join(filters) if filters else None)
+    result = await write_video(gen(), w, h, fps, out,
+                               vf=",".join(filters) if filters else None)
+    visual_cache_store(visual_cache_path("motiongfx", key), result)
+    return result

@@ -236,6 +236,13 @@ def write_png(canvas: Canvas, out: Path) -> Path:
     return out
 
 
+# Drawing a frame is pure numpy — a synchronous CPU burn with no await in it.
+# Run unbounded and concurrent chart beats simply oversubscribe the cores and
+# finish no sooner; 2 keeps both a generator and an encoder busy without pushing
+# a 4 GB box into swap, which is the failure mode that actually hurts.
+_CPU_RENDER = asyncio.Semaphore(2)
+
+
 async def write_video(frames, width: int, height: int, fps: int, out: Path,
                       alpha: bool = False, vf: str | None = None) -> Path:
     """Stream an iterable of RGBA canvases/arrays straight into ffmpeg.
@@ -247,7 +254,17 @@ async def write_video(frames, width: int, height: int, fps: int, out: Path,
     `vf` applies a filter chain in the SAME pass — the chart engine uses it to
     composite drawtext labels, which avoids a second full re-encode per chart beat
     across thousands of shorts.
+
+    Frames are pulled on a worker thread. The generator is numpy all the way
+    down, so iterating it inline stalled the whole event loop for the length of
+    the chart — every other pipeline stage froze while a chart drew.
     """
+    async with _CPU_RENDER:
+        return await _write_video(frames, width, height, fps, out, alpha, vf)
+
+
+async def _write_video(frames, width: int, height: int, fps: int, out: Path,
+                       alpha: bool, vf: str | None) -> Path:
     out.parent.mkdir(parents=True, exist_ok=True)
     if alpha:
         codec = ["-c:v", "qtrle", "-pix_fmt", "argb"]
@@ -262,9 +279,20 @@ async def write_video(frames, width: int, height: int, fps: int, out: Path,
         "-y", str(out),
         stdin=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
     )
+    def _next_buffer(iterator):
+        """One frame, drawn and serialised on the worker thread."""
+        frame = next(iterator, None)
+        if frame is None:
+            return None
+        return (frame.to_rgba().tobytes() if isinstance(frame, Canvas)
+                else frame.tobytes())
+
     try:
-        for f in frames:
-            buf = f.to_rgba().tobytes() if isinstance(f, Canvas) else f.tobytes()
+        iterator = iter(frames)
+        while True:
+            buf = await asyncio.to_thread(_next_buffer, iterator)
+            if buf is None:
+                break
             proc.stdin.write(buf)
             await proc.stdin.drain()
         proc.stdin.close()

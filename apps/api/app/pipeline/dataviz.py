@@ -23,8 +23,11 @@ Honesty rules baked in:
 """
 from __future__ import annotations
 
+import hashlib
+import json
 import math
 import re
+import shutil
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -33,6 +36,11 @@ from ..brand.raster import (Canvas, ease_in_out, ease_out_cubic, ease_out_expo,
                             write_video)
 from ..brand.theme import BrandTheme
 from ..schemas.scene import DataPoint, DataViz, Scene
+from .util import visual_cache_path, visual_cache_store
+
+# Bump when the drawing code changes shape: it namespaces every cache entry, so
+# old frames can never be served for new geometry.
+_CACHE_VERSION = 1
 
 # Chart forms the engine can render, in the order the auto-picker prefers them.
 KINDS = ["counter", "bar_compare", "line_trend", "delta", "donut", "meter"]
@@ -578,6 +586,24 @@ def _labels(theme: BrandTheme, lay: Layout, viz: DataViz, kind: str,
 # --------------------------------------------------------------------------- #
 # Entry point
 # --------------------------------------------------------------------------- #
+def cache_key(viz: DataViz, theme: BrandTheme, kind: str, width: int,
+              height: int, fps: int, duration: float) -> str:
+    """Everything the drawn pixels depend on, and nothing else.
+
+    A chart is a pure function of its data, its geometry and the brand. Re-runs
+    of the same Short redraw byte-identical frames, so the key is the content
+    itself rather than the scene it happens to sit in — the same figure reused
+    across two shorts hits the same entry.
+    """
+    body = json.dumps({
+        "version": _CACHE_VERSION, "kind": kind,
+        "viz": viz.model_dump(mode="json"),
+        "width": width, "height": height, "fps": fps,
+        "duration": round(duration, 4), "brand": theme.fingerprint,
+    }, sort_keys=True, separators=(",", ":"), default=str)
+    return hashlib.sha256(body.encode()).hexdigest()
+
+
 async def render(viz: DataViz, theme: BrandTheme, out: Path, width: int,
                  height: int, fps: int, duration: float) -> Path:
     """Render one chart to an MP4 the renderer can drop in as a scene background.
@@ -589,11 +615,21 @@ async def render(viz: DataViz, theme: BrandTheme, out: Path, width: int,
     if not viz.valid():
         raise ValueError("refusing to render a chart with no real data")
     kind = viz.kind if viz.kind in _GENERATORS else auto_kind(viz)
+
+    cached = visual_cache_path(
+        "dataviz", cache_key(viz, theme, kind, width, height, fps, duration))
+    if cached.is_file() and cached.stat().st_size > 1024:
+        out.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(cached, out)
+        return out
+
     lay = _layout(theme, width, height)
     frames = max(1, int(round(duration * fps)))
     gen = _GENERATORS[kind](theme, lay, viz, frames, fps)
     vf = ",".join(_labels(theme, lay, viz, kind, duration)) or None
-    return await write_video(gen, width, height, fps, out, vf=vf)
+    result = await write_video(gen, width, height, fps, out, vf=vf)
+    visual_cache_store(cached, result)
+    return result
 
 
 def summarize(viz: DataViz) -> str:

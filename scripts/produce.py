@@ -298,6 +298,16 @@ async def run(args) -> int:
     rep = qa.analyze(graph, str(out_mp4), render_seconds=render_s,
                      ram_peak_mb=peak_rss, min_free_mb=min_free,
                      consistency=consistency, timed_out=timed_out)
+    # PERSIST the audit. The packaging step (finalize_short.py) used to re-run
+    # this entire analysis on the loudnormed file — ten more full decodes of the
+    # same frames. Packaging stream-copies the video, so every video check here
+    # already describes the delivered bitstream exactly; writing the report lets
+    # packaging reuse it and re-probe only what loudnorm can actually change.
+    # These are also the ONLY trustworthy RAM/wall-time metrics: they come from
+    # the process that did the rendering.
+    out_dir.joinpath("qa_report.json").write_text(rep.model_dump_json(indent=2))
+    out_dir.joinpath("qa_report.txt").write_text(qa.format_report(rep))
+
     ai_stills = len({l.asset_path for s in graph.scenes for l in s.visual.layers
                      if l.kind == "ai_image" and l.asset_path})
 

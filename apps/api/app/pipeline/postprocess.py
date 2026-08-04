@@ -21,12 +21,18 @@ async def finalize(graph: SceneGraph, raw_mp4: str, channel: ChannelConfig) -> d
     final = work / "final.mp4"
     thumb = work / "thumbnail.jpg"
 
-    # loudnorm + compatibility re-encode
-    finish = ["-i", raw_mp4, "-af", "loudnorm=I=-14:TP=-1.5:LRA=11",
-              "-c:v", "libx264", "-profile:v", "main", "-pix_fmt", "yuv420p"]
+    # loudnorm — an AUDIO filter, so the video is STREAM-COPIED.
+    #
+    # This pass used to re-encode the whole video with libx264 in order to apply
+    # an audio filter. That cost a full re-compress (38s on a 45s short) and,
+    # worse, made the delivered file a THIRD lossy generation on top of the scene
+    # clips and the finish pass. The H.264 export contract it was enforcing here
+    # (Main profile, yuv420p, CFR at graph.fps) is now set where the video is
+    # actually encoded — render_ffmpeg._finish — so copying preserves it exactly
+    # and the delivered frames are bit-identical to the rendered master.
+    finish = ["-i", raw_mp4, "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:v", "copy"]
     if settings().production_optimizer_enabled:
-        finish += ["-fps_mode", "cfr", "-r", str(graph.fps),
-                   "-c:a", "aac", "-profile:a", "aac_low", "-ar", "48000",
+        finish += ["-c:a", "aac", "-profile:a", "aac_low", "-ar", "48000",
                    "-b:a", "192k", "-avoid_negative_ts", "make_zero"]
     else:
         finish += ["-c:a", "aac", "-b:a", "192k"]

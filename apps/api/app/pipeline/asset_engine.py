@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
+import json
 import os
 import re
 import shutil
@@ -181,12 +182,52 @@ async def cache(candidate: AssetCandidate, cache_dir: Path,
     return target
 
 
+def intent_key(beat: StoryboardScene) -> str:
+    """What this beat is ASKING for, independent of which asset won.
+
+    Both queries plus the owning scene — exactly the inputs that decide what is
+    searched for. Unchanged intent means the licensed asset already chosen is
+    still the right one, so re-running the search would spend the network to
+    arrive back where it started.
+    """
+    body = json.dumps({"query": build_query(beat), "retry": subject_query(beat),
+                       "scene": beat.source_scene_id},
+                      sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(body.encode()).hexdigest()
+
+
+def _reuse_candidate(record: dict) -> AssetCandidate | None:
+    """Rebuild the recorded selection, licence and attribution intact.
+
+    Every provenance field is restored verbatim from the manifest — nothing is
+    re-derived or defaulted — so a reused asset carries exactly the licence,
+    attribution requirement, institution and retrieval date it was originally
+    accepted under.
+    """
+    local = record.get("local_cache_path", "")
+    if not local or not Path(local).is_file() or not Path(local).stat().st_size:
+        return None
+    try:
+        return AssetCandidate.model_validate(record["candidate"])
+    except (KeyError, ValueError):
+        return None
+
+
 async def resolve(graph: SceneGraph, fetcher: Fetcher, downloader: Downloader,
                   cache_dir: Path | None = None,
                   providers: tuple[str, ...] | None = None) -> dict[str, str]:
     """Resolve semantic beats and return source-scene paths for broll.py."""
     if graph.storyboard is None:
         return {}
+    manifest_path = (settings().data_dir / "jobs" / graph.meta.video_id
+                     / "asset_manifest.json")
+    prior_assets: dict[str, dict] = {}
+    try:
+        prior_assets = json.loads(manifest_path.read_text()).get("beats", {})
+    except (OSError, ValueError):
+        prior_assets = {}
+    asset_records: dict[str, dict] = {}
+    reused_count = 0
     root = cache_dir or settings().data_dir / "cache" / "multi_source"
     used_urls: set[str] = set()
     resolved_paths: dict[str, str] = {}
@@ -210,6 +251,26 @@ async def resolve(graph: SceneGraph, fetcher: Fetcher, downloader: Downloader,
     for beat in graph.storyboard.scenes:
         query = build_query(beat)
         all_candidates: list[AssetCandidate] = []
+
+        # Unchanged intent + the licensed file still on disk = keep it. This
+        # skips discovery entirely, which is the whole cost of this stage.
+        key = intent_key(beat)
+        record = prior_assets.get(beat.scene_id, {})
+        if record.get("intent") == key and record.get("url") not in used_urls:
+            reused = _reuse_candidate(record)
+            if reused is not None:
+                used_urls.add(reused.source_url)
+                resolved_paths.setdefault(beat.source_scene_id,
+                                          reused.local_cache_path)
+                asset_records[beat.scene_id] = record
+                reused_count += 1
+                provenance.append(AssetResolution(
+                    scene_id=beat.scene_id, query=record.get("query", query),
+                    status="resolved", selected_source_url=reused.source_url,
+                    candidates=[reused],
+                    comparison="reused previously selected licensed asset"))
+                continue
+
         for provider in search_providers:
             if settings().production_optimizer_enabled:
                 found = discovered[(beat.scene_id, provider)]
@@ -255,6 +316,10 @@ async def resolve(graph: SceneGraph, fetcher: Fetcher, downloader: Downloader,
             used_urls.add(selected.source_url)
             resolved_paths.setdefault(beat.source_scene_id, str(local))
             status, selected_url = "resolved", selected.source_url
+            asset_records[beat.scene_id] = {
+                "intent": key, "query": query, "url": selected.source_url,
+                "local_cache_path": str(local),
+                "candidate": selected.model_dump(mode="json")}
         else:
             status = "ai_requested" if beat.ai_broll_candidate else "manual_review"
             selected_url = None
@@ -271,4 +336,12 @@ async def resolve(graph: SceneGraph, fetcher: Fetcher, downloader: Downloader,
                         if selected_url else
                         "enhanced refused old generic-stock fallback")))
     graph.asset_provenance = provenance
+    try:
+        manifest_path.parent.mkdir(parents=True, exist_ok=True)
+        manifest_path.write_text(json.dumps(
+            {"video_id": graph.meta.video_id, "beats": asset_records}, indent=2))
+    except OSError as exc:            # a lost manifest only costs a re-search
+        print(f"[assets] could not write manifest: {exc}", flush=True)
+    print(f"[assets] {reused_count} reused, "
+          f"{len(asset_records) - reused_count} newly resolved", flush=True)
     return resolved_paths

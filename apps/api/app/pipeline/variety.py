@@ -29,8 +29,10 @@ short that looks like it belongs to a different channel.
 """
 from __future__ import annotations
 
+import json
 import random
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
+from pathlib import Path
 
 from .. import state
 from ..brand.theme import BrandTheme
@@ -138,6 +140,35 @@ def _pick(rng: random.Random, options: list[str], channel_id: str,
     weights = state.cooldown_weights(options, history)
     return rng.choices(options, weights=[max(1e-4, weights[o]) for o in options],
                        k=1)[0]
+
+
+def freeze(path: Path, p: VarietyPlan) -> None:
+    """Pin this job's dice roll to disk."""
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(asdict(p), indent=2))
+    except OSError as exc:            # a lost plan only costs a re-roll
+        print(f"[variety] could not freeze plan: {exc}", flush=True)
+
+
+def thaw(path: Path) -> VarietyPlan | None:
+    """The pinned plan for an existing job, or None to draw a fresh one.
+
+    Re-rendering a job must not re-roll its creative dice. `_pick` rotates
+    through the channel ledger so options take turns ACROSS videos, which means
+    a second run of the SAME video got different cuts, camera, grade and zoom —
+    every scene clip then had to be rebuilt because the render context had
+    legitimately changed. Restoring the plan also leaves the ledger untouched,
+    so a re-render no longer consumes a rotation slot meant for the next video.
+    """
+    try:
+        data = json.loads(path.read_text())
+    except (OSError, ValueError):
+        return None
+    try:
+        return VarietyPlan(**data)
+    except TypeError:                 # plan shape changed under an old job
+        return None
 
 
 def plan(video_id: str, channel_id: str, theme: BrandTheme,

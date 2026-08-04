@@ -175,11 +175,21 @@ async def run(args) -> int:
             forced=graph.meta.structure_id or preset.get("story_structure", ""),
             record=not graph.meta.structure_id)
         graph.meta.structure_id = choice.id
-        plan = variety.plan(graph.meta.video_id, graph.meta.channel_id, theme,
-                            choice)
+        # FROZEN per job. Re-rendering must not re-roll the dice: a different
+        # grade/cuts/camera/zoom changes the render context and forces every
+        # scene clip to be rebuilt even when nothing about the scene changed.
+        plan_path = (settings().data_dir / "jobs" / graph.meta.video_id
+                     / "variety.json")
+        plan = variety.thaw(plan_path)
+        frozen = plan is not None
+        if plan is None:
+            plan = variety.plan(graph.meta.video_id, graph.meta.channel_id,
+                                theme, choice)
+            variety.freeze(plan_path, plan)
         variety.apply(graph, plan)
         print(f"   structure: {choice.structure.name} ({len(graph.scenes)} scenes)")
-        print(f"   variety  : {plan.summary()}")
+        print(f"   variety  : {plan.summary()}"
+              f"{'  [frozen]' if frozen else ''}")
 
         # character memory + per-scene LAYER PLAN (nominates the single hero beat).
         t = time.perf_counter()

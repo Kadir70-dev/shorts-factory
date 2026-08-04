@@ -22,6 +22,9 @@ and preserves its exact duration. Breaking that rule desyncs the whole video.
 from __future__ import annotations
 
 import asyncio
+import hashlib
+import json
+import subprocess
 from pathlib import Path
 
 from ..brand import brand_manager, theme_for
@@ -30,6 +33,7 @@ from ..brand.theme import BrandTheme
 from ..config import settings
 from ..schemas.scene import Scene, SceneGraph
 from .compliance import policy as compliance_policy
+from .production_optimizer import changed_scenes, scene_fingerprint
 
 # Locally-rendered visuals already carry the brand palette and their own motion.
 # Grading them again shifts the colours away from the palette they were drawn in,
@@ -65,6 +69,73 @@ _DELIVERY = ("-preset", "veryfast", "-crf", "20", "-profile:v", "main")
 _HOLD = "loop=loop=-1:size=1:start=0"
 
 
+# --------------------------------------------------------------------------- #
+# Incremental scene rendering
+#
+# A scene clip is a pure function of the scene and the render context, so an
+# edit that touches one beat has no effect on the other twelve — but every run
+# rebuilt all of them anyway. The manifest records what each clip was made from
+# and what it hashed to; a clip is reused only when the fingerprint AND the
+# bytes AND ffprobe all agree.
+#
+# The fingerprint alone is NOT sufficient. It describes the INPUTS, so it still
+# matches after a run is killed mid-encode and leaves a truncated clip on disk.
+# The checksum catches a changed file and ffprobe catches a file that is
+# unreadable or the wrong length — the two failure modes a fingerprint cannot
+# see. Anything that fails re-renders; a stale artifact is never trusted.
+# --------------------------------------------------------------------------- #
+MANIFEST_VERSION = 1
+
+
+def _render_context(graph: SceneGraph, theme: BrandTheme, grade, zoom: float) -> str:
+    """Everything outside the scene that changes how every clip is drawn.
+
+    Folded into the per-scene fingerprint, so re-branding or changing geometry
+    invalidates the whole set exactly as it should.
+    """
+    return json.dumps({
+        "version": MANIFEST_VERSION, "brand": theme.fingerprint,
+        "w": graph.width, "h": graph.height, "fps": graph.fps,
+        "grade": grade.ffmpeg(), "zoom": round(zoom, 6),
+        "variety": graph.variety, "encoder": list(_INTERMEDIATE),
+        "layered": settings().layered_render,
+        "brand_identity": settings().brand_identity_enabled,
+    }, sort_keys=True, separators=(",", ":"), default=str)
+
+
+def _checksum(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for block in iter(lambda: handle.read(1 << 20), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def _probe_duration(path: Path) -> float:
+    """Clip duration per ffprobe, or -1.0 if the file will not parse."""
+    try:
+        result = subprocess.run(
+            ["ffprobe", "-v", "error", "-select_streams", "v:0",
+             "-show_entries", "format=duration", "-of",
+             "default=nk=1:nw=1", str(path)],
+            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, timeout=30)
+        return float(result.stdout.decode().strip())
+    except (OSError, subprocess.SubprocessError, ValueError):
+        return -1.0
+
+
+def _reusable(record: dict, clip: Path, index: int, dur: float) -> bool:
+    """True only if the clip on disk is provably the one the manifest recorded."""
+    if not record or record.get("index") != index or not clip.is_file():
+        return False
+    if record.get("sha256") != _checksum(clip):
+        return False                      # truncated, half-written or replaced
+    probed = _probe_duration(clip)
+    if probed < 0:
+        return False                      # unreadable container
+    return abs(probed - dur) <= max(0.08, 0.02 * dur)
+
+
 async def render(graph: SceneGraph, out: Path) -> str:
     work = out.parent
     work.mkdir(parents=True, exist_ok=True)
@@ -73,15 +144,49 @@ async def render(graph: SceneGraph, out: Path) -> str:
     grade = theme.grade(graph.variety.get("grade", ""))
     zoom = _zoom_travel(graph)
 
-    # 1. build each scene as its own clip (background + overlays, no audio)
+    # 1. build each scene as its own clip (background + overlays, no audio),
+    #    reusing the ones whose inputs and bytes are both unchanged
+    context = _render_context(graph, theme, grade, zoom)
+    manifest_path = work / "manifest.json"
+    prior: dict = {}
+    if manifest_path.is_file():
+        try:
+            prior = json.loads(manifest_path.read_text())
+        except ValueError:                # unreadable manifest = render it all
+            prior = {}
+    if prior.get("context") != context:
+        prior = {}
+
+    changed = set(changed_scenes(graph, prior, context))
+    records: dict[str, dict] = {}
     clips: list[Path] = []
+    reused = 0
     for i, scene in enumerate(graph.scenes):
         clip = work / f"scene_{i:02d}.mp4"
+        record = prior.get("clips", {}).get(scene.id, {})
+        if scene.id not in changed and _reusable(record, clip, i,
+                                                 scene.duration_sec):
+            records[scene.id] = record
+            clips.append(clip)
+            reused += 1
+            continue
         transition = brand_manager.transition(graph, scene.transition_in)
         await _scene_clip(scene, clip, W, H, fps, theme, grade, zoom,
                           transition=transition,
                           hook=(i == 0))
+        records[scene.id] = {"index": i, "file": clip.name,
+                             "sha256": _checksum(clip)}
         clips.append(clip)
+    print(f"[render] scene clips: {reused} reused, "
+          f"{len(clips) - reused} rendered", flush=True)
+
+    manifest_path.write_text(json.dumps({
+        "version": MANIFEST_VERSION, "video_id": graph.meta.video_id,
+        "context": context,
+        "scenes": {scene.id: scene_fingerprint(scene, context)
+                   for scene in graph.scenes},
+        "clips": records,
+    }, indent=2))
 
     # 2. concat scene clips
     concat_list = work / "scenes.txt"

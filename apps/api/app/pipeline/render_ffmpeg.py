@@ -36,6 +36,34 @@ from .compliance import policy as compliance_policy
 # and Ken Burns on an animated chart is just wobble.
 _PRERENDERED = ("dataviz", "motion_gfx", "branded", "threejs")
 
+# ENCODER SETTINGS. Neither pass used to specify these, so both silently ran at
+# x264's `medium`/CRF 23 defaults — the single most expensive accident in the
+# renderer.
+#
+# _INTERMEDIATE: scene clips are throwaway inputs to the finish pass, so the only
+# thing that matters is that they are cheap to make and near-transparent. CRF 16
+# at `ultrafast` is BOTH: measured 4.5s against 10.4s per 5s clip, at a visibly
+# better intermediate than the CRF 23 it replaces. Every clip must share these
+# settings — the concat demuxer joins them with `-c copy`, which requires
+# identical codec parameters — so pipeline/layers.py encodes with them too.
+#
+# _DELIVERY: the finish pass is the ONLY encode of the delivered frames now that
+# packaging stream-copies, so it also carries the H.264 export contract that used
+# to live in postprocess.py (Main profile, CFR). CRF 20 is a lower — better —
+# quantiser than the previous default, and `veryfast` still halves the wall time.
+_INTERMEDIATE = ("-preset", "ultrafast", "-crf", "16")
+_DELIVERY = ("-preset", "veryfast", "-crf", "20", "-profile:v", "main")
+
+# Hold ONE decoded frame for the length of the clip.
+#
+# A still with no camera move used `-loop 1` at the INPUT, which makes ffmpeg
+# re-decode and re-scale the source image for every single output frame. On a
+# 9178x6298 archive JPEG that cost 75s for a 5s beat — more than the rest of the
+# timeline combined. Looping after the scale means the decode and the downscale
+# happen once and the finished frame is duplicated, which is byte-for-byte the
+# same output: verified identical framemd5 over the full clip.
+_HOLD = "loop=loop=-1:size=1:start=0"
+
 
 async def render(graph: SceneGraph, out: Path) -> str:
     work = out.parent
@@ -133,8 +161,8 @@ async def _scene_clip(scene: Scene, out: Path, W: int, H: int, fps: int,
             vf = (_kenburns_vf(v.motion, W, H, fps, dur, zoom)
                   + f",{grade.ffmpeg()}" + draw)
         elif is_img:
-            inp = ["-loop", "1", "-t", f"{dur}", "-i", v.asset_path]
-            vf = f"{fit},{grade.ffmpeg()}" + draw
+            inp = ["-i", v.asset_path]
+            vf = f"{fit},{_HOLD},{grade.ffmpeg()}" + draw
         else:
             inp = ["-stream_loop", "-1", "-t", f"{dur}", "-i", v.asset_path]
             vf = f"{fit},{grade.ffmpeg()}" + draw
@@ -147,8 +175,8 @@ async def _scene_clip(scene: Scene, out: Path, W: int, H: int, fps: int,
     vf += _mblur() + _transition(transition or scene.transition_in, dur, hook, H)
 
     await _ff(*inp, "-vf", vf, "-t", f"{dur}",
-              "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", str(fps),
-              "-an", "-y", str(out))
+              "-c:v", "libx264", *_INTERMEDIATE, "-pix_fmt", "yuv420p",
+              "-r", str(fps), "-an", "-y", str(out))
 
 
 def _kenburns_vf(motion: str, W: int, H: int, fps: int, dur: float,
@@ -383,7 +411,8 @@ async def _finish(graph: SceneGraph, silent: Path, out: Path,
         maps += ["-map", "[a]"]
 
     await _ff(*inputs, "-filter_complex", ";".join(filters), *maps,
-              "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac",
+              "-c:v", "libx264", *_DELIVERY, "-pix_fmt", "yuv420p",
+              "-fps_mode", "cfr", "-r", str(graph.fps), "-c:a", "aac",
               "-shortest", "-movflags", "+faststart", "-y", str(out))
 
 

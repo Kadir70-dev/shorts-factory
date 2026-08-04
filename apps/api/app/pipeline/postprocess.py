@@ -30,12 +30,14 @@ async def finalize(graph: SceneGraph, raw_mp4: str, channel: ChannelConfig) -> d
     # (Main profile, yuv420p, CFR at graph.fps) is now set where the video is
     # actually encoded — render_ffmpeg._finish — so copying preserves it exactly
     # and the delivered frames are bit-identical to the rendered master.
-    finish = ["-i", raw_mp4, "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:v", "copy"]
+    # AAC-LC at 48 kHz is part of the DELIVERY contract, not an optimizer
+    # feature. It only ever applied on the optimizer branch, so with the
+    # optimizer off the encoder chose its own rate — a 44.1 kHz master was
+    # landing at 96 kHz stereo. Both branches now pin it.
+    finish = ["-i", raw_mp4, "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:v", "copy",
+              "-c:a", "aac", "-profile:a", "aac_low", "-ar", "48000", "-b:a", "192k"]
     if settings().production_optimizer_enabled:
-        finish += ["-c:a", "aac", "-profile:a", "aac_low", "-ar", "48000",
-                   "-b:a", "192k", "-avoid_negative_ts", "make_zero"]
-    else:
-        finish += ["-c:a", "aac", "-b:a", "192k"]
+        finish += ["-avoid_negative_ts", "make_zero"]
     finish += ["-movflags", "+faststart", "-y", str(final)]
     await _ff(*finish)
 

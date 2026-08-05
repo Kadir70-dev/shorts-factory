@@ -1,0 +1,864 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "btc_ep01_coldopen_slice",
+    "channel_id": "k70_history",
+    "niche": "usa_history",
+    "title": "The World Before Bitcoin — cold open (slice)",
+    "hook": "In August 1971, Britain asked America for its gold. The gold wasn't there.",
+    "description": "EPISODE 1 — THE WORLD BEFORE BITCOIN (1970-2008)\n\nIn August 1971 the United States quietly broke the promise the entire world's money was built on. What followed was thirty-seven years of inflation, bank failures, frozen savings, hyperinflation and finally the largest bankruptcy in American history — and a small group of cryptographers who kept trying, and failing, to build money that no one could switch off.\n\nThis is Part 1 of The Complete History of Bitcoin.\n\nSOURCES: Federal Reserve History · U.S. Treasury / U.S. Mint · Bureau of Labor Statistics (CPI-U) · FDIC / GAO 1996 · U.S. DOJ and Secret Service (e-gold) · FHFA · Federal Reserve Board · Emergency Economic Stabilization Act 2008 · Hanke & Kwok, Cato Journal 2009 · CoreLogic. Full citations in the pinned comment.\n\nEducational history and commentary. Not financial advice.",
+    "tags": [
+      "bitcoin",
+      "history of bitcoin",
+      "bitcoin documentary",
+      "1971",
+      "nixon shock",
+      "gold standard",
+      "bretton woods",
+      "inflation",
+      "2008 financial crisis",
+      "lehman brothers",
+      "cypherpunks",
+      "digicash",
+      "hyperinflation",
+      "argentina 2001",
+      "zimbabwe",
+      "federal reserve",
+      "money",
+      "documentary"
+    ],
+    "hashtags": [
+      "#bitcoin",
+      "#documentary",
+      "#history",
+      "#money",
+      "#2008crisis"
+    ],
+    "thumbnail_text": "THE GOLD WASN'T THERE",
+    "structure_id": "timeline_twist_conclusion",
+    "disclaimer": "",
+    "compliance_notes": [],
+    "requires_ai_disclosure": false,
+    "ai_disclosure_reasons": []
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "In the second week of August, 1971, a message reached the United States Treasury.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "ai_image",
+        "query": "1971 documentary still, empty marble corridor of the US Treasury at night, single desk lamp, telex machine mid-print, deep navy shadow, 35mm grain, anamorphic, cold tungsten key light",
+        "broll_keywords": [],
+        "visual_intent": "A night-lit Treasury corridor, one telex machine still running — the moment before anyone knows",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "zoom_in",
+        "fallback_color": "#15233a",
+        "strategy": "ai_image",
+        "budget_channel": "ai_broll",
+        "decision_reason": "00 · hook · ai_broll",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "AUGUST 1971",
+          "sub": null,
+          "y": 0.14,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "hook",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s2",
+      "narration": "The British government was asking to convert about three billion dollars into gold.",
+      "duration_sec": 5.2,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "$3,000,000,000  →  GOLD",
+        "broll_keywords": [],
+        "visual_intent": "The demand set in type: $3,000,000,000 → GOLD",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 · tension · motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "$3,000,000,000  →  GOLD",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        },
+        {
+          "type": "stat",
+          "text": "BRITISH REQUEST",
+          "sub": "$3,000,000,000 in gold",
+          "y": 0.2,
+          "emphasis": "normal"
+        },
+        {
+          "type": "source",
+          "text": "Federal Reserve History",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "probable"
+    },
+    {
+      "id": "s3",
+      "narration": "They were entitled to it. That was the deal. That had always been the deal.",
+      "duration_sec": 5.2,
+      "visual": {
+        "type": "image",
+        "query": "Bretton Woods Agreement 1944 signature page document scan",
+        "broll_keywords": [
+          "bretton woods agreement document",
+          "1944 monetary conference signing"
+        ],
+        "visual_intent": "The Bretton Woods signature page — the contract being invoked",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "00 · context · official",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "World Bank Group Archives",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [
+        "bretton woods agreement document",
+        "1944 monetary conference signing"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s4",
+      "narration": "There was only one problem.",
+      "duration_sec": 3.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "ONE PROBLEM",
+        "broll_keywords": [],
+        "visual_intent": "Hard type on black — the pivot",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 · turn · motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "ONE PROBLEM",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "turn",
+      "transition_in": "dip_to_black",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s5",
+      "narration": "The gold was not there.",
+      "duration_sec": 4.2,
+      "visual": {
+        "type": "ai_image",
+        "query": "documentary still, interior of a government bullion vault, mostly EMPTY steel shelving, three gold bars remaining, harsh overhead light, dust in the air, wide anamorphic, cold blue-grey, photoreal",
+        "broll_keywords": [],
+        "visual_intent": "An almost-empty bullion vault: bare steel shelving, a handful of bars, cold light",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "zoom_in",
+        "fallback_color": "#15233a",
+        "strategy": "ai_image",
+        "budget_channel": "ai_broll",
+        "decision_reason": "00 · reveal · ai_broll",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "NOT ENOUGH GOLD",
+          "sub": null,
+          "y": 0.16,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s6",
+      "narration": "On Friday the thirteenth, the President of the United States boarded a helicopter and disappeared.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "image",
+        "query": "Richard Nixon boarding Marine One helicopter White House 1971",
+        "broll_keywords": [
+          "marine one helicopter 1971",
+          "nixon boarding helicopter white house"
+        ],
+        "visual_intent": "Marine One lifting off the South Lawn, 1971 — the vanishing",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "00 · tension · official",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "Federal Reserve History",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "cut",
+      "keywords": [
+        "marine one helicopter 1971",
+        "nixon boarding helicopter white house"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s7",
+      "narration": "He took fifteen men with him to a mountain retreat in Maryland.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "threejs",
+        "query": "Maryland",
+        "broll_keywords": [],
+        "visual_intent": "Globe flight: world → United States of America → the Maryland highlands",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "threejs",
+        "budget_channel": "threejs",
+        "decision_reason": "00 · context · threejs",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "CAMP DAVID",
+          "sub": "Catoctin Mountain, Maryland",
+          "y": 0.24,
+          "emphasis": "normal"
+        },
+        {
+          "type": "source",
+          "text": "Federal Reserve History",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s8",
+      "narration": "No press. No announcement. No record of where they had gone.",
+      "duration_sec": 4.6,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "NO PRESS.  NO ANNOUNCEMENT.  NO RECORD.",
+        "broll_keywords": [],
+        "visual_intent": "Three redactions striking through in sequence",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 · tension · motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "NO PRESS.  NO ANNOUNCEMENT.  NO RECORD.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s9",
+      "narration": "For three days, the most powerful economy on earth held a secret meeting about its own money.",
+      "duration_sec": 6.2,
+      "visual": {
+        "type": "ai_image",
+        "query": "cinematic documentary recreation, 1971 wood-panelled lodge conference room at night, fifteen men in suits silhouetted around a long table, single warm lamp, papers face down, heavy shadow, 35mm, shallow depth of field",
+        "broll_keywords": [],
+        "visual_intent": "Recreation: a lodge room, fifteen silhouettes around a table, one lamp, notes face-down",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "zoom_in",
+        "fallback_color": "#15233a",
+        "strategy": "ai_image",
+        "budget_channel": "ai_broll",
+        "decision_reason": "00 · stakes · ai_broll",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "13-15 AUGUST 1971",
+          "sub": "no minutes released at the time",
+          "y": 0.24,
+          "emphasis": "normal"
+        },
+        {
+          "type": "source",
+          "text": "Federal Reserve History",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "stakes",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "probable"
+    },
+    {
+      "id": "s10",
+      "narration": "And when they came back down, the thing in your wallet was no longer what you thought it was.",
+      "duration_sec": 5.8,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "WHAT IS THIS, REALLY?",
+        "broll_keywords": [],
+        "visual_intent": "A dollar bill dissolving into pure type — the promise leaving the paper",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 · turn · motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "WHAT IS THIS, REALLY?",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "turn",
+      "transition_in": "dip_to_black",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s11",
+      "narration": "This is the story of how the world lost trust in money.",
+      "duration_sec": 4.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "THE COMPLETE HISTORY OF BITCOIN",
+        "broll_keywords": [],
+        "visual_intent": "Series title card in the brand display face",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 · context · motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "THE COMPLETE HISTORY OF BITCOIN",
+          "sub": null,
+          "y": 0.34,
+          "emphasis": "normal"
+        },
+        {
+          "type": "lower_third",
+          "text": "EPISODE ONE",
+          "sub": "The World Before Bitcoin · 1970-2008",
+          "y": 0.46,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s12",
+      "narration": "To understand why a stranger would one day try to build money without banks, you have to understand what the banks did first.",
+      "duration_sec": 7.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "MONEY WITHOUT BANKS",
+        "broll_keywords": [],
+        "visual_intent": "The thesis line, set quietly, in the lower half of frame",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 · stakes · motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "MONEY WITHOUT BANKS",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "stakes",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    }
+  ],
+  "audio": {
+    "voiceover_path": null,
+    "music_path": null,
+    "music_gain_db": -18.0,
+    "voiceover_gain_db": 0.0,
+    "duck_music": true,
+    "duck_amount_db": -9.0,
+    "music_mood": "",
+    "music_envelope": [],
+    "music_fade_in_sec": 1.5,
+    "music_fade_out_sec": 2.0
+  },
+  "captions": [],
+  "sfx": [],
+  "storyboard": {
+    "version": "1.0",
+    "scenes": [
+      {
+        "scene_id": "sb_s1",
+        "source_scene_id": "s1",
+        "narration": "In the second week of August, 1971, a message reached the United States Treasury.",
+        "duration_estimate": 5.4,
+        "visual_objective": "A night-lit Treasury corridor, one telex machine still running — the moment before anyone knows",
+        "primary_entity": "U.S. Treasury",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Washington",
+        "year": 1971,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "AUGUST 1971"
+        ],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s2",
+        "source_scene_id": "s2",
+        "narration": "The British government was asking to convert about three billion dollars into gold.",
+        "duration_estimate": 5.2,
+        "visual_objective": "The demand set in type: $3,000,000,000 → GOLD",
+        "primary_entity": "United Kingdom",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1971,
+        "financial_numbers": [
+          "$3 billion"
+        ],
+        "emotion": "tense",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "$3,000,000,000  →  GOLD",
+          "BRITISH REQUEST"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s3",
+        "source_scene_id": "s3",
+        "narration": "They were entitled to it. That was the deal. That had always been the deal.",
+        "duration_estimate": 5.2,
+        "visual_objective": "The Bretton Woods signature page — the contract being invoked",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1944,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s4",
+        "source_scene_id": "s4",
+        "narration": "There was only one problem.",
+        "duration_estimate": 3.0,
+        "visual_objective": "Hard type on black — the pivot",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "ONE PROBLEM"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s5",
+        "source_scene_id": "s5",
+        "narration": "The gold was not there.",
+        "duration_estimate": 4.2,
+        "visual_objective": "An almost-empty bullion vault: bare steel shelving, a handful of bars, cold light",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "NOT ENOUGH GOLD"
+        ],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s6",
+        "source_scene_id": "s6",
+        "narration": "On Friday the thirteenth, the President of the United States boarded a helicopter and disappeared.",
+        "duration_estimate": 6.0,
+        "visual_objective": "Marine One lifting off the South Lawn, 1971 — the vanishing",
+        "primary_entity": "Richard Nixon",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1971,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s7",
+        "source_scene_id": "s7",
+        "narration": "He took fifteen men with him to a mountain retreat in Maryland.",
+        "duration_estimate": 5.0,
+        "visual_objective": "Globe flight: world → United States of America → the Maryland highlands",
+        "primary_entity": "Camp David",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Maryland",
+        "year": 1971,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "CAMP DAVID"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s8",
+        "source_scene_id": "s8",
+        "narration": "No press. No announcement. No record of where they had gone.",
+        "duration_estimate": 4.6,
+        "visual_objective": "Three redactions striking through in sequence",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "NO PRESS.  NO ANNOUNCEMENT.  NO RECORD."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s9",
+        "source_scene_id": "s9",
+        "narration": "For three days, the most powerful economy on earth held a secret meeting about its own money.",
+        "duration_estimate": 6.2,
+        "visual_objective": "Recreation: a lodge room, fifteen silhouettes around a table, one lamp, notes face-down",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "13-15 AUGUST 1971"
+        ],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s10",
+        "source_scene_id": "s10",
+        "narration": "And when they came back down, the thing in your wallet was no longer what you thought it was.",
+        "duration_estimate": 5.8,
+        "visual_objective": "A dollar bill dissolving into pure type — the promise leaving the paper",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "WHAT IS THIS, REALLY?"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s11",
+        "source_scene_id": "s11",
+        "narration": "This is the story of how the world lost trust in money.",
+        "duration_estimate": 4.4,
+        "visual_objective": "Series title card in the brand display face",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "THE COMPLETE HISTORY OF BITCOIN",
+          "EPISODE ONE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s12",
+        "source_scene_id": "s12",
+        "narration": "To understand why a stranger would one day try to build money without banks, you have to understand what the banks did first.",
+        "duration_estimate": 7.0,
+        "visual_objective": "The thesis line, set quietly, in the lower half of frame",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "MONEY WITHOUT BANKS"
+        ],
+        "visual_confidence_score": 0.92
+      }
+    ]
+  },
+  "asset_provenance": [],
+  "threejs_provenance": [],
+  "motion_graphics_provenance": [],
+  "ai_broll_provenance": [],
+  "brand_identity_provenance": null,
+  "variety": {},
+  "brand_id": "k70"
+}

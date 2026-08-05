@@ -1,0 +1,2434 @@
+{
+  "episode": "btc_ep01_world_before_bitcoin",
+  "beats": [
+    {
+      "scene_id": "s1",
+      "chapter": "00",
+      "beat_role": "hook",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "1971 documentary still, empty marble corridor of the US Treasury at night, single desk lamp, telex machine mid-print, deep navy shadow, 35mm grain, anamorphic, cold tungsten key light",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s2",
+      "chapter": "00",
+      "beat_role": "tension",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "$3,000,000,000  \u2192  GOLD",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/gold-convertibility-ends",
+        "license": "US government work"
+      },
+      "confidence": "probable",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s3",
+      "chapter": "00",
+      "beat_role": "context",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Bretton Woods Agreement 1944 signature page document scan",
+      "search_terms": [
+        "bretton woods agreement document",
+        "1944 monetary conference signing"
+      ],
+      "citation": {
+        "label": "World Bank Group Archives",
+        "url": "https://www.worldbank.org/en/about/archives/history/exhibits/bretton-woods-monetary-conference.print",
+        "license": "public affairs / editorial use"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s4",
+      "chapter": "00",
+      "beat_role": "turn",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "ONE PROBLEM",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s5",
+      "chapter": "00",
+      "beat_role": "reveal",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary still, interior of a government bullion vault, mostly EMPTY steel shelving, three gold bars remaining, harsh overhead light, dust in the air, wide anamorphic, cold blue-grey, photoreal",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s6",
+      "chapter": "00",
+      "beat_role": "tension",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Richard Nixon boarding Marine One helicopter White House 1971",
+      "search_terms": [
+        "marine one helicopter 1971",
+        "nixon boarding helicopter white house"
+      ],
+      "citation": {
+        "label": "Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/gold-convertibility-ends",
+        "license": "US government work"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s7",
+      "chapter": "00",
+      "beat_role": "context",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "Maryland",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/gold-convertibility-ends",
+        "license": "US government work"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s8",
+      "chapter": "00",
+      "beat_role": "tension",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "NO PRESS.  NO ANNOUNCEMENT.  NO RECORD.",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s9",
+      "chapter": "00",
+      "beat_role": "stakes",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "cinematic documentary recreation, 1971 wood-panelled lodge conference room at night, fifteen men in suits silhouetted around a long table, single warm lamp, papers face down, heavy shadow, 35mm, shallow depth of field",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/gold-convertibility-ends",
+        "license": "US government work"
+      },
+      "confidence": "probable",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s10",
+      "chapter": "00",
+      "beat_role": "turn",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "WHAT IS THIS, REALLY?",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s11",
+      "chapter": "00",
+      "beat_role": "context",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "THE COMPLETE HISTORY OF BITCOIN",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s12",
+      "chapter": "00",
+      "beat_role": "stakes",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "MONEY WITHOUT BANKS",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s13",
+      "chapter": "01",
+      "beat_role": "context",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "1944 wartime newsreel public domain footage",
+      "search_terms": [
+        "1944 world war two newsreel",
+        "wartime archive footage 1944"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s14",
+      "chapter": "01",
+      "beat_role": "context",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "New Hampshire",
+      "search_terms": [],
+      "citation": {
+        "label": "World Bank Group Archives",
+        "url": "https://www.worldbank.org/en/about/archives/history/exhibits/bretton-woods-monetary-conference.print",
+        "license": "public affairs / editorial use"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s15",
+      "chapter": "01",
+      "beat_role": "tension",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Weimar Germany 1923 hyperinflation children playing with stacks of banknotes",
+      "search_terms": [
+        "weimar hyperinflation banknotes 1923",
+        "german inflation money bundles 1923"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s16",
+      "chapter": "01",
+      "beat_role": "reveal",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "1923 Germany wheelbarrow of banknotes to buy bread photograph",
+      "search_terms": [
+        "wheelbarrow money weimar",
+        "1923 german marks wheelbarrow"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s17",
+      "chapter": "01",
+      "beat_role": "consequence",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "Germany",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s18",
+      "chapter": "01",
+      "beat_role": "mechanism",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "heavy steel chain link macro",
+      "search_terms": [
+        "steel chain link close up",
+        "heavy chain tension macro",
+        "iron chain detail"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s19",
+      "chapter": "01",
+      "beat_role": "mechanism",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "EVERY CURRENCY \u2192 THE DOLLAR",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/bretton-woods-created",
+        "license": "US government work"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s20",
+      "chapter": "01",
+      "beat_role": "reveal",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/bretton-woods-created",
+        "license": "US government work"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s21",
+      "chapter": "01",
+      "beat_role": "mechanism",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary recreation, 1950s, gloved hands sliding a single gold bar across a polished counter towards a man in a dark suit, bank vault interior, warm key light on the bar, everything else in shadow, 35mm macro, photoreal",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s22",
+      "chapter": "01",
+      "beat_role": "stakes",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "India",
+      "search_terms": [],
+      "citation": {
+        "label": "World Bank Group Archives",
+        "url": "https://www.worldbank.org/en/about/archives/history/exhibits/bretton-woods-monetary-conference.print",
+        "license": "public affairs / editorial use"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s23",
+      "chapter": "01",
+      "beat_role": "context",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "1950s american city street prosperity",
+      "search_terms": [
+        "vintage 1950s city street",
+        "retro american downtown archive",
+        "old cars busy street"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s24",
+      "chapter": "01",
+      "beat_role": "turn",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "ONE MAN DID THE ARITHMETIC",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s25",
+      "chapter": "01",
+      "beat_role": "evidence",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Robert Triffin Joint Economic Committee October 1959 testimony record",
+      "search_terms": [
+        "congressional hearing 1959 testimony",
+        "economist testifying congress 1950s"
+      ],
+      "citation": {
+        "label": "R. Triffin, Joint Economic Committee, Oct 1959",
+        "url": "https://www.nber.org/system/files/working_papers/w24195/w24195.pdf",
+        "license": "academic / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s26",
+      "chapter": "01",
+      "beat_role": "mechanism",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "SUPPLY THE WORLD  \u00b7  OR  \u00b7  BACK THE DOLLAR",
+      "search_terms": [],
+      "citation": {
+        "label": "R. Triffin, Joint Economic Committee, Oct 1959",
+        "url": "https://www.nber.org/system/files/working_papers/w24195/w24195.pdf",
+        "license": "academic / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s27",
+      "chapter": "01",
+      "beat_role": "consequence",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "BOTH ROADS END BADLY",
+      "search_terms": [],
+      "citation": {
+        "label": "R. Triffin, Joint Economic Committee, Oct 1959",
+        "url": "https://www.nber.org/system/files/working_papers/w24195/w24195.pdf",
+        "license": "academic / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s28",
+      "chapter": "01",
+      "beat_role": "reveal",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "1959 \u2192 1971",
+      "search_terms": [],
+      "citation": {
+        "label": "R. Triffin, Joint Economic Committee, Oct 1959",
+        "url": "https://www.nber.org/system/files/working_papers/w24195/w24195.pdf",
+        "license": "academic / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s29",
+      "chapter": "01",
+      "beat_role": "turn",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "TWELVE YEARS LEFT.",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s30",
+      "chapter": "02",
+      "beat_role": "context",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "1960s Vietnam war Great Society Apollo public domain archive",
+      "search_terms": [
+        "vietnam war archive footage",
+        "apollo launch nasa public domain",
+        "1960s america archive"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s31",
+      "chapter": "02",
+      "beat_role": "mechanism",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "Japan",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s32",
+      "chapter": "02",
+      "beat_role": "tension",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "SOMEONE WAS COUNTING",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s33",
+      "chapter": "02",
+      "beat_role": "evidence",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "cinematic documentary still, a bank vault interior containing a single gold bar on a plinth, surrounded and half-buried by an enormous drift of paper certificates, cold overhead light, deep shadow, wide anamorphic, photoreal, 35mm grain",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s34",
+      "chapter": "02",
+      "beat_role": "evidence",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "USGS Minerals Yearbook 1952",
+        "url": "https://search.library.wisc.edu/digital/AIJCIPOFHBEI7U8K",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s35",
+      "chapter": "02",
+      "beat_role": "reveal",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "U.S. Mint",
+        "url": "https://www.usmint.gov/about/tours-and-locations/fort-knox",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s36",
+      "chapter": "02",
+      "beat_role": "consequence",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "U.S. Mint",
+        "url": "https://www.usmint.gov/about/tours-and-locations/fort-knox",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s37",
+      "chapter": "02",
+      "beat_role": "tension",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "France",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "probable",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s38",
+      "chapter": "02",
+      "beat_role": "reveal",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "1930s bank run crowd outside bank photograph public domain",
+      "search_terms": [
+        "1933 bank run crowd",
+        "great depression bank queue photograph"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s39",
+      "chapter": "02",
+      "beat_role": "stakes",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "cinematic documentary still, an enormous circular bank vault door filling the frame, a cast metal national seal at its centre, worn steel, single hard raking light from the left, deep shadow, no people, anamorphic, photoreal, 35mm grain",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s40",
+      "chapter": "02",
+      "beat_role": "turn",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "cinematic documentary still, a telex printout curling out of a machine onto an empty government desk at night, the paper half-printed, single desk lamp, rotary phone off the hook, deep shadow, macro, photoreal, 35mm grain",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/gold-convertibility-ends",
+        "license": "US government work"
+      },
+      "confidence": "probable",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s41",
+      "chapter": "03",
+      "beat_role": "context",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary still, 1971 American living room at night, single wood-cased television glowing, empty armchair, deep shadow, curtains drawn, 35mm grain, warm CRT light as the only source, photoreal",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s42",
+      "chapter": "03",
+      "beat_role": "tension",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Nixon address to the nation August 15 1971 television broadcast",
+      "search_terms": [
+        "nixon televised address 1971",
+        "president address to the nation archive"
+      ],
+      "citation": {
+        "label": "American Presidency Project",
+        "url": "https://www.presidency.ucsb.edu/documents/address-the-nation-outlining-new-economic-policy-the-challenge-peace",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s43",
+      "chapter": "03",
+      "beat_role": "reveal",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "\"...suspend temporarily the convertibility of the dollar into gold.\"",
+      "search_terms": [],
+      "citation": {
+        "label": "American Presidency Project",
+        "url": "https://www.presidency.ucsb.edu/documents/address-the-nation-outlining-new-economic-policy-the-challenge-peace",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s44",
+      "chapter": "03",
+      "beat_role": "turn",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "TEMPORARILY",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s45",
+      "chapter": "03",
+      "beat_role": "reveal",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "STILL SUSPENDED",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s46",
+      "chapter": "03",
+      "beat_role": "consequence",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "cinematic macro still, a heavy iron chain snapped mid-link, one half gold, one half paper, black background, single hard rim light, smoke, photoreal, anamorphic",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s47",
+      "chapter": "03",
+      "beat_role": "mechanism",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "United States of America",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s48",
+      "chapter": "03",
+      "beat_role": "reveal",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "TRUST",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s49",
+      "chapter": "03",
+      "beat_role": "stakes",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "banknote printing press money sheets",
+      "search_terms": [
+        "money printing press",
+        "banknote sheets printing",
+        "currency press machine"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s50",
+      "chapter": "03",
+      "beat_role": "context",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Nixon 1971 economic policy address transcript document",
+      "search_terms": [],
+      "citation": {
+        "label": "American Presidency Project",
+        "url": "https://www.presidency.ucsb.edu/documents/address-the-nation-outlining-new-economic-policy-the-challenge-peace",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s51",
+      "chapter": "03",
+      "beat_role": "turn",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "U.S. Bureau of Labor Statistics, CPI-U",
+        "url": "https://www.bls.gov/opub/mlr/2014/article/one-hundred-years-of-price-change-the-consumer-price-index-and-the-american-inflation-experience.htm",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s52",
+      "chapter": "04",
+      "beat_role": "hook",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "supermarket price tags shopper hesitating",
+      "search_terms": [
+        "supermarket prices shopping",
+        "grocery store price tag",
+        "worried shopper receipt"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s53",
+      "chapter": "04",
+      "beat_role": "context",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "gold bullion bars stacked vault",
+      "search_terms": [
+        "gold bars stacked",
+        "bullion bar close up",
+        "gold ingots vault"
+      ],
+      "citation": {
+        "label": "Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/bretton-woods-created",
+        "license": "US government work"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s54",
+      "chapter": "04",
+      "beat_role": "evidence",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "London gold fixing, 21 Jan 1980",
+        "url": "https://www.bullionvault.com/gold-news/opinion-analysis/gold-spike-january-1980-11062007",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s55",
+      "chapter": "04",
+      "beat_role": "reveal",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "THE DOLLAR GOT SMALLER",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s56",
+      "chapter": "04",
+      "beat_role": "consequence",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary still, 1970s American supermarket shelf, price labels over-stickered three and four times, hand-written increases, harsh fluorescent light, muted film stock, photoreal, 35mm",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s57",
+      "chapter": "04",
+      "beat_role": "evidence",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "U.S. Bureau of Labor Statistics, CPI-U",
+        "url": "https://www.bls.gov/opub/mlr/2014/article/one-hundred-years-of-price-change-the-consumer-price-index-and-the-american-inflation-experience.htm",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s58",
+      "chapter": "04",
+      "beat_role": "consequence",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "payslip bank book counting coins on table",
+      "search_terms": [
+        "counting coins on table",
+        "payslip paperwork close up",
+        "savings book bank statement"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s59",
+      "chapter": "04",
+      "beat_role": "stakes",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary still, 1970s kitchen table at dusk, an open passbook savings book, two older working hands resting on it, unopened bills, single window light, desaturated, 35mm, photoreal",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s60",
+      "chapter": "04",
+      "beat_role": "turn",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Paul Volcker Federal Reserve chairman 1979 testimony photograph",
+      "search_terms": [
+        "paul volcker federal reserve 1980",
+        "volcker congressional testimony archive"
+      ],
+      "citation": {
+        "label": "Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/anti-inflation-measures",
+        "license": "US government work"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s61",
+      "chapter": "04",
+      "beat_role": "evidence",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve History",
+        "url": "https://www.federalreservehistory.org/essays/anti-inflation-measures",
+        "license": "US government work"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s62",
+      "chapter": "04",
+      "beat_role": "consequence",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "Ohio",
+      "search_terms": [],
+      "citation": {
+        "label": "FDIC, History of the Eighties",
+        "url": "https://www.fdic.gov/resources/publications/history-eighties/volume-1/history-80s-volume-1-part1-01.pdf",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s63",
+      "chapter": "04",
+      "beat_role": "payoff",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "IT WORKED",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s64",
+      "chapter": "04",
+      "beat_role": "reveal",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "YOU ARE NOT THE ONE DECIDING",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s65",
+      "chapter": "05",
+      "beat_role": "hook",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "THE PATTERN",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s66",
+      "chapter": "05",
+      "beat_role": "evidence",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve History / GAO 1996",
+        "url": "https://www.federalreservehistory.org/essays/savings-and-loan-crisis",
+        "license": "US government work"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s67",
+      "chapter": "05",
+      "beat_role": "evidence",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve History / GAO 1996",
+        "url": "https://www.federalreservehistory.org/essays/savings-and-loan-crisis",
+        "license": "US government work"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s68",
+      "chapter": "05",
+      "beat_role": "consequence",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "$132,100,000,000  \u00b7  YOU",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve History / GAO 1996",
+        "url": "https://www.federalreservehistory.org/essays/savings-and-loan-crisis",
+        "license": "US government work"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s69",
+      "chapter": "05",
+      "beat_role": "turn",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s70",
+      "chapter": "05",
+      "beat_role": "stakes",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Black Monday October 19 1987 stock exchange trading floor photograph",
+      "search_terms": [
+        "1987 stock market crash trading floor",
+        "black monday traders 1987"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s71",
+      "chapter": "05",
+      "beat_role": "reveal",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "cinematic documentary still, an enormous 1980s mainframe computer hall, rows of tape drives spinning, indicator lights, absolutely no people, cold fluorescent light down a long corridor, wide anamorphic, photoreal, 35mm grain",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s72",
+      "chapter": "05",
+      "beat_role": "turn",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "Thailand",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s73",
+      "chapter": "05",
+      "beat_role": "consequence",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "Indonesia",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s74",
+      "chapter": "05",
+      "beat_role": "turn",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "Russia",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s75",
+      "chapter": "05",
+      "beat_role": "stakes",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary still, anonymous low-rise office building in a wooded Connecticut business park at night, one window lit, no signage, empty car park, wet asphalt, cold blue moonlight, cinematic, photoreal",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s76",
+      "chapter": "05",
+      "beat_role": "mechanism",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "New York",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s77",
+      "chapter": "05",
+      "beat_role": "turn",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "NOTICE THE PATTERN",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s78",
+      "chapter": "05",
+      "beat_role": "reveal",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "PRIVATE GAINS.  PUBLIC LOSSES.",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s79",
+      "chapter": "05",
+      "beat_role": "turn",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary still, 1990s bedroom office at night, beige CRT monitor glowing green text, cables everywhere, a silhouette hunched close to the screen, single monitor light source, heavy grain, photoreal, anamorphic",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s80",
+      "chapter": "05",
+      "beat_role": "mechanism",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "bank branch entrance facade revolving door",
+      "search_terms": [
+        "bank building entrance",
+        "bank branch facade",
+        "revolving door office"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s81",
+      "chapter": "05",
+      "beat_role": "reveal",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "WHAT IF YOU DIDN'T NEED ONE?",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s82",
+      "chapter": "06",
+      "beat_role": "context",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "David Chaum cryptographer 1980s photograph",
+      "search_terms": [
+        "david chaum cryptographer",
+        "1980s computer science laboratory"
+      ],
+      "citation": {
+        "label": "D. Chaum, Blind Signatures for Untraceable Payments (1982)",
+        "url": "https://en.wikipedia.org/wiki/DigiCash",
+        "license": "academic / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s83",
+      "chapter": "06",
+      "beat_role": "evidence",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "BLIND SIGNATURES FOR UNTRACEABLE PAYMENTS \u00b7 D. CHAUM \u00b7 1982",
+      "search_terms": [],
+      "citation": {
+        "label": "D. Chaum, Blind Signatures for Untraceable Payments (1982)",
+        "url": "https://en.wikipedia.org/wiki/DigiCash",
+        "license": "academic / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s84",
+      "chapter": "06",
+      "beat_role": "mechanism",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "SIGN IT WITHOUT SEEING IT",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s85",
+      "chapter": "06",
+      "beat_role": "reveal",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "PRIVATE BY MATHEMATICS",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s86",
+      "chapter": "06",
+      "beat_role": "context",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "Netherlands",
+      "search_terms": [],
+      "citation": {
+        "label": "D. Chaum, Blind Signatures for Untraceable Payments (1982)",
+        "url": "https://en.wikipedia.org/wiki/DigiCash",
+        "license": "academic / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s87",
+      "chapter": "06",
+      "beat_role": "evidence",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "Switzerland",
+      "search_terms": [],
+      "citation": {
+        "label": "D. Chaum, Blind Signatures for Untraceable Payments (1982)",
+        "url": "https://en.wikipedia.org/wiki/DigiCash",
+        "license": "academic / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s88",
+      "chapter": "06",
+      "beat_role": "payoff",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "TEN YEARS EARLY",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s89",
+      "chapter": "06",
+      "beat_role": "turn",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "D. Chaum, Blind Signatures for Untraceable Payments (1982)",
+        "url": "https://en.wikipedia.org/wiki/DigiCash",
+        "license": "academic / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s90",
+      "chapter": "06",
+      "beat_role": "context",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "California",
+      "search_terms": [],
+      "citation": {
+        "label": "E. Hughes, A Cypherpunk's Manifesto (Mar 1993)",
+        "url": "https://en.wikipedia.org/wiki/Eric_Hughes_(cypherpunk)",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s91",
+      "chapter": "06",
+      "beat_role": "context",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "MAY  \u00b7  HUGHES  \u00b7  GILMORE",
+      "search_terms": [],
+      "citation": {
+        "label": "E. Hughes, A Cypherpunk's Manifesto (Mar 1993)",
+        "url": "https://en.wikipedia.org/wiki/Eric_Hughes_(cypherpunk)",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s92",
+      "chapter": "06",
+      "beat_role": "reveal",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary still, early 1990s informal technology meetup in a cramped apartment, paper printouts pinned to walls, beige laptops open, cigarette smoke in lamp light, no faces readable, warm tungsten, heavy grain, photoreal",
+      "search_terms": [],
+      "citation": {
+        "label": "E. Hughes, A Cypherpunk's Manifesto (Mar 1993)",
+        "url": "https://en.wikipedia.org/wiki/Eric_Hughes_(cypherpunk)",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s93",
+      "chapter": "06",
+      "beat_role": "tension",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "A Cypherpunk's Manifesto 1993 Eric Hughes text",
+      "search_terms": [],
+      "citation": {
+        "label": "E. Hughes, A Cypherpunk's Manifesto (Mar 1993)",
+        "url": "https://en.wikipedia.org/wiki/Eric_Hughes_(cypherpunk)",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s94",
+      "chapter": "06",
+      "beat_role": "reveal",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "CYPHERPUNKS WRITE CODE.",
+      "search_terms": [],
+      "citation": {
+        "label": "E. Hughes, A Cypherpunk's Manifesto (Mar 1993)",
+        "url": "https://en.wikipedia.org/wiki/Eric_Hughes_(cypherpunk)",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s95",
+      "chapter": "06",
+      "beat_role": "turn",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "hands typing code terminal screen",
+      "search_terms": [
+        "typing on mechanical keyboard",
+        "code scrolling terminal screen",
+        "programmer typing close up"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s96",
+      "chapter": "06",
+      "beat_role": "mechanism",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "HASHCASH \u00b7 1997 \u00b7 PROOF OF WORK",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s97",
+      "chapter": "06",
+      "beat_role": "mechanism",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "B-MONEY \u00b7 1998 \u00b7 EVERYONE KEEPS THE LEDGER",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s98",
+      "chapter": "06",
+      "beat_role": "context",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "BIT GOLD \u00b7 1998",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s99",
+      "chapter": "06",
+      "beat_role": "context",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "RPOW \u00b7 2004",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s100",
+      "chapter": "06",
+      "beat_role": "turn",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "ALL UNFINISHED",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s101",
+      "chapter": "06",
+      "beat_role": "tension",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "cinematic documentary still, a single small figure standing at the base of an enormous blank concrete wall that fills the frame, cold overcast light, no door, no window, wide anamorphic, muted grade, photoreal, 35mm grain",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s102",
+      "chapter": "06",
+      "beat_role": "mechanism",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "copying files on computer screen duplicate",
+      "search_terms": [
+        "file copy progress bar screen",
+        "computer screen duplicating files",
+        "hard drive platters spinning"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s103",
+      "chapter": "06",
+      "beat_role": "mechanism",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "EVERYTHING THROUGH ONE POINT",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s104",
+      "chapter": "06",
+      "beat_role": "reveal",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "Florida",
+      "search_terms": [],
+      "citation": {
+        "label": "U.S. DOJ, 27 Apr 2007",
+        "url": "https://www.justice.gov/archive/opa/pr/2007/April/07_crm_301.html",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s105",
+      "chapter": "06",
+      "beat_role": "turn",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "cinematic documentary recreation, a server room door forced open in darkness, torch beams cutting across equipment racks, dust and cable, blue emergency light, no faces, tense, photoreal, anamorphic, 35mm",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s106",
+      "chapter": "06",
+      "beat_role": "context",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "ASK E-GOLD.",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s107",
+      "chapter": "06",
+      "beat_role": "evidence",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "e-gold digital currency 1990s website screenshot",
+      "search_terms": [],
+      "citation": {
+        "label": "U.S. DOJ, 27 Apr 2007",
+        "url": "https://www.justice.gov/archive/opa/pr/2007/April/07_crm_301.html",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "probable",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s108",
+      "chapter": "06",
+      "beat_role": "turn",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Department of Justice press release April 27 2007 e-gold indictment",
+      "search_terms": [],
+      "citation": {
+        "label": "U.S. DOJ, 27 Apr 2007",
+        "url": "https://www.justice.gov/archive/opa/pr/2007/April/07_crm_301.html",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s109",
+      "chapter": "06",
+      "beat_role": "consequence",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "e-gold plea agreement July 2008 court document",
+      "search_terms": [],
+      "citation": {
+        "label": "U.S. Secret Service, Jul 2008",
+        "url": "https://www.secretservice.gov/press/releases/2008/07/us-secret-service-led-investigation-digital-currency-business-e-gold-pleads",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s110",
+      "chapter": "06",
+      "beat_role": "context",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "ASK THE LIBERTY DOLLAR.",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s111",
+      "chapter": "06",
+      "beat_role": "turn",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Liberty Dollar silver coin NORFED 2007 seizure",
+      "search_terms": [
+        "liberty dollar silver round",
+        "seized coins evidence photograph"
+      ],
+      "citation": {
+        "label": "FBI raid, 14 Nov 2007 (court record)",
+        "url": "https://en.wikipedia.org/wiki/Bernard_von_NotHaus",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s112",
+      "chapter": "06",
+      "beat_role": "reveal",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "knocking on closed door from inside",
+      "search_terms": [
+        "hand knocking on door",
+        "closed front door interior",
+        "door handle locked close up"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s113",
+      "chapter": "06",
+      "beat_role": "turn",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "UNLESS THERE IS NO DOOR.",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s114",
+      "chapter": "06",
+      "beat_role": "stakes",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "cinematic documentary still, a bare concrete room containing a single empty doorframe with no door and pure darkness beyond it, hard directional light, dust, minimal, wide anamorphic, photoreal, 35mm grain",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s115",
+      "chapter": "07",
+      "beat_role": "hook",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "person using atm cash machine at night",
+      "search_terms": [
+        "atm cash machine at night",
+        "withdrawing money from atm",
+        "hand taking cash from atm"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s116",
+      "chapter": "07",
+      "beat_role": "context",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "Argentina",
+      "search_terms": [],
+      "citation": {
+        "label": "Corralito, Decree 1570/2001",
+        "url": "https://en.wikipedia.org/wiki/Corralito",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s117",
+      "chapter": "07",
+      "beat_role": "turn",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Buenos Aires 2001 closed bank shutters corralito photograph",
+      "search_terms": [
+        "buenos aires bank closed 2001",
+        "argentina crisis bank shutters"
+      ],
+      "citation": {
+        "label": "Corralito, Decree 1570/2001",
+        "url": "https://en.wikipedia.org/wiki/Corralito",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s118",
+      "chapter": "07",
+      "beat_role": "evidence",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "Corralito, Decree 1570/2001",
+        "url": "https://en.wikipedia.org/wiki/Corralito",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s119",
+      "chapter": "07",
+      "beat_role": "mechanism",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "CONVERTED.  THEN DEVALUED.",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve Bank of San Francisco",
+        "url": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2002/10/learning-from-argentina-crisis/",
+        "license": "US government work"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s120",
+      "chapter": "07",
+      "beat_role": "evidence",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve Bank of San Francisco",
+        "url": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2002/10/learning-from-argentina-crisis/",
+        "license": "US government work"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s121",
+      "chapter": "07",
+      "beat_role": "consequence",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "cacerolazo Buenos Aires December 2001 protest pots and pans",
+      "search_terms": [
+        "argentina protest 2001 pots pans",
+        "cacerolazo buenos aires"
+      ],
+      "citation": {
+        "label": "Corralito, Decree 1570/2001",
+        "url": "https://en.wikipedia.org/wiki/Corralito",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s122",
+      "chapter": "07",
+      "beat_role": "turn",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Fernando de la Rua helicopter Casa Rosada roof December 20 2001",
+      "search_terms": [
+        "casa rosada helicopter 2001",
+        "argentina president resignation 2001"
+      ],
+      "citation": {
+        "label": "Corralito, Decree 1570/2001",
+        "url": "https://en.wikipedia.org/wiki/Corralito",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s123",
+      "chapter": "07",
+      "beat_role": "stakes",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary still, a modest Buenos Aires apartment being emptied, cardboard boxes stacked, a bank letter left on a bare table, late afternoon light through shutters, muted colour, photoreal, 35mm",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s124",
+      "chapter": "07",
+      "beat_role": "turn",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "Zimbabwe",
+      "search_terms": [],
+      "citation": {
+        "label": "Hanke & Kwok, Cato Journal 29(2), 2009",
+        "url": "https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2009/5/cj29n2-8.pdf",
+        "license": "academic / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s125",
+      "chapter": "07",
+      "beat_role": "evidence",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "Hanke & Kwok, Cato Journal 29(2), 2009",
+        "url": "https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2009/5/cj29n2-8.pdf",
+        "license": "academic / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s126",
+      "chapter": "07",
+      "beat_role": "reveal",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Zimbabwe 100 trillion dollar banknote 2009 photograph",
+      "search_terms": [
+        "zimbabwe 100 trillion dollar note",
+        "hyperinflation banknote zimbabwe"
+      ],
+      "citation": {
+        "label": "Hanke & Kwok, Cato Journal 29(2), 2009",
+        "url": "https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2009/5/cj29n2-8.pdf",
+        "license": "academic / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s127",
+      "chapter": "07",
+      "beat_role": "consequence",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "paying bus fare boarding bus",
+      "search_terms": [
+        "paying bus fare",
+        "boarding a bus ticket",
+        "bus conductor taking money"
+      ],
+      "citation": {
+        "label": "Hanke & Kwok, Cato Journal 29(2), 2009",
+        "url": "https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2009/5/cj29n2-8.pdf",
+        "license": "academic / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s128",
+      "chapter": "07",
+      "beat_role": "context",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "Hungary",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "probable",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s129",
+      "chapter": "07",
+      "beat_role": "tension",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "quiet suburban street houses afternoon",
+      "search_terms": [
+        "quiet suburban street",
+        "residential neighbourhood houses",
+        "empty street suburb daytime"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s130",
+      "chapter": "07",
+      "beat_role": "turn",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "THEN IT CAME HERE.",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s131",
+      "chapter": "08",
+      "beat_role": "context",
+      "channel": "threejs",
+      "strategy": "threejs",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "United Kingdom",
+      "search_terms": [],
+      "citation": {
+        "label": "H.S. Shin, Reflections on Northern Rock (BIS)",
+        "url": "https://www.bis.org/publ/shin_2009.pdf",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s132",
+      "chapter": "08",
+      "beat_role": "tension",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Northern Rock bank run queue September 2007 photograph",
+      "search_terms": [
+        "northern rock queue 2007",
+        "bank run queue britain 2007"
+      ],
+      "citation": {
+        "label": "H.S. Shin, Reflections on Northern Rock (BIS)",
+        "url": "https://www.bis.org/publ/shin_2009.pdf",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s133",
+      "chapter": "08",
+      "beat_role": "tension",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Northern Rock savers queue street 2007 wide shot",
+      "search_terms": [
+        "long queue outside bank 2007",
+        "savers waiting bank branch queue"
+      ],
+      "citation": {
+        "label": "H.S. Shin, Reflections on Northern Rock (BIS)",
+        "url": "https://www.bis.org/publ/shin_2009.pdf",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s134",
+      "chapter": "08",
+      "beat_role": "reveal",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "H.S. Shin, Reflections on Northern Rock (BIS)",
+        "url": "https://www.bis.org/publ/shin_2009.pdf",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s135",
+      "chapter": "08",
+      "beat_role": "turn",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve Board, Bear Stearns / Maiden Lane",
+        "url": "https://www.federalreserve.gov/regreform/reform-bearstearns.htm",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s136",
+      "chapter": "08",
+      "beat_role": "evidence",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Federal Reserve Bear Stearns Maiden Lane March 2008 statement",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve Board, Bear Stearns / Maiden Lane",
+        "url": "https://www.federalreserve.gov/regreform/reform-bearstearns.htm",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s137",
+      "chapter": "08",
+      "beat_role": "turn",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "stock ticker board falling red numbers",
+      "search_terms": [
+        "stock ticker screen red",
+        "financial market board falling",
+        "trading screen numbers dropping"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s138",
+      "chapter": "08",
+      "beat_role": "evidence",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "FHFA conservatorship Fannie Mae Freddie Mac September 7 2008 announcement",
+      "search_terms": [],
+      "citation": {
+        "label": "FHFA, conservatorship history",
+        "url": "https://www.fhfa.gov/conservatorship/history",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s139",
+      "chapter": "08",
+      "beat_role": "turn",
+      "channel": "official",
+      "strategy": "real",
+      "acquisition": "archival / official \u2014 manual clearance",
+      "query_or_prompt": "Lehman Brothers employees carrying boxes September 15 2008 photograph",
+      "search_terms": [
+        "lehman brothers collapse employees boxes",
+        "lehman headquarters 2008"
+      ],
+      "citation": {
+        "label": "Lehman Brothers Holdings Chapter 11 petition, 15 Sep 2008",
+        "url": "https://en.wikipedia.org/wiki/Bankruptcy_of_Lehman_Brothers",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s140",
+      "chapter": "08",
+      "beat_role": "evidence",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "Lehman Brothers Holdings Chapter 11 petition, 15 Sep 2008",
+        "url": "https://en.wikipedia.org/wiki/Bankruptcy_of_Lehman_Brothers",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s141",
+      "chapter": "08",
+      "beat_role": "turn",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "Federal Reserve Board press release, 16 Sep 2008",
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20080916a.htm",
+        "license": "US government work (public domain)"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s142",
+      "chapter": "08",
+      "beat_role": "evidence",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "Emergency Economic Stabilization Act, 3 Oct 2008",
+        "url": "https://ballotpedia.org/Emergency_Economic_Stabilization_Act_of_2008",
+        "license": "US government work / editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s143",
+      "chapter": "08",
+      "beat_role": "turn",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "american residential street houses",
+      "search_terms": [
+        "american suburb houses street",
+        "residential street usa",
+        "row of family homes"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s144",
+      "chapter": "08",
+      "beat_role": "evidence",
+      "channel": "charts",
+      "strategy": "dataviz",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "",
+      "search_terms": [],
+      "citation": {
+        "label": "CoreLogic, Foreclosure Crisis Decade in Review (2017)",
+        "url": "https://www.alta.org/news-and-publications/news/20170330-CoreLogic-US-Residential-Foreclosure-Crisis-Decade-in-Review",
+        "license": "editorial"
+      },
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s145",
+      "chapter": "08",
+      "beat_role": "consequence",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary still, a printed foreclosure notice taped inside the glass of a suburban American front door, empty hallway behind it, overgrown lawn reflected, flat grey afternoon light, muted colour, photoreal, 35mm",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s146",
+      "chapter": "08",
+      "beat_role": "reveal",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "looking up glass bank tower skyscraper",
+      "search_terms": [
+        "looking up at skyscraper glass",
+        "financial district tower low angle",
+        "corporate glass building upward"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s147",
+      "chapter": "08",
+      "beat_role": "reveal",
+      "channel": "stock",
+      "strategy": "real",
+      "acquisition": "stock video API (Pexels/Pixabay)",
+      "query_or_prompt": "foreclosure sign front lawn house",
+      "search_terms": [
+        "foreclosure sign yard",
+        "bank owned house sign",
+        "for sale sign empty house"
+      ],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s148",
+      "chapter": "08",
+      "beat_role": "stakes",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary still, a completely emptied trading floor at night, dark monitors, chairs pushed back, scattered paper on the ground, one row of ceiling lights still on, cold cinematic wide shot, photoreal, anamorphic",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s149",
+      "chapter": "08",
+      "beat_role": "reveal",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "\u201cTRUST US.\u201d",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s150",
+      "chapter": "08",
+      "beat_role": "payoff",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "THEY STOPPED.",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s151",
+      "chapter": "09",
+      "beat_role": "tension",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary still, a vast city seen from high above at night, large districts of windows gone dark, thin fog, cold blue, cinematic wide, photoreal, anamorphic, 35mm grain",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s152",
+      "chapter": "09",
+      "beat_role": "tension",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary still triptych, a banknote press running, a shuttered bank branch, a family car packed with boxes on a driveway at dusk, unified cold muted grade, cinematic, photoreal, 35mm",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s153",
+      "chapter": "09",
+      "beat_role": "turn",
+      "channel": "ai_broll",
+      "strategy": "ai_image",
+      "acquisition": "AI cinematic recreation (synthetic \u2014 must be disclosed)",
+      "query_or_prompt": "documentary still, an anonymous desk in a dark room, a single monitor glowing with unreadable text, an empty chair pushed slightly back, no personal objects, no window, deep shadow, photoreal, anamorphic, 35mm grain",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": true
+    },
+    {
+      "scene_id": "s154",
+      "chapter": "09",
+      "beat_role": "reveal",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "NINE PAGES",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s155",
+      "chapter": "09",
+      "beat_role": "payoff",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "THAT WOULD CHANGE MONEY FOREVER.",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    },
+    {
+      "scene_id": "s156",
+      "chapter": "09",
+      "beat_role": "cta",
+      "channel": "motion_gfx",
+      "strategy": "motion_gfx",
+      "acquisition": "rendered in-pipeline",
+      "query_or_prompt": "EPISODE TWO \u2014 THE NINE PAGES",
+      "search_terms": [],
+      "citation": null,
+      "confidence": "confirmed",
+      "synthetic": false
+    }
+  ]
+}

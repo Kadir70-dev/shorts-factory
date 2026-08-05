@@ -1,0 +1,72 @@
+# ───────────────────────────────────────────────────────────────────────────
+# PRODUCTION PRESET · long-form documentary series
+#
+# Multi-episode narrative documentary (10-15 min) rather than a 20-45s Short.
+# Same frozen Phase 1-4 spine, tuned for length: the full six-channel visual mix
+# is ON (a 14-minute film cannot survive on two visual sources), the AI still
+# budget scales with runtime, and Three.js renders at preview resolution so a
+# 150-beat graph does not thrash a 4 GB host.
+#
+# Episodes are AUTHORED, not Director-generated — a series needs continuity
+# across episodes that a per-video Director cannot hold. Always run --from-json.
+#
+#   .venv/bin/python scripts/build_bitcoin_ep01.py
+#   .venv/bin/python scripts/qa_bitcoin_ep01.py
+#   .venv/bin/python scripts/produce.py --preset documentary_series \
+#       --from-json data/series/bitcoin_history/ep01/scene_graph.json --keep
+# ───────────────────────────────────────────────────────────────────────────
+name: documentary_series
+channel_id: k70_history
+niche: usa_history
+
+env:
+  RENDER_BACKEND: ffmpeg
+  VISUAL_ACCURACY_MODE: strict
+  LAYERED_RENDER: "1"
+  CHARACTER_MEMORY: "0"          # a history series has no recurring character
+  QA_ENABLED: "1"
+  AI_VIDEO_ENABLED: "0"
+  ENABLE_IMAGE_TO_VIDEO: "0"
+  COMFYUI_ENABLED: "0"
+
+  # Long-form AI budget. The Shorts presets cap at 2 stills inside 1 hero beat
+  # because a 40-second video has one pivotal moment. A 14-minute film has one
+  # per chapter, and the visual budget still holds AI b-roll under 25% of
+  # screen time — the ceiling that actually matters.
+  LAYERED_AI_STILL_BUDGET: "24"
+  LAYERED_MAX_HERO_SCENES: "10"
+  LAYERED_FFMPEG_THREADS: "4"
+  LAYERED_SUBJECT_MATTE: oval
+  LAYERED_MIN_FREE_MB: "2000"
+
+  # ── Six-channel visual mix ───────────────────────────────────────────────
+  STORYBOARD_ENGINE_ENABLED: "1"
+  MULTI_SOURCE_ASSET_ENGINE_ENABLED: "1"
+  MOTION_GRAPHICS_ENGINE_ENABLED: "1"
+  THREEJS_VISUAL_ENGINE_ENABLED: "1"
+  AI_BROLL_ENGINE_ENABLED: "1"
+
+  # Memory ceiling, not a speed preference — see config/presets/educational.yaml
+  # for the measurements. Set to `final` on a host with 8 GB+ free.
+  THREEJS_QUALITY: preview
+
+# Documentary series are event-led and archive-led, never character-led.
+character:
+  name: ""
+  desc: ""
+  style: ""
+
+story:
+  pacing: "cold open → chapter cliffhangers → payoff → hand-off to the next episode"
+  hook_style: "Open on the moment the audience does not yet know is the beginning."
+  hero_beat: "the pivotal recreated moment of each chapter — the decision, the queue, the filing"
+  visual_doctrine: >
+    Every sentence gets a visual plan and no visual is used twice. Numbers
+    become branded animated charts of exactly the figure spoken, attributed on
+    screen. Places become globe flights. Documents and photographs come from
+    government, central-bank, museum and public-domain archives with the
+    citation burned in. AI recreation is reserved for the moment no camera was
+    in the room for, is never presented as archive footage, and triggers the
+    YouTube synthetic-content disclosure. Stock is a support shot, never a
+    substitute for the subject. No talking heads, no generic filler.
+  music_mood: dark-historical

@@ -40,7 +40,7 @@ from . import finishing
 from . import provenance as prov
 from .binary import find_scribus_binary
 
-_CACHE_VERSION = 11  # bumped: research_paper skips redundant Abstract block for short (<=25 word) bodies
+_CACHE_VERSION = 12  # bumped: vintage_newspaper title frame narrowed to clear the K70 watermark zone
 _RUNNER = Path(__file__).parent / "_runner.py"
 
 TEMPLATE_BUILDERS = {

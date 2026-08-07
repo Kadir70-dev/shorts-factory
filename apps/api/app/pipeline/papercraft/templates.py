@@ -123,7 +123,17 @@ def vintage_newspaper(spec: DocumentSpec) -> PageLayout:
     # bankruptcy") wraps to 3-4 lines at this font; a too-short frame doesn't
     # clip visibly, Scribus drops the overflow line from the export outright.
     # Font size trimmed 32->26 so more of a long headline fits per line.
-    layout.add(Frame(kind="text", x=m[0], y=m[2] + 4, w=layout.width - m[0] - m[1], h=120,
+    #
+    # The title frame's RIGHT edge is pulled in further than the body margin
+    # (612-86=526 -> 612-197=415): the K70 watermark sits at a fixed
+    # top-right screen position (brand/overlays.py's watermark_overlay,
+    # ~78-100% of frame width), and a centered 2-line masthead using the
+    # full body-safe width still reached far enough right to sit under it
+    # (confirmed on real render: "would" partially obscured). Body text
+    # below is unaffected since it doesn't reach that high on the page.
+    title_right_margin = 197
+    layout.add(Frame(kind="text", x=m[0], y=m[2] + 4,
+                     w=layout.width - m[0] - title_right_margin, h=120,
                      text=spec.title, font="Old English Text MT Regular", size=26,
                      align="center", color="#1c1811", line_spacing=28))
     layout.add(Frame(kind="line", x=m[0], y=m[2] + 126, w=layout.width - m[0] - m[1], h=0,

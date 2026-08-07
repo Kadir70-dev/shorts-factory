@@ -31,7 +31,12 @@ def camera_vf(movement: CameraMovement, w: int, h: int, fps: int, dur: float) ->
         # roughly the top third) instead of the page's geometric vertical
         # center, so the zoom spends the shot on actual content instead of
         # panning across blank lower-page paper.
-        return (f"{base},zoompan=z='min(1.0+0.04*on/{n},1.04)':d={n}:"
+        # Capped at 1.02, not 1.04: the 86pt camera-safe margins were sized
+        # for the BASE crop (zoom=1.0); a further 4% zoom-in shrinks the
+        # visible window enough on top of that to clip 1-2 edge characters
+        # by the end of a long shot (confirmed on real render). 1.02 stays
+        # inside that margin for the whole shot while still reading as motion.
+        return (f"{base},zoompan=z='min(1.0+0.02*on/{n},1.02)':d={n}:"
                 f"x='iw/2-(iw/zoom/2)':y='ih*0.30-(ih/zoom/2)':s={w}x{h}:fps={fps}")
 
     if movement == "page_slide":

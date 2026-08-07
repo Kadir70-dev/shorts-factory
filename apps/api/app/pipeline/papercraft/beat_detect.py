@@ -17,7 +17,10 @@ from __future__ import annotations
 import re
 
 from ...schemas.scene import Scene, SceneGraph, StoryboardScene
+from ..dataviz import format_value
 from .spec import Citation, DocumentSpec, Fact, Quote, Statistic
+
+_HEADLINE_CHARS = 92  # fits ~3-4 wrapped lines in every template's title frame
 
 # A bare 4-digit year in the narration itself ("...in 1952, the Treasury...").
 # `Scene` carries no year/date field of its own — only `StoryboardScene` does
@@ -49,7 +52,8 @@ _SIGNALS: dict[str, tuple[str, ...]] = {
                          "deficit", "reserve", "gold", "dollar", "market", "$"),
     "breaking_news": ("announced", "breaking", "today", "confirmed", "emergency"),
     "archive_dossier": ("classified", "secret", "investigation", "raid", "federal",
-                        "doj", "fbi", "case", "indictment"),
+                        "doj", "fbi", "case", "indictment", "indicted",
+                        "justice department", "pleaded guilty", "prosecut"),
     "research_paper": ("study", "research", "according to", "data show", "economist"),
     "company_memo": ("memo", "internal", "company", "corporation", "board"),
     "evidence_board": ("evidence", "arrest", "charged", "court", "testimony"),
@@ -113,23 +117,54 @@ def classify(scene: Scene, graph: SceneGraph) -> str:
     return best
 
 
+def _headline_from(narration: str, limit: int = _HEADLINE_CHARS) -> str:
+    """A title-frame-safe headline: cut at the last WHOLE word inside `limit`,
+    never mid-word. The full narration always survives separately as the body
+    paragraph, so this only has to be a short label, not a complete sentence —
+    a hard `narration[:80]` slice both read as truncated garbage ("...produced
+    tw") AND was too long for every template's title frame to hold without
+    Scribus silently dropping the overflow line (see templates.py/animate.py
+    fixes from this same review)."""
+    text = narration.strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0].rstrip(".,;:")
+    return cut or text[:limit]
+
+
 def build_spec(scene: Scene, graph: SceneGraph, document_type: str) -> DocumentSpec:
     source_overlay = next((o for o in scene.overlays if o.type == "source"), None)
     quote_overlay = next((o for o in scene.overlays if o.type == "quote"), None)
+    stat_overlay = next((o for o in scene.overlays if o.type == "stat"), None)
     headline = next((o.text for o in scene.overlays if o.type in ("headline", "lower_third")),
-                    scene.narration[:80])
+                    _headline_from(scene.narration))
 
     citations = [Citation(label=source_overlay.text)] if source_overlay else []
     facts = [Fact(text=scene.narration,
                   citation=citations[0] if citations else None)]
     statistics = []
-    if scene.data is not None:
+    # A director-authored `stat` overlay (e.g. "Z$100,000,000,000,000") is
+    # the single most important figure in the beat by construction — it was
+    # NOT being read at all, so a beat's headline evidence number could be
+    # completely absent from the rendered document. Added first so it leads.
+    if stat_overlay:
+        statistics.append(Statistic(
+            label=stat_overlay.sub or "", value=stat_overlay.text,
+            citation=citations[0] if citations else None))
+    # Only "counter" DataViz points are a genuine label+value pair worth a
+    # document statistic row ("Revenue: $3.8B"). Other kinds (delta,
+    # bar_compare, line_trend, ...) use `label` as the human-readable axis
+    # tick and `value` as its plotting coordinate — for a "delta" year-gap
+    # beat that's the SAME year twice ("1866" next to the formatted "1,866"),
+    # which reads as a broken duplicate, not a fact. The narration already
+    # states the real takeaway; no stat row is more honest than a wrong one.
+    if scene.data is not None and scene.data.kind == "counter":
         for p in getattr(scene.data, "points", [])[:6]:
             label = getattr(p, "label", "")
-            value = getattr(p, "value", "")
+            value = format_value(p.value, scene.data) if hasattr(p, "value") else ""
             if label:
                 statistics.append(Statistic(
-                    label=str(label), value=str(value),
+                    label=str(label), value=value,
                     citation=citations[0] if citations else None))
     quotes = []
     if quote_overlay:

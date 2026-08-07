@@ -22,8 +22,17 @@ def camera_vf(movement: CameraMovement, w: int, h: int, fps: int, dur: float) ->
             f"crop={2 * w}:{2 * h}")
 
     if movement == "slow_zoom":
-        return (f"{base},zoompan=z='min(1.06+0.05*on/{n},1.11)':d={n}:"
-                f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={w}x{h}:fps={fps}")
+        # z starts at 1.0, not 1.06: `base`'s cover-crop already discards
+        # ~27% of the page's width to make a 0.77-aspect portrait page fill a
+        # 0.5625-aspect vertical frame without distortion (fixed by geometry,
+        # not adjustable here) — starting the zoom already 6% in threw away
+        # MORE width for no reason. y is anchored toward the top-of-page
+        # content cluster (every template puts its headline/body/evidence in
+        # roughly the top third) instead of the page's geometric vertical
+        # center, so the zoom spends the shot on actual content instead of
+        # panning across blank lower-page paper.
+        return (f"{base},zoompan=z='min(1.0+0.04*on/{n},1.04)':d={n}:"
+                f"x='iw/2-(iw/zoom/2)':y='ih*0.30-(ih/zoom/2)':s={w}x{h}:fps={fps}")
 
     if movement == "page_slide":
         return (f"{base},zoompan=z='1.12':d={n}:"

@@ -106,29 +106,64 @@ def modern_newspaper(spec: DocumentSpec) -> PageLayout:
 
 
 def vintage_newspaper(spec: DocumentSpec) -> PageLayout:
-    layout = PageLayout(PAGE_W, PAGE_H, (30, 30, 30, 36), background="#EFE6D0")
+    # Left/right margins widened 30->86 — same camera-safe-zone fix as
+    # financial_report: animate.py's slow_zoom cover-crop discards ~13.6% of
+    # page width per edge to fill a 9:16 frame without distortion, and at
+    # 30pt the masthead/body text sat inside that permanently-cropped strip
+    # (confirmed on real Bitcoin Ep1 beats: "September" losing its "Se").
+    layout = PageLayout(PAGE_W, PAGE_H, (86, 86, 30, 36), background="#EFE6D0")
     m = layout.margins
     layout.add(Frame(kind="rect", x=m[0] - 8, y=m[2] - 8,
                      w=layout.width - m[0] - m[1] + 16, h=layout.height - m[2] - m[3] + 16,
                      line_color="#2a2418", line_width=1.5))
-    # Blackletter headline runs long at this width — budget 2 lines' worth of
-    # frame height with explicit line_spacing, or a wrapped second line
-    # overlaps the first instead of stacking under it (Scribus doesn't grow a
-    # frame or shrink text to fit on its own).
-    layout.add(Frame(kind="text", x=m[0], y=m[2] + 4, w=layout.width - m[0] - m[1], h=88,
-                     text=spec.title, font="Old English Text MT Regular", size=32,
-                     align="center", color="#1c1811", line_spacing=34))
-    layout.add(Frame(kind="line", x=m[0], y=m[2] + 94, w=layout.width - m[0] - m[1], h=0,
+    # Blackletter headline runs long at this width — budget frame height (with
+    # explicit line_spacing) for real headlines, not a 1-2 word masthead.
+    # Real beat narration ("timestamp: event" style, e.g. "September
+    # fifteenth, one forty-five in the morning: Lehman Brothers filed for
+    # bankruptcy") wraps to 3-4 lines at this font; a too-short frame doesn't
+    # clip visibly, Scribus drops the overflow line from the export outright.
+    # Font size trimmed 32->26 so more of a long headline fits per line.
+    layout.add(Frame(kind="text", x=m[0], y=m[2] + 4, w=layout.width - m[0] - m[1], h=120,
+                     text=spec.title, font="Old English Text MT Regular", size=26,
+                     align="center", color="#1c1811", line_spacing=28))
+    layout.add(Frame(kind="line", x=m[0], y=m[2] + 126, w=layout.width - m[0] - m[1], h=0,
                      line_color="#1c1811", line_width=2.5))
-    layout.add(Frame(kind="text", x=m[0], y=m[2] + 98, w=layout.width - m[0] - m[1], h=14,
+    layout.add(Frame(kind="text", x=m[0], y=m[2] + 130, w=layout.width - m[0] - m[1], h=14,
                      text=(_byline(spec) or "SINGLE COPY").upper(), font="Garamond Regular",
                      size=8, align="center", color="#3a3225"))
-    body_y = m[2] + 124
+    stat_y = m[2] + 156
+    # `spec.statistics` was previously unused here — for a beat whose whole
+    # point IS one figure (e.g. a director-authored `stat` overlay: "Z$100
+    # ,000,000,000,000"), that number needs to be the visual centerpiece,
+    # not absent from the page entirely.
+    if spec.statistics:
+        s0 = spec.statistics[0]
+        layout.add(Frame(kind="text", x=m[0], y=stat_y, w=layout.width - m[0] - m[1], h=40,
+                         text=s0.value, font="Old English Text MT Regular", size=30,
+                         align="center", color="#1c1811"))
+        if s0.label:
+            layout.add(Frame(kind="text", x=m[0], y=stat_y + 42,
+                             w=layout.width - m[0] - m[1], h=14,
+                             text=s0.label, font="Garamond Italic", size=10,
+                             align="center", color="#3a3225"))
+        body_y = stat_y + 66
+    else:
+        body_y = stat_y
     body_h = layout.height - m[3] - body_y - (16 if spec.citations else 0)
     cols = columns(m[0], body_y, layout.width - m[0] - m[1], body_h, 4, 10)
     body = _wrap_body(spec.body) or "\n\n".join(f.text for f in spec.facts)
-    left, right = _split_two(body)
     quotes = "\n\n".join(q.text for q in spec.quotes)
+    # These beats are almost always one short documentary sentence (10-20
+    # words), not a running article — splitting that in half by word count
+    # produces two nearly-empty columns sitting side by side, which reads as
+    # a jumbled, cut-off fragment rather than a two-column article. Only
+    # split when there's enough body text for two columns to look like an
+    # actual article; otherwise the full (short) sentence reads fine as one
+    # narrow column, same pattern `modern_newspaper` already uses.
+    if len(body.split()) > 25:
+        left, right = _split_two(body)
+    else:
+        left, right = body, ""
     col_text = [left, right, quotes, ""]
     for i, (cx, cy, cw, ch) in enumerate(cols):
         layout.add(Frame(kind="text", x=cx, y=cy, w=cw, h=ch,
@@ -141,15 +176,19 @@ def vintage_newspaper(spec: DocumentSpec) -> PageLayout:
 
 
 def research_paper(spec: DocumentSpec) -> PageLayout:
-    layout = PageLayout(PAGE_W, PAGE_H, (72, 72, 72, 72), background="#FFFFFF")
+    # 72pt margins were already close to the ~83pt camera-safe threshold
+    # (see vintage_newspaper); bumped slightly for the same reason.
+    layout = PageLayout(PAGE_W, PAGE_H, (86, 86, 72, 72), background="#FFFFFF")
     m = layout.margins
-    layout.add(Frame(kind="text", x=m[0], y=m[2], w=layout.width - m[0] - m[1], h=48,
+    # h=48 fit ~2.5 lines; a longer real headline needs a 3rd — small safety
+    # margin added (see vintage_newspaper/archive_dossier for the same fix).
+    layout.add(Frame(kind="text", x=m[0], y=m[2], w=layout.width - m[0] - m[1], h=64,
                      text=spec.title, font="Cambria Bold", size=16, align="center",
                      color="#000000", line_spacing=19))
-    layout.add(Frame(kind="text", x=m[0], y=m[2] + 52, w=layout.width - m[0] - m[1], h=14,
+    layout.add(Frame(kind="text", x=m[0], y=m[2] + 68, w=layout.width - m[0] - m[1], h=14,
                      text=spec.subtitle or _byline(spec), font="Times New Roman Italic",
                      size=10, align="center", color="#333333"))
-    y = m[2] + 78
+    y = m[2] + 94
     if spec.body:
         layout.add(Frame(kind="text", x=m[0], y=y, w=layout.width - m[0] - m[1], h=70,
                          text="Abstract — " + spec.body[:420], font="Times New Roman Italic",
@@ -172,7 +211,10 @@ def research_paper(spec: DocumentSpec) -> PageLayout:
 
 
 def archive_dossier(spec: DocumentSpec) -> PageLayout:
-    layout = PageLayout(PAGE_W, PAGE_H, (40, 40, 44, 40), background="#F2EFE6")
+    # Left/right margins widened 40->86 — same camera-safe-zone fix as
+    # financial_report/vintage_newspaper (confirmed on a real Bitcoin Ep1
+    # beat: "ARCHIVE FILE" losing its "ARCH").
+    layout = PageLayout(PAGE_W, PAGE_H, (86, 86, 44, 40), background="#F2EFE6")
     m = layout.margins
     layout.add(Frame(kind="rect", x=m[0], y=m[2], w=layout.width - m[0] - m[1], h=26,
                      fill_color="#1a1a1a"))
@@ -182,10 +224,14 @@ def archive_dossier(spec: DocumentSpec) -> PageLayout:
     layout.add(Frame(kind="text", x=m[0] + 8, y=m[2] + 5, w=layout.width - m[0] - m[1] - 16,
                      h=18, text=(spec.dates[0] if spec.dates else ""), font="Courier New Bold",
                      size=11, align="right", color="#F2EFE6"))
-    layout.add(Frame(kind="text", x=m[0], y=m[2] + 40, w=layout.width - m[0] - m[1], h=44,
+    # h=44 with no explicit line_spacing only fit ~1.5 lines — real headlines
+    # (e.g. "In April two thousand and seven, the Justice Department
+    # indicted it.") wrap to 3 lines at this width/size; Scribus drops the
+    # overflow rather than clipping it visibly.
+    layout.add(Frame(kind="text", x=m[0], y=m[2] + 40, w=layout.width - m[0] - m[1], h=82,
                      text=spec.title, font="Courier New Bold", size=20, align="left",
-                     color="#1a1a1a"))
-    y = m[2] + 92
+                     color="#1a1a1a", line_spacing=24))
+    y = m[2] + 130
     layout.add(Frame(kind="text", x=m[0], y=y, w=layout.width - m[0] - m[1], h=260,
                      text=_wrap_body(spec.body) or "\n".join(f.text for f in spec.facts),
                      font="Courier New Regular", size=10, align="left", color="#1a1a1a",
@@ -205,16 +251,30 @@ def archive_dossier(spec: DocumentSpec) -> PageLayout:
 
 
 def financial_report(spec: DocumentSpec) -> PageLayout:
-    layout = PageLayout(PAGE_W, PAGE_H, (44, 44, 40, 40), background="#FFFFFF")
+    # Left/right margins widened from 44 to 88: `animate.py`'s slow_zoom
+    # cover-crop discards ~13.6% of page width off EACH edge to fill a 9:16
+    # frame without distorting a portrait page (fixed by the aspect-ratio
+    # mismatch, not a camera bug) — on a 612pt-wide page that's ~83pt per
+    # side. At the old 44pt margin, the right-aligned stat value and the
+    # masthead/body text both sat inside that permanently-cropped strip and
+    # were invisible for the entire shot. 88pt keeps them inside the visible
+    # frame with a small buffer.
+    layout = PageLayout(PAGE_W, PAGE_H, (88, 88, 40, 40), background="#FFFFFF")
     m = layout.margins
-    layout.add(Frame(kind="rect", x=0, y=0, w=layout.width, h=64, fill_color="#0E2A47"))
-    layout.add(Frame(kind="text", x=m[0], y=18, w=layout.width - m[0] - m[1], h=30,
+    # Same overflow-drop bug as breaking_news/magazine_feature (see this
+    # review's fixes there): a title frame too short for a wrapped 2-line
+    # headline doesn't clip visibly, Scribus drops the overflow line from the
+    # export outright — a title-safe headline is now capped at the source
+    # (beat_detect._headline_from), but the frame still needs real 2-line
+    # headroom rather than assuming a one-liner. Header bar grows to match.
+    layout.add(Frame(kind="rect", x=0, y=0, w=layout.width, h=90, fill_color="#0E2A47"))
+    layout.add(Frame(kind="text", x=m[0], y=16, w=layout.width - m[0] - m[1], h=56,
                      text=spec.title, font="Cambria Bold", size=20, align="left",
-                     color="#FFFFFF"))
-    layout.add(Frame(kind="text", x=m[0], y=70, w=layout.width - m[0] - m[1], h=16,
+                     color="#FFFFFF", line_spacing=24))
+    layout.add(Frame(kind="text", x=m[0], y=96, w=layout.width - m[0] - m[1], h=16,
                      text=spec.subtitle or _byline(spec), font="Arial Regular", size=9,
                      align="left", color="#555555"))
-    y = 96
+    y = 122
     for s in spec.statistics[:5]:
         layout.add(Frame(kind="rect", x=m[0], y=y, w=layout.width - m[0] - m[1], h=30,
                          fill_color="#F0F3F7"))
@@ -362,19 +422,24 @@ def company_memo(spec: DocumentSpec) -> PageLayout:
 
 
 def historical_document(spec: DocumentSpec) -> PageLayout:
-    layout = PageLayout(PAGE_W, PAGE_H, (54, 54, 54, 54), background="#E4D6B0")
+    # Left/right margins widened 54->86 — same camera-safe-zone fix as the
+    # other templates in this pass.
+    layout = PageLayout(PAGE_W, PAGE_H, (86, 86, 54, 54), background="#E4D6B0")
     m = layout.margins
     layout.add(Frame(kind="rect", x=m[0] - 10, y=m[2] - 10,
                      w=layout.width - m[0] - m[1] + 20, h=layout.height - m[2] - m[3] + 20,
                      line_color="#5a4a2a", line_width=2.0))
-    layout.add(Frame(kind="text", x=m[0], y=m[2], w=layout.width - m[0] - m[1], h=50,
+    # h=50 with no explicit line_spacing only fit ~1.5-1.9 lines; real
+    # headlines need up to 3 (same overflow-drop bug as the other templates
+    # fixed in this pass).
+    layout.add(Frame(kind="text", x=m[0], y=m[2], w=layout.width - m[0] - m[1], h=100,
                      text=spec.title, font="Garamond Bold", size=26, align="center",
-                     color="#3a2f18"))
+                     color="#3a2f18", line_spacing=30))
     if spec.dates:
-        layout.add(Frame(kind="text", x=m[0], y=m[2] + 52, w=layout.width - m[0] - m[1], h=16,
+        layout.add(Frame(kind="text", x=m[0], y=m[2] + 102, w=layout.width - m[0] - m[1], h=16,
                          text=spec.dates[0], font="Garamond Italic", size=11, align="center",
                          color="#5a4a2a"))
-    y = m[2] + 84
+    y = m[2] + 134
     layout.add(Frame(kind="text", x=m[0] + 12, y=y, w=layout.width - m[0] - m[1] - 24,
                      h=layout.height - m[3] - y - (18 if spec.citations else 0) - 12,
                      text=_wrap_body(spec.body) or "\n\n".join(f.text for f in spec.facts),
@@ -388,8 +453,13 @@ def historical_document(spec: DocumentSpec) -> PageLayout:
 def news_clipping(spec: DocumentSpec) -> PageLayout:
     """A short, single-column clipped snippet — deliberately smaller and
     plainer than the front-page templates: a torn-edge strip for beats that
-    want a quoted excerpt pasted onto the frame, not a whole newspaper page."""
-    layout = PageLayout(PAGE_W, PAGE_H, (46, 46, 60, 60), background="#D8D2BE")
+    want a quoted excerpt pasted onto the frame, not a whole newspaper page.
+
+    Left/right margins widened 46->86 for the same camera-safe-zone reason
+    as the other templates in this pass — also happens to suit the "smaller
+    clipping pasted on a backdrop" concept, since more backdrop shows
+    around the clip."""
+    layout = PageLayout(PAGE_W, PAGE_H, (86, 86, 60, 60), background="#D8D2BE")
     m = layout.margins
     clip_x, clip_w = m[0], layout.width - m[0] - m[1]
     clip_y0, clip_y1 = m[2], layout.height - m[3]
@@ -400,10 +470,21 @@ def news_clipping(spec: DocumentSpec) -> PageLayout:
     layout.add(Frame(kind="text", x=clip_x + 20, y=clip_y0 + 18, w=clip_w - 40, h=14,
                      text=(_byline(spec) or "WIRE REPORT").upper(), font="Georgia Bold",
                      size=8, color="#7a6f52", tracking=60))
-    layout.add(Frame(kind="text", x=clip_x + 20, y=clip_y0 + 36, w=clip_w - 40, h=56,
+    # h=56 fit ~2.5 lines; widened for real 3-4 line headlines (same
+    # overflow-drop bug as the other templates fixed in this pass).
+    layout.add(Frame(kind="text", x=clip_x + 20, y=clip_y0 + 36, w=clip_w - 40, h=88,
                      text=spec.title, font="Georgia Bold", size=19, align="left",
                      color="#141414", line_spacing=22))
-    body_y = clip_y0 + 100
+    y = clip_y0 + 130
+    # `spec.statistics` was silently dropped by this template — for a
+    # counter-driven beat (e.g. "$639B... largest bankruptcy in American
+    # history") that's the ONE number the whole clipping exists to show.
+    for s in spec.statistics[:2]:
+        layout.add(Frame(kind="text", x=clip_x + 20, y=y, w=clip_w - 40, h=22,
+                         text=f"{s.label}: {s.value}", font="Georgia Bold",
+                         size=13, color="#141414"))
+        y += 26
+    body_y = y + 6
     body_h = clip_y1 - m[3] - body_y - (16 if spec.citations else 0) - 20
     layout.add(Frame(kind="text", x=clip_x + 20, y=body_y, w=clip_w - 40, h=max(body_h, 20),
                      text=_wrap_body(spec.body) or "\n\n".join(f.text for f in spec.facts),

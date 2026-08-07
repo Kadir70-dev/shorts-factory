@@ -549,6 +549,14 @@ def measure(graph: SceneGraph) -> BudgetReport:
                 ch, why = "official", "official / public-domain source"
             else:
                 ch, why = "stock", "footage of unrecorded provenance"
+        elif v.type == "papercraft":
+            # Paper Craft only ever substitutes WITHIN a beat already allocated
+            # to "official" or "charts" (pipeline/papercraft/beat_detect.py) —
+            # "official" is the more accurate long-term label for a laid-out
+            # document either way. Without this branch a real, on-disk Scribus
+            # render fell through to the catch-all below and reported as
+            # UNRESOLVED (blank) — a real render mis-reported as a failure.
+            ch, why = "official", "rendered by the Scribus Paper Craft engine"
         elif v.type == "solid" or not v.asset_path:
             # No asset on disk = nothing on screen. Counted honestly.
             ch, why = UNRESOLVED, f"no asset resolved (type={v.type})"

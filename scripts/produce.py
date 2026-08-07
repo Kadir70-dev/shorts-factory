@@ -252,7 +252,8 @@ async def run(args) -> int:
             failures.append(f"{len(creport.violations)} compliance violation(s)")
 
         _grounding_summary(graph)
-        out_dir.joinpath("scene_graph.json").write_text(graph.model_dump_json(indent=2))
+        out_dir.joinpath("scene_graph.json").write_text(
+            graph.model_dump_json(indent=2), encoding="utf-8")
 
         # Delivered visual-breakdown report, rebuilt from what ACTUALLY resolved
         # rather than from the plan — a beat that fell back to another source must
@@ -261,7 +262,7 @@ async def run(args) -> int:
         stale = visual_budget.audit_unused(graph)
         out_dir.joinpath("visual_breakdown.json").write_text(json.dumps(
             {**final_budget.as_dict(), "unused_generated_assets": stale},
-            indent=2))
+            indent=2), encoding="utf-8")
         print("\n   ── delivered visual breakdown ─────────────────────────────")
         print("   " + final_budget.format().replace("\n", "\n   "))
         print(f"   unused generated assets: {len(stale)}"
@@ -315,8 +316,10 @@ async def run(args) -> int:
     # packaging reuse it and re-probe only what loudnorm can actually change.
     # These are also the ONLY trustworthy RAM/wall-time metrics: they come from
     # the process that did the rendering.
-    out_dir.joinpath("qa_report.json").write_text(rep.model_dump_json(indent=2))
-    out_dir.joinpath("qa_report.txt").write_text(qa.format_report(rep))
+    out_dir.joinpath("qa_report.json").write_text(
+        rep.model_dump_json(indent=2), encoding="utf-8")
+    out_dir.joinpath("qa_report.txt").write_text(
+        qa.format_report(rep), encoding="utf-8")
 
     ai_stills = len({l.asset_path for s in graph.scenes for l in s.visual.layers
                      if l.kind == "ai_image" and l.asset_path})

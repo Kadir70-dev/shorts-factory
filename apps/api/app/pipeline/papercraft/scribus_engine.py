@@ -40,7 +40,7 @@ from . import finishing
 from . import provenance as prov
 from .binary import find_scribus_binary
 
-_CACHE_VERSION = 10  # bumped: build_spec() now reads `stat` overlays; vintage_newspaper displays spec.statistics
+_CACHE_VERSION = 11  # bumped: research_paper skips redundant Abstract block for short (<=25 word) bodies
 _RUNNER = Path(__file__).parent / "_runner.py"
 
 TEMPLATE_BUILDERS = {

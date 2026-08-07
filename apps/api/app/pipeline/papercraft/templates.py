@@ -189,7 +189,12 @@ def research_paper(spec: DocumentSpec) -> PageLayout:
                      text=spec.subtitle or _byline(spec), font="Times New Roman Italic",
                      size=10, align="center", color="#333333"))
     y = m[2] + 94
-    if spec.body:
+    # These beats are usually one short documentary sentence, and the
+    # abstract is literally the same text `spec.facts` renders again a few
+    # lines down (both come from `scene.narration`) — for a beat that short,
+    # "Abstract — X." directly above "X." reads as padding, not a summary.
+    # Same 25-word threshold as vintage_newspaper's column-split fix.
+    if spec.body and len(spec.body.split()) > 25:
         layout.add(Frame(kind="text", x=m[0], y=y, w=layout.width - m[0] - m[1], h=70,
                          text="Abstract — " + spec.body[:420], font="Times New Roman Italic",
                          size=9, align="justify", color="#111111", line_spacing=12))

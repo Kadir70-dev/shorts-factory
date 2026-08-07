@@ -38,7 +38,7 @@ from .production_optimizer import changed_scenes, scene_fingerprint
 # Locally-rendered visuals already carry the brand palette and their own motion.
 # Grading them again shifts the colours away from the palette they were drawn in,
 # and Ken Burns on an animated chart is just wobble.
-_PRERENDERED = ("dataviz", "motion_gfx", "branded", "threejs")
+_PRERENDERED = ("dataviz", "motion_gfx", "branded", "threejs", "papercraft")
 
 # ENCODER SETTINGS. Neither pass used to specify these, so both silently ran at
 # x264's `medium`/CRF 23 defaults — the single most expensive accident in the
@@ -257,7 +257,15 @@ async def _scene_clip(scene: Scene, out: Path, W: int, H: int, fps: int,
 
     if v.asset_path and Path(v.asset_path).exists():
         is_img = v.asset_path.lower().endswith((".jpg", ".jpeg", ".png", ".webp"))
-        if prerendered:
+        if v.type == "papercraft":
+            # A Scribus page is a flat, unanimated PNG (unlike dataviz/motion_gfx/
+            # threejs clips, which already carry motion frame-by-frame) — it needs
+            # a REAL camera move here, not the generic prerendered fit+vignette.
+            from .papercraft.animate import camera_vf
+            inp = ["-i", v.asset_path]
+            vf = (camera_vf(v.camera_movement, W, H, fps, dur)
+                  + f",{grade.ffmpeg()}" + draw)
+        elif prerendered:
             # already 1080x1920, already branded, already animating
             inp = ["-i", v.asset_path]
             vf = f"{fit},vignette=PI/{grade.vignette}" + draw

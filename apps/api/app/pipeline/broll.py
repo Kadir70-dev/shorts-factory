@@ -137,11 +137,66 @@ async def _branded_plate(scene: Scene, graph: SceneGraph) -> str | None:
         return None
 
 
+def _display_headline(scene: Scene) -> str:
+    """The line a VIEWER may read on a kinetic-type card.
+
+    Display copy only. `visual.visual_intent` is a note aimed at the asset
+    resolver — "Marine One lifting off the South Lawn, 1971 — the vanishing" —
+    and it used to sit in this fallback chain, so any footage beat that failed
+    to resolve published that production note on screen as its headline. An
+    authored `headline` overlay is display copy by definition; narration is the
+    line the viewer is already hearing, so it is always safe to set in type.
+    """
+    return next((o.text for o in scene.overlays if o.type == "headline"),
+                "") or scene.narration
+
+
+async def _render_papercraft(scene: Scene, graph: SceneGraph) -> bool:
+    """Fact-heavy beats already allocated to 'official' or 'charts' get a real
+    laid-out document instead of a chart/archival-photo search, when the
+    beat's own content says a document is the better fit (see
+    papercraft/beat_detect.py). Opt-in and additive: OFF preserves every
+    existing chart/official selection byte-for-byte; ON only ever substitutes
+    WITHIN a channel that was already allocated, so the budget report's
+    percentages never move."""
+    if not settings().papercraft_engine_enabled:
+        return False
+    if scene.visual.budget_channel not in ("official", "charts"):
+        return False
+    from . import papercraft
+    from .papercraft import beat_detect
+    if not beat_detect.is_eligible(scene):
+        return False
+    try:
+        doc_type = beat_detect.classify(scene)
+        spec = beat_detect.build_spec(scene, graph, doc_type)
+        out = _local_asset(graph.meta.video_id, scene.id, "papercraft.png")
+        result = await papercraft.render(spec, out)
+        scene.visual.asset_path = str(result.png)
+        scene.visual.type = "papercraft"
+        scene.visual.motion = "none"          # camera_movement drives motion instead
+        scene.visual.camera_movement = spec.camera_movement
+        scene.visual.decision_reason = (
+            f"papercraft:{doc_type} ({'cache hit' if result.cache_hit else 'rendered'})")
+        return True
+    except papercraft.ScribusUnavailable as e:
+        print(f"[dispatch] {scene.id}: papercraft unavailable ({e}) → chart/kinetic",
+              flush=True)
+        return False
+    except Exception as e:                        # noqa: BLE001
+        print(f"[dispatch] {scene.id}: papercraft failed ({type(e).__name__}: "
+              f"{str(e)[:120]}) → chart/kinetic", flush=True)
+        return False
+
+
 async def _render_self(scene: Scene, graph: SceneGraph) -> bool:
-    """Render this beat with no external dependency: a chart if it has real
-    numbers, otherwise kinetic type. Both are local, so this tier cannot fail for
-    want of a provider, a network call or a worker — which is what makes a blank
-    frame unnecessary."""
+    """Render this beat with no external dependency: a laid-out document when
+    the content is fact-heavy and the engine is enabled, else a chart if it
+    has real numbers, otherwise kinetic type. All three are local, so this
+    tier cannot fail for want of a provider, a network call or a worker —
+    which is what makes a blank frame unnecessary."""
+    if await _render_papercraft(scene, graph):
+        return True
     viz = scene.data or dataviz.from_scene(scene)
     if viz and viz.valid():
         try:
@@ -156,8 +211,7 @@ async def _render_self(scene: Scene, graph: SceneGraph) -> bool:
             print(f"[dispatch] {scene.id}: chart failed ({type(e).__name__}) "
                   "→ kinetic card", flush=True)
     try:
-        headline = next((o.text for o in scene.overlays if o.type == "headline"),
-                        "") or scene.visual.visual_intent or scene.narration
+        headline = _display_headline(scene)
         source = next((o.text for o in scene.overlays if o.type == "source"), "")
         out = _local_asset(graph.meta.video_id, scene.id, "gfx.mp4")
         scene.visual.asset_path = str(await motiongfx.kinetic(
@@ -495,9 +549,7 @@ async def _resolve(scene: Scene, idx: int, graph: SceneGraph, spec: VideoSpec,
     # No filmable subject: build the claim itself on screen in the channel's type.
     if strat == sd.MOTION_GFX or v.type == "motion_gfx":
         try:
-            headline = next((o.text for o in scene.overlays
-                             if o.type == "headline"), "") or v.visual_intent \
-                or scene.narration
+            headline = _display_headline(scene)
             kicker = next((o.text for o in scene.overlays
                            if o.type == "lower_third"), "")
             source = next((o.text for o in scene.overlays

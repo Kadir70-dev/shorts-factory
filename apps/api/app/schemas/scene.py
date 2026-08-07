@@ -111,7 +111,7 @@ class Visual(BaseModel):
     #   solid    = flat-colour last resort
     type: Literal[
         "broll", "ai_video", "ai_image", "dataviz", "motion_gfx", "threejs", "branded",
-        "manim", "image", "solid"
+        "manim", "image", "solid", "papercraft"
     ] = "broll"
     # search query (pexels/pixabay) OR generation prompt (veo3/seedance)
     # OR manim scene name for type=="manim"
@@ -133,6 +133,10 @@ class Visual(BaseModel):
     asset_path: Optional[str] = None
     # ken-burns / zoom give static images life; ignored for video
     motion: Literal["none", "ken_burns", "zoom_in", "zoom_out", "pan_lr"] = "ken_burns"
+    # Paper Craft only (type == "papercraft"): the richer camera vocabulary a
+    # laid-out document scene picks from — see pipeline/papercraft/animate.py.
+    # Ignored for every other type; `motion` above still governs everything else.
+    camera_movement: str = "slow_zoom"
     # fallback color if asset resolution fails (never ship a BLACK frame — this is
     # a visible dark slate, not near-black, so a solid safety net still reads on
     # screen and passes the Phase-4 QA non-black gate).
@@ -153,7 +157,7 @@ class Visual(BaseModel):
     #   ai_video   — opt-in cinematic motion insert
     strategy: Literal[
         "dataviz", "real", "ai_image", "ai_video", "motion_gfx", "threejs",
-        "branded", "hybrid"
+        "branded", "hybrid", "papercraft"
     ] = "real"
     # Which visual-budget channel the whole-video allocator gave this beat
     # (pipeline/visual_budget.py). `strategy` says how the resolver fetches;

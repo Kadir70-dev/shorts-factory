@@ -302,6 +302,13 @@ class Settings(BaseSettings):
     ai_broll_timeout_s: float = 1200.0
     # Phase 7 central visual identity. OFF preserves every existing render path.
     brand_identity_enabled: bool = False
+    # Scribus-powered Paper Craft (newspapers/reports/dossiers/documents). OFF
+    # preserves every existing chart/motion-gfx/official selection untouched;
+    # ON lets fact-heavy beats already allocated to those channels be rendered
+    # as a real laid-out document instead, within the SAME budget share.
+    papercraft_engine_enabled: bool = False
+    papercraft_binary: str = ""   # explicit Scribus executable path; "" = auto-detect
+    papercraft_timeout_s: float = 60.0
 
     @property
     def strict_visuals(self) -> bool:

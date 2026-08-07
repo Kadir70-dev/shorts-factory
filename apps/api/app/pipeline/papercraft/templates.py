@@ -1,5 +1,5 @@
 """
-Paper Craft — the 10 document templates.
+Paper Craft — the 11 document templates.
 
 Each function is a pure `DocumentSpec -> PageLayout` transform: it decides
 fonts, palette, grid and which spec fields land where, using the SAME
@@ -18,6 +18,30 @@ PAGE_W, PAGE_H = 612.0, 792.0   # US Letter, points
 
 def _wrap_body(text: str) -> str:
     return text.strip()
+
+
+def _split_two(text: str) -> tuple[str, str]:
+    """Divide body copy roughly in half by word count for a two-column read,
+    without duplicating it into both frames. Scribus's real text-flow (linked
+    frames) isn't wired up in `_runner.py` — this is a plain word-count split,
+    good enough for a two-column newspaper block, not real justified flow."""
+    words = text.split()
+    if not words:
+        return "", ""
+    mid = (len(words) + 1) // 2
+    return " ".join(words[:mid]), " ".join(words[mid:])
+
+
+def _torn_edge(layout: PageLayout, x: float, y: float, w: float, *,
+              teeth: int = 24, depth: float = 3.5, color: str = "#2a2a2a") -> None:
+    """A deterministic sawtooth line standing in for a torn-paper edge: short
+    alternating-diagonal `line` frames, the same primitive every other rule
+    line in this module already uses — no new Scribus API needed for it."""
+    step = w / teeth
+    for i in range(teeth):
+        dy = depth if i % 2 == 0 else -depth
+        layout.add(Frame(kind="line", x=x + i * step, y=y, w=step, h=dy,
+                         line_color=color, line_width=0.75))
 
 
 def _byline(spec: DocumentSpec) -> str:
@@ -87,21 +111,28 @@ def vintage_newspaper(spec: DocumentSpec) -> PageLayout:
     layout.add(Frame(kind="rect", x=m[0] - 8, y=m[2] - 8,
                      w=layout.width - m[0] - m[1] + 16, h=layout.height - m[2] - m[3] + 16,
                      line_color="#2a2418", line_width=1.5))
-    layout.add(Frame(kind="text", x=m[0], y=m[2] + 4, w=layout.width - m[0] - m[1], h=56,
-                     text=spec.title, font="Old English Text MT Regular", size=38,
-                     align="center", color="#1c1811"))
-    layout.add(Frame(kind="line", x=m[0], y=m[2] + 62, w=layout.width - m[0] - m[1], h=0,
+    # Blackletter headline runs long at this width — budget 2 lines' worth of
+    # frame height with explicit line_spacing, or a wrapped second line
+    # overlaps the first instead of stacking under it (Scribus doesn't grow a
+    # frame or shrink text to fit on its own).
+    layout.add(Frame(kind="text", x=m[0], y=m[2] + 4, w=layout.width - m[0] - m[1], h=88,
+                     text=spec.title, font="Old English Text MT Regular", size=32,
+                     align="center", color="#1c1811", line_spacing=34))
+    layout.add(Frame(kind="line", x=m[0], y=m[2] + 94, w=layout.width - m[0] - m[1], h=0,
                      line_color="#1c1811", line_width=2.5))
-    layout.add(Frame(kind="text", x=m[0], y=m[2] + 66, w=layout.width - m[0] - m[1], h=14,
+    layout.add(Frame(kind="text", x=m[0], y=m[2] + 98, w=layout.width - m[0] - m[1], h=14,
                      text=(_byline(spec) or "SINGLE COPY").upper(), font="Garamond Regular",
                      size=8, align="center", color="#3a3225"))
-    body_y = m[2] + 92
+    body_y = m[2] + 124
     body_h = layout.height - m[3] - body_y - (16 if spec.citations else 0)
     cols = columns(m[0], body_y, layout.width - m[0] - m[1], body_h, 4, 10)
     body = _wrap_body(spec.body) or "\n\n".join(f.text for f in spec.facts)
+    left, right = _split_two(body)
+    quotes = "\n\n".join(q.text for q in spec.quotes)
+    col_text = [left, right, quotes, ""]
     for i, (cx, cy, cw, ch) in enumerate(cols):
         layout.add(Frame(kind="text", x=cx, y=cy, w=cw, h=ch,
-                         text=body if i < 2 else "\n\n".join(q.text for q in spec.quotes),
+                         text=col_text[i],
                          font="Times New Roman Regular", size=9, align="justify",
                          color="#1c1811", line_spacing=11, name=f"col{i}"))
     _citation_footer(spec, layout, font="Garamond Regular", color="#4a4030")
@@ -212,10 +243,14 @@ def magazine_feature(spec: DocumentSpec) -> PageLayout:
         layout.add(Frame(kind="image", x=m[0], y=y, w=layout.width - m[0] - m[1], h=220,
                          image_path=spec.images[0].path, name="hero"))
         y += 232
-    layout.add(Frame(kind="text", x=m[0], y=y, w=layout.width - m[0] - m[1], h=60,
+    # Same class of bug as breaking_news's banner label: a frame too short for
+    # a wrapped 2-line title doesn't clip visibly, Scribus drops the overflow
+    # line from the export outright. h=60 only fit ~1.9 lines at
+    # line_spacing=31; budget a full 2 lines plus a little headroom.
+    layout.add(Frame(kind="text", x=m[0], y=y, w=layout.width - m[0] - m[1], h=76,
                      text=spec.title, font="Georgia Bold", size=28, align="left",
                      color="#111111", line_spacing=31))
-    y += 68
+    y += 84
     if spec.subtitle:
         layout.add(Frame(kind="text", x=m[0], y=y, w=layout.width - m[0] - m[1], h=30,
                          text=spec.subtitle, font="Georgia Italic", size=13,
@@ -245,7 +280,10 @@ def breaking_news(spec: DocumentSpec) -> PageLayout:
     layout = PageLayout(PAGE_W, PAGE_H, (28, 28, 30, 34), background="#FFFFFF")
     m = layout.margins
     layout.add(Frame(kind="rect", x=0, y=0, w=layout.width, h=46, fill_color="#B00E0E"))
-    layout.add(Frame(kind="text", x=m[0], y=10, w=layout.width - m[0] - m[1], h=26,
+    # h=26 was too tight for 20pt Arial Black — Scribus silently dropped the
+    # text (not just an aging/finishing artifact: it's absent from the raw PDF
+    # export too), rather than clipping or shrinking it. Give it real headroom.
+    layout.add(Frame(kind="text", x=m[0], y=8, w=layout.width - m[0] - m[1], h=32,
                      text="BREAKING NEWS", font="Arial Black", size=20, align="left",
                      color="#FFFFFF"))
     layout.add(Frame(kind="text", x=m[0], y=58, w=layout.width - m[0] - m[1], h=90,
@@ -344,4 +382,33 @@ def historical_document(spec: DocumentSpec) -> PageLayout:
                      line_spacing=17))
     _citation_footer(spec, layout, font="Garamond Regular", color="#5a4a2a")
     _editorial_mark(spec, layout, font="Garamond Regular")
+    return layout
+
+
+def news_clipping(spec: DocumentSpec) -> PageLayout:
+    """A short, single-column clipped snippet — deliberately smaller and
+    plainer than the front-page templates: a torn-edge strip for beats that
+    want a quoted excerpt pasted onto the frame, not a whole newspaper page."""
+    layout = PageLayout(PAGE_W, PAGE_H, (46, 46, 60, 60), background="#D8D2BE")
+    m = layout.margins
+    clip_x, clip_w = m[0], layout.width - m[0] - m[1]
+    clip_y0, clip_y1 = m[2], layout.height - m[3]
+    layout.add(Frame(kind="rect", x=clip_x, y=clip_y0, w=clip_w, h=clip_y1 - clip_y0,
+                     fill_color="#F7F3E7"))
+    _torn_edge(layout, clip_x, clip_y0, clip_w)
+    _torn_edge(layout, clip_x, clip_y1, clip_w)
+    layout.add(Frame(kind="text", x=clip_x + 20, y=clip_y0 + 18, w=clip_w - 40, h=14,
+                     text=(_byline(spec) or "WIRE REPORT").upper(), font="Georgia Bold",
+                     size=8, color="#7a6f52", tracking=60))
+    layout.add(Frame(kind="text", x=clip_x + 20, y=clip_y0 + 36, w=clip_w - 40, h=56,
+                     text=spec.title, font="Georgia Bold", size=19, align="left",
+                     color="#141414", line_spacing=22))
+    body_y = clip_y0 + 100
+    body_h = clip_y1 - m[3] - body_y - (16 if spec.citations else 0) - 20
+    layout.add(Frame(kind="text", x=clip_x + 20, y=body_y, w=clip_w - 40, h=max(body_h, 20),
+                     text=_wrap_body(spec.body) or "\n\n".join(f.text for f in spec.facts),
+                     font="Times New Roman Regular", size=9.5, align="justify",
+                     color="#1a1a1a", line_spacing=13))
+    _citation_footer(spec, layout, font="Georgia Regular", size=7.0, color="#8a8168")
+    _editorial_mark(spec, layout, font="Georgia Regular")
     return layout

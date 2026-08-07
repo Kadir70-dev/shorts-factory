@@ -168,7 +168,7 @@ async def _render_papercraft(scene: Scene, graph: SceneGraph) -> bool:
     if not beat_detect.is_eligible(scene):
         return False
     try:
-        doc_type = beat_detect.classify(scene)
+        doc_type = beat_detect.classify(scene, graph)
         spec = beat_detect.build_spec(scene, graph, doc_type)
         out = _local_asset(graph.meta.video_id, scene.id, "papercraft.png")
         result = await papercraft.render(spec, out)

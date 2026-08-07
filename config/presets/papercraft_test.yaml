@@ -1,0 +1,54 @@
+# ───────────────────────────────────────────────────────────────────────────
+# TEST PRESET · Scribus Paper Craft verification only
+#
+# NOT a production preset. Clones `educational` (fact-heavy niche, so beats
+# land on the "official"/"charts" budget channels papercraft substitutes
+# within) and adds PAPERCRAFT_ENGINE_ENABLED=1. Every other preset's env is
+# untouched — this is the only place the flag is on.
+#
+# Run:  .venv/bin/python scripts/produce.py --preset papercraft_test --topic "..."
+# ───────────────────────────────────────────────────────────────────────────
+name: papercraft_test
+channel_id: k70_facts
+niche: usa_facts
+
+env:
+  RENDER_BACKEND: ffmpeg
+  VISUAL_ACCURACY_MODE: strict
+  LAYERED_RENDER: "1"
+  CHARACTER_MEMORY: "1"
+  QA_ENABLED: "1"
+  AI_VIDEO_ENABLED: "0"
+  ENABLE_IMAGE_TO_VIDEO: "0"
+  COMFYUI_ENABLED: "0"
+  LAYERED_AI_STILL_BUDGET: "2"
+  LAYERED_MAX_HERO_SCENES: "1"
+  LAYERED_FFMPEG_THREADS: "4"
+  LAYERED_SUBJECT_MATTE: oval
+  LAYERED_MIN_FREE_MB: "2000"
+
+  # ── Six-channel visual mix ───────────────────────────────────────────────
+  STORYBOARD_ENGINE_ENABLED: "1"
+  MULTI_SOURCE_ASSET_ENGINE_ENABLED: "1"
+  MOTION_GRAPHICS_ENGINE_ENABLED: "1"
+  THREEJS_VISUAL_ENGINE_ENABLED: "1"
+  AI_BROLL_ENGINE_ENABLED: "1"
+  THREEJS_QUALITY: preview
+
+  # ── The one flag this preset exists to flip ─────────────────────────────
+  PAPERCRAFT_ENGINE_ENABLED: "1"
+
+character:
+  name: ""
+  desc: ""
+  style: ""
+
+story:
+  pacing: "surprising hook → one clear idea → satisfying payoff"
+  hook_style: "It's not what you think."
+  hero_beat: "the single concept made visual (the mechanism, the comparison, the reveal)"
+  visual_doctrine: >
+    Every beat shows the exact thing being explained — real footage of the subject
+    plus clear stat/diagram overlays; ONE AI cinematic still for the concept that
+    can't be filmed. Accurate, attributed, no vague 'science stock' filler.
+  music_mood: bright-curious

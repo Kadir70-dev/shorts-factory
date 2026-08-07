@@ -111,8 +111,15 @@ def age(src_png: Path, dst_png: Path, *, paper_age: str, seed: int) -> None:
     shadow = np.array(shadow_rgb, dtype=np.float32) / 255.0
     highlight = np.array(highlight_rgb, dtype=np.float32) / 255.0
     luma = img.mean(axis=2, keepdims=True)
-    tinted = highlight * luma + shadow * (1.0 - luma)
-    img = img * 0.35 + tinted * 0.65   # keep the printed ink dark, tint the paper
+    # Multiply blend, not a cross-dissolve: a lerp toward `tone` at fixed weight
+    # (the previous approach) drags BLACK INK toward `shadow_rgb` too, and
+    # shadow_rgb is a paper tone (near-white for "pristine", warm tan for
+    # "ancient") — never actual ink black. That washed every rendered page's
+    # text out to gray regardless of paper_age. Multiplying preserves it: an
+    # ink pixel near (0,0,0) stays near (0,0,0) times anything, while paper
+    # background pixels (near-white) take on the shadow/highlight tone in full.
+    tone = shadow + (highlight - shadow) * luma
+    img = img * tone
 
     img += _grain(h, w, grain_strength, seed)
     img *= _fold_shadows(h, w, seed, count=2 if paper_age != "pristine" else 0)

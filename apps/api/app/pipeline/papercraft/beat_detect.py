@@ -14,8 +14,32 @@ percentages produced by `visual_budget.allocate()` don't move.
 """
 from __future__ import annotations
 
-from ..schemas.scene import Scene, SceneGraph
+import re
+
+from ...schemas.scene import Scene, SceneGraph, StoryboardScene
 from .spec import Citation, DocumentSpec, Fact, Quote, Statistic
+
+# A bare 4-digit year in the narration itself ("...in 1952, the Treasury...").
+# `Scene` carries no year/date field of its own — only `StoryboardScene` does
+# (`location`/`year`), and that's only populated when the gated storyboard
+# engine ran. This is the fallback for when it didn't.
+_YEAR_RE = re.compile(r"\b(1[5-9]\d{2}|20[0-2]\d)\b")
+
+
+def _storyboard_meta(scene: Scene, graph: SceneGraph) -> StoryboardScene | None:
+    """The matching `StoryboardScene`, if the storyboard engine ran for this
+    beat — it, not `Scene`, is where `year`/`location` actually live."""
+    if graph.storyboard is None:
+        return None
+    return next((b for b in graph.storyboard.scenes if b.source_scene_id == scene.id), None)
+
+
+def _beat_year(scene: Scene, graph: SceneGraph) -> int | None:
+    beat = _storyboard_meta(scene, graph)
+    if beat and beat.year:
+        return beat.year
+    match = _YEAR_RE.search(scene.narration or "")
+    return int(match.group()) if match else None
 
 # Keyword signals per document type — matched against narration + entity/loc,
 # not an ML classifier. Cheap, deterministic, auditable; matches the rest of
@@ -29,6 +53,15 @@ _SIGNALS: dict[str, tuple[str, ...]] = {
     "research_paper": ("study", "research", "according to", "data show", "economist"),
     "company_memo": ("memo", "internal", "company", "corporation", "board"),
     "evidence_board": ("evidence", "arrest", "charged", "court", "testimony"),
+    "historical_document": ("declaration", "treaty", "founding", "constitution",
+                            "colonial", "revolution", "manuscript", "proclamation",
+                            "monarchy", "empire"),
+    "magazine_feature": ("profile", "feature story", "interview", "spotlight",
+                         "behind the scenes", "in-depth", "portrait", "lifestyle"),
+    "modern_newspaper": ("reported", "spokesperson", "press conference",
+                        "officials said", "newspaper", "editorial"),
+    "news_clipping": ("clipping", "clipped", "wire report", "dispatch",
+                      "excerpt", "bulletin"),
 }
 
 
@@ -47,16 +80,36 @@ def is_eligible(scene: Scene) -> bool:
               (w for kws in _SIGNALS.values() for w in kws))
 
 
-def classify(scene: Scene) -> str:
-    """Which of the 10 templates fits this beat best. Falls back to
-    `archive_dossier` — a generic official-document look — when no keyword
-    signal is strong enough to pick a more specific one."""
+def classify(scene: Scene, graph: SceneGraph) -> str:
+    """Which of the 11 templates fits this beat best.
+
+    Every template is reachable: 9 have direct keyword signals above;
+    `vintage_newspaper` and `historical_document` are reached by taking a
+    beat that already scored as `modern_newspaper`/`archive_dossier` and
+    swapping in the period-appropriate sibling when the beat's own year
+    (storyboard metadata, or else a bare 4-digit year in the narration) is
+    well before living memory, rather than duplicating near-identical
+    keywords under a second key. Falls back to `financial_report` when the
+    beat carries chart data, `news_clipping` for a very short beat (a full
+    front page reads oddly empty for one line), else `modern_newspaper` — a
+    plain, generic "printed page" look."""
     text = (scene.narration or "").lower()
     scores = {doc_type: sum(1 for kw in kws if kw in text)
              for doc_type, kws in _SIGNALS.items()}
     best = max(scores, key=scores.get)
     if scores[best] == 0:
-        return "financial_report" if (scene.data is not None) else "archive_dossier"
+        if scene.data is not None:
+            best = "financial_report"
+        else:
+            word_count = len((scene.narration or "").split())
+            best = "news_clipping" if word_count <= 25 else "modern_newspaper"
+
+    year = _beat_year(scene, graph)
+    if year and year < 1970:
+        if best == "modern_newspaper":
+            best = "vintage_newspaper"
+        elif best == "archive_dossier":
+            best = "historical_document"
     return best
 
 
@@ -82,12 +135,15 @@ def build_spec(scene: Scene, graph: SceneGraph, document_type: str) -> DocumentS
     if quote_overlay:
         quotes.append(Quote(text=quote_overlay.text, attribution=quote_overlay.sub or ""))
 
+    beat = _storyboard_meta(scene, graph)
+    year = _beat_year(scene, graph)
+
     return DocumentSpec(
         document_type=document_type,        # type: ignore[arg-type]
         title=headline,
-        subtitle=getattr(scene, "location", "") or "",
+        subtitle=(beat.location if beat else "") or "",
         body=scene.narration,
-        dates=[str(scene.year)] if getattr(scene, "year", None) else [],
+        dates=[str(year)] if year else [],
         facts=facts,
         quotes=quotes,
         statistics=statistics,

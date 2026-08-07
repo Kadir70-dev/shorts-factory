@@ -40,7 +40,7 @@ from . import finishing
 from . import provenance as prov
 from .binary import find_scribus_binary
 
-_CACHE_VERSION = 1
+_CACHE_VERSION = 4  # bumped: finishing.age() ink-contrast fix; vintage_newspaper, breaking_news, magazine_feature layout fixes
 _RUNNER = Path(__file__).parent / "_runner.py"
 
 TEMPLATE_BUILDERS = {
@@ -54,6 +54,7 @@ TEMPLATE_BUILDERS = {
     "evidence_board": tpl.evidence_board,
     "company_memo": tpl.company_memo,
     "historical_document": tpl.historical_document,
+    "news_clipping": tpl.news_clipping,
 }
 
 

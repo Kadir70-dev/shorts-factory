@@ -6,7 +6,12 @@
 # within) and adds PAPERCRAFT_ENGINE_ENABLED=1. Every other preset's env is
 # untouched — this is the only place the flag is on.
 #
-# Run:  .venv/bin/python scripts/produce.py --preset papercraft_test --topic "..."
+# AI_BROLL_ENGINE_ENABLED is OFF here (unlike `educational`) — it calls an
+# external image-generation provider and has nothing to do with verifying
+# Paper Craft, so there's no reason to spend that call on this run.
+#
+# Run:  .venv/bin/python scripts/produce.py --preset papercraft_test \
+#         --from-json data/demos/nyc_richest.json --keep
 # ───────────────────────────────────────────────────────────────────────────
 name: papercraft_test
 channel_id: k70_facts
@@ -32,7 +37,7 @@ env:
   MULTI_SOURCE_ASSET_ENGINE_ENABLED: "1"
   MOTION_GRAPHICS_ENGINE_ENABLED: "1"
   THREEJS_VISUAL_ENGINE_ENABLED: "1"
-  AI_BROLL_ENGINE_ENABLED: "1"
+  AI_BROLL_ENGINE_ENABLED: "0"
   THREEJS_QUALITY: preview
 
   # ── The one flag this preset exists to flip ─────────────────────────────

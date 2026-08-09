@@ -72,6 +72,17 @@ def escape(text: str) -> str:
                 .replace(":", "\\:"))
 
 
+def escape_path(path: str) -> str:
+    """Escape a filesystem path for an UNQUOTED filter option value (`fontfile=`).
+
+    Windows paths need backslashes turned to forward slashes (ffmpeg accepts
+    either, and a raw backslash is this parser's escape character) and the
+    drive-letter colon escaped like any other colon. POSIX paths have neither
+    character, so this is a no-op there.
+    """
+    return path.replace("\\", "/").replace(":", "\\:")
+
+
 def drawtext(text: str, *, font: str, size: int, color: str, x: str, y: str,
              alpha: float | str = 1.0, border: int = 0,
              border_color: str = "black", shadow: int = 0,
@@ -101,7 +112,7 @@ def drawtext(text: str, *, font: str, size: int, color: str, x: str, y: str,
     elif alpha < 1.0:
         parts.append(f"alpha={alpha:.3f}")
     if font:
-        parts.insert(1, f"fontfile={font}")
+        parts.insert(1, f"fontfile='{escape_path(font)}'")
     if border:
         parts += [f"borderw={border}", f"bordercolor={border_color}"]
     if shadow:

@@ -32,15 +32,20 @@ _LAST_RESORT = [
     "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
     "/usr/share/fonts/truetype/ubuntu/Ubuntu-B.ttf",
     "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    r"C:\Windows\Fonts\arialbd.ttf",
+    r"C:\Windows\Fonts\arial.ttf",
 ]
 _MONO_LAST_RESORT = [
     "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf",
     "/usr/share/fonts/truetype/ubuntu/UbuntuMono-B.ttf",
+    r"C:\Windows\Fonts\consolab.ttf",
+    r"C:\Windows\Fonts\consola.ttf",
 ] + _LAST_RESORT
 
 _FONT_ROOTS = [
     Path("/usr/share/fonts"), Path("/usr/local/share/fonts"),
     Path.home() / ".fonts", Path.home() / ".local/share/fonts",
+    Path(r"C:\Windows\Fonts"), CONFIG_DIR / "brand" / "fonts",
 ]
 
 
@@ -140,11 +145,20 @@ def resolve_font(families: list[str], bold: bool = True,
     caption renderer) resolves by FAMILY NAME through fontconfig. Returning one
     and guessing the other is how caption typography silently drifts away from
     overlay typography.
+
+    The family name is the font FILE's own name (read from its `name` table),
+    not the search string that happened to match it to a file. `_scan_roots`
+    matches by filename slug ("barlow" in "barlowcondensed-bold"), so a
+    condensed-only face was returning "Barlow" as its ASS Fontname when the
+    file's real family is "Barlow Condensed" — libass then can't find a
+    family literally called "Barlow" and silently substitutes a fallback
+    font, which is wider and can overflow a caption sized for the real one.
     """
     for fam in families:
         hit = _fc_match(fam, bold) or _scan_roots(fam, bold)
         if hit:
-            return hit, fam
+            from .font_metrics import real_family_name
+            return hit, real_family_name(hit) or fam
     fallbacks = _MONO_LAST_RESORT if mono else _LAST_RESORT
     for p in fallbacks:
         if Path(p).exists():

@@ -1,0 +1,35 @@
+{
+  "id": "d07_a",
+  "day": 7,
+  "slot": "A",
+  "category": "business_wealth_story",
+  "content_type": "evergreen",
+  "topic": "McDonald's real estate business",
+  "sources": [
+    {
+      "claim": "McDonald's franchisees pay rent and royalties; the company generally owns or secures long-term leases for restaurant land/buildings; 2024 franchised rent revenue was $10.017B",
+      "source": "McDonald's 2024 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/63908/000006390825000012/mcd-20241231.htm",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "Sonneborn",
+      "note": "SUN-\u0259-born"
+    }
+  ],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": true,
+  "disclaimer": "",
+  "status": "READY"
+}

@@ -61,6 +61,8 @@ class ImageOverlay:
     y: str = "0"
     scale_w: int | None = None      # scale plate to this width (keep aspect)
     opacity: float = 1.0            # constant opacity
+    rotate_deg: float = 0.0         # small physical tilt (evidence-card papercraft)
+    shadow: bool = False            # soft offset shadow behind a rotated plate
     start: float | None = None      # visible window (None = whole timeline)
     end: float | None = None
     fade: float = 0.25              # in/out fade seconds within the window
@@ -308,7 +310,8 @@ def lower_third_filters(theme: BrandTheme, title: str, sub: str, width: int,
 # --------------------------------------------------------------------------- #
 # Full-timeline elements
 # --------------------------------------------------------------------------- #
-def intro_filters(theme: BrandTheme, width: int, height: int) -> list[str]:
+def intro_filters(theme: BrandTheme, width: int, height: int,
+                  hook_visual_type: str = "") -> list[str]:
     """The brand stamp over the hook: an accent rule that wipes across, plus the
     wordmark. Under a second, then gone — restraint reads as authority."""
     intro = theme.intro
@@ -329,6 +332,14 @@ def intro_filters(theme: BrandTheme, width: int, height: int) -> list[str]:
         f"h={max(4, height // 320)}:color={theme.ff(accent)}@0.95:t=fill:"
         f"enable='between(t,0,{dur:.3f})'"
     ]
+    # A Paper Craft hook already has its own masthead/headline starting near the
+    # page top (a laid-out document, not the kinetic-type block this y=0.26 was
+    # tuned against) — the big centred wordmark landed directly on top of it
+    # (confirmed on the IKEA d01_a hook: "K70" stamped over "WIRE REPORT" / the
+    # headline's first lines). The thin accent rule above is a harmless wipe at
+    # the very top edge and stays; only the large wordmark text is skipped here.
+    if hook_visual_type == "papercraft":
+        return out
     if intro.get("show_wordmark", True) and theme.watermark.get("text"):
         size = theme.size("headline", height)
         out.append(tx.drawtext(
@@ -480,28 +491,48 @@ def build_image_overlay_chain(overlays: list[ImageOverlay], base_label: str,
     for i, ov in enumerate(overlays):
         if not ov.path.exists():
             continue
-        inputs += ["-loop", "1", "-i", str(ov.path)]
-        steps = ["format=rgba"]
-        if ov.scale_w:
-            steps.append(f"scale={ov.scale_w}:-1")
-        if ov.opacity < 1.0:
-            steps.append(f"colorchannelmixer=aa={ov.opacity:.3f}")
-        if ov.start is not None and ov.fade > 0:
-            steps.append(f"fade=t=in:st={ov.start:.3f}:d={ov.fade:.3f}:alpha=1")
-        if ov.end is not None and ov.fade > 0:
-            steps.append(
-                f"fade=t=out:st={max(0.0, ov.end - ov.fade):.3f}:"
-                f"d={ov.fade:.3f}:alpha=1")
-        chain.append(f"[{idx}:v]{','.join(steps)}[bov{i}]")
+        rot = f"{ov.rotate_deg * 3.14159265 / 180:.5f}"
+        rotate_step = (f"rotate={rot}:c=black@0.0:"
+                       f"ow=rotw({rot}):oh=roth({rot})") if ov.rotate_deg else None
+
+        def _build_steps(darken: float | None) -> list[str]:
+            s = ["format=rgba"]
+            if ov.scale_w:
+                s.append(f"scale={ov.scale_w}:-1")
+            if rotate_step:
+                s.append(rotate_step)
+            if darken is not None:
+                # a soft, offset shadow: darken + fade the whole plate, no blur
+                # (an extra gaussian pass here doubled this chain's cost for a
+                # tilt this small — a flat translucent dark copy reads the same)
+                s.append(f"colorchannelmixer=aa={darken:.3f}")
+            elif ov.opacity < 1.0:
+                s.append(f"colorchannelmixer=aa={ov.opacity:.3f}")
+            if ov.start is not None and ov.fade > 0:
+                s.append(f"fade=t=in:st={ov.start:.3f}:d={ov.fade:.3f}:alpha=1")
+            if ov.end is not None and ov.fade > 0:
+                s.append(f"fade=t=out:st={max(0.0, ov.end - ov.fade):.3f}:"
+                         f"d={ov.fade:.3f}:alpha=1")
+            return s
 
         enable = ""
         if ov.start is not None and ov.end is not None:
             enable = f":enable='between(t,{ov.start:.3f},{ov.end:.3f})'"
-        out_label = f"bl{i}"
         # shortest=1 is load-bearing. These plates come from `-loop 1 -i x.png`,
         # so their stream is INFINITE; with shortest=0 the overlay output runs to
         # the longest input and the finished video grows a silent tail past the
         # end of the timeline (observed: 39.2s of content in a 54.6s file).
+        if ov.shadow:
+            inputs += ["-loop", "1", "-i", str(ov.path)]
+            chain.append(f"[{idx}:v]{','.join(_build_steps(0.30))}[bsh{i}]")
+            chain.append(f"[{label}][bsh{i}]overlay=x={ov.x}+7:y={ov.y}+9"
+                         f":shortest=1{enable}[bls{i}]")
+            label = f"bls{i}"
+            idx += 1
+
+        inputs += ["-loop", "1", "-i", str(ov.path)]
+        chain.append(f"[{idx}:v]{','.join(_build_steps(None))}[bov{i}]")
+        out_label = f"bl{i}"
         chain.append(f"[{label}][bov{i}]overlay=x={ov.x}:y={ov.y}"
                      f":shortest=1{enable}[{out_label}]")
         label = out_label

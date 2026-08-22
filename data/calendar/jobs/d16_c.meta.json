@@ -1,0 +1,35 @@
+{
+  "id": "d16_c",
+  "day": 16,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "FDIC deposit insurance covers up to $250k per depositor/bank/category, not unlimited",
+  "sources": [
+    {
+      "claim": "FDIC insures deposits up to $250,000 per depositor, per insured bank, per ownership category",
+      "source": "FDIC.gov official deposit insurance coverage rules",
+      "url": "https://www.fdic.gov/deposit-insurance-coverage",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "FDIC",
+      "note": "said as four letters, 'F-D-I-C'"
+    }
+  ],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 10,
+    "visual_potential": 7,
+    "us_relevance": 9,
+    "originality": 7,
+    "average": 8.29
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

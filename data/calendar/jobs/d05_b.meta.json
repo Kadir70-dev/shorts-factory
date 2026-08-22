@@ -1,0 +1,17 @@
+{
+  "id": "d05_b",
+  "day": 5,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "How an IPO actually works",
+  "sources": [
+    {"claim": "IPOs are priced through an underwriter-led roadshow process where institutional investor demand determines the final offer price the night before public trading begins",
+     "source": "SEC investor education materials on the IPO process; standard underwriting mechanics", "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/initial-public-offerings-ipos", "type": "primary"}
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {"hook": 8, "clarity": 9, "retention": 8, "fact_confidence": 9, "visual_potential": 7, "us_relevance": 8, "originality": 7, "average": 8.0},
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

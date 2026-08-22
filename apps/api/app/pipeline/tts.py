@@ -10,7 +10,7 @@ from ..schemas.scene import SceneGraph
 from ..schemas.video_spec import VideoSpec
 from ..voice import VoiceManager
 from ..voice import engines as voice_engines
-from .util import ffmpeg_concat_audio, ffprobe_duration
+from .util import ffmpeg_concat_audio, ffprobe_duration, normalize_narration_joins
 
 
 async def synthesize(graph: SceneGraph, spec: VideoSpec,
@@ -68,6 +68,7 @@ async def synthesize(graph: SceneGraph, spec: VideoSpec,
           ", ".join(f"{name}x{count}" for name, count in counts.items()),
           flush=True)
 
+    normalize_narration_joins(clips)
     for scene, clip in zip(graph.scenes, clips):
         scene.duration_sec = round(ffprobe_duration(clip), 3)
     master = out / "voiceover.wav"

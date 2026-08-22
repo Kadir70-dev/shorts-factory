@@ -40,7 +40,8 @@ from .util import visual_cache_path, visual_cache_store
 
 # Bump when the drawing code changes shape: it namespaces every cache entry, so
 # old frames can never be served for new geometry.
-_CACHE_VERSION = 1
+#   2 — axis-label thinning + readout colour honours explicit point emphasis
+_CACHE_VERSION = 2
 
 # Chart forms the engine can render, in the order the auto-picker prefers them.
 KINDS = ["counter", "bar_compare", "line_trend", "delta", "donut", "meter"]
@@ -207,6 +208,25 @@ def _point_color(theme: BrandTheme, p: DataPoint, is_highlight: bool,
             return theme.rgb("negative")
         return theme.rgb("primary")
     return theme.rgb("secondary")
+
+
+def _readout_role(p: DataPoint, rising: bool | None) -> str:
+    """Palette role for the big NUMBER a form prints beside its geometry.
+
+    Same precedence as `_point_color`, expressed as a role name for the text
+    layer. Explicit emphasis wins over the series direction: a bailout total and
+    an inflation spike both sit in a RISING series, so deriving the colour from
+    the direction alone printed them in the palette's `positive` green — the
+    exact opposite of what the figure means, and against the brand rule that
+    green is reserved for genuine data UP.
+    """
+    if p.emphasis in ("positive", "negative"):
+        return p.emphasis
+    if p.emphasis == "primary":
+        return "primary"
+    if rising is None:
+        return "primary"
+    return "positive" if rising else "negative"
 
 
 def _y_range(values: list[float]) -> tuple[float, float]:
@@ -522,7 +542,7 @@ def _labels(theme: BrandTheme, lay: Layout, viz: DataViz, kind: str,
                 (a, lay.pad + plate_w / 2),
                 (b, lay.pad + lay.plot_w - plate_w / 2))):
             color = (theme.ff("ink_dim") if i == 0 else
-                     theme.ff("positive" if rising else "negative"))
+                     theme.ff(_readout_role(p, rising)))
             out += _counter_filters(theme, lay, viz, p.value,
                                     f"{int(x_center)}-text_w/2", y, num_size,
                                     color, duration, start=anim * 0.45 * i)
@@ -545,24 +565,50 @@ def _labels(theme: BrandTheme, lay: Layout, viz: DataViz, kind: str,
                 alpha=tx.fade_alpha(anim * 0.8, duration + 1.0, fade=0.25)))
 
     else:                                       # bar_compare / line_trend
-        for i, p in enumerate(pts):
+        def _centre(i: int) -> float:
             if kind == "bar_compare":
                 gap = lay.plot_w * 0.06 / max(1, n - 1) if n > 1 else 0
                 bw = (lay.plot_w - gap * (n - 1)) / n
-                cx = lay.pad + i * (bw + gap) + bw / 2
-            else:
-                cx = lay.pad + lay.plot_w * i / max(1, n - 1)
-                cx = min(max(cx, lay.pad + 40), lay.pad + lay.plot_w - 40)
+                return lay.pad + i * (bw + gap) + bw / 2
+            cx = lay.pad + lay.plot_w * i / max(1, n - 1)
+            return min(max(cx, lay.pad + 40), lay.pad + lay.plot_w - 40)
+
+        # AXIS LABEL THINNING. Every point used to get a label whatever room it
+        # had, so a twelve-year series drew "1971" on top of "1972" and "1981"
+        # on top of "1982" — worst at the ends, where the centres are clamped
+        # inward and pushed into their neighbours. Walk left to right and keep a
+        # label only when its box clears the last one kept. The highlighted
+        # datum is seeded first so the beat's own year is never the one dropped.
+        half_w = {i: len(str(p.label)[:14]) * lbl * 0.29 for i, p in enumerate(pts)}
+        pad_x = lbl * 0.30
+        keep: set[int] = set()
+        occupied: list[tuple[float, float]] = []
+
+        def _place(i: int) -> bool:
+            lo, hi = _centre(i) - half_w[i], _centre(i) + half_w[i]
+            if any(lo < b + pad_x and a - pad_x < hi for a, b in occupied):
+                return False
+            occupied.append((lo, hi))
+            keep.add(i)
+            return True
+
+        if 0 <= hi_idx < n:
+            _place(hi_idx)
+        for i in range(n):
+            _place(i)
+
+        for i, p in enumerate(pts):
+            cx = _centre(i)
             delay = anim * 0.35 * (i / max(1, n - 1)) if n > 1 else 0.0
-            out.append(tx.drawtext(
-                str(p.label)[:14], font=theme.body.path, size=lbl,
-                color=theme.ff("ink_dim"), x=f"{int(cx)}-text_w/2",
-                y=str(lay.plot_bottom + round(lay.h * 0.012)), shadow=2))
+            if i in keep:
+                out.append(tx.drawtext(
+                    str(p.label)[:14], font=theme.body.path, size=lbl,
+                    color=theme.ff("ink_dim"), x=f"{int(cx)}-text_w/2",
+                    y=str(lay.plot_bottom + round(lay.h * 0.012)), shadow=2))
             # Only the highlighted datum carries its value: labelling every bar
             # turns a graphic into a spreadsheet.
             if i == hi_idx:
-                color = theme.ff("positive" if rising else "negative") \
-                    if rising is not None else theme.ff("primary")
+                color = theme.ff(_readout_role(p, rising))
                 size = round(theme.size("stat_number", lay.h) * 0.34)
                 out += _counter_filters(
                     theme, lay, viz, p.value, f"{int(cx)}-text_w/2",

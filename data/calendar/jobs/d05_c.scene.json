@@ -1,0 +1,124 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d05_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Two People, Same $10,000, Ten Years Apart. Here's The Gap Compounding Creates.",
+    "hook": "Two people each invest $10,000. Same return. The only difference is one started ten years earlier.",
+    "description": "A simple hypothetical: two investors each put in $10,000 once and never add another dollar, assuming a constant 8% average annual return for illustration. One starts at 25, the other at 35. By 65, the early starter's money is worth more than double the late starter's, purely from ten extra years of compounding. This is a hypothetical math example, not a projection or promise — actual investment returns vary and are never guaranteed. Educational content only, not financial advice.",
+    "tags": ["compound interest", "investing education", "personal finance", "retirement planning", "time value of money", "money mechanics"],
+    "hashtags": ["#compoundinterest", "#investing", "#personalfinance", "#money", "#shorts"],
+    "thumbnail_text": "10 YEARS = 2X"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Two people each invest ten thousand dollars. Same return. The only difference is one started ten years earlier.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["compound interest example", "time advantage"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "two hands stacking coins side by side",
+        "visual_intent": "Two identical small stacks of coins side by side on a dark surface, dramatic side light",
+        "broll_keywords": ["coins stacks side by side", "money stacks comparison table", "coins close up dark"],
+        "decision_reason": "hook beat: the visual comparison, hard cut"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Person A invests at twenty-five and never adds another dollar. Person B invests the same amount, but waits until thirty-five.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["hypothetical example", "starting age comparison"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "none",
+        "query": "young adult and older adult portrait split",
+        "visual_intent": "A visual split between a younger adult and an older adult, neutral studio-style light, clean framing",
+        "broll_keywords": ["young adult portrait", "adult portrait split screen", "two people comparison shot"],
+        "decision_reason": "grounds the two hypothetical people"
+      },
+      "overlays": [{"type": "stat", "text": "Hypothetical example, not a projection", "y": 0.85}]
+    },
+    {
+      "id": "s3",
+      "narration": "Assuming the same steady eight percent average annual return for both, by age sixty-five, the numbers split sharply.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["8 percent assumption", "compounding math"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_out",
+        "query": "two growth line charts diverging screen",
+        "visual_intent": "Two growth curves diverging on a dark financial chart, one clearly above the other, teal and gold",
+        "broll_keywords": ["diverging growth chart lines", "two trend lines screen", "financial comparison chart dark"],
+        "decision_reason": "visualizes the diverging growth curves"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Person A's ten thousand dollars grows to roughly two hundred seventeen thousand. Person B's grows to about one hundred one thousand.",
+      "duration_sec": 8.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["compounding result", "final numbers"],
+      "visual": {
+        "type": "dataviz", "strategy": "real", "scene_visual_type": "data_viz", "motion": "none",
+        "query": "bar chart two columns comparison finance",
+        "visual_intent": "A branded bar chart comparing the two final balances",
+        "broll_keywords": ["bar chart comparison screen", "two columns financial chart"],
+        "decision_reason": "the beat states the exact result figures — chart, not stock"
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "Value At Age 65 (8% Avg. Return)",
+        "points": [
+          {"label": "Started at 35", "value": 100600, "emphasis": "normal"},
+          {"label": "Started at 25", "value": 217200, "emphasis": "positive"}
+        ],
+        "prefix": "$",
+        "decimals": 0,
+        "abbreviate": true,
+        "highlight": 1,
+        "source": "Illustrative math, 8% constant annual return assumption",
+        "note": "hypothetical, not a return guarantee"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Same amount invested. Same assumed return. More than double the outcome, purely from ten extra years of compounding.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["time is the variable", "compounding lesson"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "hourglass sand time passing close up",
+        "visual_intent": "An hourglass with sand falling, close macro, warm dramatic light",
+        "broll_keywords": ["hourglass sand falling", "time passing hourglass macro", "sand timer close up"],
+        "decision_reason": "the time-as-the-variable payoff"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Real markets don't move in a straight line, and returns are never guaranteed. But the math on time is exactly this simple. Follow for more.",
+      "duration_sec": 8.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["closing caveat", "cta"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "ken_burns",
+        "query": "calendar pages turning time lapse",
+        "visual_intent": "Calendar pages flipping in a time-lapse style, soft warm light, symbolic",
+        "broll_keywords": ["calendar pages turning", "time lapse calendar", "pages flipping symbolic"],
+        "decision_reason": "closing caveat visual and CTA"
+      }
+    }
+  ]
+}

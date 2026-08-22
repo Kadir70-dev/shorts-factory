@@ -35,6 +35,12 @@ from ..config import CONFIG_DIR, ROOT
 
 # Engines that can carry a cloned identity, best-first. Order is the cascade.
 CLONE_ENGINES = ("chatterbox", "openf5", "piper")
+# Engines that CANNOT clone: fixed speaker embeddings, a different person from
+# the enrolled narrator. Never part of `cascade()`, so `has_clone()` and every
+# "(cloned)" label stay truthful. They are reachable only through
+# `fallback_cascade()`, and only when the profile opts in per engine with
+# `non_production: true` — a stock narrator must be a deliberate, visible choice.
+NON_CLONE_ENGINES = ("kokoro",)
 OPENF5_REPOSITORY = "mrfakename/OpenF5-TTS-Base"
 
 
@@ -50,12 +56,23 @@ class EngineBinding:
     repository: str = ""
     config_path: str = ""
     vocab_path: str = ""
+    voices_path: str = ""             # kokoro speaker-embedding bundle
+    non_production: bool = False      # opt-in for a non-cloning stock engine
     settings: dict = field(default_factory=dict)
 
     def ready(self) -> tuple[bool, str]:
         """Is this binding usable right now → (ok, why not)."""
         if not self.enabled:
             return False, "disabled in profile"
+        if self.name == "kokoro":
+            if not self.non_production:
+                return False, ("stock voice — set non_production: true to permit "
+                               "a narrator who is not the enrolled identity")
+            for label, value in (("model_path", self.model_path),
+                                 ("voices_path", self.voices_path)):
+                if not value or not _abs(value).exists():
+                    return False, f"{label} missing at {_abs(value) if value else '<unset>'}"
+            return True, ""
         if self.name == "piper":
             if not self.model_path:
                 return False, "no model_path — fine-tune not installed"
@@ -111,11 +128,22 @@ class VoiceProfile:
                 out.append(name)
         return out
 
+    def fallback_cascade(self) -> list[str]:
+        """Ready NON-cloning engines. A different speaker from the enrolled
+        identity, so this is only consulted once `cascade()` is empty and the
+        profile has explicitly permitted it."""
+        out = []
+        for name in NON_CLONE_ENGINES:
+            b = self.engines.get(name)
+            if b and b.ready()[0]:
+                out.append(name)
+        return out
+
     def diagnostics(self) -> list[str]:
         """Why each engine is or isn't available — the message a user needs when
         the render refuses to run."""
         lines = []
-        for name in CLONE_ENGINES:
+        for name in CLONE_ENGINES + NON_CLONE_ENGINES:
             b = self.engines.get(name)
             if not b:
                 lines.append(f"  {name:12} not configured")
@@ -164,6 +192,8 @@ def load_profile() -> VoiceProfile:
             repository=str(spec.get("repository", "") or ""),
             config_path=str(spec.get("config_path", "") or ""),
             vocab_path=str(spec.get("vocab_path", "") or ""),
+            voices_path=str(spec.get("voices_path", "") or ""),
+            non_production=bool(spec.get("non_production", False)),
             settings=dict(spec.get("settings", {}) or {}),
         )
 

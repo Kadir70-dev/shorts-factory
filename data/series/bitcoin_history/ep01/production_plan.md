@@ -225,6 +225,18 @@ not worked around in the spec.
 3. **Chart readouts coloured by series direction, not by meaning.** The TARP total and the 1980 inflation spike both printed in the palette's `positive` green because their series happen to rise — against the brand rule reserving green for genuine data UP. The highlighted datum's explicit `emphasis` now wins. *Verified: both now red.*
 4. **Production notes were printed on screen.** When a footage beat failed to resolve, the kinetic-type fallback used `visual.visual_intent` as its headline — a note aimed at the asset resolver. The rendered slice published **"MARINE ONE LIFTING OFF THE SOUTH LAWN, 1971 — THE VANISHING"** as a title card. Two call sites, now sharing one `_display_headline()` helper that only ever uses authored display copy or the narration. *Verified in a re-render.*
 
+5. **The asset resolver threw away the Director's own search phrases.** `asset_engine.build_query()` read only storyboard fields and extracted subject nouns with `_FASHION_SUBJECT` — a *fashion* vocabulary (cotton, denim, loom, tannery). On a finance/history documentary it matches nothing, so queries collapsed to raw narration grammar: `'And then Britain asked for roughly'`, `'It worked Inflation broke'`. Meanwhile every scene already carries `broll_keywords` — which the schema defines as "ordered footage search phrases for the asset resolver" — e.g. `['marine one helicopter 1971', …]`. The engine never read them.
+
+   That guaranteed rejection. `narration_match` scores a candidate as `0.30 + 0.70 × coverage` of the **query's** words; the floor is `0.58`, needing 40% coverage. Grammar words never appear in an archive caption, so **63 of 72 candidates scored 0.30–0.47 and were rejected**. Both the first query and the retry used the same broken extractor, so every beat paid two full provider fan-outs to fail twice — that was the 400-second asset stage.
+
+   Fixed in three parts: authored keywords now lead the query, **one phrase per search** (concatenating both *lowers* coverage and so lowers the score of a correct photograph), and a stopword filter on the fallback path. Measured: candidates passing the gate **5 → 17**, official/public-domain delivered **0.0% → 14.0%**, asset stage **399.6s → 308.9s**, QA FAIL → **PASS**.
+
+6. **`SAFE_LICENSES` omitted CC BY 2.5**, rejecting the genuinely relevant Northern Rock archival photographs on licence grounds. The 2.5 and 1.0 CC generations are exactly as commercially safe as the 2.0/3.0/4.0 already listed; attribution travels with the candidate and is burned into the credits. NonCommercial and NoDerivatives remain excluded. Licence rejections: **4 → 0**.
+
+7. **Three.js was reported as "not installed" on a machine where it was fully installed.** `shutil.which("node")` cannot see an nvm install, because nvm adds its bin directory from an *interactive* shell profile that a pipeline subprocess never loads. All 20 globe flights were silently dropping to the 2D ladder. `find_node()` now checks `$NODE_BIN`, then PATH, then the newest `~/.nvm/versions/node/*`, and prepends that directory to the child environment so the `tsc` shim resolves too.
+
+8. **Globe flights arrived unlabelled.** `_flight()` sent the subject as `pins`, which `worker.ts` types but never draws — only `regions` are painted and labelled. Every flight landed on an unhighlighted country and never told the viewer where it was. The subject now travels as a `region`, which gets the accent fill, the outline and a clamped screen label in one pass.
+
 Also: a twelve-point line chart drew its axis labels on top of each other
 (1971/1972, 1981/1982). Labels are now thinned by collision, with the highlighted
 year seeded first so the beat's own number is never the one dropped. The chart
@@ -288,18 +300,29 @@ The spec is finished and validated. The 54-second cold open has been rendered
 end-to-end through `produce.py` and passed every QA gate. The full episode needs
 three things this host does not currently have:
 
-| Blocker | Effect | Fix |
+Every provider used is **free**. Nothing here bills.
+
+| Source | Cost | Status |
 |---|---|---|
-| No asset-provider keys in `.env` | 68 archival/stock/AI beats walk the provider chain, fail on network and fall back — ~76 min wasted per run | Add `PEXELS_API_KEY`, `PIXABAY_API_KEY` and one image-provider key |
-| `node` not installed in WSL | All 20 globe flights fall back — the Three.js worker cannot launch | `sudo apt install nodejs` in WSL, then `npm i` in `apps/remotion/` |
-| ~~600s render timeout~~ | ~~Aborts a 26-min render~~ | **Fixed** — now scales with runtime |
+| Wikimedia Commons | free, no key | available — 3.0s/search |
+| Pexels | free tier key | available — 0.8s/search |
+| Pixabay | free tier key | available — 0.4s/search |
+| Pollinations (AI stills) | free, no key | available — 1.4s/image |
+| Three.js / charts / motion graphics / maps | local | available |
+| Google AI, HuggingFace, ComfyUI | paid or token | **unconfigured — skipped without a network call** |
+
+Provider availability is now decided **once per run** rather than rediscovered per
+beat, and a provider that fails twice is parked for the remainder of the run.
+Measured: 50 calls to an unconfigured provider cost **0.2 ms total**; a parked
+provider short-circuits in **0.03 ms** without opening a socket.
 
 Measured on this box (4 cores, 3.8 GB): render runs at **2.13× realtime**, TTS at
 **~1× realtime**, and TTS comes in **~13% faster** than the authored estimate, so
 the finished episode lands near **12.4 minutes**.
 
-With keys and Node in place, budget **60–90 minutes** of wall clock for the full
-episode.
+Remaining bottleneck: the asset stage still costs ~62s per externally-resolved
+beat, dominated by candidate downloads rather than search. Budget **~100 minutes**
+of wall clock for a full episode render, QA and packaging.
 
 ```bash
 .venv/bin/python scripts/build_bitcoin_ep01.py     # rebuild the spec

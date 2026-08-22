@@ -1,0 +1,212 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d09_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Nike Has Never Owned a Single Shoe Factory",
+    "hook": "Nike has never owned a single factory that makes its shoes.",
+    "description": "Nike designs and markets its shoes but has never manufactured them itself. Per its own FY2024 filings, contract manufacturers ran 96 finished-goods footwear factories across 11 countries, with Vietnam alone producing about half of all Nike-brand footwear that year.",
+    "tags": [
+      "nike",
+      "business model",
+      "manufacturing",
+      "supply chain",
+      "how nike makes shoes"
+    ],
+    "hashtags": [
+      "#nike",
+      "#business",
+      "#supplychain",
+      "#shorts"
+    ],
+    "thumbnail_text": "0 FACTORIES"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Nike has never owned a single factory that makes its shoes.",
+      "duration_sec": 3.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "nike manufacturing"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "nike sneaker close up product",
+        "visual_intent": "A single sneaker on a plain lit surface, product-style macro, clean",
+        "broll_keywords": [
+          "sneaker product close up",
+          "running shoe macro shot",
+          "athletic shoe still life"
+        ],
+        "decision_reason": "hook beat: the surprising negative fact"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Every pair is built by outside manufacturers Nike contracts with, not Nike itself.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "contract manufacturing"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "shoe factory workers assembly line",
+        "visual_intent": "A footwear assembly line with workers assembling shoes, documentary realism, overhead angle",
+        "broll_keywords": [
+          "shoe factory assembly line",
+          "footwear manufacturing workers",
+          "sneaker production line overhead"
+        ],
+        "decision_reason": "defines the outsourcing structure"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "As of Nike's own twenty twenty-four filings, contract manufacturers ran ninety-six footwear factories across eleven countries.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "nike 10-K factories"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "world map factories network graphic",
+        "visual_intent": "A stylized world map with glowing nodes marking factory locations, dark background, clean data graphic",
+        "broll_keywords": [
+          "world map network nodes graphic",
+          "global factories map data",
+          "supply chain map visualization"
+        ],
+        "decision_reason": "exact figures from Nike FY2024 Form 10-K"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "96 factories \u00b7 11 countries",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "Vietnam alone made about half of all Nike footwear that year. Indonesia and China made most of the rest.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "vietnam manufacturing share"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "donut chart percentage breakdown screen",
+        "visual_intent": "A donut chart on a dark screen showing one dominant segment, clean financial graphic style",
+        "broll_keywords": [
+          "donut chart percentage screen",
+          "pie chart data breakdown",
+          "financial data segment graphic"
+        ],
+        "decision_reason": "Nike FY2024 10-K: Vietnam ~50%, Indonesia ~27%, China ~18% of footwear"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Vietnam ~50% of Nike footwear",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "Nike's actual factory floor is a design studio, a marketing budget, and a spreadsheet of supplier contracts.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "nike as design company"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "shoe design sketch studio desk",
+        "visual_intent": "A designer's desk with shoe sketches and material swatches, natural light, creative studio",
+        "broll_keywords": [
+          "shoe design sketch desk",
+          "sneaker design studio",
+          "footwear designer workspace"
+        ],
+        "decision_reason": "reframes what Nike actually 'makes'"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "That's deliberate. Owning factories means owning fixed costs, labor risk, and capacity Nike can't easily undo.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "asset-light strategy"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "industrial factory machinery heavy equipment",
+        "visual_intent": "Heavy industrial machinery in a factory setting, cool light, wide shot",
+        "broll_keywords": [
+          "industrial factory machinery wide",
+          "heavy manufacturing equipment",
+          "factory floor machines"
+        ],
+        "decision_reason": "explains the strategic rationale for outsourcing"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "Contracting it out means Nike can shift production countries faster than it could ever build a new plant. Follow for more.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "shipping containers port cargo",
+        "visual_intent": "Stacked shipping containers at a port, wide shot, cinematic golden light",
+        "broll_keywords": [
+          "shipping containers port wide",
+          "cargo port containers stacked",
+          "global shipping logistics port"
+        ],
+        "decision_reason": "closing payoff on supply-chain flexibility, CTA"
+      }
+    }
+  ]
+}

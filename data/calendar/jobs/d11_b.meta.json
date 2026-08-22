@@ -1,0 +1,35 @@
+{
+  "id": "d11_b",
+  "day": 11,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "Why index funds beat most active managers",
+  "sources": [
+    {
+      "claim": "Bogle launched the First Index Investment Trust at Vanguard on Aug 31, 1976; hoped to raise $50-150M, raised just over $11M; was mocked as 'un-American'",
+      "source": "Vanguard '50 years, 50 facts' retrospective; The Motley Fool historical coverage",
+      "url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/articles/50-years-50-facts-indexing-since-1976.html",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "Bogle",
+      "note": "rhymes with 'toggle'"
+    }
+  ],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 7,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.29
+  },
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

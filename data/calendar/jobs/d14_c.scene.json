@@ -1,0 +1,175 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d14_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Why A Car Lease Is Priced Nothing Like A Car Loan",
+    "hook": "A low lease payment can hide the most important number in the deal: what the car is expected to lose in value.",
+    "description": "A car loan finances the full purchase price of the vehicle. A lease works differently: it charges you for the vehicle's expected depreciation over the lease term, plus a finance charge, because the car goes back to the dealer at the end. That's why a lease payment is usually lower than a loan payment on the same car, but you own nothing when it's over. Educational content only, not financial advice.",
+    "tags": [
+      "car lease vs buy",
+      "auto finance",
+      "leasing explained",
+      "personal finance",
+      "car buying"
+    ],
+    "hashtags": [
+      "#cars",
+      "#personalfinance",
+      "#money",
+      "#finance",
+      "#shorts"
+    ],
+    "thumbnail_text": "LEASE \u2260 LOAN"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "A low lease payment can hide the most important number in the deal: what the car is expected to lose in value.",
+      "duration_sec": 7.99,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "car lease basics"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "new car keys handover dealership",
+        "visual_intent": "Car keys being handed over at a dealership counter, warm showroom light, cinematic",
+        "broll_keywords": [
+          "car keys handover dealership",
+          "new car showroom counter",
+          "car dealership interior"
+        ],
+        "decision_reason": "hook: the reframe"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "A purchase loan finances ownership of the vehicle, and the borrower keeps it after the loan is repaid.",
+      "duration_sec": 7.99,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "auto loan"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "full price tag on car windshield",
+        "visual_intent": "A full price sticker on a car windshield, camera panning across, showroom lighting",
+        "broll_keywords": [
+          "car price sticker windshield",
+          "auto loan paperwork desk",
+          "car dealership financing office"
+        ],
+        "decision_reason": "loan mechanics as the contrast baseline"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "A lease mainly charges for depreciation during the lease term, plus a rent charge, taxes, and fees.",
+      "duration_sec": 7.99,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "depreciation charge"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "car value declining over time chart",
+        "visual_intent": "A simple value chart declining left to right over a car silhouette, clean data graphic",
+        "broll_keywords": [
+          "car depreciation chart graphic",
+          "value declining over time",
+          "financial chart car icon"
+        ],
+        "decision_reason": "the core mechanic: depreciation-based pricing"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "The predicted value at the end is called the residual value. A higher residual generally means less depreciation to finance.",
+      "duration_sec": 7.99,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "lease end residual"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "car returning to dealership lot night",
+        "visual_intent": "A car pulling into a dealership lot at dusk, returning, quiet and deliberate, cinematic",
+        "broll_keywords": [
+          "car returning dealership lot",
+          "car lot evening return",
+          "dealership lot wide shot"
+        ],
+        "decision_reason": "explains why the payment structure differs"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Mileage limits, wear charges, and early-termination costs can change the final bill beyond the advertised monthly payment.",
+      "duration_sec": 7.99,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "lower monthly payment"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "two monthly payment numbers compared screen",
+        "visual_intent": "Two payment figures side by side on a screen, one visibly smaller, minimal financial graphic",
+        "broll_keywords": [
+          "payment comparison screen graphic",
+          "monthly cost chart display",
+          "financial numbers comparison"
+        ],
+        "decision_reason": "the practical payoff of the mechanic"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "When the lease ends, you normally return the car unless the contract offers a purchase option. You paid for use, not ownership.",
+      "duration_sec": 7.99,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "ownership vs use"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "empty driveway no car symbolic",
+        "visual_intent": "An empty driveway at dusk, quiet, symbolic of no ownership remaining, cinematic",
+        "broll_keywords": [
+          "empty driveway dusk shot",
+          "quiet suburban driveway evening",
+          "symbolic empty space shot"
+        ],
+        "decision_reason": "closing distinction + CTA"
+      }
+    }
+  ]
+}

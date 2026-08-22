@@ -1,0 +1,30 @@
+{
+  "id": "d05_a",
+  "day": 5,
+  "slot": "A",
+  "category": "business_wealth_story",
+  "content_type": "trend",
+  "intended_category": "business_wealth_story",
+  "research_query": "major US business/M&A/corporate-strategy news story breaking within the last 72 hours",
+  "topic": "New Fed Chair Kevin Warsh's first Jackson Hole speech (Aug 28, 2026)",
+  "source_requirements": [
+    "Story must be corroborated by at least one primary source (company press release, SEC 8-K/press filing, official IR statement) OR two independent reputable business-press outlets (e.g. Reuters, AP, WSJ, Bloomberg, CNBC).",
+    "Story must be less than 72 hours old at research time.",
+    "Reject if the only coverage is a single outlet, a blog, or social-media speculation."
+  ],
+  "script_template": "0-2s HOOK: state the single most concrete, surprising fact from the verified story (a number, a decision, a name) — no 'breaking news' filler. 2-8s SETUP: what happened, who, when — plain, specific. 8-30s STORY/EXPLANATION: why it happened / the mechanism behind it, in causal, visual language — one central idea only. 30-45s PAYOFF: what it actually means for the viewer or the wider economy — the 'so what', hedged per the story's real confidence level (confirmed vs analysts-expect language). Final seconds: one sharp, memorable closing line; 'Follow for more.' only if it fits naturally. Total 35-55s, ~90-130 spoken words, natural American English, no guaranteed-return or buy/sell-call language. Build the actual SceneGraph using the same schema as the evergreen jobs (see _job_spec_reference.md) once the real story and its sources are confirmed.",
+  "freshness_requirements": "Research must run within 24-48 hours of this slot's scheduled publish day (day 5 of the 30-day cycle), not at backlog-build time. If no story clears the source requirements and the 72-hour freshness bar, fall back to the next unused evergreen topic in the same category (do not force a weak or unverified story into this slot).",
+  "sources": [
+    {"claim": "Kevin Warsh was sworn in as Chairman and a member of the Board of Governors of the Federal Reserve System on May 22, 2026, and the FOMC unanimously selected him as its chairman",
+     "source": "Federal Reserve Board press release, May 22, 2026", "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20260522a.htm", "type": "primary"},
+    {"claim": "The Senate confirmed Warsh as Fed chair on May 13, 2026 in a 54-45 vote, described as the most divisive confirmation vote in Fed history",
+     "source": "NPR, May 13, 2026", "url": "https://www.npr.org/2026/05/13/nx-s1-5816235/kevin-warsh-federal-reserve-chair-jerome-powell", "type": "reputable_secondary"},
+    {"claim": "Warsh was appointed to the Federal Reserve Board of Governors in 2006 at age 35, the youngest person ever appointed, and served through the 2008 financial crisis alongside then-Chair Ben Bernanke before resigning in March 2011",
+     "source": "Britannica Money / Wikipedia biographical summary, corroborated across multiple outlets", "url": "https://www.britannica.com/money/Kevin-Warsh", "type": "reputable_secondary"},
+    {"claim": "The 2026 Jackson Hole Economic Symposium runs August 27-29, 2026, with Kevin Warsh delivering his first keynote as Fed chair on Friday, August 28, 2026",
+     "source": "Multiple business-press previews (Kalkine, Regards of Wall Street, DayTradingToolkit), corroborating the Kansas City Fed's published Jackson Hole schedule", "url": "https://www.regardsofwallstreet.com/news/jackson-hole-2026-dates-schedule-warsh-first-speech", "type": "reputable_secondary"}
+  ],
+  "quality_scores": {"hook": 9, "clarity": 8, "retention": 8, "fact_confidence": 9, "visual_potential": 7, "us_relevance": 9, "originality": 8, "average": 8.29},
+  "disclaimer": "",
+  "status": "READY"
+}

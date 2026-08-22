@@ -1,0 +1,13 @@
+{
+  "id": "d22_a", "day": 22, "slot": "A", "category": "business_wealth_story",
+  "content_type": "evergreen", "topic": "Toys R Us bankruptcy and private equity debt",
+  "sources": [
+    {"claim": "2005 LBO by KKR/Bain/Vornado, $6.6B transaction value, $26.75/share, >$5B debt drawn onto Toys R Us", "source": "SEC Form DEFA14A/8-K filings; Marketplace.org retrospective", "url": "https://www.sec.gov/Archives/edgar/data/0001005414/000119312505057773/dex991.htm", "type": "primary"},
+    {"claim": "~$5B debt remaining and ~$400M/yr debt service at 2017 bankruptcy filing; ~$464M in fees collected by the PE firms; ~33,000 jobs lost", "source": "Forbes reporting on Toys R Us bankruptcy", "url": "https://www.forbes.com/sites/nathanvardi/2017/09/19/the-big-investment-firms-that-lost-1-3-billion-on-the-toys-r-us-bankruptcy/", "type": "reputable_secondary"}
+  ],
+  "pronunciation_notes": [{"term": "KKR", "note": "said as letters, 'K K R'"}],
+  "quality_scores": {"hook": 9, "clarity": 9, "retention": 9, "fact_confidence": 9, "visual_potential": 8, "us_relevance": 9, "originality": 9, "average": 8.86},
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

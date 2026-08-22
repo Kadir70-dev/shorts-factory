@@ -1,0 +1,17 @@
+{
+  "id": "d02_c",
+  "day": 2,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "How mortgage interest front-loads the early years",
+  "sources": [
+    {"claim": "Fixed-rate mortgage amortization applies a larger share of early payments to interest and a smaller share to principal, gradually reversing over the loan term",
+     "source": "Standard amortization mathematics (CFPB consumer mortgage education materials describe this structure)", "url": "https://www.consumerfinance.gov/", "type": "primary"}
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {"hook": 8, "clarity": 9, "retention": 8, "fact_confidence": 10, "visual_potential": 7, "us_relevance": 9, "originality": 7, "average": 8.29},
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d01_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Your Credit Card Company Makes Money Even When You Pay It Off In Full",
+    "hook": "Pay your credit card in full every month and never carry a balance? The card company is still making money off you.",
+    "description": "Every time you swipe a credit card, the merchant pays a small interchange fee to your card's issuing bank, split with the card network. That fee gets charged whether you pay your statement in full or carry a balance for months. It's a quiet, guaranteed revenue stream built into every transaction, long before any interest ever gets charged.",
+    "tags": ["credit cards", "interchange fees", "how credit cards make money", "personal finance", "banking explained", "money mechanics"],
+    "hashtags": ["#creditcards", "#personalfinance", "#money", "#banking", "#shorts"],
+    "thumbnail_text": "PAID IN FULL, STILL PAYING"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Pay your credit card in full every month, never carry a balance? The card company is still making money off you.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["credit card myth", "no interest paid"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "credit card tap payment terminal close up",
+        "visual_intent": "A credit card tapping a payment terminal, extreme close up, bright retail light, slow motion",
+        "broll_keywords": ["credit card tap payment", "contactless payment terminal", "card swipe checkout close up"],
+        "decision_reason": "hook beat: the swipe itself, hard cut"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Every swipe triggers a small fee the merchant pays, called an interchange fee.",
+      "duration_sec": 4.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["interchange fee", "merchant fee"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "none",
+        "query": "cash register receipt printing store",
+        "visual_intent": "A cash register printing a receipt at checkout, warm retail light, macro detail",
+        "broll_keywords": ["cash register receipt printing", "checkout counter store", "retail transaction receipt"],
+        "decision_reason": "introduces the merchant side of the fee"
+      },
+      "overlays": [{"type": "stat", "text": "Interchange fee", "y": 0.18}]
+    },
+    {
+      "id": "s3",
+      "narration": "That fee is split between your bank and the card network. It gets paid on every purchase, no matter when or how you pay your bill.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["card network fee split", "visa mastercard"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "money flow chart arrows financial diagram",
+        "visual_intent": "An animated-feeling flow of money moving between three points on a dark chart, teal and gold",
+        "broll_keywords": ["financial flow chart arrows", "money transfer diagram screen", "business data flow graphic"],
+        "decision_reason": "visualizes the fee split between issuer and network"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "That's why stores accept cards at all, and why some add a surcharge on small purchases.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["merchant surcharge", "card acceptance cost"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "zoom_out",
+        "query": "small shop counter sign card minimum",
+        "visual_intent": "A small shop counter with a handwritten card-minimum sign taped near the register, natural light",
+        "broll_keywords": ["small shop counter sign", "store checkout counter", "local shop register"],
+        "decision_reason": "the merchant's cost passed on"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "So the rewards, the points, the cash back — a share of that is funded by interchange, collected from every purchase you make.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["rewards funding", "cash back source"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "credit card rewards points app phone",
+        "visual_intent": "A phone screen showing a credit card rewards balance ticking upward, close hand-held framing",
+        "broll_keywords": ["credit card app rewards screen", "phone banking app close up", "cash back points display"],
+        "decision_reason": "connects the fee to the reward the viewer sees"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Paying in full still avoids interest. It just doesn't make the transaction free for everyone else in the chain. Follow for more.",
+      "duration_sec": 7.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["interest free but not fee free", "closing"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "ken_burns",
+        "query": "wallet credit cards on table",
+        "visual_intent": "A wallet with several credit cards fanned out on a wooden table, warm still light",
+        "broll_keywords": ["wallet credit cards table", "multiple credit cards fanned", "personal finance wallet"],
+        "decision_reason": "closing summary and CTA"
+      }
+    }
+  ]
+}

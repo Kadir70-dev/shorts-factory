@@ -37,6 +37,18 @@ engines:
       noise_w: 0.8
       sentence_silence: 0.25
 
+  # NON-PRODUCTION stock narrator. Kokoro cannot clone — this is a different
+  # person from k70_host_v1, kept only so a render can be produced before the
+  # clone is enrolled. It sits behind every cloned engine and is skipped the
+  # moment one of them becomes ready. Set non_production: false to forbid it.
+  kokoro:
+    enabled: true
+    non_production: true
+    model_path: "data/models/kokoro/kokoro-v1.0.onnx"
+    voices_path: "data/models/kokoro/voices-v1.0.bin"
+    settings:
+      voice: am_michael
+
 pronunciation:
   lexicon: {}
   say_as: {}

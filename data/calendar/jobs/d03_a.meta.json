@@ -1,0 +1,17 @@
+{
+  "id": "d03_a",
+  "day": 3,
+  "slot": "A",
+  "category": "business_wealth_story",
+  "content_type": "evergreen",
+  "topic": "Southwest's one-aircraft-type strategy",
+  "sources": [
+    {"claim": "Southwest Airlines operates an all-Boeing 737 fleet and estimates the single-aircraft-type strategy saves hundreds of millions of dollars annually versus a mixed fleet",
+     "source": "SimpleFlying / industry fleet-strategy reporting corroborated across aviation press", "url": "https://simpleflying.com/why-worlds-biggest-airline-bet-future-single-aircraft-family/", "type": "reputable_secondary"}
+  ],
+  "pronunciation_notes": [{"term": "Boeing 737", "note": "said as 'Boeing seven thirty-seven'"}],
+  "quality_scores": {"hook": 8, "clarity": 9, "retention": 7, "fact_confidence": 9, "visual_potential": 8, "us_relevance": 8, "originality": 7, "average": 8.0},
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

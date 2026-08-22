@@ -1,0 +1,123 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d04_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Gas Stations Don't Make Money Selling You Gas. Here's What Actually Pays.",
+    "hook": "Most gas stations make almost nothing selling you gasoline.",
+    "description": "A gallon of gas often earns a station just a few cents in profit after costs, sometimes less on a bad week. The real money is inside: coffee, snacks, drinks, lottery tickets, car washes and loyalty apps can carry profit margins many times higher than fuel. The pumps get drivers in the door; the convenience store is where the business actually makes its money. Educational content only, not financial advice.",
+    "tags": ["gas station", "business model", "profit margin", "convenience store", "hidden economics", "consumer behavior"],
+    "hashtags": ["#gasstation", "#business", "#economics", "#profitmargin", "#shorts"],
+    "thumbnail_text": "PENNIES PER GALLON"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Most gas stations make almost nothing selling you gasoline.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["gas station profit", "fuel margin"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "abstract", "motion": "none",
+        "query": "gas station price sign dusk",
+        "visual_intent": "A bold, punchy claim with no single filmable subject — the setup line for the whole story",
+        "broll_keywords": ["gas price sign", "gas station at dusk", "fuel pump price display"],
+        "decision_reason": "hook beat: the claim itself, no natural single shot — motion graphics territory"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "A gallon of gas often earns the station just a few cents in profit after costs — sometimes less.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["fuel margin thin", "gas pump"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "zoom_in",
+        "query": "gas station fuel pump",
+        "visual_intent": "A close-up of a gas pump nozzle filling a car, numbers ticking upward on the price display",
+        "broll_keywords": ["gas station pump", "man pumping gas car", "refueling car at gas station", "fuel pump handle"],
+        "decision_reason": "the literal thin-margin product"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Meanwhile, the snacks and drinks inside the store can carry a profit margin many times higher.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["convenience store margin", "snack profit"],
+      "visual": {
+        "type": "dataviz", "strategy": "real", "scene_visual_type": "data_viz", "motion": "none",
+        "query": "profit margin comparison chart",
+        "visual_intent": "A branded bar chart comparing fuel margin against convenience-store margin",
+        "broll_keywords": ["profit margin bar chart", "financial comparison graphic"],
+        "decision_reason": "the beat states the comparison figure — chart, not stock"
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "Profit Margin By Product",
+        "points": [
+          {"label": "Gasoline", "value": 3, "emphasis": "normal"},
+          {"label": "Snacks & Drinks", "value": 42, "emphasis": "positive"}
+        ],
+        "suffix": "%",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 1,
+        "source": "Illustrative, based on widely reported industry margins",
+        "note": "per-item margin, not total revenue"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "That's why the coffee machine and the snack aisle matter more to the business than the pumps outside.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["convenience store interior", "coffee counter"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "pan_lr",
+        "query": "convenience store snack aisle coffee machine",
+        "visual_intent": "The inside of a convenience store, snack shelves and a self-serve coffee counter, bright fluorescent light",
+        "broll_keywords": ["convenience store snack aisle", "gas station coffee machine", "store shelves drinks snacks"],
+        "decision_reason": "the real profit center of the business"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Lottery tickets, car washes, and loyalty apps add even more — all higher margin than fuel.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["lottery tickets", "car wash upsell"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "zoom_out",
+        "query": "cashier ringing up customer convenience store register",
+        "visual_intent": "A cashier ringing up a customer at a convenience store counter, lottery ticket display visible, warm light",
+        "broll_keywords": ["convenience store cashier register", "store checkout counter customer", "gas station store counter"],
+        "decision_reason": "the extra high-margin revenue lines"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The pumps get you in the door. Everything else inside is where the real money is made. Follow for more.",
+      "duration_sec": 7.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["business model reveal", "closing"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "gas station convenience store exterior night lights",
+        "visual_intent": "A wide shot of a gas station and convenience store lit up at dusk, cinematic establishing shot",
+        "broll_keywords": ["gas station exterior night", "convenience store lights dusk", "gas station wide establishing shot"],
+        "decision_reason": "closing scale visual and CTA"
+      }
+    }
+  ]
+}

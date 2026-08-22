@@ -14,7 +14,10 @@ render elsewhere.
 """
 from __future__ import annotations
 
-import resource
+try:
+    import resource
+except ImportError:  # Windows: no POSIX resource module
+    resource = None
 from pathlib import Path
 
 _MEMINFO = Path("/proc/meminfo")
@@ -54,5 +57,7 @@ def child_peak_mb() -> float:
     On Linux `ru_maxrss` is in kB. Read it AFTER an ffmpeg run for a per-stage
     peak readout; it's cumulative-high-water, so compare against a pre-run sample
     if you want the delta."""
+    if resource is None:
+        return 0.0
     ru = resource.getrusage(resource.RUSAGE_CHILDREN)
     return ru.ru_maxrss / 1024.0                            # kB → MB (Linux)

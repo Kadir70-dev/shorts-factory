@@ -1,0 +1,205 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d10_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Sears Invented Shopping From Home. It Still Went Bankrupt.",
+    "hook": "Sears helped teach America to shop from home, then entered bankruptcy after shopping moved to screens.",
+    "description": "Sears' mail-order catalog, launched in 1893, once sold everything from tools to entire houses and made it the largest retailer in the US. The company that pioneered remote shopping never fully made the leap to e-commerce, and filed for Chapter 11 bankruptcy on October 15, 2018.",
+    "tags": [
+      "sears",
+      "retail history",
+      "business failure",
+      "bankruptcy",
+      "business strategy"
+    ],
+    "hashtags": [
+      "#sears",
+      "#business",
+      "#retail",
+      "#shorts"
+    ],
+    "thumbnail_text": "1893 \u2192 2018"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Sears helped teach America to shop from home, then entered bankruptcy after shopping moved to screens.",
+      "duration_sec": 6.55,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "sears bankruptcy"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "old catalog pages archival vintage",
+        "visual_intent": "Pages of a vintage mail-order catalog flipping, archival warm tone, close macro",
+        "broll_keywords": [
+          "vintage catalog pages flipping",
+          "old mail order catalog macro",
+          "archival paper catalog close up"
+        ],
+        "decision_reason": "hook beat: the irony stated upfront"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Its famous catalogs connected distant households to an enormous range of merchandise delivered through a national distribution system.",
+      "duration_sec": 6.55,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "sears catalog history"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "vintage train delivery archival",
+        "visual_intent": "An archival-style train at a station platform with cargo, sepia tone, documentary",
+        "broll_keywords": [
+          "vintage train station archival",
+          "old freight train platform",
+          "historic rail delivery scene"
+        ],
+        "decision_reason": "founding fact, 1893"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "That model reduced the importance of a nearby store: customers could browse at home and order remotely.",
+      "duration_sec": 6.55,
+      "confidence": "probable",
+      "transition_in": "fade",
+      "keywords": [
+        "sears peak dominance"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "vintage department store interior busy",
+        "visual_intent": "A bustling vintage department store interior, archival documentary feel, wide shot",
+        "broll_keywords": [
+          "vintage department store interior",
+          "old retail store busy archival",
+          "classic shopping mall interior"
+        ],
+        "decision_reason": "widely reported peak-era retail dominance, marked probable for the exact ranking era"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "But retail shifted again toward e-commerce, faster fulfillment, and competitors built specifically around digital shopping.",
+      "duration_sec": 6.55,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "failure to adapt"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "old computer screen vs catalog contrast",
+        "visual_intent": "A vintage catalog next to a glowing modern computer screen, split lighting, symbolic contrast",
+        "broll_keywords": [
+          "catalog versus computer screen",
+          "old vs new retail symbolic",
+          "vintage modern contrast still life"
+        ],
+        "decision_reason": "the adaptation-failure thesis"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Sears still carried the cost and complexity of a huge physical-store network while its core business weakened.",
+      "duration_sec": 6.55,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "strategic divergence"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "empty retail store closing shelves",
+        "visual_intent": "A half-empty retail store with sparse shelves, cool light, documentary realism",
+        "broll_keywords": [
+          "empty retail store shelves",
+          "closing store sparse inventory",
+          "struggling retail interior"
+        ],
+        "decision_reason": "contrasts strategic choices"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "On October fifteenth, twenty eighteen, Sears Holdings filed for Chapter Eleven protection.",
+      "duration_sec": 6.55,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "bankruptcy date"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "newspaper headline bankruptcy filing",
+        "visual_intent": "A newspaper front page with a bold headline, close focus, dramatic light",
+        "broll_keywords": [
+          "newspaper headline close up",
+          "business news front page",
+          "bankruptcy headline print"
+        ],
+        "decision_reason": "exact bankruptcy filing date, widely reported (Yahoo Finance/CNN/Fortune coverage)"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Filed Chapter 11: Oct 15, 2018",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "narration": "The company that mastered remote shopping through paper could not turn that advantage into leadership online.",
+      "duration_sec": 6.55,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "delivery boxes warehouse modern",
+        "visual_intent": "Modern delivery boxes moving on a warehouse conveyor, cool clinical light",
+        "broll_keywords": [
+          "warehouse conveyor boxes modern",
+          "delivery packages warehouse",
+          "e-commerce fulfillment center"
+        ],
+        "decision_reason": "closing irony payoff and CTA"
+      }
+    }
+  ]
+}

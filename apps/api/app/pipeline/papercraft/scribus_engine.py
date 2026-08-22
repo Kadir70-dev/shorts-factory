@@ -40,7 +40,7 @@ from . import finishing
 from . import provenance as prov
 from .binary import find_scribus_binary
 
-_CACHE_VERSION = 12  # bumped: vintage_newspaper title frame narrowed to clear the K70 watermark zone
+_CACHE_VERSION = 15  # bumped: added evidence_card (small overlay-composited clipping)
 _RUNNER = Path(__file__).parent / "_runner.py"
 
 TEMPLATE_BUILDERS = {
@@ -55,6 +55,7 @@ TEMPLATE_BUILDERS = {
     "company_memo": tpl.company_memo,
     "historical_document": tpl.historical_document,
     "news_clipping": tpl.news_clipping,
+    "evidence_card": tpl.evidence_card,
 }
 
 

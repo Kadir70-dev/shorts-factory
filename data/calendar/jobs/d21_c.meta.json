@@ -1,0 +1,12 @@
+{
+  "id": "d21_c", "day": 21, "slot": "C", "category": "money_mechanics_finance",
+  "content_type": "evergreen", "topic": "Why credit utilization moves your score fast",
+  "sources": [
+    {"claim": "'Amounts owed' (credit utilization) is ~30% of a FICO score, the second-largest factor after payment history (~35%); recalculated each statement cycle", "source": "myFICO scoring factor breakdown (industry-standard, widely corroborated)", "url": "https://www.myfico.com/credit-education/whats-in-your-credit-score", "type": "reputable_secondary"}
+  ],
+  "pronunciation_notes": [{"term": "FICO", "note": "said as 'FY-koh'"}],
+  "quality_scores": {"hook": 9, "clarity": 9, "retention": 8, "fact_confidence": 9, "visual_potential": 7, "us_relevance": 9, "originality": 8, "average": 8.43},
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

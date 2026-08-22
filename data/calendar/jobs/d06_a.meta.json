@@ -1,0 +1,35 @@
+{
+  "id": "d06_a",
+  "day": 6,
+  "slot": "A",
+  "category": "business_wealth_story",
+  "content_type": "evergreen",
+  "topic": "Amazon's thin-margin retail and AWS profit engine",
+  "sources": [
+    {
+      "claim": "Amazon's 2024 segment sales and operating income show AWS produced $39.834B of $68.593B consolidated operating income on $107.556B of $637.959B sales",
+      "source": "Amazon 2024 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "AWS",
+      "note": "said as letters, 'A-W-S'"
+    }
+  ],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

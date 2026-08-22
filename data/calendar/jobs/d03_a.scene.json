@@ -1,0 +1,109 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d03_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Southwest Flies Only One Type Of Plane. It's Saving Them Hundreds Of Millions.",
+    "hook": "Southwest Airlines operates hundreds of aircraft, and every single one is the same plane.",
+    "description": "Southwest Airlines has built its entire fleet around one aircraft family, the Boeing 737. That single decision means one training program for pilots and mechanics, one set of spare parts to stock, and total flexibility to swap crews and aircraft across routes. Airlines with mixed fleets carry all of that complexity multiplied by however many aircraft types they fly.",
+    "tags": ["southwest airlines", "boeing 737", "business strategy", "operational efficiency", "airline industry", "company strategy"],
+    "hashtags": ["#southwestairlines", "#business", "#aviation", "#strategy", "#shorts"],
+    "thumbnail_text": "ONE PLANE, EVERY ROUTE"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Southwest Airlines operates hundreds of aircraft, and every single one is the same plane.",
+      "duration_sec": 4.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["southwest fleet", "boeing 737 only"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "commercial airplane runway takeoff",
+        "visual_intent": "A commercial jet lined up on a runway at golden hour, low angle, cinematic",
+        "broll_keywords": ["commercial airplane runway", "jet aircraft taxi runway", "airplane takeoff golden hour"],
+        "decision_reason": "hook beat: the plane itself, hard cut"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "One aircraft type, the Boeing seven thirty-seven, across the entire fleet, on every route they fly.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["boeing 737 fleet", "single aircraft type"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "pan_lr",
+        "query": "airplanes lined up gate airport",
+        "visual_intent": "Multiple identical passenger jets parked at gates, wide airport tarmac shot, daylight",
+        "broll_keywords": ["airplanes parked gates airport", "airport tarmac jets lined up", "commercial airport gates wide"],
+        "decision_reason": "the fleet uniformity"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Most airlines fly several aircraft types, which means separate training, separate parts inventories, separate maintenance crews for each one.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["mixed fleet complexity", "competitor comparison"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "none",
+        "query": "airplane maintenance hangar mechanics",
+        "visual_intent": "Mechanics working under an aircraft in a large maintenance hangar, industrial light, wide shot",
+        "broll_keywords": ["airplane maintenance hangar", "aircraft mechanics working", "aviation maintenance crew"],
+        "decision_reason": "visualizes the maintenance-complexity contrast"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Southwest collapses all of that into one system. Any pilot can fly any plane in the fleet.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["pilot flexibility", "crew scheduling"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "zoom_out",
+        "query": "airline pilots cockpit preparing flight",
+        "visual_intent": "Two pilots in a cockpit going through preflight checks, focused, natural cabin light",
+        "broll_keywords": ["airline pilots cockpit", "pilots preflight checklist", "cockpit crew preparing"],
+        "decision_reason": "the crew-flexibility payoff"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "That flexibility means fewer delays from aircraft mismatches, and simpler scheduling across the whole airline.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["scheduling efficiency", "fewer delays"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "airport departure board schedule screen",
+        "visual_intent": "An airport departures board with on-time flight statuses, sharp digital light",
+        "broll_keywords": ["airport departure board", "flight schedule screen airport", "departures display board"],
+        "decision_reason": "visualizes scheduling reliability"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Southwest estimates the strategy saves it hundreds of millions of dollars a year, all from refusing to diversify its fleet. Follow for more.",
+      "duration_sec": 8.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["cost savings estimate", "closing"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "airline fleet tarmac wide aerial",
+        "visual_intent": "A wide aerial view of an airline's tarmac full of identical jets, dusk light, cinematic",
+        "broll_keywords": ["airline tarmac aerial wide", "airport fleet aerial view", "airplanes tarmac dusk"],
+        "decision_reason": "scale payoff and CTA"
+      }
+    }
+  ]
+}

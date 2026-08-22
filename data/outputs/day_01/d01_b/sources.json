@@ -1,0 +1,20 @@
+{
+  "id": "d01_b",
+  "topic": "How the Fed actually moves interest rates",
+  "content_type": "evergreen",
+  "sources": [
+    {
+      "claim": "The Federal Reserve sets a target range for the federal funds rate and uses interest on reserve balances (IORB) as a primary tool to keep the effective rate within that range",
+      "source": "Federal Reserve Board (federalreserve.gov policy tools description)",
+      "url": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "IORB",
+      "note": "not spoken aloud in narration; kept conceptual"
+    }
+  ],
+  "disclaimer": ""
+}

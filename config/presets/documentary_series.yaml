@@ -39,12 +39,41 @@ env:
   LAYERED_SUBJECT_MATTE: oval
   LAYERED_MIN_FREE_MB: "2000"
 
+  # Free AI stills come from Pollinations, which has no key and no SLA. When it
+  # is slow or throttled the generator gives up inside its time budget and this
+  # flag decides what the beat gets instead: a free, local, instantly-rendered
+  # cinematic PLATE (graded gradient + grain + vignette under Ken Burns) rather
+  # than another kinetic-type card. For a documentary that is the difference
+  # between an atmospheric frame and a wall of text — and it keeps the AI-b-roll
+  # share inside its band instead of collapsing it into motion graphics.
+  # NOTE: a plate is an atmospheric backdrop, NOT a photoreal recreation of the
+  # scene described in the prompt. The delivered breakdown reports it honestly.
+  AI_IMAGE_DEMO: "1"
+  # The engine-level wrapper defaults to 1200s — twenty minutes for ONE still,
+  # which is not a guard at all when the provider is a free service with no SLA.
+  AI_BROLL_TIMEOUT_S: "180"
+
+  # POLLINATIONS OFF. It is the only free provider the AI-b-roll engine has, and
+  # it is currently rate-limiting us (measured: HTTP 429). Worse, the engine's
+  # FluxAdapter calls `_pollinations_image` DIRECTLY rather than through
+  # `ai_image_generate`, so those calls log nothing and queue behind a module
+  # lock whose acquisition no request timeout can bound — a 156-beat render sat
+  # silent for 27 minutes on one socket. With this off, AI beats take the free
+  # local cinematic plate immediately and the render never touches the network
+  # for stills. Turn it back on when the free quota has reset; the cache is
+  # content-addressed, so only those beats regenerate.
+  POLLINATIONS_ENABLED: "0"
+
   # ── Six-channel visual mix ───────────────────────────────────────────────
   STORYBOARD_ENGINE_ENABLED: "1"
   MULTI_SOURCE_ASSET_ENGINE_ENABLED: "1"
   MOTION_GRAPHICS_ENGINE_ENABLED: "1"
   THREEJS_VISUAL_ENGINE_ENABLED: "1"
-  AI_BROLL_ENGINE_ENABLED: "1"
+  # OFF while Pollinations is rate-limited: it is this engine's only free
+  # provider, and its FluxAdapter calls the generator directly, so disabling
+  # Pollinations alone does not stop it. AI beats take the free local cinematic
+  # plate instead (AI_IMAGE_DEMO above). Re-enable once the free quota resets.
+  AI_BROLL_ENGINE_ENABLED: "0"
 
   # Memory ceiling, not a speed preference — see config/presets/educational.yaml
   # for the measurements. Set to `final` on a host with 8 GB+ free.

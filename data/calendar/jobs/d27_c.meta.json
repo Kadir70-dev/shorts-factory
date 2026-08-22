@@ -1,0 +1,31 @@
+{
+  "id": "d27_c",
+  "day": 27,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "Why term life costs so much less than whole life",
+  "sources": [
+    {
+      "claim": "Term insurance provides lower-cost coverage for a specified period and usually has no cash value; whole life is lifetime cash-value coverage",
+      "source": "NAIC Life Insurance Buyer's Guide",
+      "url": "https://content.naic.org/sites/default/files/publication-lig-lp-consumer-life.pdf",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": true,
+  "rewrite_note": "Tightened hook and added a concrete visual metaphor per scene. Ceiling on retention/originality is inherent to a plain definitional-comparison topic with no dramatic story arc; below the 8.0 average gate by 0.14 after one honest rewrite pass, kept rather than padding scores or inventing unverifiable drama.",
+  "disclaimer": "",
+  "status": "READY"
+}

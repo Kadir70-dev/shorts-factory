@@ -1,0 +1,111 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d26_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "He Couldn't Afford a Patent, So He Gave Away Half of Blue Jeans",
+    "hook": "A tailor who couldn't afford a patent fee co-invented blue jeans.",
+    "description": "In 1872, tailor Jacob Davis had been reinforcing work pants with copper rivets to stop the pockets tearing, but couldn't afford the patent filing fee. He offered fabric supplier Levi Strauss half the patent if Strauss paid the cost. On May 20, 1873, the two were granted US patent #139121 for riveted work pants — the design that became the Levi's 501.",
+    "tags": ["levi strauss", "blue jeans history", "business history", "patent history", "levis 501", "american business", "brand history"],
+    "hashtags": ["#levis", "#businesshistory", "#entrepreneurship", "#shorts"],
+    "thumbnail_text": "PATENT #139121"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "In eighteen seventy-two, a tailor named Jacob Davis couldn't afford the paperwork for his own invention.",
+      "duration_sec": 4.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["jacob davis tailor", "1872"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "vintage tailor shop sewing workbench archival",
+        "visual_intent": "An old-fashioned tailor's workbench with fabric and tools, warm sepia-toned archival feel",
+        "broll_keywords": ["vintage tailor shop workbench", "old sewing tools fabric", "historic workshop archival"],
+        "decision_reason": "hook beat: the inventor, historically corroborated by History.com/Hagley Museum"
+      },
+      "overlays": [{"type": "stat", "text": "1872", "y": 0.18}]
+    },
+    {
+      "id": "s2",
+      "narration": "He'd been reinforcing work pants with copper rivets at the stress points, so the pockets stopped tearing.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["copper rivets", "work pants reinforcement"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "zoom_in",
+        "query": "copper rivet denim pocket close up macro",
+        "visual_intent": "Extreme macro of a copper rivet on denim fabric at a pocket corner",
+        "broll_keywords": ["copper rivet denim macro", "jeans pocket detail close up", "metal rivet fabric stitching"],
+        "decision_reason": "the exact mechanical detail of the invention"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Davis wrote to Levi Strauss, the merchant who supplied his fabric, and offered him half the patent if Strauss paid the fees.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["levi strauss letter", "patent partnership"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "pan_lr",
+        "query": "handwritten letter old paper ink pen",
+        "visual_intent": "A handwritten letter on aged paper with an ink pen resting beside it, warm archival light",
+        "broll_keywords": ["handwritten vintage letter", "old ink pen paper", "historic correspondence document"],
+        "decision_reason": "corroborated by Hagley Museum/Reno Historical archives"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Strauss agreed. On May twentieth, eighteen seventy-three, the two men were granted a US patent for riveted work pants.",
+      "duration_sec": 5.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["us patent 1873", "riveted pants"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_in",
+        "query": "old patent document seal official paper",
+        "visual_intent": "An official-looking aged patent document with a seal, warm archival tone",
+        "broll_keywords": ["vintage patent document", "official seal old paper", "historic government document"],
+        "decision_reason": "US Patent #139121, granted May 20 1873, per History.com and National Archives"
+      },
+      "overlays": [{"type": "stat", "text": "May 20, 1873", "y": 0.18}]
+    },
+    {
+      "id": "s5",
+      "narration": "That patent became the Levi's five-oh-one, a design built for miners that's stayed largely unchanged for over a century and a half.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["levis 501", "miners workwear"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "pan_lr",
+        "query": "blue jeans denim pants folded stack",
+        "visual_intent": "A neatly folded stack of classic blue denim jeans, clean studio light",
+        "broll_keywords": ["blue jeans folded stack", "denim pants studio shot", "classic jeans display"],
+        "decision_reason": "the payoff: the enduring design"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The rivets weren't a fashion choice. They were an engineering fix that outlived every trend that came after it. Follow for more.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["engineering not fashion"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "zoom_in",
+        "query": "denim jeans pocket rivet detail worn",
+        "visual_intent": "Close detail shot of a worn rivet on faded denim, warm closing light",
+        "broll_keywords": ["worn denim rivet detail", "faded jeans pocket close up", "denim texture macro"],
+        "decision_reason": "closing takeaway and CTA"
+      }
+    }
+  ]
+}

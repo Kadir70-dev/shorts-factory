@@ -1,0 +1,17 @@
+{
+  "id": "d02_b",
+  "day": 2,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "What CPI actually measures",
+  "sources": [
+    {"claim": "The Consumer Price Index tracks a fixed basket of goods/services, weighted by household expenditure patterns, published monthly by BLS",
+     "source": "U.S. Bureau of Labor Statistics, CPI methodology", "url": "https://www.bls.gov/cpi/", "type": "primary"}
+  ],
+  "pronunciation_notes": [{"term": "CPI", "note": "said as 'C-P-I' or spelled out as consumer price index; not spoken as a word"}],
+  "quality_scores": {"hook": 8, "clarity": 9, "retention": 8, "fact_confidence": 10, "visual_potential": 7, "us_relevance": 10, "originality": 7, "average": 8.43},
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

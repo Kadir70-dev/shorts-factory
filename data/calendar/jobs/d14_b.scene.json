@@ -1,0 +1,182 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d14_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "GDP Doesn't Count Half Of What Actually Keeps America Running",
+    "hook": "In 2025 the US economy was measured at over thirty trillion dollars. Huge parts of it were never counted.",
+    "description": "GDP totals the market value of all goods and services a country produces in a year \u2014 in 2025 that figure for the US was measured at over $30 trillion by the Bureau of Economic Analysis. But GDP only counts what's bought and sold. Unpaid childcare, informal caregiving, and household work never show up in the number, even though they're real economic activity. Educational content only, not financial advice.",
+    "tags": [
+      "gdp explained",
+      "economics",
+      "bureau of economic analysis",
+      "macroeconomics",
+      "us economy"
+    ],
+    "hashtags": [
+      "#economics",
+      "#gdp",
+      "#macro",
+      "#finance",
+      "#shorts"
+    ],
+    "thumbnail_text": "$30T, MISSING PIECES"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "In twenty twenty-five, the US economy was measured at over thirty trillion dollars. And that number leaves things out.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "us gdp 2025"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "large glowing number thirty trillion screen",
+        "visual_intent": "A massive glowing dollar figure on a dark data screen, camera pushing in, cinematic",
+        "broll_keywords": [
+          "large number screen dark",
+          "financial data display glowing",
+          "economic chart office screen"
+        ],
+        "decision_reason": "hook: BEA 2025 nominal GDP figure, cited with year attribution"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "$30.76T (2025)",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "That number is GDP. Gross Domestic Product. It totals the market value of everything bought and sold in a year.",
+      "duration_sec": 6.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "gdp definition"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "goods and services icons flowing screen",
+        "visual_intent": "Simple icons of goods and services flowing across a dark screen into a single total, clean motion graphic",
+        "broll_keywords": [
+          "economic data flow diagram",
+          "goods services icons screen",
+          "financial summary graphic"
+        ],
+        "decision_reason": "the formal definition, BEA's own framing"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "But 'bought and sold' is the key phrase. If money doesn't change hands for it, GDP doesn't see it.",
+      "duration_sec": 5.6,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "market transactions only"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "invisible ink concept blank page",
+        "visual_intent": "A hand writing that fades to invisible on a page, symbolic of unseen activity, cinematic",
+        "broll_keywords": [
+          "invisible writing concept",
+          "blank page symbolic shot",
+          "unseen work metaphor"
+        ],
+        "decision_reason": "the limitation, stated plainly"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "A parent caring for their own kids at home. A neighbor doing unpaid caregiving. Real work. Zero dollars in GDP.",
+      "duration_sec": 6.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "unpaid care work"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "parent caring for child home warm light",
+        "visual_intent": "A parent gently caring for a child at home, warm natural light, tender documentary realism",
+        "broll_keywords": [
+          "parent child home warm",
+          "family caregiving home",
+          "household daily life warm"
+        ],
+        "decision_reason": "the concrete example of excluded activity"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Economists have debated this gap for decades. It's not a flaw exactly, it's just what the number was built to measure.",
+      "duration_sec": 6.6,
+      "confidence": "probable",
+      "transition_in": "cut",
+      "keywords": [
+        "gdp limitations debate"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_out",
+        "query": "economist looking at data charts office",
+        "visual_intent": "A person reviewing printed economic charts at a desk, thoughtful, natural office light, cinematic",
+        "broll_keywords": [
+          "economist reviewing charts desk",
+          "data analysis office thoughtful",
+          "research papers desk review"
+        ],
+        "decision_reason": "acknowledges the well-known economist critique without inventing a specific study or number"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "GDP tells you the size of the market economy. It was never built to tell you the whole economy. Follow for more.",
+      "duration_sec": 6.4,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "economics literacy"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "scale weighing partial view concept",
+        "visual_intent": "A simple scale on a dark background, one side lit and one side dim, symbolic composition",
+        "broll_keywords": [
+          "scale symbolic dark background",
+          "balance concept lit shot",
+          "economic measurement metaphor"
+        ],
+        "decision_reason": "closing distinction + CTA"
+      }
+    }
+  ]
+}

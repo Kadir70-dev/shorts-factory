@@ -62,7 +62,7 @@ type:
     headline: 62
     stat_number: 168
     stat_label: 46
-    caption: 66
+    caption: 78     # bumped from 66: read as small next to papercraft's document type
     lower_third: 44
     lower_third_sub: 32
     source: 30

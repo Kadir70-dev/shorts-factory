@@ -226,8 +226,15 @@ def apply(graph: SceneGraph, p: VarietyPlan) -> SceneGraph:
 
     p.scene_transitions, p.scene_motions = [], []
     for i, scene in enumerate(graph.scenes):
+        # An authored non-default transition is an editorial decision — a chapter
+        # break dipping to black, a whip into a reveal — and the variety planner
+        # must not roll it away. `cut` is the schema default, i.e. "no opinion",
+        # so those scenes are the ones the palette is free to dress.
+        authored = scene.transition_in != "cut"
         if i == 0:
             trans = "cut"                       # the hook never fades in
+        elif authored:
+            trans = scene.transition_in
         elif i in accent_slots:
             trans = palette["accent"]
         else:

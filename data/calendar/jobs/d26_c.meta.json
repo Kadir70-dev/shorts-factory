@@ -1,0 +1,36 @@
+{
+  "id": "d26_c",
+  "day": 26,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "The limits of identity theft protection services",
+  "sources": [
+    {
+      "claim": "Identity-monitoring services alert consumers to possible misuse but cannot prevent all identity theft; credit freezes are free",
+      "source": "Federal Trade Commission identity-theft guidance",
+      "url": "https://consumer.ftc.gov/articles/what-know-about-identity-theft",
+      "type": "primary"
+    },
+    {
+      "claim": "Federal law made credit freezes free",
+      "source": "Federal Trade Commission",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2018/09/starting-today-new-federal-law-allows-consumers-place-free-credit-freezes-yearlong-fraud-alerts",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": true,
+  "disclaimer": "",
+  "status": "READY"
+}

@@ -1,0 +1,221 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d18_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Disney Spent $15 Billion Buying Three Companies It Didn't Need To Build",
+    "hook": "Disney did not create Pixar, Marvel, or Star Wars. It spent about fifteen point five billion dollars to own them.",
+    "description": "Between 2006 and 2012, Disney spent roughly $15.8 billion acquiring Pixar for $7.4 billion, Marvel for $4 billion, and Lucasfilm for $4.05 billion. Rather than building competing franchises from scratch, Disney bet its capital on owning proven ones outright, a strategy that reshaped its film business for the following decade.",
+    "tags": [
+      "disney",
+      "mergers and acquisitions",
+      "pixar",
+      "marvel",
+      "lucasfilm",
+      "business strategy"
+    ],
+    "hashtags": [
+      "#disney",
+      "#business",
+      "#mergersandacquisitions",
+      "#entertainment",
+      "#shorts"
+    ],
+    "thumbnail_text": "$15.8B FOR 3 STUDIOS"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Disney did not create Pixar, Marvel, or Star Wars. It spent about fifteen point five billion dollars to own them.",
+      "duration_sec": 7.56,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "disney did not build"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "film reel archive shelf dark",
+        "visual_intent": "Rows of film reels on a dark archive shelf, single dramatic light, cinematic",
+        "broll_keywords": [
+          "film reels archive shelf",
+          "movie studio archive dark",
+          "cinema reels storage room"
+        ],
+        "decision_reason": "hook: the reframe"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "In two thousand six, Disney agreed to acquire Pixar in an all-stock deal valued around seven point four billion dollars.",
+      "duration_sec": 7.56,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "acquisition strategy"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "three company logos merging screen concept",
+        "visual_intent": "Three abstract shapes merging into one on a dark screen, clean motion graphic",
+        "broll_keywords": [
+          "shapes merging screen graphic",
+          "companies combining diagram",
+          "acquisition symbolic graphic"
+        ],
+        "decision_reason": "the concise turn"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "In two thousand nine, it announced a roughly four-billion-dollar acquisition of Marvel Entertainment and its character library.",
+      "duration_sec": 7.56,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "pixar acquisition"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "animation studio desk drawing tablet",
+        "visual_intent": "An animation studio workspace with a drawing tablet lit warmly, cinematic",
+        "broll_keywords": [
+          "animation studio desk tablet",
+          "digital art workspace warm",
+          "creative studio desk shot"
+        ],
+        "decision_reason": "Pixar $7.4B, 2006, widely confirmed"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "PIXAR: $7.4B",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "Then in two thousand twelve, Disney agreed to buy Lucasfilm for about four point zero five billion dollars.",
+      "duration_sec": 7.56,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "marvel acquisition"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "comic book pages close up desk",
+        "visual_intent": "Comic book pages spread on a desk under warm light, close detail shot, cinematic",
+        "broll_keywords": [
+          "comic book pages desk",
+          "comic pages close up shot",
+          "comic art detail warm"
+        ],
+        "decision_reason": "Marvel $4B, 2009, widely confirmed"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "MARVEL: $4B",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "Each deal brought proven characters, storytelling teams, and worlds that could extend across films, television, products, and parks.",
+      "duration_sec": 7.56,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "lucasfilm acquisition"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "film production set model spaceship prop",
+        "visual_intent": "A detailed model spaceship prop on a dim production set table, dramatic light, cinematic",
+        "broll_keywords": [
+          "model spaceship prop set",
+          "production set model detail",
+          "film prop table dramatic"
+        ],
+        "decision_reason": "Lucasfilm $4.05B, 2012, confirmed by NPR/CNBC coverage"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "LUCASFILM: $4.05B",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "narration": "The strategy reduced the need to invent every franchise internally, but Disney still had to integrate and expand what it bought.",
+      "duration_sec": 7.56,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "total and rationale"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "large total figure screen dark financial",
+        "visual_intent": "A large total dollar figure assembling from three smaller ones on screen, clean financial graphic",
+        "broll_keywords": [
+          "total figure assembling screen",
+          "sum total graphic display",
+          "combined total chart screen"
+        ],
+        "decision_reason": "sums the three confirmed figures"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "Three acquisitions transformed the creative pipeline by turning outside hits into long-term corporate assets.",
+      "duration_sec": 7.56,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "long term impact"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_out",
+        "query": "movie theater marquee lights evening",
+        "visual_intent": "A lit movie theater marquee at dusk, wide establishing shot, cinematic",
+        "broll_keywords": [
+          "movie theater marquee evening",
+          "cinema entrance lit dusk",
+          "theater lights wide shot"
+        ],
+        "decision_reason": "closing scope + CTA"
+      }
+    }
+  ]
+}

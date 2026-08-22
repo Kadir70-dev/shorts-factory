@@ -1,0 +1,91 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d22_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Toys R Us Wasn't Killed By Amazon. It Was Killed By Its Own Buyout.",
+    "hook": "Toys R Us paid over $400 million a year in interest before it sold a single toy.",
+    "description": "In 2005, KKR, Bain Capital and Vornado bought Toys R Us in a $6.6 billion leveraged buyout, financed with more than $5 billion in debt placed directly onto the retailer's own books. Toys R Us was spending roughly $400 million a year just servicing that debt by the time it filed for bankruptcy in September 2017, a collapse that cost about 33,000 jobs. Educational content only, not financial advice.",
+    "tags": ["toys r us", "leveraged buyout", "private equity", "corporate bankruptcy", "business failure", "business history", "retail collapse"],
+    "hashtags": ["#toysrus", "#business", "#privateequity", "#finance", "#shorts"],
+    "thumbnail_text": "$400M/YR IN INTEREST"
+  },
+  "fps": 60, "width": 1080, "height": 1920,
+  "scenes": [
+    {
+      "id": "s1", "narration": "Toys R Us paid over four hundred million dollars a year in interest, before it sold a single toy.",
+      "duration_sec": 5.4, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["toys r us debt interest"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "empty toy store aisle shelves closing",
+        "visual_intent": "An empty toy-store aisle with sparse shelves, cold fluorescent light, quiet and hollow",
+        "broll_keywords": ["empty toy store aisle", "closing retail store shelves", "vacant store interior"],
+        "decision_reason": "hook beat: the ~$400M/yr interest servicing figure, hard cut"},
+      "overlays": [{"type": "stat", "text": "$400M/YR IN INTEREST", "y": 0.18}]
+    },
+    {
+      "id": "s2", "narration": "The story people tell is that Amazon killed Toys R Us. That's not really what happened.",
+      "duration_sec": 4.6, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["amazon myth"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "none",
+        "query": "cardboard shipping boxes warehouse stacked",
+        "visual_intent": "Stacked cardboard shipping boxes in a warehouse, representing e-commerce, slightly out of focus",
+        "broll_keywords": ["cardboard boxes warehouse stacked", "shipping boxes storage", "e-commerce packages pile"],
+        "decision_reason": "sets up the reframe"}
+    },
+    {
+      "id": "s3", "narration": "In two thousand five, KKR, Bain Capital, and Vornado bought Toys R Us for six point six billion dollars.",
+      "duration_sec": 6.4, "confidence": "confirmed", "transition_in": "fade",
+      "keywords": ["2005 leveraged buyout"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "pan_lr",
+        "query": "corporate boardroom handshake deal signing",
+        "visual_intent": "A boardroom handshake over a deal document, formal and transactional, cold lighting",
+        "broll_keywords": ["boardroom handshake deal", "business deal signing table", "corporate agreement handshake"],
+        "decision_reason": "the $6.6B 2005 LBO transaction value, confirmed via SEC filing and Forbes retrospective"},
+      "overlays": [{"type": "stat", "text": "$6.6B BUYOUT, 2005", "y": 0.18}]
+    },
+    {
+      "id": "s4", "narration": "More than five billion of that purchase was paid for with debt. And that debt didn't sit with the buyers. It landed directly on Toys R Us's own books.",
+      "duration_sec": 8.4, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["debt on target company", "lbo structure"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_in",
+        "query": "financial documents debt stack heavy",
+        "visual_intent": "A tall, heavy stack of financial documents on a desk, visually representing debt weight",
+        "broll_keywords": ["financial documents stack desk", "paperwork stack heavy", "loan documents pile"],
+        "decision_reason": "$5.3B+ debt placed on Toys R Us, standard LBO structure, confirmed via SEC filing / Forbes"}
+    },
+    {
+      "id": "s5", "narration": "While the company drowned in interest payments, the firms that bought it collected over four hundred million dollars in fees.",
+      "duration_sec": 6.8, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["pe fees collected"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "none",
+        "query": "briefcase money cash close up dark",
+        "visual_intent": "A briefcase with cash inside, dark and deliberate lighting, contrast to the empty store shot",
+        "broll_keywords": ["briefcase cash money", "money briefcase close up", "cash bundle dark lighting"],
+        "decision_reason": "the ~$464M in fees collected by KKR/Bain/Vornado, confirmed via Forbes reporting"},
+      "overlays": [{"type": "stat", "text": "$464M IN FEES COLLECTED", "y": 0.18}]
+    },
+    {
+      "id": "s6", "narration": "Toys R Us filed for bankruptcy in September twenty seventeen. About thirty-three thousand people lost their jobs.",
+      "duration_sec": 6.6, "confidence": "confirmed", "transition_in": "fade",
+      "keywords": ["2017 bankruptcy", "job losses"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "store closing sale sign window",
+        "visual_intent": "A 'store closing' sale sign taped inside a storefront window, blunt and final",
+        "broll_keywords": ["store closing sign window", "closing sale sign retail", "going out of business sign"],
+        "decision_reason": "Sept 2017 bankruptcy filing, ~33,000 jobs lost, confirmed via Forbes reporting"},
+      "overlays": [{"type": "stat", "text": "~33,000 JOBS LOST", "y": 0.18}]
+    },
+    {
+      "id": "s7", "narration": "The toy store didn't fail at retail. It failed carrying debt it never chose to take on.",
+      "duration_sec": 5.8, "confidence": "confirmed", "transition_in": "fade",
+      "keywords": ["lbo lesson"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "ken_burns",
+        "query": "faded toy store sign exterior building",
+        "visual_intent": "A faded, weathered store sign on an empty building exterior, closing image of decline",
+        "broll_keywords": ["faded store sign exterior", "abandoned retail building sign", "old store facade closed"],
+        "decision_reason": "closing beat, the causal reframe"}
+    }
+  ]
+}

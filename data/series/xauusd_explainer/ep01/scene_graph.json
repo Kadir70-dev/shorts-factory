@@ -1,0 +1,2743 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "xauusd_ep01_how_gold_trading_works",
+    "channel_id": "k70_economy",
+    "niche": "usa_finance",
+    "title": "XAU/USD Explained — How Gold Trading Against the US Dollar Actually Works",
+    "hook": "Gold has been money, a war chest, a crisis hedge, and one of the most closely watched prices on Earth. But when traders say XAU/USD is moving — what are they actually looking at?",
+    "description": "XAU/USD EXPLAINED — How gold trading against the US dollar actually works, in plain English.\n\nThis video breaks down what XAU/USD actually means, why gold is quoted in US dollars, how to read a gold price quote, and the four forces that actually move it: US dollar strength, Federal Reserve interest rate policy, real yields (the opportunity cost of holding an asset that pays no interest), inflation expectations, and safe-haven demand during geopolitical uncertainty. It also covers record central bank gold buying, why gold sometimes defies simple textbook expectations, how US law treats leveraged retail gold trading, and the difference between understanding a market and trying to predict its next move.\n\nSOURCES: World Gold Council, Gold Demand Trends Full Year 2024 — https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-full-year-2024 · European Central Bank, International Role of the Euro report, June 2025 · U.S. Commodity Futures Trading Commission, \"Gold Is No Safe Investment\" — https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/gold_is_no_safe_investment.htm · CFTC press release 8643-22\n\nThis video is educational and describes how the XAU/USD market works. It does not recommend buying, selling or trading gold. Trading gold, especially with leverage, carries a high risk of loss. See disclaimer.",
+    "tags": [
+      "xauusd",
+      "xau usd",
+      "gold trading",
+      "how gold trading works",
+      "gold price explained",
+      "gold vs dollar",
+      "real yields",
+      "federal reserve gold",
+      "safe haven gold",
+      "central bank gold buying",
+      "gold explained",
+      "trading for beginners",
+      "finance documentary",
+      "world gold council"
+    ],
+    "hashtags": [
+      "#xauusd",
+      "#gold",
+      "#finance",
+      "#investing",
+      "#k70finance"
+    ],
+    "thumbnail_text": "XAU/USD EXPLAINED",
+    "structure_id": "one_number_story",
+    "disclaimer": "Educational content. Not financial advice. Trading gold, especially with leverage, carries a high risk of loss.",
+    "compliance_notes": [],
+    "requires_ai_disclosure": false,
+    "ai_disclosure_reasons": []
+  },
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Gold has been money, a war chest, a crisis hedge, and one of the most closely watched prices on Earth.",
+      "duration_sec": 5.8,
+      "visual": {
+        "type": "broll",
+        "query": "gold bars stacked macro cinematic lighting",
+        "broll_keywords": [
+          "gold bars stacked macro shot",
+          "gold bullion close up cinematic"
+        ],
+        "visual_intent": "Cinematic macro shot of stacked physical gold bars, warm dramatic lighting, premium and real",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "00 · hook · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "hook",
+      "transition_in": "cut",
+      "keywords": [
+        "gold bars stacked macro shot",
+        "gold bullion close up cinematic"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s2",
+      "narration": "But when traders say XAU/USD is moving — what are they actually looking at?",
+      "duration_sec": 4.6,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "WHAT IS XAU/USD, ACTUALLY?",
+        "broll_keywords": [],
+        "visual_intent": "The question that opens the video, held on black",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 · hook · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "WHAT IS XAU/USD, ACTUALLY?",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "hook",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s3",
+      "narration": "XAU/USD is simply the price of one troy ounce of gold, quoted in US dollars.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "dataviz",
+        "query": "XAU / USD — one troy ounce of gold, in US dollars",
+        "broll_keywords": [],
+        "visual_intent": "A hero card naming the pair plainly, branded",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "00 · context · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "counter",
+        "title": "XAU / USD",
+        "points": [
+          {
+            "label": "1 troy oz. gold, priced in",
+            "value": 1.0,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "",
+        "suffix": " USD",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": ""
+      },
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s4",
+      "narration": "One number. And underneath it — interest rates, currency strength, inflation, and global fear, all priced in at once.",
+      "duration_sec": 5.6,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "RATES · THE DOLLAR · INFLATION · FEAR — ONE PRICE",
+        "broll_keywords": [],
+        "visual_intent": "Four forces converging into one price, kinetic type",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 · evidence · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "RATES · THE DOLLAR · INFLATION · FEAR — ONE PRICE",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "evidence",
+      "transition_in": "dip_to_black",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s5",
+      "narration": "XAU is gold's currency code — the 'X' marks it as a commodity, the same way EUR marks the euro or JPY marks the yen.",
+      "duration_sec": 6.2,
+      "visual": {
+        "type": "broll",
+        "query": "gold bar hallmark stamp close up macro",
+        "broll_keywords": [
+          "gold bullion bar stamp close up",
+          "gold bar serial number macro"
+        ],
+        "visual_intent": "Real gold bars with visible hallmark stamps, close and tactile",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "01 · context · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "fade",
+      "keywords": [
+        "gold bullion bar stamp close up",
+        "gold bar serial number macro"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s6",
+      "narration": "So XAU/USD isn't a stock ticker. It's an exchange rate — gold, priced as if it were a currency of its own.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "XAU — TREATED AS A CURRENCY, NOT A STOCK",
+        "broll_keywords": [],
+        "visual_intent": "XAU treated visually as a currency symbol alongside EUR, JPY, GBP",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "01 · reveal · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "XAU — TREATED AS A CURRENCY, NOT A STOCK",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s7",
+      "narration": "It's quoted in dollars because the dollar is still the world's reserve currency — the common language most global prices get translated through.",
+      "duration_sec": 6.8,
+      "visual": {
+        "type": "image",
+        "query": "Federal Reserve building Washington DC exterior",
+        "broll_keywords": [
+          "Federal Reserve building exterior",
+          "US Treasury building Washington"
+        ],
+        "visual_intent": "Real Federal Reserve building exterior, Washington D.C., establishing the dollar's role",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "02 · context · official",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "fade",
+      "keywords": [
+        "Federal Reserve building exterior",
+        "US Treasury building Washington"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s8",
+      "narration": "Oil, gold, most international trade — priced in dollars first, then converted into whatever currency you actually spend.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "broll",
+        "query": "cargo shipping port containers international trade wide",
+        "broll_keywords": [
+          "cargo shipping port wide shot",
+          "international trade containers port"
+        ],
+        "visual_intent": "Real global trade / shipping port footage, international scale",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "02 · evidence · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [
+        "cargo shipping port wide shot",
+        "international trade containers port"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s9",
+      "narration": "That's a structural fact of the current monetary system — not a comment on any single country's economy.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "A STRUCTURAL FACT — NOT A PREDICTION",
+        "broll_keywords": [],
+        "visual_intent": "A calm, careful caveat, avoiding any USD-bearish framing",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "02 · context · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "A STRUCTURAL FACT — NOT A PREDICTION",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s10",
+      "narration": "So if XAU/USD reads two thousand, that means one troy ounce of gold costs two thousand US dollars. Nothing more complicated than that.",
+      "duration_sec": 7.0,
+      "visual": {
+        "type": "dataviz",
+        "query": "illustrative example: XAU/USD = 2,000",
+        "broll_keywords": [],
+        "visual_intent": "A simple illustrative price example — explicitly framed as an example, not a live quote",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "03 · mechanism · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "counter",
+        "title": "Example quote (illustrative)",
+        "points": [
+          {
+            "label": "1 troy oz. gold =",
+            "value": 2000.0,
+            "emphasis": "auto"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": "Example only — not a live market price"
+      },
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s11",
+      "narration": "The number rises, gold got more expensive in dollars. It falls, gold got cheaper — or the dollar simply got stronger.",
+      "duration_sec": 6.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "PRICE UP: GOLD COSTS MORE.  PRICE DOWN: GOLD, OR THE DOLLAR, CHANGED.",
+        "broll_keywords": [],
+        "visual_intent": "Price up / price down, dual causes labeled",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "03 · mechanism · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "PRICE UP: GOLD COSTS MORE.  PRICE DOWN: GOLD, OR THE DOLLAR, CHANGED.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s12",
+      "narration": "So what actually moves that number? It's rarely one thing. It's usually four.",
+      "duration_sec": 4.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "WHAT MOVES XAU/USD? USUALLY FOUR THINGS.",
+        "broll_keywords": [],
+        "visual_intent": "The chapter question that structures the rest of the video",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "04 · question · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "WHAT MOVES XAU/USD? USUALLY FOUR THINGS.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "question",
+      "transition_in": "fade",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s13",
+      "narration": "First: the dollar itself. Gold is priced in dollars, so when the dollar weakens against other currencies, gold usually costs more in dollar terms — even if nothing about gold changed.",
+      "duration_sec": 8.4,
+      "visual": {
+        "type": "broll",
+        "query": "US dollar bills close up macro cinematic",
+        "broll_keywords": [
+          "US dollar bills close up macro",
+          "hundred dollar bills stack cinematic"
+        ],
+        "visual_intent": "Real US currency close-up, tactile and premium, dollar as the denominator",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "05 · mechanism · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "fade",
+      "keywords": [
+        "US dollar bills close up macro",
+        "hundred dollar bills stack cinematic"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s14",
+      "narration": "A weaker dollar buys less of almost everything priced in dollars. Gold is no exception.",
+      "duration_sec": 5.2,
+      "visual": {
+        "type": "dataviz",
+        "query": "USD strength vs. gold price (conceptual)",
+        "broll_keywords": [],
+        "visual_intent": "Dollar strength vs gold price, inverse relationship shown conceptually",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "05 · evidence · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "bar_compare",
+        "title": "USD strength vs. gold price (conceptual)",
+        "points": [
+          {
+            "label": "Dollar weaker",
+            "value": 8.0,
+            "emphasis": "positive"
+          },
+          {
+            "label": "Dollar stronger",
+            "value": 3.0,
+            "emphasis": "negative"
+          }
+        ],
+        "prefix": "",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": "Conceptual illustration — gold priced in USD"
+      },
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s15",
+      "narration": "Second: what the Federal Reserve does with interest rates.",
+      "duration_sec": 4.2,
+      "visual": {
+        "type": "image",
+        "query": "Federal Reserve seal building entrance Washington DC",
+        "broll_keywords": [
+          "Federal Reserve entrance sign",
+          "Federal Reserve building columns"
+        ],
+        "visual_intent": "Real Federal Reserve building, a different angle from the ch02 shot",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "06 · context · official",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "fade",
+      "keywords": [
+        "Federal Reserve entrance sign",
+        "Federal Reserve building columns"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s16",
+      "narration": "Interest rates change how attractive it is to hold cash and bonds instead of an asset that pays you nothing to hold it.",
+      "duration_sec": 6.6,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "BONDS PAY YOU TO WAIT. GOLD DOESN'T.",
+        "broll_keywords": [],
+        "visual_intent": "Cash/bonds (yield) vs gold (no yield), framed as a simple choice",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "06 · mechanism · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "BONDS PAY YOU TO WAIT. GOLD DOESN'T.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s17",
+      "narration": "Here's the concept that actually drives it: real yield. Take the interest rate. Subtract expected inflation. What's left is the real yield.",
+      "duration_sec": 7.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "NOMINAL YIELD − EXPECTED INFLATION = REAL YIELD",
+        "broll_keywords": [],
+        "visual_intent": "Custom motion graphic: the real-yield formula assembling piece by piece",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "07 · reveal · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "NOMINAL YIELD − EXPECTED INFLATION = REAL YIELD",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s18",
+      "narration": "Traders don't watch the interest rate on its own. They watch it against inflation expectations — because that gap is what actually matters to an asset like gold that pays no yield at all.",
+      "duration_sec": 7.8,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "THE GAP BETWEEN RATE AND INFLATION IS WHAT MOVES GOLD",
+        "broll_keywords": [],
+        "visual_intent": "Reinforcing the formula: the GAP is what matters, not the rate alone",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "07 · mechanism · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "THE GAP BETWEEN RATE AND INFLATION IS WHAT MOVES GOLD",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s19",
+      "narration": "When real yields are high, bonds beat gold easily. When real yields fall toward zero — or below it — gold's zero yield stops being a disadvantage.",
+      "duration_sec": 8.0,
+      "visual": {
+        "type": "dataviz",
+        "query": "High real yields vs. low real yields (conceptual)",
+        "broll_keywords": [],
+        "visual_intent": "Custom motion graphic: real yield rising = opportunity cost of holding gold rising, and vice versa",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "07 · mechanism · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "bar_compare",
+        "title": "Real yield vs. gold's appeal (conceptual)",
+        "points": [
+          {
+            "label": "High real yield",
+            "value": 3.0,
+            "emphasis": "negative"
+          },
+          {
+            "label": "Low/negative real yield",
+            "value": 8.0,
+            "emphasis": "positive"
+          }
+        ],
+        "prefix": "",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": "Conceptual illustration — not a forecast"
+      },
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s20",
+      "narration": "That's the opportunity cost of holding gold — what you give up by not earning interest — rising and falling with real rates.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "OPPORTUNITY COST: WHAT YOU GIVE UP TO HOLD GOLD INSTEAD",
+        "broll_keywords": [],
+        "visual_intent": "The term named plainly: opportunity cost, tied back to the formula",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "07 · payoff · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "OPPORTUNITY COST: WHAT YOU GIVE UP TO HOLD GOLD INSTEAD",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "payoff",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s21",
+      "narration": "Third: inflation expectations. Gold has a long reputation as a store of value when a currency's purchasing power looks likely to erode.",
+      "duration_sec": 6.8,
+      "visual": {
+        "type": "broll",
+        "query": "grocery store shopping receipt prices everyday",
+        "broll_keywords": [
+          "grocery store aisle shopping",
+          "retail checkout receipt close up"
+        ],
+        "visual_intent": "Real everyday consumer/retail footage suggesting purchasing power, grounded not abstract",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "08 · context · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "fade",
+      "keywords": [
+        "grocery store aisle shopping",
+        "retail checkout receipt close up"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s22",
+      "narration": "Traders don't just react to today's inflation number. They react to where they expect inflation to go next.",
+      "duration_sec": 5.6,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "NOT TODAY'S NUMBER — WHERE INFLATION IS EXPECTED TO GO",
+        "broll_keywords": [],
+        "visual_intent": "TODAY'S NUMBER vs THE EXPECTATION, the forward-looking distinction",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "08 · mechanism · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "NOT TODAY'S NUMBER — WHERE INFLATION IS EXPECTED TO GO",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s23",
+      "narration": "Fourth: fear. When markets get nervous — a banking scare, a war, a shock nobody priced in — investors often rotate into gold.",
+      "duration_sec": 6.6,
+      "visual": {
+        "type": "broll",
+        "query": "financial news broadcast screens headlines wide",
+        "broll_keywords": [
+          "financial news studio screens",
+          "business news broadcast monitors"
+        ],
+        "visual_intent": "Real newsroom / financial broadcast screens, headlines moving, tension without sensationalism",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "09 · tension · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "fade",
+      "keywords": [
+        "financial news studio screens",
+        "business news broadcast monitors"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s24",
+      "narration": "Not because gold is exciting. Because its value isn't tied to any single government's promise.",
+      "duration_sec": 5.8,
+      "visual": {
+        "type": "threejs",
+        "query": "Gold as a cross-border, no-single-issuer asset",
+        "broll_keywords": [],
+        "visual_intent": "Globe visualization — gold as a cross-border asset, no single national flag",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "threejs",
+        "budget_channel": "threejs",
+        "decision_reason": "09 · reveal · threejs",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s25",
+      "narration": "That same logic applies to central banks. They've bought more than a thousand tonnes of gold a year, three years running.",
+      "duration_sec": 6.8,
+      "visual": {
+        "type": "dataviz",
+        "query": "Central bank gold purchases — three straight years over 1,000 tonnes",
+        "broll_keywords": [],
+        "visual_intent": "Central bank gold buying, branded and sourced to the World Gold Council",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "10 · evidence · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "World Gold Council, Gold Demand Trends — Full Ye",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": {
+        "kind": "counter",
+        "title": "Central bank gold purchases, 2024",
+        "points": [
+          {
+            "label": "Tonnes bought",
+            "value": 1045.0,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "",
+        "suffix": "t",
+        "decimals": 0,
+        "abbreviate": true,
+        "highlight": -1,
+        "source": "World Gold Council, Gold Demand Trends FY2024",
+        "note": ""
+      },
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s26",
+      "narration": "That's more than double the average pace from the decade before it.",
+      "duration_sec": 4.8,
+      "visual": {
+        "type": "dataviz",
+        "query": "Central bank gold buying: 2010s average vs. now (conceptual)",
+        "broll_keywords": [],
+        "visual_intent": "A simple before/after comparison, sourced",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "10 · evidence · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "World Gold Council, Gold Demand Trends — Full Ye",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": {
+        "kind": "bar_compare",
+        "title": "Central bank gold buying pace",
+        "points": [
+          {
+            "label": "2010s average",
+            "value": 4.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Since 2022",
+            "value": 9.0,
+            "emphasis": "positive"
+          }
+        ],
+        "prefix": "",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": "Illustrative scale, based on WGC reported figures"
+      },
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s27",
+      "narration": "Gold recently passed the euro to become the world's second-largest reserve asset — behind only the US dollar itself.",
+      "duration_sec": 6.8,
+      "visual": {
+        "type": "dataviz",
+        "query": "Share of global reserves, 2024",
+        "broll_keywords": [],
+        "visual_intent": "Reserve asset share, branded and sourced to the ECB",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "10 · payoff · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "European Central Bank, International Role of the",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": {
+        "kind": "bar_compare",
+        "title": "Share of global official reserves, 2024",
+        "points": [
+          {
+            "label": "US Dollar",
+            "value": 46.0,
+            "emphasis": "primary"
+          },
+          {
+            "label": "Gold",
+            "value": 20.0,
+            "emphasis": "positive"
+          },
+          {
+            "label": "Euro",
+            "value": 16.0,
+            "emphasis": "normal"
+          }
+        ],
+        "prefix": "",
+        "suffix": "%",
+        "decimals": 0,
+        "abbreviate": true,
+        "highlight": -1,
+        "source": "European Central Bank, June 2025",
+        "note": ""
+      },
+      "beat_role": "payoff",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s28",
+      "narration": "Here's what trips up a lot of beginners: gold doesn't always do what the textbook says it should.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "GOLD DOESN'T ALWAYS FOLLOW THE TEXTBOOK",
+        "broll_keywords": [],
+        "visual_intent": "The counterintuitive setup line",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "11 · tension · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "GOLD DOESN'T ALWAYS FOLLOW THE TEXTBOOK",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "fade",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s29",
+      "narration": "Rates can rise and gold can still rise too — if inflation expectations are climbing even faster, or fear is doing more work than rates that week.",
+      "duration_sec": 7.2,
+      "visual": {
+        "type": "broll",
+        "query": "financial analyst reviewing multiple charts screens",
+        "broll_keywords": [
+          "analyst reviewing financial charts",
+          "trading desk multiple monitors analysis"
+        ],
+        "visual_intent": "Real analyst reviewing multiple charts, complexity shown as a real working environment",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "11 · evidence · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [
+        "analyst reviewing financial charts",
+        "trading desk multiple monitors analysis"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s30",
+      "narration": "Gold isn't reacting to one input. It's pricing all four at once — and they don't always agree.",
+      "duration_sec": 5.8,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "FOUR FORCES. PRICED AT ONCE. NOT ALWAYS ALIGNED.",
+        "broll_keywords": [],
+        "visual_intent": "All four forces shown pulling in different directions at once",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "11 · mechanism · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "FOUR FORCES. PRICED AT ONCE. NOT ALWAYS ALIGNED.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s31",
+      "narration": "Now, XAU/USD isn't just a price to understand — for some, it's also something to trade. That's where people get into trouble.",
+      "duration_sec": 6.4,
+      "visual": {
+        "type": "broll",
+        "query": "trading platform interface order ticket screen",
+        "broll_keywords": [
+          "trading app interface screen",
+          "trading platform order entry close up"
+        ],
+        "visual_intent": "Real trading platform interface, order ticket visible, neutral not sensational",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "12 · tension · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "fade",
+      "keywords": [
+        "trading app interface screen",
+        "trading platform order entry close up"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s32",
+      "narration": "In the US, federal law has restricted leveraged retail gold trading since 2010 — these contracts must either deliver real metal within twenty-eight days, or trade on a regulated exchange.",
+      "duration_sec": 8.4,
+      "visual": {
+        "type": "dataviz",
+        "query": "US law: leveraged retail metals — 28-day delivery or a regulated exchange",
+        "broll_keywords": [],
+        "visual_intent": "The 28-day delivery rule, branded and sourced to the CFTC",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "12 · mechanism · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "CFTC, \"Gold Is No Safe Investment\" consumer advi",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": {
+        "kind": "counter",
+        "title": "US leveraged retail metals rule",
+        "points": [
+          {
+            "label": "Actual delivery required within",
+            "value": 28.0,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "",
+        "suffix": " days",
+        "decimals": 0,
+        "abbreviate": true,
+        "highlight": -1,
+        "source": "Commodity Exchange Act § 2(c)(2)(D)",
+        "note": ""
+      },
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s33",
+      "narration": "The CFTC has taken multi-million dollar enforcement action against offshore platforms offering exactly this kind of leveraged gold trading.",
+      "duration_sec": 6.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "CFTC ENFORCEMENT: $38M ORDERED AGAINST AN UNREGISTERED LEVERAGED-METALS SCHEME",
+        "broll_keywords": [],
+        "visual_intent": "Enforcement fact, stated plainly, sourced",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "12 · consequence · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "CFTC ENFORCEMENT: $38M ORDERED AGAINST AN UNREGISTERED LEVERAGED-METALS SCHEME",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        },
+        {
+          "type": "source",
+          "text": "CFTC press release 8643-22 — Monex Deposit Co. o",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "consequence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s34",
+      "narration": "That doesn't mean gold can't be traded responsibly. It means leverage on a volatile asset is exactly as risky as it sounds.",
+      "duration_sec": 5.8,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "LEVERAGE ON A VOLATILE ASSET IS EXACTLY AS RISKY AS IT SOUNDS",
+        "broll_keywords": [],
+        "visual_intent": "The balanced, non-alarmist close to the risk section",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "12 · payoff · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "LEVERAGE ON A VOLATILE ASSET IS EXACTLY AS RISKY AS IT SOUNDS",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "payoff",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s35",
+      "narration": "Here's the honest distinction: understanding why gold moves is not the same as predicting where it moves next.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "UNDERSTANDING WHY ≠ PREDICTING WHAT'S NEXT",
+        "broll_keywords": [],
+        "visual_intent": "The thesis-adjacent line, calm and direct",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "13 · turn · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "UNDERSTANDING WHY ≠ PREDICTING WHAT'S NEXT",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "turn",
+      "transition_in": "fade",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s36",
+      "narration": "Professionals who study this for a living still get the short term wrong constantly. The mechanics are knowable. The next candle isn't.",
+      "duration_sec": 6.6,
+      "visual": {
+        "type": "broll",
+        "query": "institutional trading floor professionals wide shot",
+        "broll_keywords": [
+          "bank trading floor wide shot",
+          "institutional dealing room professionals"
+        ],
+        "visual_intent": "Real institutional trading floor, professionals at work, humility not spectacle",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "13 · consequence · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "consequence",
+      "transition_in": "cut",
+      "keywords": [
+        "bank trading floor wide shot",
+        "institutional dealing room professionals"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s37",
+      "narration": "So — XAU/USD isn't mysterious. It's the dollar, interest rates, inflation, fear, and global demand, compressed into a single number.",
+      "duration_sec": 6.8,
+      "visual": {
+        "type": "broll",
+        "query": "gold bars stacked wide cinematic warm light",
+        "broll_keywords": [
+          "gold bullion bars wide shot",
+          "gold bars vault cinematic lighting"
+        ],
+        "visual_intent": "Wide cinematic gold bars shot, callback to the cold open, dusk-toned",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "14 · payoff · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "payoff",
+      "transition_in": "fade",
+      "keywords": [
+        "gold bullion bars wide shot",
+        "gold bars vault cinematic lighting"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s38",
+      "narration": "One troy ounce. Priced in dollars. Moved by four forces most people never learn to see.",
+      "duration_sec": 5.6,
+      "visual": {
+        "type": "dataviz",
+        "query": "XAU / USD — callback",
+        "broll_keywords": [],
+        "visual_intent": "Callback to the hook card — same pair, now understood",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "14 · payoff · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "counter",
+        "title": "XAU / USD",
+        "points": [
+          {
+            "label": "1 troy oz. gold, priced in",
+            "value": 1.0,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "",
+        "suffix": " USD",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": ""
+      },
+      "beat_role": "payoff",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s39",
+      "narration": "Understanding those forces won't tell you tomorrow's price. But it's the difference between reacting to gold, and actually understanding it.",
+      "duration_sec": 6.6,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "REACTING TO GOLD. OR UNDERSTANDING IT.",
+        "broll_keywords": [],
+        "visual_intent": "The thesis line, closing the loop opened in the cold open",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "14 · cta · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "REACTING TO GOLD. OR UNDERSTANDING IT.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "cta",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s40",
+      "narration": "If you want to keep understanding markets instead of guessing at them — that's exactly what this channel is for.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "K70 — UNDERSTAND THE ECONOMY",
+        "broll_keywords": [],
+        "visual_intent": "Channel CTA card, calm and simple, matching the Forex episode's closing card",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "14 · cta · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "K70 — UNDERSTAND THE ECONOMY",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        },
+        {
+          "type": "lower_third",
+          "text": "K70 FINANCE",
+          "sub": "Understand the economy.",
+          "y": 0.5,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "cta",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    }
+  ],
+  "audio": {
+    "voiceover_path": null,
+    "music_path": null,
+    "music_gain_db": -18.0,
+    "voiceover_gain_db": 0.0,
+    "duck_music": true,
+    "duck_amount_db": -9.0,
+    "music_mood": "",
+    "music_envelope": [],
+    "music_fade_in_sec": 1.5,
+    "music_fade_out_sec": 2.0
+  },
+  "captions": [],
+  "sfx": [],
+  "storyboard": {
+    "version": "1.0",
+    "scenes": [
+      {
+        "scene_id": "sb_s1",
+        "source_scene_id": "s1",
+        "narration": "Gold has been money, a war chest, a crisis hedge, and one of the most closely watched prices on Earth.",
+        "duration_estimate": 5.8,
+        "visual_objective": "Cinematic macro shot of stacked physical gold bars, warm dramatic lighting, premium and real",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "urgent",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s2",
+        "source_scene_id": "s2",
+        "narration": "But when traders say XAU/USD is moving — what are they actually looking at?",
+        "duration_estimate": 4.6,
+        "visual_objective": "The question that opens the video, held on black",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "WHAT IS XAU/USD, ACTUALLY?"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s3",
+        "source_scene_id": "s3",
+        "narration": "XAU/USD is simply the price of one troy ounce of gold, quoted in US dollars.",
+        "duration_estimate": 5.4,
+        "visual_objective": "A hero card naming the pair plainly, branded",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s4",
+        "source_scene_id": "s4",
+        "narration": "One number. And underneath it — interest rates, currency strength, inflation, and global fear, all priced in at once.",
+        "duration_estimate": 5.6,
+        "visual_objective": "Four forces converging into one price, kinetic type",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "RATES · THE DOLLAR · INFLATION · FEAR — ONE PRICE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s5",
+        "source_scene_id": "s5",
+        "narration": "XAU is gold's currency code — the 'X' marks it as a commodity, the same way EUR marks the euro or JPY marks the yen.",
+        "duration_estimate": 6.2,
+        "visual_objective": "Real gold bars with visible hallmark stamps, close and tactile",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s6",
+        "source_scene_id": "s6",
+        "narration": "So XAU/USD isn't a stock ticker. It's an exchange rate — gold, priced as if it were a currency of its own.",
+        "duration_estimate": 6.0,
+        "visual_objective": "XAU treated visually as a currency symbol alongside EUR, JPY, GBP",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "XAU — TREATED AS A CURRENCY, NOT A STOCK"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s7",
+        "source_scene_id": "s7",
+        "narration": "It's quoted in dollars because the dollar is still the world's reserve currency — the common language most global prices get translated through.",
+        "duration_estimate": 6.8,
+        "visual_objective": "Real Federal Reserve building exterior, Washington D.C., establishing the dollar's role",
+        "primary_entity": "Federal Reserve",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Washington, D.C.",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.8
+      },
+      {
+        "scene_id": "sb_s8",
+        "source_scene_id": "s8",
+        "narration": "Oil, gold, most international trade — priced in dollars first, then converted into whatever currency you actually spend.",
+        "duration_estimate": 6.0,
+        "visual_objective": "Real global trade / shipping port footage, international scale",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s9",
+        "source_scene_id": "s9",
+        "narration": "That's a structural fact of the current monetary system — not a comment on any single country's economy.",
+        "duration_estimate": 5.4,
+        "visual_objective": "A calm, careful caveat, avoiding any USD-bearish framing",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "A STRUCTURAL FACT — NOT A PREDICTION"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s10",
+        "source_scene_id": "s10",
+        "narration": "So if XAU/USD reads two thousand, that means one troy ounce of gold costs two thousand US dollars. Nothing more complicated than that.",
+        "duration_estimate": 7.0,
+        "visual_objective": "A simple illustrative price example — explicitly framed as an example, not a live quote",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s11",
+        "source_scene_id": "s11",
+        "narration": "The number rises, gold got more expensive in dollars. It falls, gold got cheaper — or the dollar simply got stronger.",
+        "duration_estimate": 6.4,
+        "visual_objective": "Price up / price down, dual causes labeled",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "PRICE UP: GOLD COSTS MORE.  PRICE DOWN: GOLD, OR THE DOLLAR, CHANGED."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s12",
+        "source_scene_id": "s12",
+        "narration": "So what actually moves that number? It's rarely one thing. It's usually four.",
+        "duration_estimate": 4.4,
+        "visual_objective": "The chapter question that structures the rest of the video",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [
+          "WHAT MOVES XAU/USD? USUALLY FOUR THINGS."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s13",
+        "source_scene_id": "s13",
+        "narration": "First: the dollar itself. Gold is priced in dollars, so when the dollar weakens against other currencies, gold usually costs more in dollar terms — even if nothing about gold changed.",
+        "duration_estimate": 8.4,
+        "visual_objective": "Real US currency close-up, tactile and premium, dollar as the denominator",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s14",
+        "source_scene_id": "s14",
+        "narration": "A weaker dollar buys less of almost everything priced in dollars. Gold is no exception.",
+        "duration_estimate": 5.2,
+        "visual_objective": "Dollar strength vs gold price, inverse relationship shown conceptually",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s15",
+        "source_scene_id": "s15",
+        "narration": "Second: what the Federal Reserve does with interest rates.",
+        "duration_estimate": 4.2,
+        "visual_objective": "Real Federal Reserve building, a different angle from the ch02 shot",
+        "primary_entity": "Federal Reserve",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Washington, D.C.",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.8
+      },
+      {
+        "scene_id": "sb_s16",
+        "source_scene_id": "s16",
+        "narration": "Interest rates change how attractive it is to hold cash and bonds instead of an asset that pays you nothing to hold it.",
+        "duration_estimate": 6.6,
+        "visual_objective": "Cash/bonds (yield) vs gold (no yield), framed as a simple choice",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "BONDS PAY YOU TO WAIT. GOLD DOESN'T."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s17",
+        "source_scene_id": "s17",
+        "narration": "Here's the concept that actually drives it: real yield. Take the interest rate. Subtract expected inflation. What's left is the real yield.",
+        "duration_estimate": 7.4,
+        "visual_objective": "Custom motion graphic: the real-yield formula assembling piece by piece",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "NOMINAL YIELD − EXPECTED INFLATION = REAL YIELD"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s18",
+        "source_scene_id": "s18",
+        "narration": "Traders don't watch the interest rate on its own. They watch it against inflation expectations — because that gap is what actually matters to an asset like gold that pays no yield at all.",
+        "duration_estimate": 7.8,
+        "visual_objective": "Reinforcing the formula: the GAP is what matters, not the rate alone",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "THE GAP BETWEEN RATE AND INFLATION IS WHAT MOVES GOLD"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s19",
+        "source_scene_id": "s19",
+        "narration": "When real yields are high, bonds beat gold easily. When real yields fall toward zero — or below it — gold's zero yield stops being a disadvantage.",
+        "duration_estimate": 8.0,
+        "visual_objective": "Custom motion graphic: real yield rising = opportunity cost of holding gold rising, and vice versa",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s20",
+        "source_scene_id": "s20",
+        "narration": "That's the opportunity cost of holding gold — what you give up by not earning interest — rising and falling with real rates.",
+        "duration_estimate": 6.0,
+        "visual_objective": "The term named plainly: opportunity cost, tied back to the formula",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "OPPORTUNITY COST: WHAT YOU GIVE UP TO HOLD GOLD INSTEAD"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s21",
+        "source_scene_id": "s21",
+        "narration": "Third: inflation expectations. Gold has a long reputation as a store of value when a currency's purchasing power looks likely to erode.",
+        "duration_estimate": 6.8,
+        "visual_objective": "Real everyday consumer/retail footage suggesting purchasing power, grounded not abstract",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s22",
+        "source_scene_id": "s22",
+        "narration": "Traders don't just react to today's inflation number. They react to where they expect inflation to go next.",
+        "duration_estimate": 5.6,
+        "visual_objective": "TODAY'S NUMBER vs THE EXPECTATION, the forward-looking distinction",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "NOT TODAY'S NUMBER — WHERE INFLATION IS EXPECTED TO GO"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s23",
+        "source_scene_id": "s23",
+        "narration": "Fourth: fear. When markets get nervous — a banking scare, a war, a shock nobody priced in — investors often rotate into gold.",
+        "duration_estimate": 6.6,
+        "visual_objective": "Real newsroom / financial broadcast screens, headlines moving, tension without sensationalism",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s24",
+        "source_scene_id": "s24",
+        "narration": "Not because gold is exciting. Because its value isn't tied to any single government's promise.",
+        "duration_estimate": 5.8,
+        "visual_objective": "Globe visualization — gold as a cross-border asset, no single national flag",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s25",
+        "source_scene_id": "s25",
+        "narration": "That same logic applies to central banks. They've bought more than a thousand tonnes of gold a year, three years running.",
+        "duration_estimate": 6.8,
+        "visual_objective": "Central bank gold buying, branded and sourced to the World Gold Council",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "1,045 tonnes"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s26",
+        "source_scene_id": "s26",
+        "narration": "That's more than double the average pace from the decade before it.",
+        "duration_estimate": 4.8,
+        "visual_objective": "A simple before/after comparison, sourced",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s27",
+        "source_scene_id": "s27",
+        "narration": "Gold recently passed the euro to become the world's second-largest reserve asset — behind only the US dollar itself.",
+        "duration_estimate": 6.8,
+        "visual_objective": "Reserve asset share, branded and sourced to the ECB",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "20%",
+          "16%",
+          "46%"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s28",
+        "source_scene_id": "s28",
+        "narration": "Here's what trips up a lot of beginners: gold doesn't always do what the textbook says it should.",
+        "duration_estimate": 5.4,
+        "visual_objective": "The counterintuitive setup line",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [
+          "GOLD DOESN'T ALWAYS FOLLOW THE TEXTBOOK"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s29",
+        "source_scene_id": "s29",
+        "narration": "Rates can rise and gold can still rise too — if inflation expectations are climbing even faster, or fear is doing more work than rates that week.",
+        "duration_estimate": 7.2,
+        "visual_objective": "Real analyst reviewing multiple charts, complexity shown as a real working environment",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s30",
+        "source_scene_id": "s30",
+        "narration": "Gold isn't reacting to one input. It's pricing all four at once — and they don't always agree.",
+        "duration_estimate": 5.8,
+        "visual_objective": "All four forces shown pulling in different directions at once",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "FOUR FORCES. PRICED AT ONCE. NOT ALWAYS ALIGNED."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s31",
+        "source_scene_id": "s31",
+        "narration": "Now, XAU/USD isn't just a price to understand — for some, it's also something to trade. That's where people get into trouble.",
+        "duration_estimate": 6.4,
+        "visual_objective": "Real trading platform interface, order ticket visible, neutral not sensational",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s32",
+        "source_scene_id": "s32",
+        "narration": "In the US, federal law has restricted leveraged retail gold trading since 2010 — these contracts must either deliver real metal within twenty-eight days, or trade on a regulated exchange.",
+        "duration_estimate": 8.4,
+        "visual_objective": "The 28-day delivery rule, branded and sourced to the CFTC",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "28 days"
+        ],
+        "emotion": "curious",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s33",
+        "source_scene_id": "s33",
+        "narration": "The CFTC has taken multi-million dollar enforcement action against offshore platforms offering exactly this kind of leveraged gold trading.",
+        "duration_estimate": 6.4,
+        "visual_objective": "Enforcement fact, stated plainly, sourced",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "$38 million"
+        ],
+        "emotion": "cautionary",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "CFTC ENFORCEMENT: $38M ORDERED AGAINST AN UNREGISTERED LEVERAGED-METALS SCHEME"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s34",
+        "source_scene_id": "s34",
+        "narration": "That doesn't mean gold can't be traded responsibly. It means leverage on a volatile asset is exactly as risky as it sounds.",
+        "duration_estimate": 5.8,
+        "visual_objective": "The balanced, non-alarmist close to the risk section",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "LEVERAGE ON A VOLATILE ASSET IS EXACTLY AS RISKY AS IT SOUNDS"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s35",
+        "source_scene_id": "s35",
+        "narration": "Here's the honest distinction: understanding why gold moves is not the same as predicting where it moves next.",
+        "duration_estimate": 6.0,
+        "visual_objective": "The thesis-adjacent line, calm and direct",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [
+          "UNDERSTANDING WHY ≠ PREDICTING WHAT'S NEXT"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s36",
+        "source_scene_id": "s36",
+        "narration": "Professionals who study this for a living still get the short term wrong constantly. The mechanics are knowable. The next candle isn't.",
+        "duration_estimate": 6.6,
+        "visual_objective": "Real institutional trading floor, professionals at work, humility not spectacle",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s37",
+        "source_scene_id": "s37",
+        "narration": "So — XAU/USD isn't mysterious. It's the dollar, interest rates, inflation, fear, and global demand, compressed into a single number.",
+        "duration_estimate": 6.8,
+        "visual_objective": "Wide cinematic gold bars shot, callback to the cold open, dusk-toned",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s38",
+        "source_scene_id": "s38",
+        "narration": "One troy ounce. Priced in dollars. Moved by four forces most people never learn to see.",
+        "duration_estimate": 5.6,
+        "visual_objective": "Callback to the hook card — same pair, now understood",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s39",
+        "source_scene_id": "s39",
+        "narration": "Understanding those forces won't tell you tomorrow's price. But it's the difference between reacting to gold, and actually understanding it.",
+        "duration_estimate": 6.6,
+        "visual_objective": "The thesis line, closing the loop opened in the cold open",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "urgent",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "REACTING TO GOLD. OR UNDERSTANDING IT."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s40",
+        "source_scene_id": "s40",
+        "narration": "If you want to keep understanding markets instead of guessing at them — that's exactly what this channel is for.",
+        "duration_estimate": 6.0,
+        "visual_objective": "Channel CTA card, calm and simple, matching the Forex episode's closing card",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "urgent",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "K70 — UNDERSTAND THE ECONOMY",
+          "K70 FINANCE"
+        ],
+        "visual_confidence_score": 0.92
+      }
+    ]
+  },
+  "asset_provenance": [],
+  "threejs_provenance": [],
+  "motion_graphics_provenance": [],
+  "ai_broll_provenance": [],
+  "paperima_provenance": [],
+  "brand_identity_provenance": null,
+  "variety": {},
+  "brand_id": "k70"
+}

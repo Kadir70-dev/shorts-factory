@@ -1,0 +1,126 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d26_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "There's a Number That Stops the Entire Stock Market",
+    "hook": "If the S&P 500 falls 7% in a day, the whole market stops trading.",
+    "description": "US exchanges use market-wide circuit breakers tied to the S&P 500's prior-day close: a 7% or 13% drop triggers at least a 15-minute halt (before 3:25pm), and a 20% drop shuts trading down for the rest of the day. These exact 7/13/20% thresholds have been in place since February 2013. Educational content only, not financial advice.",
+    "tags": ["stock market circuit breaker", "trading halt", "sp500", "market crash", "how the stock market works", "investing education", "wall street rules"],
+    "hashtags": ["#stockmarket", "#investing", "#wallstreet", "#finance", "#shorts"],
+    "thumbnail_text": "7% = STOP"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "If the S and P five hundred crashes seven percent in a single day, the entire US stock market stops trading, automatically.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["circuit breaker", "market halt"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "stock market crash red numbers screen",
+        "visual_intent": "A trading screen flooded with red falling numbers, tense high-contrast lighting",
+        "broll_keywords": ["stock market crash red screen", "falling stock chart red", "trading floor panic screen"],
+        "decision_reason": "hook beat: the dramatic stop-the-market fact"
+      },
+      "overlays": [{"type": "stat", "text": "-7% = HALT", "y": 0.18}]
+    },
+    {
+      "id": "s2",
+      "narration": "That's not a glitch. It's a rule, called a market-wide circuit breaker.",
+      "duration_sec": 3.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["market-wide circuit breaker rule"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "none",
+        "query": "nyse trading floor exterior wide shot",
+        "visual_intent": "The New York Stock Exchange building facade, steady wide shot, neutral daylight",
+        "broll_keywords": ["nyse building exterior", "wall street exchange facade", "stock exchange building wide"],
+        "decision_reason": "grounds the rule in a real regulated institution"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "There are three trigger levels, measured against the previous day's closing price: seven percent, thirteen percent, and twenty percent.",
+      "duration_sec": 5.8,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["circuit breaker levels", "7 13 20 percent"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "financial chart three levels graphic screen",
+        "visual_intent": "Three tiered horizontal lines on a dark chart, each labeled with a percentage, minimal cinematic render",
+        "broll_keywords": ["financial chart tiers screen", "data levels graphic dark", "trading threshold chart"],
+        "decision_reason": "SEC Rule 7.12 / NYSE MWCB, thresholds set Feb 2013"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Hit the first two levels before three twenty-five in the afternoon, and trading halts for at least fifteen minutes.",
+      "duration_sec": 5.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["15 minute halt"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "none",
+        "query": "clock ticking trading floor time",
+        "visual_intent": "A clock face or trading floor clock, static tension, cool light",
+        "broll_keywords": ["clock trading floor", "wall clock ticking close up", "time pressure office clock"],
+        "decision_reason": "NYSE MWCB FAQ: Level 1/2 halt minimum 15 minutes, 9:30am-3:25pm window"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Hit the third level, twenty percent, and the market shuts down for the rest of the day, no matter what time it is.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["level 3 full day halt"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "empty trading floor closed dark",
+        "visual_intent": "An empty, dimly lit trading floor, stillness after chaos, documentary tone",
+        "broll_keywords": ["empty trading floor dark", "closed stock exchange still", "quiet financial office empty"],
+        "decision_reason": "Level 3 halts trading for remainder of session per NYSE MWCB rules"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "These exact thresholds have only been in place since February twenty thirteen, when regulators replaced the old system with tighter triggers.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["2013 sec rule change"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_in",
+        "query": "sec securities exchange commission document",
+        "visual_intent": "An official regulatory document or seal, formal steady framing",
+        "broll_keywords": ["sec regulatory document", "government seal official paper", "financial regulation document"],
+        "decision_reason": "SEC approved 7/13/20% S&P 500-based thresholds effective Feb 4 2013, replacing prior 10/20/30% DJIA-based rule"
+      },
+      "overlays": [{"type": "stat", "text": "Since Feb 2013", "y": 0.18}]
+    },
+    {
+      "id": "s7",
+      "narration": "It's not there to stop losses. It's there to stop panic from feeding on itself. Follow for more.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["panic prevention purpose"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "zoom_in",
+        "query": "calm office window city skyline",
+        "visual_intent": "A calm shot of a city skyline through an office window, settling tone",
+        "broll_keywords": ["city skyline office window", "financial district calm view", "downtown skyline daylight"],
+        "decision_reason": "closing reframe and CTA"
+      }
+    }
+  ]
+}

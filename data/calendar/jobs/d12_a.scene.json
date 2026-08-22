@@ -1,0 +1,206 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d12_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Amazon Started in a Garage. Bezos Still Runs It Like Day 1.",
+    "hook": "Amazon started in a garage in 1994. Jeff Bezos still runs the company like it never left.",
+    "description": "Jeff Bezos founded what became Amazon from a rented house in Bellevue, Washington in 1994, packing books himself with help from his then-wife MacKenzie Scott. His 1997 shareholder letter introduced the 'Day 1' philosophy \u2014 a warning against complacency he has repeated in nearly every letter since.",
+    "tags": [
+      "amazon",
+      "jeff bezos",
+      "business history",
+      "day 1 philosophy",
+      "startup story"
+    ],
+    "hashtags": [
+      "#amazon",
+      "#jeffbezos",
+      "#business",
+      "#shorts"
+    ],
+    "thumbnail_text": "STILL DAY 1"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Amazon started in a garage in nineteen ninety-four. Jeff Bezos still runs the company like it never left.",
+      "duration_sec": 4.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "amazon garage origin"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "garage door suburban house archival",
+        "visual_intent": "A suburban garage door at dusk, warm nostalgic light, still",
+        "broll_keywords": [
+          "suburban garage door dusk",
+          "house garage exterior warm light",
+          "residential garage close up"
+        ],
+        "decision_reason": "hook beat: the origin-to-present contrast"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Bezos founded the company from a rented house in Bellevue, Washington, packing books himself.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "bellevue garage packing"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "cardboard boxes books packing warehouse",
+        "visual_intent": "Cardboard boxes and books being packed on a table, warm practical light",
+        "broll_keywords": [
+          "cardboard boxes books packing",
+          "packing books table close",
+          "shipping boxes preparation"
+        ],
+        "decision_reason": "founding location and early activity, widely reported"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "He and his then-wife MacKenzie Scott built shelving out of doors and drove packages to the post office.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "door desk mackenzie scott"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "makeshift desk door plank office",
+        "visual_intent": "A simple desk made from a door on sawhorses, minimal early-startup office feel",
+        "broll_keywords": [
+          "makeshift door desk office",
+          "simple startup desk minimal",
+          "improvised office furniture"
+        ],
+        "decision_reason": "widely reported early-Amazon detail (the 'door desk' is well documented, MacKenzie Scott's involvement is confirmed)"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "In his first shareholder letter in 1997, Bezos wrote, quote, this is Day 1 for the internet, and for Amazon.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "1997 shareholder letter quote"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "printed letter document close up",
+        "visual_intent": "A printed letter document on a desk, close focus, formal warm light",
+        "broll_keywords": [
+          "printed letter document desk",
+          "business letter close up",
+          "formal document typed page"
+        ],
+        "decision_reason": "direct quote from Amazon's 1997 shareholder letter, primary source"
+      },
+      "overlays": [
+        {
+          "type": "quote",
+          "text": "\u201cThis is Day 1 for the internet.\u201d",
+          "sub": "Jeff Bezos, 1997 shareholder letter",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "He's repeated that phrase in nearly every letter since. Amazon even named a headquarters building 'Day 1.'",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "day 1 building"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "modern office building glass exterior",
+        "visual_intent": "A modern glass office building exterior, daylight, wide architectural shot",
+        "broll_keywords": [
+          "modern glass office building",
+          "corporate headquarters exterior",
+          "tech campus building wide"
+        ],
+        "decision_reason": "Amazon's Seattle HQ building named 'Day 1', widely reported"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The idea: the moment a company acts like it has arrived, it starts losing the urgency that built it.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "day 1 philosophy meaning"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "clock ticking urgency close up",
+        "visual_intent": "A close-up of a clock ticking, symbolic of urgency, dramatic light",
+        "broll_keywords": [
+          "clock ticking close up",
+          "urgency time symbolic",
+          "clock hands moving dramatic"
+        ],
+        "decision_reason": "explains the philosophy's meaning"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "Bezos' warning has a name for the alternative. He calls it Day 2. Day 2, he's said, is stasis, followed by decline.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "day 2 closing"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "empty office desk stagnant still",
+        "visual_intent": "A still, empty office desk, dim light, symbolic of stagnation",
+        "broll_keywords": [
+          "empty office desk still",
+          "stagnant office scene dim",
+          "quiet unused workspace"
+        ],
+        "decision_reason": "Bezos' 'Day 2' framing from later shareholder letters, closing payoff"
+      }
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "schema_version": "2.0",
+  "brand_id": "k70",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "meta": {
+    "video_id": "vid_geo_texas_v1",
+    "channel_id": "k70_facts",
+    "niche": "usa_facts",
+    "structure_id": "one_number_story",
+    "title": "The State That Out-Drills Most Countries",
+    "hook": "One state pumps more oil than most countries",
+    "description": "Texas is the largest state in the contiguous United States, and it produces more than two fifths of all the crude oil drilled in the country — most of it out of the Permian Basin in West Texas.",
+    "tags": ["texas", "texas oil", "permian basin", "us oil production", "usa facts", "geography"],
+    "hashtags": ["#shorts", "#texas", "#geography", "#oil"],
+    "thumbnail_text": "ONE STATE"
+  },
+  "scenes": [
+    {
+      "id": "s1",
+      "beat_role": "hook",
+      "duration_sec": 4.5,
+      "narration": "One American state pumps more oil than most countries do.",
+      "confidence": "confirmed",
+      "keywords": [],
+      "visual": {
+        "type": "motion_gfx",
+        "strategy": "motion_gfx",
+        "scene_visual_type": "dramatic",
+        "motion": "none",
+        "visual_intent": "The claim itself, built on screen in type",
+        "broll_keywords": []
+      },
+      "overlays": [{"type": "headline", "text": "One state.", "y": 0.18}],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s2",
+      "beat_role": "context",
+      "duration_sec": 5.2,
+      "narration": "That state is Texas, the biggest state in the lower forty-eight.",
+      "confidence": "confirmed",
+      "keywords": ["Texas"],
+      "visual": {
+        "type": "threejs",
+        "strategy": "threejs",
+        "scene_visual_type": "data_viz",
+        "motion": "none",
+        "visual_intent": "Fly from the whole globe down to the state borders of Texas so the viewer sees where and how big",
+        "broll_keywords": []
+      },
+      "overlays": [{"type": "lower_third", "text": "Texas", "sub": "268,596 sq mi", "y": 0.2}],
+      "transition_in": "fade"
+    },
+    {
+      "id": "s3",
+      "beat_role": "evidence",
+      "duration_sec": 6.0,
+      "narration": "It drills more than two fifths of all the crude oil produced in the United States.",
+      "confidence": "confirmed",
+      "keywords": [],
+      "visual": {
+        "type": "dataviz",
+        "strategy": "dataviz",
+        "scene_visual_type": "data_viz",
+        "motion": "none",
+        "visual_intent": "Texas against the next producing states, so the gap is the story",
+        "broll_keywords": []
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "Share of U.S. crude oil production",
+        "points": [
+          {"label": "Texas", "value": 42, "emphasis": "primary"},
+          {"label": "N. Dakota", "value": 9, "emphasis": "normal"},
+          {"label": "New Mexico", "value": 13, "emphasis": "normal"},
+          {"label": "Colorado", "value": 4, "emphasis": "normal"}
+        ],
+        "suffix": "%",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 0,
+        "source": "U.S. Energy Information Administration"
+      },
+      "overlays": [{"type": "source", "text": "EIA", "y": 0.12}],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s4",
+      "beat_role": "mechanism",
+      "duration_sec": 5.0,
+      "narration": "Most of those barrels come out of the Permian Basin, in the dry west of the state.",
+      "confidence": "confirmed",
+      "keywords": ["oil pumpjack"],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "ken_burns",
+        "visual_intent": "Real pumpjacks working the dry west Texas plain",
+        "broll_keywords": ["oil pumpjack desert", "oil field pump west texas"]
+      },
+      "overlays": [],
+      "transition_in": "push_up"
+    },
+    {
+      "id": "s5",
+      "beat_role": "cta",
+      "duration_sec": 4.2,
+      "narration": "One state, two fifths of the barrels.",
+      "confidence": "confirmed",
+      "keywords": [],
+      "visual": {
+        "type": "motion_gfx",
+        "strategy": "motion_gfx",
+        "scene_visual_type": "dramatic",
+        "motion": "none",
+        "visual_intent": "The payoff line set in type",
+        "broll_keywords": []
+      },
+      "overlays": [
+        {"type": "headline", "text": "Two fifths of the barrels.", "y": 0.18},
+        {"type": "lower_third", "text": "Follow K70 for more America.", "y": 0.3}
+      ],
+      "transition_in": "dip_to_black"
+    }
+  ]
+}

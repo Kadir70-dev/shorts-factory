@@ -1,0 +1,205 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d10_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Skipping Your 401k Match Is Turning Down Part of Your Paycheck",
+    "hook": "If your employer offers a 401k match and you're not claiming it, you're turning down part of your paycheck.",
+    "description": "A 401k match is extra compensation your employer adds only when you contribute to your own retirement account \u2014 it functions as an immediate, guaranteed addition to what you put in, separate from any investment returns. Skipping it means that portion of compensation is never paid at all. Educational content only, not financial advice.",
+    "tags": [
+      "401k",
+      "retirement savings",
+      "employer match",
+      "personal finance",
+      "free money"
+    ],
+    "hashtags": [
+      "#401k",
+      "#retirement",
+      "#personalfinance",
+      "#shorts"
+    ],
+    "thumbnail_text": "FREE MONEY, OPT-IN"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "If your employer offers a 401k match and you're not claiming it, you're turning down part of your paycheck.",
+      "duration_sec": 4.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "401k match"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "paycheck stub close up",
+        "visual_intent": "A pay stub document close up on a desk, warm light, focused detail",
+        "broll_keywords": [
+          "pay stub close up desk",
+          "paycheck document detail",
+          "salary statement close up"
+        ],
+        "decision_reason": "hook beat: the direct stakes"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "A 401k match is extra money your employer adds, but only if you contribute first.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "match mechanics"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "office desk retirement paperwork",
+        "visual_intent": "A desk with retirement account paperwork and a pen, neutral light, still",
+        "broll_keywords": [
+          "retirement paperwork desk",
+          "401k enrollment form",
+          "office desk finance documents"
+        ],
+        "decision_reason": "defines the conditional match mechanic"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Say your employer matches fifty cents for every dollar you put in, up to six percent of your pay.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "illustrative match example"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "coins matching pairs graphic",
+        "visual_intent": "Coins being matched in pairs on a dark surface, symbolic macro shot",
+        "broll_keywords": [
+          "coins matching pairs macro",
+          "money matching concept visual",
+          "coin pairs symbolic close up"
+        ],
+        "decision_reason": "illustrative example structure, common real-world match format, framed as an example not a universal rate"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Example: 50% match up to 6% of pay",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "Contribute that six percent, and you instantly gain an extra three percent of your salary. Guaranteed, before any investment gains.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "immediate return framing"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "money growing plant sprout coins",
+        "visual_intent": "A small coin stack with a sprouting plant growing from it, symbolic macro",
+        "broll_keywords": [
+          "coin stack plant sprout macro",
+          "money growth symbolic image",
+          "savings growing concept visual"
+        ],
+        "decision_reason": "illustrates the immediate compensation gain from the example match rate"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "No stock market return works like that. It's not a bet, it's compensation you have to actively claim.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "compensation not investment"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "handshake job offer benefits",
+        "visual_intent": "A handshake in an office setting, symbolic of a job benefit being offered, warm light",
+        "broll_keywords": [
+          "handshake office benefits",
+          "job offer handshake warm",
+          "workplace agreement symbolic"
+        ],
+        "decision_reason": "reframes the match as compensation, not a market bet"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Skip the match entirely, and that money simply never gets paid to you at all.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "opportunity cost"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "empty wallet pocket concept",
+        "visual_intent": "An open empty wallet on a table, symbolic of missed money, neutral light",
+        "broll_keywords": [
+          "empty wallet table symbolic",
+          "missed money concept visual",
+          "open wallet still life"
+        ],
+        "decision_reason": "opportunity-cost consequence"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "It's the closest thing to free money in personal finance, and it's opt-in.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "retirement savings jar coins growing",
+        "visual_intent": "A glass jar filling with coins, symbolic of savings accumulating, warm light",
+        "broll_keywords": [
+          "glass jar coins savings",
+          "money jar filling symbolic",
+          "savings accumulating close up"
+        ],
+        "decision_reason": "closing 'opt-in' payoff"
+      }
+    }
+  ]
+}

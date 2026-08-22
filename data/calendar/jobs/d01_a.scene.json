@@ -1,0 +1,112 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d01_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "He Sawed The Legs Off A Table In 1956. It Became IKEA's Entire Business Model.",
+    "hook": "In 1956, an IKEA designer sawed the legs off a table just to fit it in his car.",
+    "description": "In 1956, IKEA designer Gillis Lundgren couldn't fit a table into his Volvo, so he removed the legs and packed it flat. That accident became IKEA's core business model: ship furniture unassembled, let the customer build it, and fit far more product into every truck and container. It's how a Swedish catalog company grew into one of the largest furniture retailers in the world.",
+    "tags": ["ikea", "business model", "flat pack furniture", "business strategy", "supply chain", "retail", "company history", "how ikea makes money"],
+    "hashtags": ["#ikea", "#business", "#economics", "#money", "#shorts"],
+    "thumbnail_text": "ONE BROKEN TABLE"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "In nineteen fifty-six, an IKEA designer sawed the legs off a table just to fit it in his car.",
+      "duration_sec": 4.2,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["ikea history", "gillis lundgren"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "wooden table legs sawn off workshop close up",
+        "visual_intent": "A wooden table leg being sawn off on a workshop bench, sawdust falling, harsh workshop light, close and tactile",
+        "broll_keywords": ["carpenter sawing table leg", "furniture workshop close up", "wooden furniture parts bench"],
+        "decision_reason": "hook beat: the literal accident, hard cut"
+      },
+      "overlays": [{"type": "stat", "text": "1956", "y": 0.16}]
+    },
+    {
+      "id": "s2",
+      "narration": "Staring at the pieces on the ground, he had an idea. What if furniture never left the factory fully assembled?",
+      "duration_sec": 5.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["flat pack idea", "furniture design"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "none",
+        "query": "disassembled furniture parts flat on floor",
+        "visual_intent": "Flat furniture panels and hardware laid out neatly on a floor, overhead shot, clean daylight",
+        "broll_keywords": ["flat pack furniture parts floor", "furniture panels laid out overhead", "disassembled furniture pieces"],
+        "decision_reason": "the idea beat, calm after the accident"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Ingvar Kamprad turned that accident into IKEA's whole model: ship it flat, let the customer build it at home.",
+      "duration_sec": 5.8,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["ingvar kamprad", "ikea founder"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "pan_lr",
+        "query": "flat pack furniture boxes warehouse stacked",
+        "visual_intent": "Rows of flat cardboard furniture boxes stacked on warehouse shelving, wide pan, industrial light",
+        "broll_keywords": ["flat pack boxes warehouse", "cardboard furniture boxes stacked", "distribution center shelving wide"],
+        "decision_reason": "establishes the model at scale"
+      },
+      "overlays": [{"type": "lower_third", "text": "Ingvar Kamprad, IKEA founder", "y": 0.82}]
+    },
+    {
+      "id": "s4",
+      "narration": "Flat boxes stack tighter than finished furniture, so more product fits on every truck, every container, every store shelf.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["shipping efficiency", "logistics"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_out",
+        "query": "shipping containers stacked port cargo",
+        "visual_intent": "Shipping containers stacked densely at a cargo port, wide aerial-feeling shot, cool industrial light",
+        "broll_keywords": ["cargo containers stacked port", "logistics truck loading dock", "warehouse shelving efficiency wide"],
+        "decision_reason": "visualizes the packing-density advantage that drives the economics"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "That shift moved the assembly labor onto the customer, in exchange for a dramatically lower price.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["self assembly", "cost tradeoff"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "ken_burns",
+        "query": "person assembling flat pack furniture home",
+        "visual_intent": "A person kneeling on a living room floor assembling flat-pack furniture with an allen key, warm home light",
+        "broll_keywords": ["assembling furniture home floor", "allen key furniture assembly", "flat pack furniture living room"],
+        "decision_reason": "the customer's side of the trade"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "It's why IKEA grew into one of the largest furniture retailers on Earth, built on a table that wouldn't fit in a car. Follow for more.",
+      "duration_sec": 8.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["ikea scale", "business lesson"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "large furniture retail store exterior blue",
+        "visual_intent": "A large blue-and-yellow furniture superstore exterior at dusk, wide establishing shot, cinematic",
+        "broll_keywords": ["furniture superstore exterior", "big box retail store dusk", "large retail warehouse building"],
+        "decision_reason": "scale payoff and CTA"
+      },
+      "overlays": [{"type": "stat", "text": "One of the largest furniture retailers on Earth", "y": 0.18}]
+    }
+  ]
+}

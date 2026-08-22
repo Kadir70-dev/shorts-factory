@@ -1,0 +1,207 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d29_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Lump Sum Beat Dollar-Cost Averaging About Two-Thirds Of The Time",
+    "hook": "Vanguard found investing a lump sum immediately won roughly two-thirds of historical periods.",
+    "description": "Vanguard research found immediate lump-sum investing historically outperformed staged cost averaging roughly two-thirds of the time because more money spent more time invested. Cost averaging can reduce short-term timing risk and regret. Educational content only, not financial advice.",
+    "tags": [
+      "dollar cost averaging",
+      "lump sum",
+      "investing education",
+      "market timing"
+    ],
+    "hashtags": [
+      "#investing",
+      "#dca",
+      "#stockmarket",
+      "#shorts"
+    ],
+    "thumbnail_text": "2 OUT OF 3"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Vanguard found investing a lump sum immediately beat staged cost averaging in roughly two-thirds of historical periods.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "lump sum versus DCA",
+        "investment paths graphic"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "investment cash two paths",
+        "visual_intent": "Cash splitting into immediate and scheduled investment paths",
+        "broll_keywords": [
+          "lump sum versus DCA",
+          "investment paths graphic",
+          "cash allocation comparison"
+        ],
+        "decision_reason": "Vanguard research reports the roughly two-thirds historical result"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Roughly 2/3",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "The reason is simple: markets have generally risen over time, so cash waiting on the sidelines has an opportunity cost.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "long term market chart",
+        "cash opportunity cost"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "pan_lr",
+        "query": "stock market long term rising chart",
+        "visual_intent": "A long-term market chart with cash waiting beside it",
+        "broll_keywords": [
+          "long term market chart",
+          "cash opportunity cost",
+          "invested versus cash"
+        ],
+        "decision_reason": "Vanguard attributes the result to opportunity cost and risk premium"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Dollar-cost averaging moves equal portions in on a schedule, reducing the risk of investing everything just before a drop.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "recurring investment calendar",
+        "dollar cost averaging"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "calendar recurring investments",
+        "visual_intent": "Equal dollar amounts entering a portfolio across calendar dates",
+        "broll_keywords": [
+          "recurring investment calendar",
+          "dollar cost averaging",
+          "scheduled investing"
+        ],
+        "decision_reason": "Vanguard defines cost averaging and its temporary risk reduction"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Fixed amounts over time",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "But that protection also means part of the money stays in cash longer if the market rises.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "cash on sidelines",
+        "market rises chart"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "cash waiting market rising",
+        "visual_intent": "A cash stack stationary while a chart climbs",
+        "broll_keywords": [
+          "cash on sidelines",
+          "market rises chart",
+          "opportunity cost visual"
+        ],
+        "decision_reason": "Direct tradeoff identified in Vanguard research"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "So this is a tradeoff between higher expected time in the market and lower short-term timing regret.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "risk tradeoff scale",
+        "investing decision balance"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "risk return balance scale",
+        "visual_intent": "A scale labeled time invested and timing regret",
+        "broll_keywords": [
+          "risk tradeoff scale",
+          "investing decision balance",
+          "timing risk concept"
+        ],
+        "decision_reason": "Balanced summary of expected return versus loss aversion"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Time vs regret",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "narration": "Neither method removes market risk. The useful question is which plan an investor can actually follow through volatility.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "investment plan desk",
+        "calm investor volatility"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "investor following written plan",
+        "visual_intent": "A person calmly following a written investment plan",
+        "broll_keywords": [
+          "investment plan desk",
+          "calm investor volatility",
+          "financial plan checklist"
+        ],
+        "decision_reason": "Avoids personalized recommendation and acknowledges market risk"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "No risk disappears",
+          "y": 0.18
+        }
+      ]
+    }
+  ]
+}

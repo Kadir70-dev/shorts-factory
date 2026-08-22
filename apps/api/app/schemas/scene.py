@@ -111,7 +111,7 @@ class Visual(BaseModel):
     #   solid    = flat-colour last resort
     type: Literal[
         "broll", "ai_video", "ai_image", "dataviz", "motion_gfx", "threejs", "branded",
-        "manim", "image", "solid", "papercraft"
+        "manim", "image", "solid", "papercraft", "paperima"
     ] = "broll"
     # search query (pexels/pixabay) OR generation prompt (veo3/seedance)
     # OR manim scene name for type=="manim"
@@ -172,6 +172,15 @@ class Visual(BaseModel):
     # FFmpeg Layer Composer stacks the planes (background ▸ subject ▸ fx ▸ ui)
     # with per-layer parallax. Only used when LAYERED_RENDER=1.
     layers: list[Layer] = []
+    # --- Evidence-card papercraft (small tilted clipping over real footage) --
+    # Optional. None (default) → no card, the beat's own `asset_path` fills the
+    # whole frame exactly as before. When set, `render_ffmpeg.py`'s finish pass
+    # composites this SMALL PNG (see papercraft/templates.py's `evidence_card`)
+    # as a rotated, shadowed overlay in the left third of the frame, ON TOP of
+    # whatever real footage/AI still `asset_path` already resolved to — the
+    # card is supporting evidence, never the whole scene.
+    evidence_card_path: Optional[str] = None
+    evidence_card_rotate_deg: float = -6.0
 
 
 # --------------------------------------------------------------------------- #
@@ -414,6 +423,7 @@ class ThreeJSRenderProvenance(BaseModel):
     template: Literal[
         "number_counter", "comparison_towers", "share_ownership",
         "dividend_cashflow", "timeline_flythrough", "compound_growth",
+        "globe_flight",
     ]
     template_version: str
     status: Literal["rendered", "cache_hit", "unresolved"]
@@ -495,6 +505,30 @@ class AIBrollRenderProvenance(BaseModel):
     selection_reason: str = ""
 
 
+class PaperimaRenderProvenance(BaseModel):
+    """One call into the external local Paperima app (github.com/nurimator/
+    paperima, AGPL-3.0, run unmodified as a browser-automated subprocess —
+    see pipeline/paperima_engine.py). Mirrors ThreeJSRenderProvenance's shape
+    so the plan-vs-delivery QA gate and the visual-budget breakdown treat
+    every engine's receipt the same way."""
+    scene_id: str
+    source_image: str
+    animation_type: Literal["reveal", "conceal", "dynamic", "wobble", "static"]
+    status: Literal["rendered", "cache_hit", "unresolved", "unavailable"]
+    render_path: Optional[str] = None
+    cache_key: str
+    fps: int
+    width: int
+    height: int
+    duration_sec: float = Field(ge=0)
+    render_ms: float = Field(ge=0)
+    downloaded_bytes: int = 0
+    error: str = ""
+    # True when Paperima was skipped/unavailable and the pre-existing FFmpeg
+    # paper-animation fallback produced `render_path` instead.
+    used_fallback: bool = False
+
+
 class BrandIdentityProvenance(BaseModel):
     brand_id: str
     brand_fingerprint: str
@@ -530,6 +564,10 @@ class SceneGraph(BaseModel):
     motion_graphics_provenance: list[MotionGraphicsRenderProvenance] = []
     # Phase 6 output; empty when its feature gate is disabled.
     ai_broll_provenance: list[AIBrollRenderProvenance] = []
+    # Paperima paper-animation integration; empty unless a scene actually
+    # used it (see pipeline/paperima_engine.py — invoked sparingly, only for
+    # beats whose visual strategy calls for physical document motion).
+    paperima_provenance: list[PaperimaRenderProvenance] = []
     # Phase 7 central brand receipt; absent when the feature gate is disabled.
     brand_identity_provenance: Optional[BrandIdentityProvenance] = None
 

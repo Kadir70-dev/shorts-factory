@@ -29,7 +29,10 @@ import argparse
 import json
 import asyncio
 import os
-import resource
+try:
+    import resource
+except ImportError:  # Windows: no POSIX resource module
+    resource = None
 import sys
 import threading
 import time
@@ -40,7 +43,60 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "apps" / "api"))
 PRESET_DIR = ROOT / "config" / "presets"
-RENDER_TIMEOUT_S = 600.0          # production timeout guard per short
+# Production timeout guard. A flat 600s was right while every job was a 20-45s
+# Short, but it is a function of how much video there is to draw: a 12-minute
+# documentary needs ~2.1x its own runtime to render on a 4-core host, so the
+# flat guard aborted it before the first chapter finished. Budget per second of
+# finished video, with the old value as the floor so Shorts behave exactly as
+# before.
+RENDER_TIMEOUT_FLOOR_S = 600.0
+RENDER_TIMEOUT_PER_VIDEO_S = 6.0
+
+
+def render_timeout(graph) -> float:
+    return max(RENDER_TIMEOUT_FLOOR_S,
+               graph.total_duration_sec * RENDER_TIMEOUT_PER_VIDEO_S)
+
+
+# --- production-checkpoint glue (OpenMontage-audit gap #2) ------------------ #
+# Module-level (not closures inside `run()`) so they're unit-testable without
+# spinning up a full production run. No top-level `app.schemas` import here —
+# `run()` deliberately imports the app package only AFTER the preset's env
+# vars are applied (see `_load_preset`'s comment), and these helpers must
+# honor the same ordering, hence the local import in `_load_graph`.
+def _dump_graph(g, p: Path) -> None:
+    p.write_text(g.model_dump_json(), encoding="utf-8")
+
+
+def _load_graph(p: Path):
+    from app.schemas.scene import SceneGraph
+    # Measured TTS audio can legitimately clock a very short line at e.g.
+    # 0.747s — a hair under Scene.duration_sec's `ge=0.8` floor. That was
+    # always harmless in memory (plain attribute assignment doesn't re-
+    # validate), but a checkpoint round-trip reconstructs the model from
+    # JSON via model_validate_json, which DOES re-validate — so resuming a
+    # job could crash on a value the live pipeline had been carrying all
+    # along without issue. Clamp to the schema's own floor before validating
+    # rather than loosen the floor itself (a real pacing constraint, not a
+    # serialization artifact) or skip validation entirely (which would also
+    # skip catching genuinely malformed checkpoint data).
+    data = json.loads(p.read_text(encoding="utf-8"))
+    for scene in data.get("scenes", []):
+        if isinstance(scene.get("duration_sec"), (int, float)) and scene["duration_sec"] < 0.8:
+            scene["duration_sec"] = 0.8
+    return SceneGraph.model_validate(data)
+
+
+def _stage_op(fn, *a, **kw):
+    """Wrap a stage function (sync or async) into the zero-arg async callable
+    `resumable_stage` expects, without duplicating this glue at every call
+    site in `run()`."""
+    async def _op():
+        result = fn(*a, **kw)
+        if asyncio.iscoroutine(result):
+            result = await result
+        return result
+    return _op
 
 
 # --------------------------------------------------------------------------- #
@@ -76,6 +132,8 @@ class RamSampler(threading.Thread):
 
 
 def _cpu_s() -> float:
+    if resource is None:
+        return 0.0
     ru = resource.getrusage(resource.RUSAGE_CHILDREN)
     return ru.ru_utime + ru.ru_stime
 
@@ -83,7 +141,8 @@ def _cpu_s() -> float:
 async def _get_graph(args, preset):
     from app.schemas.scene import SceneGraph
     if args.from_json:
-        graph = SceneGraph.model_validate_json(Path(args.from_json).read_text())
+        graph = SceneGraph.model_validate_json(
+            Path(args.from_json).read_text(encoding="utf-8"))
         print(f"   source: fixed spec {args.from_json} ({len(graph.scenes)} scenes)")
         return graph
     # Director path (Topic → Research → Script → Scene + grounding). Needs the
@@ -117,14 +176,19 @@ async def run(args) -> int:
     from app.brand import load_theme
     from app.config import load_channel, log_provider_validation, settings
     from app.director import structures
-    from app.pipeline import broll, captions, compliance, music, qa, ram, \
-        render_ffmpeg, sfx, storyboard, tts, variety, visual_budget
+    from app.pipeline import broll, captions, compliance, music, providers, qa, \
+        ram, render_ffmpeg, sfx, storyboard, tts, variety, visual_budget
+    from app.pipeline.production_optimizer import CheckpointStore, resumable_stage
+    from app.schemas.scene import SceneGraph
     from app.schemas.video_spec import Niche, VideoSpec
     from app.voice import load_profile
 
     BAR = "═" * 70
     print(f"{BAR}\n● PRODUCE · preset={preset['name']} · v1-production (frozen)\n{BAR}")
     log_provider_validation()
+    # Which asset sources this run can actually reach. Decided once, up front, so
+    # an unconfigured provider costs nothing instead of one timeout per beat.
+    print("   " + providers.availability_report().replace("\n", "\n   "))
     print(f"   grounding={'strict' if settings().strict_visuals else 'normal'} · "
           f"layered={settings().layered_render} · qa={settings().qa_enabled} · "
           f"backend={settings().render_backend} · ai_budget={settings().layered_ai_still_budget}")
@@ -159,12 +223,41 @@ async def run(args) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     out_mp4 = out_dir / "final.mp4"
 
+    # PRODUCTION CHECKPOINTING (OpenMontage-audit gap #2). Each expensive stage
+    # below is wrapped in `resumable_stage`, which skips straight to the stage's
+    # already-recorded SceneGraph snapshot when it validates (artifact present
+    # AND its sha256 matches what was recorded at completion) instead of
+    # re-running the stage. On a fresh job every stage simply runs once, exactly
+    # as before — this only changes behavior on a SECOND invocation for the SAME
+    # video_id (a resume after a crash/kill/timeout). It sits ALONGSIDE the
+    # existing content-addressed caches (TTS, provider search/download, scene
+    # clips, `broll.py`'s new per-scene asset_progress.json), not instead of
+    # them — those make a redone call cheap, this avoids redoing the call.
+    ckpt = CheckpointStore(graph.meta.video_id)
+
+    # A prior run for this exact video_id already finished AND its output is
+    # still on disk (implies --keep was used — a non-kept run deletes final.mp4
+    # at the end, which correctly invalidates this shortcut: there is nothing
+    # to resume TO). Report it and stop — this is what "don't repeat
+    # finalizable completed work" means at the whole-pipeline level.
+    if ckpt.valid("pipeline"):
+        prior = json.loads((out_dir / "qa_report.json").read_text(encoding="utf-8")) \
+            if (out_dir / "qa_report.json").exists() else {}
+        print(f"   ✓ {graph.meta.video_id} already completed and kept — "
+              f"{out_mp4} ({out_mp4.stat().st_size/1e6:.1f}MB). "
+              f"Delete final.mp4 or the job dir to force a re-render.")
+        return 0 if prior.get("passed", True) else 1
+
     def stage(label, t0):
         print(f"   [{label:13}] {time.perf_counter()-t0:5.1f}s")
 
     sampler = RamSampler(); sampler.start()
     cpu0 = _cpu_s(); t_all = time.perf_counter(); timed_out = False
+    final_budget = None   # set below; stays None if an earlier stage raised first
     failures: list[str] = []
+    # Sized from the AUTHORED durations. They are replaced by measured TTS below,
+    # which only ever shortens them here, so this is a safe upper bound.
+    render_budget_s = render_timeout(graph)
 
     try:
         # VARIETY PLAN — drawn before anything renders so the visual engine, the
@@ -193,9 +286,11 @@ async def run(args) -> int:
 
         # character memory + per-scene LAYER PLAN (nominates the single hero beat).
         t = time.perf_counter()
-        graph = storyboard.storyboard(graph, character_name=spec.character_name,
-                                      character_desc=spec.character_desc,
-                                      style=spec.character_style)
+        graph = await resumable_stage(
+            ckpt, "storyboard",
+            _stage_op(storyboard.storyboard, graph, character_name=spec.character_name,
+                     character_desc=spec.character_desc, style=spec.character_style),
+            dump=_dump_graph, load=_load_graph)
         stage("storyboard", t)
 
         if args.no_voice:
@@ -210,40 +305,63 @@ async def run(args) -> int:
                   "(silent cut; no substitute narrator)")
             failures.append("PREVIEW ONLY: no narration — cloned voice not built yet")
         else:
-            t = time.perf_counter(); graph = await tts.synthesize(graph, spec, channel)
+            t = time.perf_counter()
+            graph = await resumable_stage(
+                ckpt, "voiceover", _stage_op(tts.synthesize, graph, spec, channel),
+                dump=_dump_graph, load=_load_graph)
             stage("voiceover", t)
         try:
-            t = time.perf_counter(); graph = await captions.transcribe(graph)
+            t = time.perf_counter()
+            graph = await resumable_stage(
+                ckpt, "captions", _stage_op(captions.transcribe, graph, theme=theme),
+                dump=_dump_graph, load=_load_graph)
             stage("captions", t)
         except Exception as e:
             failures.append(f"captions skipped ({type(e).__name__})")
 
         # EXACT real footage only (no AI, no random stock — strict grounding).
-        # VISUAL BUDGET — a whole-video decision, so it runs BEFORE the resolver.
-        # Allocating per-scene is what produced an all-2D short: each beat picked
-        # a locally-correct source with no view of the finished mix.
-        t = time.perf_counter()
-        budget = visual_budget.allocate(graph)
-        graph = visual_budget.apply(graph, budget)
-        stage("visual-budget", t)
-        print("   " + budget.format().replace("\n", "\n   "))
+        # VISUAL BUDGET is folded into the SAME checkpointed stage as asset
+        # resolution (not its own): the budget only means anything as the input
+        # to the resolver that reads it, so checkpointing it separately would
+        # let a resume load a stale budget against a re-resolved graph.
+        async def _assets_op():
+            budget = visual_budget.allocate(graph)
+            g = visual_budget.apply(graph, budget)
+            print("   " + budget.format().replace("\n", "\n   "))
+            g = await broll.resolve_assets(g, spec_real)
+            return g
 
-        t = time.perf_counter(); graph = await broll.resolve_assets(graph, spec_real)
+        t = time.perf_counter()
+        graph = await resumable_stage(ckpt, "assets", _assets_op,
+                                      dump=_dump_graph, load=_load_graph)
         stage("exact-footage", t)
         # EXACT AI hero generation — the ONLY AI source, cache-first, ≤2 stills.
-        t = time.perf_counter(); graph = await broll.resolve_layers(graph, spec)
+        t = time.perf_counter()
+        graph = await resumable_stage(
+            ckpt, "hero_gen", _stage_op(broll.resolve_layers, graph, spec),
+            dump=_dump_graph, load=_load_graph)
         stage("hero-gen", t)
 
         try:
             t = time.perf_counter()
-            graph = await music.add_music(graph, channel, family=plan.music_family)
+            graph = await resumable_stage(
+                ckpt, "music",
+                _stage_op(music.add_music, graph, channel, family=plan.music_family),
+                dump=_dump_graph, load=_load_graph)
             stage("music", t)
-            t = time.perf_counter(); graph = await sfx.add_sound_design(graph)
+            t = time.perf_counter()
+            graph = await resumable_stage(
+                ckpt, "sfx", _stage_op(sfx.add_sound_design, graph),
+                dump=_dump_graph, load=_load_graph)
             stage("sfx", t)
         except Exception as e:
             failures.append(f"audio-bed partial ({type(e).__name__})")
 
         # Monetisation safety: rewrites, disclaimer, AI-disclosure flags.
+        # compliance.apply's REPORT (violations/checklist) isn't itself part of
+        # the graph, so it is not resumable-cacheable the same way — cheap and
+        # deterministic given the graph, so it just re-runs every time, resumed
+        # or not (consistent with the render stage's own design, see below).
         t = time.perf_counter()
         creport = compliance.apply(graph, strict=False)
         stage("compliance", t)
@@ -271,13 +389,24 @@ async def run(args) -> int:
             failures.append(f"{len(stale)} generated asset(s) never composited")
 
         # LAYERED COMPOSITION + captions burn + audio mux (timeout-guarded).
+        # NOT wrapped in `resumable_stage` like the stages above: render_ffmpeg
+        # already has its own, more precise scene-level cache (manifest.json —
+        # fingerprint + sha256 + ffprobe per clip, untouched by this change), so
+        # a re-invocation after a crash is already cheap ("N reused, 0
+        # rendered"). Adding a coarse stage-level checkpoint on TOP of it would
+        # gain nothing over what the scene cache already gives — worse, a naive
+        # one risks staying "valid" after `out_mp4` is deleted (the default
+        # --keep-absent cleanup below), which would skip re-rendering with
+        # nothing to hand to QA. The whole-pipeline shortcut at the top of this
+        # function already covers "the entire job, including render, already
+        # finished and was kept" without that risk.
         t = time.perf_counter()
         await asyncio.wait_for(render_ffmpeg.render(graph, out_mp4),
-                               timeout=RENDER_TIMEOUT_S)
+                               timeout=render_budget_s)
         stage("render", t)
     except asyncio.TimeoutError:
         timed_out = True
-        failures.append(f"render exceeded {RENDER_TIMEOUT_S:.0f}s timeout guard")
+        failures.append(f"render exceeded {render_budget_s:.0f}s timeout guard")
     except Exception as e:  # noqa: BLE001 — production guard: record, don't crash
         failures.append(f"{type(e).__name__}: {str(e)[:140]}")
         import traceback; traceback.print_exc()
@@ -308,7 +437,8 @@ async def run(args) -> int:
 
     rep = qa.analyze(graph, str(out_mp4), render_seconds=render_s,
                      ram_peak_mb=peak_rss, min_free_mb=min_free,
-                     consistency=consistency, timed_out=timed_out)
+                     consistency=consistency, timed_out=timed_out,
+                     budget_report=final_budget)
     # PERSIST the audit. The packaging step (finalize_short.py) used to re-run
     # this entire analysis on the loudnormed file — ten more full decodes of the
     # same frames. Packaging stream-copies the video, so every video check here
@@ -345,10 +475,17 @@ async def run(args) -> int:
     if out_mp4.exists():
         print(f"   🎬 MP4  : {out_mp4}  ({out_mp4.stat().st_size/1e6:.1f}MB · "
               f"{rep.metrics.get('duration_s','?')}s)")
-    if not args.keep and out_mp4.exists():
-        out_mp4.unlink()
 
     ok = rep.passed and not failures
+    # Record the whole-pipeline checkpoint BEFORE the --keep cleanup below, so
+    # its validity genuinely reflects "did this run finish" independent of
+    # whether the file was kept — the top-of-run shortcut additionally
+    # requires out_mp4.exists() itself, so a non-kept run correctly finds
+    # nothing to resume to on the next invocation.
+    if ok and out_mp4.exists():
+        ckpt.record("pipeline", "completed", artifact=str(out_mp4))
+    if not args.keep and out_mp4.exists():
+        out_mp4.unlink()
     print(f"\n{'✓ PRODUCTION OK' if ok else '✗ PRODUCTION ISSUES (see above)'}")
     return 0 if ok else 1
 

@@ -1,0 +1,205 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d09_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Visa Has Never Lent You a Dollar. It's Still Worth More Than Most Banks.",
+    "hook": "Visa and Mastercard have never lent you a single dollar. They still make billions off every swipe.",
+    "description": "Visa and Mastercard don't issue cards or extend credit \u2014 your bank does. The networks earn fees for routing transactions between the merchant's bank and your bank, collecting a small cut of nearly every card swipe rather than taking on lending risk. Educational content only, not financial advice.",
+    "tags": [
+      "visa",
+      "mastercard",
+      "payment networks",
+      "how credit cards work",
+      "business model"
+    ],
+    "hashtags": [
+      "#visa",
+      "#mastercard",
+      "#finance",
+      "#shorts"
+    ],
+    "thumbnail_text": "THEY DON'T LEND"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Visa and Mastercard have never lent you a single dollar.",
+      "duration_sec": 4.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "visa mastercard"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "credit card swipe payment terminal",
+        "visual_intent": "A card being tapped on a payment terminal, close macro, warm retail light",
+        "broll_keywords": [
+          "card tap payment terminal macro",
+          "contactless payment close up",
+          "credit card swipe reader"
+        ],
+        "decision_reason": "hook beat: the counter-intuitive fact"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "They don't issue your card, and they don't decide if you're approved. Your bank does that.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "card issuance banks"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "bank branch interior modern",
+        "visual_intent": "A modern bank branch interior, clean daylight, wide shot",
+        "broll_keywords": [
+          "bank branch interior modern",
+          "bank lobby daylight wide",
+          "banking hall interior"
+        ],
+        "decision_reason": "clarifies who actually issues/lends"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Visa and Mastercard just run the network that routes the transaction between your bank and the merchant's bank.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "payment network routing"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "data network connections glowing lines",
+        "visual_intent": "Glowing connected network lines between nodes, dark background, abstract data flow",
+        "broll_keywords": [
+          "network connections glowing lines",
+          "data flow abstract graphic",
+          "digital network nodes dark"
+        ],
+        "decision_reason": "defines the network's actual role"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "For that, they collect a small fee on nearly every transaction that crosses their rails.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "network fees"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "coins falling small amounts repeated",
+        "visual_intent": "Small coins dropping one at a time in a steady rhythm, macro, dark background",
+        "broll_keywords": [
+          "small coins dropping macro",
+          "coins falling repeated close up",
+          "micro payments concept visual"
+        ],
+        "decision_reason": "fee-per-transaction mechanic"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "A fraction of a cent \u00d7 billions of swipes",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "Multiply a fraction of a cent by billions of swipes a day, and the fee becomes the entire business.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "scale of transactions"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "global map transaction data points animated",
+        "visual_intent": "A world map with countless glowing transaction points pulsing across it, dark, cinematic",
+        "broll_keywords": [
+          "world map data points pulsing",
+          "global transactions map graphic",
+          "digital payments world map"
+        ],
+        "decision_reason": "scale-driven revenue model"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The lending risk, whether you actually pay your bill, sits with the issuing bank, not with Visa or Mastercard.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "lending risk separation"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "unpaid bills stack papers",
+        "visual_intent": "A small stack of bills and statements on a table, neutral light, still",
+        "broll_keywords": [
+          "bills statements stack table",
+          "unpaid invoice papers",
+          "financial paperwork stack"
+        ],
+        "decision_reason": "separates network fee model from lending/credit risk"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "They built the toll road. Somebody else drives the risky part of the car.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing metaphor"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "highway toll road aerial cars",
+        "visual_intent": "An aerial shot of a highway toll road with cars passing through, cinematic wide",
+        "broll_keywords": [
+          "highway toll road aerial",
+          "cars passing toll booth",
+          "road traffic aerial wide shot"
+        ],
+        "decision_reason": "closing toll-road metaphor payoff"
+      }
+    }
+  ]
+}

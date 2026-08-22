@@ -1,0 +1,35 @@
+{
+  "id": "d17_b",
+  "day": 17,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "NBER's official recession-dating method vs the 'two quarters' rule of thumb",
+  "sources": [
+    {
+      "claim": "US recessions are officially dated by the NBER Business Cycle Dating Committee using broad indicators, not a strict two-quarter GDP rule",
+      "source": "National Bureau of Economic Research, Business Cycle Dating Committee methodology",
+      "url": "https://www.nber.org/research/business-cycle-dating",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "NBER",
+      "note": "said as four letters, 'N-B-E-R'"
+    }
+  ],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 10,
+    "visual_potential": 7,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

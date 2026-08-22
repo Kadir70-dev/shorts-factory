@@ -1,0 +1,144 @@
+{
+  "total_seconds": 39.615,
+  "channels": {
+    "motion_gfx": {
+      "label": "Motion Graphics (2D)",
+      "percent": 61.23,
+      "seconds": 24.255,
+      "scenes": [
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "target_lo": 0.25,
+      "target_hi": 0.35,
+      "within_band": false
+    },
+    "threejs": {
+      "label": "Three.js (3D)",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": 0.15,
+      "target_hi": 0.25,
+      "within_band": false
+    },
+    "official": {
+      "label": "Official/Public Domain",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": 0.15,
+      "target_hi": 0.25,
+      "within_band": false
+    },
+    "ai_broll": {
+      "label": "AI Cinematic B-roll",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": 0.15,
+      "target_hi": 0.25,
+      "within_band": false
+    },
+    "stock": {
+      "label": "Pexels/Pixabay",
+      "percent": 38.77,
+      "seconds": 15.36,
+      "scenes": [
+        "s1",
+        "s6"
+      ],
+      "target_lo": 0.1,
+      "target_hi": 0.2,
+      "within_band": false
+    },
+    "charts": {
+      "label": "Charts/Maps/Icons/Logos",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": 0.1,
+      "target_hi": 0.2,
+      "within_band": false
+    },
+    "unresolved": {
+      "label": "UNRESOLVED (blank)",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": null,
+      "target_hi": null,
+      "within_band": false
+    }
+  },
+  "assignments": [
+    {
+      "scene_id": "s1",
+      "channel": "stock",
+      "seconds": 7.211,
+      "score": 0.0,
+      "reason": "footage of unrecorded provenance",
+      "scores": {
+        "planned": "ai_broll"
+      }
+    },
+    {
+      "scene_id": "s2",
+      "channel": "motion_gfx",
+      "seconds": 3.861,
+      "score": 0.0,
+      "reason": "rendered by the Scribus Paper Craft engine",
+      "scores": {
+        "planned": "motion_gfx"
+      }
+    },
+    {
+      "scene_id": "s3",
+      "channel": "motion_gfx",
+      "seconds": 7.061,
+      "score": 0.0,
+      "reason": "kinetic typography",
+      "scores": {
+        "planned": "threejs"
+      }
+    },
+    {
+      "scene_id": "s4",
+      "channel": "motion_gfx",
+      "seconds": 8.192,
+      "score": 0.0,
+      "reason": "kinetic typography",
+      "scores": {
+        "planned": "official"
+      }
+    },
+    {
+      "scene_id": "s5",
+      "channel": "motion_gfx",
+      "seconds": 5.141,
+      "score": 0.0,
+      "reason": "kinetic typography",
+      "scores": {
+        "planned": "motion_gfx"
+      }
+    },
+    {
+      "scene_id": "s6",
+      "channel": "stock",
+      "seconds": 8.149,
+      "score": 0.0,
+      "reason": "footage of unrecorded provenance",
+      "scores": {
+        "planned": "stock"
+      }
+    }
+  ],
+  "notes": [
+    "s1: planned ai_broll \u2192 delivered stock (resolver could not supply the planned source)",
+    "s3: planned threejs \u2192 delivered motion_gfx (resolver could not supply the planned source)",
+    "s4: planned official \u2192 delivered motion_gfx (resolver could not supply the planned source)"
+  ],
+  "unused_generated_assets": []
+}

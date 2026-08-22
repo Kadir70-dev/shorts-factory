@@ -77,6 +77,17 @@ _NICHE_FILE = {
     "usa_history": "niche_history.md",
     "usa_business": "niche_business.md",
     "cybersecurity": "niche_cyber.md",
+    # Fashion vertical — one shared playbook; the channel's own style_notes carry
+    # the per-bucket register (luxury restraint vs streetwear energy).
+    "fashion_business": "niche_fashion.md",
+    "fashion_luxury": "niche_fashion.md",
+    "fashion_history": "niche_fashion.md",
+    "fashion_trends": "niche_fashion.md",
+    "fashion_manufacturing": "niche_fashion.md",
+    "fashion_supply_chain": "niche_fashion.md",
+    "streetwear": "niche_fashion.md",
+    "sneaker_culture": "niche_fashion.md",
+    "textile_industry": "niche_fashion.md",
 }
 
 

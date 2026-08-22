@@ -150,6 +150,17 @@ _NICHE_FAMILY: dict[str, str] = {
     "usa_finance": "finance",
     "usa_business": "premium",
     "cybersecurity": "mystery",
+    # Fashion vertical — editorial restraint reads as "premium"; the business /
+    # supply-chain buckets stay documentary so numbers don't feel like an advert.
+    "fashion_luxury": "premium",
+    "streetwear": "premium",
+    "sneaker_culture": "premium",
+    "fashion_trends": "premium",
+    "fashion_business": "documentary",
+    "fashion_supply_chain": "documentary",
+    "fashion_manufacturing": "documentary",
+    "textile_industry": "documentary",
+    "fashion_history": "mystery",
 }
 
 

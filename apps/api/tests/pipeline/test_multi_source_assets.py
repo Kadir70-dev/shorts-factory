@@ -136,7 +136,7 @@ async def test_enabled_broll_refuses_unrelated_old_fallback(graph, monkeypatch):
 
 
 @pytest.mark.asyncio
-async def test_disabled_gate_preserves_existing_resolver_call(graph, monkeypatch):
+async def test_disabled_gate_preserves_existing_resolver_call(graph, monkeypatch, isolated_state):
     monkeypatch.setattr(settings(), "multi_source_asset_engine_enabled", False)
     called = []
 

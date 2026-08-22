@@ -1,0 +1,177 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d28_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Why You'll Sometimes Find Two Starbucks Blocks Apart",
+    "hook": "A beautiful corner can still be a terrible Starbucks location if traffic, rent, and demand do not work together.",
+    "description": "Starbucks uses geospatial and demographic data \u2014 foot traffic, income levels, population density, competitor locations \u2014 to decide where to open stores, treating site selection more like an engineering problem than intuition. That data-driven approach is also why you'll sometimes see two Starbucks locations only blocks apart: a model determined both spots could independently support a store.",
+    "tags": [
+      "starbucks",
+      "business strategy",
+      "site selection",
+      "retail strategy",
+      "data driven business",
+      "business explained"
+    ],
+    "hashtags": [
+      "#starbucks",
+      "#businessstrategy",
+      "#retail",
+      "#shorts"
+    ],
+    "thumbnail_text": "DATA, NOT LUCK"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "A beautiful corner can still be a terrible Starbucks location if traffic, rent, and demand do not work together.",
+      "duration_sec": 8.13,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "starbucks site selection"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "coffee shop storefront street corner city",
+        "visual_intent": "A coffee shop storefront on a busy street corner, natural daylight, urban energy",
+        "broll_keywords": [
+          "coffee shop storefront street",
+          "city corner cafe exterior",
+          "urban cafe street scene"
+        ],
+        "decision_reason": "hook beat: the counterintuitive data-driven premise"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Opening a store commits the company to construction costs, staffing, inventory, and often a long lease.",
+      "duration_sec": 8.13,
+      "confidence": "probable",
+      "transition_in": "cut",
+      "keywords": [
+        "geospatial analysis",
+        "demographic data"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "city map data points overlay screen",
+        "visual_intent": "A city street map with glowing data points overlaid, dark analytical UI style",
+        "broll_keywords": [
+          "city map data overlay",
+          "geographic data screen",
+          "urban planning map digital"
+        ],
+        "decision_reason": "widely reported use of GIS/geospatial and demographic analytics in retail site selection, hedged as probable methodology detail"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Starbucks' annual disclosures treat site selection and lease economics as material risks because a weak location is expensive to unwind.",
+      "duration_sec": 8.13,
+      "confidence": "probable",
+      "transition_in": "fade",
+      "keywords": [
+        "two starbucks nearby"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "zoom_out",
+        "query": "busy city street two coffee shops",
+        "visual_intent": "A busy downtown street with multiple storefronts visible, wide establishing shot",
+        "broll_keywords": [
+          "downtown street storefronts wide",
+          "busy city block shops",
+          "urban street multiple stores"
+        ],
+        "decision_reason": "commonly observed retail-clustering pattern, framed as a general phenomenon not a specific claim"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "The decision weighs local demand, access, nearby competition, expected sales, operating costs, and whether another store would steal traffic.",
+      "duration_sec": 8.13,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "location science",
+        "real estate strategy"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "blueprint architectural plans desk overhead",
+        "visual_intent": "Architectural or planning documents on a desk, overhead angle, precise clinical light",
+        "broll_keywords": [
+          "blueprint plans desk overhead",
+          "planning documents table",
+          "architectural drawings close up"
+        ],
+        "decision_reason": "reflects long-documented practice of data-driven retail site selection"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "That also explains why stores may cluster: nearby locations can serve different traffic patterns or reduce congestion at one busy shop.",
+      "duration_sec": 8.13,
+      "confidence": "probable",
+      "transition_in": "cut",
+      "keywords": [
+        "new store opening decision"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "new store construction storefront window",
+        "visual_intent": "A storefront being prepared for opening, papered windows, quiet anticipatory scene",
+        "broll_keywords": [
+          "new store construction window",
+          "storefront opening soon sign",
+          "retail buildout window"
+        ],
+        "decision_reason": "the payoff framing, kept as a general inference rather than a specific claim"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The coffee may be standardized, but each address is a capital-allocation decision. A store starts making money before opening only on a spreadsheet.",
+      "duration_sec": 8.13,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "hidden business layer"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "coffee cup counter warm light closing",
+        "visual_intent": "A coffee cup on a counter, warm closing light, calm final beat",
+        "broll_keywords": [
+          "coffee cup counter close up",
+          "cafe counter warm light",
+          "coffee cup table shot"
+        ],
+        "decision_reason": "closing takeaway and CTA"
+      }
+    }
+  ]
+}

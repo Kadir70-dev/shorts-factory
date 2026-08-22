@@ -61,6 +61,33 @@ def _citation_footer(spec: DocumentSpec, layout: PageLayout, *,
     ))
 
 
+def _furniture_fold_sketch(layout: PageLayout, x: float, y: float, w: float,
+                           color: str = "#3a3225") -> float:
+    """A restrained illustrative line diagram — a tabletop with dashed
+    corner ticks marking where legs detach, and a fold arrow into a flat
+    panel — for a beat about assembly/disassembly with no authentic period
+    photo available. Explicitly NOT a fabricated historical image: plain
+    geometric line art, drawn from the same `line`/`rect` primitives every
+    other template already uses. Returns the height it used."""
+    h = w * 0.42
+    layout.add(Frame(kind="rect", x=x, y=y, w=w, h=h * 0.30,
+                     line_color=color, line_width=1.2))
+    for cx in (x, x + w):
+        for cy in (y, y + h * 0.30):
+            layout.add(Frame(kind="line", x=cx - 6, y=cy, w=12, h=0,
+                             line_color=color, line_width=1.0))
+            layout.add(Frame(kind="line", x=cx, y=cy - 6, w=0, h=12,
+                             line_color=color, line_width=1.0))
+    layout.add(Frame(kind="line", x=x + w * 0.38, y=y + h * 0.44,
+                     w=w * 0.24, h=h * 0.18, line_color=color, line_width=1.0))
+    layout.add(Frame(kind="rect", x=x, y=y + h * 0.74, w=w, h=h * 0.10,
+                     line_color=color, line_width=1.2))
+    layout.add(Frame(kind="text", x=x, y=y + h * 0.90, w=w, h=14,
+                     text="FLAT-PACK CONCEPT SKETCH", font="Georgia Regular",
+                     size=6.5, align="center", color=color, tracking=30))
+    return h
+
+
 def _editorial_mark(spec: DocumentSpec, layout: PageLayout, *, font: str) -> None:
     """Small, always-present, never-omitted disclosure corner mark for any
     recreated document — separate from the (optional) big stamp templates
@@ -76,17 +103,29 @@ def _editorial_mark(spec: DocumentSpec, layout: PageLayout, *, font: str) -> Non
 
 # --------------------------------------------------------------------------- #
 def modern_newspaper(spec: DocumentSpec) -> PageLayout:
-    layout = PageLayout(PAGE_W, PAGE_H, (34, 34, 34, 40), background="#FBFAF6")
+    # Left/right margins widened 34->86, and the masthead given real height +
+    # line_spacing for a wrapped 2-3 line headline — same camera-safe-zone fix
+    # already applied to vintage_newspaper/archive_dossier/financial_report/
+    # historical_document/news_clipping (animate.py's slow_zoom cover-crop
+    # discards ~13.6% of page width per edge to fill a 9:16 frame): at 34pt
+    # the masthead and the outer text columns sat inside that permanently-
+    # cropped strip (confirmed on a real beat: "IT'S WHY IKEA GREW..." losing
+    # its first/last letters on both edges). The old single-line h=50 masthead
+    # also silently dropped a wrapped 2nd/3rd line — the same overflow-drop
+    # bug fixed elsewhere in this module — this modern_newspaper pass was
+    # simply missed the first time.
+    layout = PageLayout(PAGE_W, PAGE_H, (86, 86, 34, 40), background="#FBFAF6")
     m = layout.margins
-    layout.add(Frame(kind="text", x=m[0], y=m[2], w=layout.width - m[0] - m[1], h=50,
+    layout.add(Frame(kind="text", x=m[0], y=m[2], w=layout.width - m[0] - m[1], h=132,
                      text=spec.title, font="Georgia Bold", size=34, align="center",
-                     color="#111111", upper=True, name="masthead"))
-    layout.add(Frame(kind="line", x=m[0], y=m[2] + 54, w=layout.width - m[0] - m[1], h=0,
+                     color="#111111", upper=True, line_spacing=38, name="masthead"))
+    y = m[2] + 138
+    layout.add(Frame(kind="line", x=m[0], y=y, w=layout.width - m[0] - m[1], h=0,
                      line_color="#111111", line_width=2.0))
-    layout.add(Frame(kind="text", x=m[0], y=m[2] + 60, w=layout.width - m[0] - m[1], h=14,
+    layout.add(Frame(kind="text", x=m[0], y=y + 6, w=layout.width - m[0] - m[1], h=14,
                      text=_byline(spec) or "LATEST EDITION", font="Arial Regular",
                      size=8, align="center", color="#555555"))
-    y0 = m[2] + 84
+    y0 = y + 30
     layout.add(Frame(kind="text", x=m[0], y=y0, w=layout.width - m[0] - m[1], h=64,
                      text=spec.subtitle or spec.title, font="Georgia Bold", size=20,
                      align="left", color="#1a1a1a", line_spacing=23))
@@ -500,11 +539,62 @@ def news_clipping(spec: DocumentSpec) -> PageLayout:
                          size=13, color="#141414"))
         y += 26
     body_y = y + 6
-    body_h = clip_y1 - m[3] - body_y - (16 if spec.citations else 0) - 20
-    layout.add(Frame(kind="text", x=clip_x + 20, y=body_y, w=clip_w - 40, h=max(body_h, 20),
-                     text=_wrap_body(spec.body) or "\n\n".join(f.text for f in spec.facts),
-                     font="Times New Roman Regular", size=9.5, align="justify",
-                     color="#1a1a1a", line_spacing=13))
+    body_text = _wrap_body(spec.body) or "\n\n".join(f.text for f in spec.facts)
+    # A single short beat sentence only needs ~2 lines at this width — the
+    # rest of the frame below it was dead cream space (confirmed: the IKEA
+    # d01_a hook rendered ~60% empty page). Cap the text frame's real height
+    # to what a short beat needs, and use the freed space for a sketch
+    # instead of stretching the frame to the page bottom.
+    body_lines = max(1, -(-len(body_text) // 46))       # ~46 chars/line at this width
+    body_h_used = min(clip_y1 - m[3] - body_y - 20, body_lines * 13 + 10)
+    layout.add(Frame(kind="text", x=clip_x + 20, y=body_y, w=clip_w - 40, h=max(body_h_used, 20),
+                     text=body_text, font="Times New Roman Regular", size=9.5,
+                     align="justify", color="#1a1a1a", line_spacing=13))
+    if any(k in (spec.title + " " + spec.body).lower()
+          for k in ("flat", "table", "furniture", "assemble", "assembl")):
+        sketch_y = body_y + body_h_used + 34
+        if sketch_y + 90 < clip_y1 - m[3] - 24:
+            _furniture_fold_sketch(layout, clip_x + (clip_w - clip_w * 0.5) / 2,
+                                   sketch_y, clip_w * 0.5)
     _citation_footer(spec, layout, font="Georgia Regular", size=7.0, color="#8a8168")
+    _editorial_mark(spec, layout, font="Georgia Regular")
+    return layout
+
+
+# --------------------------------------------------------------------------- #
+# Evidence card — the SMALL clipping composited beside real footage, not a
+# full-screen document. Deliberately its own (smaller) page geometry rather
+# than PAGE_W/PAGE_H: this card is rendered, then rotated a few degrees and
+# scaled to ~35% of frame width by the video compositor (`brand/overlays.py`'s
+# `ImageOverlay.rotate_deg`), so it only ever needs to hold a label, a short
+# headline, and at most one supporting detail line — never body paragraphs.
+CARD_W, CARD_H = 300.0, 280.0
+
+
+def evidence_card(spec: DocumentSpec) -> PageLayout:
+    """DATE/LABEL -> short headline -> one detail. That's the whole card."""
+    layout = PageLayout(CARD_W, CARD_H, (22, 22, 22, 22), background="#F4EFE2")
+    m = layout.margins
+    layout.add(Frame(kind="rect", x=4, y=4, w=CARD_W - 8, h=CARD_H - 8,
+                     line_color="#3a3225", line_width=1.5))
+    label = (_byline(spec) or "SOURCE").upper()
+    layout.add(Frame(kind="text", x=m[0], y=m[2] + 6, w=CARD_W - m[0] - m[1], h=16,
+                     text=label, font="Georgia Bold", size=10, align="left",
+                     color="#7a6f52", tracking=50))
+    layout.add(Frame(kind="line", x=m[0], y=m[2] + 26, w=CARD_W - m[0] - m[1], h=0,
+                     line_color="#3a3225", line_width=1.0))
+    headline = spec.title if len(spec.title) <= 60 else _headline_from(spec.title, 60)
+    head_h = 92
+    layout.add(Frame(kind="text", x=m[0], y=m[2] + 40, w=CARD_W - m[0] - m[1], h=head_h,
+                     text=headline, font="Georgia Bold", size=19, align="left",
+                     color="#1a1610", line_spacing=23))
+    detail = spec.statistics[0].value if spec.statistics else (
+        spec.facts[0].text if spec.facts else "")
+    if detail:
+        detail = detail if len(detail) <= 90 else detail[:87].rsplit(" ", 1)[0] + "..."
+        layout.add(Frame(kind="text", x=m[0], y=m[2] + 40 + head_h + 10,
+                         w=CARD_W - m[0] - m[1], h=CARD_H - (m[2] + 40 + head_h + 10) - m[3],
+                         text=detail, font="Times New Roman Regular", size=10.5, align="left",
+                         color="#332c1f", line_spacing=13))
     _editorial_mark(spec, layout, font="Georgia Regular")
     return layout

@@ -1,0 +1,144 @@
+{
+  "total_seconds": 43.438,
+  "channels": {
+    "motion_gfx": {
+      "label": "Motion Graphics (2D)",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": 0.0,
+      "target_hi": 0.17,
+      "within_band": true
+    },
+    "threejs": {
+      "label": "Three.js (3D)",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": 0.0,
+      "target_hi": 0.0,
+      "within_band": true
+    },
+    "official": {
+      "label": "Official/Public Domain",
+      "percent": 17.57,
+      "seconds": 7.631,
+      "scenes": [
+        "s2"
+      ],
+      "target_lo": 0.1,
+      "target_hi": 0.3,
+      "within_band": true
+    },
+    "ai_broll": {
+      "label": "AI Cinematic B-roll",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": 0.2,
+      "target_hi": 0.45,
+      "within_band": false
+    },
+    "stock": {
+      "label": "Pexels/Pixabay",
+      "percent": 52.11,
+      "seconds": 22.637,
+      "scenes": [
+        "s1",
+        "s5",
+        "s6"
+      ],
+      "target_lo": 0.15,
+      "target_hi": 0.4,
+      "within_band": false
+    },
+    "charts": {
+      "label": "Charts/Maps/Icons/Logos",
+      "percent": 30.32,
+      "seconds": 13.17,
+      "scenes": [
+        "s3",
+        "s4"
+      ],
+      "target_lo": 0.1,
+      "target_hi": 0.25,
+      "within_band": false
+    },
+    "unresolved": {
+      "label": "UNRESOLVED (blank)",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": null,
+      "target_hi": null,
+      "within_band": false
+    }
+  },
+  "assignments": [
+    {
+      "scene_id": "s1",
+      "channel": "stock",
+      "seconds": 7.311,
+      "score": 0.0,
+      "reason": "footage of unrecorded provenance",
+      "scores": {
+        "planned": "stock"
+      }
+    },
+    {
+      "scene_id": "s2",
+      "channel": "official",
+      "seconds": 7.631,
+      "score": 0.0,
+      "reason": "official / public-domain source (wikimedia_commons)",
+      "scores": {
+        "planned": "official"
+      }
+    },
+    {
+      "scene_id": "s3",
+      "channel": "charts",
+      "seconds": 6.841,
+      "score": 0.0,
+      "reason": "rendered by the local chart engine",
+      "scores": {
+        "planned": "charts"
+      }
+    },
+    {
+      "scene_id": "s4",
+      "channel": "charts",
+      "seconds": 6.329,
+      "score": 0.0,
+      "reason": "rendered by the local chart engine",
+      "scores": {
+        "planned": "threejs"
+      }
+    },
+    {
+      "scene_id": "s5",
+      "channel": "stock",
+      "seconds": 6.223,
+      "score": 0.0,
+      "reason": "footage of unrecorded provenance",
+      "scores": {
+        "planned": "stock"
+      }
+    },
+    {
+      "scene_id": "s6",
+      "channel": "stock",
+      "seconds": 9.103,
+      "score": 0.0,
+      "reason": "footage of unrecorded provenance",
+      "scores": {
+        "planned": "ai_broll"
+      }
+    }
+  ],
+  "notes": [
+    "s4: planned threejs \u2192 delivered charts (resolver could not supply the planned source)",
+    "s6: planned ai_broll \u2192 delivered stock (resolver could not supply the planned source)"
+  ],
+  "unused_generated_assets": []
+}

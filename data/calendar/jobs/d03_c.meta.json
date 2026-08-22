@@ -1,0 +1,17 @@
+{
+  "id": "d03_c",
+  "day": 3,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "How fractional reserve banking works",
+  "sources": [
+    {"claim": "Under fractional reserve banking, banks hold a portion of deposits and lend out the remainder, and this lending cycle expands the broader money supply",
+     "source": "Federal Reserve / standard central-banking economics (conceptual, textbook-level mechanism)", "url": "https://www.federalreserve.gov/", "type": "primary"}
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {"hook": 8, "clarity": 9, "retention": 8, "fact_confidence": 9, "visual_potential": 7, "us_relevance": 8, "originality": 7, "average": 8.0},
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

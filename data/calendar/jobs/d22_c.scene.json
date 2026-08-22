@@ -1,0 +1,200 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d22_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Your Credit Card Rewards Aren't Free",
+    "hook": "Your credit card points are paid for by a hidden money loop.",
+    "description": "Rewards cards are funded by an issuer's broader economics: merchant interchange, annual fees, and interest from revolving balances. Paying in full can avoid interest, but the merchant still pays to accept the card. Educational content only, not financial advice.",
+    "tags": [
+      "credit card rewards",
+      "interchange fees",
+      "personal finance",
+      "credit cards"
+    ],
+    "hashtags": [
+      "#creditcards",
+      "#money",
+      "#personalfinance",
+      "#shorts"
+    ],
+    "thumbnail_text": "WHO PAYS?"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Your credit card points are paid for by a hidden money loop, not by a bank's generosity.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "credit card tap terminal",
+        "contactless payment close up"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "credit card tap payment terminal",
+        "visual_intent": "A credit card tapping a payment terminal in tight macro focus",
+        "broll_keywords": [
+          "credit card tap terminal",
+          "contactless payment close up",
+          "checkout card reader"
+        ],
+        "decision_reason": "Federal Reserve research explains issuer interchange income and rewards costs"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "When you tap the card, the merchant pays processing charges, including interchange that flows toward the issuing bank.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "merchant checkout card",
+        "small business payment terminal"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "pan_lr",
+        "query": "small business checkout counter card",
+        "visual_intent": "A merchant watching a card transaction clear at a busy counter",
+        "broll_keywords": [
+          "merchant checkout card",
+          "small business payment terminal",
+          "retail counter transaction"
+        ],
+        "decision_reason": "Merchant-to-issuer interchange mechanism documented by Federal Reserve"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Merchant pays",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "narration": "That issuer also earns annual fees on some cards, plus interest and other fees from customers carrying balances.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "credit card statement close up",
+        "interest charge document"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "credit card statement interest fee",
+        "visual_intent": "A statement with interest and annual-fee lines highlighted",
+        "broll_keywords": [
+          "credit card statement close up",
+          "interest charge document",
+          "annual fee statement"
+        ],
+        "decision_reason": "Federal Reserve paper treats interest and fees as issuer income"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Rewards are an expense inside that larger business model. Different customers generate very different revenue and cost profiles.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "credit card rewards phone",
+        "points balance app"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "rewards points animation phone",
+        "visual_intent": "Reward points accumulating on a phone screen",
+        "broll_keywords": [
+          "credit card rewards phone",
+          "points balance app",
+          "cashback animation"
+        ],
+        "decision_reason": "Federal Reserve paper treats rewards as a bank cost"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Rewards = issuer cost",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "Paying the statement balance in full can avoid purchase interest, but the merchant-side payment still happened at checkout.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "pay statement balance",
+        "online banking credit card"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "pay credit card statement online",
+        "visual_intent": "A cardholder paying a full statement balance online",
+        "broll_keywords": [
+          "pay statement balance",
+          "online banking credit card",
+          "credit card bill payment"
+        ],
+        "decision_reason": "Explains that paying in full changes interest, not merchant acceptance economics"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "So cash back is real, but it sits inside a system funded across merchants and cardholders. Follow for more.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "payment network diagram",
+        "money flow arrows"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "money flow network diagram",
+        "visual_intent": "A clean flow diagram connecting merchant, bank, and cardholder",
+        "broll_keywords": [
+          "payment network diagram",
+          "money flow arrows",
+          "card economics graphic"
+        ],
+        "decision_reason": "Synthesis of the verified card revenue loop"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "A money loop",
+          "y": 0.18
+        }
+      ]
+    }
+  ]
+}

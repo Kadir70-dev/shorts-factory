@@ -1,0 +1,129 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d19_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Enron's Stock Went From $90 To 26 Cents In 16 Months. Here's How.",
+    "hook": "In August 2000, Enron traded at ninety dollars a share.",
+    "description": "Enron used mark-to-market accounting and off-balance-sheet partnerships built by CFO Andrew Fastow to hide losses and debt for years. When the truth surfaced in October 2001, the stock collapsed from $90.75 to $0.26 within sixteen months, and the company filed for bankruptcy on December 2, 2001. Educational content only, not financial advice.",
+    "tags": ["enron", "enron scandal", "accounting fraud", "corporate failure", "business history", "stock market crash", "andrew fastow", "financial scandal"],
+    "hashtags": ["#enron", "#business", "#finance", "#stockmarket", "#shorts"],
+    "thumbnail_text": "$90 TO 26¢"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "In August two thousand, Enron traded at ninety dollars a share.",
+      "duration_sec": 3.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["enron stock", "2000 peak"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "corporate skyscraper glass tower low angle sunlight",
+        "visual_intent": "A gleaming glass corporate tower shot from a low angle against bright sky, confident, corporate power",
+        "broll_keywords": ["glass skyscraper low angle", "corporate office tower sunlight", "energy company headquarters exterior"],
+        "decision_reason": "hook beat: the peak, hard cut. Stock price confirmed via multiple business-history sources (Britannica, KHOU)."
+      },
+      "overlays": [{"type": "stat", "text": "$90.75 / SHARE", "y": 0.18}]
+    },
+    {
+      "id": "s2",
+      "narration": "Sixteen months later, it was worth twenty-six cents.",
+      "duration_sec": 3.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["enron collapse", "stock crash"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_out",
+        "query": "red stock chart crashing downward screen",
+        "visual_intent": "A red line chart collapsing sharply downward on a dark trading screen, stark contrast to the prior shot",
+        "broll_keywords": ["stock chart crashing red", "financial screen falling numbers", "trading monitor red decline"],
+        "decision_reason": "the pattern interrupt on the collapse, confirmed via Britannica/KHOU stock history"
+      },
+      "overlays": [{"type": "stat", "text": "$0.26 / SHARE", "y": 0.18}]
+    },
+    {
+      "id": "s3",
+      "narration": "Enron wasn't just a bad bet. It was built on accounting that let it book future profits today.",
+      "duration_sec": 5.4,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["mark-to-market accounting", "enron fraud"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "pan_lr",
+        "query": "financial documents spreadsheet office desk dim light",
+        "visual_intent": "Stacks of financial documents and a spreadsheet under a desk lamp in a dim office, secretive tone",
+        "broll_keywords": ["financial documents desk close up", "office paperwork dim light", "accountant reviewing ledger"],
+        "decision_reason": "explains mark-to-market accounting, confirmed via Britannica/International Banker"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Its CFO, Andrew Fastow, built private partnerships that hid thousands of debt off Enron's own books, and pocketed tens of millions doing it.",
+      "duration_sec": 7.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["andrew fastow", "special purpose entities"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "businessman silhouette shadow office window dark",
+        "visual_intent": "A single executive silhouette against a window blind, hard shadow bars across the face, thriller tone",
+        "broll_keywords": ["executive silhouette office blinds", "businessman shadow window dark", "corporate figure backlit"],
+        "decision_reason": "Fastow's off-balance-sheet SPEs ('Raptors') and ~$45M personal profit, confirmed via International Banker / Britannica"
+      },
+      "overlays": [{"type": "lower_third", "text": "CFO ANDREW FASTOW", "y": 0.78}]
+    },
+    {
+      "id": "s5",
+      "narration": "In October two thousand one, Enron admitted to over six hundred million dollars in losses. The SEC opened an inquiry two days later.",
+      "duration_sec": 7.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["SEC inquiry", "enron losses disclosed"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "none",
+        "query": "newspaper headline financial crisis close up",
+        "visual_intent": "A close-up of a newspaper business-section headline about corporate losses, harsh desk light",
+        "broll_keywords": ["newspaper headline finance close up", "business section newspaper desk", "financial news print closeup"],
+        "decision_reason": "the $638M Q3 loss disclosure and SEC inquiry, confirmed via History.com timeline / Fox News fast-facts timeline"
+      },
+      "overlays": [{"type": "stat", "text": "$638M LOSS DISCLOSED", "y": 0.18}]
+    },
+    {
+      "id": "s6",
+      "narration": "The stock never recovered. By November thirtieth, it had fallen below a dollar, and Enron filed for bankruptcy two days later.",
+      "duration_sec": 7.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["enron bankruptcy", "december 2001"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "empty office corridor closed doors dim",
+        "visual_intent": "An empty, dim corporate hallway with closed office doors, stillness after collapse",
+        "broll_keywords": ["empty office corridor dim", "closed office doors hallway", "abandoned corporate hallway"],
+        "decision_reason": "Nov 30 sub-$1 close and Dec 2 bankruptcy filing, confirmed via History.com / Fox News timeline"
+      },
+      "overlays": [{"type": "stat", "text": "BANKRUPTCY: DEC 2, 2001", "y": 0.18}]
+    },
+    {
+      "id": "s7",
+      "narration": "Thousands of employees had their retirement savings tied up in that same stock. The lesson wasn't about energy trading. It was about what happens when the numbers stop meaning anything.",
+      "duration_sec": 9.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["employee retirement losses", "corporate accountability"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "none",
+        "query": "cardboard box desk items office layoff",
+        "visual_intent": "A cardboard box of personal desk items on an empty desk, quiet aftermath, warm low light",
+        "broll_keywords": ["cardboard box desk office", "employee packing desk items", "empty office desk box"],
+        "decision_reason": "closing beat on the human cost and the systemic lesson, widely reported consequence of the collapse"
+      }
+    }
+  ]
+}

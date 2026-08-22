@@ -528,6 +528,17 @@ def measure(graph: SceneGraph) -> BudgetReport:
     total = sum(s.duration_sec for s in graph.scenes) or 1.0
     assignments: list[Assignment] = []
 
+    # The multi-source engine content-addresses its downloads (asset_<sha>.jpg),
+    # so the institution is not in the filename — it is in the provenance record.
+    # Reading only the path reported a Wikimedia public-domain photograph as
+    # stock "of unrecorded provenance", which is exactly backwards.
+    institution_of: dict[str, str] = {}
+    for record in graph.asset_provenance:
+        for candidate in record.candidates:
+            if candidate.local_cache_path:
+                institution_of[candidate.local_cache_path.lower()] = \
+                    candidate.provider_institution
+
     for s in graph.scenes:
         v = s.visual
         path = (v.asset_path or "").lower()
@@ -542,7 +553,12 @@ def measure(graph: SceneGraph) -> BudgetReport:
         elif v.type in ("ai_image", "ai_video"):
             ch, why = "ai_broll", "AI-generated"
         elif v.type in ("broll", "image"):
-            if any(k in path for k in ("pexels", "pixabay")):
+            institution = institution_of.get(path, "")
+            if institution in ("pexels", "pixabay"):
+                ch, why = "stock", f"stock library ({institution})"
+            elif institution:
+                ch, why = "official", f"official / public-domain source ({institution})"
+            elif any(k in path for k in ("pexels", "pixabay")):
                 ch, why = "stock", "stock library"
             elif any(k in path for k in ("wikimedia", "commons", "gov", "sec_",
                                          "company_ir", "public_domain")):
@@ -551,12 +567,23 @@ def measure(graph: SceneGraph) -> BudgetReport:
                 ch, why = "stock", "footage of unrecorded provenance"
         elif v.type == "papercraft":
             # Paper Craft only ever substitutes WITHIN a beat already allocated
-            # to "official" or "charts" (pipeline/papercraft/beat_detect.py) —
-            # "official" is the more accurate long-term label for a laid-out
-            # document either way. Without this branch a real, on-disk Scribus
-            # render fell through to the catch-all below and reported as
-            # UNRESOLVED (blank) — a real render mis-reported as a failure.
-            ch, why = "official", "rendered by the Scribus Paper Craft engine"
+            # to "official", "charts", or "motion_gfx"
+            # (pipeline/papercraft/beat_detect.py) — it inherits whichever of
+            # those the beat was already assigned, so the report keeps
+            # counting it against the same share `visual_budget.allocate()`
+            # gave it rather than relabelling every paper beat "official".
+            # Without this branch a real, on-disk Scribus render fell through
+            # to the catch-all below and reported as UNRESOLVED (blank) — a
+            # real render mis-reported as a failure.
+            ch = v.budget_channel if v.budget_channel in CHANNELS else "official"
+            why = "rendered by the Scribus Paper Craft engine"
+        elif v.type == "paperima":
+            # Same reasoning as papercraft just above: Paperima only ever
+            # animates a document Scribus already produced (pipeline/
+            # paperima_engine.py) — it is a finishing pass, not an
+            # independent source, so it inherits that beat's own channel.
+            ch = v.budget_channel if v.budget_channel in CHANNELS else "official"
+            why = "animated by the Paperima paper-motion engine"
         elif v.type == "solid" or not v.asset_path:
             # No asset on disk = nothing on screen. Counted honestly.
             ch, why = UNRESOLVED, f"no asset resolved (type={v.type})"

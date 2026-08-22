@@ -1,0 +1,131 @@
+1
+00:00:00,000 --> 00:00:01,246
+When you deposit one
+
+2
+00:00:01,246 --> 00:00:02,493
+thousand dollars in a
+
+3
+00:00:02,493 --> 00:00:03,739
+bank, the bank doesn't
+
+4
+00:00:03,739 --> 00:00:04,985
+just hold onto it.
+
+5
+00:00:04,985 --> 00:00:06,444
+Most of it gets
+
+6
+00:00:06,444 --> 00:00:07,903
+lent back out, to
+
+7
+00:00:07,903 --> 00:00:08,997
+other customers, as
+
+8
+00:00:08,997 --> 00:00:09,362
+mortgages,
+
+9
+00:00:09,362 --> 00:00:10,821
+car loans, and business
+
+10
+00:00:10,821 --> 00:00:11,186
+credit.
+
+11
+00:00:11,186 --> 00:00:12,461
+That's the fractional
+
+12
+00:00:12,461 --> 00:00:12,886
+reserve
+
+13
+00:00:12,886 --> 00:00:14,586
+system. Banks are required
+
+14
+00:00:14,586 --> 00:00:16,286
+to keep only a
+
+15
+00:00:16,286 --> 00:00:17,986
+portion of deposits readily
+
+16
+00:00:17,986 --> 00:00:18,411
+available.
+
+17
+00:00:18,411 --> 00:00:19,710
+The rest becomes a
+
+18
+00:00:19,710 --> 00:00:21,009
+loan to someone else,
+
+19
+00:00:21,009 --> 00:00:22,308
+which they spend, and
+
+20
+00:00:22,308 --> 00:00:23,607
+that money lands as
+
+21
+00:00:23,607 --> 00:00:24,906
+a deposit in another
+
+22
+00:00:24,906 --> 00:00:25,231
+bank.
+
+23
+00:00:25,231 --> 00:00:26,756
+Repeated across the whole
+
+24
+00:00:26,756 --> 00:00:28,281
+banking system, that cycle
+
+25
+00:00:28,281 --> 00:00:29,806
+is how most of
+
+26
+00:00:29,806 --> 00:00:31,331
+the money supply actually
+
+27
+00:00:31,331 --> 00:00:32,094
+gets created.
+
+28
+00:00:32,094 --> 00:00:33,454
+It's not a scandal,
+
+29
+00:00:33,454 --> 00:00:34,814
+it's the design. Your
+
+30
+00:00:34,814 --> 00:00:36,175
+deposit is doing more
+
+31
+00:00:36,175 --> 00:00:37,535
+work than just sitting
+
+32
+00:00:37,535 --> 00:00:38,895
+in an account. Follow
+
+33
+00:00:38,895 --> 00:00:39,575
+for more.

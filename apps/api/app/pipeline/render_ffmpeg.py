@@ -38,7 +38,7 @@ from .production_optimizer import changed_scenes, scene_fingerprint
 # Locally-rendered visuals already carry the brand palette and their own motion.
 # Grading them again shifts the colours away from the palette they were drawn in,
 # and Ken Burns on an animated chart is just wobble.
-_PRERENDERED = ("dataviz", "motion_gfx", "branded", "threejs", "papercraft")
+_PRERENDERED = ("dataviz", "motion_gfx", "branded", "threejs", "papercraft", "paperima")
 
 # ENCODER SETTINGS. Neither pass used to specify these, so both silently ran at
 # x264's `medium`/CRF 23 defaults — the single most expensive accident in the
@@ -388,6 +388,26 @@ def _dominant_windows(graph: SceneGraph) -> list[tuple[float, float]]:
     return out
 
 
+def _evidence_card_plates(graph: SceneGraph) -> list[ov.ImageOverlay]:
+    """One small, rotated, shadowed clipping per scene that carries one
+    (`Visual.evidence_card_path`) — positioned in the frame's left third,
+    over whatever real footage/still already fills the scene. Never the
+    whole scene: this is a supporting-evidence layer, not a document beat."""
+    plates: list[ov.ImageOverlay] = []
+    acc = 0.0
+    for s in graph.scenes:
+        if s.visual.evidence_card_path and Path(s.visual.evidence_card_path).is_file():
+            card_w = round(graph.width * 0.36)
+            plates.append(ov.ImageOverlay(
+                path=Path(s.visual.evidence_card_path),
+                x="46", y=f"(H-h)/2", scale_w=card_w,
+                rotate_deg=s.visual.evidence_card_rotate_deg, shadow=True,
+                start=acc + 0.15, end=acc + s.duration_sec - 0.1, fade=0.35,
+            ))
+        acc += s.duration_sec
+    return plates
+
+
 async def _finish(graph: SceneGraph, silent: Path, out: Path,
                   theme: BrandTheme) -> None:
     """Brand furniture + captions + audio in ONE pass.
@@ -411,7 +431,7 @@ async def _finish(graph: SceneGraph, silent: Path, out: Path,
     paths = await brand_assets.ensure_assets(theme)
 
     # ---- collect brand elements -------------------------------------------- #
-    plates: list[ov.ImageOverlay] = []
+    plates: list[ov.ImageOverlay] = list(_evidence_card_plates(graph))
     draws: list[str] = []
     mute = _dominant_windows(graph)
 
@@ -437,7 +457,8 @@ async def _finish(graph: SceneGraph, silent: Path, out: Path,
         plates += dp
         draws += dd
 
-    draws += ov.intro_filters(theme, W, H)
+    hook_visual_type = graph.scenes[0].visual.type if graph.scenes else ""
+    draws += ov.intro_filters(theme, W, H, hook_visual_type=hook_visual_type)
     plates += outro_plates
     draws += outro_draws
 
@@ -448,7 +469,19 @@ async def _finish(graph: SceneGraph, silent: Path, out: Path,
 
     # ---- assemble the filtergraph ------------------------------------------ #
     inputs: list[str] = ["-i", str(silent)]
-    filters: list[str] = [f"[0:v]subtitles={_esc_path(ass)}[vsub]"]
+    # libass (the subtitles filter's renderer) matches the ASS style's
+    # Fontname against INSTALLED font families — it has no idea our brand
+    # fonts exist unless told where to look. Without fontsdir here, a brand
+    # font that isn't installed system-wide (true for every custom font in
+    # config/brand/fonts/ on a machine without fontconfig, e.g. this Windows
+    # box) silently falls back to a substitute font instead of erroring, and
+    # that substitute can be wide enough to overflow a caption sized for the
+    # real one. theme.body.path may be empty (last-resort fallback with no
+    # resolved file) — fontsdir is only added when there's a real directory.
+    sub_filter = f"[0:v]subtitles=filename='{_esc_path(ass)}'"
+    if theme.body.path:
+        sub_filter += f":fontsdir='{_esc_path(Path(theme.body.path).parent)}'"
+    filters: list[str] = [sub_filter + "[vsub]"]
     label = "vsub"
 
     plate_inputs, plate_chain, label = ov.build_image_overlay_chain(
@@ -462,7 +495,10 @@ async def _finish(graph: SceneGraph, silent: Path, out: Path,
     maps: list[str] = ["-map", f"[{label}]"]
 
     # ---- audio -------------------------------------------------------------- #
-    idx = 1 + len(plates)
+    # NOT `1 + len(plates)`: a shadowed evidence-card plate consumes TWO image
+    # inputs (shadow copy + the card itself), so the real count is however many
+    # `-loop 1 -i ...` quads `build_image_overlay_chain` actually emitted.
+    idx = 1 + len(plate_inputs) // 4
     have_vo = bool(a.voiceover_path and Path(a.voiceover_path).exists())
     have_mus = bool(a.music_path and Path(a.music_path).exists())
     duck = have_vo and have_mus and a.duck_music
@@ -516,26 +552,61 @@ async def _finish(graph: SceneGraph, silent: Path, out: Path,
                        f"volume={_g(cue.gain_db)}[sfx{j}]")
         mix.append(f"[sfx{j}]")
 
+    # Single-pass loudness normalization on the FINAL mixed bus (after voice +
+    # music + sfx are already balanced against each other) so every render
+    # lands at a consistent, appropriately loud level regardless of which
+    # randomly-selected music bed or TTS take it got — confirmed drift: two
+    # renders with identical voiceover_gain_db/music_gain_db measured ~9dB
+    # apart in overall mean volume purely from bed/take differences. -16 LUFS
+    # integrated / -1.5dBTP is a standard, safe target for dialogue-forward
+    # short-form video; single-pass (not the slower two-pass measure+apply)
+    # to keep render time unchanged.
+    _LOUDNORM = "loudnorm=I=-16:TP=-1.5:LRA=11"
     if len(mix) == 1:
-        maps += ["-map", mix[0]]
+        filters.append(f"{mix[0]}{_LOUDNORM}[a]")
+        maps += ["-map", "[a]"]
     elif mix:
         filters.append(f"{''.join(mix)}amix=inputs={len(mix)}:normalize=0:"
-                       f"duration=first:dropout_transition=0[a]")
+                       f"duration=first:dropout_transition=0[amix]")
+        filters.append(f"[amix]{_LOUDNORM}[a]")
         maps += ["-map", "[a]"]
 
-    await _ff(*inputs, "-filter_complex", ";".join(filters), *maps,
+    # The assembled filtergraph (brand furniture + captions + audio mix) can run
+    # to tens of thousands of characters once SFX cues stack up. That's well
+    # within Linux's ARG_MAX (~2MB) but over Windows' ~32K CreateProcess command
+    # -line limit, which raises a misleadingly-worded FileNotFoundError (WinError
+    # 206) with no indication it's a length problem. `-/filter_complex` reads the
+    # identical graph from a file instead of the command line — same filtergraph,
+    # no OS argument-length ceiling on either platform.
+    script = work / "filter_complex.txt"
+    script.write_text(";".join(filters), encoding="utf-8")
+    await _ff(*inputs, "-/filter_complex", str(script), *maps,
               "-c:v", "libx264", *_DELIVERY, "-pix_fmt", "yuv420p",
               "-fps_mode", "cfr", "-r", str(graph.fps), "-c:a", "aac",
               "-shortest", "-movflags", "+faststart", "-y", str(out))
 
 
 def _cta_text(graph: SceneGraph) -> str:
-    """The end card's line: the closing beat's headline, else the final narration."""
+    """The end card's line: the closing beat's headline, else the final narration.
+
+    Falling back to the raw narration duplicated it on screen whenever the
+    closing beat is a SELF-RENDERING text type (motion_gfx/papercraft/
+    dataviz) — that beat's own visual already drew this exact sentence as its
+    headline/body, so the end-card overlay drew it a second time on top,
+    reading as ghosted/double text (confirmed: d02_c's closing kinetic-type
+    beat). Those types get no CTA text — the beat already said it; only beats
+    with nothing textual on screen (real footage/AI stills/branded plates)
+    still get the narration as their closing line.
+    """
     if not graph.scenes:
         return ""
     last = graph.scenes[-1]
     headline = next((o.text for o in last.overlays if o.type == "headline"), "")
-    return headline or last.narration
+    if headline:
+        return headline
+    if last.visual.type in ("motion_gfx", "papercraft", "paperima", "dataviz"):
+        return ""
+    return last.narration
 
 
 def _esc_path(p: Path) -> str:
@@ -551,12 +622,54 @@ def _sfx_file(sound: str) -> Path:
     return sfx_mod.sfx_path(sound)
 
 
+_ENV_MAX_POINTS = 80  # margin below ffmpeg eval's ~98-level if() nesting ceiling
+
+
+def _rdp_simplify(pts: list[tuple[float, float]], max_points: int
+                  ) -> list[tuple[float, float]]:
+    """Ramer-Douglas-Peucker line simplification, capped at `max_points`.
+
+    ffmpeg's expression evaluator has a hard nesting limit (empirically ~98
+    `if()` levels); a long-form documentary's music envelope can carry 300+
+    keyframes, which blows past it with a cryptic "too many args" parse error.
+    RDP drops the points that contribute least to the curve's SHAPE first, so a
+    long flat passage collapses to two points while a sharp swell/duck keeps
+    the points that define it — audibly much closer to the original automation
+    than either truncating the tail or uniform decimation."""
+    if len(pts) <= max_points:
+        return pts
+
+    def perp_dist(p, a, b):
+        (px, py), (ax, ay), (bx, by) = p, a, b
+        dx, dy = bx - ax, by - ay
+        if dx == 0 and dy == 0:
+            return ((px - ax) ** 2 + (py - ay) ** 2) ** 0.5
+        t = ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy)
+        cx, cy = ax + t * dx, ay + t * dy
+        return ((px - cx) ** 2 + (py - cy) ** 2) ** 0.5
+
+    # Each surviving interior point keeps a "cost" = its perpendicular deviation
+    # from the line joining its two current neighbours. Repeatedly drop the
+    # cheapest point and refresh its former neighbours' costs — a bounded,
+    # iterative variant of RDP that lets us target an exact point budget.
+    pts = list(pts)
+    while len(pts) > max_points:
+        costs = [float("inf")] + [
+            perp_dist(pts[i], pts[i - 1], pts[i + 1])
+            for i in range(1, len(pts) - 1)
+        ] + [float("inf")]
+        drop = min(range(len(pts)), key=lambda i: costs[i])
+        del pts[drop]
+    return pts
+
+
 def _env_expr(envelope) -> str:
     """Piecewise-linear (in amplitude) volume expression from music keyframes, for
     `volume=volume=<expr>:eval=frame`. Commas are escaped so the expression
     survives filter_complex parsing; the level holds flat outside the range so the
     bed swells and settles instead of jumping."""
     pts = sorted(((k.at, _g(k.gain_db)) for k in envelope), key=lambda p: p[0])
+    pts = _rdp_simplify(pts, _ENV_MAX_POINTS)
     if not pts:
         return "1.0"
     e = f"{pts[-1][1]:.5f}"

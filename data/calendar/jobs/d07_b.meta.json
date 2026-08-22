@@ -1,0 +1,30 @@
+{
+  "id": "d07_b",
+  "day": 7,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "What a stock split really changes",
+  "sources": [
+    {
+      "claim": "Mechanics of a stock split (share count multiplies, price divides proportionally, total value unchanged)",
+      "source": "Standard market-structure definition (SEC Investor.gov / textbook finance mechanics)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/stock-splits",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 7,
+    "clarity": 9,
+    "retention": 7,
+    "fact_confidence": 10,
+    "visual_potential": 8,
+    "us_relevance": 8,
+    "originality": 7,
+    "average": 8.0
+  },
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

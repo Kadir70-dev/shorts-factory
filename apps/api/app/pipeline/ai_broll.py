@@ -4,7 +4,10 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import json
-import resource
+try:
+    import resource
+except ImportError:  # Windows: no POSIX resource module
+    resource = None
 import shutil
 import time
 from dataclasses import dataclass
@@ -262,7 +265,7 @@ async def generate(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
             output.parent.mkdir(parents=True, exist_ok=True)
             if source.resolve() != output.resolve():
                 shutil.copy2(source, output)
-            rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024
+            rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024 if resource else 0.0
             return AIBrollRenderProvenance(
                 scene_id=scene.id, storyboard_scene_id=beat.scene_id,
                 status="rendered", provider=provider_name, model=generated.model,
@@ -275,6 +278,6 @@ async def generate(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
         except Exception as exc:  # provider isolation; try the next adapter
             errors.append(f"{candidate.name}: {type(exc).__name__}: {str(exc)[:120]}")
     return AIBrollRenderProvenance(**{**base, "peak_rss_mb":
-        resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024}, status="unresolved",
+        (resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024 if resource else 0.0)}, status="unresolved",
         provider_dispatch_ms=(time.perf_counter() - started) * 1000,
         error="; ".join(errors))

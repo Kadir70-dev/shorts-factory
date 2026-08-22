@@ -1,0 +1,5396 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "btc_ep01_twomin_cut",
+    "channel_id": "k70_history",
+    "niche": "usa_history",
+    "title": "The World Before Bitcoin \u2014 2-Minute Cut",
+    "hook": "In August 1971, Britain asked America for its gold. The gold wasn't there.",
+    "description": "A fast-paced 2-minute cut of Episode 1: The World Before Bitcoin. 1971-2008: the gold standard breaks, inflation and bank failures follow, and a small group of cryptographers keep trying to build money no one can switch off.\n\nEducational history and commentary. Not financial advice.",
+    "tags": [
+      "bitcoin",
+      "history of bitcoin",
+      "bitcoin documentary",
+      "1971",
+      "nixon shock",
+      "gold standard",
+      "bretton woods",
+      "inflation",
+      "2008 financial crisis",
+      "lehman brothers",
+      "cypherpunks",
+      "digicash",
+      "hyperinflation",
+      "argentina 2001",
+      "zimbabwe",
+      "federal reserve",
+      "money",
+      "documentary"
+    ],
+    "hashtags": [
+      "#bitcoin",
+      "#documentary",
+      "#history",
+      "#money",
+      "#2008crisis"
+    ],
+    "thumbnail_text": "THE GOLD WASN'T THERE",
+    "structure_id": "timeline_twist_conclusion",
+    "disclaimer": "",
+    "compliance_notes": [],
+    "requires_ai_disclosure": false,
+    "ai_disclosure_reasons": []
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "In the second week of August, 1971, a message reached the United States Treasury.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "ai_image",
+        "query": "1971 documentary still, empty marble corridor of the US Treasury at night, single desk lamp, telex machine mid-print, deep navy shadow, 35mm grain, anamorphic, cold tungsten key light",
+        "broll_keywords": [],
+        "visual_intent": "A night-lit Treasury corridor, one telex machine still running \u2014 the moment before anyone knows",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "zoom_in",
+        "fallback_color": "#15233a",
+        "strategy": "ai_image",
+        "budget_channel": "ai_broll",
+        "decision_reason": "00 \u00b7 hook \u00b7 ai_broll",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "AUGUST 1971",
+          "sub": null,
+          "y": 0.14,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "hook",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s2",
+      "narration": "The British government was asking to convert about three billion dollars into gold.",
+      "duration_sec": 5.2,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "$3,000,000,000  \u2192  GOLD",
+        "broll_keywords": [],
+        "visual_intent": "The demand set in type: $3,000,000,000 \u2192 GOLD",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 \u00b7 tension \u00b7 motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "$3,000,000,000  \u2192  GOLD",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        },
+        {
+          "type": "stat",
+          "text": "BRITISH REQUEST",
+          "sub": "$3,000,000,000 in gold",
+          "y": 0.2,
+          "emphasis": "normal"
+        },
+        {
+          "type": "source",
+          "text": "Federal Reserve History",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "probable"
+    },
+    {
+      "id": "s3",
+      "narration": "They were entitled to it. That was the deal. That had always been the deal.",
+      "duration_sec": 5.2,
+      "visual": {
+        "type": "image",
+        "query": "Bretton Woods Agreement 1944 signature page document scan",
+        "broll_keywords": [
+          "bretton woods agreement document",
+          "1944 monetary conference signing"
+        ],
+        "visual_intent": "The Bretton Woods signature page \u2014 the contract being invoked",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "00 \u00b7 context \u00b7 official",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "World Bank Group Archives",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [
+        "bretton woods agreement document",
+        "1944 monetary conference signing"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s4",
+      "narration": "There was only one problem.",
+      "duration_sec": 3.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "ONE PROBLEM",
+        "broll_keywords": [],
+        "visual_intent": "Hard type on black \u2014 the pivot",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 \u00b7 turn \u00b7 motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "ONE PROBLEM",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "turn",
+      "transition_in": "dip_to_black",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s5",
+      "narration": "The gold was not there.",
+      "duration_sec": 4.2,
+      "visual": {
+        "type": "ai_image",
+        "query": "documentary still, interior of a government bullion vault, mostly EMPTY steel shelving, three gold bars remaining, harsh overhead light, dust in the air, wide anamorphic, cold blue-grey, photoreal",
+        "broll_keywords": [],
+        "visual_intent": "An almost-empty bullion vault: bare steel shelving, a handful of bars, cold light",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "zoom_in",
+        "fallback_color": "#15233a",
+        "strategy": "ai_image",
+        "budget_channel": "ai_broll",
+        "decision_reason": "00 \u00b7 reveal \u00b7 ai_broll",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "NOT ENOUGH GOLD",
+          "sub": null,
+          "y": 0.16,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s6",
+      "narration": "On Friday the thirteenth, the President of the United States boarded a helicopter and disappeared.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "image",
+        "query": "Richard Nixon boarding Marine One helicopter White House 1971",
+        "broll_keywords": [
+          "marine one helicopter 1971",
+          "nixon boarding helicopter white house"
+        ],
+        "visual_intent": "Marine One lifting off the South Lawn, 1971 \u2014 the vanishing",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "00 \u00b7 tension \u00b7 official",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "Federal Reserve History",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "cut",
+      "keywords": [
+        "marine one helicopter 1971",
+        "nixon boarding helicopter white house"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s7",
+      "narration": "He took fifteen men with him to a mountain retreat in Maryland.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "threejs",
+        "query": "Maryland",
+        "broll_keywords": [],
+        "visual_intent": "Globe flight: world \u2192 United States of America \u2192 the Maryland highlands",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "threejs",
+        "budget_channel": "threejs",
+        "decision_reason": "00 \u00b7 context \u00b7 threejs",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "CAMP DAVID",
+          "sub": "Catoctin Mountain, Maryland",
+          "y": 0.24,
+          "emphasis": "normal"
+        },
+        {
+          "type": "source",
+          "text": "Federal Reserve History",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s8",
+      "narration": "No press. No announcement. No record of where they had gone.",
+      "duration_sec": 4.6,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "NO PRESS.  NO ANNOUNCEMENT.  NO RECORD.",
+        "broll_keywords": [],
+        "visual_intent": "Three redactions striking through in sequence",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 \u00b7 tension \u00b7 motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "NO PRESS.  NO ANNOUNCEMENT.  NO RECORD.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s9",
+      "narration": "For three days, the most powerful economy on earth held a secret meeting about its own money.",
+      "duration_sec": 6.2,
+      "visual": {
+        "type": "ai_image",
+        "query": "cinematic documentary recreation, 1971 wood-panelled lodge conference room at night, fifteen men in suits silhouetted around a long table, single warm lamp, papers face down, heavy shadow, 35mm, shallow depth of field",
+        "broll_keywords": [],
+        "visual_intent": "Recreation: a lodge room, fifteen silhouettes around a table, one lamp, notes face-down",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "zoom_in",
+        "fallback_color": "#15233a",
+        "strategy": "ai_image",
+        "budget_channel": "ai_broll",
+        "decision_reason": "00 \u00b7 stakes \u00b7 ai_broll",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "13-15 AUGUST 1971",
+          "sub": "no minutes released at the time",
+          "y": 0.24,
+          "emphasis": "normal"
+        },
+        {
+          "type": "source",
+          "text": "Federal Reserve History",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "stakes",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "probable"
+    },
+    {
+      "id": "s10",
+      "narration": "And when they came back down, the thing in your wallet was no longer what you thought it was.",
+      "duration_sec": 5.8,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "WHAT IS THIS, REALLY?",
+        "broll_keywords": [],
+        "visual_intent": "A dollar bill dissolving into pure type \u2014 the promise leaving the paper",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 \u00b7 turn \u00b7 motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "WHAT IS THIS, REALLY?",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "turn",
+      "transition_in": "dip_to_black",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s11",
+      "narration": "This is the story of how the world lost trust in money.",
+      "duration_sec": 4.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "THE COMPLETE HISTORY OF BITCOIN",
+        "broll_keywords": [],
+        "visual_intent": "Series title card in the brand display face",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 \u00b7 context \u00b7 motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "THE COMPLETE HISTORY OF BITCOIN",
+          "sub": null,
+          "y": 0.34,
+          "emphasis": "normal"
+        },
+        {
+          "type": "lower_third",
+          "text": "EPISODE ONE",
+          "sub": "The World Before Bitcoin \u00b7 1970-2008",
+          "y": 0.46,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s12",
+      "narration": "To understand why a stranger would one day try to build money without banks, you have to understand what the banks did first.",
+      "duration_sec": 7.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "MONEY WITHOUT BANKS",
+        "broll_keywords": [],
+        "visual_intent": "The thesis line, set quietly, in the lower half of frame",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 \u00b7 stakes \u00b7 motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "MONEY WITHOUT BANKS",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "stakes",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s13",
+      "narration": "Twenty-seven years earlier, the war was not yet over.",
+      "duration_sec": 4.4,
+      "visual": {
+        "type": "image",
+        "query": "1944 wartime newsreel public domain footage",
+        "broll_keywords": [
+          "1944 world war two newsreel",
+          "wartime archive footage 1944"
+        ],
+        "visual_intent": "1944 newsreel frame \u2014 Europe still at war",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "01 \u00b7 context \u00b7 official",
+        "layers": []
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "fade",
+      "keywords": [
+        "1944 world war two newsreel",
+        "wartime archive footage 1944"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s14",
+      "narration": "And in a hotel in the mountains of New Hampshire, more than seven hundred delegates from forty-four nations sat down to redesign the world.",
+      "duration_sec": 8.0,
+      "visual": {
+        "type": "threejs",
+        "query": "New Hampshire",
+        "broll_keywords": [],
+        "visual_intent": "Globe flight: world \u2192 United States \u2192 New Hampshire, pin on the conference",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "threejs",
+        "budget_channel": "threejs",
+        "decision_reason": "01 \u00b7 context \u00b7 threejs",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "BRETTON WOODS, NEW HAMPSHIRE",
+          "sub": "1-22 July 1944 \u00b7 44 nations",
+          "y": 0.24,
+          "emphasis": "normal"
+        },
+        {
+          "type": "source",
+          "text": "World Bank Group Archives",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s15",
+      "narration": "They had watched what happens when money dies.",
+      "duration_sec": 4.0,
+      "visual": {
+        "type": "image",
+        "query": "Weimar Germany 1923 hyperinflation children playing with stacks of banknotes",
+        "broll_keywords": [
+          "weimar hyperinflation banknotes 1923",
+          "german inflation money bundles 1923"
+        ],
+        "visual_intent": "Weimar hyperinflation: children stacking bricks of banknotes",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "01 \u00b7 tension \u00b7 official",
+        "layers": []
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "cut",
+      "keywords": [
+        "weimar hyperinflation banknotes 1923",
+        "german inflation money bundles 1923"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s16",
+      "narration": "Germany, nineteen twenty-three. A wheelbarrow of paper for a loaf of bread.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "image",
+        "query": "1923 Germany wheelbarrow of banknotes to buy bread photograph",
+        "broll_keywords": [
+          "wheelbarrow money weimar",
+          "1923 german marks wheelbarrow"
+        ],
+        "visual_intent": "The wheelbarrow-of-marks photograph, slow push in",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "01 \u00b7 reveal \u00b7 official",
+        "layers": []
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [
+        "wheelbarrow money weimar",
+        "1923 german marks wheelbarrow"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s17",
+      "narration": "Currencies devalued like weapons. Trade wars. Then real wars.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "threejs",
+        "query": "Germany",
+        "broll_keywords": [],
+        "visual_intent": "Globe: 1930s devaluations firing between capitals like ordnance, then the map going dark",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "threejs",
+        "budget_channel": "threejs",
+        "decision_reason": "01 \u00b7 consequence \u00b7 threejs",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "DEVALUE \u00b7 RETALIATE \u00b7 WAR",
+          "sub": null,
+          "y": 0.24,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "consequence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s18",
+      "narration": "So they built a chain.",
+      "duration_sec": 3.2,
+      "visual": {
+        "type": "broll",
+        "query": "heavy steel chain link macro",
+        "broll_keywords": [
+          "steel chain link close up",
+          "heavy chain tension macro",
+          "iron chain detail"
+        ],
+        "visual_intent": "Real macro footage of a heavy steel chain link taking the load",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "01 \u00b7 mechanism \u00b7 stock",
+        "layers": []
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [
+        "steel chain link close up",
+        "heavy chain tension macro",
+        "iron chain detail"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s19",
+      "narration": "Every currency on earth would be pegged to the American dollar.",
+      "duration_sec": 5.2,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "EVERY CURRENCY \u2192 THE DOLLAR",
+        "broll_keywords": [],
+        "visual_intent": "Currency marks arriving from every side and locking, one by one, onto a single dollar anchor",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "01 \u00b7 mechanism \u00b7 motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "EVERY CURRENCY \u2192 THE DOLLAR",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        },
+        {
+          "type": "source",
+          "text": "Federal Reserve History",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s20",
+      "narration": "And the American dollar would be pegged to gold. Thirty-five dollars an ounce. Fixed.",
+      "duration_sec": 6.2,
+      "visual": {
+        "type": "dataviz",
+        "query": "",
+        "broll_keywords": [],
+        "visual_intent": "The peg as a single locked figure, rolled up and then frozen",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "01 \u00b7 reveal \u00b7 charts",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "Federal Reserve History",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": {
+        "kind": "counter",
+        "title": "The Bretton Woods peg",
+        "points": [
+          {
+            "label": "1944-1971",
+            "value": 35.0,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "$",
+        "suffix": " / oz",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "Bretton Woods Agreement, 1944",
+        "note": "Fixed for 27 years"
+      },
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s21",
+      "narration": "Bring your dollars to Washington, and America would hand you the metal.",
+      "duration_sec": 5.2,
+      "visual": {
+        "type": "ai_image",
+        "query": "documentary recreation, 1950s, gloved hands sliding a single gold bar across a polished counter towards a man in a dark suit, bank vault interior, warm key light on the bar, everything else in shadow, 35mm macro, photoreal",
+        "broll_keywords": [],
+        "visual_intent": "Recreation: gloved hands sliding a gold bar across a counter to a foreign official",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "zoom_in",
+        "fallback_color": "#15233a",
+        "strategy": "ai_image",
+        "budget_channel": "ai_broll",
+        "decision_reason": "01 \u00b7 mechanism \u00b7 ai_broll",
+        "layers": []
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s22",
+      "narration": "For the first time in history, the entire planet's money hung from a single promise.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "threejs",
+        "query": "India",
+        "broll_keywords": [],
+        "visual_intent": "Globe flight to the far side of the world \u2014 India, a Bretton Woods signatory \u2014 tethered by one thread back to Washington",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "threejs",
+        "budget_channel": "threejs",
+        "decision_reason": "01 \u00b7 stakes \u00b7 threejs",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "ONE PROMISE",
+          "sub": "44 signatory nations",
+          "y": 0.24,
+          "emphasis": "normal"
+        },
+        {
+          "type": "source",
+          "text": "World Bank Group Archives",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "stakes",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s23",
+      "narration": "And for a while, it worked beautifully.",
+      "duration_sec": 4.0,
+      "visual": {
+        "type": "broll",
+        "query": "1950s american city street prosperity",
+        "broll_keywords": [
+          "vintage 1950s city street",
+          "retro american downtown archive",
+          "old cars busy street"
+        ],
+        "visual_intent": "Post-war prosperity: real footage of busy mid-century commerce",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "01 \u00b7 context \u00b7 stock",
+        "layers": []
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [
+        "vintage 1950s city street",
+        "retro american downtown archive",
+        "old cars busy street"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s24",
+      "narration": "Then one man did the arithmetic.",
+      "duration_sec": 3.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "ONE MAN DID THE ARITHMETIC",
+        "broll_keywords": [],
+        "visual_intent": "A single line of longhand arithmetic working itself out across the field",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "01 \u00b7 turn \u00b7 motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "ONE MAN DID THE ARITHMETIC",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "turn",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s25",
+      "narration": "In October nineteen fifty-nine, the economist Robert Triffin told the United States Congress the system was already doomed.",
+      "duration_sec": 7.9,
+      "visual": {
+        "type": "image",
+        "query": "Robert Triffin Joint Economic Committee October 1959 testimony record",
+        "broll_keywords": [
+          "congressional hearing 1959 testimony",
+          "economist testifying congress 1950s"
+        ],
+        "visual_intent": "Triffin before the Joint Economic Committee \u2014 the hearing record, his name on the witness line",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "01 \u00b7 evidence \u00b7 official",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "ROBERT TRIFFIN",
+          "sub": "Joint Economic Committee \u00b7 October 1959",
+          "y": 0.24,
+          "emphasis": "normal"
+        },
+        {
+          "type": "source",
+          "text": "R. Triffin, Joint Economic Committee, Oct 1959",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [
+        "congressional hearing 1959 testimony",
+        "economist testifying congress 1950s"
+      ],
+      "confidence": "confirmed"
+    }
+  ],
+  "audio": {
+    "voiceover_path": null,
+    "music_path": null,
+    "music_gain_db": -18.0,
+    "voiceover_gain_db": 0.0,
+    "duck_music": true,
+    "duck_amount_db": -9.0,
+    "music_mood": "",
+    "music_envelope": [],
+    "music_fade_in_sec": 1.5,
+    "music_fade_out_sec": 2.0
+  },
+  "captions": [],
+  "sfx": [],
+  "storyboard": {
+    "version": "1.0",
+    "scenes": [
+      {
+        "scene_id": "sb_s1",
+        "source_scene_id": "s1",
+        "narration": "In the second week of August, 1971, a message reached the United States Treasury.",
+        "duration_estimate": 5.4,
+        "visual_objective": "A night-lit Treasury corridor, one telex machine still running \u2014 the moment before anyone knows",
+        "primary_entity": "U.S. Treasury",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Washington",
+        "year": 1971,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "AUGUST 1971"
+        ],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s2",
+        "source_scene_id": "s2",
+        "narration": "The British government was asking to convert about three billion dollars into gold.",
+        "duration_estimate": 5.2,
+        "visual_objective": "The demand set in type: $3,000,000,000 \u2192 GOLD",
+        "primary_entity": "United Kingdom",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1971,
+        "financial_numbers": [
+          "$3 billion"
+        ],
+        "emotion": "tense",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "$3,000,000,000  \u2192  GOLD",
+          "BRITISH REQUEST"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s3",
+        "source_scene_id": "s3",
+        "narration": "They were entitled to it. That was the deal. That had always been the deal.",
+        "duration_estimate": 5.2,
+        "visual_objective": "The Bretton Woods signature page \u2014 the contract being invoked",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1944,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s4",
+        "source_scene_id": "s4",
+        "narration": "There was only one problem.",
+        "duration_estimate": 3.0,
+        "visual_objective": "Hard type on black \u2014 the pivot",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "ONE PROBLEM"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s5",
+        "source_scene_id": "s5",
+        "narration": "The gold was not there.",
+        "duration_estimate": 4.2,
+        "visual_objective": "An almost-empty bullion vault: bare steel shelving, a handful of bars, cold light",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "NOT ENOUGH GOLD"
+        ],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s6",
+        "source_scene_id": "s6",
+        "narration": "On Friday the thirteenth, the President of the United States boarded a helicopter and disappeared.",
+        "duration_estimate": 6.0,
+        "visual_objective": "Marine One lifting off the South Lawn, 1971 \u2014 the vanishing",
+        "primary_entity": "Richard Nixon",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1971,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s7",
+        "source_scene_id": "s7",
+        "narration": "He took fifteen men with him to a mountain retreat in Maryland.",
+        "duration_estimate": 5.0,
+        "visual_objective": "Globe flight: world \u2192 United States of America \u2192 the Maryland highlands",
+        "primary_entity": "Camp David",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Maryland",
+        "year": 1971,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "CAMP DAVID"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s8",
+        "source_scene_id": "s8",
+        "narration": "No press. No announcement. No record of where they had gone.",
+        "duration_estimate": 4.6,
+        "visual_objective": "Three redactions striking through in sequence",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "NO PRESS.  NO ANNOUNCEMENT.  NO RECORD."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s9",
+        "source_scene_id": "s9",
+        "narration": "For three days, the most powerful economy on earth held a secret meeting about its own money.",
+        "duration_estimate": 6.2,
+        "visual_objective": "Recreation: a lodge room, fifteen silhouettes around a table, one lamp, notes face-down",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "13-15 AUGUST 1971"
+        ],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s10",
+        "source_scene_id": "s10",
+        "narration": "And when they came back down, the thing in your wallet was no longer what you thought it was.",
+        "duration_estimate": 5.8,
+        "visual_objective": "A dollar bill dissolving into pure type \u2014 the promise leaving the paper",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "WHAT IS THIS, REALLY?"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s11",
+        "source_scene_id": "s11",
+        "narration": "This is the story of how the world lost trust in money.",
+        "duration_estimate": 4.4,
+        "visual_objective": "Series title card in the brand display face",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "THE COMPLETE HISTORY OF BITCOIN",
+          "EPISODE ONE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s12",
+        "source_scene_id": "s12",
+        "narration": "To understand why a stranger would one day try to build money without banks, you have to understand what the banks did first.",
+        "duration_estimate": 7.0,
+        "visual_objective": "The thesis line, set quietly, in the lower half of frame",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "MONEY WITHOUT BANKS"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s13",
+        "source_scene_id": "s13",
+        "narration": "Twenty-seven years earlier, the war was not yet over.",
+        "duration_estimate": 4.4,
+        "visual_objective": "1944 newsreel frame \u2014 Europe still at war",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1944,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s14",
+        "source_scene_id": "s14",
+        "narration": "And in a hotel in the mountains of New Hampshire, more than seven hundred delegates from forty-four nations sat down to redesign the world.",
+        "duration_estimate": 8.0,
+        "visual_objective": "Globe flight: world \u2192 United States \u2192 New Hampshire, pin on the conference",
+        "primary_entity": "Bretton Woods Conference",
+        "secondary_entities": [],
+        "company": "",
+        "location": "New Hampshire",
+        "year": 1944,
+        "financial_numbers": [
+          "44 nations",
+          "730 delegates"
+        ],
+        "emotion": "neutral",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "BRETTON WOODS, NEW HAMPSHIRE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s15",
+        "source_scene_id": "s15",
+        "narration": "They had watched what happens when money dies.",
+        "duration_estimate": 4.0,
+        "visual_objective": "Weimar hyperinflation: children stacking bricks of banknotes",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1923,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s16",
+        "source_scene_id": "s16",
+        "narration": "Germany, nineteen twenty-three. A wheelbarrow of paper for a loaf of bread.",
+        "duration_estimate": 5.4,
+        "visual_objective": "The wheelbarrow-of-marks photograph, slow push in",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1923,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s17",
+        "source_scene_id": "s17",
+        "narration": "Currencies devalued like weapons. Trade wars. Then real wars.",
+        "duration_estimate": 5.0,
+        "visual_objective": "Globe: 1930s devaluations firing between capitals like ordnance, then the map going dark",
+        "primary_entity": "competitive devaluation",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Germany",
+        "year": 1931,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "DEVALUE \u00b7 RETALIATE \u00b7 WAR"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s18",
+        "source_scene_id": "s18",
+        "narration": "So they built a chain.",
+        "duration_estimate": 3.2,
+        "visual_objective": "Real macro footage of a heavy steel chain link taking the load",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s19",
+        "source_scene_id": "s19",
+        "narration": "Every currency on earth would be pegged to the American dollar.",
+        "duration_estimate": 5.2,
+        "visual_objective": "Currency marks arriving from every side and locking, one by one, onto a single dollar anchor",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1944,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "EVERY CURRENCY \u2192 THE DOLLAR"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s20",
+        "source_scene_id": "s20",
+        "narration": "And the American dollar would be pegged to gold. Thirty-five dollars an ounce. Fixed.",
+        "duration_estimate": 6.2,
+        "visual_objective": "The peg as a single locked figure, rolled up and then frozen",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1944,
+        "financial_numbers": [
+          "$35"
+        ],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s21",
+        "source_scene_id": "s21",
+        "narration": "Bring your dollars to Washington, and America would hand you the metal.",
+        "duration_estimate": 5.2,
+        "visual_objective": "Recreation: gloved hands sliding a gold bar across a counter to a foreign official",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s22",
+        "source_scene_id": "s22",
+        "narration": "For the first time in history, the entire planet's money hung from a single promise.",
+        "duration_estimate": 6.0,
+        "visual_objective": "Globe flight to the far side of the world \u2014 India, a Bretton Woods signatory \u2014 tethered by one thread back to Washington",
+        "primary_entity": "Bretton Woods signatories",
+        "secondary_entities": [],
+        "company": "",
+        "location": "India",
+        "year": 1944,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "ONE PROMISE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s23",
+        "source_scene_id": "s23",
+        "narration": "And for a while, it worked beautifully.",
+        "duration_estimate": 4.0,
+        "visual_objective": "Post-war prosperity: real footage of busy mid-century commerce",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s24",
+        "source_scene_id": "s24",
+        "narration": "Then one man did the arithmetic.",
+        "duration_estimate": 3.4,
+        "visual_objective": "A single line of longhand arithmetic working itself out across the field",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "ONE MAN DID THE ARITHMETIC"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s25",
+        "source_scene_id": "s25",
+        "narration": "In October nineteen fifty-nine, the economist Robert Triffin told the United States Congress the system was already doomed.",
+        "duration_estimate": 7.9,
+        "visual_objective": "Triffin before the Joint Economic Committee \u2014 the hearing record, his name on the witness line",
+        "primary_entity": "Robert Triffin",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1959,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "ROBERT TRIFFIN"
+        ],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s26",
+        "source_scene_id": "s26",
+        "narration": "To keep the world supplied with dollars, America had to send out more of them than it could ever back.",
+        "duration_estimate": 8.4,
+        "visual_objective": "The dilemma built as a balance that cannot be levelled: supply the world, or hold the gold \u2014 never both",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1959,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "SUPPLY THE WORLD  \u00b7  OR  \u00b7  BACK THE DOLLAR"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s27",
+        "source_scene_id": "s27",
+        "narration": "Stop, and world trade starves. Carry on, and the promise breaks.",
+        "duration_estimate": 5.4,
+        "visual_objective": "Two doors, both of them closing",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "BOTH ROADS END BADLY"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s28",
+        "source_scene_id": "s28",
+        "narration": "Congress listened politely. Then it did nothing for twelve years.",
+        "duration_estimate": 5.0,
+        "visual_objective": "A hearing transcript closing, then a year counter running 1959 \u2192 1971 in silence",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "12 years"
+        ],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "1959 \u2192 1971"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s29",
+        "source_scene_id": "s29",
+        "narration": "That was all the time the system had left.",
+        "duration_estimate": 4.4,
+        "visual_objective": "The counter stopping dead on 1971",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1971,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "TWELVE YEARS LEFT."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s30",
+        "source_scene_id": "s30",
+        "narration": "A war in Vietnam. A war on poverty. A race to the moon.",
+        "duration_estimate": 5.4,
+        "visual_objective": "Three archival frames cut in rhythm \u2014 Vietnam, the Great Society, Apollo",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1965,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s31",
+        "source_scene_id": "s31",
+        "narration": "All of it paid for in dollars. Dollars that flowed out into the world.",
+        "duration_estimate": 5.6,
+        "visual_objective": "Globe: the route of the dollar out of the United States and across the Pacific into Japan",
+        "primary_entity": "dollar outflow",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Japan",
+        "year": 1965,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "DOLLARS OUT"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s32",
+        "source_scene_id": "s32",
+        "narration": "And the world began to notice something.",
+        "duration_estimate": 3.6,
+        "visual_objective": "A ledger tally striking up in the dark, one mark at a time, faster than it can be read",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "SOMEONE WAS COUNTING"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s33",
+        "source_scene_id": "s33",
+        "narration": "There were now far more dollars in circulation than there was gold in the vault.",
+        "duration_estimate": 5.8,
+        "visual_objective": "Recreation: a vault holding one gold bar, buried under a drift of paper claims",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s34",
+        "source_scene_id": "s34",
+        "narration": "In nineteen fifty-two, the United States held more than twenty thousand tonnes of gold.",
+        "duration_estimate": 6.4,
+        "visual_objective": "The reserve at its peak, counted up, then held",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1952,
+        "financial_numbers": [
+          "20,748 t"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s35",
+        "source_scene_id": "s35",
+        "narration": "By nineteen seventy-one it held eight thousand, one hundred and thirty-three.",
+        "duration_estimate": 6.2,
+        "visual_objective": "The same reserve nineteen years later \u2014 the collapse shown as a fall, not a number",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1971,
+        "financial_numbers": [
+          "8,133 t"
+        ],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s36",
+        "source_scene_id": "s36",
+        "narration": "Sixty-one percent of the gold, gone. Redeemed. Shipped abroad.",
+        "duration_estimate": 5.6,
+        "visual_objective": "The share that left, filling a meter to sixty-one percent",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "61%"
+        ],
+        "emotion": "cautionary",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s37",
+        "source_scene_id": "s37",
+        "narration": "France, by most accounts, had been converting for years. Then others followed.",
+        "duration_estimate": 6.0,
+        "visual_objective": "Globe flight from the United States across the Atlantic to France",
+        "primary_entity": "Banque de France",
+        "secondary_entities": [],
+        "company": "",
+        "location": "France",
+        "year": 1965,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "PARIS CONVERTS"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s38",
+        "source_scene_id": "s38",
+        "narration": "It was, in every way that mattered, a bank run.",
+        "duration_estimate": 5.0,
+        "visual_objective": "Depression-era bank run photograph \u2014 the shape of the thing, decades earlier",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1933,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s39",
+        "source_scene_id": "s39",
+        "narration": "Except the bank was the United States of America.",
+        "duration_estimate": 4.6,
+        "visual_objective": "Recreation: a vault door the height of a building, the national seal cast into its face",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s40",
+        "source_scene_id": "s40",
+        "narration": "And then Britain asked for roughly three billion more.",
+        "duration_estimate": 4.4,
+        "visual_objective": "Recreation: a telex cable landing on an empty Treasury desk, the request half-printed",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "whip",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s41",
+        "source_scene_id": "s41",
+        "narration": "Sunday, the fifteenth of August, nineteen seventy-one. Prime time.",
+        "duration_estimate": 5.4,
+        "visual_objective": "A dark American living room, one CRT glowing, nobody moving",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1971,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "15 AUGUST 1971"
+        ],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s42",
+        "source_scene_id": "s42",
+        "narration": "The President of the United States went on television and said this:",
+        "duration_estimate": 4.6,
+        "visual_objective": "Nixon at the desk, address to the nation \u2014 the actual broadcast frame",
+        "primary_entity": "Richard Nixon",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1971,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s43",
+        "source_scene_id": "s43",
+        "narration": "I have directed Secretary Connally to suspend temporarily the convertibility of the dollar into gold.",
+        "duration_estimate": 8.2,
+        "visual_objective": "The quotation typed on screen, with the word temporarily isolated",
+        "primary_entity": "Richard Nixon",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1971,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "\"...suspend temporarily the convertibility of the dollar into gold.\"",
+          "\u201csuspend temporarily the convertibility of the dollar into gold\u201d"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s44",
+        "source_scene_id": "s44",
+        "narration": "Temporarily.",
+        "duration_estimate": 3.0,
+        "visual_objective": "One word, alone, in the display face",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "TEMPORARILY"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s45",
+        "source_scene_id": "s45",
+        "narration": "More than fifty years later, it has never been un-suspended.",
+        "duration_estimate": 5.2,
+        "visual_objective": "A counter running from 1971 to now under the word",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "STILL SUSPENDED"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s46",
+        "source_scene_id": "s46",
+        "narration": "In one sentence, on a Sunday night, the link between money and metal was cut.",
+        "duration_estimate": 6.0,
+        "visual_objective": "Recreation: a heavy chain link severed, gold light draining out of frame",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s47",
+        "source_scene_id": "s47",
+        "narration": "From that moment, every dollar, every pound, every yen on earth was backed by exactly one thing.",
+        "duration_estimate": 6.6,
+        "visual_objective": "Globe: currency nodes lighting up worldwide with nothing beneath them",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "United States of America",
+        "year": 1971,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "EVERY CURRENCY ON EARTH"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s48",
+        "source_scene_id": "s48",
+        "narration": "Trust.",
+        "duration_estimate": 3.0,
+        "visual_objective": "One word, centred, the whole thesis of the series",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "TRUST"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s49",
+        "source_scene_id": "s49",
+        "narration": "Trust that the people printing it would not print too much.",
+        "duration_estimate": 5.2,
+        "visual_objective": "Real footage: banknote sheets moving through a printing press",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s50",
+        "source_scene_id": "s50",
+        "narration": "Nixon told the country their dollar would be worth just as much tomorrow as it was today.",
+        "duration_estimate": 6.2,
+        "visual_objective": "The transcript page with that sentence underlined",
+        "primary_entity": "Richard Nixon",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1971,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s51",
+        "source_scene_id": "s51",
+        "narration": "He was wrong by a distance almost nobody alive had imagined.",
+        "duration_estimate": 6.0,
+        "visual_objective": "What one 1971 dollar was worth by 2008",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "$0.19"
+        ],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s52",
+        "source_scene_id": "s52",
+        "narration": "The nineteen seventies did not feel like a monetary experiment. They felt like a mugging.",
+        "duration_estimate": 6.2,
+        "visual_objective": "Real footage: a supermarket aisle, price stickers, hands hesitating",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "urgent",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s53",
+        "source_scene_id": "s53",
+        "narration": "Gold had been fixed at thirty-five dollars an ounce for a generation.",
+        "duration_estimate": 5.0,
+        "visual_objective": "Real footage of stacked bullion bars, unchanging, while the number on screen does not move",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "$35"
+        ],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s54",
+        "source_scene_id": "s54",
+        "narration": "On the twenty-first of January, nineteen eighty, it fixed in London at eight hundred and fifty.",
+        "duration_estimate": 7.0,
+        "visual_objective": "The peg against the free market \u2014 a wall, not a line",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1980,
+        "financial_numbers": [
+          "$850"
+        ],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s55",
+        "source_scene_id": "s55",
+        "narration": "That is not gold getting more valuable. That is the dollar getting smaller.",
+        "duration_estimate": 5.6,
+        "visual_objective": "The same bar, unchanged, while the dollar shrinks beside it",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "THE DOLLAR GOT SMALLER"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s56",
+        "source_scene_id": "s56",
+        "narration": "At the grocery store, prices moved while you shopped.",
+        "duration_estimate": 4.8,
+        "visual_objective": "Recreation: a shelf where every price label has been over-stickered three times",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s57",
+        "source_scene_id": "s57",
+        "narration": "By March nineteen eighty, American consumer prices were rising at fourteen point eight percent a year.",
+        "duration_estimate": 7.2,
+        "visual_objective": "The full decade of inflation drawn left to right, ending at the spike",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1980,
+        "financial_numbers": [
+          "14.8%"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s58",
+        "source_scene_id": "s58",
+        "narration": "A raise was not a raise. A savings account was a slow leak.",
+        "duration_estimate": 5.4,
+        "visual_objective": "Real footage: a payslip and a bank passbook on a table, coins being counted out beside them",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s59",
+        "source_scene_id": "s59",
+        "narration": "People who had done everything right \u2014 worked, saved, never borrowed \u2014 were quietly being robbed.",
+        "duration_estimate": 6.8,
+        "visual_objective": "Recreation: a kitchen table, a passbook savings book, an older couple's hands",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s60",
+        "source_scene_id": "s60",
+        "narration": "And the only man who could stop it decided to break the country to do it.",
+        "duration_estimate": 5.8,
+        "visual_objective": "Paul Volcker at the Federal Reserve, cigar, testimony",
+        "primary_entity": "Paul Volcker",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1979,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s61",
+        "source_scene_id": "s61",
+        "narration": "Paul Volcker took interest rates to nineteen percent.",
+        "duration_estimate": 5.6,
+        "visual_objective": "The rate spike as one hero figure",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1981,
+        "financial_numbers": [
+          "19.1%"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s62",
+        "source_scene_id": "s62",
+        "narration": "Mortgages became unaffordable. Factories closed. Unemployment passed ten percent.",
+        "duration_estimate": 6.2,
+        "visual_objective": "Globe flight down into the industrial Midwest \u2014 Ohio \u2014 where the 1981-82 recession landed hardest",
+        "primary_entity": "1981-82 recession",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Ohio",
+        "year": 1982,
+        "financial_numbers": [
+          "10.8%"
+        ],
+        "emotion": "cautionary",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "THE INDUSTRIAL MIDWEST"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s63",
+        "source_scene_id": "s63",
+        "narration": "It worked. Inflation broke.",
+        "duration_estimate": 3.8,
+        "visual_objective": "The inflation line finally bending down, alone on the field",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "IT WORKED"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s64",
+        "source_scene_id": "s64",
+        "narration": "The value of your money is a decision. And you are not the one making it.",
+        "duration_estimate": 6.4,
+        "visual_objective": "The line broken across two cards, the second landing on black",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "YOU ARE NOT THE ONE DECIDING"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s65",
+        "source_scene_id": "s65",
+        "narration": "Then came the pattern.",
+        "duration_estimate": 3.2,
+        "visual_objective": "The word pattern, repeating and receding into the frame",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "urgent",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [
+          "THE PATTERN"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s66",
+        "source_scene_id": "s66",
+        "narration": "Between nineteen eighty-six and nineteen ninety-five, one thousand and forty-three American savings and loans failed.",
+        "duration_estimate": 7.6,
+        "visual_objective": "Failed institutions against the total that existed",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1990,
+        "financial_numbers": [
+          "1,043",
+          "3,234"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s67",
+        "source_scene_id": "s67",
+        "narration": "The cleanup cost about a hundred and sixty billion dollars.",
+        "duration_estimate": 5.4,
+        "visual_objective": "Total cost, then the share of it that came from the public",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "$160B",
+          "$132.1B"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s68",
+        "source_scene_id": "s68",
+        "narration": "A hundred and thirty-two billion of it came from taxpayers.",
+        "duration_estimate": 5.0,
+        "visual_objective": "The taxpayer share separating out and landing on the viewer's side",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "$132,100,000,000  \u00b7  YOU"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s69",
+        "source_scene_id": "s69",
+        "narration": "October nineteenth, nineteen eighty-seven. The Dow Jones fell twenty-two point six percent in a single day.",
+        "duration_estimate": 7.4,
+        "visual_objective": "Black Monday as a single vertical drop",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1987,
+        "financial_numbers": [
+          "-22.6%"
+        ],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s70",
+        "source_scene_id": "s70",
+        "narration": "The worst day in the history of the American stock market.",
+        "duration_estimate": 4.8,
+        "visual_objective": "Trading floor, 19 October 1987 \u2014 traders with their heads in their hands",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1987,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s71",
+        "source_scene_id": "s71",
+        "narration": "No war. No attack. Just the machine.",
+        "duration_estimate": 4.4,
+        "visual_objective": "Recreation: a vast mainframe hall running with no human being in it",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s72",
+        "source_scene_id": "s72",
+        "narration": "Nineteen ninety-seven. Thailand's currency broke.",
+        "duration_estimate": 4.8,
+        "visual_objective": "Globe flight down to Thailand",
+        "primary_entity": "Thai baht",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Thailand",
+        "year": 1997,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "BANGKOK, JULY 1997"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s73",
+        "source_scene_id": "s73",
+        "narration": "The contagion took Indonesia, South Korea and Malaysia with it.",
+        "duration_estimate": 5.4,
+        "visual_objective": "The globe spreading the failure outward from Bangkok across the region",
+        "primary_entity": "Asian financial crisis",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Indonesia",
+        "year": 1997,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "CONTAGION"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s74",
+        "source_scene_id": "s74",
+        "narration": "Nineteen ninety-eight: Russia defaulted on its own debt.",
+        "duration_estimate": 5.2,
+        "visual_objective": "Globe flight from Asia across to Russia",
+        "primary_entity": "Russian default",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Russia",
+        "year": 1998,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "MOSCOW, AUGUST 1998"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s75",
+        "source_scene_id": "s75",
+        "narration": "Weeks later, one hedge fund in Connecticut had grown so large that its failure threatened the entire global system.",
+        "duration_estimate": 7.4,
+        "visual_objective": "Recreation: a quiet suburban office park at night, one lit window, no signage",
+        "primary_entity": "Long-Term Capital Management",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Connecticut",
+        "year": 1998,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "LONG-TERM CAPITAL MANAGEMENT"
+        ],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s76",
+        "source_scene_id": "s76",
+        "narration": "The Federal Reserve gathered its rescuers in a room and organised a bailout.",
+        "duration_estimate": 5.8,
+        "visual_objective": "Globe flight from Connecticut down into New York, landing on Liberty Street",
+        "primary_entity": "Federal Reserve Bank of New York",
+        "secondary_entities": [],
+        "company": "",
+        "location": "New York",
+        "year": 1998,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "LIBERTY STREET, NEW YORK"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s77",
+        "source_scene_id": "s77",
+        "narration": "Notice the pattern.",
+        "duration_estimate": 3.2,
+        "visual_objective": "Back to the chapter's word, now with four failures stacked behind it",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "NOTICE THE PATTERN"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s78",
+        "source_scene_id": "s78",
+        "narration": "The gains were private. The losses became everyone's.",
+        "duration_estimate": 5.2,
+        "visual_objective": "Two columns: profit flowing to a few, loss flowing to the many",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "PRIVATE GAINS.  PUBLIC LOSSES."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s79",
+        "source_scene_id": "s79",
+        "narration": "And by the mid-nineties, a small, strange group of people had started asking a question nobody in finance was asking.",
+        "duration_estimate": 7.2,
+        "visual_objective": "Recreation: a dark bedroom, a CRT terminal, green text, one person's silhouette",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s80",
+        "source_scene_id": "s80",
+        "narration": "Not: how do we fix the banks?",
+        "duration_estimate": 3.8,
+        "visual_objective": "Real footage: the stone facade and revolving door of an ordinary bank branch",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s81",
+        "source_scene_id": "s81",
+        "narration": "But: what if you did not need one?",
+        "duration_estimate": 4.6,
+        "visual_objective": "The real question, alone, held longer than comfortable",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "WHAT IF YOU DIDN'T NEED ONE?"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s82",
+        "source_scene_id": "s82",
+        "narration": "The question started with a cryptographer named David Chaum.",
+        "duration_estimate": 5.0,
+        "visual_objective": "Chaum, early eighties, academic portrait",
+        "primary_entity": "David Chaum",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1982,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s83",
+        "source_scene_id": "s83",
+        "narration": "In nineteen eighty-two, he published a paper called Blind Signatures for Untraceable Payments.",
+        "duration_estimate": 6.6,
+        "visual_objective": "Document highlight: the paper's title page rebuilt in the brand type, the title sweeping into focus",
+        "primary_entity": "David Chaum",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1982,
+        "financial_numbers": [
+          "1982"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "BLIND SIGNATURES FOR UNTRACEABLE PAYMENTS \u00b7 D. CHAUM \u00b7 1982",
+          "BLIND SIGNATURES FOR UNTRACEABLE PAYMENTS"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s84",
+        "source_scene_id": "s84",
+        "narration": "The idea was almost impossible to believe: digital money a bank could validate without ever seeing who was spending it.",
+        "duration_estimate": 8.0,
+        "visual_objective": "A diagram building: payer \u2192 blinded token \u2192 bank signature \u2192 merchant, with the payer never identified",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "SIGN IT WITHOUT SEEING IT"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s85",
+        "source_scene_id": "s85",
+        "narration": "Cash, but for computers. Private by mathematics, not by permission.",
+        "duration_estimate": 5.6,
+        "visual_objective": "The distinction set as two contrasting lines",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "PRIVATE BY MATHEMATICS"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s86",
+        "source_scene_id": "s86",
+        "narration": "In nineteen eighty-nine he founded a company in Amsterdam called DigiCash.",
+        "duration_estimate": 5.8,
+        "visual_objective": "Globe flight from the United States to the Netherlands",
+        "primary_entity": "DigiCash",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Netherlands",
+        "year": 1989,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "DIGICASH"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s87",
+        "source_scene_id": "s87",
+        "narration": "Deutsche Bank signed up. Credit Suisse signed up.",
+        "duration_estimate": 5.0,
+        "visual_objective": "Globe flight from Amsterdam east to Germany, then south to Switzerland, pinning each partner",
+        "primary_entity": "Credit Suisse",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Switzerland",
+        "year": 1994,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "DEUTSCHE BANK \u00b7 CREDIT SUISSE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s88",
+        "source_scene_id": "s88",
+        "narration": "It was, by a full decade, the future.",
+        "duration_estimate": 4.0,
+        "visual_objective": "A decade-long gap drawn as distance on the field",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "TEN YEARS EARLY"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s89",
+        "source_scene_id": "s89",
+        "narration": "In November nineteen ninety-eight, DigiCash filed for bankruptcy.",
+        "duration_estimate": 5.8,
+        "visual_objective": "Nine years, drawn as a lifespan that simply stops",
+        "primary_entity": "DigiCash",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1998,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s90",
+        "source_scene_id": "s90",
+        "narration": "Meanwhile, in nineteen ninety-two, three men in the San Francisco Bay Area started a mailing list.",
+        "duration_estimate": 6.6,
+        "visual_objective": "Globe flight down to California and the Bay",
+        "primary_entity": "Cypherpunks mailing list",
+        "secondary_entities": [],
+        "company": "",
+        "location": "California",
+        "year": 1992,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "SAN FRANCISCO BAY, 1992"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s91",
+        "source_scene_id": "s91",
+        "narration": "Tim May. Eric Hughes. John Gilmore.",
+        "duration_estimate": 4.4,
+        "visual_objective": "Three names typed in, one per beat of the read",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1992,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "MAY  \u00b7  HUGHES  \u00b7  GILMORE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s92",
+        "source_scene_id": "s92",
+        "narration": "They called themselves cypherpunks.",
+        "duration_estimate": 4.4,
+        "visual_objective": "Recreation: a cluttered nineties hacker meetup, printouts, laptops, cigarette smoke",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1992,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s93",
+        "source_scene_id": "s93",
+        "narration": "In March nineteen ninety-three, Hughes published a manifesto with a line that would outlive all of them.",
+        "duration_estimate": 7.0,
+        "visual_objective": "The manifesto text, scrolling in a monospace terminal treatment",
+        "primary_entity": "Eric Hughes",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1993,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s94",
+        "source_scene_id": "s94",
+        "narration": "Cypherpunks write code.",
+        "duration_estimate": 3.6,
+        "visual_objective": "The line alone, monospace, cursor blinking",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "CYPHERPUNKS WRITE CODE.",
+          "\u201cCypherpunks write code.\u201d"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s95",
+        "source_scene_id": "s95",
+        "narration": "And they did.",
+        "duration_estimate": 2.8,
+        "visual_objective": "Real footage: fingers moving fast on a mechanical keyboard, code filling a terminal",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s96",
+        "source_scene_id": "s96",
+        "narration": "Nineteen ninety-seven: Adam Back builds Hashcash \u2014 a way to make sending something cost real computing work.",
+        "duration_estimate": 8.0,
+        "visual_objective": "Proof-of-work shown as a cost meter filling before a message can leave",
+        "primary_entity": "Adam Back",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1997,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "HASHCASH \u00b7 1997 \u00b7 PROOF OF WORK",
+          "HASHCASH"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s97",
+        "source_scene_id": "s97",
+        "narration": "Nineteen ninety-eight: Wei Dai publishes b-money \u2014 money created by solving computational problems, tracked by everyone at once.",
+        "duration_estimate": 8.4,
+        "visual_objective": "A ledger duplicating across many nodes rather than sitting in one place",
+        "primary_entity": "Wei Dai",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1998,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "B-MONEY \u00b7 1998 \u00b7 EVERYONE KEEPS THE LEDGER",
+          "B-MONEY"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s98",
+        "source_scene_id": "s98",
+        "narration": "The same year, Nick Szabo designs bit gold.",
+        "duration_estimate": 4.4,
+        "visual_objective": "The name set beside the previous two, building a lineage",
+        "primary_entity": "Nick Szabo",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1998,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "BIT GOLD \u00b7 1998",
+          "BIT GOLD"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s99",
+        "source_scene_id": "s99",
+        "narration": "Two thousand and four: Hal Finney builds reusable proofs of work.",
+        "duration_estimate": 5.0,
+        "visual_objective": "The fourth name completing the chain of predecessors",
+        "primary_entity": "Hal Finney",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2004,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "RPOW \u00b7 2004",
+          "REUSABLE PROOFS OF WORK"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s100",
+        "source_scene_id": "s100",
+        "narration": "Brilliant. Elegant. Every single one of them, unfinished.",
+        "duration_estimate": 5.4,
+        "visual_objective": "The four names dimming out one by one",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "ALL UNFINISHED"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s101",
+        "source_scene_id": "s101",
+        "narration": "Because they all ran into the same wall.",
+        "duration_estimate": 4.0,
+        "visual_objective": "Recreation: a lone figure at the foot of a blank concrete wall that fills the frame",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s102",
+        "source_scene_id": "s102",
+        "narration": "A digital coin is a file. And a file can be copied.",
+        "duration_estimate": 5.4,
+        "visual_objective": "Real footage: a file being duplicated on screen, again and again, faster than it can be read",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s103",
+        "source_scene_id": "s103",
+        "narration": "To stop someone spending the same coin twice, you need a referee who sees every transaction.",
+        "duration_estimate": 7.0,
+        "visual_objective": "Every arrow in the network routed through one central node",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "EVERYTHING THROUGH ONE POINT"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s104",
+        "source_scene_id": "s104",
+        "narration": "And the moment you have a referee, you have a company. An address. A server. A person.",
+        "duration_estimate": 7.0,
+        "visual_objective": "Globe: the whole distributed network collapsing to one pin \u2014 and the pin lands on Florida, where e-gold's directors actually lived",
+        "primary_entity": "e-gold",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Florida",
+        "year": 2007,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "A COMPANY \u00b7 AN ADDRESS \u00b7 A PERSON"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s105",
+        "source_scene_id": "s105",
+        "narration": "And a person can be arrested.",
+        "duration_estimate": 4.6,
+        "visual_objective": "Recreation: a server-room door being forced, torch beams cutting through racks",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "whip",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s106",
+        "source_scene_id": "s106",
+        "narration": "Ask e-gold.",
+        "duration_estimate": 2.8,
+        "visual_objective": "Two words as a hard chapter turn",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "ASK E-GOLD."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s107",
+        "source_scene_id": "s107",
+        "narration": "Founded in nineteen ninety-six, backed by real bullion, with more than a million accounts.",
+        "duration_estimate": 6.2,
+        "visual_objective": "An e-gold era web page and a bullion bar side by side",
+        "primary_entity": "e-gold",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 1996,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s108",
+        "source_scene_id": "s108",
+        "narration": "In April two thousand and seven, the Justice Department indicted it.",
+        "duration_estimate": 5.6,
+        "visual_objective": "The DOJ press release, the charge lines highlighted",
+        "primary_entity": "e-gold",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2007,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s109",
+        "source_scene_id": "s109",
+        "narration": "In two thousand and eight, it pleaded guilty.",
+        "duration_estimate": 4.4,
+        "visual_objective": "The plea agreement document, signature block in view",
+        "primary_entity": "e-gold",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2008,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s110",
+        "source_scene_id": "s110",
+        "narration": "Ask the Liberty Dollar.",
+        "duration_estimate": 3.0,
+        "visual_objective": "The parallel case introduced the same way",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "ASK THE LIBERTY DOLLAR."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s111",
+        "source_scene_id": "s111",
+        "narration": "On the fourteenth of November, two thousand and seven, federal agents raided its offices and seized the coins.",
+        "duration_estimate": 7.0,
+        "visual_objective": "Liberty Dollar silver rounds, then the seizure record",
+        "primary_entity": "Liberty Dollar",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2007,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s112",
+        "source_scene_id": "s112",
+        "narration": "Private money works right up until the moment it matters. Then somebody knocks on the door.",
+        "duration_estimate": 7.4,
+        "visual_objective": "Real footage: a closed door from the inside, a hand knocking, nobody answering",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s113",
+        "source_scene_id": "s113",
+        "narration": "Unless there is no door. And nobody to arrest.",
+        "duration_estimate": 5.4,
+        "visual_objective": "The door glyph erasing itself out of the frame",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "UNLESS THERE IS NO DOOR."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s114",
+        "source_scene_id": "s114",
+        "narration": "Nobody knew how to build that.",
+        "duration_estimate": 4.0,
+        "visual_objective": "Recreation: a doorway in a bare white room with no door and nothing beyond it",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s115",
+        "source_scene_id": "s115",
+        "narration": "And none of this was theory.",
+        "duration_estimate": 3.6,
+        "visual_objective": "Real footage: an ordinary person at a cash machine at night",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "urgent",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s116",
+        "source_scene_id": "s116",
+        "narration": "December first, two thousand and one. Buenos Aires.",
+        "duration_estimate": 5.2,
+        "visual_objective": "Globe flight from North America down to Argentina",
+        "primary_entity": "Argentina",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Argentina",
+        "year": 2001,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "BUENOS AIRES"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s117",
+        "source_scene_id": "s117",
+        "narration": "Argentines woke up to find their savings frozen.",
+        "duration_estimate": 4.6,
+        "visual_objective": "Locked bank shutters in Buenos Aires, 2001",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Argentina",
+        "year": 2001,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s118",
+        "source_scene_id": "s118",
+        "narration": "The limit was two hundred and fifty pesos a week. Of their own money.",
+        "duration_estimate": 6.4,
+        "visual_objective": "A weekly cap shown as a hard ceiling on an account",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2001,
+        "financial_numbers": [
+          "250 pesos"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s119",
+        "source_scene_id": "s119",
+        "narration": "Dollar accounts were converted into pesos. Then the peso was devalued.",
+        "duration_estimate": 6.2,
+        "visual_objective": "A dollar balance re-labelled as pesos, then shrinking",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2002,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "CONVERTED.  THEN DEVALUED."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s120",
+        "source_scene_id": "s120",
+        "narration": "Argentina defaulted on ninety-five billion dollars.",
+        "duration_estimate": 5.4,
+        "visual_objective": "The default total as a single figure, counting up and stopping dead",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2001,
+        "financial_numbers": [
+          "$95B"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s121",
+        "source_scene_id": "s121",
+        "narration": "People beat on the shutters of closed banks with hammers and cooking pots.",
+        "duration_estimate": 6.2,
+        "visual_objective": "Cacerolazo footage \u2014 pots and pans against bank shutters",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Argentina",
+        "year": 2001,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s122",
+        "source_scene_id": "s122",
+        "narration": "On the twentieth of December, the President fled the roof of his palace by helicopter.",
+        "duration_estimate": 6.4,
+        "visual_objective": "De la R\u00faa's helicopter leaving the Casa Rosada roof",
+        "primary_entity": "Fernando de la R\u00faa",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Argentina",
+        "year": 2001,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s123",
+        "source_scene_id": "s123",
+        "narration": "A middle class had been erased in a fortnight, without a single bullet.",
+        "duration_estimate": 6.6,
+        "visual_objective": "Recreation: a family apartment being emptied, boxes, a bank letter on the table",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s124",
+        "source_scene_id": "s124",
+        "narration": "And in Zimbabwe, money stopped being money at all.",
+        "duration_estimate": 5.0,
+        "visual_objective": "Globe flight from South America across the Atlantic to Zimbabwe",
+        "primary_entity": "Zimbabwe",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Zimbabwe",
+        "year": 2008,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "ZIMBABWE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s125",
+        "source_scene_id": "s125",
+        "narration": "By November two thousand and eight, prices were doubling roughly every day.",
+        "duration_estimate": 6.6,
+        "visual_objective": "The doubling interval, stated as a hero figure nobody can argue with",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Zimbabwe",
+        "year": 2008,
+        "financial_numbers": [
+          "24.7 hours"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s126",
+        "source_scene_id": "s126",
+        "narration": "Within weeks the central bank would print a one hundred trillion dollar note.",
+        "duration_estimate": 6.2,
+        "visual_objective": "The Z$100,000,000,000,000 banknote, held flat, all the zeroes readable",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2009,
+        "financial_numbers": [
+          "100 trillion"
+        ],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "Z$100,000,000,000,000"
+        ],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s127",
+        "source_scene_id": "s127",
+        "narration": "It could not pay a bus fare.",
+        "duration_estimate": 3.6,
+        "visual_objective": "Real footage: a fare being paid to board a bus \u2014 the smallest transaction there is",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s128",
+        "source_scene_id": "s128",
+        "narration": "Somewhere on earth, a currency dies almost every generation.",
+        "duration_estimate": 5.6,
+        "visual_objective": "Globe flight to Hungary \u2014 the 1946 peng\u0151, the worst hyperinflation ever recorded \u2014 as the map lights up with the others",
+        "primary_entity": "Hungarian peng\u0151",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Hungary",
+        "year": 1946,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "IT KEEPS HAPPENING"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s129",
+        "source_scene_id": "s129",
+        "narration": "The comforting thought was always: not here. Not to us.",
+        "duration_estimate": 5.2,
+        "visual_objective": "Real footage: an ordinary quiet Western suburban street in the afternoon, nothing happening",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s130",
+        "source_scene_id": "s130",
+        "narration": "In two thousand and seven, that thought died too.",
+        "duration_estimate": 4.6,
+        "visual_objective": "The reassurance from the previous card dissolving letter by letter off the frame",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2007,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "THEN IT CAME HERE."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s131",
+        "source_scene_id": "s131",
+        "narration": "September fourteenth, two thousand and seven. Newcastle, England.",
+        "duration_estimate": 5.6,
+        "visual_objective": "Globe flight across to the United Kingdom and down to the north-east coast",
+        "primary_entity": "Northern Rock",
+        "secondary_entities": [],
+        "company": "",
+        "location": "United Kingdom",
+        "year": 2007,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [
+          "NEWCASTLE, ENGLAND"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s132",
+        "source_scene_id": "s132",
+        "narration": "A queue formed outside a bank called Northern Rock.",
+        "duration_estimate": 4.8,
+        "visual_objective": "The first press photograph of the queue outside a branch",
+        "primary_entity": "Northern Rock",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2007,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s133",
+        "source_scene_id": "s133",
+        "narration": "It grew down the street. Then around the block.",
+        "duration_estimate": 4.6,
+        "visual_objective": "A wider frame of the same queue, extending out of shot",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2007,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s134",
+        "source_scene_id": "s134",
+        "narration": "It was the first run on a British bank in a hundred and forty-one years.",
+        "duration_estimate": 6.4,
+        "visual_objective": "The gap between the last British bank run and this one",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2007,
+        "financial_numbers": [
+          "141 years"
+        ],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s135",
+        "source_scene_id": "s135",
+        "narration": "Six months later, Bear Stearns \u2014 eighty-five years old \u2014 was sold overnight for two dollars a share.",
+        "duration_estimate": 8.0,
+        "visual_objective": "The share price a year before against the price it was sold at",
+        "primary_entity": "Bear Stearns",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2008,
+        "financial_numbers": [
+          "$2.00",
+          "$171.51"
+        ],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s136",
+        "source_scene_id": "s136",
+        "narration": "The Federal Reserve put thirty billion dollars behind the deal to make it happen.",
+        "duration_estimate": 6.0,
+        "visual_objective": "The Fed's own Bear Stearns / Maiden Lane page, figure highlighted",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2008,
+        "financial_numbers": [
+          "$30B"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s137",
+        "source_scene_id": "s137",
+        "narration": "Then it accelerated.",
+        "duration_estimate": 3.0,
+        "visual_objective": "Real footage: a market ticker board flickering, every line red",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s138",
+        "source_scene_id": "s138",
+        "narration": "September seventh: the United States government seized Fannie Mae and Freddie Mac.",
+        "duration_estimate": 6.4,
+        "visual_objective": "The FHFA conservatorship announcement document",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2008,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s139",
+        "source_scene_id": "s139",
+        "narration": "September fifteenth, one forty-five in the morning: Lehman Brothers filed for bankruptcy.",
+        "duration_estimate": 7.0,
+        "visual_objective": "Staff carrying boxes out of 745 Seventh Avenue in the dark",
+        "primary_entity": "Lehman Brothers",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2008,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s140",
+        "source_scene_id": "s140",
+        "narration": "Six hundred and thirty-nine billion dollars in assets. The largest bankruptcy in American history.",
+        "duration_estimate": 7.4,
+        "visual_objective": "The figure counting up, then the record label landing under it",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2008,
+        "financial_numbers": [
+          "$639B"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s141",
+        "source_scene_id": "s141",
+        "narration": "Twenty-four hours later, the Federal Reserve lent eighty-five billion dollars to a single insurance company.",
+        "duration_estimate": 7.4,
+        "visual_objective": "The AIG facility as one hero figure against the days around it",
+        "primary_entity": "AIG",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2008,
+        "financial_numbers": [
+          "$85B"
+        ],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s142",
+        "source_scene_id": "s142",
+        "narration": "On the third of October, Congress authorised seven hundred billion dollars to buy the bad debt.",
+        "duration_estimate": 7.2,
+        "visual_objective": "The three rescues stacked so the scale reads instantly",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2008,
+        "financial_numbers": [
+          "$700B"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s143",
+        "source_scene_id": "s143",
+        "narration": "And on the streets, the other half of the story.",
+        "duration_estimate": 4.0,
+        "visual_objective": "Real footage: a residential street of ordinary American houses, seen at ground level",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s144",
+        "source_scene_id": "s144",
+        "narration": "In the decade that followed, almost eight million American homes were lost to foreclosure.",
+        "duration_estimate": 7.2,
+        "visual_objective": "Completed foreclosures counting up past eight million and holding",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "7.8 million"
+        ],
+        "emotion": "cautionary",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s145",
+        "source_scene_id": "s145",
+        "narration": "Not bailed out. Not rescued. Foreclosed.",
+        "duration_estimate": 5.4,
+        "visual_objective": "Recreation: a foreclosure notice taped to the inside of a suburban front window",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s146",
+        "source_scene_id": "s146",
+        "narration": "The institutions that built the crisis were handed public money.",
+        "duration_estimate": 5.6,
+        "visual_objective": "Real footage looking up the glass face of a banking tower \u2014 the money went up there",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s147",
+        "source_scene_id": "s147",
+        "narration": "The people who trusted them were handed eviction notices.",
+        "duration_estimate": 5.4,
+        "visual_objective": "Real footage: a foreclosure / repossession sign staked on a front lawn",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s148",
+        "source_scene_id": "s148",
+        "narration": "Something broke that autumn that was bigger than any bank.",
+        "duration_estimate": 6.0,
+        "visual_objective": "Recreation: a wide, emptied trading floor at night, screens dark, chairs pushed back",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s149",
+        "source_scene_id": "s149",
+        "narration": "For thirty-seven years the world had run on a single sentence. Trust us.",
+        "duration_estimate": 7.0,
+        "visual_objective": "The two words that carried the entire system since 1971",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "37 years"
+        ],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "\u201cTRUST US.\u201d"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s150",
+        "source_scene_id": "s150",
+        "narration": "In the autumn of two thousand and eight, hundreds of millions of people stopped.",
+        "duration_estimate": 6.0,
+        "visual_objective": "The two words from the card before breaking apart and falling out of the bottom of frame",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2008,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "THEY STOPPED."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s151",
+        "source_scene_id": "s151",
+        "narration": "And while the world was collapsing \u2014",
+        "duration_estimate": 4.4,
+        "visual_objective": "Recreation: a city at night seen from far above, half the windows dark",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s152",
+        "source_scene_id": "s152",
+        "narration": "while governments printed, and banks failed, and families were carried out of their houses \u2014",
+        "duration_estimate": 7.2,
+        "visual_objective": "Recreation: three fragments in one held frame \u2014 a press, a shuttered branch, a packed car",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s153",
+        "source_scene_id": "s153",
+        "narration": "somewhere, in a room nobody has ever found,",
+        "duration_estimate": 5.4,
+        "visual_objective": "Recreation: an anonymous desk, one monitor's glow, the chair empty",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "ai_image",
+        "recommended_camera_movement": "zoom_in",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": true,
+        "asset_priority": [
+          "ai_recreation",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.7
+      },
+      {
+        "scene_id": "sb_s154",
+        "source_scene_id": "s154",
+        "narration": "someone was quietly writing a nine-page document",
+        "duration_estimate": 5.0,
+        "visual_objective": "Nine blank pages fanning open, none of them legible",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "NINE PAGES"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s155",
+        "source_scene_id": "s155",
+        "narration": "that would change money forever.",
+        "duration_estimate": 4.6,
+        "visual_objective": "The final line landing, then black",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "THAT WOULD CHANGE MONEY FOREVER."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s156",
+        "source_scene_id": "s156",
+        "narration": "Episode two. The nine pages.",
+        "duration_estimate": 5.0,
+        "visual_objective": "Next-episode card in the series brand",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "urgent",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "EPISODE TWO",
+          "THE NINE PAGES"
+        ],
+        "visual_confidence_score": 0.92
+      }
+    ]
+  },
+  "asset_provenance": [],
+  "threejs_provenance": [],
+  "motion_graphics_provenance": [],
+  "ai_broll_provenance": [],
+  "brand_identity_provenance": null,
+  "variety": {},
+  "brand_id": "k70"
+}

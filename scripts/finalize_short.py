@@ -122,7 +122,17 @@ async def run(args) -> int:
     from app.schemas.scene import SceneGraph
 
     job = settings().data_dir / "jobs" / args.job
-    graph = SceneGraph.model_validate_json((job / "scene_graph.json").read_text())
+    graph_raw = json.loads((job / "scene_graph.json").read_text(encoding="utf-8"))
+    # The render pass can trim a beat's duration to its actual synthesized-audio
+    # length, which occasionally lands a hair under the schema's 0.8s floor
+    # (e.g. 0.747s) — the rendered clip already reflects that real duration, so
+    # clamping here only affects this reload's captions/provenance timing by
+    # sub-frame amounts, not anything already burned into final.mp4.
+    for sc in graph_raw.get("scenes", []):
+        d = sc.get("duration_sec")
+        if isinstance(d, (int, float)) and d < 0.8:
+            sc["duration_sec"] = 0.8
+    graph = SceneGraph.model_validate(graph_raw)
     channel = load_channel(graph.meta.channel_id)
 
     # postprocess.finalize writes `final.mp4` beside its input, so the rendered

@@ -1,0 +1,189 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d15_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Four Students Undercut A $140 Billion Eyewear Industry By $400 A Pair",
+    "hook": "Warby Parker attacked eyewear pricing by removing a layer most customers never saw: the traditional middleman.",
+    "description": "In 2010, four Wharton students founded Warby Parker after noticing eyewear giants marked up frames costing around $8 to manufacture into $300 to $500 retail prices. By designing frames in-house and selling direct to consumers online starting at $95, they bypassed the traditional wholesale and licensing chain. Warby Parker now holds roughly 7% of the US eyewear market.",
+    "tags": [
+      "warby parker",
+      "direct to consumer",
+      "business model",
+      "startup story",
+      "retail disruption"
+    ],
+    "hashtags": [
+      "#business",
+      "#startup",
+      "#entrepreneurship",
+      "#retail",
+      "#shorts"
+    ],
+    "thumbnail_text": "$8 TO MAKE, $400 TO SELL"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Warby Parker attacked eyewear pricing by removing a layer most customers never saw: the traditional middleman.",
+      "duration_sec": 7.16,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "eyewear markup"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "eyeglasses frames close up display",
+        "visual_intent": "A single pair of glasses frames lit dramatically on a dark surface, macro detail, cinematic",
+        "broll_keywords": [
+          "eyeglasses frames macro close up",
+          "glasses display case store",
+          "eyewear product shot dark"
+        ],
+        "decision_reason": "hook: the markup gap, widely reported industry figure"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Founded in twenty ten, the company began as an online brand selling prescription glasses directly to consumers.",
+      "duration_sec": 7.16,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "warby parker founding"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "students working laptop startup desk",
+        "visual_intent": "Young founders working around a laptop and sketches, natural window light, documentary style",
+        "broll_keywords": [
+          "students working laptop desk",
+          "startup founders working table",
+          "young entrepreneurs planning"
+        ],
+        "decision_reason": "the founding origin, corroborated across multiple business press retrospectives"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "It designed its own frames, controlled its brand, and avoided relying entirely on traditional wholesale distribution.",
+      "duration_sec": 7.16,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "licensing wholesale chain"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "supply chain diagram multiple steps screen",
+        "visual_intent": "A multi-step supply chain diagram on a dark screen, several stages lighting up in sequence",
+        "broll_keywords": [
+          "supply chain diagram screen",
+          "distribution chain graphic",
+          "retail chain steps display"
+        ],
+        "decision_reason": "explains the old cost structure being bypassed"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Its Home Try-On program mailed five frames to customers, solving a basic problem with buying glasses online.",
+      "duration_sec": 7.16,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "direct to consumer model"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "online checkout glasses website screen",
+        "visual_intent": "A laptop screen showing an online eyewear checkout, warm home setting, natural light, cinematic",
+        "broll_keywords": [
+          "online shopping laptop screen",
+          "ecommerce checkout website",
+          "home laptop shopping evening"
+        ],
+        "decision_reason": "the DTC mechanism"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Warby Parker's filing says glasses started at ninety-five dollars, including prescription lenses, using simple unified pricing.",
+      "duration_sec": 7.16,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "price point"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "none",
+        "query": "price tag ninety five dollars glasses",
+        "visual_intent": "A simple price tag on a pair of glasses, clean product lighting, minimal composition",
+        "broll_keywords": [
+          "price tag product shot",
+          "glasses price display clean",
+          "product pricing close up"
+        ],
+        "decision_reason": "the concrete price point widely reported at launch"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "$95, LENSES INCLUDED",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "narration": "The idea was not merely cheaper frames. It was rebuilding the path from design to customer and keeping control of that relationship.",
+      "duration_sec": 7.16,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "market share"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "retail store front modern glasses shop",
+        "visual_intent": "A modern eyewear storefront with clean branding, daylight, wide establishing shot",
+        "broll_keywords": [
+          "modern retail storefront daylight",
+          "eyewear store front modern",
+          "clean retail shop exterior"
+        ],
+        "decision_reason": "the payoff figure, from recent business press reporting on Warby Parker's market position"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "~7% US MARKET",
+          "y": 0.18
+        }
+      ]
+    }
+  ]
+}

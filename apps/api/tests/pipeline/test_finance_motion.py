@@ -133,7 +133,7 @@ async def test_2d_is_preferred_to_threejs_when_equally_clear(graph, monkeypatch,
 
 
 @pytest.mark.asyncio
-async def test_disabled_gate_preserves_phase4_path(graph, monkeypatch):
+async def test_disabled_gate_preserves_phase4_path(graph, monkeypatch, isolated_state):
     monkeypatch.setattr(settings(), "motion_graphics_engine_enabled", False)
     monkeypatch.setattr(settings(), "threejs_visual_engine_enabled", False)
     monkeypatch.setattr(settings(), "multi_source_asset_engine_enabled", False)

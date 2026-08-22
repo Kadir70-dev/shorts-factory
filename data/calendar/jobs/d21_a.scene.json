@@ -1,0 +1,191 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d21_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Costco's Best-Selling Brand Is Costco. Kirkland Does $90 Billion A Year.",
+    "hook": "Kirkland Signature gives Costco something national brands cannot: a product it controls from shelf price to customer promise.",
+    "description": "Kirkland Signature, Costco's house brand, generates an estimated $90 billion a year and accounts for roughly a quarter to a third of Costco's total merchandise sales as of fiscal 2025. Many Kirkland products are made by the same manufacturers as the name-brand version sitting next to them on the shelf, priced lower because there's no separate marketing budget to fund. Educational content only, not financial advice.",
+    "tags": [
+      "costco",
+      "kirkland signature",
+      "private label brands",
+      "retail strategy",
+      "business model",
+      "costco business",
+      "consumer brands"
+    ],
+    "hashtags": [
+      "#costco",
+      "#kirkland",
+      "#business",
+      "#retail",
+      "#shorts"
+    ],
+    "thumbnail_text": "$90B / YEAR"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Kirkland Signature gives Costco something national brands cannot: a product it controls from shelf price to customer promise.",
+      "duration_sec": 7.71,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "kirkland signature sales share"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "warehouse store shelf packaged goods close up",
+        "visual_intent": "A close-up shelf sweep across packaged warehouse-store goods, dense and abundant",
+        "broll_keywords": [
+          "warehouse store shelf goods",
+          "retail shelf products close up",
+          "grocery aisle packaged items"
+        ],
+        "decision_reason": "hook beat: Kirkland's ~28-33% share of Costco sales, hard cut"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "~1/3 OF ALL SALES",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "Costco identifies Kirkland as its private-label brand and says it invests heavily in developing and protecting it.",
+      "duration_sec": 7.71,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "kirkland signature brand"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "generic store brand product packaging shelf",
+        "visual_intent": "A clean, simple store-brand product package on a shelf, understated but premium-feeling",
+        "broll_keywords": [
+          "store brand packaging shelf",
+          "private label product package",
+          "generic brand product close up"
+        ],
+        "decision_reason": "sets up the curiosity turn"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "A private label lets the retailer define specifications, choose suppliers, and sell under a name competitors cannot carry.",
+      "duration_sec": 7.71,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "same manufacturer private label"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "pan_lr",
+        "query": "factory production line packaging goods",
+        "visual_intent": "A production line packaging identical-looking goods in bulk, industrial and precise",
+        "broll_keywords": [
+          "factory production line packaging",
+          "manufacturing line goods",
+          "industrial packaging line"
+        ],
+        "decision_reason": "widely reported practice in retail/private-label industry coverage (Motley Fool, PLMA)"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "That creates a direct comparison on the same shelf: a familiar national brand beside Costco's own alternative.",
+      "duration_sec": 7.71,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "private label cost savings"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "none",
+        "query": "price tag comparison shelf close up",
+        "visual_intent": "Two price tags side by side on a shelf, one visibly lower, simple direct comparison",
+        "broll_keywords": [
+          "price tag comparison shelf",
+          "price label close up store",
+          "shelf price tags retail"
+        ],
+        "decision_reason": "explains the structural cost advantage of house brands"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "If members trust Kirkland, Costco can use one brand across groceries, clothing, household goods, and many other categories.",
+      "duration_sec": 7.71,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "kirkland 90 billion revenue"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "financial chart bars rising screen dark",
+        "visual_intent": "A single glowing bar rising dramatically taller than the rest on a dark financial display",
+        "broll_keywords": [
+          "financial chart bars screen",
+          "business data rising bar",
+          "revenue chart glowing"
+        ],
+        "decision_reason": "estimated ~$90B FY2025 figure reported across multiple retail-industry sources (Motley Fool, readtrung)"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "~$90 BILLION / YEAR",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "narration": "The strategy turns shelf space into an owned asset. Costco is not only choosing products; it is building a brand available only to members.",
+      "duration_sec": 7.71,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "kirkland as core business"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "ken_burns",
+        "query": "warehouse store aisle wide shot shoppers",
+        "visual_intent": "A wide shot of a busy warehouse-store aisle, scale and volume, closing image",
+        "broll_keywords": [
+          "warehouse store aisle wide",
+          "wholesale store interior shoppers",
+          "retail store aisle busy"
+        ],
+        "decision_reason": "closing beat, the reframe payoff"
+      }
+    }
+  ]
+}

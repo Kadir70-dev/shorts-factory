@@ -33,6 +33,7 @@ so footage never repeats, while staying deterministic.
 from __future__ import annotations
 
 import asyncio
+import json
 
 from pathlib import Path
 
@@ -42,11 +43,14 @@ from ..config import settings
 from ..schemas.scene import Layer, Scene, SceneGraph
 from ..schemas.video_spec import VideoSpec
 from . import character as char
+from . import clip_rank
 from . import dataviz
 from . import motiongfx
+from . import paperima_engine
 from . import ram
 from . import scene_director as sd
 from . import asset_engine
+from . import fashion_viz_bridge
 from . import ai_broll
 from . import finance_motion
 from . import threejs_engine
@@ -55,6 +59,9 @@ from .providers import (
     clamp_i2v_seconds, clamp_insert_seconds, manim_render, pexels_image,
     pexels_video, picsart_image_to_video, pixabay_image, pixabay_video,
     multi_source_candidates, download_asset_candidate,
+    pexels_video_candidates, pixabay_video_candidates,
+    pexels_image_candidates, pixabay_image_candidates,
+    download_rank_candidate,
 )
 
 # Extra search cues appended to the Director's keywords, by editorial role.
@@ -97,6 +104,35 @@ _NICHE_TERMS: dict[str, list[str]] = {
                       "cybersecurity analyst working", "code on computer screen dark",
                       "server racks blinking lights", "person typing on laptop office",
                       "network operations center team", "email inbox on screen"],
+    # FASHION vertical — real garments, real hands, real factories and shop
+    # floors. Never fashion-influencer haul stock, never AI-runway pastiche.
+    "fashion_luxury": ["atelier seamstress hands sewing", "leather craftsman workshop",
+                       "fabric texture macro close up", "haute couture dress detail",
+                       "luxury boutique interior", "runway fashion show model walking"],
+    "fashion_business": ["clothing store rails shopping", "retail shop floor customers",
+                         "garment factory production line", "warehouse boxes conveyor",
+                         "fashion designer sketching studio", "clothes hanging on rail store"],
+    "fashion_supply_chain": ["container ship port cranes", "textile warehouse rolls of fabric",
+                             "cargo containers stacked terminal", "logistics truck loading dock",
+                             "garment factory workers sewing", "freight airplane cargo loading"],
+    "fashion_manufacturing": ["industrial sewing machine operator", "garment cutting table fabric",
+                              "textile factory machinery running", "clothing quality inspection",
+                              "pattern cutting workshop", "steam press garment finishing"],
+    "textile_industry": ["cotton field harvest", "spinning mill yarn machinery",
+                         "fabric dyeing vats textile", "loom weaving cloth close up",
+                         "rolls of fabric warehouse", "wool fibre processing"],
+    "streetwear": ["city street style pedestrians", "sneaker store queue line",
+                   "skate park youth culture", "graffiti urban wall street",
+                   "clothing screen printing workshop", "streetwear shop interior"],
+    "sneaker_culture": ["sneakers close up detail", "shoe factory sole assembly",
+                        "sneaker store shelves display", "person lacing shoes close up",
+                        "basketball court shoes playing", "shoe box unboxing hands"],
+    "fashion_trends": ["fashion week street style", "runway show audience front row",
+                       "clothing rail boutique browsing", "fashion editorial photoshoot studio",
+                       "young people city street fashion", "shop window mannequin display"],
+    "fashion_history": ["vintage fashion archival footage", "old black and white fashion photographs",
+                        "antique sewing machine", "historic department store archive",
+                        "vintage clothing museum garments", "old newspaper fashion advertisement"],
 }
 
 # Image motion per role — keeps a still alive and matches the beat's energy.
@@ -151,17 +187,66 @@ def _display_headline(scene: Scene) -> str:
                 "") or scene.narration
 
 
+# camera_movement values whose EXISTING ffmpeg treatment is a documented,
+# self-acknowledged approximation of PHYSICAL paper motion —
+# papercraft/animate.py's own docstring: "true 3D page-curl isn't
+# expressible in a plain ffmpeg filter graph..." (page_turn) and "a single
+# flat page has no depth layers to separate..." (parallax). These two are
+# the only beats this integration spends a Paperima render on; every other
+# camera_movement is an honest camera pan/zoom over a static page, already
+# well served by the existing zoompan path, and is left on it untouched.
+# This is the "only when the document needs physical motion" boundary the
+# Paperima integration is scoped to.
+_PAPERIMA_WORTHY: dict[str, "paperima_engine.AnimationType"] = {
+    "page_turn": "dynamic", "parallax": "wobble",
+}
+
+
+async def _try_paperima(scene: Scene, graph: SceneGraph, camera_movement: str) -> None:
+    """Optional finishing pass over the Scribus page `_render_papercraft`
+    just produced (see module docstring + pipeline/paperima_engine.py).
+    Never required: on any failure, or when Paperima isn't installed, the
+    scene is left exactly as `_render_papercraft` set it — the pre-existing
+    camera_vf zoompan path (render_ffmpeg.py) animates that unchanged, so
+    this function has nothing to clean up on the failure path."""
+    animation_type = _PAPERIMA_WORTHY.get(camera_movement)
+    if animation_type is None or not paperima_engine.available():
+        return
+    try:
+        prov = await paperima_engine.render(
+            scene.id, scene.visual.asset_path, animation_type,
+            duration_sec=max(2.0, scene.duration_sec), fps=graph.fps,
+            width=graph.width, height=graph.height)
+    except Exception as e:                        # noqa: BLE001 — degrade, never break
+        print(f"[dispatch] {scene.id}: paperima failed ({type(e).__name__}) "
+              "→ papercraft camera move stays", flush=True)
+        return
+    graph.paperima_provenance.append(prov)
+    if prov.status in ("rendered", "cache_hit") and prov.render_path:
+        scene.visual.asset_path = prov.render_path
+        scene.visual.type = "paperima"
+        scene.visual.motion = "none"
+        scene.visual.decision_reason += f" → paperima:{animation_type} ({prov.status})"
+    else:
+        print(f"[dispatch] {scene.id}: paperima {prov.status} "
+              f"({prov.error[:80]}) → papercraft camera move stays", flush=True)
+
+
 async def _render_papercraft(scene: Scene, graph: SceneGraph) -> bool:
-    """Fact-heavy beats already allocated to 'official' or 'charts' get a real
-    laid-out document instead of a chart/archival-photo search, when the
-    beat's own content says a document is the better fit (see
-    papercraft/beat_detect.py). Opt-in and additive: OFF preserves every
-    existing chart/official selection byte-for-byte; ON only ever substitutes
+    """Fact-heavy beats already allocated to 'official', 'charts', or
+    'motion_gfx' get a real laid-out document instead of a chart/archival-photo
+    search or plain kinetic type, when the beat's own content says a document
+    is the better fit (see papercraft/beat_detect.py). 'motion_gfx' is the
+    "plain text on a background" tier — the paper-card treatment is its
+    premium replacement for dates, quotes, figures, and other document-shaped
+    beats, while beats with no such shape stay kinetic type (`is_eligible`
+    gates that). Opt-in and additive: OFF preserves every existing
+    chart/official/kinetic selection byte-for-byte; ON only ever substitutes
     WITHIN a channel that was already allocated, so the budget report's
     percentages never move."""
     if not settings().papercraft_engine_enabled:
         return False
-    if scene.visual.budget_channel not in ("official", "charts"):
+    if scene.visual.budget_channel not in ("official", "charts", "motion_gfx"):
         return False
     from . import papercraft
     from .papercraft import beat_detect
@@ -178,6 +263,7 @@ async def _render_papercraft(scene: Scene, graph: SceneGraph) -> bool:
         scene.visual.camera_movement = spec.camera_movement
         scene.visual.decision_reason = (
             f"papercraft:{doc_type} ({'cache hit' if result.cache_hit else 'rendered'})")
+        await _try_paperima(scene, graph, spec.camera_movement)
         return True
     except papercraft.ScribusUnavailable as e:
         print(f"[dispatch] {scene.id}: papercraft unavailable ({e}) → chart/kinetic",
@@ -226,6 +312,92 @@ async def _render_self(scene: Scene, graph: SceneGraph) -> bool:
         return False
 
 
+# --------------------------------------------------------------------------- #
+# Beat-level resume (OpenMontage-audit gap #2). `resolve_assets` dispatches
+# every scene concurrently via `asyncio.gather` — if the process dies partway
+# (crash, OOM kill, timeout), scenes that had already finished (an asset was
+# already downloaded/rendered and assigned) still need to be redone on the
+# next run, because nothing recorded WHICH scenes were already done. This is
+# a THIN layer under `_dispatch_scene`/`_resolve`: after a scene resolves, its
+# resulting `visual.{asset_path,type,motion}` is snapshotted to a per-job JSON
+# file; before a scene is dispatched, that snapshot is checked first — a hit
+# whose asset file still exists on disk is applied directly and the (possibly
+# expensive: Pexels/Pixabay search, an AI still, a Paper Craft/Three.js
+# render) dispatch call is skipped entirely.
+#
+# This sits ALONGSIDE the existing content-addressed caches (provider search
+# cache, `_download`'s sha1-named files, each engine's own render cache) —
+# it does not replace them. Those caches make a REDONE call cheap; this layer
+# avoids making the call at all.
+_VISUAL_SNAPSHOT_FIELDS = ("asset_path", "type", "motion")
+
+
+def _progress_path(video_id: str) -> Path:
+    return settings().data_dir / "jobs" / video_id / "asset_progress.json"
+
+
+def _load_progress(video_id: str) -> dict[str, dict]:
+    try:
+        data = json.loads(_progress_path(video_id).read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {}
+    except (OSError, ValueError):
+        return {}
+
+
+def _save_progress_entry(video_id: str, scene_id: str, snapshot: dict) -> None:
+    """Read-modify-write, no `await` between read and write — safe under the
+    single-threaded asyncio event loop even with many scenes finishing
+    concurrently, because nothing yields control mid-update."""
+    path = _progress_path(video_id)
+    data = _load_progress(video_id)
+    data[scene_id] = snapshot
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".json.tmp")
+    try:
+        tmp.write_text(json.dumps(data), encoding="utf-8")
+        tmp.replace(path)
+    except OSError:
+        tmp.unlink(missing_ok=True)
+
+
+def _snapshot_visual(scene: Scene) -> dict:
+    return {f: getattr(scene.visual, f) for f in _VISUAL_SNAPSHOT_FIELDS}
+
+
+def _apply_visual_snapshot(scene: Scene, snapshot: dict) -> None:
+    for f in _VISUAL_SNAPSHOT_FIELDS:
+        if f in snapshot:
+            setattr(scene.visual, f, snapshot[f])
+
+
+def _snapshot_is_reusable(snapshot: dict) -> bool:
+    """A snapshot with no asset_path (a `solid`/no-op outcome) is always
+    reusable; one WITH a path is only reusable while that file still exists —
+    a cleared cache directory must not resurrect a dangling reference."""
+    path = snapshot.get("asset_path")
+    return not path or Path(path).is_file()
+
+
+async def _dispatch_scene_resumable(scene: Scene, idx: int, graph: SceneGraph,
+                                    decision: "sd.Decision", progress: dict) -> None:
+    snap = progress.get(scene.id)
+    if snap and _snapshot_is_reusable(snap):
+        _apply_visual_snapshot(scene, snap)
+        return
+    await _dispatch_scene(scene, idx, graph, decision)
+    _save_progress_entry(graph.meta.video_id, scene.id, _snapshot_visual(scene))
+
+
+async def _resolve_resumable(scene: Scene, idx: int, graph: SceneGraph, spec: VideoSpec,
+                             decision: "sd.Decision", progress: dict) -> None:
+    snap = progress.get(scene.id)
+    if snap and _snapshot_is_reusable(snap):
+        _apply_visual_snapshot(scene, snap)
+        return
+    await _resolve(scene, idx, graph, spec, decision)
+    _save_progress_entry(graph.meta.video_id, scene.id, _snapshot_visual(scene))
+
+
 async def _dispatch_scene(scene: Scene, idx: int, graph: SceneGraph,
                           decision: "sd.Decision") -> None:
     """Resolve ONE unclaimed scene down its own ladder.
@@ -236,14 +408,22 @@ async def _dispatch_scene(scene: Scene, idx: int, graph: SceneGraph,
 
       * STOCK IS ONLY REACHABLE WHEN ALLOCATED. Previously any beat that failed
         its engine could be swept into stock footage, so a chart beat shipped as
-        an unrelated clip. A beat allocated charts/threejs/official/ai_broll now
-        falls to a self-rendered visual instead — it explains the same point.
+        an unrelated clip. A beat allocated charts/threejs/official now falls to
+        a self-rendered visual instead — it explains the same point.
       * THERE IS NO BLANK OUTCOME. `solid` produced an empty frame; the branded
         placeholder is the floor, and it is still on-brand.
+
+    ONE deliberate exception to the first rule: a beat allocated `ai_broll`
+    reaching this function means the AI engine already ran (in `resolve_assets`)
+    and failed — a single provider outage should not fall straight to plain
+    kinetic type when a bounded, one-shot stock search (the same call `stock`
+    beats use, not a retry loop) might have real, on-topic footage available.
+    Still falls to `_render_self`'s own ladder (papercraft/chart/kinetic) if
+    that one search comes up empty, exactly as before this exception existed.
     """
     channel = scene.visual.budget_channel or ""
 
-    if channel == "stock":
+    if channel in ("stock", "ai_broll"):
         await _resolve_support_stock(scene, idx, graph)
         if scene.visual.asset_path:
             return
@@ -265,6 +445,7 @@ async def _dispatch_scene(scene: Scene, idx: int, graph: SceneGraph,
 
 
 async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
+    _reset_rank_pool(graph.meta.video_id)
     # 1) decide the per-scene strategy + enforce the visual-mix budget.
     report = sd.decide(graph, spec)
     by_id = {d.scene_id: d for d in report.decisions}
@@ -276,15 +457,28 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
         from . import storyboard
         graph.storyboard = storyboard.generate_semantic(graph, report)
 
+    # FASHION VISUALIZATION ENGINE — runs FIRST. These beats are explicitly
+    # authored (`visual.query = "fashionviz:<module>"`), so no lookup engine may
+    # satisfy one with a stock clip. A no-op for every non-fashion channel.
+    fashionviz_handled: dict[str, dict] = await fashion_viz_bridge.resolve(
+        graph, quality=settings().threejs_quality.strip().lower())
+
     enhanced: dict[str, str] = {}
     if settings().multi_source_asset_engine_enabled:
-        discovery = None
-        if settings().ai_broll_engine_enabled:
-            discovery = ("government_public_domain", "sec_regulatory",
-                         "company_ir", "wikimedia_commons")
+        # OFFICIAL has to mean official. Querying pexels/pixabay here let a stock
+        # clip satisfy an `official` allocation, and — because a claimed scene is
+        # skipped by every later engine — let stock take beats the budget had
+        # allocated to Three.js before that engine ever ran.
+        discovery = ("government_public_domain", "sec_regulatory",
+                     "company_ir", "wikimedia_commons")
         enhanced = await asset_engine.resolve(
             graph, multi_source_candidates, download_asset_candidate,
             providers=discovery)
+        # This engine may only keep what it was allocated. Anything else it
+        # happened to resolve is released so the allocated engine still runs.
+        channels = {s.id: s.visual.budget_channel for s in graph.scenes}
+        enhanced = {sid: path for sid, path in enhanced.items()
+                    if channels.get(sid, "") in ("", "official")}
         for record in graph.asset_provenance:
             source_id = next((b.source_scene_id for b in graph.storyboard.scenes
                               if b.scene_id == record.scene_id), "")
@@ -311,7 +505,7 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
             by_source.setdefault(beat.source_scene_id, []).append(beat)
         motion_jobs = []
         for index, scene in enumerate(graph.scenes):
-            if scene.id in enhanced:
+            if scene.id in enhanced or scene.id in fashionviz_handled:
                 continue
             # Engine blocks run in a fixed order and each claims what it can, so
             # whichever runs first wins. That order predates the Visual Budget
@@ -358,7 +552,8 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
         for scene in graph.scenes:
             # Official/licensed Phase 3 assets keep priority; Three.js should
             # explain numbers, not replace strong archival evidence.
-            if scene.id in enhanced or scene.id in motion_handled:
+            if (scene.id in enhanced or scene.id in motion_handled
+                    or scene.id in fashionviz_handled):
                 continue
             if scene.visual.budget_channel not in ("", "threejs"):
                 continue
@@ -385,13 +580,16 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
             # A failed clarity-specific visual is never permission to substitute
             # unrelated stock — the dispatcher falls it to a SELF-RENDERED chart
             # or kinetic card, which explains the same beat without a lookup.
+        # Chromium is done here, and ffmpeg needs the RAM. Holding the worker
+        # open through composition left 47MB free on a 4GB box and failed QA.
+        await threejs_engine.close_worker()
 
     ai_handled: set[str] = set()
     if settings().ai_broll_engine_enabled and graph.storyboard is not None:
         by_source: dict[str, list] = {}
         for beat in graph.storyboard.scenes:
             by_source.setdefault(beat.source_scene_id, []).append(beat)
-        local_success = motion_handled | threejs_handled
+        local_success = motion_handled | threejs_handled | set(fashionviz_handled)
         ai_jobs = []
         for scene in graph.scenes:
             if scene.id in enhanced or scene.id in local_success:
@@ -434,24 +632,31 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
                   or settings().threejs_visual_engine_enabled
                   or settings().ai_broll_engine_enabled)
     if engines_on:
-        handled = set(enhanced) | motion_handled | threejs_handled | ai_handled
+        handled = (set(enhanced) | motion_handled | threejs_handled | ai_handled
+                   | set(fashionviz_handled))
+        progress = _load_progress(graph.meta.video_id)
         await asyncio.gather(
-            *[_dispatch_scene(s, i, graph, by_id[s.id])
+            *[_dispatch_scene_resumable(s, i, graph, by_id[s.id], progress)
               for i, s in enumerate(graph.scenes) if s.id not in handled]
         )
         if settings().strict_visuals:
             await _dedupe_real_assets(graph)
+        await _diversify_semantic_assets(graph)
         return graph
 
-    # 2) no engines enabled → the original single-pass resolver, untouched.
+    # 2) no engines enabled → the original single-pass resolver, untouched
+    #    except that a fashion-viz beat is already resolved and must not be
+    #    re-dispatched: _resolve would overwrite its clip with a generic card.
+    progress = _load_progress(graph.meta.video_id)
     await asyncio.gather(
-        *[_resolve(s, i, graph, spec, by_id[s.id])
-          for i, s in enumerate(graph.scenes)]
+        *[_resolve_resumable(s, i, graph, spec, by_id[s.id], progress)
+          for i, s in enumerate(graph.scenes) if s.id not in fashionviz_handled]
     )
     # 3) STRICT: never the SAME real clip twice — re-pick duplicates to a different,
     #    still-on-topic shot. AI images are already unique per prompt+seed.
     if settings().strict_visuals:
         await _dedupe_real_assets(graph)
+    await _diversify_semantic_assets(graph)
     return graph
 
 
@@ -466,11 +671,14 @@ async def _resolve_support_stock(scene: Scene, index: int,
     """Phase 6 floor: stock is permitted only as an honest support transition."""
     terms = _strip_cliches(_exact_terms(scene) or _search_terms(scene, graph),
                            scene.narration)
-    hit = await _video(terms, max(2.0, scene.duration_sec), index)
+    query_text = " ".join(filter(None, [scene.narration, scene.visual.visual_intent])).strip()
+    rank_key = f"{graph.meta.video_id}:{scene.id}"
+    hit = await _video(terms, max(2.0, scene.duration_sec), index,
+                       query_text=query_text, rank_key=rank_key)
     if hit:
         scene.visual.asset_path, scene.visual.type = hit, "broll"
         return
-    hit = await _image(terms, index)
+    hit = await _image(terms, index, query_text=query_text, rank_key=rank_key)
     if hit:
         scene.visual.asset_path, scene.visual.type = hit, "image"
         scene.visual.motion = "ken_burns"
@@ -628,6 +836,9 @@ async def _resolve(scene: Scene, idx: int, graph: SceneGraph, spec: VideoSpec,
     #            skipped for everyday-realism beats) → generic stock (Tier 4, the
     #            non-black safety net only).
     #    normal: the original combined exact+generic search.
+    query_text = " ".join(filter(None, [scene.narration, v.visual_intent])).strip()
+    rank_key = f"{graph.meta.video_id}:{scene.id}"
+
     if settings().strict_visuals:
         narr = scene.narration
         km = _INTENT_MOTION.get(v.scene_visual_type, "ken_burns")
@@ -635,11 +846,11 @@ async def _resolve(scene: Scene, idx: int, graph: SceneGraph, spec: VideoSpec,
         async def _try(terms: list[str]) -> bool:
             """Try real footage then photo for one tier; set asset on a hit."""
             terms = _strip_cliches(terms, narr)        # anti-cliché guard
-            hit = await _video(terms, min_dur, pick)
+            hit = await _video(terms, min_dur, pick, query_text=query_text, rank_key=rank_key)
             if hit:
                 v.asset_path, v.type = hit, "broll"
                 return True
-            hit = await _image(terms, pick)
+            hit = await _image(terms, pick, query_text=query_text, rank_key=rank_key)
             if hit:
                 v.asset_path, v.type = hit, "image"
                 v.motion = km
@@ -674,13 +885,13 @@ async def _resolve(scene: Scene, idx: int, graph: SceneGraph, spec: VideoSpec,
         return
 
     # normal mode — video first (Pexels → Pixabay). Realism, always preferred.
-    vid = await _video(terms, min_dur, pick)
+    vid = await _video(terms, min_dur, pick, query_text=query_text, rank_key=rank_key)
     if vid:
         v.asset_path, v.type = vid, "broll"
         return
 
     # real PHOTO — Pexels then Pixabay, with Ken Burns motion (realism tier).
-    photo = await _image(terms, pick)
+    photo = await _image(terms, pick, query_text=query_text, rank_key=rank_key)
     if photo:
         v.asset_path, v.type = photo, "image"
         v.motion = _INTENT_MOTION.get(v.scene_visual_type, "ken_burns")
@@ -821,16 +1032,35 @@ def _search_terms(scene: Scene, graph: SceneGraph) -> list[str]:
                     _supporting_terms(scene, graph))
 
 
-async def _video(terms: list[str], min_dur: float, pick: int) -> str | None:
-    """Real-footage VIDEO: Pexels then Pixabay (priority tiers 1+2)."""
+async def _video(terms: list[str], min_dur: float, pick: int, *,
+                 query_text: str = "", rank_key: str = "") -> str | None:
+    """Real-footage VIDEO: Pexels then Pixabay (priority tiers 1+2).
+
+    When `query_text` is given (narration + visual intent for this beat),
+    tries semantic ranking first — see `_semantic_pick`. That path returns
+    None the moment CLIP is unavailable, the candidate pool is too small to
+    rank, or nothing clears the relevance floor, in which case this falls
+    through to the exact keyword-first-hit behavior below, unchanged from
+    before semantic ranking existed.
+    """
+    if query_text:
+        picked = await _semantic_pick(terms, min_dur, query_text, "video", rank_key)
+        if picked:
+            return picked
     return (
         await _first_hit(lambda t, p: pexels_video(t, min_dur, p), terms, pick)
         or await _first_hit(lambda t, p: pixabay_video(t, min_dur, p), terms, pick)
     )
 
 
-async def _image(terms: list[str], pick: int) -> str | None:
-    """Real-footage PHOTO: Pexels then Pixabay (realism tier, gets Ken Burns)."""
+async def _image(terms: list[str], pick: int, *,
+                 query_text: str = "", rank_key: str = "") -> str | None:
+    """Real-footage PHOTO: Pexels then Pixabay (realism tier, gets Ken Burns).
+    See `_video` for the semantic-ranking-first / keyword-fallback contract."""
+    if query_text:
+        picked = await _semantic_pick(terms, 0.0, query_text, "image", rank_key)
+        if picked:
+            return picked
     return (
         await _first_hit(pexels_image, terms, pick)
         or await _first_hit(pixabay_image, terms, pick)
@@ -848,6 +1078,114 @@ async def _first_hit(search, terms: list[str], pick: int) -> str | None:
         if hit:
             return hit
     return None
+
+
+# --------------------------------------------------------------------------- #
+# Semantic ranking — clean-room CLIP-style retrieval (see pipeline/clip_rank.py)
+# --------------------------------------------------------------------------- #
+# `_RANK_POOL` remembers, per scene, the full ranked candidate list a
+# successful semantic pick produced — including the embeddings, which is
+# expensive to recompute. `_diversify_semantic_assets` reads it after every
+# scene has resolved to catch the case keyword-dedupe cannot: two DIFFERENT
+# stock files that just happen to show the same generic shot (two different
+# "server room with blinking lights" clips, say). Cleared per job so a
+# long-lived worker process never leaks memory across renders.
+_RANK_POOL: dict[str, tuple["clip_rank.RankedCandidate", list["clip_rank.RankedCandidate"]]] = {}
+
+
+def _reset_rank_pool(video_id: str) -> None:
+    prefix = f"{video_id}:"
+    for key in [k for k in _RANK_POOL if k.startswith(prefix)]:
+        del _RANK_POOL[key]
+
+
+async def _semantic_pick(terms: list[str], min_dur: float, query_text: str,
+                         kind: str, rank_key: str) -> str | None:
+    """Try each term in order (mirrors `_first_hit`'s tier fallthrough): fetch
+    a candidate pool from Pexels+Pixabay, rank it against `query_text`, and
+    return the top pick if — and only if — it clears the relevance floor.
+    Remembers the ranked pool under `rank_key` for the diversify post-pass.
+    """
+    if not clip_rank.available():
+        return None
+    for term in terms:
+        if not term:
+            continue
+        try:
+            if kind == "video":
+                cands = (await pexels_video_candidates(term, min_dur)
+                         + await pixabay_video_candidates(term, min_dur))
+            else:
+                cands = (await pexels_image_candidates(term)
+                         + await pixabay_image_candidates(term))
+        except Exception:
+            continue
+        if len(cands) < 2:
+            continue                    # not enough to meaningfully rank
+        try:
+            ranked = await clip_rank.rank_async(cands, query_text)
+        except Exception:
+            ranked = []
+        if not ranked or ranked[0].relevance < clip_rank.DEFAULT_MIN_RELEVANCE:
+            continue
+        best = ranked[0]
+        try:
+            local = await download_rank_candidate(best.candidate)
+        except Exception:
+            continue
+        if not local:
+            continue
+        if rank_key:
+            _RANK_POOL[rank_key] = (best, ranked)
+        return local
+    return None
+
+
+async def _diversify_semantic_assets(graph: SceneGraph) -> None:
+    """Cross-scene diversity pass over semantically-ranked picks only (see
+    `_RANK_POOL`). Walks scenes in a stable, sequential order — unlike the
+    concurrent resolution pass, so an MMR-style "already selected" list is
+    meaningful here. A scene whose chosen asset embeds too close to one
+    already kept (`clip_rank.is_near_duplicate`) is swapped for the best
+    alternate in its own ranked pool that is NOT a near-duplicate of
+    anything kept so far; if every alternate is also too similar, the
+    original pick stands — a repeat beats an unrelated clip.
+    No-op when CLIP is unavailable or no scene in this graph was ranked.
+    """
+    if not clip_rank.available() or not _RANK_POOL:
+        return
+    selected: list = []
+    for scene in graph.scenes:
+        key = f"{graph.meta.video_id}:{scene.id}"
+        entry = _RANK_POOL.get(key)
+        if entry is None:
+            continue
+        chosen, pool = entry
+        if chosen.vec is None:
+            continue
+        if not any(clip_rank.is_near_duplicate(chosen.vec, s) for s in selected):
+            selected.append(chosen.vec)
+            continue
+        replacement = next(
+            (rc for rc in pool
+             if rc is not chosen and rc.vec is not None
+             and not any(clip_rank.is_near_duplicate(rc.vec, s) for s in selected)),
+            None,
+        )
+        if replacement is None:
+            selected.append(chosen.vec)     # nothing better on offer — keep it
+            continue
+        try:
+            local = await download_rank_candidate(replacement.candidate)
+        except Exception:
+            local = None
+        if local:
+            scene.visual.asset_path = local
+            print(f"[grounding] {scene.id}: diversified near-duplicate visual "
+                  f"→ {replacement.candidate.download_url.split('/')[-1]}", flush=True)
+            selected.append(replacement.vec)
+        else:
+            selected.append(chosen.vec)
 
 
 # --------------------------------------------------------------------------- #

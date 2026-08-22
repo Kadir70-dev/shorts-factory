@@ -297,6 +297,12 @@ _NICHE_AI_LEAN: dict[str, float] = {
     "usa_history": 1.0, "usa_politics": 0.7, "usa_election": 0.7,
     "usa_business": 0.7, "usa_finance": 0.3, "usa_facts": 0.2,
     "cybersecurity": 0.85,
+    # Fashion: real garment/atelier/retail footage is abundant and always beats a
+    # generated approximation, so the AI lean stays low everywhere except the
+    # archival history bucket where no footage exists.
+    "fashion_luxury": 0.3, "fashion_business": 0.2, "fashion_supply_chain": 0.2,
+    "fashion_manufacturing": 0.2, "textile_industry": 0.25, "streetwear": 0.25,
+    "sneaker_culture": 0.25, "fashion_trends": 0.25, "fashion_history": 0.8,
 }
 
 

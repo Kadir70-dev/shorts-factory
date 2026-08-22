@@ -1,0 +1,12 @@
+{
+  "id": "d22_b", "day": 22, "slot": "B", "category": "markets_economics_education",
+  "content_type": "evergreen", "topic": "How margin trading amplifies gains and losses",
+  "sources": [
+    {"claim": "Regulation T caps initial margin loan at 50% of purchase price; FINRA maintenance margin requires ~25% minimum equity; breach triggers a margin call and possible forced liquidation", "source": "FINRA.org margin rules / SEC Investor Bulletin: Understanding Margin Accounts", "url": "https://www.finra.org/investors/insights/margin-calls", "type": "primary"}
+  ],
+  "pronunciation_notes": [{"term": "FINRA", "note": "said as 'FIN-ruh'"}, {"term": "Reg T", "note": "said as 'reg tee'"}],
+  "quality_scores": {"hook": 9, "clarity": 9, "retention": 8, "fact_confidence": 9, "visual_potential": 8, "us_relevance": 8, "originality": 8, "average": 8.43},
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

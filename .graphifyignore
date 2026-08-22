@@ -1,0 +1,15 @@
+# Graphify extraction excludes, layered on top of .gitignore.
+# This repo's actual venv directory is named .venv-win (not .venv, which is
+# the only one .gitignore covers) and apps/remotion/dist-paperima/ is a new
+# build output dir from this session that predates a .gitignore update —
+# both are vendored/generated, not source, and would otherwise flood the
+# graph with third-party package internals instead of this project's code.
+.venv-win/
+.venv/
+apps/remotion/dist-paperima/
+apps/remotion/dist-threejs/
+apps/remotion/node_modules/
+node_modules/
+data/
+docs/graphify/
+graphify-out/

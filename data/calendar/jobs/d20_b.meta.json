@@ -1,0 +1,12 @@
+{
+  "id": "d20_b", "day": 20, "slot": "B", "category": "markets_economics_education",
+  "content_type": "evergreen", "topic": "ETFs vs mutual funds: the tax efficiency gap",
+  "sources": [
+    {"claim": "Mutual funds may sell holdings to meet redemptions, triggering capital-gains distributions to all shareholders; ETFs largely avoid this via in-kind creation/redemption with authorized participants", "source": "SEC Investor.gov / standard fund-structure mechanics (textbook-level, non-disputed)", "url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-1", "type": "reputable_secondary"}
+  ],
+  "pronunciation_notes": [{"term": "ETF", "note": "said as letters, 'E T F'"}],
+  "quality_scores": {"hook": 8, "clarity": 9, "retention": 8, "fact_confidence": 9, "visual_potential": 7, "us_relevance": 8, "originality": 8, "average": 8.14},
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

@@ -28,6 +28,10 @@ from . import character as char
 _FX: dict[str, list[str]] = {
     "cybersecurity": ["scanlines.png", "glow.png", "grain.png"],
     "usa_history":   ["grain.png", "glow.png"],
+    # Fashion: film grain only. Editorial restraint — no scanlines/glow furniture
+    # over a garment; the fabric is the texture.
+    "fashion_luxury":  ["grain.png"],
+    "fashion_history": ["grain.png", "glow.png"],
     "default":       ["grain.png"],
 }
 
@@ -176,7 +180,12 @@ def generate_semantic(graph: SceneGraph, decision_report) -> StoryboardData:
             # `financial_numbers`, so without this a data-rich scene reads as
             # having no numbers and silently loses its 3D treatment.
             if not numbers and scene.data and scene.data.valid():
-                numbers = [f"{point.value:g}" for point in scene.data.points]
+                # "Finance 17", not "17". `_number()` still parses the value, and
+                # map_template builds its axis labels from these strings — with
+                # bare values the 3D chart labelled every bar with its own number
+                # repeated ("17 17") instead of naming the category.
+                numbers = [f"{point.label} {point.value:g}".strip()
+                           for point in scene.data.points]
             primary = company or location or (entities[0] if entities else "")
             secondary = [entity for entity in entities if entity != primary]
             objective = scene.visual.visual_intent.strip()
@@ -217,7 +226,12 @@ def generate_semantic(graph: SceneGraph, decision_report) -> StoryboardData:
                 asset_priority=(_asset_priority_for_channel(channel)
                                 or _asset_priority(strategy)),
                 transition=scene.transition_in if index == 1 else "cut",
-                overlay_text=[overlay.text for overlay in scene.overlays if overlay.text],
+                # The figure usually lives in the stat overlay's `sub` ("2 WEEKS",
+                # "36 HOURS"), not its label. Dropping `sub` left every fashion
+                # beat looking numberless, so Three.js template mapping declined.
+                overlay_text=[text for overlay in scene.overlays
+                              for text in (overlay.text, getattr(overlay, "sub", ""))
+                              if text],
                 visual_confidence_score=min(1.0, confidence),
             ))
     return StoryboardData(scenes=result)

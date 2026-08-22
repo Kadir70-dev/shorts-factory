@@ -1,0 +1,207 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d07_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "That Store Card Discount Costs More Than It Saves",
+    "hook": "That store card offering 20% off today's purchase can charge over 30% interest for years after.",
+    "description": "Retail store credit cards routinely carry some of the highest interest rates in the card industry \u2014 often north of 30% APR versus roughly 21% for general-purpose cards, per Bankrate's annual retail card survey. The one-time discount is real; so is the interest, and it outlasts the discount if a balance is carried.",
+    "tags": [
+      "credit cards",
+      "store credit card",
+      "interest rates",
+      "personal finance",
+      "credit card apr",
+      "money mistakes"
+    ],
+    "hashtags": [
+      "#creditcards",
+      "#personalfinance",
+      "#money",
+      "#shorts"
+    ],
+    "thumbnail_text": "OVER 30% APR"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "That store card offering twenty percent off today's purchase can charge you more than thirty percent interest for years after.",
+      "duration_sec": 3.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "store credit card",
+        "discount offer"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "cashier offering store credit card signup checkout",
+        "visual_intent": "A checkout counter moment with a card being offered at the register, warm retail light, close on hands",
+        "broll_keywords": [
+          "checkout counter card offer",
+          "retail cashier register close up",
+          "store credit card signup"
+        ],
+        "decision_reason": "hook beat: the tempting offer, hard cut"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Retail credit cards routinely carry some of the highest interest rates in the entire card industry.",
+      "duration_sec": 4.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "retail card interest"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "shopping mall storefronts wide shot",
+        "visual_intent": "A row of retail storefronts in a shopping center, daylight, wide establishing shot",
+        "broll_keywords": [
+          "shopping mall storefronts wide",
+          "retail store row daylight",
+          "shopping center exterior"
+        ],
+        "decision_reason": "sets up the category-wide pattern"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "General-purpose credit cards average interest in the low twenties. Store-only cards average well over thirty percent.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "apr comparison"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "two bar chart columns comparing percentages screen",
+        "visual_intent": "Two glowing bar columns on a dark financial screen, one clearly taller than the other, teal and gold",
+        "broll_keywords": [
+          "financial bar chart comparison screen",
+          "two bars data comparison dark",
+          "business data analytics monitor"
+        ],
+        "decision_reason": "Bankrate 2025 retail credit card survey: retail ~30%+ APR vs general-purpose ~21% average"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "General cards: ~21%  |  Store cards: 30%+",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "That gap exists because store cards are underwritten differently. Approval is easy. The bank is pricing in default risk.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "underwriting risk"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "credit application form pen signing",
+        "visual_intent": "A hand signing a credit application form at a counter, close focus, natural light",
+        "broll_keywords": [
+          "signing application form close up",
+          "credit form pen signature",
+          "paperwork signing counter"
+        ],
+        "decision_reason": "explains the underwriting rationale"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Retailers don't mind. A card that gets declined less means more checkouts completed today.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "retailer incentive"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "busy retail checkout line customers",
+        "visual_intent": "A busy retail checkout line with customers waiting, motion blur, daylight",
+        "broll_keywords": [
+          "retail checkout line customers",
+          "busy store checkout counter",
+          "shoppers waiting register"
+        ],
+        "decision_reason": "the retailer-side incentive turn"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The one-time discount is real. The interest rate is also real, and it outlasts the discount by years if you carry a balance.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "long term cost"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "calendar pages turning time passing",
+        "visual_intent": "Calendar pages flipping forward rapidly, symbolizing time passing, cinematic time-lapse style",
+        "broll_keywords": [
+          "calendar pages flipping time lapse",
+          "time passing calendar concept",
+          "months passing symbolic"
+        ],
+        "decision_reason": "visualizes the long-tail cost vs the one-time discount"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "The safest way to use one: pay it off before interest ever applies.",
+      "duration_sec": 4.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing tip"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "hand tapping card payment terminal",
+        "visual_intent": "A hand tapping a card on a payment terminal, clean close-up, neutral light",
+        "broll_keywords": [
+          "card tap payment terminal",
+          "contactless payment close up",
+          "paying off balance concept"
+        ],
+        "decision_reason": "closing practical takeaway"
+      }
+    }
+  ]
+}

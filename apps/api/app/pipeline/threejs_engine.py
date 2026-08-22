@@ -18,11 +18,29 @@ from ..brand import theme_for
 from ..config import ROOT, settings
 from ..schemas.scene import (Scene, SceneGraph, StoryboardScene,
                              ThreeJSRenderProvenance)
+from . import geo_data
 
-TEMPLATE_VERSION = "1.0.1"
+# Namespaces every cache entry. Bump whenever the rendered result changes for an
+# unchanged storyboard beat — the key hashes the BEAT, not the built payload, so
+# a change inside `_flight()` is invisible to it.
+#   1.1.0 — globe_flight sends its subject as a labelled `region`
+TEMPLATE_VERSION = "1.1.0"
 TEMPLATES = (
     "number_counter", "comparison_towers", "share_ownership",
     "dividend_cashflow", "timeline_flythrough", "compound_growth",
+    "globe_flight",
+)
+# Fashion vocabulary for template selection — the supply chain IS a timeline
+# (design → fabric → factory → hub → store) and the industry's headline figures
+# are shares and counts, not cash flows.
+_FASHION_TIMELINE = (
+    "lead time", "weeks", "days", "hours", "sketch", "shop floor", "design to",
+    "shipping", "delivered", "delivery", "restock", "dispatch", "turnaround",
+    "factory to", "supply chain", "stage",
+)
+_FASHION_SHARE = (
+    "half", "percent", "%", "share", "designs", "batch", "batches", "stores",
+    "units", "garments", "styles", "production", "sourcing",
 )
 _worker: asyncio.subprocess.Process | None = None
 _worker_lock = asyncio.Lock()
@@ -36,6 +54,9 @@ class RenderSpec:
     label: str
     values: tuple[float, ...]
     labels: tuple[str, ...]
+    # globe_flight only: (place name, boundary source URL). Empty for every
+    # chart template, so their specs and cache keys are byte-identical to before.
+    geo: tuple[str, str] = ("", "")
 
 
 def _number(value: str) -> float | None:
@@ -58,8 +79,32 @@ def map_template(beat: StoryboardScene) -> RenderSpec | None:
     text = f"{beat.narration} {beat.visual_objective}".lower()
     values = tuple(value for raw in beat.financial_numbers
                    if (value := _number(raw)) is not None)
+    # Non-finance verticals (fashion) state their figures in the stat overlay and
+    # the narration — lead times, batch sizes, sourcing shares — never in a
+    # `financial_numbers` series. Without this the extraction came back empty and
+    # every allocated 3D beat declined straight past the engine.
+    if not values:
+        values = tuple(value for raw in (*beat.overlay_text, beat.narration)
+                       if (value := _number(raw)) is not None)
     title = (beat.company or beat.primary_entity or "Finance explained")[:48]
     label = (beat.overlay_text[0] if beat.overlay_text else beat.narration)[:72]
+    # GEOGRAPHY FIRST. A beat that names a real place on the map is answered by
+    # flying there — a camera move a viewer can follow — and a bar chart of the
+    # same sentence explains strictly less. Checked ahead of the numeric
+    # branches because a geography beat usually ALSO carries a figure ("9.8
+    # million square kilometres"), and whichever branch runs first wins.
+    # An explicit `location` is the storyboard NAMING the place this beat is
+    # about, so it wins outright. Resolving it together with the prose let an
+    # incidental mention win instead: a beat located in "Japan" whose objective
+    # described the flight "out of the United States and across the Pacific"
+    # flew to the United States, because longest-match wins and the ORIGIN of
+    # the move is named in the sentence just as often as the destination.
+    place = (geo_data.resolve(beat.location) if beat.location.strip() else None) \
+        or geo_data.resolve(f"{beat.primary_entity} {text}")
+    if place is not None:
+        name, source = place
+        return RenderSpec("globe_flight", title, name.title(), values or (0.0,),
+                          (name.title(),), geo=(name, source))
     if any(word in text for word in ("ownership", "shareholder", "stake", "owns")):
         template = "share_ownership"
     elif "dividend" in text or "cash flow" in text:
@@ -68,6 +113,12 @@ def map_template(beat: StoryboardScene) -> RenderSpec | None:
         template = "compound_growth"
     elif beat.year and any(word in text for word in ("since", "timeline", "history", "from")):
         template = "timeline_flythrough"
+    # FASHION: a lead time or a supply-chain stage is a timeline, and a sourcing
+    # or batch share is a counter. Same six templates, fashion vocabulary.
+    elif any(word in text for word in _FASHION_TIMELINE):
+        template = "timeline_flythrough"
+    elif values and any(word in text for word in _FASHION_SHARE):
+        template = "number_counter"
     elif len(values) >= 2 or any(word in text for word in ("revenue versus", "profit versus", "compared")):
         template = "comparison_towers"
     elif values:
@@ -96,12 +147,51 @@ def _payload(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
     frames = max(1, round(scene.duration_sec * fps))
     if frames > settings().threejs_max_frames:
         raise ValueError(f"Three.js frame budget exceeded: {frames}")
-    return {
+    payload = {
         "id": beat.scene_id, "outputDir": str(frames_dir),
         "template": spec.template, "width": width, "height": height,
         "fps": fps, "frames": frames, "seed": seed, "title": spec.title,
         "label": spec.label, "values": spec.values, "labels": spec.labels,
         "palette": theme.palette, "fontFamily": theme.display.name,
+    }
+    if spec.template == "globe_flight":
+        payload.update(_flight(spec))
+    return payload
+
+
+def _flight(spec: RenderSpec) -> dict:
+    """Borders plus the waypoints that fly to them.
+
+    A state target gets the full world → country → state descent; a country
+    target stops at the country. The legs are weighted so the descent decelerates
+    into the subject rather than arriving at constant speed.
+    """
+    name, source = spec.geo
+    world, _ = geo_data.borders(geo_data.WORLD_URL)
+    _, country = geo_data.borders(geo_data.WORLD_URL,
+                                  only="United States of America"
+                                  if source == geo_data.STATES_URL else name)
+    focus = country
+    rings = world
+    if source == geo_data.STATES_URL:
+        states, focus = geo_data.borders(geo_data.STATES_URL, only=name)
+        rings = world + states
+    country_lon, country_lat = geo_data.centroid(country)
+    focus_lon, focus_lat = geo_data.centroid(focus)
+    legs = [{"lon": country_lon - 55, "lat": 18.0, "altitude": 3.40, "hold": 1.0},
+            {"lon": country_lon, "lat": country_lat, "altitude": 1.05, "hold": 1.6}]
+    if focus is not country:
+        legs.append({"lon": focus_lon, "lat": focus_lat, "altitude": .30, "hold": 1.4})
+    return {
+        "world": rings, "highlight": country, "focus": focus, "flight": legs,
+        # The subject travels as a REGION, not a pin. `regions` is the only
+        # payload the worker actually paints — it fills the rings in the accent
+        # tone, outlines them and draws a screen label clamped inside the frame.
+        # `pins` is typed but never drawn, so every flight used to arrive at an
+        # unlabelled, unhighlighted country: the viewer saw the camera land
+        # somewhere and was never told where.
+        "regions": [{"rings": focus, "label": spec.label.upper(),
+                     "lon": focus_lon, "lat": focus_lat, "tone": "primary"}],
     }
 
 
@@ -113,6 +203,7 @@ def cache_key(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
         "storyboard": beat.model_dump(mode="json"), "duration": scene.duration_sec,
         "fps": graph.fps, "dimensions": _quality_dimensions(graph, quality),
         "quality": quality, "seed": seed, "brand": theme.fingerprint,
+        "geo": list(spec.geo),
     }, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(body.encode()).hexdigest()
 
@@ -195,25 +286,69 @@ def _report_failure(scene_id: str, error: str) -> None:
         print(f"[threejs] {hint}", flush=True)
 
 
+def find_node() -> str | None:
+    """Absolute path to a usable `node`, or None.
+
+    `shutil.which` alone is not enough. nvm — the normal way Node is installed on
+    a developer box and the only way to get it without root — puts node under
+    ~/.nvm/versions/node/<ver>/bin and adds that to PATH from an INTERACTIVE
+    shell profile. A worker launched from the Python pipeline inherits neither,
+    so a machine with Node fully installed reported "dependencies are not
+    installed" and silently dropped every 3D beat to the 2D ladder.
+
+    Order: explicit override, then PATH, then the newest nvm install.
+    """
+    override = os.environ.get("NODE_BIN", "").strip()
+    if override and Path(override).is_file():
+        return override
+    found = shutil.which("node")
+    if found:
+        return found
+    versions = Path.home() / ".nvm" / "versions" / "node"
+    if versions.is_dir():
+        def key(p: Path) -> tuple:
+            # v22.23.2 -> (22, 23, 2); anything unparseable sorts last.
+            try:
+                return tuple(int(part) for part in p.name.lstrip("v").split("."))
+            except ValueError:
+                return (-1,)
+        for candidate in sorted(versions.iterdir(), key=key, reverse=True):
+            binary = candidate / "bin" / "node"
+            if binary.is_file():
+                return str(binary)
+    return None
+
+
 async def _ensure_worker() -> asyncio.subprocess.Process:
     global _worker
     if _worker and _worker.returncode is None:
         return _worker
     app = ROOT / "apps" / "remotion"
-    node = shutil.which("node")
+    node = find_node()
     compiler = app / "node_modules" / ".bin" / "tsc"
     built = app / "dist-threejs" / "worker.js"
     source = app / "src" / "threejs" / "worker.ts"
-    if not node or not compiler.is_file():
-        raise RuntimeError("Three.js worker dependencies are not installed")
+    # Say WHICH half is missing. "dependencies are not installed" sent us looking
+    # for absent packages on a box where everything was installed and only PATH
+    # was wrong.
+    if not node:
+        raise RuntimeError(
+            "Three.js worker needs Node and none was found (checked $NODE_BIN, "
+            "PATH and ~/.nvm/versions/node). Install Node, or set NODE_BIN.")
+    if not compiler.is_file():
+        raise RuntimeError(
+            f"Three.js worker needs its npm packages: run `npm install` in {app}")
+    # The child must see node on PATH too: `tsc` here is a shim whose shebang is
+    # `#!/usr/bin/env node`, and the worker resolves its own tooling the same way.
+    env = os.environ.copy()
+    env["PATH"] = f"{Path(node).parent}{os.pathsep}{env.get('PATH', '')}"
     if not built.is_file() or built.stat().st_mtime < source.stat().st_mtime:
         compile_proc = await asyncio.create_subprocess_exec(
-            str(compiler), "-p", "tsconfig.threejs.json", cwd=app,
+            str(compiler), "-p", "tsconfig.threejs.json", cwd=app, env=env,
             stderr=asyncio.subprocess.PIPE)
         _, compile_error = await compile_proc.communicate()
         if compile_proc.returncode:
             raise RuntimeError(compile_error.decode(errors="replace")[-1200:])
-    env = os.environ.copy()
     if settings().threejs_browser_executable:
         env["THREEJS_BROWSER_EXECUTABLE"] = settings().threejs_browser_executable
     _worker = await asyncio.create_subprocess_exec(

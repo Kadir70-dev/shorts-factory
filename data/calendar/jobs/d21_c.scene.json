@@ -1,0 +1,78 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d21_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "You Can Tank Your Credit Score Without Missing One Payment",
+    "hook": "You can hurt your credit score without missing a single payment.",
+    "description": "Credit utilization — how much of your available credit you're using — is the second-largest factor in the FICO score, weighted around 30%, behind only payment history. Unlike payment history, which takes years to build, utilization is recalculated every billing cycle, so a maxed-out card can swing your score fast even if you always pay in full. Educational content only, not financial advice.",
+    "tags": ["credit score", "fico score", "credit utilization", "personal finance", "credit cards", "money mechanics", "credit tips"],
+    "hashtags": ["#creditscore", "#personalfinance", "#creditcards", "#money", "#shorts"],
+    "thumbnail_text": "NO LATE PAYMENTS. STILL DROPPED."
+  },
+  "fps": 60, "width": 1080, "height": 1920,
+  "scenes": [
+    {
+      "id": "s1", "narration": "You can hurt your credit score without missing a single payment.",
+      "duration_sec": 3.6, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["credit score drop"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "credit card swipe payment terminal close up",
+        "visual_intent": "A credit card being swiped at a payment terminal, ordinary transaction, close macro",
+        "broll_keywords": ["credit card swipe terminal", "payment card tap machine", "credit card transaction close up"],
+        "decision_reason": "hook beat: the counterintuitive claim, hard cut"}
+    },
+    {
+      "id": "s2", "narration": "Here's how. Max out a card you always pay off in full, and your score can still fall.",
+      "duration_sec": 5.4, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["maxed out card", "credit utilization"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "credit card statement balance close up",
+        "visual_intent": "A credit card statement showing a high balance close-up, numbers filling the frame",
+        "broll_keywords": ["credit card statement balance", "billing statement close up", "credit balance document"],
+        "decision_reason": "sets the mechanism"}
+    },
+    {
+      "id": "s3", "narration": "That's because how much of your available credit you're using is the second-biggest factor in your score, weighted around thirty percent.",
+      "duration_sec": 7.6, "confidence": "confirmed", "transition_in": "fade",
+      "keywords": ["fico 30 percent weight", "amounts owed"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_in",
+        "query": "gauge meter dial percentage screen",
+        "visual_intent": "A gauge dial climbing toward a high percentage on a dashboard-style screen, tension building",
+        "broll_keywords": ["gauge dial percentage screen", "meter dashboard climbing", "percentage gauge display"],
+        "decision_reason": "the 'amounts owed' category is ~30% of a FICO score, second only to payment history — standard myFICO scoring-factor breakdown"},
+      "overlays": [{"type": "stat", "text": "~30% OF YOUR SCORE", "y": 0.18}]
+    },
+    {
+      "id": "s4", "narration": "It's not about whether you've ever been late. It's a snapshot of your balance the moment your statement closes.",
+      "duration_sec": 6.4, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["statement balance snapshot"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "none",
+        "query": "calendar date circled close up",
+        "visual_intent": "A specific date circled on a calendar, precise and time-bound",
+        "broll_keywords": ["calendar date circled", "calendar close up date", "statement date reminder"],
+        "decision_reason": "explains the timing mechanism vs payment history"}
+    },
+    {
+      "id": "s5", "narration": "Payment history takes years to build. Utilization can swing your score within a single billing cycle.",
+      "duration_sec": 6.2, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["fast moving factor"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_out",
+        "query": "line graph sharp swing up down screen",
+        "visual_intent": "A line graph swinging sharply up and down within a tight time window, volatility visualized",
+        "broll_keywords": ["line graph sharp swing", "volatile data chart screen", "score fluctuation graph"],
+        "decision_reason": "the payoff contrast between slow-moving and fast-moving score factors"}
+    },
+    {
+      "id": "s6", "narration": "The fastest lever on your credit score isn't discipline. It's timing what your balance looks like when it gets reported.",
+      "duration_sec": 7.0, "confidence": "confirmed", "transition_in": "fade",
+      "keywords": ["timing balance report"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "ken_burns",
+        "query": "smartphone banking app balance screen",
+        "visual_intent": "A smartphone showing a banking app balance screen in hand, closing image, practical and personal",
+        "broll_keywords": ["banking app balance screen", "phone finance app close up", "mobile banking balance check"],
+        "decision_reason": "closing beat, actionable causal takeaway"}
+    }
+  ]
+}

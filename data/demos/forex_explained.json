@@ -1,0 +1,240 @@
+{
+  "schema_version": "2.0",
+  "brand_id": "k70",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "meta": {
+    "video_id": "vid_forex_explained_v1",
+    "channel_id": "k70_economy",
+    "niche": "usa_finance",
+    "structure_id": "one_number_story",
+    "title": "What Is Forex Trading?",
+    "hook": "Over $7 trillion changes hands every day in one market",
+    "description": "Foreign exchange is the biggest financial market there is: the BIS put average turnover at 7.5 trillion dollars a day in April 2022. This is what actually happens when dollars become euros \u2014 who trades, how a rate move becomes a profit, and why it prices your imports, exports and holidays.",
+    "tags": [
+      "forex",
+      "forex trading",
+      "currency trading",
+      "eurusd",
+      "foreign exchange",
+      "finance explained",
+      "trading for beginners"
+    ],
+    "hashtags": [
+      "#shorts",
+      "#forex",
+      "#trading",
+      "#finance"
+    ],
+    "thumbnail_text": "$7 TRILLION A DAY"
+  },
+  "scenes": [
+    {
+      "id": "s1",
+      "beat_role": "hook",
+      "duration_sec": 5.7,
+      "narration": "Every single day, more than seven trillion dollars changes hands in one market. It is called Forex.",
+      "confidence": "confirmed",
+      "keywords": [],
+      "visual": {
+        "type": "motion_gfx",
+        "strategy": "motion_gfx",
+        "scene_visual_type": "dramatic",
+        "motion": "none",
+        "visual_intent": "The number itself, built on screen in type \u2014 nothing filmable carries seven trillion a day",
+        "broll_keywords": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "$7 trillion. Every day.",
+          "y": 0.18
+        },
+        {
+          "type": "source",
+          "text": "BIS Triennial Survey, April 2022",
+          "y": 0.12
+        }
+      ],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s2",
+      "beat_role": "context",
+      "duration_sec": 4.4,
+      "narration": "It starts in the United States, where trades begin with dollars.",
+      "confidence": "confirmed",
+      "keywords": [
+        "United States"
+      ],
+      "visual": {
+        "type": "threejs",
+        "strategy": "threejs",
+        "scene_visual_type": "data_viz",
+        "motion": "none",
+        "visual_intent": "Fly from the whole planet down onto the United States, the origin of the dollar leg",
+        "broll_keywords": []
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "USD",
+          "sub": "The dollar leg",
+          "y": 0.2
+        }
+      ],
+      "transition_in": "fade"
+    },
+    {
+      "id": "s3",
+      "beat_role": "turn",
+      "duration_sec": 4.4,
+      "narration": "Then it crosses to Germany, and those dollars become euros.",
+      "confidence": "confirmed",
+      "keywords": [
+        "Germany",
+        "euro zone map"
+      ],
+      "visual": {
+        "type": "threejs",
+        "strategy": "threejs",
+        "scene_visual_type": "data_viz",
+        "motion": "none",
+        "visual_intent": "Continue the same flight east across the continent onto Germany, so the currency pair reads as one unbroken camera move",
+        "broll_keywords": []
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "EUR",
+          "sub": "The euro leg",
+          "y": 0.2
+        }
+      ],
+      "transition_in": "crossfade"
+    },
+    {
+      "id": "s4",
+      "beat_role": "evidence",
+      "duration_sec": 8.6,
+      "narration": "Trading is buying one currency while selling another. If euro-dollar climbs from one point one zero to one point one two, that two-cent move is the entire profit.",
+      "confidence": "probable",
+      "keywords": [],
+      "visual": {
+        "type": "dataviz",
+        "strategy": "dataviz",
+        "scene_visual_type": "data_viz",
+        "motion": "none",
+        "visual_intent": "The rate itself moving \u2014 before and after, with the gap between them called out",
+        "broll_keywords": []
+      },
+      "data": {
+        "kind": "delta",
+        "title": "EUR/USD \u2014 worked example",
+        "points": [
+          {
+            "label": "Entry",
+            "value": 1.1,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Exit",
+            "value": 1.12,
+            "emphasis": "positive"
+          }
+        ],
+        "decimals": 2,
+        "abbreviate": false,
+        "highlight": 1,
+        "source": "Illustrative example",
+        "note": "Illustrative \u2014 not a real quote"
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "Illustrative example",
+          "y": 0.12
+        }
+      ],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s5",
+      "beat_role": "mechanism",
+      "duration_sec": 6.0,
+      "narration": "Banks move most of it, then hedge funds, corporations, governments, and millions of ordinary traders at home.",
+      "confidence": "confirmed",
+      "keywords": [],
+      "visual": {
+        "type": "motion_gfx",
+        "strategy": "motion_gfx",
+        "scene_visual_type": "dramatic",
+        "motion": "none",
+        "visual_intent": "The five participants stacked in type, largest first",
+        "broll_keywords": []
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Banks \u00b7 Funds \u00b7 Firms",
+          "sub": "Governments \u00b7 You",
+          "y": 0.2
+        }
+      ],
+      "transition_in": "push_up"
+    },
+    {
+      "id": "s6",
+      "beat_role": "payoff",
+      "duration_sec": 5.6,
+      "narration": "Those prices set what you pay for imports, exports, holidays abroad, and every international deal signed today.",
+      "confidence": "confirmed",
+      "keywords": [
+        "shipping port containers"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "ken_burns",
+        "visual_intent": "Real container terminal at work \u2014 the physical trade those rates price",
+        "broll_keywords": [
+          "container port cranes",
+          "cargo ship loading containers"
+        ]
+      },
+      "overlays": [],
+      "transition_in": "fade"
+    },
+    {
+      "id": "s7",
+      "beat_role": "cta",
+      "duration_sec": 4.2,
+      "narration": "So Forex ends up the largest financial market anywhere.",
+      "confidence": "confirmed",
+      "keywords": [],
+      "visual": {
+        "type": "motion_gfx",
+        "strategy": "motion_gfx",
+        "scene_visual_type": "dramatic",
+        "motion": "none",
+        "visual_intent": "The closing line set in type over the branded field",
+        "broll_keywords": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "The largest market there is.",
+          "y": 0.18
+        },
+        {
+          "type": "lower_third",
+          "text": "Follow K70 for more.",
+          "y": 0.3
+        }
+      ],
+      "transition_in": "dip_to_black"
+    }
+  ]
+}

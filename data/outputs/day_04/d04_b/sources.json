@@ -1,0 +1,15 @@
+{
+  "id": "d04_b",
+  "topic": "Why an inverted yield curve signals recession risk",
+  "content_type": "evergreen",
+  "sources": [
+    {
+      "claim": "An inverted yield curve (short-term Treasury yields exceeding long-term yields) has preceded most US recessions historically and reflects expectations of future Fed rate cuts amid slowing growth",
+      "source": "Federal Reserve Bank research (widely cited yield-curve-as-recession-indicator literature, e.g. San Francisco Fed / NY Fed economic notes)",
+      "url": "https://www.federalreserve.gov/",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "disclaimer": ""
+}

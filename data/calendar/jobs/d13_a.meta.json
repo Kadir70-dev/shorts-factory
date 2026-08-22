@@ -1,0 +1,41 @@
+{
+  "id": "d13_a",
+  "day": 13,
+  "slot": "A",
+  "category": "business_wealth_story",
+  "content_type": "evergreen",
+  "topic": "Musk's PayPal payout funded Tesla and SpaceX, both nearly failed in 2008",
+  "sources": [
+    {
+      "claim": "eBay acquired PayPal in 2002 for $1.5B",
+      "source": "eBay corporate history",
+      "url": "https://www.ebayinc.com/company/our-history/",
+      "type": "primary"
+    },
+    {
+      "claim": "Musk received about $180M from the PayPal sale and invested in SpaceX and Tesla; both faced severe 2008 financing pressure",
+      "source": "TIME profile of Elon Musk",
+      "url": "https://time.com/6127754/elon-musk-net-worth-person-of-the-year/",
+      "type": "reputable_secondary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "PayPal",
+      "note": "said 'Pay-Pal'"
+    }
+  ],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": true,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

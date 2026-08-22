@@ -5,7 +5,10 @@ import hashlib
 import json
 import math
 import random
-import resource
+try:
+    import resource
+except ImportError:  # Windows: no POSIX resource module
+    resource = None
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -265,7 +268,7 @@ async def render(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
         await write_video(_frames(theme, spec, w, h, graph.fps,
                                   scene.duration_sec, seed), w, h, graph.fps, out,
                           vf=",".join(filters) if filters else None)
-        rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024
+        rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024 if resource else 0.0
         return MotionGraphicsRenderProvenance(**base, status="rendered",
             render_path=str(out), render_ms=(time.perf_counter() - started) * 1000,
             peak_rss_mb=rss)
@@ -273,7 +276,7 @@ async def render(graph: SceneGraph, scene: Scene, beat: StoryboardScene,
         out.unlink(missing_ok=True)
         return MotionGraphicsRenderProvenance(**base, status="unresolved",
             render_ms=(time.perf_counter() - started) * 1000,
-            peak_rss_mb=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024,
+            peak_rss_mb=(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024 if resource else 0.0),
             error=f"{type(exc).__name__}: {str(exc)[:240]}")
 
 

@@ -1,0 +1,207 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d29_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "A Credit Freeze Locks The Door Before Identity Thieves Arrive",
+    "hook": "A free credit freeze can stop a thief from opening most new accounts in your name.",
+    "description": "A credit freeze restricts access to your credit report, so prospective creditors generally cannot approve new accounts until you lift it. It is free to place and lift with each nationwide credit bureau, and it does not affect your existing accounts or credit score.",
+    "tags": [
+      "credit freeze",
+      "identity theft",
+      "credit report",
+      "personal finance"
+    ],
+    "hashtags": [
+      "#credit",
+      "#identitytheft",
+      "#personalfinance",
+      "#shorts"
+    ],
+    "thumbnail_text": "LOCK YOUR FILE"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "A free credit freeze can stop an identity thief from opening most new accounts in your name.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "credit report lock",
+        "identity theft protection"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "credit report padlock digital",
+        "visual_intent": "A digital credit report snapping behind a padlock",
+        "broll_keywords": [
+          "credit report lock",
+          "identity theft protection",
+          "digital file padlock"
+        ],
+        "decision_reason": "FTC says freezes restrict access and help prevent new-account fraud"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "FREE",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "New lenders usually check a credit report before approving an account. A freeze blocks that access.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "credit check application",
+        "loan approval screen"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "pan_lr",
+        "query": "loan application credit check",
+        "visual_intent": "A lender screen requesting a credit report",
+        "broll_keywords": [
+          "credit check application",
+          "loan approval screen",
+          "credit report request"
+        ],
+        "decision_reason": "FTC explains prospective creditors generally need report access"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "With no report available, the application generally cannot move forward, even if the thief has your Social Security number.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "fraud application blocked",
+        "access denied identity theft"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "identity thief blocked screen",
+        "visual_intent": "A fraudulent application stopped by an access-denied screen",
+        "broll_keywords": [
+          "fraud application blocked",
+          "access denied identity theft",
+          "online application rejected"
+        ],
+        "decision_reason": "Mechanism follows FTC guidance"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Access denied",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "You place the freeze separately with each nationwide credit bureau, and federal law makes placing and lifting it free.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "three credit bureaus",
+        "credit files locked"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "three credit bureau folders lock",
+        "visual_intent": "Three separate file folders each receiving a lock",
+        "broll_keywords": [
+          "three credit bureaus",
+          "credit files locked",
+          "freeze each bureau"
+        ],
+        "decision_reason": "FTC says placement and lifting are free and handled with bureaus"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Freeze each bureau",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "It does not close existing accounts, stop every kind of fraud, or prevent you from using current credit cards.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "credit card checkout",
+        "existing account use"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "existing credit card payment",
+        "visual_intent": "A current credit card working normally at checkout",
+        "broll_keywords": [
+          "credit card checkout",
+          "existing account use",
+          "card payment normal"
+        ],
+        "decision_reason": "FTC distinguishes freezes from protection against all fraud"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Think of it as locking the new-account door. You keep the key and temporarily lift the freeze when needed.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "lift credit freeze",
+        "unlock credit file"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "key unlocking credit file",
+        "visual_intent": "A hand briefly unlocking a file cabinet",
+        "broll_keywords": [
+          "lift credit freeze",
+          "unlock credit file",
+          "security key folder"
+        ],
+        "decision_reason": "Accurate closing metaphor for temporary lifting"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "You hold the key",
+          "y": 0.18
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "d24_c",
+  "day": 24,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "How student loan interest capitalization works",
+  "sources": [
+    {
+      "claim": "Capitalization adds unpaid interest to principal, causing future interest to accrue on the larger balance",
+      "source": "Federal Student Aid / Aidvantage interest guidance",
+      "url": "https://aidvantage.studentaid.gov/in-repayment/interest-and-taxes",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not personalized financial advice.",
+  "status": "READY"
+}

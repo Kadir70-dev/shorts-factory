@@ -1,0 +1,223 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d10_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "If a Company Goes Bankrupt, Bondholders Get Paid Before Stockholders",
+    "hook": "If the company you invested in goes bankrupt, one type of investor gets paid before everyone else.",
+    "description": "A bond is a loan: a government or company borrows from investors and pays regular interest, called a coupon, returning the principal at maturity. Bondholders sit ahead of stockholders in a company's capital structure, meaning they're repaid first if the company fails. Safer borrowers can pay lower interest because investors demand less compensation for the risk. Educational content only, not financial advice.",
+    "tags": [
+      "bonds",
+      "investing basics",
+      "fixed income",
+      "how bonds work",
+      "investing for beginners"
+    ],
+    "hashtags": [
+      "#bonds",
+      "#investing",
+      "#personalfinance",
+      "#shorts"
+    ],
+    "thumbnail_text": "PAID FIRST"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "If the company you invested in goes bankrupt, one type of investor gets paid before everyone else.",
+      "duration_sec": 4.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "bond definition"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "handshake loan agreement close up",
+        "visual_intent": "A close-up handshake over a desk with documents, warm light, symbolic of an agreement",
+        "broll_keywords": [
+          "handshake agreement close up",
+          "loan document signing hands",
+          "business deal handshake"
+        ],
+        "decision_reason": "hook beat: reframing the common misconception"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "A bond is an IOU. A government or company borrows from you and promises to pay it back.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "bond as IOU"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "government building capitol archival",
+        "visual_intent": "A government building facade, classic columns, daylight, wide shot",
+        "broll_keywords": [
+          "government building facade wide",
+          "capitol building daylight",
+          "official building columns"
+        ],
+        "decision_reason": "defines the core lending relationship"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "In exchange, they pay you regular interest, called a coupon, until the bond matures.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "coupon payments"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "calendar payments recurring graphic",
+        "visual_intent": "A calendar with recurring payment markers highlighted at intervals, clean graphic",
+        "broll_keywords": [
+          "calendar recurring payments graphic",
+          "payment schedule visual",
+          "financial calendar markers"
+        ],
+        "decision_reason": "explains coupon mechanics, definitional"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "At maturity, you get your original loan amount back, assuming the borrower doesn't default.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "principal at maturity"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "envelope full return payment concept",
+        "visual_intent": "An envelope being opened revealing a document, symbolic of receiving payment, warm light",
+        "broll_keywords": [
+          "envelope opening document",
+          "receiving payment concept visual",
+          "financial return symbolic close up"
+        ],
+        "decision_reason": "defines maturity/principal return, notes default risk"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "That's why bonds from the US government are considered safer than bonds from a struggling company.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "credit risk comparison"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "treasury building washington archival",
+        "visual_intent": "A US Treasury-style government building exterior, daylight, formal composition",
+        "broll_keywords": [
+          "treasury building exterior daylight",
+          "government finance building",
+          "washington official building"
+        ],
+        "decision_reason": "credit-risk comparison, definitional/textbook"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The safer the borrower, the lower the interest rate they can get away with paying you.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "risk-return tradeoff"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "seesaw balance risk reward graphic",
+        "visual_intent": "A seesaw balancing two weighted sides, symbolic of risk versus reward, clean render",
+        "broll_keywords": [
+          "seesaw balance symbolic",
+          "risk reward balance graphic",
+          "weighing scale concept visual"
+        ],
+        "decision_reason": "risk/reward relationship, definitional"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "And here's the investor you asked about. In a bankruptcy, bondholders are legally paid back before stockholders see a cent.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "bond seniority",
+        "bankruptcy priority"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "courthouse steps legal building",
+        "visual_intent": "A courthouse or legal building exterior, formal daylight, symbolic of legal priority",
+        "broll_keywords": [
+          "courthouse steps exterior",
+          "legal building formal facade",
+          "bankruptcy court building"
+        ],
+        "decision_reason": "capital-structure seniority: bondholders rank ahead of equity holders in liquidation, standard corporate-finance/bankruptcy-law principle"
+      }
+    },
+    {
+      "id": "s8",
+      "narration": "Stocks make you an owner, last in line. Bonds make you a lender, first in line. Different risk, different reward.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing contrast"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "stock certificate and bond document side by side",
+        "visual_intent": "Two financial documents laid side by side on a desk, neutral light, still",
+        "broll_keywords": [
+          "financial documents desk still",
+          "stock and bond papers",
+          "investment documents comparison"
+        ],
+        "decision_reason": "closing owner-vs-lender, last-vs-first-in-line contrast"
+      }
+    }
+  ]
+}

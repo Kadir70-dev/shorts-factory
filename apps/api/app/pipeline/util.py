@@ -49,6 +49,34 @@ def ffprobe_duration(path: Path) -> float:
     return float(out.stdout.strip())
 
 
+def normalize_narration_joins(clips: list[Path], *, pad_sec: float = 0.10) -> None:
+    """Add one small, CONSISTENT breath-gap to the end of every per-scene TTS
+    clip — in place.
+
+    Measured root cause: each scene is synthesised as its own isolated
+    utterance, and `ffmpeg_concat_audio` butts the raw clips together with
+    ZERO gap between them (confirmed: `silencedetect` finds no measurable
+    silence anywhere in delivered voiceover.wav — there was never a pause to
+    remove). Two independently-synthesised clips glued at 0.000s apart lose
+    the natural micro-breath a continuous reading has between clauses/
+    sentences, which reads as an abrupt, "assembly-line" splice rather than
+    continuous speech — the actual complaint, despite there being no long
+    silence to point to.
+
+    This only ADDS silence (`apad`), never trims — there is no risk of
+    clipping an onset or trailing phoneme, only of the pad itself being too
+    long, which is why it's kept short and uniform rather than adaptive.
+    """
+    for clip in clips:
+        tmp = clip.with_suffix(".pad.wav")
+        subprocess.run(
+            ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(clip),
+             "-af", f"apad=pad_dur={pad_sec}", str(tmp)],
+            check=True,
+        )
+        tmp.replace(clip)
+
+
 def ffmpeg_concat_audio(clips: list[Path], out: Path) -> None:
     """Concat same-codec audio clips. Re-encode to a uniform wav to be safe."""
     listfile = out.parent / "concat.txt"

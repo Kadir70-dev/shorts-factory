@@ -1,0 +1,12 @@
+   QA · vid_fin_d02_c_v2 · ✗ FAIL
+     [PASS] render completed (no timeout) — finished in time
+     [PASS] playable file written — 18.8MB
+     [PASS] has video stream — video audio
+     [PASS] has audio stream — audio present
+     [PASS] resolution 9:16 — 1080x1920 (want 1080x1920)
+     [PASS] duration matches timeline — 40.0s (timeline 40.0s)
+     [PASS] black-frame fraction — 0.17s black (0.4% ≤ 6%)
+     [PASS] every scene non-black — all scenes lit
+     [PASS] RAM peak within budget — ~0MB (≤ 4000MB)
+     [PASS] render within wall-time budget — 299s (≤ 900s)
+     [FAIL] plan-vs-delivery: no silent visual downgrade — 1/6 planned beats (16.7%) silently downgraded — s3: planned official → delivered motion_gfx

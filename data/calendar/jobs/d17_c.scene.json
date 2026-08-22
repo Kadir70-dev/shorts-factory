@@ -1,0 +1,175 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d17_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "How A Ten Dollar Coffee Turns Into A Thirty Five Dollar Bank Fee",
+    "hook": "Banks collect billions a year from a fee triggered by a balance that was only short by a few dollars.",
+    "description": "Overdraft fees are charged when an account balance goes negative, and banks have historically processed transactions in an order that can trigger several fees from a single low balance. It became a multi-billion dollar annual revenue line for the banking industry, though regulatory pressure and policy changes have cut that total roughly in half over the past few years. Educational content only, not financial advice.",
+    "tags": [
+      "overdraft fees",
+      "bank fees",
+      "personal finance",
+      "banking explained",
+      "consumer finance"
+    ],
+    "hashtags": [
+      "#banking",
+      "#personalfinance",
+      "#money",
+      "#finance",
+      "#shorts"
+    ],
+    "thumbnail_text": "BILLIONS FROM SMALL GAPS"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "A ten dollar coffee can turn into a thirty five dollar bank fee.",
+      "duration_sec": 3.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "overdraft fee hook"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "coffee cup receipt bank notification phone",
+        "visual_intent": "A coffee cup next to a phone showing a bank alert, warm cafe light, close shot",
+        "broll_keywords": [
+          "coffee cup phone notification",
+          "cafe table phone alert",
+          "bank notification phone close"
+        ],
+        "decision_reason": "hook: the disproportionate fee framing"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "It's called an overdraft fee. It triggers when your balance drops below zero, even by a few dollars.",
+      "duration_sec": 5.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "overdraft mechanism"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "balance dropping below zero screen",
+        "visual_intent": "An account balance figure dropping below zero on a banking app screen, clean financial graphic",
+        "broll_keywords": [
+          "balance below zero screen",
+          "banking app negative balance",
+          "account overdraft graphic"
+        ],
+        "decision_reason": "the basic mechanism"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Banks have historically processed several transactions in an order that can trigger more than one fee from a single low balance.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "transaction ordering"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "multiple transactions stacking fees screen",
+        "visual_intent": "Several small transaction icons stacking into a larger fee total, clean financial motion graphic",
+        "broll_keywords": [
+          "transactions stacking screen graphic",
+          "multiple fees stacking display",
+          "fee accumulation graphic"
+        ],
+        "decision_reason": "documented CFPB finding on transaction ordering and multiple-fee triggers"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "At its peak, this became a multi-billion dollar a year revenue line across the banking industry.",
+      "duration_sec": 5.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "billions annually"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "tall financial bar chart billions dark",
+        "visual_intent": "A tall glowing bar on a dark financial chart, camera pushing in, dramatic scale",
+        "broll_keywords": [
+          "tall bar chart dark screen",
+          "financial scale chart display",
+          "large revenue bar graphic"
+        ],
+        "decision_reason": "CFPB has tracked overdraft/NSF revenue in the multi-billion dollar range annually"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Regulatory pressure and policy changes at several banks have cut that total roughly in half over the past few years.",
+      "duration_sec": 6.4,
+      "confidence": "probable",
+      "transition_in": "fade",
+      "keywords": [
+        "decline in fees"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "declining bar chart trend screen",
+        "visual_intent": "A declining bar chart trend over several bars, clean financial motion graphic",
+        "broll_keywords": [
+          "declining bar chart trend",
+          "trend decreasing graphic screen",
+          "financial decline chart display"
+        ],
+        "decision_reason": "CFPB reported overdraft/NSF revenue down more than 50% versus pre-pandemic; marked probable since the trend is ongoing and bank-specific"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The fee was never about the coffee. It was about the gap, and the order things got charged in. Follow for more.",
+      "duration_sec": 6.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "closing takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "bank statement fee line highlighted close",
+        "visual_intent": "A bank statement with a fee line highlighted, close and deliberate, calm resolution shot",
+        "broll_keywords": [
+          "bank statement fee highlighted",
+          "statement close up shot",
+          "fee line document close"
+        ],
+        "decision_reason": "closing takeaway + CTA"
+      }
+    }
+  ]
+}

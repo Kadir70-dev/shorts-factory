@@ -1,0 +1,110 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d06_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Amazon's Retail Business Barely Turns A Profit. This Division Pays For Everything.",
+    "hook": "Amazon's massive retail operation runs on razor-thin margins. Almost all its profit comes from somewhere else entirely.",
+    "description": "Amazon's North America and international retail segments generate huge revenue but thin operating margins, functioning more like a customer-acquisition engine than a profit center. The real profit driver is Amazon Web Services, its cloud computing division: a much smaller slice of total revenue that delivers an outsized share of total operating income. Retail scale funds AWS's infrastructure buildout, and AWS profit funds everything else.",
+    "tags": ["amazon", "aws", "business model", "how amazon makes money", "cloud computing", "business strategy", "company finances"],
+    "hashtags": ["#amazon", "#aws", "#business", "#economics", "#shorts"],
+    "thumbnail_text": "IT'S NOT RETAIL"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Amazon's massive retail operation runs on razor-thin margins. Almost all its profit comes from somewhere else.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["amazon retail margins", "profit source"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "warehouse fulfillment center boxes conveyor",
+        "visual_intent": "A vast fulfillment center with boxes moving on conveyor belts, industrial light, wide tracking shot",
+        "broll_keywords": ["warehouse fulfillment center conveyor", "boxes conveyor belt warehouse", "distribution center packages"],
+        "decision_reason": "hook beat: the retail machine, hard cut"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Selling and shipping products at scale is expensive. Warehouses, delivery trucks, packaging, all eating into a thin margin.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["retail cost structure", "thin margins"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "pan_lr",
+        "query": "delivery trucks loading dock warehouse",
+        "visual_intent": "Delivery trucks lined up at a warehouse loading dock, overcast light, wide shot",
+        "broll_keywords": ["delivery trucks loading dock", "warehouse trucks lined up", "logistics trucks dock"],
+        "decision_reason": "shows the cost side of retail"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "The real profit engine is a division most customers never think about: Amazon Web Services, its cloud computing arm.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["aws profit engine", "cloud computing"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "server data center racks glowing blue",
+        "visual_intent": "Glowing server racks in a data center, cool blue light, wide tracking shot",
+        "broll_keywords": ["data center servers glowing", "server racks blue light", "cloud computing infrastructure"],
+        "decision_reason": "the AWS reveal"
+      },
+      "overlays": [{"type": "stat", "text": "Amazon Web Services (AWS)", "y": 0.16}]
+    },
+    {
+      "id": "s4",
+      "narration": "AWS makes up a much smaller slice of Amazon's total revenue, but it consistently delivers the majority of the company's operating profit.",
+      "duration_sec": 7.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["aws revenue vs profit share", "outsized margin"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_in",
+        "query": "pie chart small large slice screen",
+        "visual_intent": "A pie chart with a small slice representing revenue and a large slice representing profit, teal and gold",
+        "broll_keywords": ["pie chart slices screen", "financial breakdown pie chart", "data proportions graphic"],
+        "decision_reason": "visualizes the revenue-vs-profit contrast, per Amazon's segment reporting"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Retail's scale actually helps fund AWS's buildout, and AWS profit is what funds nearly everything else Amazon does.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["cross funding", "retail funds aws"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "money flow diagram two directions dark",
+        "visual_intent": "An arrows-based flow diagram showing funds moving between two business units, dark screen, teal and gold",
+        "broll_keywords": ["money flow diagram screen", "business flow arrows graphic", "financial network chart"],
+        "decision_reason": "the cross-funding relationship"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The store you shop at and the company that actually makes the money are, in a real sense, two different businesses. Follow for more.",
+      "duration_sec": 7.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["two businesses insight", "closing"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "corporate office building glass exterior modern",
+        "visual_intent": "A modern glass corporate headquarters exterior, wide shot, clear daylight",
+        "broll_keywords": ["corporate headquarters glass exterior", "modern office building wide", "tech company campus"],
+        "decision_reason": "closing scale visual and CTA"
+      }
+    }
+  ]
+}

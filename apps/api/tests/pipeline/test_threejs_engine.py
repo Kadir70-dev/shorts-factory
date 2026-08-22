@@ -90,7 +90,7 @@ async def test_render_failure_is_explicitly_unresolved(graph, monkeypatch, tmp_p
 
 
 @pytest.mark.asyncio
-async def test_disabled_gate_preserves_existing_asset_path(graph, monkeypatch):
+async def test_disabled_gate_preserves_existing_asset_path(graph, monkeypatch, isolated_state):
     monkeypatch.setattr(settings(), "threejs_visual_engine_enabled", False)
     monkeypatch.setattr(settings(), "multi_source_asset_engine_enabled", False)
     calls = []

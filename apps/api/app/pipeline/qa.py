@@ -44,6 +44,71 @@ class Check(BaseModel):
     severity: str = "error"            # "error" fails the report; "warn" doesn't
 
 
+# --------------------------------------------------------------------------- #
+# Plan-vs-delivery (OpenMontage-audit gap #3)
+# --------------------------------------------------------------------------- #
+# Which DELIVERED channel is an honest, non-silent substitution for a given
+# PLANNED channel — a lateral move between "real/produced visual" tiers, not a
+# collapse into the generic-card safety net. Anything reaching "motion_gfx"
+# (kinetic typography / the branded plate — see visual_budget.measure's own
+# branded→motion_gfx mapping) or UNRESOLVED from a DIFFERENT planned channel is
+# exactly the "blue/dark motion-card fallback" pattern this audit named: a
+# beat that was supposed to show something specific ends up showing text on a
+# brand-colour field instead. That transition is never in the allowed set —
+# it is always counted as a silent downgrade, by design, not oversight.
+#
+# The five "real content" channels (stock, official, ai_broll, charts,
+# threejs) may substitute for one another: a scene planned for archival
+# footage that lands on a relevant chart, or a 3D flythrough that lands on a
+# curated stock clip, is still SHOWING something concrete — a materially
+# different craft choice, not a failure. Configurable — this is a starting
+# point informed by the audit's own worked examples, not a claim of
+# universal correctness for every channel.
+ALLOWED_FALLBACKS: dict[str, set[str]] = {
+    "stock": {"official", "ai_broll", "charts", "threejs"},
+    "official": {"stock", "ai_broll", "charts", "threejs"},
+    "ai_broll": {"stock", "official", "charts", "threejs"},
+    "charts": {"stock", "official", "ai_broll", "threejs"},
+    "threejs": {"stock", "official", "ai_broll", "charts"},
+}
+
+
+class PlanVsDelivery(BaseModel):
+    """One scene's planned-vs-delivered outcome. `silent` is the flag this
+    whole check exists to raise — a mismatch that isn't in ALLOWED_FALLBACKS."""
+    scene_id: str
+    planned: str
+    delivered: str
+    matched: bool
+    silent: bool
+    reason: str = ""
+
+
+def plan_vs_delivery(budget_report) -> list[PlanVsDelivery]:
+    """Compare every scene's planned channel (what the allocator assigned,
+    `visual_budget.allocate`) against its delivered channel (what actually
+    resolved, `visual_budget.measure`) using ALLOWED_FALLBACKS.
+
+    Takes the report `visual_budget.measure(graph)` already produces (not the
+    graph directly) so this stays a pure function over data produce.py already
+    computes and persists (`visual_breakdown.json`) — no re-deriving the plan,
+    which is exactly the mistake `measure()`'s own docstring warns against.
+    """
+    out: list[PlanVsDelivery] = []
+    for a in budget_report.assignments:
+        planned = a.scores.get("planned", "-")
+        delivered = a.channel
+        if planned in ("", "-"):
+            continue                    # nothing was planned for this beat to drift from
+        matched = planned == delivered
+        silent = (not matched) and (delivered not in ALLOWED_FALLBACKS.get(planned, set()))
+        out.append(PlanVsDelivery(
+            scene_id=a.scene_id, planned=planned, delivered=delivered,
+            matched=matched, silent=silent,
+            reason="" if matched else a.reason))
+    return out
+
+
 class QAReport(BaseModel):
     video_id: str
     mp4: str
@@ -152,7 +217,8 @@ def consistency_pct(a: str, b: str) -> float:
 def analyze(graph: SceneGraph, mp4: str, *, render_seconds: float,
             ram_peak_mb: float, min_free_mb: float,
             consistency: Optional[float] = None,
-            timed_out: bool = False) -> QAReport:
+            timed_out: bool = False,
+            budget_report=None) -> QAReport:
     """Run the full QA audit on a finished short. Pure I/O on the file + metrics;
     never raises. `consistency` is an optional pre-computed character-consistency %
     (pass None when the short has no reusable character)."""
@@ -223,6 +289,28 @@ def analyze(graph: SceneGraph, mp4: str, *, render_seconds: float,
         rep.add("character consistency", consistency >= s.qa_consistency_min_pct,
                 f"{consistency:.1f}% (≥ {s.qa_consistency_min_pct:.0f}%)")
 
+    # --- 7. plan-vs-delivery: silent visual downgrades ------------------------ #
+    downgrade_count = downgrade_rate = None
+    if budget_report is not None:
+        pvd = plan_vs_delivery(budget_report)
+        drifted = [p for p in pvd if not p.matched]
+        silent = [p for p in pvd if p.silent]
+        downgrade_count = len(silent)
+        downgrade_rate = (len(silent) / len(pvd)) if pvd else 0.0
+        if silent:
+            examples = "; ".join(f"{p.scene_id}: planned {p.planned} → "
+                                 f"delivered {p.delivered}" for p in silent[:4])
+            more = f" (+{len(silent)-4} more)" if len(silent) > 4 else ""
+            detail = (f"{len(silent)}/{len(pvd)} planned beats ({downgrade_rate*100:.1f}%) "
+                     f"silently downgraded — {examples}{more}")
+        elif drifted:
+            detail = (f"{len(drifted)}/{len(pvd)} beats drifted from plan, "
+                     f"all within the allowed-fallback matrix")
+        else:
+            detail = f"all {len(pvd)} planned beats delivered as planned"
+        rep.add("plan-vs-delivery: no silent visual downgrade",
+                downgrade_rate <= s.qa_max_silent_downgrade_rate, detail)
+
     rep.metrics = {
         "render_seconds": round(render_seconds, 1),
         "ram_peak_mb": round(ram_peak_mb),
@@ -231,6 +319,8 @@ def analyze(graph: SceneGraph, mp4: str, *, render_seconds: float,
         "black_seconds": round(black, 2) if black >= 0 else None,
         "size_mb": round(os.path.getsize(mp4) / 1e6, 1),
         "consistency_pct": round(consistency, 1) if consistency is not None else None,
+        "silent_downgrade_count": downgrade_count,
+        "silent_downgrade_rate": round(downgrade_rate, 4) if downgrade_rate is not None else None,
     }
     return rep
 

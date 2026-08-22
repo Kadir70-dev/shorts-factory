@@ -1,0 +1,237 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d07_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "McDonald's Real Business Isn't Burgers. It's Rent.",
+    "hook": "McDonald's collected more than ten billion dollars in rent from franchised restaurants in twenty twenty-four.",
+    "description": "McDonald's Corporation owns or controls much of the land and buildings under its restaurants and collects rent from franchisees. Finance chief Harry Sonneborn engineered this structure in the 1950s through McDonald's Franchise Realty Corporation. The burgers pay the bills; the real estate is the business.",
+    "tags": [
+      "mcdonalds",
+      "business model",
+      "real estate",
+      "franchise",
+      "harry sonneborn",
+      "how mcdonalds makes money",
+      "business strategy"
+    ],
+    "hashtags": [
+      "#mcdonalds",
+      "#business",
+      "#realestate",
+      "#money",
+      "#shorts"
+    ],
+    "thumbnail_text": "THE REAL BUSINESS"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "McDonald's collected more than ten billion dollars in rent from franchised restaurants in twenty twenty-four.",
+      "duration_sec": 6.91,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "mcdonalds restaurant",
+        "business model"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "mcdonalds restaurant exterior sign",
+        "visual_intent": "A McDonald's storefront and golden arches sign at dusk, low angle, cinematic",
+        "broll_keywords": [
+          "mcdonalds restaurant exterior",
+          "golden arches sign close up",
+          "fast food storefront night"
+        ],
+        "decision_reason": "hook beat: the familiar object, hard cut"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "THE REAL BUSINESS",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "That happens because franchisees do not just pay royalties for the logo and operating system.",
+      "duration_sec": 6.91,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "harry sonneborn",
+        "mcdonalds history"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "pan_lr",
+        "query": "1950s businessman office archival black and white",
+        "visual_intent": "A mid-century office interior, archival documentary feel, a man reviewing papers at a desk, film grain",
+        "broll_keywords": [
+          "vintage office desk papers",
+          "1950s businessman archival",
+          "black and white office scene"
+        ],
+        "decision_reason": "introduces the financial architect, reported history"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "McDonald's generally owns the restaurant land or building, or secures the long-term lease, then charges the franchisee rent.",
+      "duration_sec": 6.91,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "franchise realty",
+        "land lease"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "empty commercial lot for lease sign",
+        "visual_intent": "A vacant corner lot with a 'for lease' sign, wide establishing shot, golden hour",
+        "broll_keywords": [
+          "commercial land for lease sign",
+          "empty corner lot city",
+          "real estate development site"
+        ],
+        "decision_reason": "structural fact: McDonald's Franchise Realty Corp, 1956"
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "McDonald's Franchise Realty Corp., 1956",
+          "y": 0.82
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "Its annual filing says conventional franchisees pay rent and royalties tied to sales, with minimum rent requirements.",
+      "duration_sec": 6.91,
+      "confidence": "probable",
+      "transition_in": "cut",
+      "keywords": [
+        "sonneborn quote",
+        "real estate business"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "businessman speaking pointing hand gesture office",
+        "visual_intent": "A man in a suit gesturing firmly mid-sentence across a desk, high contrast, documentary style",
+        "broll_keywords": [
+          "businessman pointing desk talking",
+          "serious office conversation",
+          "executive making a point"
+        ],
+        "decision_reason": "widely reported paraphrase of Sonneborn, marked as reported quote"
+      },
+      "overlays": [
+        {
+          "type": "quote",
+          "text": "\u201cWe're in the real estate business.\u201d",
+          "sub": "Harry Sonneborn",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "At the end of a typical franchise term, McDonald's still controls the underlying real estate and can re-franchise the location.",
+      "duration_sec": 6.91,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "burger pricing",
+        "rent"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "hamburger on tray fast food close up",
+        "visual_intent": "A simple fast-food hamburger on a tray under warm light, shallow focus, still",
+        "broll_keywords": [
+          "hamburger tray close up",
+          "fast food burger macro",
+          "classic burger fries close up"
+        ],
+        "decision_reason": "the curiosity-gap turn on the product itself"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "So every successful restaurant can produce food sales, royalties, and rent while the operator handles the kitchen.",
+      "duration_sec": 6.91,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "mcdonalds real estate holdings",
+        "corporate structure"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "aerial view suburban strip mall real estate",
+        "visual_intent": "An aerial tracking shot over a suburban commercial strip with multiple retail pads, cinematic drone feel",
+        "broll_keywords": [
+          "aerial suburban commercial real estate",
+          "strip mall aerial view",
+          "retail property rooftops"
+        ],
+        "decision_reason": "structural fact about McDonald's Corp's land/property holdings model"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Landlord to thousands of restaurants",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "narration": "The burger brings customers in. Control of the site makes the cash flow unusually durable.",
+      "duration_sec": 6.91,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "franchise model",
+        "business model payoff"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "restaurant kitchen staff working fast food",
+        "visual_intent": "A busy fast-food kitchen with staff working the line, warm light, documentary realism, pulling back",
+        "broll_keywords": [
+          "fast food kitchen staff working",
+          "restaurant line cooks busy",
+          "commercial kitchen wide shot"
+        ],
+        "decision_reason": "the payoff and CTA"
+      }
+    }
+  ]
+}

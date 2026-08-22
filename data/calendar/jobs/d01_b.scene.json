@@ -1,0 +1,111 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d01_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "The Fed Doesn't Print Money To Change Interest Rates. Here's What It Actually Does.",
+    "hook": "The Federal Reserve has never printed a dollar to raise or lower interest rates.",
+    "description": "The Federal Reserve sets a target range for the federal funds rate, then uses tools like the interest it pays banks on reserves to pull the real rate toward that target. No printing press involved. That single rate ripples out into mortgages, credit cards, savings accounts and business loans across the entire US economy. Educational content only, not financial advice.",
+    "tags": ["federal reserve", "interest rates", "fed funds rate", "how the fed works", "monetary policy", "economics explained", "macro economics"],
+    "hashtags": ["#federalreserve", "#interestrates", "#economics", "#money", "#shorts"],
+    "thumbnail_text": "NO PRINTING PRESS"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "The Federal Reserve has never printed a dollar to raise or lower interest rates.",
+      "duration_sec": 4.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["federal reserve", "interest rates myth"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "federal reserve building washington exterior",
+        "visual_intent": "The Federal Reserve building facade in Washington DC, low angle, overcast cinematic light",
+        "broll_keywords": ["federal reserve building exterior", "washington dc government building", "marriner eccles building"],
+        "decision_reason": "hook beat: the building, hard cut"
+      },
+      "overlays": [{"type": "stat", "text": "No printing press involved", "y": 0.16}]
+    },
+    {
+      "id": "s2",
+      "narration": "What it actually does is set a target range for one specific rate: the rate banks charge each other overnight.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["fed funds rate", "overnight lending"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "pan_lr",
+        "query": "bank vault interior secure",
+        "visual_intent": "A bank's secure vault interior, cool metallic light, slow pan across steel doors",
+        "broll_keywords": ["bank vault interior", "bank secure room steel", "financial institution interior"],
+        "decision_reason": "the fed funds rate mechanism"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "To hit that target, it changes the interest it pays banks on the reserves those banks already keep parked at the Fed.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["interest on reserve balances", "monetary policy tool"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_out",
+        "query": "financial data dashboard numbers screen",
+        "visual_intent": "A dashboard of glowing financial rate figures adjusting on a dark screen, minimal cinematic render",
+        "broll_keywords": ["financial dashboard screen numbers", "interest rate chart display", "banking data terminal"],
+        "decision_reason": "visualizes the rate-setting lever"
+      },
+      "overlays": [{"type": "stat", "text": "Interest on reserve balances", "y": 0.18}]
+    },
+    {
+      "id": "s4",
+      "narration": "Raise that, and banks demand more to lend to each other. Lower it, and lending gets cheaper across the board.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["rate transmission", "bank lending"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "none",
+        "query": "two bankers handshake office deal",
+        "visual_intent": "Two bankers shaking hands across a desk in a glass office, cool corporate light",
+        "broll_keywords": ["bankers handshake office", "business deal handshake desk", "corporate office meeting"],
+        "decision_reason": "the up/down mechanic"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "That one number then ripples outward into mortgage rates, credit card APRs, savings account yields, and business loans.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["rate ripple effect", "consumer loans"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "suburban houses neighborhood aerial",
+        "visual_intent": "An aerial pan over a suburban American neighborhood, warm late-day light",
+        "broll_keywords": ["suburban neighborhood aerial", "american houses street", "residential homes overhead"],
+        "decision_reason": "the reach into everyday financial life"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "No presses running. Just one rate, adjusted at a boardroom table, moving through the entire economy. Follow for more.",
+      "duration_sec": 7.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["monetary policy summary", "economy wide effect"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "conference room table meeting officials",
+        "visual_intent": "An empty formal conference room table with microphones and name placards, dramatic overhead light",
+        "broll_keywords": ["conference room table meeting", "formal boardroom empty", "government meeting room table"],
+        "decision_reason": "the boardroom-to-economy scale payoff and CTA"
+      }
+    }
+  ]
+}

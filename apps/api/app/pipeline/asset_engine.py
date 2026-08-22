@@ -11,7 +11,7 @@ import json
 import os
 import re
 import shutil
-from collections.abc import Awaitable, Callable
+from collections.abc import Awaitable, Callable, Sequence
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
@@ -36,9 +36,20 @@ SOURCE_PRIORITY = (
 # selection time rather than after spending the bandwidth.
 RENDERABLE_SUFFIXES = {".mp4", ".mov", ".webm", ".jpg", ".jpeg", ".png", ".webp"}
 RENDERABLE_TYPES = {"image", "video"}
+# Licences that permit COMMERCIAL use. Attribution-required entries are fine —
+# the requirement travels with the candidate in `attribution_requirement` and is
+# burned into the credits. NonCommercial (NC) and NoDerivatives (ND) are
+# deliberately absent and must stay absent.
+#
+# The 2.5 and 1.0 generations were missing, which silently rejected real archival
+# photographs: Wikimedia serves plenty of "CC BY 2.5", and it is exactly as
+# commercially safe as the 2.0 and 3.0 already listed.
 SAFE_LICENSES = {
-    "public domain", "us government work", "cc0", "cc by 2.0", "cc by 3.0",
-    "cc by 4.0", "cc by-sa 2.0", "cc by-sa 3.0", "cc by-sa 4.0",
+    "public domain", "public domain mark", "pdm 1.0", "pdm-owner",
+    "us government work", "pd-usgov", "cc0", "cc0 1.0",
+    "cc by 1.0", "cc by 2.0", "cc by 2.5", "cc by 3.0", "cc by 4.0",
+    "cc by-sa 1.0", "cc by-sa 2.0", "cc by-sa 2.5", "cc by-sa 3.0",
+    "cc by-sa 4.0",
     "pexels license", "pixabay content license", "company press use",
 }
 Fetcher = Callable[[str, str, StoryboardScene], Awaitable[list[AssetCandidate]]]
@@ -66,8 +77,49 @@ _FASHION_SUBJECT = re.compile(
     r"retail|store|garment|apparel|shoe|sneaker|inspection)\b", re.I)
 
 
-def build_query(beat: StoryboardScene) -> str:
-    """Build a subject-first query from structured facts, not generic themes."""
+# Grammar an archive caption never contains. `narration_match` scores a hit by
+# how much of the QUERY it covers, so every one of these words in a query is a
+# guaranteed miss that drags a perfectly good photograph under the floor.
+_STOPWORDS = frozenset("""
+a an and are as at be been but by called did do does for from had has have he
+her his how in into is it its of on one only or our out she so that the their
+then there these they this to too was were what when where which who why will
+with would you your not no now just also more most over after before while
+""".split())
+
+
+def _dedup(fields: list[str]) -> str:
+    seen: set[str] = set()
+    return " ".join(value.strip() for value in fields
+                    if value and not (value.lower() in seen or seen.add(value.lower())))
+
+
+def _content_words(text: str, limit: int) -> list[str]:
+    """Narration words an archive could plausibly have indexed."""
+    return [word for word in re.findall(r"[A-Za-z][\w'-]+", text)
+            if word.lower() not in _STOPWORDS][:limit]
+
+
+def build_query(beat: StoryboardScene, keywords: Sequence[str] = ()) -> str:
+    """Build a subject-first query from structured facts, not generic themes.
+
+    `keywords` are the Director's authored `visual.broll_keywords` — the schema
+    calls them "ordered footage search phrases for the asset resolver", and they
+    are the single best description of the shot that exists anywhere in the
+    graph. They were not read here, so a beat that had asked for
+    "marine one helicopter 1971" was searched for as "On Friday the thirteenth
+    the President" instead: sentence grammar, which no caption contains, which
+    scores the floor 0.30 against a 0.58 gate, which rejects every candidate no
+    matter how good. Authored phrases now lead the query.
+    """
+    if keywords:
+        # EXACTLY ONE phrase. `narration_match` scores a hit by the fraction of
+        # the query's words the caption contains, so every extra word makes a
+        # correct photograph score LOWER. Gluing both authored phrases together
+        # and appending the entity built an 11-word query that the right image
+        # could not cover; the phrase on its own is short, specific and clears
+        # the floor comfortably. The second phrase is the retry, not a suffix.
+        return keywords[0].strip()
     fields: list[str] = [beat.company, beat.primary_entity]
     fields.extend(beat.secondary_entities[:2])
     fields.extend([beat.location, str(beat.year or "")])
@@ -77,29 +129,27 @@ def build_query(beat: StoryboardScene) -> str:
     fields.extend(list(dict.fromkeys(
         m.group(0).lower() for m in
         _FASHION_SUBJECT.finditer(f"{beat.narration} {beat.visual_objective}")))[:4])
-    # The narration carries the event/action that Phase 2 does not model
-    # separately. Six words, not twelve: `narration_match` scores an archive hit
-    # by how much of THIS query it covers, so every extra grammar word lowered
-    # the score of a perfectly good photograph until it fell under the floor.
-    event = " ".join(re.findall(r"[A-Za-z][\w'-]+", beat.narration)[:6])
-    fields.append(event)
-    seen: set[str] = set()
-    return " ".join(value.strip() for value in fields
-                    if value and not (value.lower() in seen or seen.add(value.lower())))
+    # Fallback for a beat with no structured subject at all. Content words only —
+    # the old version took the first six words verbatim, which on most sentences
+    # is pure grammar ("And then Britain asked for roughly").
+    fields.append(" ".join(_content_words(beat.narration, 6)))
+    return _dedup(fields)
 
 
-def subject_query(beat: StoryboardScene) -> str:
-    """Nouns only — the retry query. Brand/place/year plus the physical subject
-    (material, process, facility, supply-chain stage), with no narration grammar
-    to dilute the match score."""
+def subject_query(beat: StoryboardScene, keywords: Sequence[str] = ()) -> str:
+    """Nouns only — the retry query. Brand/place/year plus the physical subject,
+    with no narration grammar to dilute the match score."""
+    if len(keywords) > 1:
+        # A second authored phrase is a genuinely different shot idea, which is
+        # exactly what a retry wants. Same phrase twice is not worth a round trip.
+        return keywords[1].strip()
     fields = [beat.company, beat.primary_entity, beat.location,
               str(beat.year or "")]
     fields.extend(list(dict.fromkeys(
         m.group(0).lower() for m in
         _FASHION_SUBJECT.finditer(f"{beat.narration} {beat.visual_objective}")))[:3])
-    seen: set[str] = set()
-    return " ".join(v.strip() for v in fields
-                    if v and not (v.lower() in seen or seen.add(v.lower())))
+    fields.append(" ".join(_content_words(beat.visual_objective, 4)))
+    return _dedup(fields)
 
 
 def legal(candidate: AssetCandidate) -> bool:
@@ -235,13 +285,22 @@ async def resolve(graph: SceneGraph, fetcher: Fetcher, downloader: Downloader,
     today = date.today().isoformat()
     search_providers = providers or tuple(
         p for p in source_priority() if p != "ai_generation")
+    # The Director's authored footage phrases, keyed by the scene they belong to.
+    # They live on Scene.visual, which the storyboard beat does not carry, so the
+    # graph is the only place this mapping can be built.
+    keywords_for: dict[str, tuple[str, ...]] = {
+        scene.id: tuple(scene.visual.broll_keywords) for scene in graph.scenes}
+
+    def _query(beat: StoryboardScene) -> str:
+        return build_query(beat, keywords_for.get(beat.source_scene_id, ()))
+
     discovered: dict[tuple[str, str], list[AssetCandidate]] = {}
     if settings().production_optimizer_enabled:
         from .production_optimizer import scheduler
         jobs = [(beat, provider) for beat in graph.storyboard.scenes
                 for provider in search_providers]
         async def discover(beat, provider):
-            try: return await fetcher(provider, build_query(beat), beat)
+            try: return await fetcher(provider, _query(beat), beat)
             except Exception: return []
         results = await scheduler.map("asset_discovery", [
             (lambda beat=beat, provider=provider: discover(beat, provider))
@@ -249,7 +308,8 @@ async def resolve(graph: SceneGraph, fetcher: Fetcher, downloader: Downloader,
         discovered = {(beat.scene_id, provider): found
                       for (beat, provider), found in zip(jobs, results)}
     for beat in graph.storyboard.scenes:
-        query = build_query(beat)
+        authored = keywords_for.get(beat.source_scene_id, ())
+        query = build_query(beat, authored)
         all_candidates: list[AssetCandidate] = []
 
         # Unchanged intent + the licensed file still on disk = keep it. This
@@ -289,7 +349,7 @@ async def resolve(graph: SceneGraph, fetcher: Fetcher, downloader: Downloader,
         # ONE retry per beat, nouns only. An archive that holds the right
         # photograph still answers "nothing" to a sentence-shaped query; this is
         # the difference between an official asset and falling through the floor.
-        retry = subject_query(beat)
+        retry = subject_query(beat, authored)
         if selected is None and retry and retry != query:
             # The providers are independent HTTP calls, so the retry ran N
             # round-trips back to back for no reason. Still exactly ONE retry

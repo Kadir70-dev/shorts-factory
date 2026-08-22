@@ -1,0 +1,208 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d07_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "A Stock Split Sounds Like a Discount. It Isn't.",
+    "hook": "A stock split can make a $900 share suddenly cost $90. Your money hasn't changed at all.",
+    "description": "A stock split multiplies a company's share count while dividing the price by the same factor \u2014 total value is unchanged. Companies split mainly to make shares look more accessible to smaller investors, not to create new value. Educational content only, not financial advice.",
+    "tags": [
+      "stock split",
+      "stock market basics",
+      "investing for beginners",
+      "how stocks work",
+      "shares explained"
+    ],
+    "hashtags": [
+      "#stockmarket",
+      "#investing",
+      "#stocks",
+      "#money",
+      "#shorts"
+    ],
+    "thumbnail_text": "SAME MONEY"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "A stock split can turn a nine hundred dollar share into ten shares worth ninety dollars each.",
+      "duration_sec": 3.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "stock split",
+        "share price"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "stock chart screen numbers close up",
+        "visual_intent": "A glowing stock price ticker splitting visually into smaller numbered blocks, dark cinematic finance screen",
+        "broll_keywords": [
+          "stock price ticker screen",
+          "stock market numbers close up",
+          "financial chart screen dark"
+        ],
+        "decision_reason": "hook beat: the visual math, hard cut"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "It feels like a discount. It isn't. Nothing about the company changed.",
+      "duration_sec": 4.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "stock split myth"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "empty trading floor screens still",
+        "visual_intent": "A quiet trading floor with idle screens, stillness after the opening rush, cool light",
+        "broll_keywords": [
+          "trading floor screens idle",
+          "stock exchange quiet interior",
+          "financial monitors still"
+        ],
+        "decision_reason": "the myth-busting turn"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "A split just multiplies the number of shares while dividing the price by the same factor.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "split mechanics"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "pie chart splitting into equal pieces animation style footage",
+        "visual_intent": "A whole shape dividing into equal smaller pieces, clean graphic-style motion, dark background",
+        "broll_keywords": [
+          "shapes dividing equal pieces",
+          "abstract division graphic",
+          "geometric split animation footage"
+        ],
+        "decision_reason": "core mechanics, definitional \u2014 no company-specific figure asserted"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "If you owned one share worth nine hundred dollars, you now own ten shares worth ninety. Same total value.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "share value unchanged"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "stack of coins dividing into smaller stacks",
+        "visual_intent": "One tall stack of coins splitting into ten smaller equal stacks on a dark surface, macro",
+        "broll_keywords": [
+          "coins stack dividing macro",
+          "coin stacks equal piles",
+          "money stacks close up"
+        ],
+        "decision_reason": "illustrates value conservation with a worked example"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "1 \u00d7 $900 = 10 \u00d7 $90",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "So why do companies bother? Mostly optics. A lower share price looks more accessible to smaller investors.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "investor psychology"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "young investor looking at phone stock app",
+        "visual_intent": "A person checking a stock app on their phone, casual setting, natural light",
+        "broll_keywords": [
+          "person checking phone stock app",
+          "investor smartphone trading app",
+          "checking finances phone casual"
+        ],
+        "decision_reason": "the psychological/accessibility rationale"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "It can also make options and small trades easier to size. But your ownership stake never grows from a split alone.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "options trading",
+        "ownership stake"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "hands typing on trading computer screen",
+        "visual_intent": "Hands typing at a desk with a trading screen in soft focus behind, warm light",
+        "broll_keywords": [
+          "hands typing keyboard desk",
+          "trading computer screen background",
+          "investor working desk"
+        ],
+        "decision_reason": "clarifies the practical (not value) benefit"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "The math doesn't create a cent of new wealth. It just cuts the same pie into smaller slices.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_out",
+        "query": "whole pie cut into slices on table overhead",
+        "visual_intent": "An overhead shot of a whole pie being cut into equal slices, clean warm light",
+        "broll_keywords": [
+          "pie cut into slices overhead",
+          "dessert sliced equal pieces",
+          "food metaphor slicing overhead"
+        ],
+        "decision_reason": "closing metaphor payoff"
+      }
+    }
+  ]
+}

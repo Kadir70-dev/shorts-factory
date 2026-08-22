@@ -1,0 +1,183 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d17_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "The Supreme Court Broke Up One Oil Company. It Became Dozens.",
+    "hook": "In nineteen eleven, the Supreme Court ordered Standard Oil broken apart under the Sherman Antitrust Act.",
+    "description": "In 1911 the US Supreme Court ruled Standard Oil was an illegal monopoly and ordered it dissolved into roughly 34 separate companies. Those pieces evolved over the following century into firms including ExxonMobil, Chevron, and Marathon, among others. It remains one of the most consequential antitrust breakups in American business history.",
+    "tags": [
+      "standard oil",
+      "antitrust history",
+      "business history",
+      "exxon",
+      "chevron",
+      "rockefeller"
+    ],
+    "hashtags": [
+      "#business",
+      "#history",
+      "#antitrust",
+      "#economics",
+      "#shorts"
+    ],
+    "thumbnail_text": "1 COMPANY \u2192 34"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "In nineteen eleven, the Supreme Court ordered Standard Oil broken apart under the Sherman Antitrust Act.",
+      "duration_sec": 6.96,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "standard oil breakup"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "old courthouse columns archival style",
+        "visual_intent": "Grand courthouse columns shot from below, archival documentary grade, dramatic light",
+        "broll_keywords": [
+          "courthouse columns archival",
+          "supreme court building historic",
+          "government building columns"
+        ],
+        "decision_reason": "hook: the historic ruling"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "The company had grown into a dominant force across refining, transportation, and distribution in the American oil industry.",
+      "duration_sec": 6.96,
+      "confidence": "probable",
+      "transition_in": "cut",
+      "keywords": [
+        "standard oil dominance"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "pan_lr",
+        "query": "vintage oil refinery archival footage",
+        "visual_intent": "An early twentieth century oil refinery, archival film grain, wide industrial shot",
+        "broll_keywords": [
+          "vintage oil refinery archival",
+          "historic industrial plant film",
+          "old oil facility archival"
+        ],
+        "decision_reason": "widely documented dominance, kept general rather than an exact contested percentage"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "The Court concluded that its conduct unlawfully restrained trade and ordered the combination dissolved into separate companies.",
+      "duration_sec": 6.96,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "sherman antitrust ruling"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "gavel document signing archival",
+        "visual_intent": "A gavel resting on a legal document, dramatic single light, archival tone",
+        "broll_keywords": [
+          "gavel legal document shot",
+          "courtroom document archival",
+          "legal ruling symbolic shot"
+        ],
+        "decision_reason": "the Sherman Antitrust Act ruling, well documented"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "The breakup did not erase the underlying refineries, pipelines, brands, or shareholders. It separated their corporate control.",
+      "duration_sec": 6.96,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "34 companies"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "single shape splitting into many pieces screen",
+        "visual_intent": "A single glowing shape splitting into many smaller pieces on a dark screen, clean motion graphic",
+        "broll_keywords": [
+          "shape splitting pieces graphic",
+          "single form dividing screen",
+          "company split visualization"
+        ],
+        "decision_reason": "figure corroborated by Library of Congress and multiple legal history sources"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "34 COMPANIES",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "Over later decades, successor companies merged and evolved into businesses connected to names including ExxonMobil and Chevron.",
+      "duration_sec": 6.96,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "successor companies"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "pan_lr",
+        "query": "modern oil company logo gas station exterior",
+        "visual_intent": "A modern gas station exterior with company branding visible, daylight, wide shot",
+        "broll_keywords": [
+          "gas station exterior daylight",
+          "oil company branding modern",
+          "fuel station wide shot"
+        ],
+        "decision_reason": "successor lineage is well documented in corporate history records"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "One court decision changed ownership boundaries across an industry whose physical assets kept operating for generations.",
+      "duration_sec": 6.96,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "long term impact"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_out",
+        "query": "modern city skyline energy industry wide",
+        "visual_intent": "A modern city skyline at dusk, symbolic of the industry's continued scale, cinematic",
+        "broll_keywords": [
+          "city skyline dusk wide",
+          "modern skyline energy symbolic",
+          "urban skyline evening shot"
+        ],
+        "decision_reason": "closing scope + CTA"
+      }
+    }
+  ]
+}

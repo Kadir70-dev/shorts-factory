@@ -1,0 +1,275 @@
+{
+  "schema_version": "2.0",
+  "brand_id": "k70",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "meta": {
+    "video_id": "vid_usa_50_states_v1",
+    "channel_id": "k70_facts",
+    "niche": "usa_facts",
+    "structure_id": "timeline_twist_conclusion",
+    "title": "Why Does the USA Have Exactly 50 States?",
+    "hook": "Why exactly fifty — and not forty, or a hundred?",
+    "description": "The United States began as thirteen British colonies in 1776. Purchases, treaties and statehood acts added thirty-seven more, and the count stopped in 1959 when Alaska and Hawaii joined seven months apart. Today those fifty states cover about 9.8 million square kilometres.",
+    "tags": [
+      "50 states",
+      "why 50 states",
+      "us history",
+      "american geography",
+      "alaska hawaii statehood",
+      "louisiana purchase",
+      "usa facts"
+    ],
+    "hashtags": [
+      "#shorts",
+      "#usa",
+      "#history",
+      "#geography"
+    ],
+    "thumbnail_text": "WHY 50 STATES?"
+  },
+  "scenes": [
+    {
+      "id": "s1",
+      "beat_role": "hook",
+      "duration_sec": 5.0,
+      "narration": "Why does the United States have exactly fifty states, and not forty, or a hundred?",
+      "confidence": "confirmed",
+      "keywords": [],
+      "visual": {
+        "type": "motion_gfx",
+        "strategy": "motion_gfx",
+        "scene_visual_type": "dramatic",
+        "motion": "none",
+        "visual_intent": "The question itself, built on screen in type — no footage answers a why",
+        "broll_keywords": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "Why exactly 50?",
+          "y": 0.18
+        }
+      ],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s2",
+      "beat_role": "context",
+      "duration_sec": 6.8,
+      "narration": "In seventeen seventy-six, thirteen British colonies signed the Declaration of Independence and broke away.",
+      "confidence": "confirmed",
+      "keywords": [
+        "Declaration of Independence"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "ken_burns",
+        "visual_intent": "Archival public-domain painting of the Declaration of Independence signing — the historic founding record, not a recreation",
+        "broll_keywords": [
+          "Declaration of Independence signing painting",
+          "Trumbull Declaration of Independence"
+        ]
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "1776",
+          "sub": "Thirteen colonies"
+        }
+      ],
+      "transition_in": "fade"
+    },
+    {
+      "id": "s3",
+      "beat_role": "evidence",
+      "duration_sec": 8.0,
+      "narration": "From those original thirteen, the map kept growing, and thirty-seven more states joined the Union over the next two centuries.",
+      "confidence": "confirmed",
+      "keywords": [],
+      "visual": {
+        "type": "dataviz",
+        "strategy": "dataviz",
+        "scene_visual_type": "data_viz",
+        "motion": "none",
+        "visual_intent": "The whole story as one number moving: 13 becomes 50",
+        "broll_keywords": []
+      },
+      "data": {
+        "kind": "delta",
+        "title": "States in the Union",
+        "points": [
+          {
+            "label": "1776",
+            "value": 13,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Today",
+            "value": 50,
+            "emphasis": "primary"
+          }
+        ],
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 1,
+        "source": "U.S. National Archives"
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "U.S. National Archives",
+          "y": 0.12
+        }
+      ],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s4",
+      "beat_role": "turn",
+      "duration_sec": 5.0,
+      "narration": "In eighteen oh three, the Louisiana Purchase doubled the young country overnight.",
+      "confidence": "confirmed",
+      "keywords": [
+        "Louisiana Purchase"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "ken_burns",
+        "visual_intent": "The archival Louisiana Purchase treaty and the historic 1803 map of the territory — public-domain record, not a recreation",
+        "broll_keywords": [
+          "Louisiana Purchase treaty document",
+          "Louisiana Purchase 1803 map"
+        ]
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Louisiana Purchase, 1803",
+          "sub": "Doubled the nation",
+          "y": 0.2
+        }
+      ],
+      "transition_in": "push_up"
+    },
+    {
+      "id": "s5",
+      "beat_role": "evidence",
+      "duration_sec": 5.5,
+      "narration": "The count stopped in nineteen fifty-nine: Alaska joined that January, and Hawaii that August.",
+      "confidence": "confirmed",
+      "keywords": [
+        "Alaska landscape",
+        "Hawaii landscape"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "ken_burns",
+        "visual_intent": "The two places that closed the list — Alaskan mountains, then Hawaiian shoreline",
+        "broll_keywords": [
+          "alaska mountain range",
+          "hawaii shoreline"
+        ]
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "1959",
+          "sub": "Alaska 49th · Hawaii 50th"
+        }
+      ],
+      "transition_in": "fade"
+    },
+    {
+      "id": "s6",
+      "beat_role": "evidence",
+      "duration_sec": 7.0,
+      "narration": "Together they cover nine point eight million square kilometres, the third largest on Earth by total area.",
+      "confidence": "confirmed",
+      "keywords": [],
+      "visual": {
+        "type": "threejs",
+        "strategy": "threejs",
+        "scene_visual_type": "data_viz",
+        "motion": "none",
+        "visual_intent": "The scale figure counted up in 3D against the two countries that beat it",
+        "broll_keywords": []
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "Total area, million km²",
+        "points": [
+          {
+            "label": "Russia",
+            "value": 17.1,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Canada",
+            "value": 10.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "USA",
+            "value": 9.8,
+            "emphasis": "primary"
+          },
+          {
+            "label": "China",
+            "value": 9.6,
+            "emphasis": "normal"
+          }
+        ],
+        "decimals": 1,
+        "abbreviate": false,
+        "highlight": 2,
+        "source": "CIA World Factbook, total area",
+        "note": "Ranked by total area, land plus water"
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "CIA World Factbook",
+          "y": 0.12
+        }
+      ],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s7",
+      "beat_role": "cta",
+      "duration_sec": 5.1,
+      "narration": "So every star on the flag is one of them: fifty states, one country.",
+      "confidence": "confirmed",
+      "keywords": [],
+      "visual": {
+        "type": "motion_gfx",
+        "strategy": "motion_gfx",
+        "scene_visual_type": "dramatic",
+        "motion": "none",
+        "visual_intent": "The payoff line set in type, fifty stars resolving behind it on the branded field",
+        "broll_keywords": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "50 stars. 50 states.",
+          "y": 0.18
+        },
+        {
+          "type": "lower_third",
+          "text": "Follow K70 for more America.",
+          "y": 0.3
+        }
+      ],
+      "transition_in": "dip_to_black"
+    }
+  ]
+}

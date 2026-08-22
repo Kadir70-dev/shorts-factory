@@ -1,0 +1,111 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d28_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "5.6 Million US Households Pay To Cash Their Own Paycheck",
+    "hook": "5.6 million American households don't have a bank account at all.",
+    "description": "The FDIC found 4.2% of US households — about 5.6 million — were unbanked in 2023, the lowest rate since the survey began in 2009. Without a bank account, basic transactions like cashing a paycheck or paying a bill run through check-cashing and prepaid-card services that charge fees a checking account usually wouldn't.",
+    "tags": ["unbanked", "check cashing", "fdic", "personal finance", "financial inclusion", "consumer finance", "banking basics"],
+    "hashtags": ["#personalfinance", "#banking", "#fdic", "#consumerfinance", "#shorts"],
+    "thumbnail_text": "5.6 MILLION"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "About five point six million American households don't have a bank account at all. Check-cashing stores exist because of them.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["unbanked households", "check cashing stores"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "check cashing store storefront sign",
+        "visual_intent": "A check-cashing storefront sign, documentary street-level shot, neutral daylight",
+        "broll_keywords": ["check cashing store sign", "storefront urban street", "financial services storefront"],
+        "decision_reason": "hook beat: FDIC 2023 National Survey figure (5.6 million households, 4.2%)"
+      },
+      "overlays": [{"type": "stat", "text": "5.6M households", "y": 0.18}]
+    },
+    {
+      "id": "s2",
+      "narration": "A checking account would clear your paycheck for free. Without one, cashing that same check can cost a real cut of it.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["paycheck cashing fee"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "pan_lr",
+        "query": "paycheck close up hand counting cash",
+        "visual_intent": "A paycheck being handed over with cash counted beside it, warm working-class setting",
+        "broll_keywords": ["paycheck cash counting hand", "counting money close up", "paycheck envelope cash"],
+        "decision_reason": "illustrates the fee-vs-free contrast"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Check-cashing and prepaid-card services charge fees for basic transactions that a bank account would usually handle for nothing.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["prepaid card fees"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_in",
+        "query": "prepaid debit card close up fees",
+        "visual_intent": "A prepaid debit card in close focus, clinical product-style lighting",
+        "broll_keywords": ["prepaid debit card close up", "plastic card macro shot", "bank card product photo"],
+        "decision_reason": "grounds the fee structure in the actual product"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "It adds up. Someone paid biweekly can lose real money every year just accessing their own paycheck.",
+      "duration_sec": 5.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["cumulative fee cost"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_out",
+        "query": "coins draining pile shrinking",
+        "visual_intent": "A pile of coins visibly shrinking, symbolic of fees chipping away at income",
+        "broll_keywords": ["coins pile shrinking", "money draining concept", "coins decreasing close up"],
+        "decision_reason": "visualizes the cumulative cost without asserting an unverified exact dollar figure"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "The FDIC put the unbanked rate at four point two percent of US households in twenty twenty-three, the lowest since the survey began in two thousand nine.",
+      "duration_sec": 7.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["fdic 2023 survey"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "financial chart declining trend line screen",
+        "visual_intent": "A downward-trending line chart on a clean data display, teal branded tone",
+        "broll_keywords": ["declining trend chart screen", "data line graph dark", "statistics chart falling"],
+        "decision_reason": "FDIC 2023 National Survey of Unbanked and Underbanked Households, published November 2024"
+      },
+      "overlays": [{"type": "stat", "text": "4.2% unbanked (2023)", "y": 0.18}]
+    },
+    {
+      "id": "s6",
+      "narration": "The fees aren't hidden. They're just the price of not having access most people take for granted. Follow for more.",
+      "duration_sec": 5.6,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["access inequality summary"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "zoom_in",
+        "query": "bank branch exterior street daylight",
+        "visual_intent": "A neighborhood bank branch exterior, calm closing daylight shot",
+        "broll_keywords": ["bank branch exterior street", "local bank building daylight", "bank storefront calm shot"],
+        "decision_reason": "closing takeaway and CTA"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "d14_a",
+  "day": 14,
+  "slot": "A",
+  "category": "business_wealth_story",
+  "content_type": "trend",
+  "intended_category": "business_wealth_story",
+  "research_query": "major US business/M&A/corporate-strategy news story breaking within the last 72 hours",
+  "source_requirements": [
+    "Story must be corroborated by at least one primary source (company press release, SEC 8-K/press filing, official IR statement) OR two independent reputable business-press outlets (e.g. Reuters, AP, WSJ, Bloomberg, CNBC).",
+    "Story must be less than 72 hours old at research time.",
+    "Reject if the only coverage is a single outlet, a blog, or social-media speculation."
+  ],
+  "script_template": "0-2s HOOK: state the single most concrete, surprising fact from the verified story (a number, a decision, a name) \u2014 no 'breaking news' filler. 2-8s SETUP: what happened, who, when \u2014 plain, specific. 8-30s STORY/EXPLANATION: why it happened / the mechanism behind it, in causal, visual language \u2014 one central idea only. 30-45s PAYOFF: what it actually means for the viewer or the wider economy \u2014 the 'so what', hedged per the story's real confidence level (confirmed vs analysts-expect language). Final seconds: one sharp, memorable closing line; 'Follow for more.' only if it fits naturally. Total 35-55s, ~90-130 spoken words, natural American English, no guaranteed-return or buy/sell-call language. Build the actual SceneGraph using the same schema as the evergreen jobs (see _job_spec_reference.md) once the real story and its sources are confirmed.",
+  "freshness_requirements": "Research must run within 24-48 hours of this slot's scheduled publish day (day 14 of the 30-day cycle), not at backlog-build time. If no story clears the source requirements and the 72-hour freshness bar, fall back to the next unused evergreen topic in the same category (do not force a weak or unverified story into this slot).",
+  "sources": [],
+  "quality_scores": null,
+  "disclaimer": "",
+  "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+}

@@ -16,13 +16,20 @@
 # ─────────────────────────────────────────────────────────────────────────────
 version: 1
 
+# 2026-08-22 (Day 04 rule): motion_gfx (full-screen kinetic typography, the
+# "blue text card") was hitting 25-47% of screen time per Short — a text
+# slideshow, not a visual story. Capped to a single beat max (~1 scene) and
+# threejs zeroed out (engine disabled in this environment; routing scenes to
+# it produced broken/blank frames). The freed share moves to real footage,
+# AI cinematic recreation and charts. Revert from visual_budget.yaml.day04.bak
+# if the old 25-35% motion_gfx default is ever wanted back.
 bands:
-  motion_gfx:  {lo: 0.25, hi: 0.35}   # kinetic typography over branded fields
-  threejs:     {lo: 0.15, hi: 0.25}   # 3D data / geography / scale
-  official:    {lo: 0.15, hi: 0.25}   # government, SEC, company IR, Wikimedia
-  ai_broll:    {lo: 0.15, hi: 0.25}   # cinematic recreation, nothing licensable
-  stock:       {lo: 0.10, hi: 0.20}   # Pexels / Pixabay — SUPPORT SHOTS ONLY
-  charts:      {lo: 0.10, hi: 0.20}   # data visualisation, maps, icons, logos
+  motion_gfx:  {lo: 0.00, hi: 0.17}   # kinetic typography — ONE beat max, never the default
+  threejs:     {lo: 0.00, hi: 0.00}   # engine disabled here; do not route scenes to it
+  official:    {lo: 0.10, hi: 0.30}   # government, SEC, company IR, Wikimedia
+  ai_broll:    {lo: 0.20, hi: 0.45}   # cinematic recreation, nothing licensable
+  stock:       {lo: 0.15, hi: 0.40}   # Pexels / Pixabay — real-world & relevant footage
+  charts:      {lo: 0.10, hi: 0.25}   # data visualisation, maps, icons, logos
 
 # Order the allocator fills bands in. Scarce, content-gated channels go FIRST:
 # a beat that can carry official footage is rare, so claim it before a channel

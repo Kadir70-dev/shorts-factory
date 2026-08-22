@@ -1,0 +1,111 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d02_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Blockbuster Could Have Bought Netflix For $50 Million. They Laughed Them Out Of The Room.",
+    "hook": "In 2000, Netflix walked into Blockbuster and offered to sell the entire company for fifty million dollars.",
+    "description": "In 2000, Netflix co-founders Reed Hastings and Marc Randolph pitched Blockbuster on buying their struggling DVD-by-mail startup for $50 million. Blockbuster's leadership passed. Within a decade Blockbuster was bankrupt, and Netflix went on to become one of the most valuable media companies in the world. (Blockbuster's then-CEO has since disputed how serious the meeting was — this is the widely reported version from Netflix's own founders.)",
+    "tags": ["blockbuster", "netflix", "business failure", "missed opportunity", "business strategy", "company history", "streaming"],
+    "hashtags": ["#netflix", "#blockbuster", "#business", "#economics", "#shorts"],
+    "thumbnail_text": "$50 MILLION, NO"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "In two thousand, Netflix walked into Blockbuster and offered to sell the entire company for fifty million dollars.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["netflix blockbuster meeting", "2000 offer"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "video rental store interior 2000s archival",
+        "visual_intent": "A video rental store aisle with VHS and DVD cases, warm fluorescent light, archival documentary feel",
+        "broll_keywords": ["video rental store aisle", "dvd rental shelves store", "movie rental store interior"],
+        "decision_reason": "hook beat: the world Blockbuster was defending, hard cut"
+      },
+      "overlays": [{"type": "stat", "text": "2000: $50,000,000 offer", "y": 0.16}]
+    },
+    {
+      "id": "s2",
+      "narration": "Blockbuster's executives reportedly laughed them out of the room.",
+      "duration_sec": 3.5,
+      "confidence": "probable",
+      "transition_in": "cut",
+      "keywords": ["blockbuster rejection", "reported quote"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "none",
+        "query": "boardroom meeting executives dismissive",
+        "visual_intent": "Executives around a boardroom table, one leaning back dismissively, cool corporate light",
+        "broll_keywords": ["boardroom meeting executives", "corporate meeting table serious", "office negotiation tense"],
+        "decision_reason": "widely reported by Netflix co-founders; marked as reported, not confirmed by Blockbuster"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "They saw a niche mail-order DVD service. Not a threat to a chain with thousands of stores nationwide.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["blockbuster scale", "market misjudgment"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "pan_lr",
+        "query": "mail package delivery mailbox dvd",
+        "visual_intent": "A DVD mailer envelope being pulled from a mailbox, warm suburban light, close and personal",
+        "broll_keywords": ["dvd mail envelope mailbox", "package delivery mailbox home", "mail order envelope close up"],
+        "decision_reason": "visualizes what Netflix actually was at the time"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Netflix kept building. In two thousand seven, it launched streaming, first as a small add-on to slow down cancellations.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["netflix streaming launch", "2007"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "person streaming video laptop couch",
+        "visual_intent": "A person streaming video on a laptop from a couch at night, blue screen glow, cinematic",
+        "broll_keywords": ["streaming video laptop couch", "person watching laptop night", "home streaming device screen"],
+        "decision_reason": "the pivot that changed everything"
+      },
+      "overlays": [{"type": "stat", "text": "2007: streaming begins", "y": 0.18}]
+    },
+    {
+      "id": "s5",
+      "narration": "That small add-on eventually replaced the entire disc business it started from.",
+      "duration_sec": 4.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["streaming replaces dvd", "netflix pivot"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "zoom_out",
+        "query": "empty dvd shelves store closing",
+        "visual_intent": "Nearly empty DVD store shelves under harsh light, a sense of decline, documentary realism",
+        "broll_keywords": ["empty store shelves closing", "retail store closing down", "abandoned shelves interior"],
+        "decision_reason": "the transition payoff"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Blockbuster filed for bankruptcy in twenty ten. Netflix is now worth more than most banks in America. Follow for more.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["blockbuster bankruptcy", "netflix valuation"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "closed retail store sign bankruptcy",
+        "visual_intent": "A closed storefront with a faded sign, empty parking lot, late afternoon light, documentary tone",
+        "broll_keywords": ["closed storefront empty", "abandoned retail parking lot", "store closing sign faded"],
+        "decision_reason": "the ending contrast and CTA"
+      }
+    }
+  ]
+}

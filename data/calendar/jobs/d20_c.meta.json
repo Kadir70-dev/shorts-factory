@@ -1,0 +1,12 @@
+{
+  "id": "d20_c", "day": 20, "slot": "C", "category": "money_mechanics_finance",
+  "content_type": "evergreen", "topic": "How title loans work and why they're risky",
+  "sources": [
+    {"claim": "Title loans average ~300% APR; average borrower renews/flips loan ~8 times paying ~$2,300 in fees on a $1,000 loan; 1 in 5 borrowers has vehicle repossessed", "source": "Consumer Financial Protection Bureau research, via Center for Responsible Lending summary", "url": "https://www.responsiblelending.org/media/cfpb-car-title-loan-research-exposes-sky-high-levels-car-repossessions-and-extent-debt-trap", "type": "primary"}
+  ],
+  "pronunciation_notes": [{"term": "CFPB", "note": "narration avoids the acronym, says 'federal regulators' instead"}],
+  "quality_scores": {"hook": 9, "clarity": 9, "retention": 8, "fact_confidence": 9, "visual_potential": 8, "us_relevance": 9, "originality": 8, "average": 8.57},
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d05_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "How A Company Actually Decides Its Own Stock Price On IPO Day",
+    "hook": "Before a company's stock trades for the first time, its own executives don't set the price. A weeks-long sales pitch does.",
+    "description": "Going public starts with a roadshow: company executives and underwriting banks pitch large institutional investors over one to two weeks to gauge real demand. That demand determines the final offer price the night before trading begins. Only after that negotiated price is set does the stock open for public trading on an exchange, at whatever price buyers and sellers agree to next. Educational content only, not financial advice.",
+    "tags": ["ipo", "stock market", "how ipos work", "investing education", "wall street", "roadshow", "underwriting"],
+    "hashtags": ["#ipo", "#stockmarket", "#investing", "#wallstreet", "#shorts"],
+    "thumbnail_text": "WHO SETS THE PRICE?"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Before a company's stock trades for the first time, its own executives don't actually set the price.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["ipo pricing myth", "who sets ipo price"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "stock exchange opening bell ceremony",
+        "visual_intent": "The stock exchange opening bell ceremony with executives on a balcony, bright celebratory light",
+        "broll_keywords": ["stock exchange opening bell", "ipo bell ceremony", "exchange floor executives"],
+        "decision_reason": "hook beat: the ceremony, hard cut"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "It's set through something called a roadshow, a one to two week sales pitch to big institutional investors.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["ipo roadshow", "institutional investors"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "pan_lr",
+        "query": "executives presenting investors conference room",
+        "visual_intent": "Executives presenting slides to a room of investors, focused corporate light, wide angle",
+        "broll_keywords": ["executives presenting investors", "business presentation conference room", "corporate pitch meeting"],
+        "decision_reason": "the roadshow mechanism"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Underwriting banks run the process, gauging exactly how much demand exists at different price levels.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["underwriting banks", "demand gauging"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_out",
+        "query": "investment bank office analysts screens",
+        "visual_intent": "Analysts working at multiple financial screens in a bank office, cool light, focused",
+        "broll_keywords": ["investment bank analysts screens", "financial office trading desks", "bank analysts working"],
+        "decision_reason": "the underwriter's role"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "That collected demand determines the final offer price, set the night before the stock ever trades publicly.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["offer price setting", "night before trading"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "none",
+        "query": "late night office lights city building",
+        "visual_intent": "An office building lit late at night in a financial district, cinematic, city lights",
+        "broll_keywords": ["office building lit night", "financial district night lights", "city skyscraper night"],
+        "decision_reason": "the pricing-night tension"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Only after that negotiated price is locked in does the stock finally open to the public the next morning.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["public trading opens", "next morning"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "zoom_in",
+        "query": "stock ticker screen numbers trading",
+        "visual_intent": "A stock ticker with numbers scrolling rapidly on a trading screen, sharp digital light",
+        "broll_keywords": ["stock ticker screen numbers", "trading screen scrolling data", "market data display"],
+        "decision_reason": "the public-trading payoff"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The dramatic opening-day price swing you see on the news? That's the market re-pricing a decision made weeks earlier. Follow for more.",
+      "duration_sec": 7.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["opening day volatility", "closing"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "trading floor crowd screens excitement",
+        "visual_intent": "A busy trading floor with screens and animated activity, wide shot, energetic light",
+        "broll_keywords": ["trading floor crowd screens", "stock exchange floor busy", "traders floor activity"],
+        "decision_reason": "closing visual and CTA"
+      }
+    }
+  ]
+}

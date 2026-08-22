@@ -1,0 +1,196 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d20_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "BlackBerry Ran Half of America's Smartphones. Then It Didn't.",
+    "hook": "BlackBerry's own filings explain its collapse in one sentence: customers wanted products and apps it did not yet have.",
+    "description": "BlackBerry-maker RIM held around 50% of the US smartphone market and peaked near 85 million subscribers worldwide in 2011, four years after the iPhone launched. By 2012 its global smartphone share had collapsed to under 5%. The company kept betting on physical keyboards and enterprise email while the market moved to touchscreens and app ecosystems. Educational content only, not financial advice.",
+    "tags": [
+      "blackberry",
+      "rim",
+      "business failure",
+      "smartphone history",
+      "iphone",
+      "corporate strategy",
+      "business history",
+      "tech history"
+    ],
+    "hashtags": [
+      "#blackberry",
+      "#business",
+      "#technology",
+      "#economics",
+      "#shorts"
+    ],
+    "thumbnail_text": "50% \u2192 5%"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "BlackBerry's own filings explain its collapse in one sentence: customers wanted products and apps it did not yet have.",
+      "duration_sec": 6.54,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "blackberry market share",
+        "2011 peak"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "old blackberry phone physical keyboard close up",
+        "visual_intent": "Macro shot of a BlackBerry's physical keyboard under warm office light, thumbs typing fast",
+        "broll_keywords": [
+          "blackberry keyboard close up",
+          "physical keyboard phone typing",
+          "business phone keyboard macro"
+        ],
+        "decision_reason": "hook beat: the peak stat, RIM ~50% US share/~85M subscribers 2011, hard cut"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "~50% OF U.S. MARKET",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "The company had built enormous loyalty around secure messaging, enterprise email, and its physical keyboard.",
+      "duration_sec": 6.54,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "iphone 2007 launch"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "smartphone touchscreen hands scrolling apps",
+        "visual_intent": "A modern touchscreen phone being scrolled by hand, smooth glass, contrast with the prior keyboard shot",
+        "broll_keywords": [
+          "smartphone touchscreen scrolling",
+          "hand holding phone apps",
+          "touchscreen phone close up"
+        ],
+        "decision_reason": "sets the timeline contrast; iPhone launched 2007, widely documented"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "But touchscreen competitors changed expectations around browsers, media, and large app ecosystems.",
+      "duration_sec": 6.54,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "rim strategy",
+        "enterprise email"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "none",
+        "query": "businessman typing email phone office desk",
+        "visual_intent": "A businessman typing intently on a keyboard phone at a desk, corporate confidence, unaware of the shift outside",
+        "broll_keywords": [
+          "businessman typing phone desk",
+          "office worker email phone",
+          "corporate professional phone"
+        ],
+        "decision_reason": "RIM's continued keyboard/enterprise focus is well documented across multiple business-history retrospectives"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "BlackBerry reported intense U.S. competition, delayed product launches, and no timely high-end LTE offering.",
+      "duration_sec": 6.54,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "app ecosystem shift",
+        "android growth"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "abstract",
+        "motion": "zoom_out",
+        "query": "app icons grid screen colorful smartphone",
+        "visual_intent": "A colorful grid of app icons filling a smartphone screen, energetic and modern, contrasts the beige enterprise feel before",
+        "broll_keywords": [
+          "app icons grid screen",
+          "smartphone home screen apps",
+          "mobile apps colorful interface"
+        ],
+        "decision_reason": "visualizes the app-ecosystem shift RIM was slow to match"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Its next-generation BlackBerry Ten devices arrived after many consumers and developers had already moved to iPhone or Android.",
+      "duration_sec": 6.54,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "blackberry decline 2012"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "declining bar chart red arrow down screen",
+        "visual_intent": "A bar chart shrinking dramatically downward on a dark display, sharp red decline arrow",
+        "broll_keywords": [
+          "declining bar chart screen",
+          "downward arrow chart red",
+          "business decline graph"
+        ],
+        "decision_reason": "the collapse from ~20% (2009) to <5% (2012) global share, confirmed via Statista-cited retrospectives"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "<5% BY 2012",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "narration": "The old strengths never vanished. They simply stopped being enough once the basis of competition changed.",
+      "duration_sec": 6.54,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "business lesson",
+        "adapt or fail"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "ken_burns",
+        "query": "old smartphone drawer forgotten technology",
+        "visual_intent": "An old keyboard phone sitting unused in a drawer among cables, quiet, closing image of obsolescence",
+        "broll_keywords": [
+          "old phone drawer forgotten",
+          "outdated technology drawer",
+          "unused electronics drawer"
+        ],
+        "decision_reason": "closing beat, the causal takeaway"
+      }
+    }
+  ]
+}

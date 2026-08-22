@@ -1,0 +1,207 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d23_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Your Landlord's Insurance Does Not Cover Your Stuff",
+    "hook": "Your landlord's insurance can rebuild the building and pay you nothing for your laptop.",
+    "description": "A landlord's policy generally protects the building, not a tenant's belongings. Renters insurance can cover personal property, liability, and sometimes additional living expenses after a covered loss. Coverage and exclusions vary by policy.",
+    "tags": [
+      "renters insurance",
+      "insurance explained",
+      "personal finance",
+      "renting"
+    ],
+    "hashtags": [
+      "#rentersinsurance",
+      "#money",
+      "#renting",
+      "#shorts"
+    ],
+    "thumbnail_text": "NOT YOUR STUFF"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Your landlord's insurance can rebuild the building and still pay you nothing for your stolen laptop.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "stolen laptop apartment",
+        "empty desk theft"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "apartment laptop empty desk theft",
+        "visual_intent": "An apartment desk with an empty space where a laptop was",
+        "broll_keywords": [
+          "stolen laptop apartment",
+          "empty desk theft",
+          "rental apartment belongings"
+        ],
+        "decision_reason": "NAIC says landlord insurance does not cover tenant belongings"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Landlord policy != your stuff",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "The landlord's policy generally protects the structure and the owner's property, not everything a tenant owns inside.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "rental apartment exterior",
+        "landlord property building"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "pan_lr",
+        "query": "apartment building exterior landlord",
+        "visual_intent": "A multi-unit rental building exterior",
+        "broll_keywords": [
+          "rental apartment exterior",
+          "landlord property building",
+          "apartment block daylight"
+        ],
+        "decision_reason": "NAIC explains the structure-versus-contents divide"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "A renters policy can cover personal belongings damaged or stolen in events listed by that specific policy.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "home inventory photos",
+        "renter belongings"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "home belongings inventory camera",
+        "visual_intent": "A renter photographing belongings for an inventory",
+        "broll_keywords": [
+          "home inventory photos",
+          "renter belongings",
+          "document personal property"
+        ],
+        "decision_reason": "NAIC describes personal-property protection"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Personal property",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "It also commonly includes liability protection if an accident leads to injury or property-damage claims against you.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "apartment slip hazard",
+        "liability accident home"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "slip fall apartment liability",
+        "visual_intent": "A spilled drink and warning cone suggesting liability risk",
+        "broll_keywords": [
+          "apartment slip hazard",
+          "liability accident home",
+          "floor spill warning"
+        ],
+        "decision_reason": "NAIC describes liability protection"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Liability",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "Some policies cover extra living expenses when a covered loss makes the apartment temporarily unlivable.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "temporary housing hotel",
+        "suitcase hotel room"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "hotel suitcase temporary housing",
+        "visual_intent": "A suitcase in a modest hotel room",
+        "broll_keywords": [
+          "temporary housing hotel",
+          "suitcase hotel room",
+          "displaced renter"
+        ],
+        "decision_reason": "NAIC notes some policies cover additional living expenses"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The cheap-looking policy is really three protections bundled together. But limits, deductibles, and exclusions still decide what gets paid.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "insurance policy close up",
+        "deductible document"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "insurance policy limits close up",
+        "visual_intent": "Policy pages with limits and deductible highlighted",
+        "broll_keywords": [
+          "insurance policy close up",
+          "deductible document",
+          "coverage limits paper"
+        ],
+        "decision_reason": "Policy-specific caveat preserves accuracy"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Read limits + exclusions",
+          "y": 0.18
+        }
+      ]
+    }
+  ]
+}

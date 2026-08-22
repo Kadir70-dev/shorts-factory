@@ -14,7 +14,7 @@ from typing import Literal
 DocumentType = Literal[
     "modern_newspaper", "vintage_newspaper", "research_paper", "archive_dossier",
     "financial_report", "magazine_feature", "breaking_news", "evidence_board",
-    "company_memo", "historical_document", "news_clipping",
+    "company_memo", "historical_document", "news_clipping", "evidence_card",
 ]
 
 CameraMovement = Literal[

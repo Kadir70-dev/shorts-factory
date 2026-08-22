@@ -290,6 +290,18 @@ class Settings(BaseSettings):
     threejs_worker_url: str = ""
     threejs_render_timeout_s: float = 180.0
     threejs_max_frames: int = 360
+    # Paperima paper-animation integration (pipeline/paperima_engine.py).
+    # Paperima itself is an EXTERNAL local app (github.com/nurimator/paperima,
+    # AGPL-3.0) — never vendored into this repo. `paperima_dist_dir` points at
+    # its own unmodified `npm run build` output; empty/missing means the
+    # engine is unavailable and every caller falls back to the pre-existing
+    # FFmpeg paper animation, exactly like a missing Scribus binary degrades
+    # Paper Craft rather than failing the render.
+    paperima_engine_enabled: bool = False
+    paperima_dist_dir: str = ""
+    paperima_browser_executable: str = ""
+    paperima_render_timeout_s: float = 90.0
+    optimizer_paperima_restart_jobs: int = 12
     # Phase 5 lightweight branded finance explainers. OFF leaves Phase 1-4
     # selection and rendering untouched.
     motion_graphics_engine_enabled: bool = False
@@ -357,6 +369,15 @@ class Settings(BaseSettings):
     qa_min_free_floor_mb: int = 800              # free RAM must never dip below this
     qa_render_budget_s: float = 900.0            # hard wall-time budget per short
     qa_consistency_min_pct: float = 95.0         # character-consistency floor (when applicable)
+    # OpenMontage-audit gap #3: plan-vs-delivery. A scene whose DELIVERED visual
+    # channel (pipeline/visual_budget.measure) differs from its PLANNED channel
+    # and isn't in the allowed-fallback matrix (pipeline/qa.py:ALLOWED_FALLBACKS)
+    # is a "silent downgrade" — e.g. planned threejs, delivered a text card
+    # because the resolver couldn't supply the real thing. Fails the report
+    # (not just a warning) once the downgrade RATE crosses this floor, since a
+    # handful of honest fallbacks on a 150-beat documentary is normal; a third
+    # of the film silently becoming generic cards is not.
+    qa_max_silent_downgrade_rate: float = 0.10
     # Phase 8 production gate. Unlike legacy QA_ENABLED observability, this fails
     # export when any required production check fails.
     visual_qa_engine_enabled: bool = False

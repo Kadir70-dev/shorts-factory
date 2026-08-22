@@ -1,0 +1,30 @@
+{
+  "id": "d13_c",
+  "day": 13,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "Debt consolidation lowers rate, doesn't erase the amount owed",
+  "sources": [
+    {
+      "claim": "Debt-consolidation loans combine debts into one payment; lower payments can reflect longer terms and greater total cost",
+      "source": "Consumer Financial Protection Bureau debt-consolidation guidance",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/what-do-i-need-to-know-if-im-thinking-about-consolidating-my-credit-card-debt-en-1861/",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": true,
+  "disclaimer": "",
+  "status": "READY"
+}

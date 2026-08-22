@@ -18,7 +18,7 @@ class VoiceManager:
                 "config/voice/profile.yaml is required; stock voices are disabled")
         if not self.profile.identity.strip():
             raise engines.VoiceIdentityError("voice profile has no identity")
-        if not self.profile.cascade():
+        if not (self.profile.cascade() or self.profile.fallback_cascade()):
             raise engines.VoiceIdentityError(
                 f"cloned voice {self.profile.identity!r} is unavailable:\n" +
                 "\n".join(self.profile.diagnostics()))

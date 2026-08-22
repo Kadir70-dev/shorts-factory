@@ -1,0 +1,111 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d27_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Coca-Cola's Best-Tested Product Ever Lasted Only 79 Days",
+    "hook": "Coca-Cola changed its 99-year-old formula. It lasted 79 days.",
+    "description": "In 1985 Coca-Cola replaced its original formula with 'New Coke' after blind taste tests showed it beating Pepsi and old Coke. The backlash was immediate: up to 8,000 calls a day and roughly 40,000 letters. On July 11, 1985 — 79 days after launch — the original formula returned as Coca-Cola Classic.",
+    "tags": ["coca cola", "new coke", "brand history", "marketing failure", "business history", "coca cola classic", "consumer psychology"],
+    "hashtags": ["#cocacola", "#businesshistory", "#branding", "#shorts"],
+    "thumbnail_text": "79 DAYS"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "In nineteen eighty-five, Coca-Cola changed its formula for the first time in ninety-nine years. It lasted seventy-nine days.",
+      "duration_sec": 5.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["new coke 1985", "formula change"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "cold coca cola bottle condensation macro",
+        "visual_intent": "Extreme macro of a classic cola bottle with condensation, deep red backlight",
+        "broll_keywords": ["soda bottle condensation macro", "cola glass bottle close up", "red backlit beverage bottle"],
+        "decision_reason": "hook beat: Coca-Cola formula dates to 1886, per company's own history page"
+      },
+      "overlays": [{"type": "stat", "text": "79 DAYS", "y": 0.18}]
+    },
+    {
+      "id": "s2",
+      "narration": "The company had blind-tested New Coke against Pepsi and its own original formula. New Coke won those taste tests.",
+      "duration_sec": 5.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["blind taste test", "new coke"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "pan_lr",
+        "query": "taste test cups blindfold table",
+        "visual_intent": "Rows of small tasting cups on a table, clinical bright light, product-test aesthetic",
+        "broll_keywords": ["taste test cups table", "blind taste test setup", "product testing samples"],
+        "decision_reason": "corroborated by Coca-Cola Company's own history page and multiple outlets"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "But when it hit shelves on April twenty-third, people didn't just dislike it. They felt betrayed.",
+      "duration_sec": 5.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["april 23 1985", "consumer backlash"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "grocery store shelf soda cans wide",
+        "visual_intent": "A grocery store beverage aisle shelf, wide static shot, neutral commercial light",
+        "broll_keywords": ["grocery store soda aisle", "beverage shelf supermarket", "store shelf drinks wide"],
+        "decision_reason": "launch date April 23 1985 confirmed by History.com"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "The switchboard got flooded with up to eight thousand calls a day. About forty thousand angry letters followed.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["consumer complaints", "8000 calls"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_in",
+        "query": "vintage office phone ringing switchboard",
+        "visual_intent": "A vintage-style office phone ringing on a desk, archival warm tone",
+        "broll_keywords": ["vintage office phone desk", "ringing telephone close up", "1980s office phone"],
+        "decision_reason": "8,000 calls/day and ~40,000 letters figures reported by History.com and multiple outlets"
+      },
+      "overlays": [{"type": "stat", "text": "40,000 letters", "y": 0.18}]
+    },
+    {
+      "id": "s5",
+      "narration": "On July eleventh, seventy-nine days later, Coca-Cola brought the original formula back as Coca-Cola Classic.",
+      "duration_sec": 5.4,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["july 11 1985", "coca cola classic"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "zoom_in",
+        "query": "classic coca cola bottle logo close up",
+        "visual_intent": "A classic Coca-Cola bottle label in close focus, warm red brand lighting",
+        "broll_keywords": ["coca cola classic bottle", "cola brand logo close up", "vintage soda bottle label"],
+        "decision_reason": "reversal date July 11, 1985 confirmed by Coca-Cola Company history and History.com"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The best-tested product in company history still lost, because taste wasn't what people were actually buying. Follow for more.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["brand identity lesson"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "zoom_out",
+        "query": "coca cola bottles crate vintage warm",
+        "visual_intent": "A crate of classic glass Coca-Cola bottles, warm nostalgic light, closing shot",
+        "broll_keywords": ["coca cola bottle crate", "vintage soda crate bottles", "classic beverage crate"],
+        "decision_reason": "closing takeaway and CTA"
+      }
+    }
+  ]
+}

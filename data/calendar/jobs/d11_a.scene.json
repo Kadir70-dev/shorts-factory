@@ -1,0 +1,205 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d11_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Kodak Invented the Digital Camera. Then Sat On It.",
+    "hook": "Kodak built the first self-contained digital-camera prototype in nineteen seventy-five, decades before digital photography took over.",
+    "description": "Kodak engineer Steven Sasson built the first working digital camera prototype in 1975 and Kodak patented the invention in 1978 \u2014 but did not bring it to market. Kodak filed for Chapter 11 bankruptcy in January 2012, years after rivals built the digital camera industry the company had invented first.",
+    "tags": [
+      "kodak",
+      "business history",
+      "innovation failure",
+      "digital camera history",
+      "disruption"
+    ],
+    "hashtags": [
+      "#kodak",
+      "#business",
+      "#innovation",
+      "#shorts"
+    ],
+    "thumbnail_text": "INVENTED IT FIRST"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Kodak built the first self-contained digital-camera prototype in nineteen seventy-five, decades before digital photography took over.",
+      "duration_sec": 7.02,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "kodak digital camera"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "vintage camera equipment close up",
+        "visual_intent": "A vintage bulky camera prototype on a workbench, archival warm light, close macro",
+        "broll_keywords": [
+          "vintage camera prototype workbench",
+          "old camera equipment macro",
+          "retro electronics close up"
+        ],
+        "decision_reason": "hook beat: the irony stated upfront"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Engineer Steven Sasson combined a charge-coupled device, digital memory, and cassette storage into an eight-pound experimental camera.",
+      "duration_sec": 7.02,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "steven sasson"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "engineer workshop circuit boards 1970s",
+        "visual_intent": "An engineer's workbench with circuit boards and wires, archival 1970s style lighting",
+        "broll_keywords": [
+          "engineer workbench circuit boards",
+          "1970s electronics workshop",
+          "vintage tech lab archival"
+        ],
+        "decision_reason": "attributes the invention, confirmed history"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "It captured a low-resolution black-and-white image and needed seconds to record it, but the core idea worked.",
+      "duration_sec": 7.02,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "prototype specs"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "old bulky electronic device hands holding",
+        "visual_intent": "Hands holding a bulky, heavy prototype device, close focus, archival tone",
+        "broll_keywords": [
+          "hands holding bulky device",
+          "heavy prototype electronics hands",
+          "vintage gadget close up hold"
+        ],
+        "decision_reason": "documented prototype specifications, National Inventors Hall of Fame / PetaPixel sourced"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "8 lbs \u00b7 100\u00d7100 px \u00b7 23 sec",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "Kodak continued developing digital technology, yet its economics remained deeply tied to film, processing, and photographic paper.",
+      "duration_sec": 7.02,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "patented not sold"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "filing cabinet documents archive",
+        "visual_intent": "A filing cabinet drawer with documents inside, dim office light, symbolic of shelving",
+        "broll_keywords": [
+          "filing cabinet documents drawer",
+          "archive papers stored",
+          "office storage cabinet close up"
+        ],
+        "decision_reason": "patent filed 1978, product not commercialized"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "As digital cameras improved, every photo taken without film weakened the recurring business Kodak had dominated.",
+      "duration_sec": 7.02,
+      "confidence": "probable",
+      "transition_in": "fade",
+      "keywords": [
+        "motive for shelving"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "film rolls stacked vintage",
+        "visual_intent": "Stacked rolls of photographic film, warm light, product-style still",
+        "broll_keywords": [
+          "film rolls stacked product",
+          "vintage camera film rolls",
+          "photographic film still life"
+        ],
+        "decision_reason": "the commonly cited motive, marked probable \u2014 the full internal reasoning is more nuanced per historical fact-checks"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Kodak did sell digital products, but it could not replace the profits disappearing from its old model.",
+      "duration_sec": 7.02,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "competitors built market"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "modern digital cameras display store",
+        "visual_intent": "A row of modern digital cameras on a store display, bright even light",
+        "broll_keywords": [
+          "digital cameras store display",
+          "modern camera lineup shelf",
+          "electronics store cameras"
+        ],
+        "decision_reason": "market outcome: competitors captured the digital camera industry"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "The company filed for Chapter Eleven in twenty twelve. Inventing a transition is not the same as surviving it.",
+      "duration_sec": 7.02,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing bankruptcy"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "old kodak film boxes fading archival",
+        "visual_intent": "Faded old Kodak film boxes on a dusty shelf, muted color, documentary tone",
+        "broll_keywords": [
+          "old film boxes shelf faded",
+          "vintage kodak packaging dusty",
+          "discontinued product archival"
+        ],
+        "decision_reason": "Kodak Chapter 11 filing Jan 19 2012, closing payoff and CTA"
+      }
+    }
+  ]
+}

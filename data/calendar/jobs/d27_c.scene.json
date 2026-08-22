@@ -1,0 +1,176 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d27_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Why Term Life Insurance Costs So Much Less Than Whole Life",
+    "hook": "Term and whole life can promise the same death benefit while charging dramatically different premiums because they cover different promises.",
+    "description": "Term life insurance only pays out if death occurs within a fixed window and builds no cash value, which is why it's priced far lower than whole life. Whole life covers you permanently and builds a cash value you can borrow against, which makes it a bundle of insurance plus a savings product \u2014 and priced accordingly. Educational content only, not financial advice.",
+    "tags": [
+      "term life insurance",
+      "whole life insurance",
+      "life insurance explained",
+      "personal finance",
+      "insurance basics"
+    ],
+    "hashtags": [
+      "#lifeinsurance",
+      "#personalfinance",
+      "#termlife",
+      "#shorts"
+    ],
+    "thumbnail_text": "TERM vs WHOLE"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Term and whole life can promise the same death benefit while charging dramatically different premiums because they cover different promises.",
+      "duration_sec": 7.92,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "term life",
+        "whole life insurance"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "family signing insurance paperwork home",
+        "visual_intent": "A person reviewing insurance paperwork at a kitchen table, warm domestic light",
+        "broll_keywords": [
+          "insurance paperwork table",
+          "reviewing documents home",
+          "family finance planning desk"
+        ],
+        "decision_reason": "hook beat: the price contrast puzzle"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Term insurance pays if the insured dies during a specified period, such as ten, twenty, or thirty years.",
+      "duration_sec": 7.92,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "term life definition",
+        "fixed period coverage"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "calendar pages timeline years passing",
+        "visual_intent": "A calendar or timeline graphic marking a fixed span of years, clean minimal render",
+        "broll_keywords": [
+          "calendar timeline graphic",
+          "years passing concept",
+          "date pages flipping"
+        ],
+        "decision_reason": "standard term life policy structure, industry-standard definitional fact"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Most term policies build no cash value, and coverage may end or become more expensive when the term expires.",
+      "duration_sec": 7.92,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "whole life cash value"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "savings jar coins growing close up",
+        "visual_intent": "Coins building up in a jar, steady growth visual, warm light",
+        "broll_keywords": [
+          "coins jar growing savings",
+          "money jar close up",
+          "savings growth visual"
+        ],
+        "decision_reason": "standard whole life policy structure, industry-standard definitional fact"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Whole life is designed to remain in force for life when required premiums are paid, and it builds cash value.",
+      "duration_sec": 7.92,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "premium cost difference"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "two stacks of cash comparison table",
+        "visual_intent": "Two uneven stacks of cash side by side on a table, clean comparison framing",
+        "broll_keywords": [
+          "two cash stacks comparison",
+          "money piles side by side",
+          "financial comparison table"
+        ],
+        "decision_reason": "the cost-driver explanation"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Lifetime coverage and guaranteed cash-value features require the insurer to fund more than a temporary death-risk promise.",
+      "duration_sec": 7.92,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "risk protection pricing"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "umbrella rain protection concept",
+        "visual_intent": "An open umbrella against a plain backdrop, simple protective metaphor",
+        "broll_keywords": [
+          "umbrella protection concept",
+          "rain umbrella close up",
+          "shelter metaphor visual"
+        ],
+        "decision_reason": "visual metaphor for protection-only pricing"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "That is why term is generally lower-cost coverage for a defined window, while whole life bundles permanent insurance with cash value.",
+      "duration_sec": 7.92,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "insurance vs savings bundle"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_out",
+        "query": "family home warm evening window light",
+        "visual_intent": "A calm home interior with warm evening light, settling closing tone",
+        "broll_keywords": [
+          "cozy home evening light",
+          "family living room warm",
+          "calm home interior shot"
+        ],
+        "decision_reason": "closing takeaway and CTA"
+      }
+    }
+  ]
+}

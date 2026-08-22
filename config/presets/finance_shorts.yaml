@@ -1,0 +1,56 @@
+# ───────────────────────────────────────────────────────────────────────────
+# PRODUCTION PRESET · finance shorts  (v1-production, frozen core; this file is
+# pure additive configuration per PRODUCTION.md — no pipeline/schema changes)
+# Premium documentary-style business/markets/money-mechanics storytelling for
+# the usa_finance channel. Sourced numbers only, no hype, no advice. Built for
+# the 30-day finance content backlog (data/calendar/) — every job is a
+# pre-authored SceneGraph, so production is deterministic (--from-json).
+# Run:  .venv/bin/python scripts/produce.py --preset finance_shorts \
+#           --from-json data/calendar/jobs/<job_id>.scene.json --keep
+# ───────────────────────────────────────────────────────────────────────────
+name: finance_shorts
+channel_id: usa_finance
+niche: usa_finance
+
+env:
+  RENDER_BACKEND: ffmpeg
+  VISUAL_ACCURACY_MODE: strict
+  LAYERED_RENDER: "1"
+  CHARACTER_MEMORY: "1"
+  QA_ENABLED: "1"
+  AI_VIDEO_ENABLED: "0"
+  ENABLE_IMAGE_TO_VIDEO: "0"
+  COMFYUI_ENABLED: "0"
+  LAYERED_AI_STILL_BUDGET: "2"
+  LAYERED_MAX_HERO_SCENES: "1"
+  LAYERED_FFMPEG_THREADS: "4"
+  LAYERED_SUBJECT_MATTE: oval
+  LAYERED_MIN_FREE_MB: "2000"
+
+  # ── Six-channel visual mix ───────────────────────────────────────────────
+  STORYBOARD_ENGINE_ENABLED: "1"
+  MULTI_SOURCE_ASSET_ENGINE_ENABLED: "1"
+  MOTION_GRAPHICS_ENGINE_ENABLED: "1"
+  THREEJS_VISUAL_ENGINE_ENABLED: "1"
+  AI_BROLL_ENGINE_ENABLED: "1"
+  THREEJS_QUALITY: preview
+
+# Story/company-led, not a reusable on-screen character — matches the two
+# existing finance demos (fin_costco_hotdog, fin_buffett_coke).
+character:
+  name: ""
+  desc: ""
+  style: ""
+
+story:
+  pacing: "sharpest fact first → causal explanation → the number that proves it → memorable turn"
+  hook_style: "state the surprising fact immediately, no preamble"
+  hero_beat: "the single number or decision the whole story hinges on, as a branded data-viz beat"
+  visual_doctrine: >
+    Lead with the number that matters. Every stated figure gets its own
+    branded chart (dataviz), never paired with unrelated stock. Real footage
+    of the actual subject (company, product, instrument) first; one AI
+    cinematic still only for what can't be filmed. Source attribution
+    overlay on every confirmed statistic. No financial advice — describe,
+    don't recommend; no guaranteed-return or buy/sell-call language.
+  music_mood: sharp-analyst

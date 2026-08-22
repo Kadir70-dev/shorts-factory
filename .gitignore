@@ -22,6 +22,8 @@ data/topic_intelligence/
 node_modules/
 apps/remotion/node_modules/
 apps/remotion/dist-threejs/
+apps/remotion/dist-paperima/
+.venv-win/
 
 # Local assistant permissions and environment backups (may contain secrets).
 .claude/
@@ -34,6 +36,11 @@ data/ambience_proof/
 data/renders/
 data/state/
 data/voice/
+data/previews/
+logs/
+
+# Graphify code-graph cache/output (regenerable via `graphify update .`).
+graphify-out/
 
 # One-off machine-specific render diagnostics; reusable tooling lives in scripts/.
 /diagnose*.sh

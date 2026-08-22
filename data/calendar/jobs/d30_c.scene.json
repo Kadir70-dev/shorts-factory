@@ -1,0 +1,200 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d30_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Why A Free Trial Wants Your Credit Card First",
+    "hook": "The most important moment in a free trial is the deadline you are expected to forget.",
+    "description": "Many free trials use negative-option billing: if you do not cancel before the trial ends, the company treats your silence as permission to begin charging. The FTC advises checking the deadline, price, and cancellation method before signing up.",
+    "tags": [
+      "free trials",
+      "subscriptions",
+      "negative option",
+      "consumer finance"
+    ],
+    "hashtags": [
+      "#subscriptions",
+      "#money",
+      "#consumertips",
+      "#shorts"
+    ],
+    "thumbnail_text": "SILENCE = YES"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "The most important moment in a free trial is the cancellation deadline the business expects you to remember.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "free trial countdown",
+        "subscription app timer"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "free trial countdown phone",
+        "visual_intent": "A subscription screen with a countdown timer",
+        "broll_keywords": [
+          "free trial countdown",
+          "subscription app timer",
+          "trial deadline phone"
+        ],
+        "decision_reason": "FTC warns that missing the cancellation deadline usually triggers charges"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Remember the deadline",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "Many trials ask for a card upfront, then automatically convert into paid billing when the trial ends.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "free trial credit card",
+        "subscription signup screen"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "pan_lr",
+        "query": "credit card signup screen",
+        "visual_intent": "A credit card entered into a free-trial signup form",
+        "broll_keywords": [
+          "free trial credit card",
+          "subscription signup screen",
+          "payment details online"
+        ],
+        "decision_reason": "FTC explains why trials request payment information"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "This is called a negative option: your silence is treated as permission to keep charging until you cancel.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "recurring billing diagram",
+        "negative option subscription"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "automatic recurring billing arrows",
+        "visual_intent": "A clean loop diagram showing automatic monthly charges",
+        "broll_keywords": [
+          "recurring billing diagram",
+          "negative option subscription",
+          "automatic payment loop"
+        ],
+        "decision_reason": "FTC defines negative-option billing"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Silence = permission",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "The signup is immediate, but the cost arrives days or weeks later, when the original decision is easy to forget.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "forgotten calendar reminder",
+        "subscription deadline"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "calendar reminder forgotten",
+        "visual_intent": "A small calendar reminder buried beneath notifications",
+        "broll_keywords": [
+          "forgotten calendar reminder",
+          "subscription deadline",
+          "phone notifications crowded"
+        ],
+        "decision_reason": "Explains the delayed conversion mechanism without a fabricated statistic"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "The Federal Trade Commission says to check the deadline, post-trial price, and cancellation steps before entering payment details.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "subscription terms close up",
+        "cancel membership screen"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "subscription terms cancellation",
+        "visual_intent": "Trial length, price, and cancel button highlighted",
+        "broll_keywords": [
+          "subscription terms close up",
+          "cancel membership screen",
+          "trial price details"
+        ],
+        "decision_reason": "FTC consumer guidance lists terms, length, price, and cancellation information"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Deadline + price + cancel",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "narration": "Free describes the trial period, not the subscription. The business model begins when inaction turns into recurring revenue.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "recurring revenue calendar",
+        "subscription payments"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "recurring revenue coins calendar",
+        "visual_intent": "Coins appearing repeatedly across calendar months",
+        "broll_keywords": [
+          "recurring revenue calendar",
+          "subscription payments",
+          "monthly billing concept"
+        ],
+        "decision_reason": "Closing synthesis of the verified business mechanism"
+      }
+    }
+  ]
+}

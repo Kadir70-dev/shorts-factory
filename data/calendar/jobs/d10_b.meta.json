@@ -1,0 +1,41 @@
+{
+  "id": "d10_b",
+  "day": 10,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "What a bond actually is",
+  "sources": [
+    {
+      "claim": "Core bond mechanics: loan, coupon interest, principal repayment at maturity, credit-risk-based pricing",
+      "source": "SEC Investor.gov bonds primer",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/bonds-or-fixed-income-products/bonds",
+      "type": "primary"
+    },
+    {
+      "claim": "In bankruptcy/liquidation, bondholders (creditors) are repaid ahead of common stockholders under standard capital-structure seniority",
+      "source": "SEC Investor.gov bonds primer / standard US corporate bankruptcy priority-of-claims principle (Bankruptcy Code absolute priority rule)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/bonds-or-fixed-income-products/bonds",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "coupon",
+      "note": "the interest payment, not a discount coupon"
+    }
+  ],
+  "quality_scores": {
+    "hook": 9,
+    "clarity": 9,
+    "retention": 9,
+    "fact_confidence": 10,
+    "visual_potential": 8,
+    "us_relevance": 8,
+    "originality": 8,
+    "average": 8.71
+  },
+  "rewritten": true,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

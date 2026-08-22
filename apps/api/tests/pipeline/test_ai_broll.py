@@ -154,7 +154,7 @@ async def test_failed_ai_never_uses_stock_for_primary_scene(graph, monkeypatch):
 
 
 @pytest.mark.asyncio
-async def test_disabled_gate_preserves_phase5_path(graph, monkeypatch):
+async def test_disabled_gate_preserves_phase5_path(graph, monkeypatch, isolated_state):
     monkeypatch.setattr(settings(), "ai_broll_engine_enabled", False)
     monkeypatch.setattr(settings(), "multi_source_asset_engine_enabled", False)
     monkeypatch.setattr(settings(), "motion_graphics_engine_enabled", False)

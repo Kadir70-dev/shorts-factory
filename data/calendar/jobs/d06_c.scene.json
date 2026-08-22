@@ -1,0 +1,214 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d06_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Insurance Companies Have Two Ways To Make Money",
+    "hook": "An insurance company can lose money on policies and still finish the year profitable.",
+    "description": "Insurers have two broad earnings engines: underwriting and investments. They price premiums against expected claims and expenses, pool many risks, hold reserves for future claims, and invest much of the money while waiting to pay those claims.",
+    "tags": [
+      "insurance",
+      "underwriting",
+      "risk pooling",
+      "personal finance"
+    ],
+    "hashtags": [
+      "#insurance",
+      "#money",
+      "#business",
+      "#shorts"
+    ],
+    "thumbnail_text": "TWO PROFIT ENGINES"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "An insurance company can lose money on policies and still finish the year profitable. It has a second engine.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "insurance claims premiums",
+        "insurance paperwork money"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "insurance claim papers money",
+        "visual_intent": "Claim forms beside premium payments on a desk",
+        "broll_keywords": [
+          "insurance claims premiums",
+          "insurance paperwork money",
+          "policy claim desk"
+        ],
+        "decision_reason": "NAIC materials explain that underwriting can be offset by investment results"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Two profit engines",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "The first is underwriting: collect premiums across a large pool, then pay claims and operating expenses from that pool.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "insurance risk pool",
+        "crowd umbrella protection"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "pan_lr",
+        "query": "crowd risk pool umbrella",
+        "visual_intent": "A crowd under one large umbrella as a risk-pool metaphor",
+        "broll_keywords": [
+          "insurance risk pool",
+          "crowd umbrella protection",
+          "shared risk concept"
+        ],
+        "decision_reason": "NAIC defines premiums, claims, expenses, and underwriting economics"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Premiums - claims - expenses",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "narration": "Actuaries estimate how often losses may happen and how costly they may be, so premiums can reflect expected risk.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "actuary data analysis",
+        "insurance probability charts"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "actuary statistics charts",
+        "visual_intent": "An actuary reviewing probability tables and charts",
+        "broll_keywords": [
+          "actuary data analysis",
+          "insurance probability charts",
+          "risk model office"
+        ],
+        "decision_reason": "NAIC explains risk classification and premium setting"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "But premiums arrive before many claims are paid. Insurers hold reserves to meet those future obligations.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "insurance reserves",
+        "financial reserve vault"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "insurance reserves vault",
+        "visual_intent": "Labeled reserve funds secured in a vault",
+        "broll_keywords": [
+          "insurance reserves",
+          "financial reserve vault",
+          "future claims fund"
+        ],
+        "decision_reason": "NAIC explains premiums are collected before later claims and held in reserve"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Reserves for future claims",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "While that money waits, insurers invest much of it, usually under strict rules designed to protect policyholders.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "insurance investment portfolio",
+        "bond portfolio screen"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "bond portfolio investment screen",
+        "visual_intent": "A conservative bond portfolio on an institutional screen",
+        "broll_keywords": [
+          "insurance investment portfolio",
+          "bond portfolio screen",
+          "institutional investing"
+        ],
+        "decision_reason": "NAIC explains anticipated investment income on reserved funds"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Investment income",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "narration": "Profit can come from underwriting, investment income, or both. Insurance is risk pooling wrapped around a giant timing business.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "underwriting investment diagram",
+        "insurance profit model"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "two engine profit diagram",
+        "visual_intent": "Two labeled engines, underwriting and investments, feeding one result",
+        "broll_keywords": [
+          "underwriting investment diagram",
+          "insurance profit model",
+          "two revenue engines"
+        ],
+        "decision_reason": "NAIC identifies underwriting and investment income as the two fundamental profit sources"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Underwriting + investments",
+          "y": 0.18
+        }
+      ]
+    }
+  ]
+}

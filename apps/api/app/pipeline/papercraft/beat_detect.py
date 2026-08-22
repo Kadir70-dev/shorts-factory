@@ -4,13 +4,22 @@ Paper Craft — SceneGraph beat detection.
 Deliberately narrow in scope: this does NOT introduce a new budget channel
 (`pipeline/visual_budget.py`'s `CHANNELS` bands are proven-in-production and
 out of scope for this change). Instead it looks at beats the allocator has
-ALREADY assigned to "official" (real-document-shaped content) or "charts"
-(figures/statistics) and asks a narrower question: given what this beat
-ACTUALLY says, would a real laid-out document communicate it better than a
-generic chart or an archival-photo search? If so, it builds the `DocumentSpec`
-and the caller (`broll.py`) substitutes the renderer — the beat still counts
-against the same budget share it was already allocated, so the report
-percentages produced by `visual_budget.allocate()` don't move.
+ALREADY assigned to "official" (real-document-shaped content), "charts"
+(figures/statistics), or "motion_gfx" (the beat's own words are the content —
+kinetic type over a moving background) and asks a narrower question: given
+what this beat ACTUALLY says, would a real laid-out document communicate it
+better than a generic chart, an archival-photo search, or plain text on a
+brand backdrop? If so, it builds the `DocumentSpec` and the caller
+(`broll.py`) substitutes the renderer — the beat still counts against the
+same budget share it was already allocated, so the report percentages
+produced by `visual_budget.allocate()` don't move.
+
+The "motion_gfx" case is the premium replacement for otherwise-static text
+screens: a date, a historical fact, a quote, a business decision, or a
+sourced figure gets a paper card/newspaper/memo/ledger instead of a bare
+headline. A beat that's a plain claim or abstract mechanism with none of
+that shape (`is_eligible` returns False) stays kinetic type — not every
+scene should become a document.
 """
 from __future__ import annotations
 
@@ -70,16 +79,36 @@ _SIGNALS: dict[str, tuple[str, ...]] = {
 
 
 def is_eligible(scene: Scene) -> bool:
-    """Only ever called for beats already on the 'official' or 'charts'
-    channel — see the module docstring. Returns True when the beat's own
-    content (a cited source, real numbers, or a strong document-type keyword
-    signal) makes a document a better fit than that channel's default
+    """Called for beats on the 'official'/'charts' channels AND, since the
+    paper-motion pass, 'motion_gfx' beats too (see broll.py's
+    `_render_papercraft`) — a kinetic-type beat whose own words are a cited
+    source, a quote, a director-authored figure, or a document-shaped claim is
+    exactly the "plain text on a background" case a physical document reads
+    better than. Returns True when the beat's own content (a cited source, a
+    quote, a callout figure, real chart numbers, or a strong document-type
+    keyword signal) makes a document a better fit than that channel's default
     renderer."""
-    if scene.overlays and any(o.type == "source" for o in scene.overlays):
+    # A "stat" overlay only signals real document content when it carries a
+    # label+value pair (`sub`) or is itself a bare year (a dateline) — a
+    # label-less descriptive callout (e.g. "one of the largest furniture
+    # retailers on Earth") is a SCALE/CONSEQUENCE beat, not a document one; per
+    # the channel's visual-language rule that belongs on real footage/AI
+    # b-roll, not a second paper page (confirmed: it produced a redundant
+    # front page as the Short's ending instead of a payoff shot).
+    def _stat_is_document_worthy(o: object) -> bool:
+        return bool(getattr(o, "sub", None)) or bool(
+            _YEAR_RE.fullmatch((getattr(o, "text", "") or "").strip()))
+
+    if scene.overlays and any(
+            o.type in ("source", "quote")
+            or (o.type == "stat" and _stat_is_document_worthy(o))
+            for o in scene.overlays):
         return True
     if scene.data is not None and getattr(scene, "nums", None):
         return True
     text = (scene.narration or "").lower()
+    if _YEAR_RE.search(text):
+        return True
     return any(kw in text for kw in
               (w for kws in _SIGNALS.values() for w in kws))
 
@@ -147,10 +176,21 @@ def build_spec(scene: Scene, graph: SceneGraph, document_type: str) -> DocumentS
     # the single most important figure in the beat by construction — it was
     # NOT being read at all, so a beat's headline evidence number could be
     # completely absent from the rendered document. Added first so it leads.
-    if stat_overlay:
+    # Every template renders this as "{label}: {value}" (or label/value in
+    # adjacent frames) — a bare stat with no `sub` (no label) produced a
+    # meaningless orphaned "": 1956"" line (confirmed on the IKEA d01_a hook,
+    # a bare-year overlay with `sub=None`). A label-less stat whose text is
+    # itself a bare year is a DATE, not a statistic row — it now feeds
+    # `_beat_year` below instead; any other label-less stat is dropped rather
+    # than rendered broken (the figure still reads fine in the body copy).
+    if stat_overlay and stat_overlay.sub:
         statistics.append(Statistic(
-            label=stat_overlay.sub or "", value=stat_overlay.text,
+            label=stat_overlay.sub, value=stat_overlay.text,
             citation=citations[0] if citations else None))
+    stat_overlay_year = (stat_overlay.text.strip()
+                         if stat_overlay and not stat_overlay.sub
+                         and _YEAR_RE.fullmatch((stat_overlay.text or "").strip())
+                         else None)
     # Only "counter" DataViz points are a genuine label+value pair worth a
     # document statistic row ("Revenue: $3.8B"). Other kinds (delta,
     # bar_compare, line_trend, ...) use `label` as the human-readable axis
@@ -171,7 +211,7 @@ def build_spec(scene: Scene, graph: SceneGraph, document_type: str) -> DocumentS
         quotes.append(Quote(text=quote_overlay.text, attribution=quote_overlay.sub or ""))
 
     beat = _storyboard_meta(scene, graph)
-    year = _beat_year(scene, graph)
+    year = _beat_year(scene, graph) or (int(stat_overlay_year) if stat_overlay_year else None)
 
     return DocumentSpec(
         document_type=document_type,        # type: ignore[arg-type]

@@ -1,0 +1,135 @@
+1
+00:00:00,000 --> 00:00:01,353
+Pay your credit card
+
+2
+00:00:01,353 --> 00:00:02,706
+in full every month,
+
+3
+00:00:02,706 --> 00:00:04,059
+never carry a balance?
+
+4
+00:00:04,059 --> 00:00:05,413
+The card company is
+
+5
+00:00:05,413 --> 00:00:06,766
+still making money off
+
+6
+00:00:06,766 --> 00:00:07,104
+you.
+
+7
+00:00:07,104 --> 00:00:08,568
+Every swipe triggers a
+
+8
+00:00:08,568 --> 00:00:10,031
+small fee the merchant
+
+9
+00:00:10,031 --> 00:00:11,495
+pays, called an interchange
+
+10
+00:00:11,495 --> 00:00:11,861
+fee.
+
+11
+00:00:11,861 --> 00:00:13,141
+That fee is split
+
+12
+00:00:13,141 --> 00:00:14,421
+between your bank and
+
+13
+00:00:14,421 --> 00:00:15,701
+the card network. It
+
+14
+00:00:15,701 --> 00:00:16,981
+gets paid on every
+
+15
+00:00:16,981 --> 00:00:18,261
+purchase, no matter when
+
+16
+00:00:18,261 --> 00:00:19,541
+or how you pay
+
+17
+00:00:19,541 --> 00:00:20,181
+your bill.
+
+18
+00:00:20,181 --> 00:00:21,594
+That's why stores accept
+
+19
+00:00:21,594 --> 00:00:23,008
+cards at all, and
+
+20
+00:00:23,008 --> 00:00:24,421
+why some add a
+
+21
+00:00:24,421 --> 00:00:25,834
+surcharge on small purchases.
+
+22
+00:00:25,834 --> 00:00:27,207
+So the rewards, the
+
+23
+00:00:27,207 --> 00:00:28,579
+points, the cash back
+
+24
+00:00:28,579 --> 00:00:29,952
+— a share of
+
+25
+00:00:29,952 --> 00:00:31,325
+that is funded by
+
+26
+00:00:31,325 --> 00:00:32,354
+interchange, collected from
+
+27
+00:00:32,354 --> 00:00:32,697
+every
+
+28
+00:00:32,697 --> 00:00:33,727
+purchase you make.
+
+29
+00:00:33,727 --> 00:00:35,178
+Paying in full still
+
+30
+00:00:35,178 --> 00:00:36,628
+avoids interest. It just
+
+31
+00:00:36,628 --> 00:00:38,079
+doesn't make the transaction
+
+32
+00:00:38,079 --> 00:00:39,530
+free for everyone else
+
+33
+00:00:39,530 --> 00:00:40,981
+in the chain. Follow
+
+34
+00:00:40,981 --> 00:00:41,706
+for more.

@@ -1,0 +1,80 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d20_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "A $1,000 Car Title Loan Can Cost $2,300 In Fees Alone",
+    "hook": "A one-thousand-dollar title loan can cost twenty-three hundred dollars in fees.",
+    "description": "The Consumer Financial Protection Bureau found car-title loans carry average APRs near 300%, and that the average borrower renews or 'flips' the same loan about 8 times, paying roughly $2,300 in fees on a $1,000 loan. One in five borrowers has their vehicle repossessed. Educational content only, not financial advice.",
+    "tags": ["title loans", "predatory lending", "personal finance", "debt trap", "consumer finance", "CFPB", "money mechanics"],
+    "hashtags": ["#titleloans", "#personalfinance", "#debt", "#money", "#shorts"],
+    "thumbnail_text": "$1,000 → $2,300 IN FEES"
+  },
+  "fps": 60, "width": 1080, "height": 1920,
+  "scenes": [
+    {
+      "id": "s1", "narration": "A one thousand dollar title loan can end up costing twenty-three hundred dollars in fees alone.",
+      "duration_sec": 5.0, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["title loan fees", "cfpb data"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "car keys on cash stack close up",
+        "visual_intent": "Car keys resting on a stack of cash, tight macro shot, immediate visual link between vehicle and money",
+        "broll_keywords": ["car keys cash close up", "keys on money stack", "vehicle keys dollar bills"],
+        "decision_reason": "hook beat: CFPB-sourced average fee figure, hard cut"},
+      "overlays": [{"type": "stat", "text": "$1,000 → $2,300 FEES", "y": 0.18}]
+    },
+    {
+      "id": "s2", "narration": "That's the average, not the worst case.",
+      "duration_sec": 2.4, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["cfpb average"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "none",
+        "query": "car parked driveway evening",
+        "visual_intent": "A car parked quietly in a driveway at dusk, ordinary and vulnerable-looking",
+        "broll_keywords": ["car parked driveway evening", "vehicle parked outside house", "car in driveway dusk"],
+        "decision_reason": "pattern interrupt, sets up why"}
+    },
+    {
+      "id": "s3", "narration": "A title loan uses your car as collateral for a short-term loan, and federal regulators found the average annual rate runs close to three hundred percent.",
+      "duration_sec": 8.4, "confidence": "confirmed", "transition_in": "fade",
+      "keywords": ["300 percent apr", "collateral loan"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "loan contract paperwork signing pen close up",
+        "visual_intent": "A hand signing a loan contract, pen close up, formal and slightly ominous lighting",
+        "broll_keywords": ["loan contract signing pen", "paperwork signature close up", "loan agreement document"],
+        "decision_reason": "the ~300% average APR is a CFPB-documented finding"},
+      "overlays": [{"type": "stat", "text": "~300% APR", "y": 0.18}]
+    },
+    {
+      "id": "s4", "narration": "Most borrowers can't pay it off in one term, so they renew the same loan again. The average borrower does this about eight times.",
+      "duration_sec": 7.6, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["loan renewal cycle", "flipping loans"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_in",
+        "query": "calendar pages flipping repeating cycle",
+        "visual_intent": "Calendar pages flipping repeatedly in sequence, visualizing a repeating cycle that doesn't resolve",
+        "broll_keywords": ["calendar pages flipping", "repeating calendar cycle", "time passing calendar close up"],
+        "decision_reason": "the average 8x renewal ('flipping') pattern is CFPB-documented"}
+    },
+    {
+      "id": "s5", "narration": "One in five borrowers ends up losing the vehicle entirely.",
+      "duration_sec": 4.2, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["repossession rate"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "none",
+        "query": "tow truck towing car street",
+        "visual_intent": "A tow truck hauling away a car on an ordinary street, stark and consequential",
+        "broll_keywords": ["tow truck towing car", "car repossession street", "vehicle being towed"],
+        "decision_reason": "1-in-5 repossession rate is CFPB-documented finding"},
+      "overlays": [{"type": "stat", "text": "1 IN 5 LOSE THE CAR", "y": 0.18}]
+    },
+    {
+      "id": "s6", "narration": "This loan was never priced to be paid off quickly. It was priced to be renewed.",
+      "duration_sec": 5.6, "confidence": "confirmed", "transition_in": "fade",
+      "keywords": ["debt trap design"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "ken_burns",
+        "query": "empty driveway no car left behind",
+        "visual_intent": "An empty driveway where the car used to be, quiet and final, closing image",
+        "broll_keywords": ["empty driveway no car", "vacant parking spot house", "driveway without vehicle"],
+        "decision_reason": "closing beat, sharp causal takeaway"}
+    }
+  ]
+}

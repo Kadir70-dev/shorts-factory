@@ -1,0 +1,18 @@
+{
+  "id": "d25_b",
+  "day": 25,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "What quantitative easing actually does",
+  "sources": [
+    {"claim": "Fed balance sheet grew from ~$4T (pre-2020) to ~$8.9-9T by early/April 2022", "source": "Congressional Research Service (Congress.gov IF12147); Federal Reserve H.4.1 data via Richmond Fed / American Action Forum tracker", "url": "https://www.congress.gov/crs-product/IF12147", "type": "primary"},
+    {"claim": "Balance sheet reduced from ~$8.9T (2022) to ~$6.5T (2025) via quantitative tightening", "source": "Federal Reserve data, reported via Richmond Fed / AAF tracker", "url": "https://www.richmondfed.org/publications/research/econ_focus/2022/q3_federal_reserve", "type": "reputable_secondary"},
+    {"claim": "QE mechanics: Fed creates reserves to buy Treasury and mortgage-backed securities, lowering long-term rates", "source": "Federal Reserve's own description of QE policy tools", "url": "https://www.congress.gov/crs-product/IF12147", "type": "primary"}
+  ],
+  "pronunciation_notes": [{"term": "QE", "note": "said in full as 'quantitative easing', not spelled out as letters"}],
+  "quality_scores": {"hook": 8, "clarity": 9, "retention": 8, "fact_confidence": 9, "visual_potential": 7, "us_relevance": 9, "originality": 8, "average": 8.29},
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

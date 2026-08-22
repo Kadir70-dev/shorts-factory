@@ -1,0 +1,189 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d16_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Airbnb Almost Died In 2008. It Was Saved By Cereal.",
+    "hook": "Airbnb's founders once funded their struggling startup by selling presidential-election cereal for forty dollars a box.",
+    "description": "In 2008, before Airbnb was taking off, its founders were running low on money during the presidential election season. They designed novelty cereal boxes, 'Obama O's' and 'Cap'n McCain's,' selling roughly 500 of each at $40 a box. The stunt raised about $30,000, just enough runway to keep building the company that would later be valued in the billions.",
+    "tags": [
+      "airbnb history",
+      "startup story",
+      "y combinator",
+      "entrepreneurship",
+      "business origin story"
+    ],
+    "hashtags": [
+      "#airbnb",
+      "#startup",
+      "#business",
+      "#entrepreneurship",
+      "#shorts"
+    ],
+    "thumbnail_text": "$30K FROM CEREAL"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Airbnb's founders once funded their struggling startup by selling presidential-election cereal for forty dollars a box.",
+      "duration_sec": 7.37,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "airbnb near broke 2008"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "empty wallet cash counting startup founders",
+        "visual_intent": "A hand counting a small stack of cash on a table, dim apartment light, tense documentary feel",
+        "broll_keywords": [
+          "hand counting cash close up",
+          "small startup apartment desk",
+          "counting money table dim"
+        ],
+        "decision_reason": "hook: the desperation setup"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "During the two thousand eight campaign, they designed Obama O's and Cap'n McCain's as limited-edition collectibles.",
+      "duration_sec": 7.37,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "obama os cap'n mccains"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "cereal box design mockup table",
+        "visual_intent": "A designed cereal box mockup on a cluttered design desk, warm workspace light, cinematic",
+        "broll_keywords": [
+          "cereal box mockup desk",
+          "product design table workspace",
+          "graphic design cereal box"
+        ],
+        "decision_reason": "the literal, specific detail that makes the hook credible"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "They assembled boxes by hand, filled them with ordinary cereal, and pitched the stunt to political-event crowds.",
+      "duration_sec": 7.37,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "cereal box sales figures"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "cereal boxes lined up shelf display",
+        "visual_intent": "Novelty cereal boxes lined up on a simple shelf, studio lighting, product-style shot",
+        "broll_keywords": [
+          "cereal boxes shelf display",
+          "product boxes lined studio",
+          "novelty packaging display shot"
+        ],
+        "decision_reason": "sourced from Benzinga/CNBC business press reporting on the campaign"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "$40 A BOX",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "The sales generated about thirty thousand dollars, according to co-founder Brian Chesky's account of the episode.",
+      "duration_sec": 7.37,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "30000 raised"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "small pile of cash on table startup",
+        "visual_intent": "A modest stack of bills on a plain table, single desk lamp, understated documentary tone",
+        "broll_keywords": [
+          "cash pile desk lamp",
+          "small money stack table",
+          "startup funding modest shot"
+        ],
+        "decision_reason": "the exact figure, corroborated across multiple outlets"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "~$30,000",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "Cereal did not prove the home-sharing model, but it supplied cash and demonstrated the founders could create demand from almost nothing.",
+      "duration_sec": 7.37,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "runway survival"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "laptop working late night startup apartment",
+        "visual_intent": "Founders working late at a laptop in a small apartment, warm lamp light, quiet determination",
+        "broll_keywords": [
+          "laptop late night work",
+          "small apartment startup desk",
+          "founders working night"
+        ],
+        "decision_reason": "the resolution beat"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Investors later used the boxes as evidence of resourcefulness. Before Airbnb scaled rooms, it sold a story in a cereal aisle.",
+      "duration_sec": 7.37,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "airbnb later success"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "modern city apartment buildings wide shot",
+        "visual_intent": "A wide shot of city apartment buildings at golden hour, symbolic of Airbnb's later scale, cinematic",
+        "broll_keywords": [
+          "city apartments golden hour",
+          "urban buildings wide shot",
+          "residential skyline evening"
+        ],
+        "decision_reason": "closing payoff, kept non-specific on exact valuation since it shifts; CTA"
+      }
+    }
+  ]
+}

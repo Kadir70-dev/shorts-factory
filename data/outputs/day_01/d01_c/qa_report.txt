@@ -1,0 +1,12 @@
+   QA · vid_fin_d01_c · ✅ PASS
+     [PASS] render completed (no timeout) — finished in time
+     [PASS] playable file written — 9.6MB
+     [PASS] has video stream — video audio
+     [PASS] has audio stream — audio present
+     [PASS] resolution 9:16 — 1080x1920 (want 1080x1920)
+     [PASS] duration matches timeline — 41.7s (timeline 41.7s)
+     [PASS] black-frame fraction — 0.00s black (0.0% ≤ 6%)
+     [PASS] every scene non-black — all scenes lit
+     [PASS] RAM peak within budget — ~0MB (≤ 4000MB)
+     [PASS] render within wall-time budget — 351s (≤ 900s)
+     [PASS] plan-vs-delivery: no silent visual downgrade — all 6 planned beats delivered as planned

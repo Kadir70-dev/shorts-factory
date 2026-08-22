@@ -1,0 +1,665 @@
+[
+  {
+    "scene_id": "s1",
+    "chapter": "00",
+    "beat_role": "hook",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "financial district skyline sunrise glass skyscrapers wide cinematic",
+    "search_terms": [
+      "financial district skyline sunrise",
+      "stock exchange building exterior wide"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s2",
+    "chapter": "00",
+    "beat_role": "hook",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "Global daily FX turnover",
+    "search_terms": [],
+    "citation": {
+      "label": "Bank for International Settlements, 2025 Triennial Survey",
+      "url": "https://www.bis.org/press/p250930.htm",
+      "license": "public data / editorial use"
+    },
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s3",
+    "chapter": "00",
+    "beat_role": "evidence",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "FX turnover growth 2022 to 2025",
+    "search_terms": [],
+    "citation": {
+      "label": "Bank for International Settlements, 2025 Triennial Survey",
+      "url": "https://www.bis.org/press/p250930.htm",
+      "license": "public data / editorial use"
+    },
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s4",
+    "chapter": "00",
+    "beat_role": "question",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "WHAT IS THIS MARKET, ACTUALLY?",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s5",
+    "chapter": "01",
+    "beat_role": "context",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "different world currencies banknotes overhead flat lay",
+    "search_terms": [
+      "world currencies banknotes flat lay",
+      "foreign currency notes different countries"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s6",
+    "chapter": "01",
+    "beat_role": "tension",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "NO EXCHANGE. NO OPENING BELL. NO SINGLE BUILDING.",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s7",
+    "chapter": "01",
+    "beat_role": "context",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "bank trading floor multiple monitors professional dealing room",
+    "search_terms": [
+      "trading floor multiple screens",
+      "financial dealing room professional"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s8",
+    "chapter": "01",
+    "beat_role": "evidence",
+    "channel": "threejs",
+    "strategy": "threejs",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "forex trading session handoff",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s9",
+    "chapter": "02",
+    "beat_role": "context",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "cargo shipping port containers international trade",
+    "search_terms": [
+      "shipping containers port crane",
+      "cargo ship international trade"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s10",
+    "chapter": "02",
+    "beat_role": "mechanism",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "factory workers manufacturing floor",
+    "search_terms": [
+      "factory production line workers",
+      "manufacturing plant floor"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s11",
+    "chapter": "02",
+    "beat_role": "reveal",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "$ \u2192 \u00a5   THAT CONVERSION IS FOREX",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s12",
+    "chapter": "02",
+    "beat_role": "evidence",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "airport currency exchange counter traveler",
+    "search_terms": [
+      "currency exchange booth airport",
+      "foreign exchange kiosk travel"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s13",
+    "chapter": "03",
+    "beat_role": "context",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "EUR / USD",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s14",
+    "chapter": "03",
+    "beat_role": "context",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "EUR/USD \u2014 the world's most traded currency pair",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s15",
+    "chapter": "03",
+    "beat_role": "mechanism",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "BASE  /  QUOTE",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s16",
+    "chapter": "03",
+    "beat_role": "evidence",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "illustrative example: EUR/USD = 1.10",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s17",
+    "chapter": "04",
+    "beat_role": "tension",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "trading terminal screen bid ask price ladder close up",
+    "search_terms": [
+      "forex trading screen close up",
+      "trading terminal price ladder"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s18",
+    "chapter": "04",
+    "beat_role": "mechanism",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "Bid vs Ask (illustrative)",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s19",
+    "chapter": "04",
+    "beat_role": "reveal",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "THE SPREAD \u2014 THE GAP BETWEEN BID AND ASK",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s20",
+    "chapter": "05",
+    "beat_role": "question",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "WHY DO CURRENCIES MOVE?",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s21",
+    "chapter": "05",
+    "beat_role": "mechanism",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "Currency demand vs price",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s22",
+    "chapter": "05",
+    "beat_role": "evidence",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "financial news broadcast screens headlines",
+    "search_terms": [
+      "financial news studio screens",
+      "business news broadcast monitors"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s23",
+    "chapter": "06",
+    "beat_role": "context",
+    "channel": "official",
+    "strategy": "real",
+    "acquisition": "archival / official \u2014 real photograph, sourced",
+    "query_or_prompt": "Federal Reserve building Washington DC exterior",
+    "search_terms": [
+      "Federal Reserve building exterior",
+      "Marriner Eccles building Washington"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s24",
+    "chapter": "06",
+    "beat_role": "mechanism",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "HIGHER RATES \u2192 HIGHER RETURN \u2192 MORE DEMAND",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s25",
+    "chapter": "06",
+    "beat_role": "evidence",
+    "channel": "threejs",
+    "strategy": "threejs",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "Interest rate differential and capital flow",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s26",
+    "chapter": "06",
+    "beat_role": "payoff",
+    "channel": "official",
+    "strategy": "real",
+    "acquisition": "archival / official \u2014 real photograph, sourced",
+    "query_or_prompt": "European Central Bank building Frankfurt exterior",
+    "search_terms": [
+      "European Central Bank building Frankfurt",
+      "ECB tower Frankfurt skyline"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s27",
+    "chapter": "07",
+    "beat_role": "context",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "financial analyst reviewing economic data charts screen",
+    "search_terms": [
+      "analyst reviewing financial charts",
+      "economic data spreadsheet screen"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s28",
+    "chapter": "07",
+    "beat_role": "mechanism",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "THE DATA \u2192 THE EXPECTATION",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s29",
+    "chapter": "07",
+    "beat_role": "reveal",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "EXPECTED vs. ACTUAL \u2014 THE GAP IS WHAT MOVES THE PRICE",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s30",
+    "chapter": "07",
+    "beat_role": "consequence",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "Good news, currency down (conceptual)",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s31",
+    "chapter": "08",
+    "beat_role": "tension",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "forex trading platform order ticket interface screen",
+    "search_terms": [
+      "trading app interface screen",
+      "forex order entry platform"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s32",
+    "chapter": "08",
+    "beat_role": "mechanism",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "US retail forex maximum leverage: 50:1 on major pairs",
+    "search_terms": [],
+    "citation": {
+      "label": "CFTC, 17 CFR \u00a7 5.9 \u2014 Security deposits for retail forex",
+      "url": "https://www.ecfr.gov/current/title-17/chapter-I/part-5/section-5.9",
+      "license": "US government work (public domain)"
+    },
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s33",
+    "chapter": "08",
+    "beat_role": "evidence",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "$2,000 controls $100,000 at 50:1 leverage",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s34",
+    "chapter": "08",
+    "beat_role": "turn",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "LEVERAGE MULTIPLIES BOTH DIRECTIONS",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s35",
+    "chapter": "08",
+    "beat_role": "consequence",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "THAT'S NOT A WARNING. THAT'S THE MATH.",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s36",
+    "chapter": "09",
+    "beat_role": "turn",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "institutional trading floor bank professionals wide shot",
+    "search_terms": [
+      "bank trading floor wide shot",
+      "institutional dealing room professionals"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s37",
+    "chapter": "09",
+    "beat_role": "evidence",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "FX swaps: the largest single instrument in forex",
+    "search_terms": [],
+    "citation": {
+      "label": "BIS, OTC foreign exchange turnover, April 2025",
+      "url": "https://www.bis.org/statistics/rpfx25_fx.htm",
+      "license": "public data / editorial use"
+    },
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s38",
+    "chapter": "09",
+    "beat_role": "mechanism",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "RETAIL TRADERS: A SMALL SLICE OF A HUGE MARKET",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s39",
+    "chapter": "09",
+    "beat_role": "payoff",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "Institutional vs. retail forex (conceptual)",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s40",
+    "chapter": "10",
+    "beat_role": "tension",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "scrolling phone social media screen close up",
+    "search_terms": [
+      "phone screen scrolling social media",
+      "smartphone browsing hand close up"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s41",
+    "chapter": "10",
+    "beat_role": "mechanism",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "NOT A SHORTCUT. THE MOST COMPETITIVE MARKET ON EARTH.",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s42",
+    "chapter": "10",
+    "beat_role": "consequence",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "OVERSIZED TRADES. IGNORED SPREADS. LEVERAGE MISTAKEN FOR FREE MONEY.",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s43",
+    "chapter": "11",
+    "beat_role": "payoff",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "financial district skyline dusk wide cinematic",
+    "search_terms": [
+      "financial district skyline dusk",
+      "city skyline sunset wide shot"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s44",
+    "chapter": "11",
+    "beat_role": "payoff",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "Global daily FX turnover \u2014 callback",
+    "search_terms": [],
+    "citation": {
+      "label": "Bank for International Settlements, 2025 Triennial Survey",
+      "url": "https://www.bis.org/press/p250930.htm",
+      "license": "public data / editorial use"
+    },
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s45",
+    "chapter": "11",
+    "beat_role": "cta",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "A MARKET. NOT A MACHINE.",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s46",
+    "chapter": "11",
+    "beat_role": "cta",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "K70 \u2014 UNDERSTAND THE ECONOMY",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  }
+]

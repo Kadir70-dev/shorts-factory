@@ -1,0 +1,31 @@
+{
+  "ground_a": {
+    "max_visible_ground_error": 0.06591945141553879,
+    "max_visible_planted_slide": 0.1598841813633667,
+    "anchors": [
+      "LEFT_SOLE",
+      "RIGHT_SOLE"
+    ]
+  },
+  "ground_b": {
+    "max_visible_ground_error": 0.0,
+    "max_visible_planted_slide": 0.039838341719270004,
+    "anchors": [
+      "LEFT_SOLE",
+      "RIGHT_SOLE"
+    ]
+  },
+  "hand_a": {
+    "role": "handshake",
+    "max_error": 0.11259279664513046,
+    "samples": 23
+  },
+  "hand_b": {
+    "role": "handshake",
+    "max_error": 0.24382940864958455,
+    "samples": 23
+  },
+  "separation": 0.9026830494403839,
+  "arm_reach": 0.5470806360244751,
+  "shoulder_width": 0.03759997379294292
+}

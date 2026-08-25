@@ -115,6 +115,26 @@ analysis. Every provider is optional; a Gemini outage falls back, and when
 nothing credible and safe survives it returns `NO_SAFE_TOPIC_AVAILABLE` rather
 than filler. Full docs: **[`docs/TOPIC_INTELLIGENCE.md`](docs/TOPIC_INTELLIGENCE.md)**.
 
+## K70 Finance long-form (`tools/k70_scene_engine/`)
+A separate Blender-based scene engine for K70's long-form finance documentaries
+(Fed policy, forex, XAU/USD, etc.), independent of the Shorts pipeline above.
+See **[tools/k70_scene_engine/README.md](tools/k70_scene_engine/README.md)** for
+the engine itself and **[docs/K70_SCENE_ENGINE_LICENSE_AUDIT.md](docs/K70_SCENE_ENGINE_LICENSE_AUDIT.md)**
+for asset licensing.
+
+Finance long-form content is restricted to a strict visual language: **cinematic
+real footage, premium 3D motion graphics, animated charts/graphs, and real-footage
++ chart hybrids only** — no Minecraft/voxel, isometric miniature, clay, sketch,
+paper-collage, 2.5D illustration, or standalone vector-explainer scenes. Every
+shot must earn its place against the exact narration line it's paired with;
+generic-relevance filler is treated as a defect, not a placeholder. The engine's
+generic `growth_stage`/milestone "capital block" 3D-motion template was removed
+for producing meaningless pillar visuals with no real financial mechanism behind
+them (`tools/k70_scene_engine/blender/_motion_graphics_3d_script.py`) — 3D Motion
+Graphics shots now require a real semantic visualization (money flow, balance
+sheet, network/flow diagram) or the beat must be reclassified to a different
+shot type instead of falling back to a generic shape.
+
 ## Phase map
 - **P1** skeleton + schemas + infra ✅ (this repo)
 - **P2** Director engine (`app/director/`) — structured tool-use + repair loop

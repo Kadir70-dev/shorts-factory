@@ -1,0 +1,7 @@
+data/index.sqlite
+data/embeddings.npz
+data/*.jsonl
+!data/.gitkeep
+gallery/index.html
+assets/
+__pycache__/

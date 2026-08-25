@@ -1,0 +1,162 @@
+{
+  "verified": [
+    {
+      "cmu_id": "18_08",
+      "action": "explain_hands",
+      "description": "conversation - explain with hand gestures",
+      "fps": 120,
+      "frames": 2087,
+      "path": "data\\assets\\motions\\cmu\\bvh\\18_08.bvh",
+      "sha256": "b57e6ba15cf2bde4e6e4233da53425dde6d91952fb2bff17a89c5fce18a1a0ce",
+      "source": "https://github.com/una-dinosauria/cmu-mocap"
+    },
+    {
+      "cmu_id": "79_85",
+      "action": "type_laptop",
+      "description": "typing on a laptop",
+      "fps": 60,
+      "frames": 1050,
+      "path": "data\\assets\\motions\\cmu\\bvh\\79_85.bvh",
+      "sha256": "410a490550951e2d3ff6621bad8797c7fcf88ca67a25f90d3bc3ffee7ae56101",
+      "source": "https://github.com/una-dinosauria/cmu-mocap"
+    },
+    {
+      "cmu_id": "18_01",
+      "action": "handshake",
+      "description": "walk, shake hands - subject A",
+      "fps": 120,
+      "frames": 304,
+      "path": "data\\assets\\motions\\cmu\\bvh\\18_01.bvh",
+      "sha256": "08a783b18cb63314cefe5ea1d953377d0f02de718de4148067a8febd756bdabf",
+      "source": "https://github.com/una-dinosauria/cmu-mocap"
+    },
+    {
+      "cmu_id": "13_01",
+      "action": "sit_down_stand_up",
+      "description": "sit on high stool, stand up",
+      "fps": 120,
+      "frames": 2314,
+      "path": "data\\assets\\motions\\cmu\\bvh\\13_01.bvh",
+      "sha256": "f9e1fa1da61569a14ca8ecd7bd7782e02a55e6189351148e958c9b75ab89889f",
+      "source": "https://github.com/una-dinosauria/cmu-mocap"
+    }
+  ],
+  "benchmarks": {
+    "A": {
+      "kind": "A",
+      "actions": [
+        "K70_CMU_13_01"
+      ],
+      "qa": {
+        "ground_pre": {
+          "role": "ground",
+          "max_error": 4.485843546238652e-08,
+          "samples": 12
+        },
+        "chair": {
+          "role": "chair",
+          "max_error": 0.0,
+          "samples": 18
+        },
+        "ground_post": {
+          "role": "ground",
+          "max_error": 1.862645149230957e-08,
+          "samples": 9
+        }
+      },
+      "manual_per_frame": false,
+      "video": "C:\\Users\\Admin\\shorts-factory\\data\\benchmarks\\cmu_contact\\test_a\\benchmark.mp4",
+      "contact_sheet": "C:\\Users\\Admin\\shorts-factory\\data\\benchmarks\\cmu_contact\\test_a\\contact_sheet.jpg"
+    },
+    "B": {
+      "kind": "B",
+      "actions": [
+        "K70_CMU_79_85"
+      ],
+      "qa": {
+        "chair": {
+          "role": "chair",
+          "max_error": 1.3170890159654386e-09,
+          "samples": 48
+        },
+        "left_hand": {
+          "role": "keyboard",
+          "max_error": 1.2288320526339159e-06,
+          "samples": 35
+        },
+        "right_hand": {
+          "role": "keyboard",
+          "max_error": 5.267862132326641e-07,
+          "samples": 35
+        }
+      },
+      "manual_per_frame": false,
+      "video": "C:\\Users\\Admin\\shorts-factory\\data\\benchmarks\\cmu_contact\\test_b\\benchmark.mp4",
+      "contact_sheet": "C:\\Users\\Admin\\shorts-factory\\data\\benchmarks\\cmu_contact\\test_b\\contact_sheet.jpg"
+    },
+    "C": {
+      "kind": "C",
+      "actions": [
+        "K70_CMU_18_01",
+        "K70_CMU_18_01.001"
+      ],
+      "qa": {
+        "a_ground": {
+          "role": "ground",
+          "max_error": 3.3527612686157227e-08,
+          "samples": 48
+        },
+        "b_ground": {
+          "role": "ground",
+          "max_error": 3.3527612686157227e-08,
+          "samples": 48
+        },
+        "a_hand": {
+          "role": "handshake",
+          "max_error": 6.645583672890609e-05,
+          "samples": 21
+        },
+        "b_hand": {
+          "role": "handshake",
+          "max_error": 6.653992044078286e-05,
+          "samples": 21
+        }
+      },
+      "manual_per_frame": false,
+      "video": "C:\\Users\\Admin\\shorts-factory\\data\\benchmarks\\cmu_contact\\test_c\\benchmark.mp4",
+      "contact_sheet": "C:\\Users\\Admin\\shorts-factory\\data\\benchmarks\\cmu_contact\\test_c\\contact_sheet.jpg"
+    },
+    "D": {
+      "kind": "D",
+      "actions": [
+        "K70_CMU_18_08",
+        "K70_CMU_18_08.001"
+      ],
+      "qa": {
+        "a_ground": {
+          "role": "ground",
+          "max_error": 6.7158625935464895e-09,
+          "samples": 48
+        },
+        "b_ground": {
+          "role": "ground",
+          "max_error": 5.268356063861754e-09,
+          "samples": 48
+        },
+        "giver_hand": {
+          "role": "document",
+          "max_error": 4.824502638745927e-07,
+          "samples": 18
+        },
+        "receiver_hand": {
+          "role": "document",
+          "max_error": 0.1279979177607331,
+          "samples": 18
+        }
+      },
+      "manual_per_frame": false,
+      "video": "C:\\Users\\Admin\\shorts-factory\\data\\benchmarks\\cmu_contact\\test_d\\benchmark.mp4",
+      "contact_sheet": "C:\\Users\\Admin\\shorts-factory\\data\\benchmarks\\cmu_contact\\test_d\\contact_sheet.jpg"
+    }
+  }
+}

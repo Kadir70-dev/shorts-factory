@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evaluating Script Structure &mdash; Natron 2.5.0 documentation</title>
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reference Guide" href="../_group.html" />
+    <link rel="prev" title="Alternative Matte Extraction Tutorial" href="tutorials-AlternativeMatteExtraction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Natron
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2.5
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">What is compositing?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getstarted.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compositing.html">Compositing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thenodes.html">The Nodes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tutorials-writedoc.html">Writing documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials-imagesequence.html">How To Convert Videos To Image Sequences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials-imagesequence.html#how-to-convert-image-sequences-to-video-files">How To Convert Image Sequences To Video Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials-imagesequence.html#using-nle">Using NLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials-imagesequence.html#creating-digital-intermediate-for-editing-servers">Creating Digital Intermediate For Editing Servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials-hsvtool.html">HSVTool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials-ffmpeg.html">FFmpeg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials-hugin.html">Using PanoTools projects within Natron</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials-svgworkflow.html">Vector graphics workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials-AlternativeMatteExtraction.html">Alternative Matte Extraction Tutorial</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Evaluating Script Structure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#file-do-s-and-dont-s">File Do’s and Dont’s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manage-folders-and-files">Manage folders and files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#read-node-movies-should-be-formatted-as-image-sequences">Read node movies should be formatted as image sequences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#script-housekeeping-do-s-and-dont-s">Script Housekeeping Do’s and Dont’s</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#color-grading-do-s-and-dont-s">Color Grading Do’s and Dont’s</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#merging-and-premultiplication-do-s-and-dont-s">Merging and Premultiplication Do’s and Dont’s</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../_group.html">Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/index.html">Developers Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Natron</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">User Guide</a> &raquo;</li>
+          <li><a href="tutorials.html">Tutorials</a> &raquo;</li>
+      <li>Evaluating Script Structure</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/guide/tutorials-evaluating-script-structure.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="evaluating-script-structure">
+<h1>Evaluating Script Structure<a class="headerlink" href="#evaluating-script-structure" title="Permalink to this heading"></a></h1>
+<p>Natron is a very ‘adult’ application that lets you handle your material in any way that you wish.
+It will not give you a warning beep or forbid you from doing anything.
+For this reason it is very easy to accidentally do things in the ‘wrong’ way.
+This is a short (non comprehensive) list of common ‘bad practice’ items.
+Of course, sometimes these ‘rules’ may be broken, but only as an exception.</p>
+<section id="file-do-s-and-dont-s">
+<h2>File Do’s and Dont’s<a class="headerlink" href="#file-do-s-and-dont-s" title="Permalink to this heading"></a></h2>
+<p>Folders and files should be well managed: consistently and rationally named.</p>
+<p><strong>Always set the format and FPS in settings before you start</strong></p>
+<p>The format once set (see <a class="reference internal" href="compositing-projects-setup.html#compositing-projects-setup"><span class="std std-ref">Project setup</span></a>) , will determine all default formats after that.
+This is very important as a wrongly set format can cause the format of all default nodes to be set to something other than the format that you are working in.
+This can be infuriating and make script maintains very difficult.</p>
+</section>
+<section id="manage-folders-and-files">
+<h2>Manage folders and files<a class="headerlink" href="#manage-folders-and-files" title="Permalink to this heading"></a></h2>
+<p><strong>Donʼt use absolute file paths</strong></p>
+<p>An absolute path is one that specifies the location of the file with respect to the computer
+e.g.
+<code class="docutils literal notranslate"><span class="pre">My_Computer/school/lesson_one/asset.jpg</span></code>.
+A relative path is one that defines the location relative to a file or a folder.</p>
+<p>An absolute path ‘breaks’ when the project folder is moved to a new computer, and each filepath will then have to be manually repaired.
+A relative path, on the other hand, is far more durable.</p>
+<p>There are two flavours of relative paths:
+those that look ‘downstream’ (i.e. into the same folder in which the Natron file is located, or other folders within it) or ‘upstream’ (i.e. in the parent folders of the folders in which the Natron file is located).</p>
+<a class="reference internal image-reference" href="../_images/tutorials-evaluating-script-structure-file_stream.png"><img alt="../_images/tutorials-evaluating-script-structure-file_stream.png" src="../_images/tutorials-evaluating-script-structure-file_stream.png" style="width: 600px;" /></a>
+<p>For downstream, the following relative filepath is recommend.
+This writes or reads into a folder called ‘sources’, which is located in the same folder as the Natron file.
+The image below illustrates this relationship:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[file</span> <span class="pre">dirname</span> <span class="pre">[value</span> <span class="pre">root.name]]/sources/Asset_Name.jpg</span></code></p>
+<a class="reference internal image-reference" href="../_images/tutorials-evaluating-script-structure-file_relative.png"><img alt="../_images/tutorials-evaluating-script-structure-file_relative.png" src="../_images/tutorials-evaluating-script-structure-file_relative.png" style="width: 600px;" /></a>
+<p>For upstream, the following relative filepath is recommend.
+This writes or reads into a folder called ‘comp-out’, which is located ‘upstream’ to the Natron file.
+The image below illustrates this relationship. To go further upstream, the value end-n needs to be increased.</p>
+<p><code class="docutils literal notranslate"><span class="pre">[join</span> <span class="pre">[lrange</span> <span class="pre">[split</span> <span class="pre">[file</span> <span class="pre">dirname</span> <span class="pre">[knob</span> <span class="pre">root.name]]</span> <span class="pre">&quot;/&quot;]</span> <span class="pre">0</span> <span class="pre">end-1]</span> <span class="pre">&quot;/&quot;]/comp-out/01_01_qua_v1.jpg</span></code></p>
+<a class="reference internal image-reference" href="../_images/tutorials-evaluating-script-structure-file_relative2.png"><img alt="../_images/tutorials-evaluating-script-structure-file_relative2.png" src="../_images/tutorials-evaluating-script-structure-file_relative2.png" style="width: 600px;" /></a>
+</section>
+<section id="read-node-movies-should-be-formatted-as-image-sequences">
+<h2>Read node movies should be formatted as image sequences<a class="headerlink" href="#read-node-movies-should-be-formatted-as-image-sequences" title="Permalink to this heading"></a></h2>
+<p>Movies rendered as QuickTime files can sometimes be difficult to perform time edits upon.
+It is highly recommended that movies read into Natron should be rendered first as image sequences (see <a class="reference internal" href="tutorials-imagesequence.html#tutorials-imagesequence"><span class="std std-ref">How To Convert Videos To Image Sequences</span></a>).</p>
+</section>
+<section id="script-housekeeping-do-s-and-dont-s">
+<h2>Script Housekeeping Do’s and Dont’s<a class="headerlink" href="#script-housekeeping-do-s-and-dont-s" title="Permalink to this heading"></a></h2>
+<p>Comb your hair and clean your shoes.</p>
+<p><strong>Consider masking stills in Gimp or Krita.</strong></p>
+<p>A Natron roto is not always a good way to mask a still image. Consider masking in Gimp/Krita instead: for complex shapes they are quicker to make and better.
+Save the result as tiff or png.</p>
+<p><strong>Avoid side masking a merge node</strong></p>
+<p>Side masks are for things like color corrections, filters etc. They are not to be used to determine transparency in a Merge node.
+If the same shape that you were recklessly going to use as a layer mask can be added to the Merge feeds as a Matte value.</p>
+<p><strong>Observe the primacy of the B feed</strong></p>
+<p>A script can be bothersome to manage if B feed primacy is not observed.</p>
+<p><strong>Avoid feeding more than two inputs into a merge node</strong></p>
+<p>Though the Merge node will accept many inputs, it does not do so in a way that is consistent and predictable. Consider instead stacking a whole bunch of merge nodes on top of each other.</p>
+<p><strong>Avoid using too many points when you roto</strong></p>
+<p>Too many points in a roto can be difficult to edit and hell to animate. Use as few as you can.</p>
+<p><strong>Avoid recycling masks</strong></p>
+<p>Two or more sequential nodes masked by the same channel can sometimes cause problems.
+Better instead to use a KeyMix.</p>
+</section>
+</section>
+<section id="color-grading-do-s-and-dont-s">
+<h1>Color Grading Do’s and Dont’s<a class="headerlink" href="#color-grading-do-s-and-dont-s" title="Permalink to this heading"></a></h1>
+<p>Some general rules to follow in color grading:</p>
+<p><strong>Use HSL ‘color thinking’ space</strong></p>
+<p>Color is a volume, with a single color value being a point in that volume.
+Describing a point within a volume requires at least three coordinates (e.g. x, y and z).
+Such a three point system is referred to as a color space. In digital imaging the color space most commonly used is red, green and blue (RGB).
+This may be referred to as our ‘working’ space. However, when artists are thinking about color they traditionally refer to hue, saturation and lightness (HSL) color space. This is more perceptually agreeable that RGB… artists find it far easier to make aesthetic judgments in this space.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>HUE</p></td>
+<td><p>This can be understood as the ‘name space’ of the color (i.e. whether it is a blue, green, pink etc).</p></td>
+</tr>
+<tr class="row-even"><td><p>Saturation</p></td>
+<td><p>This refers to the intensity (or purity) of the color. Hence black, white and grey all have zero saturation value. Hue and saturation together make up the chroma component of the color.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lightness</p></td>
+<td><p>The lightness values of an image is what we are left looking at if we pull the saturation of an image down to zero. To see the lightness values of an image, hover the cursor over the viewer and press the ‘Y’ key.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Both lightness and saturation are expressed in terms of intensity. They are bound by terminal extremes (maximum and minimum).
+They are also related: zero or maximum lightness (i.e. Black and white) both result in zero saturation.
+Hue is traditionally expressed as values arranged around a wheel (i.e. A color wheel).</p>
+<p>When color grading, it is usual to first address lightness, followed by hue, then saturation.
+Sometimes an adjustment to one will result in a slight perpetual change to another.</p>
+<p><strong>Respect the difference between R, G and B</strong></p>
+<p>As already stated, the working space of digital color grading is RGB.
+These channel are not identical in what they express:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Red</p></td>
+<td><p>This is where details live. Look at the red channel, and see how even-form it is and how well it contains all the fine features of the image.</p></td>
+</tr>
+<tr class="row-even"><td><p>Green</p></td>
+<td><p>Green is where the lightness values of the image live. Look at the green channel and see how closely it matches the lightness values of the image. When making a hue adjustment, it is customary to leave the green channel alone, as any adjustment to it could effect the lightness of the image.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Blue</p></td>
+<td><p>Blue is where the large masses of the image lives. It also has the reputation of being the naughty channel, being much inclined to noisiness.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Color grade in order</strong></p>
+<p>Color grading may be divided into three stages, delivered in the following order:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Color correction</p></li>
+<li><p>Color matching</p></li>
+<li><p>Color stylization</p></li>
+</ol>
+</div></blockquote>
+<p><strong>Splitting up compound color edits</strong></p>
+<p>Complex color edits are best split up into small components. For example, don’t try to adjust the lightness and the hue in one operation. Splitting up such compound adjustments into smaller chunks makes them easier to edit and troubleshoot.</p>
+<p><strong>Consider using simple color tools before using complex ones</strong></p>
+<p>Fancy nodes with lots of sliders might look fun to play with but are they necessary?
+You will find that for a lot of color correction work simple nodes like Multiply or Saturation is enough.
+These require less processing, but also make the script easier to read.</p>
+<p><strong>Donʼt leave ‘fiddle’ values in the parameters</strong></p>
+<p>When reading someone else’s script, it can be very annoying to open something like a ColorCorrect to discover that a multiply has been set to .0003 (or some other random, completely ineffectual value).
+If you intend to change a value then do so. If not, then leave it at its default value.</p>
+<section id="merging-and-premultiplication-do-s-and-dont-s">
+<h2>Merging and Premultiplication Do’s and Dont’s<a class="headerlink" href="#merging-and-premultiplication-do-s-and-dont-s" title="Permalink to this heading"></a></h2>
+<p>The following rules apply to any merging operation:</p>
+<p><strong>Don’t color correct premultiplied images</strong></p>
+<p>Color correction should not be done on images that are premultiplied.
+To un-premultiply you may use an Unpremult node, or use the (un)premult option within the node.</p>
+<p><strong>Don’t composite pre-multiplied images</strong></p>
+<p>Don’t composite a FG that is not pre-multiplied</p>
+<p><strong>Don’t Double pre-multiplication</strong></p>
+<p>Do not apply premultiplication twice in a row to the same image. It can damage the edges of the alpha.</p>
+<p><strong>Donʼt use the composite image that comes out of a keyer</strong></p>
+<p>Most high end keyers output a composite image (the foreground over the background). generally, this should not be used, as no color corrections can be done to the foreground. Better instead to use the keyer’s alpha channel ina merging operation further down the node tree.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorials-AlternativeMatteExtraction.html" class="btn btn-neutral float-left" title="Alternative Matte Extraction Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../_group.html" class="btn btn-neutral float-right" title="Reference Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013-2022 The Natron documentation authors, licensed under CC BY-SA 4.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

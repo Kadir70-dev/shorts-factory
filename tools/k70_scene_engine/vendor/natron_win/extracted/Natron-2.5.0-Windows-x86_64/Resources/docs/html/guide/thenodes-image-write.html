@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Write Node &mdash; Natron 2.5.0 documentation</title>
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Draw Nodes" href="thenodes-draw.html" />
+    <link rel="prev" title="Read Node" href="thenodes-image-read.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Natron
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2.5
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">What is compositing?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getstarted.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compositing.html">Compositing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="thenodes.html">The Nodes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="thenodes-common-properties.html">Common Properties</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="thenodes-image.html">Image Nodes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="thenodes-image-checkerboard.html">Checkerboard Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thenodes-image-ColorWheel.html">ColorWheel Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thenodes-image-read.html">Read Node</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Write Node</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="thenodes-draw.html">Draw Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thenodes-merge.html">Merge Nodes Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../_group.html">Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/index.html">Developers Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Natron</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">User Guide</a> &raquo;</li>
+          <li><a href="thenodes.html">The Nodes</a> &raquo;</li>
+          <li><a href="thenodes-image.html">Image Nodes</a> &raquo;</li>
+      <li>Write Node</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/guide/thenodes-image-write.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="write-node">
+<h1>Write Node<a class="headerlink" href="#write-node" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>The Write node is where the result of the script is rendered out. This may be formatted as a .mov file, or as an image sequence.</p>
+<ul class="simple">
+<li><p>Create a write node (shortcut  <code class="docutils literal notranslate"><span class="pre">w</span></code>).</p></li>
+<li><p>Connect the write node to the last node of your NodeTree.</p></li>
+<li><p>Press the little folder icon next to the ‘file’ value, then navigate to Where you wish the result to be rendered.</p></li>
+</ul>
+<p>See <a class="reference internal" href="getstarted-environment-fileselect.html"><span class="doc">The File Browser</span></a> section for more informations.</p>
+<ul class="simple">
+<li><p>The name of the output must be followed by the file extension of the format (.mov, .tga, .tiff etc). Once this is in place, the parameters in the Write node will expand to include those that are specific to that format.</p></li>
+<li><p>The “frame range” “First Frame” “Last Frame” parameter should be specified. In the screen shot below, a frame range of 1 to 665 has been set.</p></li>
+</ul>
+<img alt="../_images/node_image_write_properties.gif" src="../_images/node_image_write_properties.gif" />
+<ul>
+<li><p>Start the Render (ie. start calculation of the result)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>press the “Render” button in the node properties.</p></li>
+</ul>
+<img alt="../_images/node_image_write_render.gif" src="../_images/node_image_write_render.gif" />
+<ul class="simple">
+<li><p>Or go to the menu select Render-&gt;Render Selected Writers</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<section id="filename">
+<h2>Filename<a class="headerlink" href="#filename" title="Permalink to this heading"></a></h2>
+<p>Click on the folder icon to open the file browser and choose the file you want to read from disk.</p>
+<p>See <span class="xref std std-doc">The File Browser</span> section for more informations</p>
+</section>
+<section id="format-type">
+<h2>Format Type<a class="headerlink" href="#format-type" title="Permalink to this heading"></a></h2>
+<p>The size of the output image in pixels. This size is not influenced by the proxy setting of the viewer</p>
+</section>
+<section id="color">
+<h2>Color<a class="headerlink" href="#color" title="Permalink to this heading"></a></h2>
+<p>The write node can change the color space of the output image.</p>
+<img alt="../_images/node_image_write_color.gif" src="../_images/node_image_write_color.gif" />
+<p>The file will be converted from “Input colorspace” to “File Colorspace”</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt><strong>Tips:</strong> Natron</dt><dd><ul class="simple">
+<li><p>It is recommended to leave “Input” to linear as this is the recommended basic workflow in Natron</p></li>
+<li><p>When file and Input spaces are the same, no conversion will occur</p></li>
+<li><p>Output usually is set to the same colorspace as the main read node. This results in an unmodified image.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+<section id="interpretation">
+<h2>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this heading"></a></h2>
+<p>The Write node can change how the image is exported to disk</p>
+<img alt="../_images/read_node_interpret_footage.jpg" src="../_images/read_node_interpret_footage.jpg" />
+<ul>
+<li><p>Premultiplication.</p>
+<blockquote>
+<div><p>If the processed image has transparent areas and the state of the “premultiplied” flag has been treated properly in your node tree, Natron will guess the value of the “Input Premult”.
+If the result is not correct you can force the “Input Premult” to your liking.</p>
+<p>when writing RGBA to a file format that does not support alpha, the write node just drop alpha and don’t premultiply (This is new from v2.4 to avoid that the file written to disk look different from the viewer in Nuke</p>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Output Components</dt><dd><p>tells Natron wether or not to ditch the Alpha channel. The A option is disabled when image format doesn’t support alpha channel</p>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="../_images/node_image_write_channels.gif" src="../_images/node_image_write_channels.gif" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For Quicktime files the Alpha support is located in the encoder options. Beware that most codecs don’t actually support alpha channel (DNxHD, Prores do)</p>
+</div>
+</section>
+<section id="encoding">
+<h2>Encoding<a class="headerlink" href="#encoding" title="Permalink to this heading"></a></h2>
+<p>The read node can change the way an image is rendered from the values in the disk file. These options change with the type of file being read.</p>
+<p>quicktime options:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Frame rate</dt><dd><p>defaults to the value in the project settings. It can be overridden for movie file types. Image sequence don’t have Frame rate.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="../_images/node_image_write_encoder_mov.gif" src="../_images/node_image_write_encoder_mov.gif" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Tip:</strong>
+Natron behaves way better with image sequence (numbered) files rather than Movies (quicktime, mp4, …). More reliable, faster access, possibility to overwrite parts of sequence when (re)rendering are the main reasons for this</p>
+</div>
+<p>See <a class="reference internal" href="compositing-projects-render.html"><span class="doc">Rendering projects</span></a> section for more information.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="thenodes-image-read.html" class="btn btn-neutral float-left" title="Read Node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="thenodes-draw.html" class="btn btn-neutral float-right" title="Draw Nodes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013-2022 The Natron documentation authors, licensed under CC BY-SA 4.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with nodes &mdash; Natron 2.5.0 documentation</title>
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Navigating inside the Node Graph" href="getstarted-environment-nodegraph.html" />
+    <link rel="prev" title="Using the toolbar" href="getstarted-environment-toolbar.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Natron
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2.5
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">What is compositing?</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="getstarted.html">Getting started</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="getstarted-about.html">About</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getstarted-installation.html">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getstarted-installation.html#additional-elements">Additional Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Transition-fromNuke_01.html">Nuke to Natron transition guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="getstarted-environment.html">Environment</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#generic-description">Generic Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-toolbar">The Toolbar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-menu-bar">The Menu bar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-viewer-panel">The Viewer panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-properties-editor">The Properties editor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-node-graph">The Node graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-curve-editor">The Curve editor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-dopesheet">The Dopesheet</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="getstarted-environment.html#the-file-browser">The File Browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="getstarted-troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="compositing.html">Compositing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thenodes.html">The Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../_group.html">Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/index.html">Developers Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Natron</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">User Guide</a> &raquo;</li>
+          <li><a href="getstarted.html">Getting started</a> &raquo;</li>
+          <li><a href="getstarted-environment.html">Environment</a> &raquo;</li>
+      <li>Working with nodes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/guide/getstarted-environment-nodes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="working-with-nodes">
+<h1>Working with nodes<a class="headerlink" href="#working-with-nodes" title="Permalink to this heading"></a></h1>
+<p>For a brief introduction to the concept of nodes and images in Natron see: <a class="reference internal" href="getstarted-about-mainconcepts.html"><span class="doc">Main concepts</span></a></p>
+<section id="main-rules">
+<h2>Main rules<a class="headerlink" href="#main-rules" title="Permalink to this heading"></a></h2>
+<img alt="../_images/node_connections.gif" src="../_images/node_connections.gif" />
+<ul>
+<li><dl>
+<dt>Nodes can have 1 or more inputs.</dt><dd><p>Most processing nodes have only 1 input (blur, color corrections…)</p>
+<p>Merging nodes have several inputs that are turned into one “mixed” output</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>mask input is present on many nodes.</dt><dd><p>It’s purpose usually is to limit the effect of the node to the part of the image defined by the white part of the mask</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Nodes always have exactly 1 output.</dt><dd><p>If several nodes B and C connect their inputs to the same output of node A they will receive the same image</p>
+<p>The only node without any output is the Viewer node. It determines what node is shown in the Viewer pane</p>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="../_images/node_viewer.gif" src="../_images/node_viewer.gif" />
+<p>When a node has several inputs (eg. Merge node) the B input is the “background” and A is the “foreground” image. If you disable the node, B input is passed unmodified
+Merge nodes can have many inputs added when required to allow many merge operations at once</p>
+<a class="reference internal image-reference" href="../_images/node_multiple_inputs.gif"><img alt="../_images/node_multiple_inputs.gif" src="../_images/node_multiple_inputs.gif" style="width: 600px;" /></a>
+</section>
+<section id="creating-nodes">
+<h2>Creating nodes<a class="headerlink" href="#creating-nodes" title="Permalink to this heading"></a></h2>
+<p>Nodes can be created in 3 ways</p>
+<ul>
+<li><dl>
+<dt>Use their shortcut</dt><dd><p><code class="docutils literal notranslate"><span class="pre">G</span></code> Grade</p>
+<p><code class="docutils literal notranslate"><span class="pre">T</span></code> Transform</p>
+<p><code class="docutils literal notranslate"><span class="pre">B</span></code> Blur</p>
+<p><code class="docutils literal notranslate"><span class="pre">C</span></code> ColorCorrect</p>
+<p><code class="docutils literal notranslate"><span class="pre">R</span></code> Read</p>
+<p><code class="docutils literal notranslate"><span class="pre">W</span></code> Write</p>
+<p><code class="docutils literal notranslate"><span class="pre">.</span></code> Dot</p>
+<p><code class="docutils literal notranslate"><span class="pre">O</span></code> Roto</p>
+<p><code class="docutils literal notranslate"><span class="pre">P</span></code> Rotopaint</p>
+<p><code class="docutils literal notranslate"><span class="pre">M</span></code> Merge</p>
+</dd>
+</dl>
+</li>
+<li><p>Pick the node in the tools palette under each category.</p></li>
+</ul>
+<img alt="../_images/toolbar_02.jpg" src="../_images/toolbar_02.jpg" />
+<ul class="simple">
+<li><p>Call the Node search menu with <code class="docutils literal notranslate"><span class="pre">tab</span></code> then type some letters to make the list of the names appears</p></li>
+</ul>
+<img alt="../_images/environment-nodes-node_select.gif" src="../_images/environment-nodes-node_select.gif" />
+</section>
+<section id="duplicating-nodes">
+<h2>Duplicating Nodes<a class="headerlink" href="#duplicating-nodes" title="Permalink to this heading"></a></h2>
+<p>Nodes can be duplicated by copying (shortcut <code class="docutils literal notranslate"><span class="pre">CTRL+C</span></code>) and pasting  (shortcut <code class="docutils literal notranslate"><span class="pre">CTRL+V</span></code>)</p>
+<p>This create two independent copies.</p>
+<p>If you want the two copies to process different images with the same parameters even when they are changed the nodes can be cloned (shortcut <code class="docutils literal notranslate"><span class="pre">ALT+K</span></code>).</p>
+<p>The link between the nodes is shown with a pink arrow.</p>
+<img alt="../_images/environment-nodes-clones.gif" src="../_images/environment-nodes-clones.gif" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Even Group (New in v2.4) and Roto can be cloned (which is not possible in nuke)</p></li>
+<li><p>Beware that parameters of the group are clones dynamically updated but not the internal structure of nodes inside the group</p></li>
+</ul>
+</div>
+</section>
+<section id="connections">
+<h2>Connections<a class="headerlink" href="#connections" title="Permalink to this heading"></a></h2>
+<p>To connect a node to another:
+grab the tip of the input arrow and drop it onto the input node</p>
+<img alt="../_images/node_connect_disconnect.gif" src="../_images/node_connect_disconnect.gif" />
+<p>insert in the graph:
+hold <code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + drag and drop node C onto a existing connection between A and B will insert the node inbetween. resulting in A-&gt;C-&gt;B
+To show you where the node will be inserted, a green arrow is displayed</p>
+<img alt="../_images/node_insert.gif" src="../_images/node_insert.gif" />
+<p>To disconnect a node:
+select it, press <code class="docutils literal notranslate"><span class="pre">ctrl+shift+x</span></code></p>
+<img alt="../_images/node_extract.gif" src="../_images/node_extract.gif" />
+<p><strong>community scripts</strong></p>
+<p>To connect distant nodes, select output node, input node, press <code class="docutils literal notranslate"><span class="pre">y</span></code></p>
+<img alt="../_images/node_distant_connect.gif" src="../_images/node_distant_connect.gif" />
+<p>For more in depth information on how to manage your nodegraph see <a class="reference internal" href="getstarted-environment-nodegraph.html"><span class="doc">Nodegraph</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="getstarted-environment-toolbar.html" class="btn btn-neutral float-left" title="Using the toolbar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="getstarted-environment-nodegraph.html" class="btn btn-neutral float-right" title="Navigating inside the Node Graph" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013-2022 The Natron documentation authors, licensed under CC BY-SA 4.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

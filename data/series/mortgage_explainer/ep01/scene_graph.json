@@ -1,0 +1,2223 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "mortgage_ep01_how_500k_mortgage_works",
+    "channel_id": "k70_economy",
+    "niche": "usa_finance",
+    "title": "How a $500,000 Mortgage Actually Works | Mortgage Explained",
+    "hook": "A five hundred thousand dollar house doesn't cost five hundred thousand dollars. Finance it for thirty years, and the number that actually leaves your pocket can look completely different.",
+    "description": "MORTGAGE EXPLAINED — How a $500,000 mortgage actually works, in plain English, through one hypothetical buyer's story.\n\nThis video breaks down the down payment, mortgage principal, fixed interest rate, monthly principal-and-interest payment, property taxes, homeowners insurance, and PMI, how amortization shifts the interest/principal split from year 1 to year 30, the real total interest cost over 30 years, how sensitive that total is to the interest rate, what an extra principal payment actually does to the payoff timeline and total interest, and why affordability is about more than a home's sticker price.\n\nAll calculations use a standard fixed-rate amortization formula with one clearly-stated hypothetical scenario ($500,000 home, 10% down, 6.5% hypothetical rate, 30-year fixed) -- not a prediction or personalized advice.\n\nSOURCES: Consumer Financial Protection Bureau — https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/ · https://www.consumerfinance.gov/ask-cfpb/what-is-private-mortgage-insurance-en-122/\n\nThis video is educational and uses a hypothetical example. It does not constitute mortgage, tax, or financial advice. Speak with a licensed lender for your actual numbers. See disclaimer.",
+    "tags": [
+      "mortgage explained",
+      "how mortgages work",
+      "500000 house",
+      "mortgage amortization",
+      "down payment",
+      "PMI explained",
+      "30 year fixed mortgage",
+      "principal and interest",
+      "escrow",
+      "home buying",
+      "mortgage interest",
+      "extra mortgage payments",
+      "personal finance",
+      "finance documentary"
+    ],
+    "hashtags": [
+      "#mortgage",
+      "#realestate",
+      "#personalfinance",
+      "#homebuying",
+      "#k70finance"
+    ],
+    "thumbnail_text": "THE REAL COST",
+    "structure_id": "one_number_story",
+    "disclaimer": "Educational content using a hypothetical example. Not mortgage, tax, or financial advice.",
+    "compliance_notes": [],
+    "requires_ai_disclosure": false,
+    "ai_disclosure_reasons": []
+  },
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "A five hundred thousand dollar house doesn't cost five hundred thousand dollars. Finance it for thirty years, and the number that actually leaves your pocket can look completely different.",
+      "duration_sec": 7.6,
+      "visual": {
+        "type": "broll",
+        "query": "beautiful american suburban house exterior daylight",
+        "broll_keywords": [
+          "american house exterior daylight",
+          "suburban home for sale exterior"
+        ],
+        "visual_intent": "Real, attractive American home exterior, warm daylight, premium establishing shot",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "00 · hook · stock · vis=stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "hook",
+      "transition_in": "cut",
+      "keywords": [
+        "american house exterior daylight",
+        "suburban home for sale exterior"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s2",
+      "narration": "Meet John. John found a home he loves — listed at five hundred thousand dollars.",
+      "duration_sec": 4.6,
+      "visual": {
+        "type": "image",
+        "query": "",
+        "broll_keywords": [],
+        "visual_intent": "John, K70 recurring character, front three-quarter studio shot",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "01 · context · stock · vis=character",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "fade",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s3",
+      "narration": "Almost nobody pays that in cash. Most buyers borrow the difference between what they put down, and what the home actually costs.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "PRICE − DOWN PAYMENT = WHAT YOU BORROW",
+        "broll_keywords": [],
+        "visual_intent": "The core mechanic stated plainly",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "01 · context · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "PRICE − DOWN PAYMENT = WHAT YOU BORROW",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s4",
+      "narration": "For this example, John puts down 10 percent — 50,000 dollars. That's his choice for this scenario; real buyers put down anywhere from a few percent to twenty percent or more.",
+      "duration_sec": 8.4,
+      "visual": {
+        "type": "dataviz",
+        "query": "Down payment (illustrative)",
+        "broll_keywords": [],
+        "visual_intent": "Down payment counter, explicitly framed as one illustrative choice",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "02 · evidence · charts · vis=chart",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "counter",
+        "title": "Down payment (illustrative example)",
+        "points": [
+          {
+            "label": "10% of price",
+            "value": 50000.0,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": "One possible scenario — not a requirement"
+      },
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s5",
+      "narration": "The rest — 450,000 dollars — is what he actually borrows. That's the mortgage principal.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "dataviz",
+        "query": "Mortgage principal",
+        "broll_keywords": [],
+        "visual_intent": "Principal counter card",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "02 · reveal · charts · vis=chart",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "counter",
+        "title": "Mortgage principal",
+        "points": [
+          {
+            "label": "Amount borrowed",
+            "value": 450000.0,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": ""
+      },
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s6",
+      "narration": "The bank agrees to lend him that principal over thirty years, at a fixed interest rate. For this example, we'll use six and a half percent — a hypothetical rate for illustration, not a live market quote.",
+      "duration_sec": 8.6,
+      "visual": {
+        "type": "image",
+        "query": "local bank branch exterior daylight",
+        "broll_keywords": [
+          "bank branch exterior",
+          "credit union building exterior"
+        ],
+        "visual_intent": "Real bank exterior, grounding the loan concept in a real institution",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "03 · mechanism · official · vis=archival",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "fade",
+      "keywords": [
+        "bank branch exterior",
+        "credit union building exterior"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s7",
+      "narration": "Fixed means the rate never changes. Whatever John's payment is in year one, it's the same in year thirty.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "30-YEAR FIXED: SAME RATE, START TO FINISH",
+        "broll_keywords": [],
+        "visual_intent": "30-year fixed defined plainly",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "03 · mechanism · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "30-YEAR FIXED: SAME RATE, START TO FINISH",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s8",
+      "narration": "Run those numbers through a standard mortgage formula, and John's principal-and-interest payment comes out to 2,844 dollars a month.",
+      "duration_sec": 6.8,
+      "visual": {
+        "type": "dataviz",
+        "query": "Monthly principal + interest",
+        "broll_keywords": [],
+        "visual_intent": "Monthly P&I hero counter, calculated not guessed",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "04 · reveal · charts · vis=chart",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "counter",
+        "title": "Monthly principal + interest",
+        "points": [
+          {
+            "label": "Per month",
+            "value": 2844.31,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": "450,000 at 6.5%, 30-yr fixed (hypothetical rate)"
+      },
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s9",
+      "narration": "But that single number doesn't all go to the bank as profit. Here's where a payment like that actually travels.",
+      "duration_sec": 5.6,
+      "visual": {
+        "type": "image",
+        "query": "",
+        "broll_keywords": [],
+        "visual_intent": "ONE deliberate voxel-style transition -- payment splitting into destinations, used sparingly as instructed",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "04 · turn · stock · vis=voxel",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "turn",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s10",
+      "narration": "Property taxes, homeowners insurance, and — because John put down less than twenty percent — private mortgage insurance, all get added on top of that principal-and-interest payment.",
+      "duration_sec": 7.6,
+      "visual": {
+        "type": "broll",
+        "query": "family in front of new home real estate",
+        "broll_keywords": [
+          "family new home exterior",
+          "homebuyers standing outside house"
+        ],
+        "visual_intent": "Real family/home context, grounding the escrow concept",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "05 · evidence · stock · vis=stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [
+        "family new home exterior",
+        "homebuyers standing outside house"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s11",
+      "narration": "Lenders usually bundle all of that into one monthly bill, called an escrow payment.",
+      "duration_sec": 4.6,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "ESCROW: TAXES + INSURANCE + PMI, ONE BILL",
+        "broll_keywords": [],
+        "visual_intent": "Escrow defined",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "05 · context · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "ESCROW: TAXES + INSURANCE + PMI, ONE BILL",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s12",
+      "narration": "For this illustrative example: taxes add roughly 458 dollars a month. Insurance, about 150. PMI, about 281. Together, John's real monthly payment is closer to 3,734 dollars.",
+      "duration_sec": 10.5,
+      "visual": {
+        "type": "dataviz",
+        "query": "Estimated total monthly payment (illustrative)",
+        "broll_keywords": [],
+        "visual_intent": "Full monthly payment breakdown, clearly labeled illustrative",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "05 · evidence · charts · vis=chart",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "bar_compare",
+        "title": "Estimated monthly payment (illustrative)",
+        "points": [
+          {
+            "label": "Principal + interest",
+            "value": 2844.31,
+            "emphasis": "primary"
+          },
+          {
+            "label": "Taxes (est.)",
+            "value": 458.33,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Insurance (est.)",
+            "value": 150.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "PMI (est.)",
+            "value": 281.25,
+            "emphasis": "normal"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": "Taxes/insurance/PMI are illustrative estimates, not quotes"
+      },
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s13",
+      "narration": "PMI protects the bank, not John — and by federal law, it has to come off automatically once his loan balance drops to seventy-eight percent of the home's original value.",
+      "duration_sec": 8.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "PMI ENDS AUTOMATICALLY AT 78% LOAN-TO-VALUE",
+        "broll_keywords": [],
+        "visual_intent": "CFPB-verified PMI automatic termination rule",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "05 · payoff · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "PMI ENDS AUTOMATICALLY AT 78% LOAN-TO-VALUE",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        },
+        {
+          "type": "source",
+          "text": "CFPB — When can I remove private mortgage insura",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "payoff",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s14",
+      "narration": "Here's the part almost nobody explains well: not every one of John's payments works the same way.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "NOT EVERY PAYMENT WORKS THE SAME WAY",
+        "broll_keywords": [],
+        "visual_intent": "The chapter hook",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "06 · tension · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "NOT EVERY PAYMENT WORKS THE SAME WAY",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "fade",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s15",
+      "narration": "In year one, 85 percent of every payment John makes is interest. Only about 15 percent actually reduces what he owes.",
+      "duration_sec": 7.0,
+      "visual": {
+        "type": "dataviz",
+        "query": "Year 1: payment split",
+        "broll_keywords": [],
+        "visual_intent": "Year 1 amortization split, calculated from the real schedule",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "06 · evidence · charts · vis=chart",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "donut",
+        "title": "Year 1 — where the payment goes",
+        "points": [
+          {
+            "label": "Interest",
+            "value": 85.0,
+            "emphasis": "negative"
+          },
+          {
+            "label": "Principal",
+            "value": 15.0,
+            "emphasis": "positive"
+          }
+        ],
+        "prefix": "",
+        "suffix": "%",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": ""
+      },
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s16",
+      "narration": "By year fifteen, that's shifted — 62 percent interest, 38 percent principal.",
+      "duration_sec": 5.6,
+      "visual": {
+        "type": "dataviz",
+        "query": "Year 15: payment split",
+        "broll_keywords": [],
+        "visual_intent": "Year 15 split -- midpoint, matches CFPB's PMI-termination midpoint rule too",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "06 · evidence · charts · vis=chart",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "donut",
+        "title": "Year 15 — where the payment goes",
+        "points": [
+          {
+            "label": "Interest",
+            "value": 62.0,
+            "emphasis": "negative"
+          },
+          {
+            "label": "Principal",
+            "value": 38.0,
+            "emphasis": "positive"
+          }
+        ],
+        "prefix": "",
+        "suffix": "%",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": ""
+      },
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s17",
+      "narration": "By year thirty, it's flipped almost completely: less than one percent interest, the rest is pure principal.",
+      "duration_sec": 5.8,
+      "visual": {
+        "type": "dataviz",
+        "query": "Year 30: payment split",
+        "broll_keywords": [],
+        "visual_intent": "Year 30 split -- the payoff",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "06 · reveal · charts · vis=chart",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "donut",
+        "title": "Year 30 — where the payment goes",
+        "points": [
+          {
+            "label": "Interest",
+            "value": 0.5,
+            "emphasis": "negative"
+          },
+          {
+            "label": "Principal",
+            "value": 99.5,
+            "emphasis": "positive"
+          }
+        ],
+        "prefix": "",
+        "suffix": "%",
+        "decimals": 1,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": ""
+      },
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s18",
+      "narration": "That's amortization: the bank collects most of its interest early, while John owes the most money — and less interest later, as the balance shrinks.",
+      "duration_sec": 7.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "AMORTIZATION: MORE INTEREST EARLY, MORE PRINCIPAL LATE",
+        "broll_keywords": [],
+        "visual_intent": "Amortization named and explained",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "06 · payoff · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "AMORTIZATION: MORE INTEREST EARLY, MORE PRINCIPAL LATE",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "payoff",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s19",
+      "narration": "Here's why: interest is calculated on whatever John still owes, not on the original loan. Early on, he still owes almost all of it, so interest takes the bigger share of the payment.",
+      "duration_sec": 8.2,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "INTEREST IS CALCULATED ON WHAT'S LEFT TO OWE",
+        "broll_keywords": [],
+        "visual_intent": "Explains the actual mechanism, not just the observed pattern",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "06 · mechanism · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "INTEREST IS CALCULATED ON WHAT'S LEFT TO OWE",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s20",
+      "narration": "As his balance drops, month after month, there's less principal left to charge interest on — so a shrinking slice goes to interest, and a growing slice chips away at what he owes.",
+      "duration_sec": 8.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "SMALLER BALANCE → LESS INTEREST → FASTER PRINCIPAL PAYOFF",
+        "broll_keywords": [],
+        "visual_intent": "Second half of the mechanism explanation, closes the loop",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "06 · mechanism · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "SMALLER BALANCE → LESS INTEREST → FASTER PRINCIPAL PAYOFF",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s21",
+      "narration": "Add up every interest payment over all thirty years, and here's the number that surprises most buyers: 573,950 dollars in interest alone.",
+      "duration_sec": 8.2,
+      "visual": {
+        "type": "dataviz",
+        "query": "Total interest over 30 years",
+        "broll_keywords": [],
+        "visual_intent": "The big surprising total-interest number",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "07 · reveal · charts · vis=chart",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "counter",
+        "title": "Total interest over 30 years",
+        "points": [
+          {
+            "label": "Interest paid",
+            "value": 573950.2,
+            "emphasis": "negative"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": ""
+      },
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s22",
+      "narration": "That's more than John originally borrowed. Borrow 450,000, and — on this schedule — he ends up paying 1,023,950 dollars total.",
+      "duration_sec": 8.0,
+      "visual": {
+        "type": "dataviz",
+        "query": "Borrowed vs. total paid",
+        "broll_keywords": [],
+        "visual_intent": "Principal borrowed vs total paid, the contrast",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "07 · consequence · charts · vis=chart",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "delta",
+        "title": "Borrowed vs. total paid over 30 years",
+        "points": [
+          {
+            "label": "Borrowed",
+            "value": 450000.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Total paid",
+            "value": 1023950.2,
+            "emphasis": "negative"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": ""
+      },
+      "beat_role": "consequence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s23",
+      "narration": "And that total is extremely sensitive to the rate. The exact same loan, at 5.5 percent instead of 6.5, costs about 104,132 dollars less in interest over the life of the loan.",
+      "duration_sec": 9.4,
+      "visual": {
+        "type": "dataviz",
+        "query": "Total interest at three hypothetical rates",
+        "broll_keywords": [],
+        "visual_intent": "Rate sensitivity comparison, three hypothetical rates on the identical loan",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "08 · evidence · charts · vis=chart",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "bar_compare",
+        "title": "Total interest, same loan, different hypothetical rates",
+        "points": [
+          {
+            "label": "5.5%",
+            "value": 469818.18,
+            "emphasis": "positive"
+          },
+          {
+            "label": "6.5%",
+            "value": 573950.2,
+            "emphasis": "normal"
+          },
+          {
+            "label": "7.5%",
+            "value": 682727.5,
+            "emphasis": "negative"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": "Same principal and term throughout -- educational comparison, not a forecast"
+      },
+      "beat_role": "evidence",
+      "transition_in": "fade",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s24",
+      "narration": "Go the other way — 7.5 percent instead of 6.5 — and it costs about 108,777 dollars more. Same house, same amount borrowed, a very different outcome — just from the rate.",
+      "duration_sec": 8.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "SAME LOAN. DIFFERENT RATE. VERY DIFFERENT COST.",
+        "broll_keywords": [],
+        "visual_intent": "Completes the rate-sensitivity comparison with the higher-rate side",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "08 · payoff · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "SAME LOAN. DIFFERENT RATE. VERY DIFFERENT COST.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "payoff",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s25",
+      "narration": "Now here's a choice that's actually in John's control: what if he pays an extra three hundred dollars toward principal, every single month?",
+      "duration_sec": 6.8,
+      "visual": {
+        "type": "image",
+        "query": "",
+        "broll_keywords": [],
+        "visual_intent": "John, second distinct shot -- same character, different angle for continuity + variety",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "09 · question · stock · vis=character",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "question",
+      "transition_in": "fade",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s26",
+      "narration": "On this schedule, that alone pays off the loan about 7 years early — and saves him over 155,173 dollars in interest.",
+      "duration_sec": 8.0,
+      "visual": {
+        "type": "dataviz",
+        "query": "Interest saved with $300/month extra principal",
+        "broll_keywords": [],
+        "visual_intent": "Extra-payment comparison, calculated",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "09 · reveal · charts · vis=chart",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "delta",
+        "title": "Total interest: normal vs. extra $300/mo principal",
+        "points": [
+          {
+            "label": "Normal schedule",
+            "value": 573950.2,
+            "emphasis": "negative"
+          },
+          {
+            "label": "With extra payments",
+            "value": 418777.01,
+            "emphasis": "positive"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": ""
+      },
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s27",
+      "narration": "It isn't free money — it's real cash out of his budget every month, and it isn't automatically the best move for everyone. But it shows how much leverage extra principal has, especially early in a loan.",
+      "duration_sec": 8.2,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "REAL MONEY, EVERY MONTH — NOT AUTOMATICALLY RIGHT FOR EVERYONE",
+        "broll_keywords": [],
+        "visual_intent": "Balanced caveat -- not universal advice",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "09 · consequence · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "REAL MONEY, EVERY MONTH — NOT AUTOMATICALLY RIGHT FOR EVERYONE",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "consequence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s28",
+      "narration": "Which is really the point: the sticker price was never the full story. What actually matters is the rate John gets, how long he finances it, and what he chooses to do with his payment every single month.",
+      "duration_sec": 8.4,
+      "visual": {
+        "type": "broll",
+        "query": "family relaxing outside home real estate",
+        "broll_keywords": [
+          "family outside home relaxing",
+          "homeowners porch real estate"
+        ],
+        "visual_intent": "Real family/home context, broader affordability framing",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "10 · payoff · stock · vis=stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "payoff",
+      "transition_in": "fade",
+      "keywords": [
+        "family outside home relaxing",
+        "homeowners porch real estate"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s29",
+      "narration": "A five hundred thousand dollar house can mean very different total costs for two different buyers, on two different mortgages.",
+      "duration_sec": 5.6,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "SAME STICKER PRICE. DIFFERENT TOTAL COST.",
+        "broll_keywords": [],
+        "visual_intent": "The thesis line",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "10 · payoff · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "SAME STICKER PRICE. DIFFERENT TOTAL COST.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "payoff",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s30",
+      "narration": "And the sticker price still isn't the whole picture — closing costs, ongoing maintenance, and how those escrow items change over time all shape what a home really costs to own, well beyond the number on the listing.",
+      "duration_sec": 8.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "STICKER PRICE ≠ TOTAL COST OF OWNERSHIP",
+        "broll_keywords": [],
+        "visual_intent": "Rounds out affordability point without inventing specific closing-cost figures",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "10 · consequence · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "STICKER PRICE ≠ TOTAL COST OF OWNERSHIP",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "consequence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s31",
+      "narration": "This has been one hypothetical example — not a prediction for your mortgage, your rate, or your local taxes. A real lender can run your actual numbers.",
+      "duration_sec": 7.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "ONE HYPOTHETICAL EXAMPLE — NOT PERSONAL ADVICE",
+        "broll_keywords": [],
+        "visual_intent": "Explicit disclaimer per brief requirements",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "11 · cta · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "ONE HYPOTHETICAL EXAMPLE — NOT PERSONAL ADVICE",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "cta",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s32",
+      "narration": "If you want to actually understand how money works — instead of guessing at it — that's exactly what this channel is for.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "K70 — UNDERSTAND THE ECONOMY",
+        "broll_keywords": [],
+        "visual_intent": "Channel CTA card, matching Forex/XAU-USD closing style",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "11 · cta · motion_gfx · vis=mgfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "K70 — UNDERSTAND THE ECONOMY",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        },
+        {
+          "type": "lower_third",
+          "text": "K70 FINANCE",
+          "sub": "Understand the economy.",
+          "y": 0.5,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "cta",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    }
+  ],
+  "audio": {
+    "voiceover_path": null,
+    "music_path": null,
+    "music_gain_db": -18.0,
+    "voiceover_gain_db": 0.0,
+    "duck_music": true,
+    "duck_amount_db": -9.0,
+    "music_mood": "",
+    "music_envelope": [],
+    "music_fade_in_sec": 1.5,
+    "music_fade_out_sec": 2.0
+  },
+  "captions": [],
+  "sfx": [],
+  "storyboard": {
+    "version": "1.0",
+    "scenes": [
+      {
+        "scene_id": "sb_s1",
+        "source_scene_id": "s1",
+        "narration": "A five hundred thousand dollar house doesn't cost five hundred thousand dollars. Finance it for thirty years, and the number that actually leaves your pocket can look completely different.",
+        "duration_estimate": 7.6,
+        "visual_objective": "Real, attractive American home exterior, warm daylight, premium establishing shot",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "urgent",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.8
+      },
+      {
+        "scene_id": "sb_s2",
+        "source_scene_id": "s2",
+        "narration": "Meet John. John found a home he loves — listed at five hundred thousand dollars.",
+        "duration_estimate": 4.6,
+        "visual_objective": "John, K70 recurring character, front three-quarter studio shot",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.8
+      },
+      {
+        "scene_id": "sb_s3",
+        "source_scene_id": "s3",
+        "narration": "Almost nobody pays that in cash. Most buyers borrow the difference between what they put down, and what the home actually costs.",
+        "duration_estimate": 6.0,
+        "visual_objective": "The core mechanic stated plainly",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "PRICE − DOWN PAYMENT = WHAT YOU BORROW"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s4",
+        "source_scene_id": "s4",
+        "narration": "For this example, John puts down 10 percent — 50,000 dollars. That's his choice for this scenario; real buyers put down anywhere from a few percent to twenty percent or more.",
+        "duration_estimate": 8.4,
+        "visual_objective": "Down payment counter, explicitly framed as one illustrative choice",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s5",
+        "source_scene_id": "s5",
+        "narration": "The rest — 450,000 dollars — is what he actually borrows. That's the mortgage principal.",
+        "duration_estimate": 5.4,
+        "visual_objective": "Principal counter card",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s6",
+        "source_scene_id": "s6",
+        "narration": "The bank agrees to lend him that principal over thirty years, at a fixed interest rate. For this example, we'll use six and a half percent — a hypothetical rate for illustration, not a live market quote.",
+        "duration_estimate": 8.6,
+        "visual_objective": "Real bank exterior, grounding the loan concept in a real institution",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.8
+      },
+      {
+        "scene_id": "sb_s7",
+        "source_scene_id": "s7",
+        "narration": "Fixed means the rate never changes. Whatever John's payment is in year one, it's the same in year thirty.",
+        "duration_estimate": 5.4,
+        "visual_objective": "30-year fixed defined plainly",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "30-YEAR FIXED: SAME RATE, START TO FINISH"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s8",
+        "source_scene_id": "s8",
+        "narration": "Run those numbers through a standard mortgage formula, and John's principal-and-interest payment comes out to 2,844 dollars a month.",
+        "duration_estimate": 6.8,
+        "visual_objective": "Monthly P&I hero counter, calculated not guessed",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s9",
+        "source_scene_id": "s9",
+        "narration": "But that single number doesn't all go to the bank as profit. Here's where a payment like that actually travels.",
+        "duration_estimate": 5.6,
+        "visual_objective": "ONE deliberate voxel-style transition -- payment splitting into destinations, used sparingly as instructed",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.8
+      },
+      {
+        "scene_id": "sb_s10",
+        "source_scene_id": "s10",
+        "narration": "Property taxes, homeowners insurance, and — because John put down less than twenty percent — private mortgage insurance, all get added on top of that principal-and-interest payment.",
+        "duration_estimate": 7.6,
+        "visual_objective": "Real family/home context, grounding the escrow concept",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.8
+      },
+      {
+        "scene_id": "sb_s11",
+        "source_scene_id": "s11",
+        "narration": "Lenders usually bundle all of that into one monthly bill, called an escrow payment.",
+        "duration_estimate": 4.6,
+        "visual_objective": "Escrow defined",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "ESCROW: TAXES + INSURANCE + PMI, ONE BILL"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s12",
+        "source_scene_id": "s12",
+        "narration": "For this illustrative example: taxes add roughly 458 dollars a month. Insurance, about 150. PMI, about 281. Together, John's real monthly payment is closer to 3,734 dollars.",
+        "duration_estimate": 10.5,
+        "visual_objective": "Full monthly payment breakdown, clearly labeled illustrative",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s13",
+        "source_scene_id": "s13",
+        "narration": "PMI protects the bank, not John — and by federal law, it has to come off automatically once his loan balance drops to seventy-eight percent of the home's original value.",
+        "duration_estimate": 8.0,
+        "visual_objective": "CFPB-verified PMI automatic termination rule",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "78%"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "PMI ENDS AUTOMATICALLY AT 78% LOAN-TO-VALUE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s14",
+        "source_scene_id": "s14",
+        "narration": "Here's the part almost nobody explains well: not every one of John's payments works the same way.",
+        "duration_estimate": 5.0,
+        "visual_objective": "The chapter hook",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [
+          "NOT EVERY PAYMENT WORKS THE SAME WAY"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s15",
+        "source_scene_id": "s15",
+        "narration": "In year one, 85 percent of every payment John makes is interest. Only about 15 percent actually reduces what he owes.",
+        "duration_estimate": 7.0,
+        "visual_objective": "Year 1 amortization split, calculated from the real schedule",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s16",
+        "source_scene_id": "s16",
+        "narration": "By year fifteen, that's shifted — 62 percent interest, 38 percent principal.",
+        "duration_estimate": 5.6,
+        "visual_objective": "Year 15 split -- midpoint, matches CFPB's PMI-termination midpoint rule too",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s17",
+        "source_scene_id": "s17",
+        "narration": "By year thirty, it's flipped almost completely: less than one percent interest, the rest is pure principal.",
+        "duration_estimate": 5.8,
+        "visual_objective": "Year 30 split -- the payoff",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s18",
+        "source_scene_id": "s18",
+        "narration": "That's amortization: the bank collects most of its interest early, while John owes the most money — and less interest later, as the balance shrinks.",
+        "duration_estimate": 7.0,
+        "visual_objective": "Amortization named and explained",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "AMORTIZATION: MORE INTEREST EARLY, MORE PRINCIPAL LATE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s19",
+        "source_scene_id": "s19",
+        "narration": "Here's why: interest is calculated on whatever John still owes, not on the original loan. Early on, he still owes almost all of it, so interest takes the bigger share of the payment.",
+        "duration_estimate": 8.2,
+        "visual_objective": "Explains the actual mechanism, not just the observed pattern",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "INTEREST IS CALCULATED ON WHAT'S LEFT TO OWE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s20",
+        "source_scene_id": "s20",
+        "narration": "As his balance drops, month after month, there's less principal left to charge interest on — so a shrinking slice goes to interest, and a growing slice chips away at what he owes.",
+        "duration_estimate": 8.0,
+        "visual_objective": "Second half of the mechanism explanation, closes the loop",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "SMALLER BALANCE → LESS INTEREST → FASTER PRINCIPAL PAYOFF"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s21",
+        "source_scene_id": "s21",
+        "narration": "Add up every interest payment over all thirty years, and here's the number that surprises most buyers: 573,950 dollars in interest alone.",
+        "duration_estimate": 8.2,
+        "visual_objective": "The big surprising total-interest number",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s22",
+        "source_scene_id": "s22",
+        "narration": "That's more than John originally borrowed. Borrow 450,000, and — on this schedule — he ends up paying 1,023,950 dollars total.",
+        "duration_estimate": 8.0,
+        "visual_objective": "Principal borrowed vs total paid, the contrast",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s23",
+        "source_scene_id": "s23",
+        "narration": "And that total is extremely sensitive to the rate. The exact same loan, at 5.5 percent instead of 6.5, costs about 104,132 dollars less in interest over the life of the loan.",
+        "duration_estimate": 9.4,
+        "visual_objective": "Rate sensitivity comparison, three hypothetical rates on the identical loan",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s24",
+        "source_scene_id": "s24",
+        "narration": "Go the other way — 7.5 percent instead of 6.5 — and it costs about 108,777 dollars more. Same house, same amount borrowed, a very different outcome — just from the rate.",
+        "duration_estimate": 8.4,
+        "visual_objective": "Completes the rate-sensitivity comparison with the higher-rate side",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "SAME LOAN. DIFFERENT RATE. VERY DIFFERENT COST."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s25",
+        "source_scene_id": "s25",
+        "narration": "Now here's a choice that's actually in John's control: what if he pays an extra three hundred dollars toward principal, every single month?",
+        "duration_estimate": 6.8,
+        "visual_objective": "John, second distinct shot -- same character, different angle for continuity + variety",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.8
+      },
+      {
+        "scene_id": "sb_s26",
+        "source_scene_id": "s26",
+        "narration": "On this schedule, that alone pays off the loan about 7 years early — and saves him over 155,173 dollars in interest.",
+        "duration_estimate": 8.0,
+        "visual_objective": "Extra-payment comparison, calculated",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s27",
+        "source_scene_id": "s27",
+        "narration": "It isn't free money — it's real cash out of his budget every month, and it isn't automatically the best move for everyone. But it shows how much leverage extra principal has, especially early in a loan.",
+        "duration_estimate": 8.2,
+        "visual_objective": "Balanced caveat -- not universal advice",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "REAL MONEY, EVERY MONTH — NOT AUTOMATICALLY RIGHT FOR EVERYONE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s28",
+        "source_scene_id": "s28",
+        "narration": "Which is really the point: the sticker price was never the full story. What actually matters is the rate John gets, how long he finances it, and what he chooses to do with his payment every single month.",
+        "duration_estimate": 8.4,
+        "visual_objective": "Real family/home context, broader affordability framing",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.8
+      },
+      {
+        "scene_id": "sb_s29",
+        "source_scene_id": "s29",
+        "narration": "A five hundred thousand dollar house can mean very different total costs for two different buyers, on two different mortgages.",
+        "duration_estimate": 5.6,
+        "visual_objective": "The thesis line",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "SAME STICKER PRICE. DIFFERENT TOTAL COST."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s30",
+        "source_scene_id": "s30",
+        "narration": "And the sticker price still isn't the whole picture — closing costs, ongoing maintenance, and how those escrow items change over time all shape what a home really costs to own, well beyond the number on the listing.",
+        "duration_estimate": 8.4,
+        "visual_objective": "Rounds out affordability point without inventing specific closing-cost figures",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "STICKER PRICE ≠ TOTAL COST OF OWNERSHIP"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s31",
+        "source_scene_id": "s31",
+        "narration": "This has been one hypothetical example — not a prediction for your mortgage, your rate, or your local taxes. A real lender can run your actual numbers.",
+        "duration_estimate": 7.0,
+        "visual_objective": "Explicit disclaimer per brief requirements",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "urgent",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "ONE HYPOTHETICAL EXAMPLE — NOT PERSONAL ADVICE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s32",
+        "source_scene_id": "s32",
+        "narration": "If you want to actually understand how money works — instead of guessing at it — that's exactly what this channel is for.",
+        "duration_estimate": 6.0,
+        "visual_objective": "Channel CTA card, matching Forex/XAU-USD closing style",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "urgent",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "K70 — UNDERSTAND THE ECONOMY",
+          "K70 FINANCE"
+        ],
+        "visual_confidence_score": 0.92
+      }
+    ]
+  },
+  "asset_provenance": [],
+  "threejs_provenance": [],
+  "motion_graphics_provenance": [],
+  "ai_broll_provenance": [],
+  "paperima_provenance": [],
+  "brand_identity_provenance": null,
+  "variety": {},
+  "brand_id": "k70"
+}

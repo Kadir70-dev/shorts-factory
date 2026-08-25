@@ -1,0 +1,24 @@
+{
+  "kind": "A",
+  "actions": [
+    "K70_CMU_13_01"
+  ],
+  "qa": {
+    "ground_pre": {
+      "role": "ground",
+      "max_error": 4.485843546238652e-08,
+      "samples": 12
+    },
+    "chair": {
+      "role": "chair",
+      "max_error": 0.0,
+      "samples": 18
+    },
+    "ground_post": {
+      "role": "ground",
+      "max_error": 1.862645149230957e-08,
+      "samples": 9
+    }
+  },
+  "manual_per_frame": false
+}

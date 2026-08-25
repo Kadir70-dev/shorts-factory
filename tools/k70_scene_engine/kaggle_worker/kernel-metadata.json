@@ -1,0 +1,14 @@
+{
+  "id": "k70networksolution/k70-blender-gpu-worker",
+  "title": "K70 Blender GPU Worker",
+  "code_file": "k70_kaggle_render.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": []
+}

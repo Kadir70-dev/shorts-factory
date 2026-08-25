@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+   <name>Unhide All Layers</name>
+   <name xml:lang="ar">الغاء اخفاء كل الطبقات</name>
+   <name xml:lang="bs">Prikaži sve slojeve</name>
+   <name xml:lang="ca@valencia">Mostra totes les capes</name>
+   <name xml:lang="cs">Zobrazit všechny vrstvy</name>
+   <name xml:lang="da">Ophæv skjul af alle lag</name>
+   <name xml:lang="de">Alle Ebenen anzeigen</name>
+   <name xml:lang="es">Activa todas las capas</name>
+   <name xml:lang="eu">Erakutsi geruza guztiak</name>
+   <name xml:lang="eu_ES">Erakutsi geruza guztiak</name>
+   <name xml:lang="fr">Afficher Tous les Calques</name>
+   <name xml:lang="it">Mostra tutti i Livelli</name>
+   <name xml:lang="ko_KR">모든 레이어 숨기기 해제</name>
+   <name xml:lang="lt">Parodyti visus sluoksnius</name>
+   <name xml:lang="nl">Alle lagen zichtbaar maken</name>
+   <name xml:lang="pl_PL">Pokaż Wszystkie Warstwy</name>
+   <name xml:lang="pt">Mostrar Todas as Camadas</name>
+   <name xml:lang="pt_BR">Reexibir Todas as Camadas</name>
+   <name xml:lang="ru">Показать все скрытые слои</name>
+   <name xml:lang="sk_SK">Odokryť všetky vrstvy</name>
+   <name xml:lang="sl">Pokaži Vse Plasti</name>
+   <name xml:lang="sr_RS">Прикажи све слојеве</name>
+   <name xml:lang="sv_SE">Visa alla lager</name>
+   <name xml:lang="tr">Bütün Katmanları Göster</name>
+   <name xml:lang="zh_CN">显示所有层</name>
+   <name xml:lang="zh_TW">所有圖層取消隱藏</name>
+   <exec>view-unhide-all-layers.py</exec>
+</plugin>

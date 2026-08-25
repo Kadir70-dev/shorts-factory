@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuremap [
+<!ELEMENT configuremap (configure)+>
+<!ELEMENT configure (#PCDATA)>
+<!ATTLIST configure name CDATA #REQUIRED>
+<!ATTLIST configure value CDATA #REQUIRED>
+]>
+<configuremap>
+  <configure name="CC" value="x86_64-w64-mingw32-gcc"/>
+  <configure name="CFLAGS" value="-fopenmp -I/build/packet/win-64/imagemagick-6.8.7/envdeps/include -Wall -fexceptions -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16"/>
+  <configure name="CODER_PATH" value="/build/packet/win-64/imagemagick-6.8.7/install/lib/ImageMagick-6.8.7/modules-Q16/coders"/>
+  <configure name="CONFIGURE_PATH" value="/build/packet/win-64/imagemagick-6.8.7/install/etc/ImageMagick-6/"/>
+  <configure name="CONFIGURE" value="./configure  '--host=x86_64-w64-mingw32' '--prefix=/build/packet/win-64/imagemagick-6.8.7/install' '--disable-static' '--enable-shared' '--without-perl' '--without-x' '--with-threads' '--with-magick_plus_plus' '--without-modules' 'host_alias=x86_64-w64-mingw32' 'CFLAGS= -I/build/packet/win-64/imagemagick-6.8.7/envdeps/include   ' 'LDFLAGS= -L/build/packet/win-64/imagemagick-6.8.7/envdeps/lib -L/build/packet/win-64/imagemagick-6.8.7/envdeps/lib64  -L/usr/x86_64-w64-mingw32/lib -L/usr/lib/gcc/x86_64-w64-mingw32/10-posix/ -L/usr/lib/gcc/x86_64-w64-mingw32/6.3-posix/ ' 'CPPFLAGS= -I/build/packet/win-64/imagemagick-6.8.7/envdeps/include   ' 'CXXFLAGS=-I/build/packet/win-64/imagemagick-6.8.7/envdeps/include   '"/>
+  <configure name="COPYRIGHT" value="Copyright (C) 1999-2014 ImageMagick Studio LLC"/>
+  <configure name="CPPFLAGS" value="-I/build/packet/win-64/imagemagick-6.8.7/install/include/ImageMagick-6 -D_DLL -D_MT"/>
+  <configure name="CXXFLAGS" value="-I/build/packet/win-64/imagemagick-6.8.7/envdeps/include"/>
+  <configure name="CXX" value="x86_64-w64-mingw32-g++"/>
+  <configure name="DEFS" value="-DHAVE_CONFIG_H"/>
+  <configure name="DELEGATES" value="mpeg fftw jng jpeg png ps tiff xml zlib"/>
+  <configure name="DISTCHECK_CONFIG_FLAGS" value="'CFLAGS= -I/build/packet/win-64/imagemagick-6.8.7/envdeps/include ' 'CPPFLAGS= -I/build/packet/win-64/imagemagick-6.8.7/envdeps/include ' 'LDFLAGS= -L/build/packet/win-64/imagemagick-6.8.7/envdeps/lib -L/build/packet/win-64/imagemagick-6.8.7/envdeps/lib64 -L/usr/x86_64-w64-mingw32/lib -L/usr/lib/gcc/x86_64-w64-mingw32/10-posix/ -L/usr/lib/gcc/x86_64-w64-mingw32/6.3-posix/ ' --disable-deprecated --with-quantum-depth=16 --with-umem=no --with-autotrace=no --with-gslib=no --with-fontpath= --with-gvc=no --with-mupdf=no --with-rsvg=no --with-wmf=no --with-perl=no"/>
+  <configure name="DOCUMENTATION_PATH" value="/build/packet/win-64/imagemagick-6.8.7/install/share/doc/ImageMagick-6"/>
+  <configure name="EXEC-PREFIX" value="/build/packet/win-64/imagemagick-6.8.7/install"/>
+  <configure name="EXECUTABLE_PATH" value="/build/packet/win-64/imagemagick-6.8.7/install/bin"/>
+  <configure name="FEATURES" value="OpenMP"/>
+  <configure name="FILTER_PATH" value="/build/packet/win-64/imagemagick-6.8.7/install/lib/ImageMagick-6.8.7/modules-Q16/filters"/>
+  <configure name="HOST" value="x86_64-w64-mingw32"/>
+  <configure name="INCLUDE_PATH" value="/build/packet/win-64/imagemagick-6.8.7/install/include/ImageMagick-6"/>
+  <configure name="LDFLAGS" value="-L/build/packet/win-64/imagemagick-6.8.7/install/lib -L/build/packet/win-64/imagemagick-6.8.7/envdeps/lib -L/build/packet/win-64/imagemagick-6.8.7/envdeps/lib64 -L/usr/x86_64-w64-mingw32/lib -L/usr/lib/gcc/x86_64-w64-mingw32/10-posix/ -L/usr/lib/gcc/x86_64-w64-mingw32/6.3-posix/ -L/build/packet/win-64/xml-2.9.4/install/lib"/>
+  <configure name="LIBRARY_PATH" value="/build/packet/win-64/imagemagick-6.8.7/install/lib/ImageMagick-6.8.7"/>
+  <configure name="LIBS" value="-ltiff -ljpeg -lpng16 -lfftw3 -lxml2 -lz -lgdi32 -lm -lgomp"/>
+  <configure name="LIB_VERSION_NUMBER" value="6,8,7,10"/>
+  <configure name="LIB_VERSION" value="0x687"/>
+  <configure name="NAME" value="ImageMagick"/>
+  <configure name="PCFLAGS" value="-fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -D_DLL -D_MT"/>
+  <configure name="PREFIX" value="/build/packet/win-64/imagemagick-6.8.7/install"/>
+  <configure name="QuantumDepth" value="16"/>
+  <configure name="RELEASE_DATE" value="2026-01-18"/>
+  <configure name="SHAREARCH_PATH" value="/build/packet/win-64/imagemagick-6.8.7/install/lib/ImageMagick-6.8.7/config-Q16"/>
+  <configure name="SHARE_PATH" value="/build/packet/win-64/imagemagick-6.8.7/install/share/ImageMagick-6"/>
+  <configure name="SVN_REVISION" value="13965" />
+  <configure name="TARGET_CPU" value="x86_64"/>
+  <configure name="TARGET_OS" value="mingw32"/>
+  <configure name="TARGET_VENDOR" value="w64"/>
+  <configure name="VERSION" value="6.8.7"/>
+  <configure name="WEBSITE" value="http://www.imagemagick.org"/>
+</configuremap>

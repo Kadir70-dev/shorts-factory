@@ -1,0 +1,31 @@
+{
+  "test_a": "FAIL",
+  "test_c": "FAIL",
+  "foot_lock": "PASS",
+  "ground_contact": "FAIL",
+  "chair_contact": "FAIL",
+  "point_screen_gesture": "FAIL",
+  "business_gestures_available": "4/9",
+  "manual_animation_required": "YES",
+  "manual_coordinate_fixes": "NO",
+  "voxel_system_unchanged": "YES",
+  "production_ready": "NO",
+  "qa": {
+    "test_a": {
+      "max_ground_error_m": 0.0003593564,
+      "max_planted_foot_velocity_m_per_frame": 0.0,
+      "transition_discontinuities": 0
+    },
+    "test_c": {
+      "max_ground_error_m": 0.1549546719,
+      "max_planted_foot_velocity_m_per_frame": 0.0,
+      "max_chair_contact_error_m": 0.3108677399,
+      "transition_discontinuities": 0
+    }
+  },
+  "blockers": [
+    "Neither Mesh2Motion human pack contains a visually valid point-screen action; pistol actions do not read as pointing without weapon/hand adaptation.",
+    "The sitting actions' imported pelvis/rest-space does not align with Blender chair contact after automatic root correction.",
+    "A production solution requires a verified business-motion source or authored reusable clips plus a constraint/IK retarget solve, not more semantic relabeling."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "B",
+  "actions": [
+    "K70_CMU_79_85"
+  ],
+  "qa": {
+    "chair": {
+      "role": "chair",
+      "max_error": 1.3170890159654386e-09,
+      "samples": 48
+    },
+    "left_hand": {
+      "role": "keyboard",
+      "max_error": 1.2288320526339159e-06,
+      "samples": 35
+    },
+    "right_hand": {
+      "role": "keyboard",
+      "max_error": 5.267862132326641e-07,
+      "samples": 35
+    }
+  },
+  "manual_per_frame": false
+}

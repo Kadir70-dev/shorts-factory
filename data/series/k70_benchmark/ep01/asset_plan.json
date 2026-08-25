@@ -1,0 +1,59 @@
+[
+  {
+    "scene_id": "s0",
+    "vis": "stock",
+    "search_terms": [
+      "young professional reviewing finances at home",
+      "person using calculator laptop budgeting"
+    ]
+  },
+  {
+    "scene_id": "s1",
+    "vis": "environment",
+    "character": "john",
+    "character_angle": "three_quarter",
+    "environment": "house"
+  },
+  {
+    "scene_id": "s2",
+    "vis": "stock",
+    "search_terms": [
+      "bank exterior daylight",
+      "financial district building"
+    ]
+  },
+  {
+    "scene_id": "s3",
+    "vis": "environment",
+    "character": "john",
+    "character_angle": "three_quarter",
+    "environment": "bank"
+  },
+  {
+    "scene_id": "s4",
+    "vis": "chart"
+  },
+  {
+    "scene_id": "s5",
+    "vis": "stock",
+    "search_terms": [
+      "grocery store shopping prices",
+      "family budget rising costs"
+    ]
+  },
+  {
+    "scene_id": "s6",
+    "vis": "voxel_story",
+    "object_type": "dollar"
+  },
+  {
+    "scene_id": "s7",
+    "vis": "procedural_city"
+  },
+  {
+    "scene_id": "s8",
+    "vis": "character",
+    "character": "john",
+    "character_angle": "front"
+  }
+]

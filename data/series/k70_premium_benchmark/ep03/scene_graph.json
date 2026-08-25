@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "video_id": "k70_premium_benchmark_ep03",
+    "channel_id": "k70_finance",
+    "niche": "personal_finance",
+    "title": "K70 PREMIUM SCENE ENGINE -- INTERNAL BENCHMARK EP03 (not for publication)",
+    "hook": "How much house can John actually afford?",
+    "structure_id": "k70_premium_internal_benchmark_ep03"
+  },
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "scenes": [
+    {
+      "id": "s0",
+      "narration": "John is considering a five hundred thousand dollar house.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s1",
+      "narration": "So he walks through the neighborhood to see it for himself.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s2",
+      "narration": "Then he meets the banker, inside a properly furnished financial office.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s3",
+      "narration": "The banker walks him through it: home price, down payment, and loan.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "$500,000 home -- how it breaks down",
+        "points": [
+          {
+            "label": "Home price",
+            "value": 500000.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Down payment (10%)",
+            "value": 50000.0,
+            "emphasis": "primary"
+          },
+          {
+            "label": "Loan amount",
+            "value": 450000.0,
+            "emphasis": "normal"
+          }
+        ],
+        "prefix": "$",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 1,
+        "note": "Illustrative example"
+      },
+      "beat_role": "body"
+    },
+    {
+      "id": "s4",
+      "narration": "Zoom out, and John's decision fits into a much wider economy.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s5",
+      "narration": "Meanwhile, Sarah is having a similar conversation with her own paycheck, at her own workplace.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s6",
+      "narration": "It comes down to the bank, the money, and the house.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s7",
+      "narration": "The money.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s8",
+      "narration": "And John's house.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s9",
+      "narration": "So John has to decide -- realistically -- how much he can actually spend.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    }
+  ]
+}

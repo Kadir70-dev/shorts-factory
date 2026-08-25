@@ -1,0 +1,13 @@
+{
+  "frames": 49,
+  "mesh_count": 14,
+  "vertex_hashes_unchanged": true,
+  "forbidden_deformers": [],
+  "rigid_geometry_preserved": true,
+  "actions": [
+    "idle_neutral",
+    "walk_normal",
+    "turn_left",
+    "point_screen"
+  ]
+}

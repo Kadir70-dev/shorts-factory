@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "video_id": "k70_benchmark_ep01",
+    "channel_id": "k70_finance",
+    "niche": "personal_finance",
+    "title": "K70 SCENE ENGINE -- INTERNAL BENCHMARK (not for publication)",
+    "hook": "How much house can John actually afford?",
+    "structure_id": "k70_internal_benchmark"
+  },
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "scenes": [
+    {
+      "id": "s0",
+      "narration": "John earns five thousand dollars a month, and like a lot of people, he's wondering how much house that actually buys him.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s1",
+      "narration": "He's been eyeing a house in a neighborhood he likes -- the kind of place he imagines actually settling down in.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s2",
+      "narration": "So John visits the bank to find out what he can actually afford.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s3",
+      "narration": "The loan officer explains that the interest rate on his loan changes how much home he can afford.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s4",
+      "narration": "Even a small difference in rate adds up over thirty years of payments.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "Est. monthly payment by rate (same loan)",
+        "points": [
+          {
+            "label": "6.0% rate",
+            "value": 2398.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "7.0% rate",
+            "value": 2661.0,
+            "emphasis": "primary"
+          },
+          {
+            "label": "8.0% rate",
+            "value": 2935.0,
+            "emphasis": "normal"
+          }
+        ],
+        "prefix": "$",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 1,
+        "note": "Illustrative example, same $400,000 loan amount"
+      },
+      "beat_role": "body"
+    },
+    {
+      "id": "s5",
+      "narration": "Meanwhile, inflation has been quietly raising some of his everyday expenses too.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s6",
+      "narration": "That means less of his paycheck is actually free for a mortgage payment than it used to be.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s7",
+      "narration": "Zoom out, and John is just one buyer in a housing market shaped by thousands of decisions just like his.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s8",
+      "narration": "So John has to decide -- realistically -- how much he can actually spend.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    }
+  ]
+}

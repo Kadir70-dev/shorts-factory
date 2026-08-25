@@ -1,0 +1,32 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [master, main]
+  schedule:
+    - cron: "0 6 * * 1"  # weekly reindex+validate, Mondays 06:00 UTC
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Reindex from sources
+        run: python3 scripts/cc0a reindex
+      - name: Validate records against schema + license rules
+        run: python3 scripts/validate.py
+      - name: Build gallery
+        run: python3 scripts/generate_gallery.py
+      - name: Upload index + gallery artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: assets-index
+          path: |
+            data/assets.jsonl
+            data/index.sqlite
+            gallery/index.html
+          retention-days: 30

@@ -1,0 +1,30 @@
+{
+  "kind": "D",
+  "actions": [
+    "K70_CMU_18_08",
+    "K70_CMU_18_08.001"
+  ],
+  "qa": {
+    "a_ground": {
+      "role": "ground",
+      "max_error": 6.7158625935464895e-09,
+      "samples": 48
+    },
+    "b_ground": {
+      "role": "ground",
+      "max_error": 5.268356063861754e-09,
+      "samples": 48
+    },
+    "giver_hand": {
+      "role": "document",
+      "max_error": 4.824502638745927e-07,
+      "samples": 18
+    },
+    "receiver_hand": {
+      "role": "document",
+      "max_error": 0.1279979177607331,
+      "samples": 18
+    }
+  },
+  "manual_per_frame": false
+}

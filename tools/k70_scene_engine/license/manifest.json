@@ -1,0 +1,2045 @@
+{
+  "generated_by": "tools/k70_scene_engine/license/manifest.py",
+  "total_entries": 101,
+  "eligible_count": 101,
+  "excluded_count": 0,
+  "eligible": [
+    {
+      "asset_id": "source:cc0-asset-index",
+      "source": "Jpalmer95/cc0-asset-index",
+      "source_url": "https://github.com/Jpalmer95/cc0-asset-index",
+      "creator": "Jonathan Korstad",
+      "license_spdx": "MIT",
+      "license_note": "MIT covers the INDEXER TOOL itself (Python code that queries Kenney.nl, PolyHaven.com and Quaternius.com). The tool does not bundle assets \u2014 each indexed pack's own license (Kenney/PolyHaven/Quaternius are all independently, publicly CC0) must still be confirmed per-pack at download time by indexers/*.py before that pack's assets get a `verified` catalog entry.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "tools/k70_scene_engine/vendor/cc0-asset-index",
+      "category": "tool:index",
+      "tags": [
+        "index",
+        "catalog",
+        "kenney",
+        "polyhaven",
+        "quaternius"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "source:gobkit-free-assets",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "GitHub's API reports NOASSERTION at the repo level (no root LICENSE file recognised by its detector), but the vendored LICENSE file's actual text is the full CC0 1.0 Universal legal code, explicitly naming these assets: 'These 3D assets are provided by Gobkit / Alsomind Tech Co., Ltd. No rights reserved.' Public domain, no attribution required, commercial use explicit.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "tools/k70_scene_engine/vendor/gobkit-free-assets",
+      "category": "characters+nature",
+      "tags": [
+        "character",
+        "animal",
+        "minion",
+        "nature",
+        "rigged",
+        "glb"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "source:cc0tree",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Confirmed CC0-1.0 via GitHub API license detection. Despite the repo name/description ('Free Low Poly Assets for Indie Game Devs'), actual content is a small (39-file) misc-props pack: tools, a computer tower, sports items, one tree \u2014 NOT a buildings/environment library as the brief's summary implied. Useful for prop dressing, not for building exteriors.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "tools/k70_scene_engine/vendor/CC0Tree",
+      "category": "props",
+      "tags": [
+        "prop",
+        "misc",
+        "fbx",
+        "computer",
+        "tools"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "source:procedural_city_generation",
+      "source": "josauder/procedural_city_generation",
+      "source_url": "https://github.com/josauder/procedural_city_generation",
+      "creator": "",
+      "license_spdx": "MPL-2.0",
+      "license_note": "MPL-2.0 is weak/file-level copyleft: using it as an external invoked tool (or even importing its modules) only obligates sharing modifications to MPL-covered files themselves, not K70's own codebase. Real risk is NOT licensing but staleness: last pushed 2023-01-12, targets an old Blender bpy API. Not independently re-tested against the Blender version installed in this session as of the last catalog build \u2014 treat any city generated with it as `needs_review` output until a render is actually produced and inspected.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "tools/k70_scene_engine/vendor/procedural_city_generation",
+      "category": "tool:procedural",
+      "tags": [
+        "city",
+        "procedural",
+        "streets",
+        "buildings"
+      ],
+      "integration_mode": "subprocess_only",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "source:bene-proggen-maps",
+      "source": "Beneking102/bene-proggen-maps",
+      "source_url": "https://github.com/Beneking102/bene-proggen-maps",
+      "creator": "Beneking102",
+      "license_spdx": "GPL-3.0-or-later",
+      "license_note": "GitHub API reports NOASSERTION (false negative \u2014 its detector didn't match the license file's nonstandard preamble). The vendored LICENSE file's full text is GPL-3.0-or-later, and its preamble explicitly states: 'This program (procgen_maps) is a Blender addon that uses Blender's Python API (bpy) and is therefore licensed under GPLv3... consistent with Blender's own GPL licensing terms.' GPL restricts REDISTRIBUTING/MODIFYING the tool's own source, not the renders it produces (same principle as art made in GPL-licensed Blender/GIMP not being GPL). K70 must invoke it as an external subprocess/addon, never vendor its code directly into K70's own MIT-adjacent modules, to keep the two works from combining under GPL terms.",
+      "commercial_use": "conditional",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "tools/k70_scene_engine/vendor/bene-proggen-maps",
+      "category": "tool:procedural",
+      "tags": [
+        "city",
+        "terrain",
+        "dungeon",
+        "procedural",
+        "buildings"
+      ],
+      "integration_mode": "subprocess_only",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "source:minecraft-voxel-loader",
+      "source": "carl-vbn/minecraft-voxel-loader",
+      "source_url": "https://github.com/carl-vbn/minecraft-voxel-loader",
+      "creator": "Carl von Bonin",
+      "license_spdx": "MIT",
+      "license_note": "IMPORTANT ARCHITECTURE NOTE: this repo is a Minecraft Fabric mod (Java) PLUS a standalone Blender/Python voxelizer script \u2014 NOT a general-purpose voxel renderer as the brief's one-line summary implied. Only `Scripts/blender_voxelizer.py` (pure bpy+bmesh+numpy, zero Minecraft/Fabric/Mojang dependency) is vendored and used. The Fabric mod, gradle build, and everything that talks to an actual Minecraft client were deliberately NOT vendored and will never be installed or invoked \u2014 using them would require a licensed Minecraft copy and would run inside Mojang's own renderer, which conflicts with the brief's explicit ban on Minecraft/Mojang assets and branding. VOXEL_STORY mode instead voxelizes any eligible CC0 mesh with this script and renders the resulting block geometry with Blender's own Cycles/EEVEE renderer \u2014 an originally-styled block world, never touching Minecraft.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "tools/k70_scene_engine/vendor/minecraft-voxel-loader-scripts",
+      "category": "tool:voxelizer",
+      "tags": [
+        "voxel",
+        "blockify",
+        "bpy"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:animal/Anglerfish",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\animal\\Anglerfish.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "animal",
+        "anglerfish"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:animal/Bat",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\animal\\Bat.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "animal",
+        "bat"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:animal/Corgi",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\animal\\Corgi.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "animal",
+        "corgi"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:animal/Duck",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\animal\\Duck.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "animal",
+        "duck"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:animal/Hippo",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\animal\\Hippo.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "animal",
+        "hippo"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:animal/Jellyfish",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\animal\\Jellyfish.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "animal",
+        "jellyfish"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:animal/Platypus",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\animal\\Platypus.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "animal",
+        "platypus"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:animal/Red",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\animal\\Red.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "animal",
+        "red"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:animal/Rhino",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\animal\\Rhino.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "animal",
+        "rhino"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:animal/Shark",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\animal\\Shark.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "animal",
+        "shark"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:minion/minion-a01",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\minion\\minion-a01.glb",
+      "category": "character",
+      "tags": [
+        "character",
+        "rigged",
+        "minion-a01"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:minion/minion-a02",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\minion\\minion-a02.glb",
+      "category": "character",
+      "tags": [
+        "character",
+        "rigged",
+        "minion-a02"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:minion/minion-b01",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\minion\\minion-b01.glb",
+      "category": "character",
+      "tags": [
+        "character",
+        "rigged",
+        "minion-b01"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:minion/minion-b02",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\minion\\minion-b02.glb",
+      "category": "character",
+      "tags": [
+        "character",
+        "rigged",
+        "minion-b02"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:minion/minion-c01",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\minion\\minion-c01.glb",
+      "category": "character",
+      "tags": [
+        "character",
+        "rigged",
+        "minion-c01"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:minion/minion-c02",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\minion\\minion-c02.glb",
+      "category": "character",
+      "tags": [
+        "character",
+        "rigged",
+        "minion-c02"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:minion/minion-d01",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\minion\\minion-d01.glb",
+      "category": "character",
+      "tags": [
+        "character",
+        "rigged",
+        "minion-d01"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:minion/minion-d02",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\minion\\minion-d02.glb",
+      "category": "character",
+      "tags": [
+        "character",
+        "rigged",
+        "minion-d02"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Bush001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Bush001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "bush001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Bush002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Bush002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "bush002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Cliff001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Cliff001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "cliff001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Cliff002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Cliff002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "cliff002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Cliff003",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Cliff003.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "cliff003"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Cloud001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Cloud001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "cloud001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Cloud002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Cloud002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "cloud002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Cloud003",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Cloud003.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "cloud003"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Grass001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Grass001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "grass001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Grass002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Grass002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "grass002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Grass003",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Grass003.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "grass003"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Hill001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Hill001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "hill001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Hill002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Hill002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "hill002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Hill003",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Hill003.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "hill003"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/HillSand001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\HillSand001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "hillsand001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/HillSand002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\HillSand002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "hillsand002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/HillSand003",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\HillSand003.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "hillsand003"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Mountain001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Mountain001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "mountain001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Mountain002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Mountain002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "mountain002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Mountain003",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Mountain003.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "mountain003"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/MountainFar001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\MountainFar001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "mountainfar001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/MountainFar002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\MountainFar002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "mountainfar002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/MountainFar003",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\MountainFar003.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "mountainfar003"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/nature-kit-scene",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\nature-kit-scene.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "nature-kit-scene"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Reed001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Reed001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "reed001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Reed002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Reed002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "reed002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Rock001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Rock001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "rock001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Rock002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Rock002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "rock002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Rock003",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Rock003.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "rock003"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Stalactite001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Stalactite001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "stalactite001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Stalactite002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Stalactite002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "stalactite002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/Stalactite003",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\Stalactite003.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "stalactite003"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/TreeHigh001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\TreeHigh001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "treehigh001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/TreeHigh002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\TreeHigh002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "treehigh002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/TreeHigh003",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\TreeHigh003.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "treehigh003"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/TreeLow001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\TreeLow001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "treelow001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/TreeLow002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\TreeLow002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "treelow002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/TreeLow003",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\TreeLow003.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "treelow003"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/TreeLow004",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\TreeLow004.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "treelow004"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/TreeMed001",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\TreeMed001.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "treemed001"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/TreeMed002",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\TreeMed002.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "treemed002"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "gobkit:nature/TreeMed003",
+      "source": "Ariescar/gobkit-free-assets",
+      "source_url": "https://github.com/Ariescar/gobkit-free-assets",
+      "creator": "Gobkit / Alsomind Tech Co., Ltd.",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:gobkit-free-assets).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\gobkit-free-assets\\nature\\TreeMed003.glb",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "prop",
+        "treemed003"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_AbstractZeusSculpture",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_AbstractZeusSculpture.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "decor",
+        "office"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_Airplane",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_Airplane.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "vehicle"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_BaseballBat",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_BaseballBat.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "sport"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_Bowling_Ball",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_Bowling_Ball.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "sport"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_Bowling_Pin",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_Bowling_Pin.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "sport"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_ComputerTower",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_ComputerTower.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "computer",
+        "office"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_CrowBar",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_CrowBar.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "tool"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_FireAxe",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_FireAxe.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "tool"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_HammerClaw",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_HammerClaw.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "tool"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_Screwdriver",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_Screwdriver.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "tool"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_Sword_1_Shortsword",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_Sword_1_Shortsword.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "weapon"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_Sword_2_Katana",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_Sword_2_Katana.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "weapon"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_Tree_1",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_Tree_1.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "nature",
+        "tree"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_WateringCan",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_WateringCan.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "garden"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "cc0tree:SM_Wrench",
+      "source": "SkywolfGameStudios/CC0Tree",
+      "source_url": "https://github.com/SkywolfGameStudios/CC0Tree",
+      "creator": "",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Inherits repo-level verified CC0-1.0 (see source:cc0tree).",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\CC0Tree\\Assets\\SM_Wrench.fbx",
+      "category": "prop",
+      "tags": [
+        "prop",
+        "tool"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "quaternius:ultimate-nature",
+      "source": "quaternius.com",
+      "source_url": "https://quaternius.com/packs/ultimatenature.html",
+      "creator": "Quaternius",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Quaternius packs are independently, publicly documented as CC0. Not yet downloaded -- integration_mode=index_pointer until fetch_pack() pulls it and a human/CI re-verifies the specific pack page still states CC0 at fetch time.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "claimed",
+      "local_path": "",
+      "category": "nature",
+      "tags": [
+        "nature",
+        "trees",
+        "rocks",
+        "forest",
+        "environment",
+        "foliage"
+      ],
+      "integration_mode": "index_pointer",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "quaternius:ultimate-modular-ruins",
+      "source": "quaternius.com",
+      "source_url": "https://quaternius.com/packs/ultimatemodularruins.html",
+      "creator": "Quaternius",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Quaternius packs are independently, publicly documented as CC0. Not yet downloaded -- integration_mode=index_pointer until fetch_pack() pulls it and a human/CI re-verifies the specific pack page still states CC0 at fetch time.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "claimed",
+      "local_path": "",
+      "category": "building",
+      "tags": [
+        "ruins",
+        "modular",
+        "dungeon",
+        "ancient",
+        "environment"
+      ],
+      "integration_mode": "index_pointer",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "quaternius:scifi-city-builder",
+      "source": "quaternius.com",
+      "source_url": "https://quaternius.com/packs/scificitybuilder.html",
+      "creator": "Quaternius",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Quaternius packs are independently, publicly documented as CC0. Not yet downloaded -- integration_mode=index_pointer until fetch_pack() pulls it and a human/CI re-verifies the specific pack page still states CC0 at fetch time.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "claimed",
+      "local_path": "",
+      "category": "building",
+      "tags": [
+        "sci-fi",
+        "city",
+        "buildings",
+        "modular",
+        "urban"
+      ],
+      "integration_mode": "index_pointer",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "quaternius:ultimate-modular-scifi",
+      "source": "quaternius.com",
+      "source_url": "https://quaternius.com/packs/ultimatemodularscifi.html",
+      "creator": "Quaternius",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Quaternius packs are independently, publicly documented as CC0. Not yet downloaded -- integration_mode=index_pointer until fetch_pack() pulls it and a human/CI re-verifies the specific pack page still states CC0 at fetch time.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "claimed",
+      "local_path": "",
+      "category": "building",
+      "tags": [
+        "sci-fi",
+        "modular",
+        "interior",
+        "corridor",
+        "space"
+      ],
+      "integration_mode": "index_pointer",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "quaternius:platformer-kit",
+      "source": "quaternius.com",
+      "source_url": "https://quaternius.com/packs/ultimateplatformer.html",
+      "creator": "Quaternius",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Quaternius packs are independently, publicly documented as CC0. Not yet downloaded -- integration_mode=index_pointer until fetch_pack() pulls it and a human/CI re-verifies the specific pack page still states CC0 at fetch time.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "claimed",
+      "local_path": "",
+      "category": "building",
+      "tags": [
+        "platformer",
+        "level",
+        "modular",
+        "stylized"
+      ],
+      "integration_mode": "index_pointer",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "quaternius:animated-rpg-characters",
+      "source": "quaternius.com",
+      "source_url": "https://quaternius.com/packs/ultimateanimatedcharacter.html",
+      "creator": "Quaternius",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Quaternius packs are independently, publicly documented as CC0. Not yet downloaded -- integration_mode=index_pointer until fetch_pack() pulls it and a human/CI re-verifies the specific pack page still states CC0 at fetch time.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "claimed",
+      "local_path": "",
+      "category": "character",
+      "tags": [
+        "characters",
+        "animated",
+        "rigged",
+        "rpg",
+        "humanoid"
+      ],
+      "integration_mode": "index_pointer",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "quaternius:monsters-animated",
+      "source": "quaternius.com",
+      "source_url": "https://quaternius.com/packs/ultimateanimatedmonsters.html",
+      "creator": "Quaternius",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Quaternius packs are independently, publicly documented as CC0. Not yet downloaded -- integration_mode=index_pointer until fetch_pack() pulls it and a human/CI re-verifies the specific pack page still states CC0 at fetch time.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "claimed",
+      "local_path": "",
+      "category": "character",
+      "tags": [
+        "monsters",
+        "animated",
+        "rigged",
+        "creatures",
+        "enemies"
+      ],
+      "integration_mode": "index_pointer",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "quaternius:space-kit",
+      "source": "quaternius.com",
+      "source_url": "https://quaternius.com/packs/spacekit.html",
+      "creator": "Quaternius",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Quaternius packs are independently, publicly documented as CC0. Not yet downloaded -- integration_mode=index_pointer until fetch_pack() pulls it and a human/CI re-verifies the specific pack page still states CC0 at fetch time.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "claimed",
+      "local_path": "",
+      "category": "nature",
+      "tags": [
+        "space",
+        "ships",
+        "sci-fi",
+        "vehicles"
+      ],
+      "integration_mode": "index_pointer",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "quaternius:farm-pack",
+      "source": "quaternius.com",
+      "source_url": "https://quaternius.com/packs/ultimatefarm.html",
+      "creator": "Quaternius",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Quaternius packs are independently, publicly documented as CC0. Not yet downloaded -- integration_mode=index_pointer until fetch_pack() pulls it and a human/CI re-verifies the specific pack page still states CC0 at fetch time.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "claimed",
+      "local_path": "",
+      "category": "building",
+      "tags": [
+        "farm",
+        "crops",
+        "buildings",
+        "animals",
+        "rural"
+      ],
+      "integration_mode": "index_pointer",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "quaternius:medieval-village",
+      "source": "quaternius.com",
+      "source_url": "https://quaternius.com/packs/medievalvillage.html",
+      "creator": "Quaternius",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Quaternius packs are independently, publicly documented as CC0. Not yet downloaded -- integration_mode=index_pointer until fetch_pack() pulls it and a human/CI re-verifies the specific pack page still states CC0 at fetch time.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "claimed",
+      "local_path": "",
+      "category": "building",
+      "tags": [
+        "medieval",
+        "village",
+        "buildings",
+        "fantasy",
+        "town"
+      ],
+      "integration_mode": "index_pointer",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "polyhaven:metal_office_desk",
+      "source": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/metal_office_desk",
+      "creator": "Poly Haven contributors",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Poly Haven publishes 100% CC0 assets (site-wide policy, https://polyhaven.com/license). Downloaded and MD5-verified directly from the documented api.polyhaven.com REST API, not assumed from a catalog pointer.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\polyhaven\\metal_office_desk\\metal_office_desk.gltf",
+      "category": "office",
+      "tags": [
+        "desk",
+        "office",
+        "furniture"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "polyhaven:classic_laptop",
+      "source": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/classic_laptop",
+      "creator": "Poly Haven contributors",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Poly Haven publishes 100% CC0 assets (site-wide policy, https://polyhaven.com/license). Downloaded and MD5-verified directly from the documented api.polyhaven.com REST API, not assumed from a catalog pointer.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\polyhaven\\classic_laptop\\classic_laptop.gltf",
+      "category": "office",
+      "tags": [
+        "computer",
+        "laptop",
+        "office"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "polyhaven:CashRegister_01",
+      "source": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/CashRegister_01",
+      "creator": "Poly Haven contributors",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Poly Haven publishes 100% CC0 assets (site-wide policy, https://polyhaven.com/license). Downloaded and MD5-verified directly from the documented api.polyhaven.com REST API, not assumed from a catalog pointer.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\polyhaven\\CashRegister_01\\CashRegister_01.gltf",
+      "category": "money_prop",
+      "tags": [
+        "money_prop",
+        "store",
+        "bank"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "polyhaven:wall_clock",
+      "source": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/wall_clock",
+      "creator": "Poly Haven contributors",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Poly Haven publishes 100% CC0 assets (site-wide policy, https://polyhaven.com/license). Downloaded and MD5-verified directly from the documented api.polyhaven.com REST API, not assumed from a catalog pointer.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\polyhaven\\wall_clock\\wall_clock.gltf",
+      "category": "office",
+      "tags": [
+        "office",
+        "clock"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "polyhaven:Shelf_01",
+      "source": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/Shelf_01",
+      "creator": "Poly Haven contributors",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Poly Haven publishes 100% CC0 assets (site-wide policy, https://polyhaven.com/license). Downloaded and MD5-verified directly from the documented api.polyhaven.com REST API, not assumed from a catalog pointer.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\polyhaven\\Shelf_01\\Shelf_01.gltf",
+      "category": "office",
+      "tags": [
+        "office",
+        "store",
+        "furniture"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "polyhaven:drawer_cabinet",
+      "source": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/drawer_cabinet",
+      "creator": "Poly Haven contributors",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Poly Haven publishes 100% CC0 assets (site-wide policy, https://polyhaven.com/license). Downloaded and MD5-verified directly from the documented api.polyhaven.com REST API, not assumed from a catalog pointer.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\polyhaven\\drawer_cabinet\\drawer_cabinet.gltf",
+      "category": "office",
+      "tags": [
+        "office",
+        "furniture",
+        "storage"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "polyhaven:Sofa_01",
+      "source": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/Sofa_01",
+      "creator": "Poly Haven contributors",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Poly Haven publishes 100% CC0 assets (site-wide policy, https://polyhaven.com/license). Downloaded and MD5-verified directly from the documented api.polyhaven.com REST API, not assumed from a catalog pointer.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\polyhaven\\Sofa_01\\Sofa_01.gltf",
+      "category": "office",
+      "tags": [
+        "office",
+        "furniture",
+        "waiting_area"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "polyhaven:SchoolChair_01",
+      "source": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/SchoolChair_01",
+      "creator": "Poly Haven contributors",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Poly Haven publishes 100% CC0 assets (site-wide policy, https://polyhaven.com/license). Downloaded and MD5-verified directly from the documented api.polyhaven.com REST API, not assumed from a catalog pointer.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\polyhaven\\SchoolChair_01\\SchoolChair_01.gltf",
+      "category": "office",
+      "tags": [
+        "office",
+        "furniture",
+        "chair"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "polyhaven:desk_lamp_arm_01",
+      "source": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/desk_lamp_arm_01",
+      "creator": "Poly Haven contributors",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Poly Haven publishes 100% CC0 assets (site-wide policy, https://polyhaven.com/license). Downloaded and MD5-verified directly from the documented api.polyhaven.com REST API, not assumed from a catalog pointer.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\polyhaven\\desk_lamp_arm_01\\desk_lamp_arm_01.gltf",
+      "category": "office",
+      "tags": [
+        "office",
+        "furniture",
+        "lamp"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    },
+    {
+      "asset_id": "polyhaven:modular_urban_apartments_facade",
+      "source": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/modular_urban_apartments_facade",
+      "creator": "Poly Haven contributors",
+      "license_spdx": "CC0-1.0",
+      "license_note": "Poly Haven publishes 100% CC0 assets (site-wide policy, https://polyhaven.com/license). Downloaded and MD5-verified directly from the documented api.polyhaven.com REST API, not assumed from a catalog pointer.",
+      "commercial_use": "yes",
+      "attribution_required": false,
+      "clarity": "verified",
+      "local_path": "vendor\\polyhaven\\modular_urban_apartments_facade\\modular_urban_apartments_facade.gltf",
+      "category": "building",
+      "tags": [
+        "building",
+        "city",
+        "facade"
+      ],
+      "integration_mode": "vendored",
+      "checked_at": "2026-08-22"
+    }
+  ],
+  "excluded": []
+}

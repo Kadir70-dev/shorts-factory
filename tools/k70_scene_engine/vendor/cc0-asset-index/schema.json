@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CC0 Asset Index record",
+  "type": "object",
+  "required": ["id", "name", "license", "attribution_required", "kind", "formats", "tags", "description", "engine_targets", "source"],
+  "properties": {
+    "id": { "type": "string", "description": "provider:slug, e.g. polyhaven:ArmChair_01" },
+    "name": { "type": "string" },
+    "license": { "type": "string", "enum": ["CC0"], "description": "Index-time validated. Only CC0/public-domain records are admitted." },
+    "attribution_required": { "type": "boolean", "const": false },
+    "kind": { "type": "string", "enum": ["kit", "model", "hdri", "material", "scene"], "description": "kit = composable modular pack (best for environment scaffolding); model = single asset" },
+    "formats": { "type": "array", "items": { "type": "string" } },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "description": { "type": "string", "description": "Plain-text description for keyword/vibe search now, embedding search later." },
+    "engine_targets": { "type": "array", "items": { "type": "string", "enum": ["blender", "godot", "unreal"] } },
+    "preview_url": { "type": "string" },
+    "categories": { "type": "array", "items": { "type": "string" }, "description": "Provider-native categories (broader than tags; used for filtering/facets)." },
+    "grade": {
+      "type": "string",
+      "enum": ["gold", "silver", "bronze", "archive"],
+      "description": "Optional quality grade. Default (absent) = ungraded, treated as silver. 'archive' records are demoted from default search results but never deleted."
+    },
+    "grade_reason": { "type": "string", "description": "Short justification when grade is assigned (e.g. 'low-res textures', 'community-enhanced v2')." },
+    "generated_by": { "type": "string", "description": "If AI/procedurally generated: the model/tool + version (e.g. 'TRELLIS-2024-12'). Required for AI-generated contributions." },
+    "provenance": {
+      "type": "object",
+      "description": "Enhancement lineage. Present when this record supersedes an earlier version; the original is archived, never deleted.",
+      "properties": {
+        "original_id": { "type": "string", "description": "id of the archived record this enhances" },
+        "enhanced_with": { "type": "string", "description": "tool/model used for the enhancement" },
+        "enhanced_by": { "type": "string", "description": "contributor handle" },
+        "date": { "type": "string", "description": "ISO date" },
+        "note": { "type": "string" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["provider", "url"],
+      "properties": {
+        "provider": { "type": "string" },
+        "url": { "type": "string" },
+        "files_api": { "type": "string", "description": "Optional API endpoint that resolves download URLs per format" }
+      }
+    }
+  }
+}

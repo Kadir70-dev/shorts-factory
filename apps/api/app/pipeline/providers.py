@@ -467,6 +467,13 @@ class RankCandidate:
     source: str                 # "pexels" | "pixabay"
     kind: str                   # "video" | "image"
     tags: str = ""              # provider title/tag text, for a text-only prior
+    source_page_url: str = ""
+    creator: str = ""
+    license: str = ""
+    license_url: str = ""
+    attribution: str = ""
+    width: int = 0
+    height: int = 0
 
 
 def _rank_cache_file(key: str) -> Path:
@@ -560,7 +567,7 @@ async def pixabay_video_candidates(query: str, min_dur: float) -> list[RankCandi
     return await _cached_rank_search(f"pixvidrank:{min_dur:.0f}:{query}", fetch)
 
 
-async def pexels_image_candidates(query: str) -> list[RankCandidate]:
+async def pexels_image_candidates(query: str, orientation: str = "portrait") -> list[RankCandidate]:
     if not available("pexels"):
         return []
 
@@ -569,7 +576,7 @@ async def pexels_image_candidates(query: str) -> list[RankCandidate]:
             r = await c.get(
                 "https://api.pexels.com/v1/search",
                 headers={"Authorization": settings().pexels_api_key},
-                params={"query": query, "orientation": "portrait", "per_page": 15},
+                params={"query": query, "orientation": orientation, "per_page": 15},
             )
         if r.status_code != 200:
             return []
@@ -581,13 +588,17 @@ async def pexels_image_candidates(query: str) -> list[RankCandidate]:
             if u:
                 out.append(RankCandidate(
                     download_url=u, thumb_url=thumb or "", source="pexels",
-                    kind="image", tags=p.get("alt", "")))
+                    kind="image", tags=p.get("alt", ""),
+                    source_page_url=p.get("url", ""), creator=p.get("photographer", ""),
+                    license="Pexels License", license_url="https://www.pexels.com/license/",
+                    attribution=f"Photo by {p.get('photographer', 'UNKNOWN')} on Pexels",
+                    width=int(p.get("width") or 0), height=int(p.get("height") or 0)))
         return out
 
-    return await _cached_rank_search(f"peximgrank:{query}", fetch)
+    return await _cached_rank_search(f"peximgrank:{orientation}:{query}", fetch)
 
 
-async def pixabay_image_candidates(query: str) -> list[RankCandidate]:
+async def pixabay_image_candidates(query: str, orientation: str = "vertical") -> list[RankCandidate]:
     if not available("pixabay"):
         return []
 
@@ -595,7 +606,7 @@ async def pixabay_image_candidates(query: str) -> list[RankCandidate]:
         async with httpx.AsyncClient(timeout=60) as c:
             r = await c.get("https://pixabay.com/api/",
                             params={"key": settings().pixabay_api_key, "q": query,
-                                    "image_type": "photo", "orientation": "vertical",
+                                    "image_type": "all", "orientation": orientation,
                                     "per_page": 15, "safesearch": "true"})
         if r.status_code != 200:
             return []
@@ -606,10 +617,15 @@ async def pixabay_image_candidates(query: str) -> list[RankCandidate]:
             if u:
                 out.append(RankCandidate(
                     download_url=u, thumb_url=thumb or "", source="pixabay",
-                    kind="image", tags=h.get("tags", "")))
+                    kind="image", tags=h.get("tags", ""),
+                    source_page_url=h.get("pageURL", ""), creator=h.get("user", ""),
+                    license="Pixabay Content License",
+                    license_url="https://pixabay.com/service/license-summary/",
+                    attribution=f"Image by {h.get('user', 'UNKNOWN')} on Pixabay",
+                    width=int(h.get("imageWidth") or 0), height=int(h.get("imageHeight") or 0)))
         return out
 
-    return await _cached_rank_search(f"piximgrank:{query}", fetch)
+    return await _cached_rank_search(f"piximgrank:{orientation}:{query}", fetch)
 
 
 async def download_rank_candidate(cand: RankCandidate) -> str:

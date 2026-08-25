@@ -1,0 +1,419 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "video_id": "k70_longform_first_100k",
+    "channel_id": "k70_finance",
+    "niche": "personal_finance",
+    "title": "Why Your First $100,000 Is the Hardest (And What Happens After)",
+    "hook": "Why does money seem to grow faster after the first $100K?",
+    "structure_id": "k70_longform_first_100k"
+  },
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "scenes": [
+    {
+      "id": "s0",
+      "narration": "Why does money seem to grow faster once you cross one hundred thousand dollars?",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s1",
+      "narration": "It's not magic. It's math -- and understanding it can change how you save for the rest of your life.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s2",
+      "narration": "Meet John. He's twenty-seven, works a normal job, and like most people, saving money never quite feels like it's working.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s3",
+      "narration": "The paycheck comes in. The bills go out -- rent, groceries, the usual list.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s4",
+      "narration": "After everything, there's not much left over. Some months, almost nothing at all.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s5",
+      "narration": "This is where most people start -- and where a lot of people stay stuck.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "John's monthly budget",
+        "points": [
+          {
+            "label": "Income",
+            "value": 3400.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Expenses",
+            "value": 3350.0,
+            "emphasis": "primary"
+          },
+          {
+            "label": "Left to save",
+            "value": 50.0,
+            "emphasis": "normal"
+          }
+        ],
+        "prefix": "$",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 2,
+        "note": "Illustrative example"
+      },
+      "beat_role": "body"
+    },
+    {
+      "id": "s6",
+      "narration": "So why does saving the very first bit of money feel so much harder than the rest?",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s7",
+      "narration": "The math is simple: if income barely covers expenses, there's nothing left over. Every dollar is already spoken for before it arrives.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s8",
+      "narration": "So John does something small. He trims one expense, and puts the difference aside -- fifty dollars a paycheck.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s9",
+      "narration": "It's not much. But for the first time, it isn't zero.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s10",
+      "narration": "Weeks turn into months. The habit matters more than the amount.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s11",
+      "narration": "Ten thousand dollars. Still not life-changing on its own. But it's real, and it's his.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "John's savings so far",
+        "points": [
+          {
+            "label": "Month 1",
+            "value": 50.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Month 12",
+            "value": 1000.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Year 3",
+            "value": 10000.0,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "$",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 2,
+        "note": "Hypothetical example, consistent monthly saving"
+      },
+      "beat_role": "body"
+    },
+    {
+      "id": "s12",
+      "narration": "Sarah's story looks a little different, but the shape of it is the same.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s13",
+      "narration": "A household budget, a family to plan around, and the same basic question: what's actually left at the end of the month?",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s14",
+      "narration": "A banker put it simply: the first ten or twenty thousand dollars is the hardest, because you're building the habit before you see the reward.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s15",
+      "narration": "There's no interest check coming yet. No compounding doing the work for you. It's just discipline, showing up month after month.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s16",
+      "narration": "Twenty-five thousand dollars in. The number is bigger now -- but the feeling of slow progress often hasn't changed much.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "The long middle stretch",
+        "points": [
+          {
+            "label": "Year 3",
+            "value": 10000.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Year 5",
+            "value": 25000.0,
+            "emphasis": "primary"
+          },
+          {
+            "label": "Year 7",
+            "value": 50000.0,
+            "emphasis": "normal"
+          }
+        ],
+        "prefix": "$",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 1,
+        "note": "Hypothetical example, consistent monthly saving"
+      },
+      "beat_role": "body"
+    },
+    {
+      "id": "s17",
+      "narration": "Zoom out, and this same story is happening across an entire economy -- millions of people, at every stage of it.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s18",
+      "narration": "Markets moving, businesses growing, paychecks landing every two weeks in every direction.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s19",
+      "narration": "This is an investor -- someone thinking less about saving the next dollar, and more about what money can start doing on its own.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s20",
+      "narration": "Because somewhere past that first big milestone, something genuinely changes: the money you already have starts helping earn the next dollar.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s21",
+      "narration": "Here's a simple, hypothetical example. Assume a seven percent average annual return -- a common long-run historical stock market estimate, never guaranteed.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "Same 7% return, different starting amounts (hypothetical)",
+        "points": [
+          {
+            "label": "$10,000 earns",
+            "value": 700.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "$100,000 earns",
+            "value": 7000.0,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "$",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 1,
+        "note": "Illustrative only -- returns are never guaranteed"
+      },
+      "beat_role": "body"
+    },
+    {
+      "id": "s22",
+      "narration": "Same percentage. Seven times the dollars. That's the entire secret behind why a bigger principal starts to feel like it's working harder for you.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s23",
+      "narration": "It's not that the math changes at one hundred thousand dollars. It's that compounding needs a real base to work with -- and now there's one.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s24",
+      "narration": "None of this happens overnight, and none of it is guaranteed. Markets go up and down, and past growth never promises future growth.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s25",
+      "narration": "But the pattern holds for almost everyone who gets there: the first hundred thousand is mostly about behavior. What comes after leans more on math.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s26",
+      "narration": "John isn't rich. He's not done. But he's not stuck at zero anymore, either -- and that's the part that was actually hard.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s27",
+      "narration": "Wherever you're starting from, the first step is the same one John took: find the number that isn't zero, and protect it.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    }
+  ]
+}

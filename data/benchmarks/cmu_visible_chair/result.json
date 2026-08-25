@@ -1,0 +1,22 @@
+{
+  "ground": {
+    "max_visible_ground_error": 1.862645149230957e-09,
+    "max_visible_planted_slide": 4.470348358154297e-08,
+    "anchors": [
+      "LEFT_SOLE",
+      "RIGHT_SOLE"
+    ]
+  },
+  "chair": {
+    "anchor": "SEAT_CONTACT",
+    "max_visible_chair_error": 2.9802322387695312e-08
+  },
+  "post_ground": {
+    "max_visible_ground_error": 3.725290298461914e-09,
+    "max_visible_planted_slide": 4.470348358154297e-08,
+    "anchors": [
+      "LEFT_SOLE",
+      "RIGHT_SOLE"
+    ]
+  }
+}

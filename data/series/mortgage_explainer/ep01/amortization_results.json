@@ -1,0 +1,63 @@
+{
+  "assumptions": {
+    "home_price": 500000,
+    "down_payment_pct": 0.1,
+    "down_payment": 50000,
+    "principal": 450000,
+    "annual_rate_hypothetical": 0.065,
+    "term_years": 30,
+    "property_tax_annual_rate_illustrative": 0.011,
+    "insurance_monthly_illustrative": 150.0,
+    "pmi_annual_rate_illustrative": 0.0075,
+    "pmi_cancel_ltv_cfpb_verified": 0.78,
+    "extra_monthly_principal": 300.0
+  },
+  "monthly_pi": 2844.31,
+  "monthly_property_tax_illustrative": 458.33,
+  "monthly_insurance_illustrative": 150.0,
+  "monthly_pmi_initial_illustrative": 281.25,
+  "total_monthly_payment_initial_illustrative": 3733.89,
+  "base_schedule_summary": {
+    "months_paid": 360,
+    "years_paid": 30.0,
+    "total_interest": 573950.2,
+    "total_principal": 450000.0,
+    "total_paid": 1023950.2,
+    "year1_interest_share": 0.8482,
+    "year15_interest_share": 0.6239,
+    "year30_interest_share": 0.0054,
+    "pmi_drop_month": 109,
+    "pmi_drop_year": 9.1
+  },
+  "extra_payment_schedule_summary": {
+    "months_paid": 277,
+    "years_paid": 23.08,
+    "total_interest": 418777.01,
+    "total_principal": 450000.0,
+    "total_paid": 868777.01,
+    "year1_interest_share": 0.7614,
+    "year15_interest_share": 0.4088,
+    "year30_interest_share": 0.007,
+    "pmi_drop_month": 71,
+    "pmi_drop_year": 5.9
+  },
+  "interest_saved_with_extra_payment": 155173.19,
+  "months_saved_with_extra_payment": 83,
+  "rate_comparison": [
+    {
+      "rate": 0.055,
+      "monthly_pi": 2555.05,
+      "total_interest": 469818.18
+    },
+    {
+      "rate": 0.065,
+      "monthly_pi": 2844.31,
+      "total_interest": 573950.2
+    },
+    {
+      "rate": 0.075,
+      "monthly_pi": 3146.47,
+      "total_interest": 682727.5
+    }
+  ]
+}

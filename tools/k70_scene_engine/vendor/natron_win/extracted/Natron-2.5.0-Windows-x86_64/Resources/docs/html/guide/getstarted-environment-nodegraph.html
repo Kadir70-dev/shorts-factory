@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navigating inside the Node Graph &mdash; Natron 2.5.0 documentation</title>
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Properties panels" href="getstarted-environment-proppanels.html" />
+    <link rel="prev" title="Working with nodes" href="getstarted-environment-nodes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Natron
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2.5
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">What is compositing?</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="getstarted.html">Getting started</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="getstarted-about.html">About</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getstarted-installation.html">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getstarted-installation.html#additional-elements">Additional Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Transition-fromNuke_01.html">Nuke to Natron transition guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="getstarted-environment.html">Environment</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#generic-description">Generic Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-toolbar">The Toolbar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-menu-bar">The Menu bar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-viewer-panel">The Viewer panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-properties-editor">The Properties editor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-node-graph">The Node graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-curve-editor">The Curve editor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getstarted-environment.html#the-dopesheet">The Dopesheet</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="getstarted-environment.html#the-file-browser">The File Browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="getstarted-troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="compositing.html">Compositing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thenodes.html">The Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../_group.html">Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/index.html">Developers Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Natron</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">User Guide</a> &raquo;</li>
+          <li><a href="getstarted.html">Getting started</a> &raquo;</li>
+          <li><a href="getstarted-environment.html">Environment</a> &raquo;</li>
+      <li>Navigating inside the Node Graph</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/guide/getstarted-environment-nodegraph.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="navigating-inside-the-node-graph">
+<h1>Navigating inside the Node Graph<a class="headerlink" href="#navigating-inside-the-node-graph" title="Permalink to this heading"></a></h1>
+<p>Pan the nodes view: <code class="docutils literal notranslate"><span class="pre">middle</span> <span class="pre">mouse</span> <span class="pre">drag</span></code></p>
+<p>zoom the nodes view: <code class="docutils literal notranslate"><span class="pre">ALT</span> <span class="pre">+</span> <span class="pre">middle</span> <span class="pre">mouse</span> <span class="pre">drag</span></code></p>
+<p>Frame all nodes: shortcut <code class="docutils literal notranslate"><span class="pre">f</span></code></p>
+<p>Frame only selected nodes: shortcut <code class="docutils literal notranslate"><span class="pre">f</span></code></p>
+<img alt="../_images/environment-big-node-graph.gif" src="../_images/environment-big-node-graph.gif" />
+<dl>
+<dt>Mini Node Graph</dt><dd><p>The bottom right rectangle shows a minified view of the graph.</p>
+<p>Click and drag the yellow rectangle to change the part of the graph that is displayed</p>
+</dd>
+</dl>
+<img alt="../_images/environment-mini-node-graph.gif" src="../_images/environment-mini-node-graph.gif" />
+</section>
+<section id="node-graph-tidiness">
+<h1>Node Graph Tidiness<a class="headerlink" href="#node-graph-tidiness" title="Permalink to this heading"></a></h1>
+<section id="rearrange-nodes">
+<h2>Rearrange Nodes<a class="headerlink" href="#rearrange-nodes" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Select several nodes connected in chain</p></li>
+<li><p>press shortcut <code class="docutils literal notranslate"><span class="pre">L</span></code></p></li>
+</ul>
+<p>Nodes are automatically aligned vertically without moving the last one</p>
+<img alt="../_images/environment-rearrange-node-graph.gif" src="../_images/environment-rearrange-node-graph.gif" />
+</section>
+<section id="natron-s-tidy-nodes">
+<h2>Natron’s Tidy Nodes<a class="headerlink" href="#natron-s-tidy-nodes" title="Permalink to this heading"></a></h2>
+<p>Natron has a couple of nodes devoted entirely to script housekeeping.</p>
+<section id="backdrop">
+<h3>Backdrop<a class="headerlink" href="#backdrop" title="Permalink to this heading"></a></h3>
+<p>A Backdrop is a flat colored sheet that can be placed behind a bunch of nodes. This is useful for making a complex script easier to read. I use backdrops in many of my. The other useful thing about a backdrop, is that its entire contents can be moved about by simply dragging on its header bar.
+Colored backdrops in a node graph.</p>
+<img alt="../_images/environment-nodegraph-backdrop.gif" src="../_images/environment-nodegraph-backdrop.gif" />
+<dl>
+<dt>Create a backdrop</dt><dd><ul class="simple">
+<li><p>Tools Palette “Other”</p></li>
+<li><p>Select “Backdrop</p></li>
+</ul>
+<p>or</p>
+<ul class="simple">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Tab</span></code></p></li>
+<li><p>Type “bac”</p></li>
+<li><p>Select Backdrop in the list</p></li>
+</ul>
+</dd>
+<dt>Backdrops can be color coded.</dt><dd><p>A common  convention is:</p>
+<ul class="simple">
+<li><p>Grey          Mattes</p></li>
+<li><p>Blue          CG</p></li>
+<li><p>Green      Live action footage</p></li>
+<li><p>Yellow     Made in Nuke</p></li>
+<li><p>Pink          Other</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A backdrop can be used as a sticky note to store text information inside nuke’s project.</p>
+<p>Use the “Control”/”label” text field to type in</p>
+</div>
+</section>
+<section id="dot">
+<h3>Dot<a class="headerlink" href="#dot" title="Permalink to this heading"></a></h3>
+<p>A Dot can be added to any arrow that runs between nodes. This can be used to maintain tidiness. One general rule of node graph tidiness is that arrows should run vertically or horizontally, not diagonally. To add a dot, hold down the ‘command’ key and click the yellow dot that appears.</p>
+<img alt="../_images/environment-dot-drag.gif" src="../_images/environment-dot-drag.gif" />
+</section>
+<section id="group">
+<h3>Group<a class="headerlink" href="#group" title="Permalink to this heading"></a></h3>
+<p>Many nodes can be grouped together to make the graph easier to read.</p>
+<ul>
+<li><p>select the Nodes</p></li>
+<li><p>hit <code class="docutils literal notranslate"><span class="pre">CTRL+G</span></code>.
+The nodes will be replaced by a group node containing them all.</p>
+<p>Its content is automatically opened in a new node graph tab called “Group”
+To reopen later this node graph click the eye icon in the top bar of the group node.</p>
+</li>
+</ul>
+<img alt="../_images/environment-nodes-group-opengraph.gif" src="../_images/environment-nodes-group-opengraph.gif" />
+</section>
+</section>
+<section id="nodes-properties">
+<h2>Nodes properties<a class="headerlink" href="#nodes-properties" title="Permalink to this heading"></a></h2>
+<section id="nodes-naming">
+<h3>Nodes naming<a class="headerlink" href="#nodes-naming" title="Permalink to this heading"></a></h3>
+<p>Label everything (using NoOps with preview enabled, BackDrops etc)</p>
+<p>Rename the “Label” of a node not the “script name”</p>
+<img alt="../_images/environment-nodes-rename.gif" src="../_images/environment-nodes-rename.gif" />
+</section>
+<section id="previews">
+<h3>Previews<a class="headerlink" href="#previews" title="Permalink to this heading"></a></h3>
+<p>A node can show a thumbnail of it’s output by ticking the Preview checkbox.</p>
+<img alt="../_images/environment-nodes-preview.gif" src="../_images/environment-nodes-preview.gif" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a node graph has many previews it can slow down the display. You can disable the auto refresh of these previews disabling the “Auto Previews” checkbox of the project settings (shortcut <code class="docutils literal notranslate"><span class="pre">S</span></code> in the node graph)</p>
+<img alt="../_images/environment-nodes-autopreview.gif" src="../_images/environment-nodes-autopreview.gif" />
+</div>
+</section>
+<section id="hide-input">
+<h3>Hide input<a class="headerlink" href="#hide-input" title="Permalink to this heading"></a></h3>
+<p>When nodes have very long connections they can make the node graph difficult to read. To avoid this you can hide the input arrow of a node.</p>
+<p>The input arrows only disappear when the node is not selected.</p>
+<p>To make the script easy to read you often enable the preview and rename the node with the input hiddens</p>
+<img alt="../_images/environment-nodes-hide_input.gif" src="../_images/environment-nodes-hide_input.gif" />
+</section>
+</section>
+<section id="nodes-placement-convention">
+<h2>Nodes placement convention<a class="headerlink" href="#nodes-placement-convention" title="Permalink to this heading"></a></h2>
+<p>Scripts should be readable: laid out in a rational and consistent manner. This is to enable their easy reading by you and anyone else who might review your script.</p>
+<p>A common  convention is:</p>
+<ul>
+<li><p>Main input feed from the top.</p>
+<blockquote>
+<div><p>the B input of the merge that is transmitted when the node is disabled</p>
+</div></blockquote>
+</li>
+<li><p>Masks feed in from the right</p>
+<blockquote>
+<div><p>usually labelled mask</p>
+</div></blockquote>
+</li>
+<li><p>Image secondary inputs feed in from the left.</p>
+<blockquote>
+<div><p>the A input for the Merge</p>
+</div></blockquote>
+</li>
+<li><p>Favour vertical connections for main branches.</p>
+<blockquote>
+<div><p>They allow naming the nodes without overlap and take less screen room. The autoarrange functions is coded for this.</p>
+</div></blockquote>
+</li>
+<li><p>Favour horizontal connections over diagonal ones to connect several branches.</p>
+<blockquote>
+<div><p>Dots can be used to make this happen.</p>
+</div></blockquote>
+</li>
+<li><p>Put everything inside backdrops.</p>
+<blockquote>
+<div><p>This useful even for moving groups of nodes, to ensure you don’t forget part of a function</p>
+</div></blockquote>
+</li>
+<li><p>Label everything.</p>
+<blockquote>
+<div><p>Using backdrops, postage stamps, and the Labels of the nodes.</p>
+</div></blockquote>
+</li>
+<li><p>Don’t change the script name.</p>
+<blockquote>
+<div><p>This can be confusing for humans and the expression engine.
+It’s not a viable option because no two nodes can have the same name. Hence  Natron does some automatic renaming when duplicating nodes</p>
+<p>For more in depth information on Nodes see <a class="reference internal" href="getstarted-environment-nodes.html"><span class="doc">Nodes</span></a></p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="getstarted-environment-nodes.html" class="btn btn-neutral float-left" title="Working with nodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="getstarted-environment-proppanels.html" class="btn btn-neutral float-right" title="Properties panels" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013-2022 The Natron documentation authors, licensed under CC BY-SA 4.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

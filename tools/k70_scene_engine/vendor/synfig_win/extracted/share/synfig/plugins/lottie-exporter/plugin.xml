@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+   <name>Export to Lottie format</name>
+   <name xml:lang="ar">صدر إلى صيغة Lottie</name>
+   <name xml:lang="es">Exportar a formato Lottie</name>
+   <name xml:lang="eu">Esportatu Lottie formatura</name>
+   <name xml:lang="fr">Exporter au format Lottie</name>
+   <name xml:lang="it">Esporta in formato Lottie</name>
+   <name xml:lang="ko_KR">Lottie 형식으로 익스포트</name>
+   <name xml:lang="pt_BR">Exportar para formato Lottie</name>
+   <name xml:lang="ru">Экспорт в формат Lottie</name>
+   <exporter>
+       <extension>html</extension>
+       <description>Lottie HTML Preview (*.html)</description>
+       <description xml:lang="fr">Aperçu Lottie HTML (*.html)</description>
+       <description xml:lang="it">Anteprima Lottie HTML (*.html)</description>
+       <description xml:lang="pt_BR">Lottie - Prévia HTML (*.html)</description>
+       <exec stdout="log">lottie-exporter.py</exec>
+   </exporter>
+   <exporter>
+       <extension>json</extension>
+       <description>Lottie Animation (*.json)</description>
+       <description xml:lang="fr">Animation Lottie (*.json)</description>
+       <description xml:lang="it">Animazione Lottie (*.json)</description>
+       <description xml:lang="pt_BR">Lottie - Animação (*.json)</description>
+       <exec stdout="log">lottie-exporter.py</exec>
+   </exporter>
+   <exporter>
+       <extension>html</extension>
+       <description>Lottie HTML Preview without variable widths (*.html)</description>
+       <description xml:lang="fr">Aperçu Lottie HTML sans largeurs variables (*.html)</description>
+       <description xml:lang="it">Anteprima Lottie HTML (*.html) senza larghezze variabili</description>
+       <description xml:lang="pt_BR">Lottie - Prévia HTML sem larguras variáveis (*.html)</description>
+       <exec stdout="log" interpreter="python">export_without_variable_width.py</exec>
+   </exporter>
+   <exporter>
+       <extension>json</extension>
+       <description>Lottie Animation without variable widths (*.json)</description>
+       <description xml:lang="fr">Animation Lottie sans largeurs variables (*.json)</description>
+       <description xml:lang="it">Animazione Lottie senza larghezze variabili (*.json)</description>
+       <description xml:lang="pt_BR">Lottie - Animação sem larguras variáveis (*.html)</description>
+       <exec stdout="log" interpreter="python">export_without_variable_width.py</exec>
+   </exporter>
+</plugin>

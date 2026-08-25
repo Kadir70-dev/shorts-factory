@@ -1,0 +1,8 @@
+{
+  "max_visible_ground_error": 6.984919309616089e-10,
+  "max_visible_planted_slide": 5.960464477539063e-08,
+  "anchors": [
+    "LEFT_SOLE",
+    "RIGHT_SOLE"
+  ]
+}

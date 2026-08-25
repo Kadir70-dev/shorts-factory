@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roto Node &mdash; Natron 2.5.0 documentation</title>
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Merge Nodes Menu" href="thenodes-merge.html" />
+    <link rel="prev" title="Rectangle Node" href="thenodes-draw-rectangle.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Natron
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2.5
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">What is compositing?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getstarted.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compositing.html">Compositing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="thenodes.html">The Nodes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="thenodes-common-properties.html">Common Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thenodes-image.html">Image Nodes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="thenodes-draw.html">Draw Nodes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="thenodes-draw-lightwrap.html">Lightwrap Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thenodes-draw-plasma.html">Plasma Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thenodes-draw-radial.html">Radial Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thenodes-draw-ramp.html">Ramp Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thenodes-draw-rand_noise.html">Rand Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thenodes-draw-rand_noise.html#noise-node">Noise Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thenodes-draw-rectangle.html">Rectangle Node</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Roto Node</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="thenodes-merge.html">Merge Nodes Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../_group.html">Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/index.html">Developers Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Natron</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">User Guide</a> &raquo;</li>
+          <li><a href="thenodes.html">The Nodes</a> &raquo;</li>
+          <li><a href="thenodes-draw.html">Draw Nodes</a> &raquo;</li>
+      <li>Roto Node</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/guide/thenodes-draw-roto.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="roto-node">
+<h1>Roto Node<a class="headerlink" href="#roto-node" title="Permalink to this heading"></a></h1>
+<p>Using a Roto node a vector shape may be drawn (like the pen tool in Photoshop or Illustrator). There are two main uses for this node:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>To make a mask: In a situation where a node such as Multiply is being used to darken an image, a Roto shape may be used as a mask: to limit the effects of that node.</p></li>
+<li><p>To make an alpha channel: In a situation when the alpha of an image needs editing, a Roto shape may be used to add to, remove from or replace that alpha.</p></li>
+</ul>
+</div></blockquote>
+<p>Added to this is a host of other functionality. It may, for example, be used to hide or revel one layer from another. This functionality can be used to hide glitches in an image using something called a ‘clean plate’.</p>
+<p>Natron’s Roto node has many parameters parameters in the tabs. However, most day to day usage is covered effectively by the first two tabs.</p>
+<img alt="../_images/thenodes-draw-roto-interface02.gif" src="../_images/thenodes-draw-roto-interface02.gif" />
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<dl>
+<dt>Basic usage:</dt><dd><ul class="simple">
+<li><p>create the node with ‘o’ or ‘p’ shortcut</p></li>
+<li><p>start click+dragging in the viewer</p></li>
+<li><p>click on the firs point to close it</p></li>
+<li><p>If you want soft edges around your shape, pull the little red lines protruding from each control points. The dotted line that appear is the limit of the soft edgea</p></li>
+<li><p>That’s it you image now have your shape drawn (in the alpha channel by default)</p></li>
+</ul>
+<img alt="../_images/nodes_draw_roto03_feather.jpg" src="../_images/nodes_draw_roto03_feather.jpg" />
+</dd>
+</dl>
+<p>To edit the shape you have tools in the viewer window:</p>
+<dl class="simple">
+<dt>In the viewer the tools to create or edit shapes are:</dt><dd><ul class="simple">
+<li><p>1: “Autokey” create a new key to your shape each time you move any part of it. If this is disabled click on the “+” (25) to create a key</p></li>
+<li><p>2: “FeatherLink” lets you move a point on the shape and the feather point follows.</p></li>
+<li><p>3: “display feather” can disable viewing/editing the feather points (dotted line)</p></li>
+<li><p>4: sticky selection of vertices. Helps editing the shape with constant selection</p></li>
+<li><p>5: sticky bounding box: Helps editing the shape with constant selection.</p></li>
+<li><p>6: “Ripple Edit” let you change the shape on all keyframes in an offset manner</p></li>
+<li><p>7-8: Add / Delete keyframe to the currently selected shape (similar to 25/26 in the properties</p></li>
+<li><p>9: show transform. Let you move the whole shape without the need to edit each point of the shape. Good for rotoscoping “hard objects” wich shape doesn’t change much over time.</p></li>
+<li><p>10: Select/transform “arrow” tools. Select it after the creation of the Curve</p></li>
+<li><p>11: Add/remove points tool</p></li>
+<li><p>12:create shape tool. Long click to get the choice between freeform, rectangle, ellipse shapes.</p></li>
+<li><p>13: pencil tools</p></li>
+</ul>
+</dd>
+</dl>
+<img alt="../_images/thenodes-draw-roto-interface03.gif" src="../_images/thenodes-draw-roto-interface03.gif" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The layers don’t have geometric properties. Their only purpose is to group paint dabs/masks to enable/disable these in  s ingle click</p>
+</div>
+<p>See <a class="reference internal" href="compositing-rotopaint.html"><span class="doc">The Rotopaint</span></a> section for more informations.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="thenodes-draw-rectangle.html" class="btn btn-neutral float-left" title="Rectangle Node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="thenodes-merge.html" class="btn btn-neutral float-right" title="Merge Nodes Menu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013-2022 The Natron documentation authors, licensed under CC BY-SA 4.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

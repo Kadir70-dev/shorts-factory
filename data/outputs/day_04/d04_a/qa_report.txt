@@ -1,0 +1,11 @@
+   QA · vid_fin_d04_a · ✅ PASS
+     [PASS] render completed (no timeout) — finished in time
+     [PASS] playable file written — 14.5MB
+     [PASS] has video stream — video audio
+     [PASS] has audio stream — audio present
+     [PASS] resolution 9:16 — 1080x1920 (want 1080x1920)
+     [PASS] duration matches timeline — 35.5s (timeline 35.4s)
+     [PASS] black-frame fraction — 0.00s black (0.0% ≤ 6%)
+     [PASS] every scene non-black — all scenes lit
+     [PASS] RAM peak within budget — ~0MB (≤ 4000MB)
+     [PASS] render within wall-time budget — 0s (≤ 900s)

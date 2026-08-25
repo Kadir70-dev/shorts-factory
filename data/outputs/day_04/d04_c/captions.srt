@@ -1,0 +1,143 @@
+1
+00:00:00,000 --> 00:00:01,131
+Before nineteen eighty-nine,
+
+2
+00:00:01,131 --> 00:00:01,508
+there
+
+3
+00:00:01,508 --> 00:00:03,015
+was no single number
+
+4
+00:00:03,015 --> 00:00:04,523
+lenders used to judge
+
+5
+00:00:04,523 --> 00:00:04,900
+you.
+
+6
+00:00:04,900 --> 00:00:06,453
+Every lender had its
+
+7
+00:00:06,453 --> 00:00:08,005
+own inconsistent method, so
+
+8
+00:00:08,005 --> 00:00:09,558
+the same borrower could
+
+9
+00:00:09,558 --> 00:00:10,722
+look completely different
+
+10
+00:00:10,722 --> 00:00:11,111
+to
+
+11
+00:00:11,111 --> 00:00:12,275
+two different banks.
+
+12
+00:00:12,275 --> 00:00:13,741
+In February nineteen
+
+13
+00:00:13,741 --> 00:00:14,229
+eighty-nine,
+
+14
+00:00:14,229 --> 00:00:16,183
+the Fair Isaac Corporation
+
+15
+00:00:16,183 --> 00:00:17,649
+launched a single
+
+16
+00:00:17,649 --> 00:00:18,137
+standardized
+
+17
+00:00:18,137 --> 00:00:18,626
+score.
+
+18
+00:00:18,626 --> 00:00:20,039
+The scale it created
+
+19
+00:00:20,039 --> 00:00:21,452
+still runs from three
+
+20
+00:00:21,452 --> 00:00:22,864
+hundred to eight hundred
+
+21
+00:00:22,864 --> 00:00:24,277
+fifty today, and every
+
+22
+00:00:24,277 --> 00:00:25,690
+major credit bureau adopted
+
+23
+00:00:25,690 --> 00:00:26,043
+it.
+
+24
+00:00:26,043 --> 00:00:27,741
+That original model is
+
+25
+00:00:27,741 --> 00:00:29,439
+the direct ancestor of
+
+26
+00:00:29,439 --> 00:00:31,137
+the score used today,
+
+27
+00:00:31,137 --> 00:00:32,835
+shaping your interest rate,
+
+28
+00:00:32,835 --> 00:00:34,533
+your credit limit, even
+
+29
+00:00:34,533 --> 00:00:35,807
+some rental applications.
+
+30
+00:00:35,807 --> 00:00:37,244
+One private company's
+
+31
+00:00:37,244 --> 00:00:37,723
+three-digit
+
+32
+00:00:37,723 --> 00:00:39,160
+number quietly became
+
+33
+00:00:39,160 --> 00:00:39,639
+infrastructure
+
+34
+00:00:39,639 --> 00:00:41,555
+for the entire US
+
+35
+00:00:41,555 --> 00:00:43,471
+credit system. Follow for
+
+36
+00:00:43,471 --> 00:00:43,950
+more.

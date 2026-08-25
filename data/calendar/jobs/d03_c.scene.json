@@ -1,0 +1,109 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d03_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Your Bank Doesn't Have Your Money Sitting In A Vault. Here's Where It Actually Is.",
+    "hook": "When you deposit $1,000 in a bank, the bank doesn't just hold it. Most of it gets lent out.",
+    "description": "Under the fractional reserve system, banks are required to keep only a portion of deposits readily available and can lend out the rest to other customers as mortgages, auto loans and business credit. That lending is how the banking system creates most of the money circulating in the economy — deposits become loans, which become new deposits elsewhere.",
+    "tags": ["fractional reserve banking", "how banks work", "banking explained", "money supply", "economics explained", "personal finance"],
+    "hashtags": ["#banking", "#economics", "#money", "#personalfinance", "#shorts"],
+    "thumbnail_text": "IT'S NOT IN A VAULT"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "When you deposit one thousand dollars in a bank, the bank doesn't just hold onto it.",
+      "duration_sec": 4.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["bank deposit myth", "vault misconception"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "bank teller deposit cash counter",
+        "visual_intent": "A hand sliding cash across a bank teller counter, warm indoor light, close focus",
+        "broll_keywords": ["bank teller deposit cash", "bank counter transaction", "depositing money teller"],
+        "decision_reason": "hook beat: the deposit itself, hard cut"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Most of it gets lent back out, to other customers, as mortgages, car loans, and business credit.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["banks lend deposits", "loan types"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "pan_lr",
+        "query": "loan officer meeting customer bank",
+        "visual_intent": "A loan officer discussing paperwork with a customer at a bank desk, natural light",
+        "broll_keywords": ["loan officer meeting customer", "bank loan consultation", "bank desk meeting"],
+        "decision_reason": "shows where deposits actually go"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "That's the fractional reserve system. Banks are required to keep only a portion of deposits readily available.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["fractional reserve system", "reserve requirement"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_out",
+        "query": "bank vault door steel secure",
+        "visual_intent": "A heavy steel bank vault door, cool metallic light, slow push in",
+        "broll_keywords": ["bank vault door steel", "secure vault interior", "bank security door"],
+        "decision_reason": "visualizes the small reserved portion versus the rest"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "The rest becomes a loan to someone else, which they spend, and that money lands as a deposit in another bank.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["money circulation", "deposit loan cycle"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "money flow network diagram animated",
+        "visual_intent": "A network-style flow diagram of money moving between nodes on a dark screen, teal and gold",
+        "broll_keywords": ["money flow diagram screen", "financial network graphic", "business data flow dark"],
+        "decision_reason": "visualizes the deposit-loan-deposit cycle"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Repeated across the whole banking system, that cycle is how most of the money supply actually gets created.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["money supply creation", "banking system"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "city financial district skyline banks",
+        "visual_intent": "A city skyline dense with bank headquarters towers, wide shot, late afternoon light",
+        "broll_keywords": ["financial district skyline", "bank towers city skyline", "downtown financial buildings"],
+        "decision_reason": "scale payoff visual"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "It's not a scandal, it's the design. Your deposit is doing more work than just sitting in an account. Follow for more.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["by design", "closing"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "ken_burns",
+        "query": "bank branch exterior daytime",
+        "visual_intent": "A neighborhood bank branch exterior in clear daylight, calm and orderly",
+        "broll_keywords": ["bank branch exterior", "local bank building daytime", "bank storefront street"],
+        "decision_reason": "closing and CTA"
+      }
+    }
+  ]
+}

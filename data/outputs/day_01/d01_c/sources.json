@@ -1,0 +1,15 @@
+{
+  "id": "d01_c",
+  "topic": "How credit card companies profit even when you pay in full",
+  "content_type": "evergreen",
+  "sources": [
+    {
+      "claim": "Merchants pay an interchange fee on every card transaction, split between the card-issuing bank and the card network, regardless of whether the cardholder later carries a balance",
+      "source": "Widely documented card-network economics (Visa/Mastercard interchange structure, standard payments-industry description)",
+      "url": "",
+      "type": "reputable_secondary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "disclaimer": ""
+}

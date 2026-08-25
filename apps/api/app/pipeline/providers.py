@@ -1,77 +1,250 @@
 """
-External provider adapters. ALL behind plain async functions so the pipeline
-never imports a vendor SDK directly — swap ElevenLabs->OpenAI or Pexels->Pixabay
-without touching pipeline logic. v1 ships real elevenlabs/openai/pexels/manim;
+External visual provider adapters. ALL behind plain async functions so the pipeline
+never imports a vendor SDK directly. v1 ships real pexels/pixabay/manim;
 veo3/seedance are stubs that raise unless wired (cost gate).
 """
 from __future__ import annotations
 
 import asyncio
 import base64
+import contextlib
 import hashlib
+import json
+import re
+import time
+from datetime import date
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 
 import httpx
 
 from ..config import settings
+from ..schemas.scene import AssetCandidate, StoryboardScene
+
+# Wikimedia enforces its robot policy on the anonymous API: a request without a
+# descriptive User-Agent is answered 403 (phabricator T400119), which silently
+# emptied the official/public-domain tier for every beat. Contact string per
+# https://w.wiki/4wJS.
+WIKIMEDIA_UA = ("shorts-factory/1.0 (https://github.com/Kadir70-dev/shorts-factory; "
+                "kadirab1999@gmail.com) httpx")
+
+# --- download admission control (see `_download`) --------------------------- #
+# Wikimedia's robot policy is about CONCURRENCY, not volume: a burst is throttled
+# where the same requests spread over time are served. Two in flight keeps the
+# official/public-domain tier reachable without slowing a render measurably.
+_WIKIMEDIA_HOSTS = frozenset({"upload.wikimedia.org", "commons.wikimedia.org"})
+_WIKIMEDIA_TRANSFERS = asyncio.Semaphore(2)
+# Only these statuses are worth a second attempt; 403/404 are settled answers.
+_RETRY_STATUS = frozenset({429, 500, 502, 503, 504})
+_DOWNLOAD_ATTEMPTS = 2                  # one try, one retry
+_DOWNLOAD_BACKOFF_S = 2.0               # doubled per attempt; `Retry-After` wins
+# Whole-fetch deadline, independent of httpx's per-read timeout. Generous enough
+# for a 1080p stock clip on a slow line, hard enough that one bad CDN connection
+# cannot hold a 156-beat render open indefinitely.
+_DOWNLOAD_DEADLINE_S = 90.0
+_MEDIA_TYPES = ("image/", "video/", "application/octet-stream")
+# A 1.6 KB "image" decodes cleanly and still cannot fill a 1080x1920 frame. The
+# floor rejects thumbnails and throttling notices before either reaches cache.
+_MIN_ASSET_BYTES = 8_192
 
 
-# ----------------------------- TTS ----------------------------------------- #
-async def elevenlabs_tts(text: str, out: Path, voice) -> None:
-    url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice.voice_id}"
-    async with httpx.AsyncClient(timeout=120) as c:
-        r = await c.post(
-            url,
-            headers={"xi-api-key": settings().elevenlabs_api_key},
-            json={"text": text, "model_id": "eleven_turbo_v2_5",
-                  "voice_settings": {"stability": voice.stability,
-                                     "similarity_boost": 0.75,
-                                     "speed": voice.speed}},
-        )
-        r.raise_for_status()
-        out.write_bytes(r.content)              # mp3; ffprobe handles it
+def _retry_delay(response: "httpx.Response", attempt: int) -> float:
+    """Honour `Retry-After` when the server sends one, else exponential."""
+    header = response.headers.get("retry-after", "").strip()
+    if header.isdigit():
+        return min(30.0, float(header))
+    return _DOWNLOAD_BACKOFF_S * (2 ** attempt)
 
 
-async def openai_tts(text: str, out: Path, voice) -> None:
-    async with httpx.AsyncClient(timeout=120) as c:
-        r = await c.post(
-            "https://api.openai.com/v1/audio/speech",
-            headers={"Authorization": f"Bearer {settings().openai_api_key}"},
-            json={"model": "tts-1", "voice": voice.voice_id or "onyx",
-                  "input": text, "response_format": "wav"},
-        )
-        r.raise_for_status()
-        out.write_bytes(r.content)
+# --------------------------------------------------------------------------- #
+# PROVIDER AVAILABILITY — decided ONCE per run, not re-discovered per scene.
+#
+# A long-form episode asks the resolver for assets 150+ times. Without this, a
+# provider that is unconfigured or has gone down is re-attempted on every single
+# beat, and each attempt pays the full connect/read timeout before falling
+# through. On a 156-beat graph that is the difference between seconds and an
+# hour of waiting for answers already known.
+#
+# Two separate ideas, deliberately:
+#   configured() — static: is there a key / is the provider switched on. Free of
+#                  charge to check, so it is checked before any network call.
+#   is_down()    — dynamic: this provider has failed repeatedly DURING THIS RUN.
+#                  Cleared on process exit; nothing is persisted, because a
+#                  provider being down for one render says nothing about the next.
+# --------------------------------------------------------------------------- #
+_FAILURE_LIMIT = 2            # consecutive failures before a provider is parked
+_run_failures: dict[str, int] = {}
+_run_reasons: dict[str, str] = {}
 
 
-async def piper_tts(text: str, out: Path, voice) -> None:
-    """Fully local fallback (no API cost). Requires piper binary."""
-    proc = await asyncio.create_subprocess_exec(
-        "piper", "--model", f"/opt/piper/{voice.voice_id}.onnx",
-        "--output_file", str(out),
-        stdin=asyncio.subprocess.PIPE,
-    )
-    await proc.communicate(text.encode())
+def configured(provider: str) -> bool:
+    """Is this provider usable at all on this machine? No network involved."""
+    s = settings()
+    if provider in ("wikimedia_commons", "pollinations"):
+        return bool(s.pollinations_enabled) if provider == "pollinations" else True
+    if provider == "pexels":
+        return bool(s.pexels_api_key)
+    if provider == "pixabay":
+        return bool(s.pixabay_api_key)
+    if provider == "google_ai":
+        return bool(s.google_api_key)
+    if provider == "huggingface":
+        return bool(s.hf_api_token)
+    if provider == "comfyui":
+        return bool(s.comfyui_enabled and s.comfyui_base_url)
+    return True               # unknown providers are not pre-judged
 
 
-async def espeak_tts(text: str, out: Path, voice) -> None:
-    """Zero-dependency local voice (apt install espeak-ng). Robotic but real."""
-    proc = await asyncio.create_subprocess_exec(
-        "espeak-ng", "-v", "en-us", "-s", "165", "-w", str(out), text,
-    )
-    await proc.wait()
+def is_down(provider: str) -> bool:
+    """Has this provider failed enough times this run to stop asking?"""
+    return _run_failures.get(provider, 0) >= _FAILURE_LIMIT
 
 
-async def tone_tts(text: str, out: Path, voice) -> None:
-    """Last resort, NO speech tool at all: emit silence sized to the estimated
-    speaking time (~2.6 words/sec) so the timeline still flows for testing."""
-    secs = max(1.0, len(text.split()) / 2.6)
-    proc = await asyncio.create_subprocess_exec(
-        "ffmpeg", "-hide_banner", "-loglevel", "error", "-f", "lavfi",
-        "-i", f"anullsrc=r=44100:cl=mono", "-t", f"{secs:.2f}", "-y", str(out),
-    )
-    await proc.wait()
+def available(provider: str) -> bool:
+    return configured(provider) and not is_down(provider)
+
+
+def note_failure(provider: str, error: BaseException | str) -> None:
+    """Record a failed attempt. The provider is parked after `_FAILURE_LIMIT`."""
+    reason = (f"{type(error).__name__}: {error}" if isinstance(error, BaseException)
+              else str(error))
+    _run_failures[provider] = _run_failures.get(provider, 0) + 1
+    _run_reasons[provider] = reason[:160]
+    if is_down(provider):
+        print(f"[providers] {provider} parked for this run after "
+              f"{_FAILURE_LIMIT} failures — {reason[:120]}", flush=True)
+
+
+def note_success(provider: str) -> None:
+    """A success clears the strike count: a blip must not park a live provider."""
+    _run_failures.pop(provider, None)
+    _run_reasons.pop(provider, None)
+
+
+def availability_report() -> str:
+    """One line per provider, for the run log."""
+    names = ("wikimedia_commons", "pexels", "pixabay", "pollinations",
+             "google_ai", "huggingface", "comfyui")
+    rows = []
+    for name in names:
+        if not configured(name):
+            state = "unconfigured — skipped without a network call"
+        elif is_down(name):
+            state = f"DOWN this run — {_run_reasons.get(name, '')}"
+        else:
+            state = "available"
+        rows.append(f"  {name:20} {state}")
+    return "provider availability\n" + "\n".join(rows)
+
+
+async def multi_source_candidates(provider: str, query: str,
+                                  beat: StoryboardScene) -> list[AssetCandidate]:
+    """Discover typed candidates for the provenance-aware b-roll extension.
+
+    Official/government, SEC and company-IR collections do not expose one safe
+    universal media API, so those adapters intentionally return no result until
+    an institution-specific connector can supply explicit licence metadata.
+    They remain ahead of library sources in the resolver priority.
+    """
+    today = date.today().isoformat()
+
+    def narration_match(metadata: str) -> float:
+        stop = {"the", "a", "an", "and", "or", "at", "in", "of", "to",
+                "for", "from", "since", "its", "it", "was"}
+        wanted = {word for word in re.findall(r"[a-z0-9]+", query.lower())
+                  if len(word) > 2 and word not in stop}
+        offered = set(re.findall(r"[a-z0-9]+", metadata.lower()))
+        coverage = len(wanted & offered) / max(1, len(wanted))
+        return round(min(.96, .30 + .70 * coverage), 3)
+
+    def candidate(url: str, institution: str, license_name: str,
+                  relevance: float, quality: float = .75) -> AssetCandidate:
+        return AssetCandidate(
+            source_url=url, provider_institution=institution, asset_type="image",
+            license=license_name, commercial_use_status="allowed",
+            retrieval_date=today, scene_id=beat.scene_id,
+            relevance_score=relevance, confidence=.8,
+            subject_specificity=relevance, visual_quality=quality,
+            originality=.65, mobile_readability=.8)
+
+    # Answer from what this run already knows before opening a socket.
+    if not available(provider):
+        return []
+
+    if provider == "wikimedia_commons":
+        try:
+            async with httpx.AsyncClient(
+                    timeout=30, headers={"User-Agent": WIKIMEDIA_UA}) as client:
+                response = await client.get("https://commons.wikimedia.org/w/api.php",
+                    params={"action": "query", "generator": "search", "gsrsearch": query,
+                            "gsrnamespace": 6, "gsrlimit": 10, "prop": "imageinfo",
+                            "iiprop": "url|extmetadata", "format": "json"})
+        except (httpx.HTTPError, OSError) as e:
+            note_failure(provider, e)
+            return []
+        if response.status_code != 200:
+            note_failure(provider, f"HTTP {response.status_code}")
+            return []
+        note_success(provider)
+        out = []
+        for page in response.json().get("query", {}).get("pages", {}).values():
+            info = (page.get("imageinfo") or [{}])[0]
+            meta = info.get("extmetadata") or {}
+            license_name = (meta.get("LicenseShortName") or {}).get("value", "")
+            url = info.get("thumburl") or info.get("url")
+            if url:
+                description = " ".join((page.get("title", ""),
+                    (meta.get("ImageDescription") or {}).get("value", "")))
+                item = candidate(url, provider, license_name,
+                                 narration_match(description))
+                item.attribution_requirement = (meta.get("Artist") or {}).get("value", "")
+                out.append(item)
+        return out
+    if provider == "pexels":
+        try:
+            async with httpx.AsyncClient(timeout=30) as client:
+                response = await client.get("https://api.pexels.com/v1/search",
+                    headers={"Authorization": settings().pexels_api_key},
+                    params={"query": query, "orientation": "portrait", "per_page": 10})
+        except (httpx.HTTPError, OSError) as e:
+            note_failure(provider, e)
+            return []
+        if response.status_code != 200:
+            note_failure(provider, f"HTTP {response.status_code}")
+            return []
+        note_success(provider)
+        return [candidate((p.get("src") or {}).get("portrait", ""), provider,
+                          "Pexels License", narration_match(p.get("alt", "")), .82)
+                for p in response.json().get("photos", [])
+                if (p.get("src") or {}).get("portrait")]
+    if provider == "pixabay":
+        try:
+            async with httpx.AsyncClient(timeout=30) as client:
+                response = await client.get("https://pixabay.com/api/",
+                    params={"key": settings().pixabay_api_key, "q": query,
+                            "image_type": "photo", "orientation": "vertical",
+                            "safesearch": "true", "per_page": 10})
+        except (httpx.HTTPError, OSError) as e:
+            note_failure(provider, e)
+            return []
+        if response.status_code != 200:
+            note_failure(provider, f"HTTP {response.status_code}")
+            return []
+        note_success(provider)
+        return [candidate(h.get("largeImageURL") or h.get("webformatURL"), provider,
+                          "Pixabay Content License",
+                          narration_match(h.get("tags", "")), .78)
+                for h in response.json().get("hits", [])
+                if h.get("largeImageURL") or h.get("webformatURL")]
+    return []
+
+
+async def download_asset_candidate(candidate: AssetCandidate, target: Path
+                                   ) -> Path | None:
+    """Download through the existing content-addressed provider cache."""
+    ext = target.suffix.lstrip(".") or "bin"
+    cached = Path(await _download(candidate.source_url, ext))
+    return cached if cached.is_file() else None
 
 
 # ----------------------------- B-roll -------------------------------------- #
@@ -91,20 +264,67 @@ _SEARCH_LOCKS: dict[str, asyncio.Lock] = {}
 _DL_LOCKS: dict[str, asyncio.Lock] = {}
 
 
+# Stock-library results churn slowly — a query answered today answers the same
+# tomorrow. The in-process memo only ever survived one render, so every re-run
+# paid the same API round-trips again. A day on disk is long enough to make
+# re-renders free and short enough that new uploads still surface.
+_SEARCH_TTL_SECONDS = 86_400
+
+
+def _search_cache_file(key: str) -> Path:
+    path = settings().data_dir / "cache" / "provider_search"
+    path.mkdir(parents=True, exist_ok=True)
+    return path / f"{hashlib.sha1(key.encode()).hexdigest()}.json"
+
+
+def _search_from_disk(key: str) -> list[str] | None:
+    entry = _search_cache_file(key)
+    try:
+        payload = json.loads(entry.read_text())
+    except (OSError, ValueError):
+        return None
+    if time.time() - float(payload.get("fetched_at", 0)) > _SEARCH_TTL_SECONDS:
+        return None
+    urls = payload.get("urls")
+    return urls if isinstance(urls, list) else None
+
+
+def _search_to_disk(key: str, urls: list[str]) -> None:
+    entry = _search_cache_file(key)
+    tmp = entry.with_suffix(".json.tmp")
+    try:
+        tmp.write_text(json.dumps({"key": key, "fetched_at": time.time(),
+                                   "urls": urls}))
+        tmp.replace(entry)                  # atomic: no torn read
+    except OSError as exc:                  # a cache miss is always survivable
+        tmp.unlink(missing_ok=True)
+        _log(f"search cache store failed ({type(exc).__name__}): {exc}")
+
+
 async def _cached_search(key: str, fetch) -> list[str]:
-    """Memoise a candidate-URL list per query for the lifetime of the process.
-    A per-key lock collapses concurrent identical searches into one API call."""
+    """Memoise a candidate-URL list per query, in process and on disk.
+
+    A per-key lock collapses concurrent identical searches into one API call.
+    An empty result is NOT persisted: a provider outage would otherwise be
+    cached as "this query has no assets" for a full day.
+    """
     if key in _SEARCH_CACHE:
         return _SEARCH_CACHE[key]
     lock = _SEARCH_LOCKS.setdefault(key, asyncio.Lock())
     async with lock:
         if key in _SEARCH_CACHE:
             return _SEARCH_CACHE[key]
+        stored = _search_from_disk(key)
+        if stored is not None:
+            _SEARCH_CACHE[key] = stored
+            return stored
         try:
             urls = await fetch()
         except Exception:
             urls = []
         _SEARCH_CACHE[key] = urls
+        if urls:
+            _search_to_disk(key, urls)
         return urls
 
 
@@ -116,7 +336,7 @@ async def _pick_download(urls: list[str], pick: int, ext: str) -> str | None:
 
 async def pexels_video(query: str, min_dur: float, pick: int = 0) -> str | None:
     key = settings().pexels_api_key
-    if not key:
+    if not available("pexels"):       # unkeyed, or already parked this run
         return None
 
     async def fetch() -> list[str]:
@@ -147,7 +367,7 @@ async def pexels_video(query: str, min_dur: float, pick: int = 0) -> str | None:
 
 async def pixabay_video(query: str, min_dur: float, pick: int = 0) -> str | None:
     key = settings().pixabay_api_key
-    if not key:
+    if not available("pixabay"):      # unkeyed, or already parked this run
         return None
 
     async def fetch() -> list[str]:
@@ -173,7 +393,7 @@ async def pixabay_video(query: str, min_dur: float, pick: int = 0) -> str | None
 
 async def pexels_image(query: str, pick: int = 0) -> str | None:
     key = settings().pexels_api_key
-    if not key:
+    if not available("pexels"):       # unkeyed, or already parked this run
         return None
 
     async def fetch() -> list[str]:
@@ -199,7 +419,7 @@ async def pexels_image(query: str, pick: int = 0) -> str | None:
 
 async def pixabay_image(query: str, pick: int = 0) -> str | None:
     key = settings().pixabay_api_key
-    if not key:
+    if not available("pixabay"):      # unkeyed, or already parked this run
         return None
 
     async def fetch() -> list[str]:
@@ -219,6 +439,200 @@ async def pixabay_image(query: str, pick: int = 0) -> str | None:
 
     urls = await _cached_search(f"piximg:{query}", fetch)
     return await _pick_download(urls, pick, "jpg")
+
+
+# ------------------------- Ranked candidate pools --------------------------- #
+# Separate from the four plain search functions above ON PURPOSE: they keep
+# their own `_SEARCH_CACHE`/on-disk cache (list[str] payload) completely
+# unchanged, so the keyword-first-hit fallback path is byte-for-byte identical
+# to before this was added. These functions hit the same APIs independently,
+# with their own richer cache (list[dict] payload, separate cache file), and
+# exist only to feed `pipeline/clip_rank.py`'s semantic ranking. If that
+# ranking is unavailable, nothing here is ever called.
+from dataclasses import dataclass, asdict as _asdict
+
+
+@dataclass(frozen=True)
+class RankCandidate:
+    """One stock-search hit, with enough metadata to rank AND download it.
+
+    `thumb_url` is a small/cheap image to embed for ranking — a video poster
+    frame (Pexels) or a preview-size image (Pixabay images). When a provider
+    exposes no cheap thumbnail (Pixabay video has none in its API response),
+    `thumb_url` is "" and the ranker scores that candidate as unranked rather
+    than guessing — it stays eligible, just not re-ordered by visual content.
+    """
+    download_url: str
+    thumb_url: str
+    source: str                 # "pexels" | "pixabay"
+    kind: str                   # "video" | "image"
+    tags: str = ""              # provider title/tag text, for a text-only prior
+    source_page_url: str = ""
+    creator: str = ""
+    license: str = ""
+    license_url: str = ""
+    attribution: str = ""
+    width: int = 0
+    height: int = 0
+
+
+def _rank_cache_file(key: str) -> Path:
+    path = settings().data_dir / "cache" / "provider_search_rank"
+    path.mkdir(parents=True, exist_ok=True)
+    return path / f"{hashlib.sha1(key.encode()).hexdigest()}.json"
+
+
+async def _cached_rank_search(key: str, fetch) -> list[RankCandidate]:
+    """Same memoise-per-key-per-day shape as `_cached_search`, for the richer
+    RankCandidate payload. A separate cache namespace, see module note above."""
+    entry = _rank_cache_file(key)
+    try:
+        payload = json.loads(entry.read_text())
+        if time.time() - float(payload.get("fetched_at", 0)) <= _SEARCH_TTL_SECONDS:
+            return [RankCandidate(**row) for row in payload.get("rows", [])]
+    except (OSError, ValueError, TypeError):
+        pass
+    try:
+        rows = await fetch()
+    except Exception:
+        rows = []
+    if rows:
+        tmp = entry.with_suffix(".json.tmp")
+        try:
+            tmp.write_text(json.dumps({"fetched_at": time.time(),
+                                       "rows": [_asdict(r) for r in rows]}))
+            tmp.replace(entry)
+        except OSError:
+            tmp.unlink(missing_ok=True)
+    return rows
+
+
+async def pexels_video_candidates(query: str, min_dur: float) -> list[RankCandidate]:
+    if not available("pexels"):
+        return []
+
+    async def fetch() -> list[RankCandidate]:
+        async with httpx.AsyncClient(timeout=60) as c:
+            r = await c.get(
+                "https://api.pexels.com/videos/search",
+                headers={"Authorization": settings().pexels_api_key},
+                params={"query": query, "orientation": "portrait",
+                        "size": "medium", "per_page": 15},
+            )
+        if r.status_code != 200:
+            return []
+        vids = r.json().get("videos", [])
+        long_enough = [v for v in vids if v.get("duration", 0) >= min_dur] or vids
+        out: list[RankCandidate] = []
+        for v in long_enough:
+            files = sorted(v.get("video_files", []),
+                           key=lambda f: f.get("height", 0), reverse=True)
+            pref = [f for f in files if f.get("height", 0) <= 1920] or files
+            if pref:
+                out.append(RankCandidate(
+                    download_url=pref[0]["link"], thumb_url=v.get("image", ""),
+                    source="pexels", kind="video",
+                    tags=v.get("url", "").rsplit("/", 1)[-1].replace("-", " ")))
+        return out
+
+    return await _cached_rank_search(f"pexvidrank:{min_dur:.0f}:{query}", fetch)
+
+
+async def pixabay_video_candidates(query: str, min_dur: float) -> list[RankCandidate]:
+    if not available("pixabay"):
+        return []
+
+    async def fetch() -> list[RankCandidate]:
+        async with httpx.AsyncClient(timeout=60) as c:
+            r = await c.get("https://pixabay.com/api/videos/",
+                            params={"key": settings().pixabay_api_key, "q": query,
+                                    "per_page": 15, "safesearch": "true"})
+        if r.status_code != 200:
+            return []
+        hits = r.json().get("hits", [])
+        long_enough = [h for h in hits if h.get("duration", 0) >= min_dur] or hits
+        out: list[RankCandidate] = []
+        for h in long_enough:
+            files = h.get("videos", {})
+            f = files.get("large") or files.get("medium") or files.get("small")
+            if f and f.get("url"):
+                # Pixabay's video API exposes no poster/thumbnail field — the
+                # ranker will score this candidate on tags only (see RankCandidate
+                # docstring), not a guessed-at frame.
+                out.append(RankCandidate(
+                    download_url=f["url"], thumb_url="", source="pixabay",
+                    kind="video", tags=h.get("tags", "")))
+        return out
+
+    return await _cached_rank_search(f"pixvidrank:{min_dur:.0f}:{query}", fetch)
+
+
+async def pexels_image_candidates(query: str, orientation: str = "portrait") -> list[RankCandidate]:
+    if not available("pexels"):
+        return []
+
+    async def fetch() -> list[RankCandidate]:
+        async with httpx.AsyncClient(timeout=60) as c:
+            r = await c.get(
+                "https://api.pexels.com/v1/search",
+                headers={"Authorization": settings().pexels_api_key},
+                params={"query": query, "orientation": orientation, "per_page": 15},
+            )
+        if r.status_code != 200:
+            return []
+        out: list[RankCandidate] = []
+        for p in r.json().get("photos", []):
+            src = p.get("src") or {}
+            u = src.get("portrait") or src.get("large2x") or src.get("large")
+            thumb = src.get("small") or src.get("tiny") or u
+            if u:
+                out.append(RankCandidate(
+                    download_url=u, thumb_url=thumb or "", source="pexels",
+                    kind="image", tags=p.get("alt", ""),
+                    source_page_url=p.get("url", ""), creator=p.get("photographer", ""),
+                    license="Pexels License", license_url="https://www.pexels.com/license/",
+                    attribution=f"Photo by {p.get('photographer', 'UNKNOWN')} on Pexels",
+                    width=int(p.get("width") or 0), height=int(p.get("height") or 0)))
+        return out
+
+    return await _cached_rank_search(f"peximgrank:{orientation}:{query}", fetch)
+
+
+async def pixabay_image_candidates(query: str, orientation: str = "vertical") -> list[RankCandidate]:
+    if not available("pixabay"):
+        return []
+
+    async def fetch() -> list[RankCandidate]:
+        async with httpx.AsyncClient(timeout=60) as c:
+            r = await c.get("https://pixabay.com/api/",
+                            params={"key": settings().pixabay_api_key, "q": query,
+                                    "image_type": "all", "orientation": orientation,
+                                    "per_page": 15, "safesearch": "true"})
+        if r.status_code != 200:
+            return []
+        out: list[RankCandidate] = []
+        for h in r.json().get("hits", []):
+            u = h.get("largeImageURL") or h.get("webformatURL")
+            thumb = h.get("previewURL") or u
+            if u:
+                out.append(RankCandidate(
+                    download_url=u, thumb_url=thumb or "", source="pixabay",
+                    kind="image", tags=h.get("tags", ""),
+                    source_page_url=h.get("pageURL", ""), creator=h.get("user", ""),
+                    license="Pixabay Content License",
+                    license_url="https://pixabay.com/service/license-summary/",
+                    attribution=f"Image by {h.get('user', 'UNKNOWN')} on Pixabay",
+                    width=int(h.get("imageWidth") or 0), height=int(h.get("imageHeight") or 0)))
+        return out
+
+    return await _cached_rank_search(f"piximgrank:{orientation}:{query}", fetch)
+
+
+async def download_rank_candidate(cand: RankCandidate) -> str:
+    """Download a ranked candidate's full-resolution file through the same
+    content-addressed cache every other asset in this pipeline uses."""
+    ext = "mp4" if cand.kind == "video" else "jpg"
+    return await _download(cand.download_url, ext)
 
 
 # ----------------------------- Manim --------------------------------------- #
@@ -653,56 +1067,60 @@ async def ai_image_generate(subject: str, video_id: str, scene_id: str,
     #    tunnel). Runs a DreamShaper SD1.5 txt2img graph and returns a real still.
     #    ANY failure (tunnel down, timeout, bad graph) logs and falls through to the
     #    existing chain below — the pipeline never breaks.
-    if s.comfyui_enabled and s.comfyui_base_url:
+    if available("comfyui"):
         _log(f"{scene_id}: generating via remote ComfyUI "
              f"({s.comfyui_checkpoint})… subject={subject!r}")
         try:
             path = await _remote_comfyui_image(prompt, seed)
+            note_success("comfyui")
             _log(f"{scene_id}: ✓ COMFYUI image inserted → {Path(path).name}")
             return path
         except Exception as e:  # noqa: BLE001
+            note_failure("comfyui", e)
             _log(f"{scene_id}: ✗ ComfyUI failed "
                  f"({type(e).__name__}: {str(e)[:120]}) → falling back to chain")
 
     # 1) PRIMARY — Google AI Studio (needs billing on the key).
-    if s.google_api_key:
+    if available("google_ai"):
         _log(f"{scene_id}: generating via Google AI Studio "
              f"({s.google_image_model})… subject={subject!r}")
         try:
             path = await _google_ai_studio_image(prompt)
+            note_success("google_ai")
             _log(f"{scene_id}: ✓ GOOGLE AI IMAGE inserted → {Path(path).name}")
             return path
         except Exception as e:  # noqa: BLE001
+            note_failure("google_ai", e)
             _log(f"{scene_id}: ✗ Google generation FAILED "
                  f"({type(e).__name__}: {str(e)[:120]}) → trying Pollinations (free)")
-    else:
-        _log(f"{scene_id}: GOOGLE_API_KEY not set → trying Pollinations (free)")
 
     # 2) FREE FALLBACK #1 — Hugging Face Inference Providers (FLUX, free with a HF
     #    token). FLUX.1-dev (preferred) → FLUX.1-schnell (fast free). Any failure or
     #    rate-limit cleanly degrades to Pollinations next — the pipeline never breaks.
-    if s.hf_api_token:
+    if available("huggingface"):
         _log(f"{scene_id}: generating via HuggingFace FLUX "
              f"({s.huggingface_image_model})… subject={subject!r}")
         try:
             path = await _huggingface_image(prompt, seed)
+            note_success("huggingface")
             _log(f"{scene_id}: ✓ HF image inserted → {Path(path).name}")
             return path
         except Exception as e:  # noqa: BLE001
+            note_failure("huggingface", e)
             _log(f"{scene_id}: ✗ HF failed "
                  f"({type(e).__name__}: {str(e)[:120]}) → fallback to Pollinations")
-    else:
-        _log(f"{scene_id}: HF_TOKEN not set → trying Pollinations (free)")
 
     # 3) FREE FALLBACK #2 — Pollinations (no key). Keeps real AI images flowing free.
-    if s.pollinations_enabled:
+    if available("pollinations"):
         _log(f"{scene_id}: generating via Pollinations "
              f"({s.pollinations_model}, free)… subject={subject!r}")
         try:
             path = await _pollinations_image(prompt, seed)
+            note_success("pollinations")
             _log(f"{scene_id}: ✓ POLLINATIONS (free) AI IMAGE inserted → {Path(path).name}")
             return path
         except Exception as e:  # noqa: BLE001
+            note_failure("pollinations", e)
             _log(f"{scene_id}: ✗ Pollinations FAILED "
                  f"({type(e).__name__}: {str(e)[:120]}) → fallback to real footage")
 
@@ -972,7 +1390,23 @@ async def _huggingface_image(prompt: str, seed: int = 0) -> str:
 # empty body. The pipeline resolves scenes CONCURRENTLY, so we serialize all
 # Pollinations calls through this lock and retry-with-backoff on 402/429/empty.
 _POLLI_LOCK = asyncio.Lock()
-_POLLI_BACKOFF = (4, 8, 14, 22)   # seconds between attempts (queue drains)
+# A FREE service must never be able to block a render. Pollinations serialises
+# every call behind `_POLLI_LOCK` (its free tier allows one at a time), so any
+# per-image cost is multiplied by the number of AI beats. At the previous
+# settings — 180s per request x 5 attempts + 48s of backoff — a single image
+# could hold the pipeline for ~16 minutes, and a 28-beat episode for over seven
+# hours. Measured on this box: 57 minutes of waiting produced ZERO images.
+#
+# These three constants are the whole budget. When it is spent the caller
+# degrades to `_local_cinematic_plate`, which is free, local and instant, and
+# `note_failure` parks the provider so the remaining beats skip it outright.
+# Measured: a healthy free generation lands in 2-45s (three cold prompts came
+# back at 2.4s, 45.2s and 44.7s). The request window has to clear that, or half
+# the LEGITIMATE images get cut off; the total budget is what stops a throttled
+# queue from turning into an unbounded wait.
+_POLLI_REQUEST_TIMEOUT_S = 70.0   # one attempt; comfortably over the 45s norm
+_POLLI_TOTAL_BUDGET_S = 110.0     # wall clock for ALL attempts at one image
+_POLLI_BACKOFF = (4, 8)           # seconds between attempts (queue drains)
 
 
 async def _pollinations_image(prompt: str, seed: int = 0) -> str:
@@ -985,6 +1419,13 @@ async def _pollinations_image(prompt: str, seed: int = 0) -> str:
     out = _img_cache(f"pollinations:{model}:{seed}:{prompt}", "jpg")
     if out.exists():
         return str(out)
+    # Refuse at the GENERATOR, not only at the orchestrator. `ai_image_generate`
+    # checks `available()` first, but the AI-b-roll engine's FluxAdapter calls
+    # this function directly — so switching Pollinations off did nothing and the
+    # render still hung on it. A disabled or parked provider must be unreachable
+    # by every caller, cached results excepted (already returned above).
+    if not available("pollinations"):
+        raise RuntimeError("pollinations disabled or parked for this run")
     url = f"https://image.pollinations.ai/prompt/{quote(prompt, safe='')}"
     params = {"width": 768, "height": 1344,    # 9:16; renderer crops to fill
               "model": model, "seed": seed, "nologo": "true",
@@ -995,11 +1436,30 @@ async def _pollinations_image(prompt: str, seed: int = 0) -> str:
                if s.pollinations_token else {})
 
     last = ""
+    started = time.monotonic()
+
+    def _spent() -> float:
+        return time.monotonic() - started
+
     async with _POLLI_LOCK:                      # one Pollinations call at a time
-        async with httpx.AsyncClient(timeout=180, follow_redirects=True) as c:
+        async with httpx.AsyncClient(timeout=_POLLI_REQUEST_TIMEOUT_S,
+                                     follow_redirects=True) as c:
             for i in range(len(_POLLI_BACKOFF) + 1):
+                remaining = _POLLI_TOTAL_BUDGET_S - _spent()
+                if remaining <= 0:
+                    last = last or "budget spent before first reply"
+                    break
                 try:
-                    r = await c.get(url, params=params, headers=headers)
+                    # HARD wall-clock cap. httpx's `timeout` is per-READ, so a
+                    # server that trickles bytes while it queues never trips it
+                    # and the transfer hangs forever — measured here as a single
+                    # socket held open for 21 minutes against a 70s timeout.
+                    # asyncio.wait_for bounds the whole request, not each read.
+                    r = await asyncio.wait_for(
+                        c.get(url, params=params, headers=headers),
+                        timeout=min(_POLLI_REQUEST_TIMEOUT_S, remaining))
+                except (asyncio.TimeoutError, TimeoutError):
+                    last = f"timed out after {_spent():.0f}s"
                 except Exception as e:          # noqa: BLE001
                     last = f"{type(e).__name__}"
                 else:
@@ -1012,9 +1472,11 @@ async def _pollinations_image(prompt: str, seed: int = 0) -> str:
                         return str(out)
                     last = (f"{r.status_code} {ct} {len(r.content)}B"
                             if r.status_code != 200 else "empty image")
-                if i < len(_POLLI_BACKOFF):
+                # Only sleep if there is budget left to use the next attempt.
+                if i < len(_POLLI_BACKOFF) and \
+                        _spent() + _POLLI_BACKOFF[i] < _POLLI_TOTAL_BUDGET_S:
                     await asyncio.sleep(_POLLI_BACKOFF[i])
-    raise RuntimeError(f"pollinations unavailable after retries ({last})")
+    raise RuntimeError(f"pollinations unavailable after {_spent():.0f}s ({last})")
 
 
 async def _local_cinematic_plate(subject: str, category: str, seed: int) -> str:
@@ -1044,12 +1506,37 @@ async def _local_cinematic_plate(subject: str, category: str, seed: int) -> str:
     return str(out)
 
 
+async def _decodes(path: Path) -> bool:
+    """Does ffmpeg actually see a frame in this file? The repo already probes
+    media with ffprobe everywhere else, so this needs no new dependency.
+
+    Byte count alone cannot tell a photograph from a throttling notice that
+    happened to arrive with a 200 — decoding can.
+    """
+    proc = await asyncio.create_subprocess_exec(
+        "ffprobe", "-v", "error", "-select_streams", "v:0",
+        "-show_entries", "stream=width,height", "-of", "csv=p=0", str(path),
+        stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.DEVNULL,
+    )
+    out, _ = await proc.communicate()
+    if proc.returncode != 0:
+        return False
+    dims = out.decode().strip().strip(",").split(",")
+    return len(dims) >= 2 and all(d.isdigit() and int(d) > 0 for d in dims[:2])
+
+
 async def _download(url: str, ext: str) -> str:
     """Content-addressed cache. The filename is sha1(url) so the SAME asset is
     only ever fetched once across runs (deterministic, no duplicate downloads).
     A per-file lock collapses concurrent requests for the same URL, and the
     bytes are published atomically via rename so a crash can't leave a truncated
-    file masquerading as a cache hit."""
+    file masquerading as a cache hit.
+
+    Nothing is published until the response proves it is renderable media:
+    status, Content-Type, byte count and a real decode. A body that fails any of
+    those is discarded rather than cached, because a cached dud is permanent —
+    the sha1 name makes every later run a "hit" on the same broken bytes.
+    """
     cache = settings().data_dir / "cache"
     cache.mkdir(parents=True, exist_ok=True)
     name = cache / f"{hashlib.sha1(url.encode()).hexdigest()}.{ext}"
@@ -1059,10 +1546,58 @@ async def _download(url: str, ext: str) -> str:
     async with lock:
         if name.exists():                       # won the race while waiting
             return str(name)
-        async with httpx.AsyncClient(timeout=180, follow_redirects=True) as c:
-            r = await c.get(url)
-            r.raise_for_status()
-            tmp = name.with_name(name.name + ".part")
-            tmp.write_bytes(r.content)
-            tmp.replace(name)                   # atomic publish
+        # upload.wikimedia.org enforces the same robot policy as the API, so a
+        # candidate could rank 0.96 and still never reach disk: the search
+        # succeeded, the fetch 403'd, and the beat silently fell back.
+        #
+        # It also answers a BURST of parallel fetches with 429. The asset engine
+        # discovers every beat concurrently, so a 7-scene video opened ~28
+        # requests at once and the throttled ones raised — which is how a
+        # 0.91-scoring public-domain image was reported as "no licensed asset
+        # exists". Wikimedia transfers are serialised to two at a time; every
+        # other host keeps the previous unbounded behaviour.
+        gate = (_WIKIMEDIA_TRANSFERS
+                if urlparse(url).hostname in _WIKIMEDIA_HOSTS
+                else contextlib.nullcontext())
+        async with httpx.AsyncClient(timeout=180, follow_redirects=True,
+                                     headers={"User-Agent": WIKIMEDIA_UA}) as c:
+            # ONE retry, backed off. A 429/5xx means "come back later", so an
+            # immediate repeat just spends the same rejection twice; anything
+            # else is a permanent answer and retrying it is pure latency.
+            for attempt in range(_DOWNLOAD_ATTEMPTS):
+                async with gate:
+                    # HARD wall-clock cap. `timeout=180` above is httpx's
+                    # per-READ budget, so a host that trickles a large video —
+                    # a few bytes inside every window — never trips it and the
+                    # transfer hangs indefinitely. A 156-beat render sat silent
+                    # for 27 minutes on exactly one such socket. asyncio.wait_for
+                    # bounds the whole fetch, so a slow CDN costs one asset, not
+                    # the episode.
+                    try:
+                        r = await asyncio.wait_for(c.get(url),
+                                                   timeout=_DOWNLOAD_DEADLINE_S)
+                    except (asyncio.TimeoutError, TimeoutError):
+                        if attempt < _DOWNLOAD_ATTEMPTS - 1:
+                            continue
+                        raise RuntimeError(
+                            f"{url[:80]} → stalled past {_DOWNLOAD_DEADLINE_S:.0f}s")
+                if r.status_code != 200:
+                    if (r.status_code in _RETRY_STATUS
+                            and attempt < _DOWNLOAD_ATTEMPTS - 1):
+                        await asyncio.sleep(_retry_delay(r, attempt))
+                        continue
+                    raise RuntimeError(f"{url[:80]} → HTTP {r.status_code}")
+                kind = r.headers.get("content-type", "").split(";")[0].strip()
+                if kind and not kind.startswith(_MEDIA_TYPES):
+                    raise RuntimeError(f"{url[:80]} → not media ({kind})")
+                if len(r.content) < _MIN_ASSET_BYTES:
+                    raise RuntimeError(f"{url[:80]} → {len(r.content)}B under the "
+                                       f"{_MIN_ASSET_BYTES}B floor")
+                tmp = name.with_name(name.name + ".part")
+                tmp.write_bytes(r.content)
+                if not await _decodes(tmp):
+                    tmp.unlink(missing_ok=True)
+                    raise RuntimeError(f"{url[:80]} → body does not decode")
+                tmp.replace(name)               # atomic publish
+                break
     return str(name)

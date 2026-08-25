@@ -1,0 +1,122 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d05_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Meet The New Fed Chair Wall Street Is Still Trying To Read",
+    "hook": "The Federal Reserve has a new chair, and this Friday he gives his first major speech since taking the job.",
+    "description": "Kevin Warsh was confirmed by the Senate in May 2026 in the closest vote for a Fed chair in the institution's history, and sworn in on May 22, 2026. He's not new to the Fed: in 2006 he became its youngest-ever governor at 35, sat beside Ben Bernanke through the 2008 financial crisis, then resigned in 2011 over policy disagreements. His first Jackson Hole keynote as chair lands August 28, 2026. Educational content only, not financial advice.",
+    "tags": ["kevin warsh", "federal reserve", "fed chair", "jackson hole", "monetary policy", "wall street"],
+    "hashtags": ["#federalreserve", "#fed", "#wallstreet", "#economy", "#shorts"],
+    "thumbnail_text": "NEW FED CHAIR"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "The Federal Reserve has a new chair, and this Friday he gives his first major speech since taking the job.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["new fed chair", "first speech"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "abstract", "motion": "none",
+        "query": "federal reserve building washington exterior",
+        "visual_intent": "A bold, punchy claim with no single filmable subject — the setup line for the whole story",
+        "broll_keywords": ["federal reserve building exterior", "federal reserve seal marble", "washington government building"],
+        "decision_reason": "hook beat: the claim itself, no natural single shot — motion graphics territory"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "His name is Kevin Warsh. The Senate confirmed him in May twenty twenty-six, by the closest vote for a Fed chair in history.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["kevin warsh confirmation", "senate vote"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "pan_lr",
+        "query": "us capitol building senate washington",
+        "visual_intent": "The U.S. Capitol building exterior, classical architecture, clear daylight",
+        "broll_keywords": ["us capitol building", "senate chamber washington", "capitol dome washington dc"],
+        "decision_reason": "the confirmation vote context"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "He's not new to the Fed. Back in two thousand six, he became its youngest-ever governor, sworn in at just thirty-five.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["youngest fed governor", "2006 appointment"],
+      "visual": {
+        "type": "dataviz", "strategy": "real", "scene_visual_type": "data_viz", "motion": "none",
+        "query": "youngest fed governor age chart",
+        "visual_intent": "A branded hero-number chart showing the age 35 as the record",
+        "broll_keywords": ["fed governor age record graphic", "financial record number screen"],
+        "decision_reason": "the beat states an exact, sourced figure — chart, not stock"
+      },
+      "data": {
+        "kind": "counter",
+        "title": "Youngest Fed Governor Ever",
+        "points": [
+          {"label": "Age At Swearing-In", "value": 35, "emphasis": "positive"}
+        ],
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 0,
+        "source": "Federal Reserve Board of Governors records, 2006",
+        "note": "record still stands"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "He sat beside Ben Bernanke through the two thousand eight financial crisis, then resigned in twenty eleven over policy disagreements.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["2008 financial crisis", "resignation 2011"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "2008 financial crisis wall street newspaper",
+        "visual_intent": "Archival-style footage evoking the 2008 financial crisis, newspapers or a falling stock chart, tense tone",
+        "broll_keywords": ["2008 financial crisis newspaper headlines", "wall street stock crash archival", "financial crisis stock market screen red"],
+        "decision_reason": "the crisis-era credential"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Now he's back, running the Fed his own way, and Friday's speech at Jackson Hole is the first time markets get to size him up.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["jackson hole symposium", "first speech as chair"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "zoom_out",
+        "query": "jackson hole wyoming mountains landscape",
+        "visual_intent": "The Grand Teton mountains near Jackson Hole, Wyoming, wide sweeping landscape shot",
+        "broll_keywords": ["jackson hole wyoming mountains", "grand teton mountains landscape", "wyoming mountain range wide shot"],
+        "decision_reason": "the Jackson Hole setting for the upcoming speech"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Whatever he says Friday will move markets. This is a name worth knowing before it does. Follow for more.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["market impact", "closing"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "new york stock exchange trading floor wide",
+        "visual_intent": "The New York Stock Exchange trading floor, wide establishing shot, energetic light",
+        "broll_keywords": ["stock exchange trading floor wide", "wall street building exterior", "financial district new york skyline"],
+        "decision_reason": "closing scale visual and CTA"
+      }
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "schema_version": "2.0",
+  "brand_id": "k70",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "meta": {
+    "video_id": "vid_nyc_richest_v1",
+    "channel_id": "k70_economy",
+    "niche": "usa_finance",
+    "structure_id": "one_number_story",
+    "title": "Why New York Is the Richest City on Earth",
+    "hook": "Nowhere creates more wealth per square mile",
+    "description": "New York's metro economy produced over $2.6 trillion in 2024 \u2014 more than most countries. The reason is not size. It is density: finance, law, media and advertising stacked into a few square miles.",
+    "tags": [
+      "new york",
+      "richest city",
+      "nyc economy",
+      "new york gdp",
+      "economics explained",
+      "finance",
+      "wall street"
+    ],
+    "hashtags": [
+      "#shorts",
+      "#economics",
+      "#newyork",
+      "#finance"
+    ],
+    "thumbnail_text": "RICHEST CITY ON EARTH"
+  },
+  "scenes": [
+    {
+      "id": "s1",
+      "beat_role": "hook",
+      "duration_sec": 5.5,
+      "narration": "Nowhere else on Earth creates more wealth in a single square mile than New York.",
+      "keywords": [],
+      "visual": {
+        "type": "motion_gfx",
+        "scene_visual_type": "dramatic",
+        "visual_intent": "The claim itself, built on screen in type \u2014 no footage can show wealth per square mile",
+        "broll_keywords": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "Richest per square mile",
+          "y": 0.2
+        }
+      ],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s2",
+      "beat_role": "context",
+      "duration_sec": 5.1,
+      "narration": "Every weekday, millions of workers pour into just a few square miles of Manhattan.",
+      "keywords": [
+        "manhattan commuters"
+      ],
+      "visual": {
+        "type": "broll",
+        "scene_visual_type": "real_footage",
+        "visual_intent": "Real commuters filling Manhattan at street level \u2014 the everyday workforce behind the number",
+        "broll_keywords": [
+          "manhattan commuters morning",
+          "new york office workers street"
+        ]
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "Manhattan",
+          "sub": "Weekday workforce"
+        }
+      ],
+      "transition_in": "fade"
+    },
+    {
+      "id": "s3",
+      "beat_role": "evidence",
+      "duration_sec": 6.7,
+      "narration": "In 2024 the New York metro area alone produced two point six trillion dollars of total economic output.",
+      "keywords": [],
+      "visual": {
+        "type": "dataviz",
+        "scene_visual_type": "data_viz",
+        "visual_intent": "The hero figure, counted up on screen with its source",
+        "broll_keywords": []
+      },
+      "data": {
+        "kind": "counter",
+        "title": "New York metro area output, 2024",
+        "points": [
+          {
+            "label": "New York-Newark-Jersey City metro",
+            "value": 2600000000000,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "$",
+        "decimals": 1,
+        "abbreviate": true,
+        "source": "U.S. Bureau of Economic Analysis, 2024"
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "BEA, 2024",
+          "y": 0.07
+        }
+      ],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s4",
+      "beat_role": "mechanism",
+      "duration_sec": 6.0,
+      "narration": "Density is the reason. Finance, law, media and advertising stacked into a few Manhattan blocks.",
+      "keywords": [],
+      "visual": {
+        "type": "ai_image",
+        "scene_visual_type": "dramatic",
+        "visual_intent": "Cinematic recreation of a Manhattan trading floor at dusk \u2014 the mechanism itself, not a generic skyline",
+        "broll_keywords": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "Density is the mechanism",
+          "y": 0.2
+        }
+      ],
+      "transition_in": "push_up"
+    },
+    {
+      "id": "s5",
+      "beat_role": "evidence",
+      "duration_sec": 6.2,
+      "narration": "The Federal Reserve Bank of New York holds the largest known gold vault anywhere on the planet.",
+      "keywords": [
+        "Federal Reserve Bank of New York"
+      ],
+      "visual": {
+        "type": "broll",
+        "scene_visual_type": "real_footage",
+        "visual_intent": "The institution itself \u2014 official or public-domain imagery of the Federal Reserve Bank of New York",
+        "broll_keywords": []
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "Federal Reserve Bank of New York",
+          "y": 0.07
+        }
+      ],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s6",
+      "beat_role": "evidence",
+      "duration_sec": 6.0,
+      "narration": "Finance alone drives nearly a fifth of that, running well ahead of professional services and technology.",
+      "keywords": [],
+      "visual": {
+        "type": "threejs",
+        "scene_visual_type": "data_viz",
+        "visual_intent": "Industry ranking built in 3D \u2014 which sectors actually carry the economy",
+        "broll_keywords": []
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "Share of New York economic activity",
+        "points": [
+          {
+            "label": "Finance",
+            "value": 17,
+            "emphasis": "primary"
+          },
+          {
+            "label": "Prof. svcs",
+            "value": 15,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Tech",
+            "value": 10,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Health",
+            "value": 8,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Tourism",
+            "value": 5,
+            "emphasis": "normal"
+          }
+        ],
+        "suffix": "%",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 0,
+        "source": "Industry estimates; shares approximate",
+        "note": "Estimated shares of economic activity"
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "Industry estimates",
+          "y": 0.07
+        }
+      ],
+      "transition_in": "cut"
+    },
+    {
+      "id": "s8",
+      "beat_role": "cta",
+      "duration_sec": 5.7,
+      "narration": "Wealth gathers where the biggest decisions get made, and New York simply makes more of them.",
+      "keywords": [],
+      "visual": {
+        "type": "motion_gfx",
+        "scene_visual_type": "dramatic",
+        "visual_intent": "The payoff line, set in type over the branded field",
+        "broll_keywords": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "Decisions concentrate wealth",
+          "y": 0.2
+        }
+      ],
+      "transition_in": "dip_to_black"
+    }
+  ]
+}

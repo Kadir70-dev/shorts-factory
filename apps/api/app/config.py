@@ -9,13 +9,47 @@ exists. No code change to add "usa_finance_v2".
 from __future__ import annotations
 
 import functools
+import os
 from pathlib import Path
 
 import yaml
 from pydantic import AliasChoices, BaseModel, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-ROOT = Path(__file__).resolve().parents[3]      # repo root
+_CONFIG_FILE = Path(__file__).resolve()
+
+# Container fallback root. In the image, `app/` is COPYed to /app/app (see
+# apps/api/Dockerfile), so the source checkout is NOT present and config/ + data/
+# arrive only as Compose bind mounts under /repo.
+_CONTAINER_ROOT = Path("/repo")
+
+
+def _resolve_root() -> Path:
+    """Project root, resolved for the runtime we are actually in.
+
+    Order of precedence:
+      1. PROJECT_ROOT — explicit override, always wins (any runtime).
+      2. Source checkout — <root>/apps/api/app/config.py, detected by walking up
+         and confirming the sibling `apps/` directory exists. This is local WSL /
+         bare-metal dev, where the root is wherever the repo was cloned.
+      3. /repo — the Docker Compose mount root, used when the checkout layout is
+         absent (i.e. inside the image, where config.py lives at /app/app/).
+
+    Never hardcodes a user path and never invents /repo on a local box.
+    """
+    override = os.getenv("PROJECT_ROOT", "").strip()
+    if override:
+        return Path(override).expanduser().resolve()
+
+    if len(_CONFIG_FILE.parents) > 3:
+        candidate = _CONFIG_FILE.parents[3]     # <root>/apps/api/app/config.py
+        if (candidate / "apps").is_dir():       # real source checkout
+            return candidate
+
+    return _CONTAINER_ROOT
+
+
+ROOT = _resolve_root()
 CONFIG_DIR = ROOT / "config"
 DATA_DIR = ROOT / "data"
 
@@ -38,27 +72,11 @@ class Settings(BaseSettings):
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
     openrouter_model: str = "openai/gpt-4o-mini"     # default cheap backup model
 
-    # --- TTS ---
-    elevenlabs_api_key: str = ""
-    openai_api_key: str = ""
-
-    # --- Local TTS fallback stack (FREE, CPU-only) -------------------------- #
-    # Removes the hard ElevenLabs dependency. Cascade: ElevenLabs (if credits) →
-    # Kokoro (primary free local) → Piper (emergency local) → espeak → tone. The
-    # local engines run as isolated subprocesses (scripts/tts_kokoro.py / piper bin)
-    # so the worker stays light and a crash can't take down the API. TWO fixed
-    # documentary voices only: a male dark-history narrator (primary) + a secondary.
-    # Paths default to data/models/{kokoro,piper}; blank = auto-detect there.
+    # --- Local cloned-voice TTS --------------------------------------------- #
+    # Chatterbox -> Apache-2.0 OpenF5 -> the host's fine-tuned Piper model.
+    # Model identity and paths are pinned in config/voice/profile.yaml.
     tts_models_dir: Path = DATA_DIR / "models"
-    # Kokoro (kokoro-onnx). Blank → auto: <tts_models_dir>/kokoro/kokoro-v1.0.onnx.
-    kokoro_model_path: str = ""
-    kokoro_voices_path: str = ""
-    kokoro_voice_primary: str = "am_michael"     # deep American male — dark doc narrator
-    kokoro_voice_secondary: str = "am_adam"      # secondary American male
-    # Piper (self-contained binary). Blank bin → auto: <models>/piper/piper/piper or PATH.
     piper_bin: str = ""
-    piper_voice_primary: str = ""                # blank → <models>/piper/en_US-ryan-high.onnx
-    piper_voice_secondary: str = ""              # blank → <models>/piper/en_US-lessac-medium.onnx
 
     # --- assets ---
     pexels_api_key: str = ""
@@ -250,6 +268,60 @@ class Settings(BaseSettings):
     scene_grounding: bool = False               # force per-sentence exact intent
     narration_to_visual_lock: bool = False      # ban generic/repeat; prefer exact
 
+    # Phase 1 Visual Intelligence comparison. OFF preserves the established
+    # scene_director policy exactly; ON runs the enhanced policy and records a
+    # side-by-side semantic score before the asset resolver sees the result.
+    visual_intelligence_enabled: bool = False
+    # Phase 2 structured semantic storyboard. OFF leaves SceneGraph.storyboard
+    # unset and performs no splitting or extraction work.
+    storyboard_engine_enabled: bool = False
+    # Phase 3 provenance-aware, narration-specific asset routing. OFF preserves
+    # the established b-roll resolver byte-for-byte.
+    multi_source_asset_engine_enabled: bool = False
+    multi_source_asset_min_match: float = 0.58
+    multi_source_asset_priority: str = (
+        "government_public_domain,sec_regulatory,company_ir,wikimedia_commons,"
+        "pexels,pixabay,ai_generation")
+    # Phase 4 deterministic Three.js finance graphics. OFF preserves asset
+    # resolution and rendering exactly.
+    threejs_visual_engine_enabled: bool = False
+    threejs_quality: str = "final"
+    threejs_browser_executable: str = ""
+    threejs_worker_url: str = ""
+    threejs_render_timeout_s: float = 180.0
+    threejs_max_frames: int = 360
+    # Paperima paper-animation integration (pipeline/paperima_engine.py).
+    # Paperima itself is an EXTERNAL local app (github.com/nurimator/paperima,
+    # AGPL-3.0) — never vendored into this repo. `paperima_dist_dir` points at
+    # its own unmodified `npm run build` output; empty/missing means the
+    # engine is unavailable and every caller falls back to the pre-existing
+    # FFmpeg paper animation, exactly like a missing Scribus binary degrades
+    # Paper Craft rather than failing the render.
+    paperima_engine_enabled: bool = False
+    paperima_dist_dir: str = ""
+    paperima_browser_executable: str = ""
+    paperima_render_timeout_s: float = 90.0
+    optimizer_paperima_restart_jobs: int = 12
+    # Phase 5 lightweight branded finance explainers. OFF leaves Phase 1-4
+    # selection and rendering untouched.
+    motion_graphics_engine_enabled: bool = False
+    motion_graphics_quality: str = "final"
+    # Phase 6 storyboard-grounded cinematic generation. Provider priority is a
+    # registry order, not a hardcoded backend choice.
+    ai_broll_engine_enabled: bool = False
+    ai_broll_provider_priority: str = "flux,stable_diffusion,wan"
+    ai_broll_quality: str = "final"
+    ai_broll_timeout_s: float = 1200.0
+    # Phase 7 central visual identity. OFF preserves every existing render path.
+    brand_identity_enabled: bool = False
+    # Scribus-powered Paper Craft (newspapers/reports/dossiers/documents). OFF
+    # preserves every existing chart/motion-gfx/official selection untouched;
+    # ON lets fact-heavy beats already allocated to those channels be rendered
+    # as a real laid-out document instead, within the SAME budget share.
+    papercraft_engine_enabled: bool = False
+    papercraft_binary: str = ""   # explicit Scribus executable path; "" = auto-detect
+    papercraft_timeout_s: float = 60.0
+
     @property
     def strict_visuals(self) -> bool:
         """True when the narration→visual grounding lock is active (any of the
@@ -297,15 +369,55 @@ class Settings(BaseSettings):
     qa_min_free_floor_mb: int = 800              # free RAM must never dip below this
     qa_render_budget_s: float = 900.0            # hard wall-time budget per short
     qa_consistency_min_pct: float = 95.0         # character-consistency floor (when applicable)
+    # OpenMontage-audit gap #3: plan-vs-delivery. A scene whose DELIVERED visual
+    # channel (pipeline/visual_budget.measure) differs from its PLANNED channel
+    # and isn't in the allowed-fallback matrix (pipeline/qa.py:ALLOWED_FALLBACKS)
+    # is a "silent downgrade" — e.g. planned threejs, delivered a text card
+    # because the resolver couldn't supply the real thing. Fails the report
+    # (not just a warning) once the downgrade RATE crosses this floor, since a
+    # handful of honest fallbacks on a 150-beat documentary is normal; a third
+    # of the film silently becoming generic cards is not.
+    qa_max_silent_downgrade_rate: float = 0.10
+    # Phase 8 production gate. Unlike legacy QA_ENABLED observability, this fails
+    # export when any required production check fails.
+    visual_qa_engine_enabled: bool = False
+    visual_qa_min_bitrate_kbps: int = 500
+    visual_qa_max_bitrate_kbps: int = 25000
+    visual_qa_loudness_min_lufs: float = -18.0
+    visual_qa_loudness_max_lufs: float = -11.0
+    visual_qa_max_silence_fraction: float = 0.18
+    # Phase 9 bounded production scheduler. All values are inert while disabled.
+    production_optimizer_enabled: bool = False
+    optimizer_memory_floor_mb: int = 1200
+    optimizer_memory_hard_floor_mb: int = 700
+    optimizer_max_jobs: int = 3
+    optimizer_max_retries: int = 2
+    optimizer_cache_max_gb: float = 20.0
+    optimizer_cache_max_age_days: int = 30
+    optimizer_threejs_restart_jobs: int = 12
+    optimizer_threejs_restart_rss_mb: int = 1400
+    optimizer_backpressure_timeout_s: float = 900.0
 
     # --- infra ---
     redis_url: str = "redis://localhost:6379/0"
     database_url: str = f"sqlite:///{DATA_DIR}/factory.db"
+
+    # --- authentication ---
+    auth_required: bool = True
+    auth_secret_key: str = ""
+    auth_access_token_minutes: int = 30
+    auth_refresh_token_days: int = 14
+    auth_rate_limit_attempts: int = 10
+    auth_rate_limit_window_seconds: int = 60
+    auth_min_password_length: int = 12
     remotion_render_url: str = "http://localhost:3001"   # remotion render service
     data_dir: Path = DATA_DIR
 
     # --- uploads ---
-    youtube_client_secret_path: str = ""
+    # Defaults under the resolved CONFIG_DIR so it follows the runtime root
+    # (checkout locally, /repo in Compose) instead of being pinned to /repo.
+    youtube_client_secret_path: str = str(
+        CONFIG_DIR / "secrets" / "youtube_client_secret.json")
 
 
 class BrandConfig(BaseModel):

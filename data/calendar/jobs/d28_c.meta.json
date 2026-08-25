@@ -1,0 +1,17 @@
+{
+  "id": "d28_c",
+  "day": 28,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "How check-cashing stores profit from the unbanked",
+  "sources": [
+    {"claim": "4.2% of US households (~5.6 million) were unbanked in 2023, lowest since the survey began in 2009", "source": "FDIC 2023 National Survey of Unbanked and Underbanked Households (published Nov 2024)", "url": "https://www.fdic.gov/household-survey", "type": "primary"},
+    {"claim": "Check-cashing and prepaid-card services charge fees for transactions a checking account typically handles free", "source": "General consumer-finance industry knowledge, consistent with CFPB consumer guidance", "url": "", "type": "reputable_secondary"}
+  ],
+  "pronunciation_notes": [{"term": "FDIC", "note": "said as letters, 'F-D-I-C'"}],
+  "quality_scores": {"hook": 9, "clarity": 9, "retention": 8, "fact_confidence": 9, "visual_potential": 7, "us_relevance": 9, "originality": 8, "average": 8.43},
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "d07_c",
+  "day": 7,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "Why store credit cards carry brutal interest rates",
+  "sources": [
+    {
+      "claim": "Retail credit cards average roughly 30%+ APR, versus ~21% average for general-purpose cards",
+      "source": "Bankrate Retail Credit Card Study",
+      "url": "https://www.bankrate.com/credit-cards/news/retail-store-credit-card-survey/",
+      "type": "reputable_secondary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "APR",
+      "note": "said as 'A-P-R'"
+    }
+  ],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

@@ -1,0 +1,123 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d04_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "One Company Invented The Three-Digit Number That Runs Your Financial Life",
+    "hook": "Before 1989, there was no single number lenders used to judge you. Then one company invented one.",
+    "description": "Before the FICO score, lenders each used their own inconsistent methods to judge borrowers. In 1989, the Fair Isaac Corporation launched a single standardized credit scoring model that the major credit bureaus adopted, giving lenders nationwide one common language for risk. That original model is the ancestor of the three-digit score that now shapes loan approvals, interest rates and even some rental applications.",
+    "tags": ["fico score", "credit score", "credit history", "personal finance", "money mechanics", "how credit scores work"],
+    "hashtags": ["#creditscore", "#personalfinance", "#fico", "#money", "#shorts"],
+    "thumbnail_text": "1989: ONE NUMBER"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Before nineteen eighty-nine, there was no single number lenders used to judge you.",
+      "duration_sec": 4.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["before fico", "no standard score"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "abstract", "motion": "none",
+        "query": "stack of paper loan files office",
+        "visual_intent": "A bold claim with no single filmable subject — the setup line for the whole story",
+        "broll_keywords": ["paper loan files stack", "office paperwork desk archival", "loan documents stack"],
+        "decision_reason": "hook beat: the claim itself — motion graphics territory"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Every lender had its own inconsistent method, so the same borrower could look completely different to two different banks.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["inconsistent lending", "pre-standardization"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "none",
+        "query": "loan officer reviewing files desk",
+        "visual_intent": "A loan officer reviewing paper files at a desk, contemplative, soft office light",
+        "broll_keywords": ["loan officer reviewing files", "bank employee desk paperwork", "office review documents"],
+        "decision_reason": "shows the fragmented old process"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "In February nineteen eighty-nine, the Fair Isaac Corporation launched a single standardized score.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["fair isaac corporation", "fico launch 1989"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_out",
+        "query": "three digit number screen credit score",
+        "visual_intent": "A large three-digit number glowing on a dark screen, minimal cinematic render, teal accent",
+        "broll_keywords": ["credit score number screen", "three digit number display", "financial score graphic"],
+        "decision_reason": "the product itself, exact launch date"
+      },
+      "overlays": [{"type": "stat", "text": "February 1989", "y": 0.16}]
+    },
+    {
+      "id": "s4",
+      "narration": "The scale it created still runs from three hundred to eight hundred fifty today, and every major credit bureau adopted it.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["fico score range", "credit bureaus adoption"],
+      "visual": {
+        "type": "dataviz", "strategy": "real", "scene_visual_type": "data_viz", "motion": "none",
+        "query": "credit score scale meter graphic",
+        "visual_intent": "A branded meter/counter graphic showing the FICO score scale topping out at 850",
+        "broll_keywords": ["credit score scale graphic", "score meter dashboard"],
+        "decision_reason": "the beat states the exact scale figure — chart, not stock"
+      },
+      "data": {
+        "kind": "counter",
+        "title": "Highest Possible FICO Score",
+        "points": [
+          {"label": "Max Score", "value": 850, "emphasis": "positive"}
+        ],
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 0,
+        "source": "myFICO — FICO Score history",
+        "note": "scale runs 300-850"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "That original model is the direct ancestor of the score used today, shaping your interest rate, your credit limit, even some rental applications.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["modern score legacy", "rental applications"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "phone credit score app screen check",
+        "visual_intent": "A phone screen showing a credit score check app, close hand-held framing, soft light",
+        "broll_keywords": ["phone credit score app", "checking credit score phone", "credit monitoring app screen"],
+        "decision_reason": "the modern-day reach of the same idea"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "One private company's three-digit number quietly became infrastructure for the entire US credit system. Follow for more.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["credit infrastructure", "closing"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "ken_burns",
+        "query": "city financial district buildings skyline",
+        "visual_intent": "A financial district skyline in clear daylight, wide establishing shot",
+        "broll_keywords": ["financial district skyline", "city bank buildings", "downtown business district"],
+        "decision_reason": "closing scale visual and CTA"
+      }
+    }
+  ]
+}

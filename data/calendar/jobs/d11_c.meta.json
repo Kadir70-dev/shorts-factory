@@ -1,0 +1,35 @@
+{
+  "id": "d11_c",
+  "day": 11,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "How payday loans trap borrowers",
+  "sources": [
+    {
+      "claim": "A $15-per-$100, two-week payday loan fee annualizes to roughly 391% APR; typical payday loan APRs run in the triple digits",
+      "source": "Consumer Financial Protection Bureau \u2014 payday lending data points and APR explainer",
+      "url": "https://www.consumerfinance.gov/data-research/research-reports/cfpb-data-points-payday-lending/",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "CFPB",
+      "note": "said as 'C-F-P-B'"
+    }
+  ],
+  "quality_scores": {
+    "hook": 9,
+    "clarity": 9,
+    "retention": 9,
+    "fact_confidence": 10,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 7,
+    "average": 8.71
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

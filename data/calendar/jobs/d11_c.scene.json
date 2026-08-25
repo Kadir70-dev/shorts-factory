@@ -1,0 +1,205 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d11_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "A $15 Payday Loan Fee Is Actually a 391% Interest Rate",
+    "hook": "A payday loan fee can look like fifteen dollars. Annualized, that's close to 400% interest.",
+    "description": "Payday loans are typically marketed as a flat fee, such as $15 per $100 borrowed, but they're usually due in about two weeks. Annualized the way other credit products are required to disclose, that works out to roughly 391% APR, per Consumer Financial Protection Bureau data \u2014 and borrowers who can't repay often roll the loan over, paying the fee again.",
+    "tags": [
+      "payday loans",
+      "predatory lending",
+      "personal finance",
+      "debt trap",
+      "cfpb"
+    ],
+    "hashtags": [
+      "#paydayloans",
+      "#personalfinance",
+      "#debt",
+      "#shorts"
+    ],
+    "thumbnail_text": "391% APR"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "A payday loan fee can look like fifteen dollars. Annualized, that's close to four hundred percent interest.",
+      "duration_sec": 4.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "payday loan hook"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "payday loan storefront sign",
+        "visual_intent": "A payday loan storefront sign, dusk lighting, slightly gritty urban feel",
+        "broll_keywords": [
+          "payday loan storefront sign",
+          "check cashing store front",
+          "urban lending shop exterior"
+        ],
+        "decision_reason": "hook beat: the deceptive framing"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Payday loans are usually marketed as a flat fee, say, fifteen dollars for every hundred dollars borrowed.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "flat fee framing"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "cash bills counting hand",
+        "visual_intent": "A hand counting cash bills on a counter, close focus, neutral light",
+        "broll_keywords": [
+          "hand counting cash bills",
+          "counting money counter close up",
+          "cash payment hand close"
+        ],
+        "decision_reason": "explains the flat-fee marketing"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "That sounds small. But payday loans are typically due in about two weeks, not a year.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "short repayment window"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "calendar two weeks highlighted",
+        "visual_intent": "A calendar with a two-week span highlighted, clean graphic, close focus",
+        "broll_keywords": [
+          "calendar two week span highlighted",
+          "short date range calendar graphic",
+          "calendar deadline marked"
+        ],
+        "decision_reason": "clarifies the short loan term"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Stretch that same fee out to an annual rate, the way credit cards are required to disclose theirs, and it lands near 391 percent.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "apr annualization"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "percentage number large screen graphic",
+        "visual_intent": "A large glowing percentage figure on a dark financial screen, dramatic",
+        "broll_keywords": [
+          "large percentage number screen",
+          "apr figure display dark",
+          "financial rate graphic dramatic"
+        ],
+        "decision_reason": "CFPB-documented annualized rate example on typical payday loans"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "~391% APR",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "The Consumer Financial Protection Bureau has documented annualized rates in that range on typical payday loans.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "cfpb sourcing"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "government building financial regulator",
+        "visual_intent": "A federal government building facade, daylight, formal wide shot",
+        "broll_keywords": [
+          "federal building facade daylight",
+          "government regulator building",
+          "official washington building wide"
+        ],
+        "decision_reason": "attributes the data to CFPB directly"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Borrowers who can't repay in two weeks often roll the loan over, paying the fee again just to buy more time.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "rollover trap"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "clock hands spinning fast time pressure",
+        "visual_intent": "A close-up clock with hands spinning rapidly, symbolic of mounting time pressure, dramatic light",
+        "broll_keywords": [
+          "clock hands spinning fast",
+          "time pressure clock close up",
+          "ticking clock symbolic dramatic"
+        ],
+        "decision_reason": "explains the rollover debt-trap mechanism, CFPB-documented pattern"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "The fee never changes. It's the repeated rollovers that turn a small loan into a very expensive one.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "empty wallet closed hand",
+        "visual_intent": "A closed hand holding an empty wallet, neutral light, still composition",
+        "broll_keywords": [
+          "closed empty wallet hand",
+          "holding empty wallet still",
+          "financial hardship symbolic close"
+        ],
+        "decision_reason": "closing payoff on the rollover mechanic"
+      }
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d26_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Identity Theft Protection Services Can't Actually Stop Identity Theft",
+    "hook": "Identity-theft monitoring cannot stop your personal information from being stolen. It can only warn you when misuse appears.",
+    "description": "Paid identity theft protection services mostly sell monitoring \u2014 watching your credit reports and accounts for signs of misuse \u2014 which detects fraud after it happens rather than preventing it. A credit freeze, which is free by federal law, blocks new accounts from being opened using your credit report in the first place. Educational content only, not financial advice.",
+    "tags": [
+      "identity theft protection",
+      "credit freeze",
+      "credit monitoring",
+      "personal finance",
+      "fraud protection",
+      "consumer finance"
+    ],
+    "hashtags": [
+      "#identitytheft",
+      "#creditfreeze",
+      "#personalfinance",
+      "#consumerprotection",
+      "#shorts"
+    ],
+    "thumbnail_text": "MONITOR \u2260 PREVENT"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Identity-theft monitoring cannot stop your personal information from being stolen. It can only warn you when misuse appears.",
+      "duration_sec": 7.64,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "identity theft protection"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "laptop screen alert notification security",
+        "visual_intent": "A laptop screen showing a security alert notification, dim room, cool blue light",
+        "broll_keywords": [
+          "laptop security alert screen",
+          "computer notification warning",
+          "cybersecurity alert monitor"
+        ],
+        "decision_reason": "hook beat: the counterintuitive limit"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Monitoring services watch credit files or accounts for changes such as new inquiries, accounts, or exposed credentials.",
+      "duration_sec": 7.64,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "credit monitoring service"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "person checking phone banking app notification",
+        "visual_intent": "A hand holding a phone showing an account alert, home setting, natural light",
+        "broll_keywords": [
+          "phone banking app alert",
+          "checking phone notification hand",
+          "mobile app screen close up"
+        ],
+        "decision_reason": "visualizes the monitoring product"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Those alerts can shorten response time, but they usually arrive after data was exposed or someone attempted a transaction.",
+      "duration_sec": 7.64,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "detection vs prevention"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "abstract",
+        "motion": "none",
+        "query": "clock hands moving time passing",
+        "visual_intent": "A clock face with hands moving, implying the time lag between event and detection",
+        "broll_keywords": [
+          "clock hands moving close up",
+          "time passing clock face",
+          "wall clock ticking"
+        ],
+        "decision_reason": "the core distinction of the video"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "A credit freeze does a different job: it restricts access to your credit file, making many new-account approvals harder.",
+      "duration_sec": 7.64,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "new account fraud"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "hooded figure computer dark room silhouette",
+        "visual_intent": "A silhouetted figure at a computer in a dim room, tense documentary tone",
+        "broll_keywords": [
+          "hacker silhouette computer dark",
+          "person laptop dark room",
+          "cybercrime silhouette scene"
+        ],
+        "decision_reason": "illustrates the threat the monitoring can't preempt"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Federal law makes freezes free to place and lift with each nationwide credit bureau.",
+      "duration_sec": 7.64,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "credit freeze free"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "padlock icon credit report document",
+        "visual_intent": "A padlock graphic over a document representing a locked credit file, clean cinematic render",
+        "broll_keywords": [
+          "padlock document graphic",
+          "locked file icon security",
+          "credit report lock concept"
+        ],
+        "decision_reason": "2018 Economic Growth, Regulatory Relief, and Consumer Protection Act made credit freezes free nationwide (FTC)"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Credit freeze = FREE",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "narration": "Monitoring is an alarm. A freeze is a lock on one door. Neither covers every kind of identity fraud, but they are not interchangeable.",
+      "duration_sec": 7.64,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "monitoring vs freeze summary"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "wallet credit cards on table close up",
+        "visual_intent": "A wallet with cards resting on a table, calm closing light",
+        "broll_keywords": [
+          "wallet credit cards table",
+          "cards close up desk",
+          "personal finance items table"
+        ],
+        "decision_reason": "closing summary and CTA"
+      }
+    }
+  ]
+}

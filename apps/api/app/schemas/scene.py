@@ -14,9 +14,60 @@ Design rules that make this robust:
 from __future__ import annotations
 
 from typing import Literal, Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
-SCHEMA_VERSION = "1.5"
+SCHEMA_VERSION = "2.0"
+
+
+# --------------------------------------------------------------------------- #
+# DataViz — a REAL animated data visualisation for a beat that states a figure.
+#
+# The old pipeline paired numbers with random stock footage and had a Manim
+# template stuffed with placeholder values ([2.1, 2.4, 2.9] regardless of topic),
+# which is worse than no chart: it renders a confident-looking graph of numbers
+# nobody asserted. This model makes the data EXPLICIT and Director-authored, so
+# what animates on screen is exactly what the narration claims and what the
+# `source` overlay attributes.
+#
+# `pipeline/dataviz.py` renders these locally with numpy + ffmpeg — no Manim, no
+# network, no placeholder data. A beat with no usable figure simply gets no
+# chart; it never gets an invented one.
+# --------------------------------------------------------------------------- #
+class DataPoint(BaseModel):
+    label: str                        # "2019", "Costco", "Before" — the x axis
+    value: float
+    # colour role; `auto` lets the renderer infer up/down from the series
+    emphasis: Literal["auto", "normal", "primary", "positive", "negative"] = "auto"
+
+
+class DataViz(BaseModel):
+    kind: Literal[
+        "counter",       # one hero figure, rolled up from zero
+        "bar_compare",   # 2–6 categories side by side
+        "line_trend",    # a time series drawing left-to-right
+        "delta",         # before → after, with the change between them
+        "donut",         # one share of a whole
+        "meter",         # a percentage as a filling bar
+    ] = "counter"
+    title: str = ""                   # what the number measures
+    points: list[DataPoint] = []
+    prefix: str = ""                  # "$"
+    suffix: str = ""                  # "%", " jobs", "bps"
+    decimals: int = Field(1, ge=0, le=3)
+    abbreviate: bool = True           # 1_200_000_000 → "1.2B"
+    highlight: int = -1               # index that carries the emphasis (-1 = last)
+    source: str = ""                  # attribution burned under the chart
+    note: str = ""                    # one short clarifying line
+
+    def valid(self) -> bool:
+        """A chart is only worth rendering when it has real numbers behind it."""
+        if not self.points:
+            return False
+        if self.kind in ("counter", "meter", "donut"):
+            return len(self.points) >= 1
+        if self.kind == "delta":
+            return len(self.points) >= 2
+        return len(self.points) >= 2
 
 
 # --------------------------------------------------------------------------- #
@@ -51,10 +102,17 @@ class Visual(BaseModel):
     #   broll    = real moving footage (Pexels/Pixabay video)
     #   ai_video = short cinematic AI video insert (veo3/seedance)
     #   ai_image = AI-generated documentary still (gets Ken Burns motion) — Phase 5.5
-    #   manim    = locally-rendered chart / motion-graphic
+    #   dataviz  = locally-rendered BRANDED animated chart driven by real numbers
+    #   motion_gfx = kinetic typography over a live branded field
+    #   branded  = a branded plate (the floor, instead of unrelated stock)
+    #   manim    = legacy chart path (only used when manim is installed AND the
+    #              beat carries real data; `dataviz` supersedes it)
     #   image    = real stock photo (gets Ken Burns motion)
-    #   solid    = animated-gradient last resort
-    type: Literal["broll", "ai_video", "ai_image", "manim", "image", "solid"] = "broll"
+    #   solid    = flat-colour last resort
+    type: Literal[
+        "broll", "ai_video", "ai_image", "dataviz", "motion_gfx", "threejs", "branded",
+        "manim", "image", "solid", "papercraft", "paperima"
+    ] = "broll"
     # search query (pexels/pixabay) OR generation prompt (veo3/seedance)
     # OR manim scene name for type=="manim"
     query: str = ""
@@ -75,6 +133,10 @@ class Visual(BaseModel):
     asset_path: Optional[str] = None
     # ken-burns / zoom give static images life; ignored for video
     motion: Literal["none", "ken_burns", "zoom_in", "zoom_out", "pan_lr"] = "ken_burns"
+    # Paper Craft only (type == "papercraft"): the richer camera vocabulary a
+    # laid-out document scene picks from — see pipeline/papercraft/animate.py.
+    # Ignored for every other type; `motion` above still governs everything else.
+    camera_movement: str = "slow_zoom"
     # fallback color if asset resolution fails (never ship a BLACK frame — this is
     # a visible dark slate, not near-black, so a solid safety net still reads on
     # screen and passes the Phase-4 QA non-black gate).
@@ -85,9 +147,23 @@ class Visual(BaseModel):
     # is surfaced in metadata / verification. real = literal footage; ai_image =
     # cinematic documentary still; ai_video = AI motion insert; motion_gfx =
     # chart/animated graphics; hybrid = AI base composited with on-screen graphics.
+    # Ladder order (see pipeline/scene_director.py):
+    #   dataviz    — the beat states a real figure → branded animated chart
+    #   real       — SUBJECT-SPECIFIC footage of the exact thing named
+    #   ai_image   — AI recreation of that exact subject (no camera could have)
+    #   motion_gfx — kinetic typography: the claim itself, moving, on brand
+    #   branded    — a branded plate; the floor, instead of unrelated stock
+    #   hybrid     — a base visual composited with on-screen graphics
+    #   ai_video   — opt-in cinematic motion insert
     strategy: Literal[
-        "real", "ai_image", "ai_video", "motion_gfx", "hybrid"
+        "dataviz", "real", "ai_image", "ai_video", "motion_gfx", "threejs",
+        "branded", "hybrid", "papercraft"
     ] = "real"
+    # Which visual-budget channel the whole-video allocator gave this beat
+    # (pipeline/visual_budget.py). `strategy` says how the resolver fetches;
+    # this says which share of screen time the beat was counted against, and it
+    # is what the delivered visual-breakdown report is built from.
+    budget_channel: str = ""
     # one line on WHY the engine chose this strategy (debug / verification).
     decision_reason: str = ""
     # --- CPU multi-layer cinematic stack (Phase 2/3) -------------------------
@@ -96,6 +172,15 @@ class Visual(BaseModel):
     # FFmpeg Layer Composer stacks the planes (background ▸ subject ▸ fx ▸ ui)
     # with per-layer parallax. Only used when LAYERED_RENDER=1.
     layers: list[Layer] = []
+    # --- Evidence-card papercraft (small tilted clipping over real footage) --
+    # Optional. None (default) → no card, the beat's own `asset_path` fills the
+    # whole frame exactly as before. When set, `render_ffmpeg.py`'s finish pass
+    # composites this SMALL PNG (see papercraft/templates.py's `evidence_card`)
+    # as a rotated, shadowed overlay in the left third of the frame, ON TOP of
+    # whatever real footage/AI still `asset_path` already resolved to — the
+    # card is supporting evidence, never the whole scene.
+    evidence_card_path: Optional[str] = None
+    evidence_card_rotate_deg: float = -6.0
 
 
 # --------------------------------------------------------------------------- #
@@ -122,7 +207,17 @@ class Scene(BaseModel):
     duration_sec: float = Field(3.5, ge=0.8, le=12.0)
     visual: Visual = Visual()
     overlays: list[Overlay] = []
-    transition_in: Literal["cut", "fade", "slide_l", "whip"] = "cut"
+    # Real numbers for THIS beat. When present and valid, the beat renders as a
+    # branded animated chart instead of borrowing a stock clip — the "every
+    # important number gets a custom visualisation" rule.
+    data: Optional[DataViz] = None
+    # The narrative role this beat plays in the chosen story structure (hook,
+    # tension, evidence, reveal, cta, …). Set by the Director from the structure
+    # block; drives the music envelope, sound design and visual strategy.
+    beat_role: str = ""
+    transition_in: Literal[
+        "cut", "fade", "slide_l", "whip", "dip_to_black", "push_up", "crossfade"
+    ] = "cut"
     # b-roll keywords help the router when `visual.query` is too literal
     keywords: list[str] = []
     # FACTUAL RELIABILITY — the Director's honest confidence in this beat's claim:
@@ -203,6 +298,248 @@ class SceneMeta(BaseModel):
     hashtags: list[str] = []         # ["#inflation", "#shorts", ...]
     thumbnail_text: str = ""         # 2-4 word punchy overlay for the thumbnail
 
+    # --- storytelling ------------------------------------------------------- #
+    # Which narrative spine this short was built on (config/story_structures.yaml).
+    # Recorded so the rotation is auditable and a render is reproducible.
+    structure_id: str = ""
+
+    # --- compliance (pipeline/compliance.py) -------------------------------- #
+    # The educational disclaimer burned into the video AND prepended to the
+    # description. Set by the compliance stage.
+    disclaimer: str = ""
+    # Every automatic rewrite the safety pass made, so the artifact explains itself
+    # during review instead of silently changing the script.
+    compliance_notes: list[str] = []
+    # YouTube "Altered or Synthetic Content": true when the finished video contains
+    # realistic AI-generated people, places or events a viewer could mistake for
+    # real. The pipeline cannot tick that box for you — it flags it loudly.
+    requires_ai_disclosure: bool = False
+    ai_disclosure_reasons: list[str] = []
+
+
+# --------------------------------------------------------------------------- #
+# Storyboard — semantic beat metadata produced after Visual Intelligence.
+# It is advisory structured data only: renderers and asset providers remain the
+# owners of pixels and files. `None` means the gated engine did not run.
+# --------------------------------------------------------------------------- #
+class StoryboardScene(BaseModel):
+    scene_id: str
+    source_scene_id: str
+    narration: str
+    duration_estimate: float = Field(ge=0.8, le=12.0)
+    visual_objective: str
+    primary_entity: str = ""
+    secondary_entities: list[str] = []
+    company: str = ""
+    location: str = ""
+    year: Optional[int] = Field(None, ge=1000, le=2200)
+    financial_numbers: list[str] = []
+    emotion: Literal[
+        "urgent", "curious", "tense", "surprising", "confident", "neutral",
+        "hopeful", "cautionary",
+    ] = "neutral"
+    recommended_visual_type: Literal[
+        "dataviz", "real", "ai_image", "ai_video", "motion_gfx", "threejs", "branded",
+        "hybrid",
+    ]
+    recommended_camera_movement: Literal[
+        "none", "ken_burns", "zoom_in", "zoom_out", "pan_lr",
+    ] = "ken_burns"
+    motion_graphics_needed: bool = False
+    threejs_candidate: bool = False
+    ai_broll_candidate: bool = False
+    asset_priority: list[Literal[
+        "exact_footage", "licensed_image", "local_graphics", "ai_recreation",
+        "branded_fallback",
+    ]]
+    transition: Literal[
+        "cut", "fade", "slide_l", "whip", "dip_to_black", "push_up", "crossfade",
+    ] = "cut"
+    overlay_text: list[str] = []
+    visual_confidence_score: float = Field(ge=0.0, le=1.0)
+
+    @model_validator(mode="after")
+    def validate_required_content(self):
+        if not self.scene_id.strip() or not self.source_scene_id.strip():
+            raise ValueError("storyboard scene ids cannot be blank")
+        if not self.narration.strip():
+            raise ValueError("storyboard narration cannot be blank")
+        if not self.visual_objective.strip():
+            raise ValueError("storyboard visual objective cannot be blank")
+        if not self.asset_priority:
+            raise ValueError("storyboard asset_priority cannot be empty")
+        if len(self.asset_priority) != len(set(self.asset_priority)):
+            raise ValueError("storyboard asset_priority must not contain duplicates")
+        return self
+
+
+class StoryboardData(BaseModel):
+    version: str = "1.0"
+    scenes: list[StoryboardScene]
+
+    @model_validator(mode="after")
+    def validate_scene_ids(self):
+        ids = [scene.scene_id for scene in self.scenes]
+        if not ids:
+            raise ValueError("storyboard must contain at least one semantic beat")
+        if len(ids) != len(set(ids)):
+            raise ValueError("storyboard scene ids must be unique")
+        return self
+
+
+class AssetCandidate(BaseModel):
+    """Auditable asset considered for one semantic storyboard beat."""
+    source_url: str
+    provider_institution: str
+    asset_type: Literal["video", "image", "document", "ai_request"]
+    license: str
+    commercial_use_status: Literal["allowed", "prohibited", "unclear"]
+    attribution_requirement: str = ""
+    retrieval_date: str
+    scene_id: str
+    local_cache_path: Optional[str] = None
+    relevance_score: float = Field(ge=0.0, le=1.0)
+    confidence: float = Field(ge=0.0, le=1.0)
+    synthetic_status: Literal["no", "yes", "requested"] = "no"
+    subject_specificity: float = Field(0.5, ge=0.0, le=1.0)
+    visual_quality: float = Field(0.5, ge=0.0, le=1.0)
+    originality: float = Field(0.5, ge=0.0, le=1.0)
+    mobile_readability: float = Field(0.5, ge=0.0, le=1.0)
+
+
+class AssetResolution(BaseModel):
+    scene_id: str
+    query: str
+    status: Literal["resolved", "ai_requested", "manual_review"]
+    selected_source_url: Optional[str] = None
+    candidates: list[AssetCandidate] = []
+    legacy_query: str = ""
+    comparison: str = ""
+
+
+class ThreeJSRenderProvenance(BaseModel):
+    scene_id: str
+    storyboard_scene_id: str
+    template: Literal[
+        "number_counter", "comparison_towers", "share_ownership",
+        "dividend_cashflow", "timeline_flythrough", "compound_growth",
+        "globe_flight",
+    ]
+    template_version: str
+    status: Literal["rendered", "cache_hit", "unresolved"]
+    render_path: Optional[str] = None
+    cache_key: str
+    seed: int
+    fps: Literal[30, 60]
+    width: int
+    height: int
+    quality: Literal["preview", "final"]
+    brand_id: str
+    brand_fingerprint: str
+    render_ms: float = Field(ge=0)
+    peak_rss_mb: float = Field(ge=0)
+    error: str = ""
+    legacy_decision: str = ""
+
+
+class MotionGraphicsRenderProvenance(BaseModel):
+    scene_id: str
+    storyboard_scene_id: str
+    template: Literal[
+        "stat_card", "bar_chart_comparison", "percentage_split",
+        "timeline_events", "before_after", "revenue_profit_waterfall",
+        "price_inflation", "document_highlight", "quote_card",
+        "company_ecosystem",
+    ]
+    template_version: str
+    status: Literal["rendered", "cache_hit", "unresolved"]
+    render_path: Optional[str] = None
+    cache_key: str
+    seed: int
+    fps: int
+    width: int
+    height: int
+    quality: Literal["preview", "final"]
+    brand_id: str
+    brand_fingerprint: str
+    render_ms: float = Field(ge=0)
+    peak_rss_mb: float = Field(ge=0)
+    error: str = ""
+    existing_decision: str = ""
+    clarity_reason: str = ""
+
+
+class AICinematicSpec(BaseModel):
+    cinematic_prompt: str
+    negative_prompt: str
+    camera_angle: str
+    focal_length: str
+    lighting: str
+    color_palette: list[str]
+    composition: str
+    movement: str
+    mood: str
+    realism_level: Literal["photorealistic", "stylized_documentary"]
+    continuity_seed: int
+    brand_style: str
+    duration: float = Field(gt=0, le=12)
+    aspect_ratio: Literal["9:16"] = "9:16"
+
+
+class AIBrollRenderProvenance(BaseModel):
+    scene_id: str
+    storyboard_scene_id: str
+    status: Literal["rendered", "cache_hit", "unresolved", "rejected"]
+    provider: str
+    model: str
+    asset_type: Literal["image", "video"]
+    synthetic: bool = True
+    render_path: Optional[str] = None
+    cache_key: str
+    prompt_spec: AICinematicSpec
+    quality: Literal["preview", "final"]
+    prompt_generation_ms: float = Field(ge=0)
+    provider_dispatch_ms: float = Field(ge=0)
+    peak_rss_mb: float = Field(ge=0)
+    error: str = ""
+    selection_reason: str = ""
+
+
+class PaperimaRenderProvenance(BaseModel):
+    """One call into the external local Paperima app (github.com/nurimator/
+    paperima, AGPL-3.0, run unmodified as a browser-automated subprocess —
+    see pipeline/paperima_engine.py). Mirrors ThreeJSRenderProvenance's shape
+    so the plan-vs-delivery QA gate and the visual-budget breakdown treat
+    every engine's receipt the same way."""
+    scene_id: str
+    source_image: str
+    animation_type: Literal["reveal", "conceal", "dynamic", "wobble", "static"]
+    status: Literal["rendered", "cache_hit", "unresolved", "unavailable"]
+    render_path: Optional[str] = None
+    cache_key: str
+    fps: int
+    width: int
+    height: int
+    duration_sec: float = Field(ge=0)
+    render_ms: float = Field(ge=0)
+    downloaded_bytes: int = 0
+    error: str = ""
+    # True when Paperima was skipped/unavailable and the pre-existing FFmpeg
+    # paper-animation fallback produced `render_path` instead.
+    used_fallback: bool = False
+
+
+class BrandIdentityProvenance(BaseModel):
+    brand_id: str
+    brand_fingerprint: str
+    manager_version: str
+    enabled: bool = True
+    modules: list[str] = []
+    palette: dict[str, str] = {}
+    fonts: dict[str, str] = {}
+    safe_margins: dict[str, float] = {}
+    consistency_checks: dict[str, bool] = {}
+
 
 class SceneGraph(BaseModel):
     """Complete, self-contained render package. Remotion's only input."""
@@ -217,6 +554,30 @@ class SceneGraph(BaseModel):
     audio: AudioTrack = AudioTrack()
     captions: list[Caption] = []      # empty until captioning stage
     sfx: list[SfxCue] = []            # empty until the sound-design stage
+    # Optional Phase 2 output. Disabled production graphs keep this as None.
+    storyboard: Optional[StoryboardData] = None
+    # Phase 3 output; empty when the feature gate is disabled.
+    asset_provenance: list[AssetResolution] = []
+    # Phase 4 output; empty when its feature gate is disabled.
+    threejs_provenance: list[ThreeJSRenderProvenance] = []
+    # Phase 5 output; empty when its feature gate is disabled.
+    motion_graphics_provenance: list[MotionGraphicsRenderProvenance] = []
+    # Phase 6 output; empty when its feature gate is disabled.
+    ai_broll_provenance: list[AIBrollRenderProvenance] = []
+    # Paperima paper-animation integration; empty unless a scene actually
+    # used it (see pipeline/paperima_engine.py — invoked sparingly, only for
+    # beats whose visual strategy calls for physical document motion).
+    paperima_provenance: list[PaperimaRenderProvenance] = []
+    # Phase 7 central brand receipt; absent when the feature gate is disabled.
+    brand_identity_provenance: Optional[BrandIdentityProvenance] = None
+
+    # The per-video VARIETY PLAN (pipeline/variety.py): which caption animation,
+    # transition palette, motion style, colour grade and CTA shape this short
+    # drew. Persisted so a render is reproducible and so the anti-repeat ledger
+    # can be audited against what actually shipped.
+    variety: dict[str, str] = {}
+    # Brand the short was rendered with (config/brand/<id>.yaml).
+    brand_id: str = "k70"
 
     @property
     def total_duration_sec(self) -> float:

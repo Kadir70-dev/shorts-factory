@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+   <name>Add Skeleton (Simple)</name>
+   <name xml:lang="ar">اضافة هيكل عظمي(بسيط)</name>
+   <name xml:lang="bs">Prikaži skelet (jednostavno)</name>
+   <name xml:lang="ca@valencia">Afig un esquelet (simple)</name>
+   <name xml:lang="cs">Přidat kostru (základní)</name>
+   <name xml:lang="da">Tilføj skelet (forenklet)</name>
+   <name xml:lang="de">Skelett hinzufügen (einfach)</name>
+   <name xml:lang="es">Añadir Esqueleto (Simple)</name>
+   <name xml:lang="eu">Gehitu hezurdura (sinplea)</name>
+   <name xml:lang="fr">Ajouter une Ossature (Simple)</name>
+   <name xml:lang="it">Aggiungi Scheletro (Semplice)</name>
+   <name xml:lang="ja_JP">スケルトンを追加 (シンプル)</name>
+   <name xml:lang="ko_KR">스켈레톤 추가 (심플)</name>
+   <name xml:lang="lt">Įdėti skeletą (paprasta)</name>
+   <name xml:lang="nl">Toevoegen Skelet (Simpel)</name>
+   <name xml:lang="pl_PL">Dodaj szkielet (prosty)</name>
+   <name xml:lang="pt">Adicionar Esqueleto (Simples)</name>
+   <name xml:lang="pt_BR">Adicionar Esqueleto (Simples)</name>
+   <name xml:lang="ru">Добавить скелет (Простой)</name>
+   <name xml:lang="sk_SK">Vložiť kostru (Jednoduchú)</name>
+   <name xml:lang="sl">Dodaj Ogrodje (Preprosto)</name>
+   <name xml:lang="sr_RS">Додај скелет (једноставно)</name>
+   <name xml:lang="sv_SE">Lägg till skelett (enkelt)</name>
+   <name xml:lang="tr">İskelet Ekle (Basit)</name>
+   <name xml:lang="zh_CN">添加（简单）骨架</name>
+   <name xml:lang="zh_TW">增加骨架 (簡單)</name>
+   <exec>add-skeleton-simple.py</exec>
+</plugin>

@@ -1,0 +1,30 @@
+{
+  "id": "d23_b",
+  "day": 23,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "Why the S&P 500 is market-cap weighted",
+  "sources": [
+    {
+      "claim": "The S&P 500 is weighted by float-adjusted market capitalization, so larger constituents have greater index impact",
+      "source": "S&P U.S. Indices Methodology",
+      "url": "https://www.spglobal.com/spdji/en/methodology/article/sp-us-indices-methodology/",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

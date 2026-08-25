@@ -1,0 +1,35 @@
+{
+  "id": "d08_b",
+  "day": 8,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "How short selling works and its unique risk",
+  "sources": [
+    {
+      "claim": "Short-selling mechanics and unlimited-loss asymmetry vs capped long-position loss",
+      "source": "SEC Investor.gov short sale investor bulletin",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/short-sales",
+      "type": "primary"
+    },
+    {
+      "claim": "GameStop's January 2021 short squeeze caused large losses for funds shorting the stock (no specific dollar figure stated in script)",
+      "source": "Widely reported financial press coverage of the Jan 2021 GameStop short squeeze",
+      "type": "reputable_secondary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 9,
+    "clarity": 9,
+    "retention": 9,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 8,
+    "originality": 7,
+    "average": 8.43
+  },
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

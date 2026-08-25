@@ -1,0 +1,235 @@
+[
+  {
+    "scene_id": "s0",
+    "vis": "voxel_human_clip",
+    "scene": "apartment",
+    "role": "john",
+    "anim": "idle",
+    "rotation_z_deg": -15
+  },
+  {
+    "scene_id": "s1",
+    "vis": "stock",
+    "search_terms": [
+      "american city skyline morning",
+      "downtown financial district"
+    ]
+  },
+  {
+    "scene_id": "s2",
+    "vis": "voxel_human_still",
+    "scene": "apartment",
+    "role": "john",
+    "anim": "idle",
+    "rotation_z_deg": -20
+  },
+  {
+    "scene_id": "s3",
+    "vis": "stock",
+    "search_terms": [
+      "person paying bills at home",
+      "commuters walking city street"
+    ]
+  },
+  {
+    "scene_id": "s4",
+    "vis": "voxel_human_still",
+    "scene": "apartment",
+    "role": "john",
+    "anim": "idle",
+    "rotation_z_deg": 15
+  },
+  {
+    "scene_id": "s5",
+    "vis": "chart"
+  },
+  {
+    "scene_id": "s6",
+    "vis": "voxel_story",
+    "object_type": "bank"
+  },
+  {
+    "scene_id": "s7",
+    "vis": "voxel_human_clip",
+    "scene": "apartment",
+    "role": "john",
+    "anim": "point",
+    "rotation_z_deg": 0
+  },
+  {
+    "scene_id": "s8",
+    "vis": "voxel_human_clip",
+    "scene": "apartment",
+    "role": "john",
+    "anim": "point",
+    "rotation_z_deg": -10
+  },
+  {
+    "scene_id": "s9",
+    "vis": "voxel_story",
+    "object_type": "dollar"
+  },
+  {
+    "scene_id": "s10",
+    "vis": "stock",
+    "search_terms": [
+      "time lapse city calendar days passing",
+      "person working at desk time lapse"
+    ]
+  },
+  {
+    "scene_id": "s11",
+    "vis": "chart"
+  },
+  {
+    "scene_id": "s12",
+    "vis": "voxel_human_still",
+    "scene": "apartment",
+    "role": "sarah",
+    "anim": "idle",
+    "rotation_z_deg": -20
+  },
+  {
+    "scene_id": "s13",
+    "vis": "stock",
+    "search_terms": [
+      "family at home budgeting",
+      "parent and child kitchen table"
+    ]
+  },
+  {
+    "scene_id": "s14",
+    "vis": "voxel_human_clip",
+    "scene": "office",
+    "roles": [
+      {
+        "role": "john",
+        "anim": "idle",
+        "location": [
+          -0.55,
+          -0.6,
+          0
+        ],
+        "rotation_z_deg": 10
+      },
+      {
+        "role": "banker",
+        "anim": "point",
+        "location": [
+          0.5,
+          1.5,
+          0
+        ],
+        "rotation_z_deg": 200
+      }
+    ]
+  },
+  {
+    "scene_id": "s15",
+    "vis": "voxel_human_still",
+    "scene": "office",
+    "roles": [
+      {
+        "role": "john",
+        "anim": "idle",
+        "location": [
+          -0.55,
+          -0.6,
+          0
+        ],
+        "rotation_z_deg": 10
+      },
+      {
+        "role": "banker",
+        "anim": "idle",
+        "location": [
+          0.5,
+          1.5,
+          0
+        ],
+        "rotation_z_deg": 200
+      }
+    ]
+  },
+  {
+    "scene_id": "s16",
+    "vis": "chart"
+  },
+  {
+    "scene_id": "s17",
+    "vis": "procedural_city"
+  },
+  {
+    "scene_id": "s18",
+    "vis": "stock",
+    "search_terms": [
+      "stock market trading floor",
+      "business district people walking"
+    ]
+  },
+  {
+    "scene_id": "s19",
+    "vis": "voxel_human_still",
+    "scene": "office",
+    "role": "investor",
+    "anim": "idle",
+    "rotation_z_deg": -15
+  },
+  {
+    "scene_id": "s20",
+    "vis": "voxel_human_clip",
+    "scene": "office",
+    "role": "investor",
+    "anim": "point",
+    "rotation_z_deg": -10
+  },
+  {
+    "scene_id": "s21",
+    "vis": "chart"
+  },
+  {
+    "scene_id": "s22",
+    "vis": "voxel_human_clip",
+    "scene": "office",
+    "role": "investor",
+    "anim": "point",
+    "rotation_z_deg": 0
+  },
+  {
+    "scene_id": "s23",
+    "vis": "voxel_story",
+    "object_type": "bank"
+  },
+  {
+    "scene_id": "s24",
+    "vis": "stock",
+    "search_terms": [
+      "economy business finance abstract",
+      "city financial district evening"
+    ]
+  },
+  {
+    "scene_id": "s25",
+    "vis": "voxel_human_still",
+    "scene": "apartment",
+    "role": "john",
+    "anim": "idle",
+    "rotation_z_deg": 15
+  },
+  {
+    "scene_id": "s26",
+    "vis": "voxel_human_clip",
+    "scene": "house",
+    "role": "john",
+    "anim": "idle",
+    "rotation_z_deg": -25
+  },
+  {
+    "scene_id": "s27",
+    "vis": "stock",
+    "search_terms": [
+      "sunrise over american suburb",
+      "family in front of home"
+    ]
+  }
+]

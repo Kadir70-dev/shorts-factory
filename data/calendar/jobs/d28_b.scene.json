@@ -1,0 +1,185 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d28_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "A Company Can Report Record Profits And The Stock Still Crashes",
+    "hook": "A company can beat last year's profit and still watch its stock fall because the market was expecting even more.",
+    "description": "Stock prices react to results versus expectations, not results alone \u2014 expectations are already baked into a stock's price before news is officially announced, a phenomenon known as 'priced in.' That's why genuinely good results can still send a stock down, and why 'bad' news can sometimes send it up. Educational content only, not financial advice.",
+    "tags": [
+      "stock market",
+      "priced in",
+      "investing education",
+      "market psychology",
+      "how stocks move",
+      "earnings reports",
+      "wall street explained"
+    ],
+    "hashtags": [
+      "#stockmarket",
+      "#investing",
+      "#wallstreet",
+      "#finance",
+      "#shorts"
+    ],
+    "thumbnail_text": "\"PRICED IN\""
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "A company can beat last year's profit and still watch its stock fall because the market was expecting even more.",
+      "duration_sec": 7.85,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "priced in",
+        "stock reaction"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "red stock chart falling screen close up",
+        "visual_intent": "A red declining stock chart on a screen, tense close framing",
+        "broll_keywords": [
+          "red stock chart falling",
+          "declining chart screen close",
+          "stock price drop graphic"
+        ],
+        "decision_reason": "hook beat: the counterintuitive market reaction"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "\"PRICED IN\"",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "A stock price reflects what buyers and sellers currently believe about future cash flows, risk, and growth.",
+      "duration_sec": 7.85,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "expectations vs results"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "financial analyst screen data numbers office",
+        "visual_intent": "An analyst's desk with multiple financial data screens, focused working atmosphere",
+        "broll_keywords": [
+          "financial analyst desk screens",
+          "trading desk multiple monitors",
+          "market data screens office"
+        ],
+        "decision_reason": "core mechanism: efficient-market expectation pricing, standard finance concept"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Before an announcement, forecasts and public information already influence those beliefs and therefore the trading price.",
+      "duration_sec": 7.85,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "earnings miss expectations"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "bar chart comparison two bars screen",
+        "visual_intent": "Two comparison bars on a dark chart, one taller labeled expectation, animated cinematic render",
+        "broll_keywords": [
+          "bar chart comparison screen",
+          "data comparison graphic dark",
+          "expectation vs actual chart"
+        ],
+        "decision_reason": "illustrates the expectation-vs-actual gap driving price"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "When the result arrives, the surprise matters: good news below expectations can disappoint, while bad news above expectations can bring relief.",
+      "duration_sec": 7.85,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "analyst estimates"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "zoom_in",
+        "query": "trading floor screens numbers busy",
+        "visual_intent": "A busy trading floor with overhead data screens, dynamic energetic framing",
+        "broll_keywords": [
+          "trading floor busy screens",
+          "financial exchange numbers overhead",
+          "market data board wide"
+        ],
+        "decision_reason": "grounds the analyst-estimate obsession in a real trading environment"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "That is what traders mean by priced in. The price had already moved in anticipation of a particular outcome.",
+      "duration_sec": 7.85,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "stocks rise on bad news"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "green stock chart rising screen",
+        "visual_intent": "A green rising stock chart line, upward energetic motion, contrasting the earlier red chart",
+        "broll_keywords": [
+          "green stock chart rising",
+          "rising chart line screen",
+          "stock price gain graphic"
+        ],
+        "decision_reason": "the inverse case, completing the mechanism"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Markets do not grade a result only against the past. They reprice the gap between what happened and what investors expected.",
+      "duration_sec": 7.85,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "market grading expectations summary"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_out",
+        "query": "financial district skyline dusk calm",
+        "visual_intent": "A financial district skyline at dusk, calm reflective closing shot",
+        "broll_keywords": [
+          "financial district skyline dusk",
+          "downtown skyline evening",
+          "city skyline calm shot"
+        ],
+        "decision_reason": "closing takeaway and CTA"
+      }
+    }
+  ]
+}

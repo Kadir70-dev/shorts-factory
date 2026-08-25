@@ -1,0 +1,213 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d25_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "A HELOC Isn't a Loan. It's a Credit Card Secured By Your House.",
+    "hook": "A HELOC works more like a credit line than a one-time loan, and your house secures every dollar drawn.",
+    "description": "A home equity line of credit (HELOC) and a second mortgage both let you borrow against equity, but they work differently: a second mortgage is one fixed lump sum, a HELOC is a revolving credit line you can draw and repay repeatedly. Both use your home as collateral, which means both carry foreclosure risk if payments are missed. Educational content only, not financial advice.",
+    "tags": [
+      "heloc",
+      "second mortgage",
+      "home equity",
+      "home equity line of credit",
+      "mortgage explained",
+      "personal finance",
+      "how loans work"
+    ],
+    "hashtags": [
+      "#heloc",
+      "#homeequity",
+      "#mortgage",
+      "#personalfinance",
+      "#shorts"
+    ],
+    "thumbnail_text": "HOUSE = COLLATERAL"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "A HELOC works more like a credit line than a one-time loan, and your house secures every dollar drawn.",
+      "duration_sec": 6.91,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "heloc",
+        "home equity"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "suburban house exterior daytime",
+        "visual_intent": "A modest suburban house exterior, warm afternoon light, slow push in",
+        "broll_keywords": [
+          "suburban house exterior",
+          "home front door daylight",
+          "residential neighborhood house"
+        ],
+        "decision_reason": "hook beat: the house itself as collateral"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "HELOC = credit line",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "Both a home-equity loan and a HELOC let homeowners borrow against equity beyond the first mortgage balance.",
+      "duration_sec": 6.91,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "home equity",
+        "second mortgage"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "home appraisal documents keys table",
+        "visual_intent": "Home appraisal papers and house keys laid on a table, natural window light",
+        "broll_keywords": [
+          "home appraisal documents",
+          "house keys table close up",
+          "mortgage paperwork desk"
+        ],
+        "decision_reason": "establishes the shared concept: borrowing against equity"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "A home-equity loan usually delivers one lump sum with a set repayment schedule.",
+      "duration_sec": 6.91,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "second mortgage lump sum",
+        "fixed rate loan"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "single stack of cash on table",
+        "visual_intent": "One neat stack of cash placed once on a table, single deliberate motion, clean light",
+        "broll_keywords": [
+          "cash stack single pile",
+          "money on table close up",
+          "lump sum cash desk"
+        ],
+        "decision_reason": "visualizes the one-time lump-sum structure"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "A HELOC provides a reusable line during a draw period: borrow, repay, and potentially borrow again.",
+      "duration_sec": 6.91,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "heloc draw period",
+        "revolving credit line"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "credit card swipe checkout counter",
+        "visual_intent": "A card being swiped repeatedly at a counter, implying repeated draw-and-repay use",
+        "broll_keywords": [
+          "credit card swipe machine",
+          "card payment counter close up",
+          "revolving credit concept"
+        ],
+        "decision_reason": "visual analogy to the credit-card-like revolving structure"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Many HELOCs have variable rates, so required payments can change as benchmark rates move.",
+      "duration_sec": 6.91,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "variable rate risk"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "interest rate percentage sign rising chart",
+        "visual_intent": "A percentage figure ticking upward on a dark financial display",
+        "broll_keywords": [
+          "interest rate rising chart",
+          "percentage number screen",
+          "financial rate display"
+        ],
+        "decision_reason": "the variable-rate risk callout"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The flexibility does not reduce the collateral risk. Failure to repay can lead to foreclosure because the home secures the account.",
+      "duration_sec": 6.91,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "foreclosure risk",
+        "secured loan"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "house for sale foreclosure sign yard",
+        "visual_intent": "A for-sale sign on a house lawn, overcast light, sober documentary tone",
+        "broll_keywords": [
+          "house for sale sign yard",
+          "foreclosure sign lawn",
+          "real estate sign house"
+        ],
+        "decision_reason": "the shared collateral risk, plainly stated"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "One delivers cash once; the other keeps a credit line open. Both convert home equity into debt.",
+      "duration_sec": 6.91,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "heloc vs second mortgage summary"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "house keys hand close up",
+        "visual_intent": "House keys resting in an open palm, warm closing light, calm final shot",
+        "broll_keywords": [
+          "house keys in hand",
+          "home keys close up palm",
+          "keys on table warm light"
+        ],
+        "decision_reason": "closing summary shot and CTA"
+      }
+    }
+  ]
+}

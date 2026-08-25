@@ -1,0 +1,125 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d25_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "The Fed Doesn't Print Money The Way You Think",
+    "hook": "The Fed's balance sheet went from $4T to almost $9T.",
+    "description": "Between 2020 and 2022 the Federal Reserve's balance sheet grew from about $4 trillion to nearly $9 trillion through quantitative easing — buying huge amounts of government and mortgage bonds to push long-term interest rates down. No cash gets physically printed; new bank reserves are created electronically to buy debt. Educational content only, not financial advice.",
+    "tags": ["federal reserve", "quantitative easing", "interest rates", "fed balance sheet", "monetary policy", "how the fed works", "economics explained", "inflation"],
+    "hashtags": ["#federalreserve", "#economics", "#investing", "#finance", "#shorts"],
+    "thumbnail_text": "$4T → $9T"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Between twenty twenty and twenty twenty-two, the Federal Reserve's balance sheet grew from about four trillion dollars to nearly nine trillion.",
+      "duration_sec": 4.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["federal reserve balance sheet", "quantitative easing"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_in",
+        "query": "federal reserve building washington dc exterior",
+        "visual_intent": "The Federal Reserve headquarters building in Washington DC, low angle, overcast cinematic light",
+        "broll_keywords": ["federal reserve building exterior", "washington dc government building", "central bank building marble"],
+        "decision_reason": "hook beat: the institution itself; balance sheet figures from Federal Reserve H.4.1 data via Congressional Research Service"
+      },
+      "overlays": [{"type": "stat", "text": "$4T → $9T", "y": 0.18}]
+    },
+    {
+      "id": "s2",
+      "narration": "That's not the Treasury printing cash. It's something else, called quantitative easing.",
+      "duration_sec": 3.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["quantitative easing definition"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "dollar bills printing press close up",
+        "visual_intent": "Close macro of dollar bills, then a hard visual contrast implying this is NOT what's happening, cool desaturated grade",
+        "broll_keywords": ["dollar bills close up macro", "us currency printing press", "cash stack studio light"],
+        "decision_reason": "the curiosity-gap correction: it's not literal printing"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "The Fed creates new bank reserves electronically and uses them to buy massive amounts of government and mortgage bonds.",
+      "duration_sec": 5.4,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["bank reserves", "treasury bonds purchase"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "financial data screen bond market numbers",
+        "visual_intent": "Glowing financial data terminal with bond ticker numbers scrolling, dark blue cinematic tone",
+        "broll_keywords": ["bond market data screen", "financial trading terminal numbers", "treasury bonds document stack"],
+        "decision_reason": "mechanics of QE per Federal Reserve's own policy tools description"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Buying that much debt pushes bond prices up and their yields down, so long-term interest rates fall with them.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["bond yields", "long-term interest rates"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_in",
+        "query": "chart line falling interest rate graph screen",
+        "visual_intent": "A clean animated line trending downward on a dark chart, teal glow, minimal cinematic render",
+        "broll_keywords": ["falling chart line graph", "interest rate chart screen", "financial graph declining"],
+        "decision_reason": "the causal mechanism: bond buying to yield decline"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "That's why mortgages, business loans, and car loans get cheaper across the whole economy, not just at the Fed.",
+      "duration_sec": 5.4,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["mortgage rates", "borrowing costs"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "none",
+        "query": "family signing mortgage documents home",
+        "visual_intent": "A hand signing paperwork on a kitchen table, warm domestic light, shallow focus",
+        "broll_keywords": ["signing mortgage paperwork", "family kitchen table documents", "loan application signing hand"],
+        "decision_reason": "the real-world transmission of the policy to households"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "It's also why the balance sheet has to shrink again later, the emergency lever gets reversed once the crisis passes.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["quantitative tightening", "balance sheet runoff"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_out",
+        "query": "financial chart bars shrinking screen dark",
+        "visual_intent": "Bar chart columns shrinking down on a dark display, teal and amber grade",
+        "broll_keywords": ["shrinking bar chart data", "financial chart decreasing screen", "economic data monitor dark"],
+        "decision_reason": "balance sheet reduced from $8.9T (2022) toward $6.5T (2025) per Federal Reserve data"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "The Fed doesn't print money to hand out. It creates it to buy debt, so borrowing gets cheaper for everyone. Follow for more.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["monetary policy summary"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "federal reserve seal emblem close up",
+        "visual_intent": "Close shot of the Federal Reserve seal or currency detail, warm gold rim light, authoritative close",
+        "broll_keywords": ["federal reserve seal emblem", "us currency detail macro", "central bank symbol close up"],
+        "decision_reason": "authority close and CTA"
+      }
+    }
+  ]
+}

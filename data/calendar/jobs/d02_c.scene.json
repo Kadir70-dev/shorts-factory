@@ -1,0 +1,109 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d02_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Your First Mortgage Payment Barely Touches The Loan. Here's Why.",
+    "hook": "In the first years of a 30-year mortgage, most of your payment isn't paying down the loan at all.",
+    "description": "Mortgages use amortization schedules that front-load interest: in the early years, the majority of each fixed payment covers interest on the full remaining balance, with only a small slice reducing principal. Over time that ratio flips, and later payments knock down principal much faster. It's a structural feature of how the loan is repaid, not a hidden fee.",
+    "tags": ["mortgage", "amortization", "home loans", "personal finance", "money mechanics", "how mortgages work"],
+    "hashtags": ["#mortgage", "#personalfinance", "#homeownership", "#money", "#shorts"],
+    "thumbnail_text": "MOSTLY INTEREST, YEAR 1"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "In the first years of a thirty-year mortgage, most of your payment isn't paying down the loan at all.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["mortgage myth", "amortization"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "house keys mortgage document signing",
+        "visual_intent": "House keys resting on top of a mortgage document on a desk, warm light, shallow focus",
+        "broll_keywords": ["house keys mortgage document", "home loan paperwork desk", "signing mortgage papers"],
+        "decision_reason": "hook beat: the document, hard cut"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "It's mostly going toward interest, on the full amount you still owe.",
+      "duration_sec": 4.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["interest on balance", "loan structure"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "none",
+        "query": "calculator numbers financial planning desk",
+        "visual_intent": "A calculator and mortgage papers on a desk with a hand pressing keys, soft natural light",
+        "broll_keywords": ["calculator financial planning", "calculating numbers desk", "loan calculator paperwork"],
+        "decision_reason": "grounds the interest calculation"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "That's how amortization works. Every fixed payment is split between interest and principal, and early on, interest wins that split.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["amortization schedule", "payment split"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "line chart declining rising screen finance",
+        "visual_intent": "Two crossing trend lines on a dark financial chart, one falling and one rising, teal and gold, cinematic",
+        "broll_keywords": ["financial chart crossing lines", "trend chart screen data", "line graph finance dark"],
+        "decision_reason": "visualizes the interest-vs-principal crossover"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "As the balance shrinks, less interest is owed each month, so more of the same payment starts chipping away at principal.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["balance shrinking", "principal acceleration"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "zoom_out",
+        "query": "house exterior suburban home daylight",
+        "visual_intent": "A modest suburban house exterior in clear daylight, steady wide shot",
+        "broll_keywords": ["suburban house exterior daylight", "home exterior daytime", "residential house front"],
+        "decision_reason": "the payoff visual, the home itself"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "By the back half of the loan, the split flips almost completely, and most of the payment finally builds equity.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["equity building", "late loan payments"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_in",
+        "query": "home equity growth chart bars",
+        "visual_intent": "A bar chart of equity building steadily upward on a dark screen, teal and gold, cinematic",
+        "broll_keywords": ["equity chart bars screen", "growth chart finance dark", "financial bar chart rising"],
+        "decision_reason": "the equity payoff visual"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "It's not a hidden fee. It's just how a fixed loan payment gets divided over thirty years. Follow for more.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["not a hidden fee", "closing"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "ken_burns",
+        "query": "family front porch home evening",
+        "visual_intent": "A family relaxing on a front porch at golden hour, warm and calm, documentary tone",
+        "broll_keywords": ["family front porch evening", "home porch golden hour", "family house evening light"],
+        "decision_reason": "closing warmth and CTA"
+      }
+    }
+  ]
+}

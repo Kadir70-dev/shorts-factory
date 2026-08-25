@@ -211,12 +211,17 @@ async def _build_args(scene: Scene, planes: dict[str, Layer], out: Path,
     final += "[vout]"
     fc.append(final)
 
+    # A composited hero beat is a scene clip like any other and is concatenated
+    # with `-c copy` alongside them, so it MUST carry the renderer's intermediate
+    # encoder settings — mismatched codec parameters break the concat demuxer.
+    from .render_ffmpeg import _INTERMEDIATE
+
     return [
         *inputs,
         "-filter_complex", ";".join(fc),
         "-map", "[vout]",
         "-t", f"{dur:.3f}",
-        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", str(fps),
+        "-c:v", "libx264", *_INTERMEDIATE, "-pix_fmt", "yuv420p", "-r", str(fps),
         "-an", "-y", str(out),
     ]
 

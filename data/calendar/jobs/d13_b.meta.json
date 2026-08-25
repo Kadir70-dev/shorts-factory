@@ -1,0 +1,41 @@
+{
+  "id": "d13_b",
+  "day": 13,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "How stock buybacks mechanically raise earnings-per-share",
+  "sources": [
+    {
+      "claim": "Buybacks reduce shares outstanding, mechanically raising EPS if net income is flat",
+      "source": "Standard corporate-finance mechanics (SEC investor.gov explainer on buybacks)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/stock-buybacks",
+      "type": "primary"
+    },
+    {
+      "claim": "US public companies spend hundreds of billions annually on buybacks in aggregate",
+      "source": "S&P Dow Jones Indices buyback data (order-of-magnitude, not a single year figure)",
+      "url": "",
+      "type": "reputable_secondary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "EPS",
+      "note": "said as 'earnings per share', spelled out"
+    }
+  ],
+  "quality_scores": {
+    "hook": 7,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 7,
+    "us_relevance": 9,
+    "originality": 7,
+    "average": 8.0
+  },
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

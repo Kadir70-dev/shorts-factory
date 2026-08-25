@@ -1,0 +1,198 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d08_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Buying a Stock Caps Your Loss at 100%. Shorting Doesn't.",
+    "hook": "When you buy a stock, you can lose 100%. When you short one, there's no ceiling on how much you can lose.",
+    "description": "Short selling means borrowing shares, selling them, and aiming to buy them back cheaper. Because a stock's price has no upper limit, losses on a short position are theoretically unlimited \u2014 unlike buying, where the most you can lose is your original investment. Educational content only, not financial advice.",
+    "tags": [
+      "short selling",
+      "stock market",
+      "investing risk",
+      "trading explained",
+      "gamestop"
+    ],
+    "hashtags": [
+      "#shortselling",
+      "#stockmarket",
+      "#investing",
+      "#shorts"
+    ],
+    "thumbnail_text": "NO CEILING"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "When you buy a stock, the most you can lose is everything you put in.",
+      "duration_sec": 4.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "buying risk"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "red stock chart falling screen",
+        "visual_intent": "A red stock chart line falling on a dark screen, high contrast",
+        "broll_keywords": [
+          "red stock chart falling screen",
+          "stock decline chart dark",
+          "financial loss chart red"
+        ],
+        "decision_reason": "hook setup: the familiar, capped downside"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Short selling means borrowing shares, selling them, and hoping to buy them back cheaper later.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "short selling mechanics"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "stock trader screen multiple monitors",
+        "visual_intent": "A trader's desk with multiple glowing monitors, dim room, focused",
+        "broll_keywords": [
+          "trader desk multiple monitors",
+          "stock trading screens dark room",
+          "financial trader workstation"
+        ],
+        "decision_reason": "defines the mechanic"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "If the price drops, you pocket the difference. Simple enough.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "short selling profit"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "green down arrow chart profit",
+        "visual_intent": "A downward chart line with a green profit indicator, clean financial graphic",
+        "broll_keywords": [
+          "green profit chart down",
+          "financial gain indicator screen",
+          "downward arrow finance graphic"
+        ],
+        "decision_reason": "the simple upside case"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "But if the price rises instead, you still have to buy those shares back, at whatever price the market demands.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "short squeeze risk"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "stock chart spiking upward red screen",
+        "visual_intent": "A stock chart spiking sharply upward on a red-tinted screen, dramatic",
+        "broll_keywords": [
+          "stock chart spiking upward",
+          "price surge chart dramatic",
+          "market spike screen red"
+        ],
+        "decision_reason": "introduces the reversal risk"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "A stock can only fall to zero. It has no ceiling on how high it can climb.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "unlimited loss concept"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "arrow pointing up into sky endless",
+        "visual_intent": "An arrow graphic pointing upward off-screen into open sky, symbolic, clean render",
+        "broll_keywords": [
+          "arrow pointing up sky",
+          "upward arrow symbolic graphic",
+          "endless growth concept visual"
+        ],
+        "decision_reason": "the core asymmetry, definitional"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "In twenty twenty-one, GameStop's stock spiked so violently that funds betting against it faced losses far beyond their original bet.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "gamestop short squeeze"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "crowd trading frenzy screens excitement",
+        "visual_intent": "A chaotic scene of screens and excited reactions, symbolic of a trading frenzy, high energy",
+        "broll_keywords": [
+          "trading frenzy screens excitement",
+          "stock market mania scene",
+          "chaotic trading floor energy"
+        ],
+        "decision_reason": "GameStop Jan 2021 short squeeze, widely reported event, no specific dollar figure asserted"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "That's the trade-off of shorting. The downside on a normal buy is capped. The downside on a short isn't.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "scale balance risk concept",
+        "visual_intent": "A balance scale tipping unevenly, symbolic of risk asymmetry, clean studio light",
+        "broll_keywords": [
+          "balance scale tipping",
+          "risk symbolic scale image",
+          "imbalance concept still life"
+        ],
+        "decision_reason": "closing risk-asymmetry payoff"
+      }
+    }
+  ]
+}

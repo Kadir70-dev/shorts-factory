@@ -19,6 +19,8 @@ class MockDirector:
 
     async def build_scene_graph(self, spec: VideoSpec) -> SceneGraph:
         topic = spec.topic.replace("__trending__:", "").split(":")[0] or "today's story"
+        if "high-frequency trading" in topic.lower() or "hft" in topic.lower():
+            return _hft_graph(spec)
         return SceneGraph(
             meta=SceneMeta(
                 video_id=spec.id,
@@ -91,3 +93,82 @@ class MockDirector:
                 ),
             ],
         )
+
+
+def _hft_graph(spec: VideoSpec) -> SceneGraph:
+    """Deterministic offline fixture for the approved HFT smoke topic."""
+    return SceneGraph(
+        meta=SceneMeta(
+            video_id=spec.id,
+            channel_id=spec.channel_id,
+            niche=spec.niche.value,
+            title="What is High-Frequency Trading (HFT)?",
+            hook="Trades faster than a blink?",
+            description="A beginner-friendly explanation of high-frequency trading.",
+            tags=["high-frequency trading", "HFT", "finance", "trading"],
+            hashtags=["#HFT", "#Trading", "#Shorts"],
+        ),
+        fps=spec.render.fps, width=spec.render.width, height=spec.render.height,
+        scenes=[
+            Scene(
+                id="s1",
+                narration="High-frequency trading can buy and sell in less time than it takes you to blink.",
+                duration_sec=5.0,
+                visual=Visual(type="broll", query="electronic trading screens",
+                              scene_visual_type="dramatic", motion="zoom_in",
+                              broll_keywords=["electronic trading screens", "data center"]),
+                overlays=[Overlay(type="headline", text="Faster than a blink?",
+                                  emphasis="alert", y=0.16)],
+                transition_in="fade",
+            ),
+            Scene(
+                id="s2",
+                narration="HFT uses powerful computers and algorithms to place huge numbers of orders at extremely high speed.",
+                duration_sec=6.0,
+                visual=Visual(type="manim", query="orders moving through an exchange",
+                              scene_visual_type="data_viz"),
+                overlays=[Overlay(type="headline", text="Computers + algorithms",
+                                  y=0.18)],
+            ),
+            Scene(
+                id="s3",
+                narration="Those algorithms scan prices across markets, spot tiny differences, and react in fractions of a second.",
+                duration_sec=6.0,
+                visual=Visual(type="broll", query="market data network",
+                              scene_visual_type="real_footage",
+                              broll_keywords=["server room", "stock exchange data"]),
+                overlays=[Overlay(type="headline", text="Scan. Spot. React.",
+                                  emphasis="positive", y=0.18)],
+            ),
+            Scene(
+                id="s4",
+                narration="The goal is often a very small gain on each trade, repeated many times. Speed and infrastructure create the edge.",
+                duration_sec=7.0,
+                visual=Visual(type="manim", query="small repeated market movements",
+                              scene_visual_type="data_viz"),
+                overlays=[Overlay(type="headline", text="Tiny moves, many trades",
+                                  y=0.18)],
+            ),
+            Scene(
+                id="s5",
+                narration="HFT can add liquidity, but critics say it may increase short-term volatility. This is education, not financial advice.",
+                duration_sec=7.0,
+                visual=Visual(type="broll", query="calm financial market screens",
+                              scene_visual_type="subtle", motion="ken_burns",
+                              broll_keywords=["financial market screens", "city skyline"]),
+                overlays=[Overlay(type="headline", text="Benefits and trade-offs",
+                                  y=0.18)],
+            ),
+            Scene(
+                id="s6",
+                narration="Follow for more AI and Trading insights.",
+                duration_sec=3.0,
+                visual=Visual(type="solid", query="", scene_visual_type="subtle",
+                              fallback_color="#15233a"),
+                overlays=[Overlay(type="headline",
+                                  text="Follow for more AI and Trading insights.",
+                                  emphasis="alert", y=0.40)],
+                transition_in="slide_l",
+            ),
+        ],
+    )

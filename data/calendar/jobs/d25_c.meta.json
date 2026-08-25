@@ -1,0 +1,35 @@
+{
+  "id": "d25_c",
+  "day": 25,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "What a HELOC actually is",
+  "sources": [
+    {
+      "claim": "A HELOC is an open-end line secured by home equity, often with a variable rate; failure to repay can put the home at risk",
+      "source": "Consumer Financial Protection Bureau HELOC booklet",
+      "url": "https://files.consumerfinance.gov/f/201401_cfpb_booklet_heloc.pdf",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "HELOC",
+      "note": "said as 'HEE-lock', one word, not spelled out"
+    }
+  ],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": true,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

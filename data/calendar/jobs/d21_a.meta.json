@@ -1,0 +1,31 @@
+{
+  "id": "d21_a",
+  "day": 21,
+  "slot": "A",
+  "category": "business_wealth_story",
+  "content_type": "evergreen",
+  "topic": "Costco's Kirkland Signature private-label strategy",
+  "sources": [
+    {
+      "claim": "Costco identifies Kirkland Signature as its private-label brand and says it invests in developing and protecting it",
+      "source": "Costco 2025 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": true,
+  "disclaimer": "",
+  "status": "READY",
+  "note": "Materially different angle from existing data/demos/fin_costco_hotdog.json (private-label economics vs. loss-leader/membership-renewal story) per task instruction on reused topics."
+}

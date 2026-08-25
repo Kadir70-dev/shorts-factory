@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "ultimate-nature",
+    "name": "Ultimate Nature Pack",
+    "url": "https://quaternius.com/packs/ultimatenature.html",
+    "tags": ["nature", "trees", "rocks", "forest", "environment", "foliage"],
+    "description": "Huge CC0 nature kit: trees, rocks, plants, terrain pieces. Ideal for forest/outdoor environment scaffolding."
+  },
+  {
+    "slug": "ultimate-modular-ruins",
+    "name": "Ultimate Modular Ruins",
+    "url": "https://quaternius.com/packs/ultimatemodularruins.html",
+    "tags": ["ruins", "modular", "dungeon", "ancient", "environment"],
+    "description": "Modular CC0 ruins kit: walls, arches, columns, floors for ancient temple/dungeon environments."
+  },
+  {
+    "slug": "scifi-city-builder",
+    "name": "Sci-Fi City Builder",
+    "url": "https://quaternius.com/packs/scificitybuilder.html",
+    "tags": ["sci-fi", "city", "buildings", "modular", "urban"],
+    "description": "Modular CC0 sci-fi city kit: buildings, roads, props for futuristic urban environments."
+  },
+  {
+    "slug": "ultimate-modular-scifi",
+    "name": "Ultimate Modular Sci-Fi",
+    "url": "https://quaternius.com/packs/ultimatemodularscifi.html",
+    "tags": ["sci-fi", "modular", "interior", "corridor", "space"],
+    "description": "Modular CC0 sci-fi interior kit: corridors, rooms, doors, props for spaceship/station environments."
+  },
+  {
+    "slug": "platformer-kit",
+    "name": "Ultimate Platformer Pack",
+    "url": "https://quaternius.com/packs/ultimateplatformer.html",
+    "tags": ["platformer", "level", "modular", "stylized"],
+    "description": "CC0 platformer level kit: tiles, slopes, collectibles, hazards for 2.5D/3D platformer scaffolding."
+  },
+  {
+    "slug": "animated-rpg-characters",
+    "name": "Ultimate Animated Character Pack",
+    "url": "https://quaternius.com/packs/ultimateanimatedcharacter.html",
+    "tags": ["characters", "animated", "rigged", "rpg", "humanoid"],
+    "description": "CC0 rigged & animated low-poly characters with shared animations (idle, walk, attack, etc.)."
+  },
+  {
+    "slug": "monsters-animated",
+    "name": "Ultimate Animated Monsters",
+    "url": "https://quaternius.com/packs/ultimateanimatedmonsters.html",
+    "tags": ["monsters", "animated", "rigged", "creatures", "enemies"],
+    "description": "CC0 rigged & animated monster/creature models for enemies and NPCs."
+  },
+  {
+    "slug": "space-kit",
+    "name": "Space Kit",
+    "url": "https://quaternius.com/packs/spacekit.html",
+    "tags": ["space", "ships", "sci-fi", "vehicles"],
+    "description": "CC0 space kit: ships, stations, asteroids and props for space environments."
+  },
+  {
+    "slug": "farm-pack",
+    "name": "Ultimate Farm Pack",
+    "url": "https://quaternius.com/packs/ultimatefarm.html",
+    "tags": ["farm", "crops", "buildings", "animals", "rural"],
+    "description": "CC0 farm kit: crops, barns, fences, animals and rural props."
+  },
+  {
+    "slug": "medieval-village",
+    "name": "Medieval Village Pack",
+    "url": "https://quaternius.com/packs/medievalvillage.html",
+    "tags": ["medieval", "village", "buildings", "fantasy", "town"],
+    "description": "CC0 medieval village kit: houses, market props, walls for fantasy town environments."
+  }
+]

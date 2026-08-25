@@ -1,0 +1,207 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d30_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Warren Buffett's Famous Company Began As A Bad Investment",
+    "hook": "Berkshire Hathaway started as a dying textile mill Warren Buffett later called a mistake.",
+    "description": "Berkshire Hathaway was formed from New England textile businesses and came under Warren Buffett's control in 1965. The textile operation consumed capital in a declining industry, so Buffett redirected cash into insurance and other businesses while retaining the Berkshire name.",
+    "tags": [
+      "Berkshire Hathaway",
+      "Warren Buffett",
+      "business history",
+      "capital allocation"
+    ],
+    "hashtags": [
+      "#warrenbuffett",
+      "#berkshire",
+      "#business",
+      "#shorts"
+    ],
+    "thumbnail_text": "A COSTLY MISTAKE"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Berkshire Hathaway started as a dying textile mill, an investment Warren Buffett later described as a major mistake.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "historic textile mill",
+        "loom machinery factory"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "old textile mill machinery",
+        "visual_intent": "Dusty textile machinery turning inside an old mill",
+        "broll_keywords": [
+          "historic textile mill",
+          "loom machinery factory",
+          "New England mill interior"
+        ],
+        "decision_reason": "Berkshire shareholder letters call the original textile operation beleaguered and a mistake"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "A textile mistake",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "The name came from New England textile businesses that merged in nineteen fifty-five, long before today's conglomerate existed.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "New England textile factory",
+        "historic brick mill"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "pan_lr",
+        "query": "new england factory archival",
+        "visual_intent": "An archival-looking brick mill beside a river",
+        "broll_keywords": [
+          "New England textile factory",
+          "historic brick mill",
+          "industrial archive building"
+        ],
+        "decision_reason": "Berkshire 2006 letter documents the 1955 merger"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "1955",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "narration": "Buffett's partnership acquired control in early nineteen sixty-five, when the operation needed nearly all of Berkshire's capital.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "1965 stock papers",
+        "vintage share certificate"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "1965 stock certificate paperwork",
+        "visual_intent": "A vintage stock certificate and dated control documents",
+        "broll_keywords": [
+          "1965 stock papers",
+          "vintage share certificate",
+          "corporate acquisition archive"
+        ],
+        "decision_reason": "Berkshire 2019 letter confirms control in early 1965 and capital intensity"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Control in 1965",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "Textiles faced relentless competition and demanded more investment without producing attractive returns. The economic engine was failing.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "old factory maintenance",
+        "industrial machinery repair"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "factory machine repair costs",
+        "visual_intent": "Workers maintaining aging industrial machinery",
+        "broll_keywords": [
+          "old factory maintenance",
+          "industrial machinery repair",
+          "textile equipment costs"
+        ],
+        "decision_reason": "Buffett letters repeatedly explain the textile business's poor economics"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Buffett gradually redirected capital into insurance and other businesses, where cash could be reinvested more productively.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "capital allocation diagram",
+        "insurance cash flow"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "insurance business capital flow",
+        "visual_intent": "Capital arrows moving from factory to insurance building",
+        "broll_keywords": [
+          "capital allocation diagram",
+          "insurance cash flow",
+          "business reinvestment graphic"
+        ],
+        "decision_reason": "Berkshire letters document the shift toward better businesses including insurance"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Redirect the capital",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "narration": "The textile mills eventually disappeared, but their name survived on one of the world's best-known holding companies.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "holding company office",
+        "corporate headquarters exterior"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "berkshire office building name",
+        "visual_intent": "A restrained corporate office exterior after the mill fades",
+        "broll_keywords": [
+          "holding company office",
+          "corporate headquarters exterior",
+          "business transformation closing"
+        ],
+        "decision_reason": "Closing contrast based on the documented corporate transformation"
+      }
+    }
+  ]
+}

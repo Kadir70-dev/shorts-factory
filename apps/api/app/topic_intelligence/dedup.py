@@ -25,8 +25,15 @@ from .repository import TopicIntelligenceRepository
 from .settings import ti_settings
 from .tables import TopicLedger
 
-# Ledger rows in these states block reuse: already committed to, or in flight.
-BLOCKING_STATUSES = ("selected", "queued", "rendering", "published")
+# Ledger rows in these states block reuse: already committed to, in flight, or
+# explicitly turned down by a reviewer.
+#   selected  — chosen by a run, awaiting review
+#   queued    — approved and handed to the pipeline
+#   rendering / published — in flight or shipped
+#   rejected  — a reviewer said no (Phase 2B); re-surfacing it tomorrow would just
+#               re-ask a question that was already answered. `abandoned` remains
+#               deliberately NON-blocking: it means "replaced", not "refused".
+BLOCKING_STATUSES = ("selected", "queued", "rendering", "published", "rejected")
 
 
 @dataclass

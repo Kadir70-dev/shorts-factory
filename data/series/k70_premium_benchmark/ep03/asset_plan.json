@@ -1,0 +1,68 @@
+[
+  {
+    "scene_id": "s0",
+    "vis": "stock",
+    "search_terms": [
+      "american suburban house exterior daylight",
+      "suburban neighborhood street"
+    ]
+  },
+  {
+    "scene_id": "s1",
+    "vis": "mblab_walk",
+    "role": "john",
+    "checkpoint": "C:\\Users\\Admin\\shorts-factory\\tools\\k70_scene_engine\\.test_renders\\mblab_proof\\john_m_ca01_posed.blend"
+  },
+  {
+    "scene_id": "s2",
+    "vis": "mblab_character",
+    "role": "banker",
+    "checkpoint": "C:\\Users\\Admin\\shorts-factory\\tools\\k70_scene_engine\\.test_renders\\mblab_proof\\banker_m_af01_posed.blend",
+    "lighting": "office_interior",
+    "shot": "medium",
+    "angle": "three_quarter",
+    "office_environment": true
+  },
+  {
+    "scene_id": "s3",
+    "vis": "chart"
+  },
+  {
+    "scene_id": "s4",
+    "vis": "procedural_city"
+  },
+  {
+    "scene_id": "s5",
+    "vis": "mblab_character",
+    "role": "sarah",
+    "checkpoint": "C:\\Users\\Admin\\shorts-factory\\tools\\k70_scene_engine\\.test_renders\\mblab_proof\\sarah_f_ca01_posed.blend",
+    "lighting": "office_interior",
+    "shot": "medium",
+    "angle": "three_quarter",
+    "office_environment": true
+  },
+  {
+    "scene_id": "s6",
+    "vis": "voxel_story",
+    "object_type": "bank"
+  },
+  {
+    "scene_id": "s7",
+    "vis": "voxel_story",
+    "object_type": "dollar"
+  },
+  {
+    "scene_id": "s8",
+    "vis": "voxel_story",
+    "object_type": "house"
+  },
+  {
+    "scene_id": "s9",
+    "vis": "mblab_character",
+    "role": "john",
+    "checkpoint": "C:\\Users\\Admin\\shorts-factory\\tools\\k70_scene_engine\\.test_renders\\mblab_proof\\john_m_ca01_posed.blend",
+    "lighting": "portrait_studio",
+    "shot": "medium",
+    "angle": "front"
+  }
+]

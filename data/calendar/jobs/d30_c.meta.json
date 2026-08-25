@@ -1,0 +1,30 @@
+{
+  "id": "d30_c",
+  "day": 30,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "How subscription free trials auto-convert",
+  "sources": [
+    {
+      "claim": "Many free trials automatically begin billing unless the consumer cancels before the deadline; this is a negative-option feature",
+      "source": "Federal Trade Commission consumer guidance",
+      "url": "https://consumer.ftc.gov/articles/getting-and-out-free-trials-auto-renewals-and-negative-option-subscriptions",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

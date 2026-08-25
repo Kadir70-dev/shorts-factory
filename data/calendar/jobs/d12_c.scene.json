@@ -1,0 +1,198 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d12_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "The Tax on Your Pay Stub Isn't Your Real Tax Bill",
+    "hook": "The tax taken from your paycheck isn't your real tax bill. It's a guess.",
+    "description": "Employers withhold estimated tax from every paycheck using IRS formulas based on your W-4 form, but that's only an estimate of what you'll owe for the year. The true amount is reconciled the following spring when you file \u2014 a big refund usually means you overpaid an interest-free amount to the government all year. Educational content only, not personalized tax advice.",
+    "tags": [
+      "taxes",
+      "paycheck",
+      "tax withholding",
+      "personal finance",
+      "how taxes work"
+    ],
+    "hashtags": [
+      "#taxes",
+      "#personalfinance",
+      "#money",
+      "#shorts"
+    ],
+    "thumbnail_text": "IT'S JUST A GUESS"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "The tax taken from your paycheck isn't your real tax bill. It's a guess.",
+      "duration_sec": 3.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "withholding hook"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "pay stub tax line close up",
+        "visual_intent": "A pay stub with the tax withholding line highlighted, close focus, warm light",
+        "broll_keywords": [
+          "pay stub tax line close up",
+          "paycheck deduction detail",
+          "salary statement tax line"
+        ],
+        "decision_reason": "hook beat: reframing a familiar number"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Employers withhold money from every paycheck using IRS formulas based on what you put on a W-4 form.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "w-4 withholding"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "tax form w4 paperwork desk",
+        "visual_intent": "A tax form on a desk with a pen, neutral light, close focus",
+        "broll_keywords": [
+          "tax form paperwork desk",
+          "w4 form close up",
+          "irs document desk pen"
+        ],
+        "decision_reason": "defines the W-4-driven withholding process"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "That withholding is an estimate of what you'll owe for the year, not the final, exact number.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "estimate not final"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "calculator estimate numbers screen",
+        "visual_intent": "A calculator display with numbers, close focus, neutral light",
+        "broll_keywords": [
+          "calculator display numbers close",
+          "estimate calculation screen",
+          "financial calculator close up"
+        ],
+        "decision_reason": "clarifies estimate-vs-final distinction, IRS mechanics"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "If your employer withheld too much, you get the difference back as a refund the next spring.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "refund scenario"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "refund check envelope mail",
+        "visual_intent": "An envelope with a check being pulled out, close focus, warm light",
+        "broll_keywords": [
+          "refund check envelope close",
+          "mail check envelope hand",
+          "tax refund document close up"
+        ],
+        "decision_reason": "explains the over-withholding/refund case, IRS mechanics"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "If they withheld too little, you owe the IRS the difference when you file.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "owe scenario"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "tax filing deadline calendar april",
+        "visual_intent": "A calendar page marked with a tax deadline, close focus, neutral light",
+        "broll_keywords": [
+          "calendar tax deadline marked",
+          "april filing date calendar",
+          "deadline reminder calendar close"
+        ],
+        "decision_reason": "explains the under-withholding/owe case, IRS mechanics"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "A big refund can feel like a bonus. It usually just means you overpaid an interest-free loan to the government all year.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "refund reframe"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "piggy bank empty interest concept",
+        "visual_intent": "A piggy bank sitting still on a table, neutral light, symbolic stillness",
+        "broll_keywords": [
+          "piggy bank table still",
+          "savings symbol stillness",
+          "piggy bank close up neutral"
+        ],
+        "decision_reason": "reframes the refund as an interest-free overpayment, common IRS-explainer framing"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "The number on your pay stub was never final. It was always just a placeholder.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "pay stub folded pocket",
+        "visual_intent": "A folded pay stub being placed into a pocket, close focus, warm light",
+        "broll_keywords": [
+          "pay stub folded pocket close",
+          "paycheck document pocket",
+          "folding paperwork close up"
+        ],
+        "decision_reason": "closing 'placeholder' payoff"
+      }
+    }
+  ]
+}

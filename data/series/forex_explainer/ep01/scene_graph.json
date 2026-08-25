@@ -1,0 +1,3147 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "forex_ep01_how_the_market_works",
+    "channel_id": "k70_economy",
+    "niche": "usa_finance",
+    "title": "How The $9.6 Trillion-A-Day Currency Market Actually Works | Forex Explained",
+    "hook": "While you watch this video, tens of billions of dollars will change hands in a market almost nobody outside a bank has ever actually seen work.",
+    "description": "FOREX EXPLAINED — How the foreign exchange market actually works, in plain English.\n\nThe global forex market now moves more than $9.6 trillion a day (BIS, 2025 Triennial Survey) — more than any other market on Earth. This video breaks down what forex actually is, why currencies need to be exchanged, how currency pairs like EUR/USD work, what bid, ask and spread actually mean, why exchange rates move, how central banks and interest rates drive the market, why economic data moves prices, how leverage works (and why it's dangerous), how institutional forex differs from retail forex, and why so many beginners misunderstand this market.\n\nSOURCES: Bank for International Settlements, 2025 Triennial Central Bank Survey of Foreign Exchange — https://www.bis.org/press/p250930.htm · U.S. Commodity Futures Trading Commission, 17 CFR § 5.9 — https://www.ecfr.gov/current/title-17/chapter-I/part-5/section-5.9\n\nThis video is educational and describes how the forex market works. It is not financial advice, and it does not recommend buying, selling or trading any currency. Trading foreign exchange, especially with leverage, carries a high risk of loss.",
+    "tags": [
+      "forex",
+      "forex trading",
+      "foreign exchange market",
+      "how forex works",
+      "eur usd",
+      "bid ask spread",
+      "leverage trading",
+      "currency trading",
+      "central banks",
+      "interest rates",
+      "forex explained",
+      "trading for beginners",
+      "bank for international settlements",
+      "finance documentary"
+    ],
+    "hashtags": [
+      "#forex",
+      "#forextrading",
+      "#finance",
+      "#investing",
+      "#k70finance"
+    ],
+    "thumbnail_text": "HOW FOREX REALLY WORKS",
+    "structure_id": "one_number_story",
+    "disclaimer": "Educational content. Not financial advice. Forex trading, especially with leverage, carries a high risk of loss.",
+    "compliance_notes": [],
+    "requires_ai_disclosure": false,
+    "ai_disclosure_reasons": []
+  },
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "While you watch this video, tens of billions of dollars will change hands in a market almost nobody outside a bank has ever actually seen work.",
+      "duration_sec": 6.4,
+      "visual": {
+        "type": "broll",
+        "query": "financial district skyline sunrise glass skyscrapers wide cinematic",
+        "broll_keywords": [
+          "financial district skyline sunrise",
+          "stock exchange building exterior wide"
+        ],
+        "visual_intent": "Cinematic dawn shot of a financial district skyline, glass towers, real city — the market hiding in plain sight",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "00 · hook · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "hook",
+      "transition_in": "cut",
+      "keywords": [
+        "financial district skyline sunrise",
+        "stock exchange building exterior wide"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s2",
+      "narration": "It's called the foreign exchange market — forex — and according to the Bank for International Settlements, it now moves more than nine and a half trillion dollars, every single day.",
+      "duration_sec": 7.5,
+      "visual": {
+        "type": "dataviz",
+        "query": "Global daily FX turnover",
+        "broll_keywords": [],
+        "visual_intent": "A hero counter rolling up to $9.6T, branded, sourced on screen",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "00 · hook · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "Bank for International Settlements, 2025 Trienni",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": {
+        "kind": "counter",
+        "title": "Global daily FX turnover",
+        "points": [
+          {
+            "label": "Per day",
+            "value": 9.6,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "T",
+        "decimals": 1,
+        "abbreviate": true,
+        "highlight": -1,
+        "source": "BIS, 2025 Triennial Survey",
+        "note": ""
+      },
+      "beat_role": "hook",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s3",
+      "narration": "And it's growing fast — up twenty-eight percent from seven and a half trillion a day, just three years earlier.",
+      "duration_sec": 5.2,
+      "visual": {
+        "type": "dataviz",
+        "query": "FX turnover growth 2022 to 2025",
+        "broll_keywords": [],
+        "visual_intent": "A simple two-point growth chart, 2022 to 2025, branded and sourced",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "00 · evidence · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "Bank for International Settlements, 2025 Trienni",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": {
+        "kind": "delta",
+        "title": "Global daily FX turnover",
+        "points": [
+          {
+            "label": "2022",
+            "value": 7.5,
+            "emphasis": "normal"
+          },
+          {
+            "label": "2025",
+            "value": 9.6,
+            "emphasis": "positive"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "T",
+        "decimals": 1,
+        "abbreviate": true,
+        "highlight": -1,
+        "source": "BIS Triennial Surveys, 2022 & 2025",
+        "note": ""
+      },
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s4",
+      "narration": "So what actually is this market — and why does it move more money in one day than most countries produce in an entire year?",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "WHAT IS THIS MARKET, ACTUALLY?",
+        "broll_keywords": [],
+        "visual_intent": "The question that structures the rest of the video, held on black",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 · question · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "WHAT IS THIS MARKET, ACTUALLY?",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "question",
+      "transition_in": "dip_to_black",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s5",
+      "narration": "Forex is simply the market where one country's currency gets traded for another's.",
+      "duration_sec": 4.6,
+      "visual": {
+        "type": "broll",
+        "query": "different world currencies banknotes overhead flat lay",
+        "broll_keywords": [
+          "world currencies banknotes flat lay",
+          "foreign currency notes different countries"
+        ],
+        "visual_intent": "Real currency notes from multiple countries, clean overhead shot",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "01 · context · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "fade",
+      "keywords": [
+        "world currencies banknotes flat lay",
+        "foreign currency notes different countries"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s6",
+      "narration": "No single building. No opening bell. No central exchange anywhere on Earth.",
+      "duration_sec": 4.2,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "NO EXCHANGE. NO OPENING BELL. NO SINGLE BUILDING.",
+        "broll_keywords": [],
+        "visual_intent": "Three quick negations in type — what forex is NOT",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "01 · tension · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "NO EXCHANGE. NO OPENING BELL. NO SINGLE BUILDING.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s7",
+      "narration": "It's a network of banks, governments, funds and brokers trading directly with each other, twenty-four hours a day, five days a week.",
+      "duration_sec": 5.8,
+      "visual": {
+        "type": "broll",
+        "query": "bank trading floor multiple monitors professional dealing room",
+        "broll_keywords": [
+          "trading floor multiple screens",
+          "financial dealing room professional"
+        ],
+        "visual_intent": "Real bank dealing-room / trading terminal footage, multiple screens, professional",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "01 · context · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [
+        "trading floor multiple screens",
+        "financial dealing room professional"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s8",
+      "narration": "It opens in Sydney. Hands off to Tokyo. Then London. Then New York. And by the time New York closes, Sydney is already opening again.",
+      "duration_sec": 7.2,
+      "visual": {
+        "type": "threejs",
+        "query": "forex trading session handoff",
+        "broll_keywords": [],
+        "visual_intent": "Globe flight following the 24-hour session handoff: Sydney → Tokyo → London → New York",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "threejs",
+        "budget_channel": "threejs",
+        "decision_reason": "01 · evidence · threejs",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "lower_third",
+          "text": "OPEN 24 HOURS",
+          "sub": "Sydney → Tokyo → London → New York",
+          "y": 0.24,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s9",
+      "narration": "Here's why this market exists. Say a US company wants to buy machine parts from a supplier in Japan.",
+      "duration_sec": 5.6,
+      "visual": {
+        "type": "broll",
+        "query": "cargo shipping port containers international trade",
+        "broll_keywords": [
+          "shipping containers port crane",
+          "cargo ship international trade"
+        ],
+        "visual_intent": "Real cargo port / shipping containers, international trade in motion",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "02 · context · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "fade",
+      "keywords": [
+        "shipping containers port crane",
+        "cargo ship international trade"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s10",
+      "narration": "That supplier doesn't want dollars. They want yen — because that's what pays their workers and their bills.",
+      "duration_sec": 5.2,
+      "visual": {
+        "type": "broll",
+        "query": "factory workers manufacturing floor",
+        "broll_keywords": [
+          "factory production line workers",
+          "manufacturing plant floor"
+        ],
+        "visual_intent": "Real factory floor / manufacturing footage, workers, everyday and concrete",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "02 · mechanism · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [
+        "factory production line workers",
+        "manufacturing plant floor"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s11",
+      "narration": "Somewhere in that transaction, dollars get converted into yen. That conversion IS the forex market.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "$ → ¥   THAT CONVERSION IS FOREX",
+        "broll_keywords": [],
+        "visual_intent": "Dollars converting to yen, rendered as clean kinetic type",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "02 · reveal · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "$ → ¥   THAT CONVERSION IS FOREX",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s12",
+      "narration": "It happens at an airport currency counter, when a company pays an overseas supplier, or when an investor buys a foreign bond.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "broll",
+        "query": "airport currency exchange counter traveler",
+        "broll_keywords": [
+          "currency exchange booth airport",
+          "foreign exchange kiosk travel"
+        ],
+        "visual_intent": "Real airport currency exchange kiosk, a traveler at the counter",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "02 · evidence · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [
+        "currency exchange booth airport",
+        "foreign exchange kiosk travel"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s13",
+      "narration": "Because you're always trading one currency FOR another, forex prices always come as a pair.",
+      "duration_sec": 4.8,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "EUR / USD",
+        "broll_keywords": [],
+        "visual_intent": "Two currency codes locking together as one unit",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "03 · context · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "EUR / USD",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "fade",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s14",
+      "narration": "The world's most heavily traded pair is the euro against the US dollar — written EUR slash USD.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "dataviz",
+        "query": "EUR/USD — the world's most traded currency pair",
+        "broll_keywords": [],
+        "visual_intent": "EUR/USD rendered as the hero pair, branded card",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "03 · context · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "counter",
+        "title": "World's most traded currency pair",
+        "points": [
+          {
+            "label": "EUR / USD",
+            "value": 1.0,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": ""
+      },
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s15",
+      "narration": "The first currency is the 'base.' The second is the 'quote.' The price tells you how many dollars it takes to buy one euro.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "BASE  /  QUOTE",
+        "broll_keywords": [],
+        "visual_intent": "BASE / QUOTE labeled directly on the EUR/USD pair",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "03 · mechanism · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "BASE  /  QUOTE",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s16",
+      "narration": "So if EUR/USD is quoted at, say, one-ten, that means one euro costs you a dollar ten.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "dataviz",
+        "query": "illustrative example: EUR/USD = 1.10",
+        "broll_keywords": [],
+        "visual_intent": "A simple illustrative price example — explicitly framed as an example, not a live quote",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "03 · evidence · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "counter",
+        "title": "Example quote (illustrative)",
+        "points": [
+          {
+            "label": "1 EUR =",
+            "value": 1.1,
+            "emphasis": "auto"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 2,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": "Example only — not a live market price"
+      },
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s17",
+      "narration": "Here's something most beginners never get explained: every forex quote is actually two prices, not one.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "broll",
+        "query": "trading terminal screen bid ask price ladder close up",
+        "broll_keywords": [
+          "forex trading screen close up",
+          "trading terminal price ladder"
+        ],
+        "visual_intent": "Real trading terminal close-up, two-sided price ladder visible",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "04 · tension · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "fade",
+      "keywords": [
+        "forex trading screen close up",
+        "trading terminal price ladder"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s18",
+      "narration": "The 'bid' is what a broker pays you. The 'ask' is what they charge you — and it's always a little higher.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "dataviz",
+        "query": "Bid vs Ask (illustrative)",
+        "broll_keywords": [],
+        "visual_intent": "Bid vs ask shown as a clean delta — illustrative values",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "04 · mechanism · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "delta",
+        "title": "Bid vs. Ask (illustrative)",
+        "points": [
+          {
+            "label": "Bid",
+            "value": 1.099,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Ask",
+            "value": 1.1,
+            "emphasis": "negative"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 3,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": "Example only — not a live market price"
+      },
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s19",
+      "narration": "That gap is called the spread — and it's how most brokers make money, whether you win or lose your trade.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "THE SPREAD — THE GAP BETWEEN BID AND ASK",
+        "broll_keywords": [],
+        "visual_intent": "THE SPREAD, isolated and defined",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "04 · reveal · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "THE SPREAD — THE GAP BETWEEN BID AND ASK",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s20",
+      "narration": "So why does the price of a currency change at all?",
+      "duration_sec": 3.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "WHY DO CURRENCIES MOVE?",
+        "broll_keywords": [],
+        "visual_intent": "The chapter question, simple and direct",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "05 · question · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "WHY DO CURRENCIES MOVE?",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "question",
+      "transition_in": "fade",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s21",
+      "narration": "Simple version: supply and demand. More demand pushes the price up. Less demand pushes it down.",
+      "duration_sec": 5.6,
+      "visual": {
+        "type": "dataviz",
+        "query": "Currency demand vs price",
+        "broll_keywords": [],
+        "visual_intent": "A demand-up / demand-down comparison, minimal and clean",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "05 · mechanism · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "bar_compare",
+        "title": "Demand and price",
+        "points": [
+          {
+            "label": "More demand",
+            "value": 8.0,
+            "emphasis": "positive"
+          },
+          {
+            "label": "Less demand",
+            "value": 3.0,
+            "emphasis": "negative"
+          }
+        ],
+        "prefix": "",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": "Conceptual illustration"
+      },
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s22",
+      "narration": "What drives that demand is interest rates, inflation, trade flows, politics, and market sentiment.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "broll",
+        "query": "financial news broadcast screens headlines",
+        "broll_keywords": [
+          "financial news studio screens",
+          "business news broadcast monitors"
+        ],
+        "visual_intent": "Real newsroom / financial broadcast screens, headlines moving",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "05 · evidence · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [
+        "financial news studio screens",
+        "business news broadcast monitors"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s23",
+      "narration": "The single biggest driver, most of the time, is what central banks do with interest rates.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "image",
+        "query": "Federal Reserve building Washington DC exterior",
+        "broll_keywords": [
+          "Federal Reserve building exterior",
+          "Marriner Eccles building Washington"
+        ],
+        "visual_intent": "Real Federal Reserve building exterior, Washington D.C.",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "06 · context · official",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "fade",
+      "keywords": [
+        "Federal Reserve building exterior",
+        "Marriner Eccles building Washington"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s24",
+      "narration": "When the Fed raises interest rates, global investors want to hold dollars more — because their money earns more just sitting in them.",
+      "duration_sec": 6.6,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "HIGHER RATES → HIGHER RETURN → MORE DEMAND",
+        "broll_keywords": [],
+        "visual_intent": "Higher rate → higher return → more demand, shown as a simple causal chain",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "06 · mechanism · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "HIGHER RATES → HIGHER RETURN → MORE DEMAND",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s25",
+      "narration": "That pulls in foreign capital chasing the better return, pushing the currency's value up.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "threejs",
+        "query": "Interest rate differential and capital flow",
+        "broll_keywords": [],
+        "visual_intent": "Capital flowing INTO one economy — comparison towers, rates vs capital inflow",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "threejs",
+        "budget_channel": "threejs",
+        "decision_reason": "06 · evidence · threejs",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s26",
+      "narration": "So when the Fed and the European Central Bank move rates in different directions, EUR/USD tends to move too.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "image",
+        "query": "European Central Bank building Frankfurt exterior",
+        "broll_keywords": [
+          "European Central Bank building Frankfurt",
+          "ECB tower Frankfurt skyline"
+        ],
+        "visual_intent": "Real European Central Bank building exterior, Frankfurt",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "06 · payoff · official",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "payoff",
+      "transition_in": "cut",
+      "keywords": [
+        "European Central Bank building Frankfurt",
+        "ECB tower Frankfurt skyline"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s27",
+      "narration": "This is also why traders obsess over jobs reports, inflation numbers, and GDP growth.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "broll",
+        "query": "financial analyst reviewing economic data charts screen",
+        "broll_keywords": [
+          "analyst reviewing financial charts",
+          "economic data spreadsheet screen"
+        ],
+        "visual_intent": "Real economic data on screen, spreadsheets, analyst reviewing charts",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "07 · context · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "fade",
+      "keywords": [
+        "analyst reviewing financial charts",
+        "economic data spreadsheet screen"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s28",
+      "narration": "Not because the number matters alone — but because it changes what people expect the central bank to do next.",
+      "duration_sec": 5.6,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "THE DATA → THE EXPECTATION",
+        "broll_keywords": [],
+        "visual_intent": "DATA changing into EXPECTATION, kinetic type",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "07 · mechanism · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "THE DATA → THE EXPECTATION",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s29",
+      "narration": "Markets don't just react to the news. They react to the news being different from what everyone already expected.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "EXPECTED vs. ACTUAL — THE GAP IS WHAT MOVES THE PRICE",
+        "broll_keywords": [],
+        "visual_intent": "EXPECTED vs ACTUAL, the gap between them highlighted",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "07 · reveal · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "EXPECTED vs. ACTUAL — THE GAP IS WHAT MOVES THE PRICE",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s30",
+      "narration": "That's why 'good' news can send a currency DOWN — if traders expected something even better.",
+      "duration_sec": 5.6,
+      "visual": {
+        "type": "dataviz",
+        "query": "Good news, currency down (conceptual)",
+        "broll_keywords": [],
+        "visual_intent": "A counterintuitive good-news-down illustration",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "07 · consequence · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "bar_compare",
+        "title": "Expected vs. delivered (conceptual)",
+        "points": [
+          {
+            "label": "Expected",
+            "value": 9.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Delivered",
+            "value": 7.0,
+            "emphasis": "negative"
+          }
+        ],
+        "prefix": "",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": "Conceptual illustration"
+      },
+      "beat_role": "consequence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s31",
+      "narration": "Now here's the part that draws in a lot of beginners — and hurts a lot of them too: leverage.",
+      "duration_sec": 5.2,
+      "visual": {
+        "type": "broll",
+        "query": "forex trading platform order ticket interface screen",
+        "broll_keywords": [
+          "trading app interface screen",
+          "forex order entry platform"
+        ],
+        "visual_intent": "Real trading app / platform interface, order ticket visible",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "08 · tension · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "fade",
+      "keywords": [
+        "trading app interface screen",
+        "forex order entry platform"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s32",
+      "narration": "Leverage lets you control a large position with a small amount of your own money. US regulators cap retail forex leverage at fifty-to-one on major pairs.",
+      "duration_sec": 7.4,
+      "visual": {
+        "type": "dataviz",
+        "query": "US retail forex maximum leverage: 50:1 on major pairs",
+        "broll_keywords": [],
+        "visual_intent": "The 50:1 cap, branded and sourced to the CFTC",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "08 · mechanism · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "CFTC, 17 CFR § 5.9 — Security deposits for retai",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": {
+        "kind": "counter",
+        "title": "Max. US retail leverage, major pairs",
+        "points": [
+          {
+            "label": "Cap",
+            "value": 50.0,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "",
+        "suffix": ":1",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "CFTC, 17 CFR § 5.9",
+        "note": ""
+      },
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s33",
+      "narration": "That means with two thousand dollars of your own money, you could control a hundred thousand dollars in currency.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "dataviz",
+        "query": "$2,000 controls $100,000 at 50:1 leverage",
+        "broll_keywords": [],
+        "visual_intent": "$2,000 controlling $100,000 — the multiplier made concrete",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "08 · evidence · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "delta",
+        "title": "What 50:1 leverage controls",
+        "points": [
+          {
+            "label": "Your money",
+            "value": 2000.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Position size",
+            "value": 100000.0,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": true,
+        "highlight": -1,
+        "source": "",
+        "note": ""
+      },
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s34",
+      "narration": "Leverage multiplies your gains. But it multiplies your losses exactly the same way.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "LEVERAGE MULTIPLIES BOTH DIRECTIONS",
+        "broll_keywords": [],
+        "visual_intent": "Symmetric arrows — gains up, losses down, same size",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "08 · turn · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "LEVERAGE MULTIPLIES BOTH DIRECTIONS",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "turn",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s35",
+      "narration": "A move that would barely register without leverage can wipe out your account with it. That's just the math.",
+      "duration_sec": 5.8,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "THAT'S NOT A WARNING. THAT'S THE MATH.",
+        "broll_keywords": [],
+        "visual_intent": "The math stated plainly, no dramatization needed",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "08 · consequence · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "THAT'S NOT A WARNING. THAT'S THE MATH.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "consequence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s36",
+      "narration": "Which raises something most retail traders don't realize: this market wasn't really built for them.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "broll",
+        "query": "institutional trading floor bank professionals wide shot",
+        "broll_keywords": [
+          "bank trading floor wide shot",
+          "institutional dealing room professionals"
+        ],
+        "visual_intent": "Real institutional trading floor, scale and seriousness",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "09 · turn · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "turn",
+      "transition_in": "fade",
+      "keywords": [
+        "bank trading floor wide shot",
+        "institutional dealing room professionals"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s37",
+      "narration": "More than four trillion dollars a day moves through FX swaps alone — used almost entirely by banks and institutions moving real money.",
+      "duration_sec": 7.2,
+      "visual": {
+        "type": "dataviz",
+        "query": "FX swaps: the largest single instrument in forex",
+        "broll_keywords": [],
+        "visual_intent": "FX swaps as the largest single instrument, branded and sourced",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "09 · evidence · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "BIS, OTC foreign exchange turnover, April 2025",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": {
+        "kind": "counter",
+        "title": "FX swaps — daily turnover",
+        "points": [
+          {
+            "label": "Per day",
+            "value": 4.0,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "T",
+        "decimals": 1,
+        "abbreviate": true,
+        "highlight": -1,
+        "source": "BIS, 2025 Triennial Survey",
+        "note": "Largest single FX instrument"
+      },
+      "beat_role": "evidence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s38",
+      "narration": "Individual retail traders make up a small slice of that nine-point-six-trillion-dollar total.",
+      "duration_sec": 5.2,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "RETAIL TRADERS: A SMALL SLICE OF A HUGE MARKET",
+        "broll_keywords": [],
+        "visual_intent": "Retail slice shown as small against the total",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "09 · mechanism · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "RETAIL TRADERS: A SMALL SLICE OF A HUGE MARKET",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s39",
+      "narration": "Institutions get tighter spreads, faster execution, and far more information. Retail gets access — not the same playing field.",
+      "duration_sec": 6.4,
+      "visual": {
+        "type": "dataviz",
+        "query": "Institutional vs. retail forex (conceptual)",
+        "broll_keywords": [],
+        "visual_intent": "Institutional vs retail advantages, side by side",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "09 · payoff · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": {
+        "kind": "bar_compare",
+        "title": "Execution advantage (conceptual)",
+        "points": [
+          {
+            "label": "Institutional",
+            "value": 9.0,
+            "emphasis": "primary"
+          },
+          {
+            "label": "Retail",
+            "value": 4.0,
+            "emphasis": "normal"
+          }
+        ],
+        "prefix": "",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": -1,
+        "source": "",
+        "note": "Conceptual illustration"
+      },
+      "beat_role": "payoff",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s40",
+      "narration": "That gap is exactly what a lot of 'get rich trading forex' content online quietly leaves out.",
+      "duration_sec": 5.6,
+      "visual": {
+        "type": "broll",
+        "query": "scrolling phone social media screen close up",
+        "broll_keywords": [
+          "phone screen scrolling social media",
+          "smartphone browsing hand close up"
+        ],
+        "visual_intent": "Real phone/social media scrolling footage, generic and unbranded",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "10 · tension · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "tension",
+      "transition_in": "fade",
+      "keywords": [
+        "phone screen scrolling social media",
+        "smartphone browsing hand close up"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s41",
+      "narration": "Forex isn't a shortcut. It's one of the most competitive markets on Earth — and you're trading against professionals who do this all day.",
+      "duration_sec": 6.2,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "NOT A SHORTCUT. THE MOST COMPETITIVE MARKET ON EARTH.",
+        "broll_keywords": [],
+        "visual_intent": "The reframe, stated plainly",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "10 · mechanism · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "NOT A SHORTCUT. THE MOST COMPETITIVE MARKET ON EARTH.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "mechanism",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s42",
+      "narration": "Most beginners don't fail because forex is rigged. They oversize trades, ignore the spread, and treat leverage like free money instead of borrowed risk.",
+      "duration_sec": 6.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "OVERSIZED TRADES. IGNORED SPREADS. LEVERAGE MISTAKEN FOR FREE MONEY.",
+        "broll_keywords": [],
+        "visual_intent": "Three concrete failure modes, listed plainly",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "10 · consequence · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "OVERSIZED TRADES. IGNORED SPREADS. LEVERAGE MISTAKEN FOR FREE MONEY.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "consequence",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s43",
+      "narration": "So — forex isn't secretive, and it isn't rigged. It's just enormous, fast, and mostly invisible.",
+      "duration_sec": 5.4,
+      "visual": {
+        "type": "broll",
+        "query": "financial district skyline dusk wide cinematic",
+        "broll_keywords": [
+          "financial district skyline dusk",
+          "city skyline sunset wide shot"
+        ],
+        "visual_intent": "Wide dusk establishing shot, callback to the cold open",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "stock",
+        "decision_reason": "11 · payoff · stock",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [],
+      "data": null,
+      "beat_role": "payoff",
+      "transition_in": "fade",
+      "keywords": [
+        "financial district skyline dusk",
+        "city skyline sunset wide shot"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s44",
+      "narration": "Nine point six trillion dollars a day — moving between banks, corporations and traders, every hour the sun is up somewhere on Earth.",
+      "duration_sec": 6.8,
+      "visual": {
+        "type": "dataviz",
+        "query": "Global daily FX turnover — callback",
+        "broll_keywords": [],
+        "visual_intent": "Callback to the hook counter — same number, now understood",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "11 · payoff · charts",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "Bank for International Settlements, 2025 Trienni",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": {
+        "kind": "counter",
+        "title": "Global daily FX turnover",
+        "points": [
+          {
+            "label": "Per day",
+            "value": 9.6,
+            "emphasis": "primary"
+          }
+        ],
+        "prefix": "$",
+        "suffix": "T",
+        "decimals": 1,
+        "abbreviate": true,
+        "highlight": -1,
+        "source": "BIS, 2025 Triennial Survey",
+        "note": ""
+      },
+      "beat_role": "payoff",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s45",
+      "narration": "It's a market — not a machine that prints money. Understanding how it actually works is the difference between using it, and being used by it.",
+      "duration_sec": 6.8,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "A MARKET. NOT A MACHINE.",
+        "broll_keywords": [],
+        "visual_intent": "The thesis line, closing the loop opened in the cold open",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "11 · cta · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "A MARKET. NOT A MACHINE.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "cta",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s46",
+      "narration": "If you want to actually understand how markets work — instead of guessing at them — that's exactly what this channel is for.",
+      "duration_sec": 6.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "K70 — UNDERSTAND THE ECONOMY",
+        "broll_keywords": [],
+        "visual_intent": "Channel CTA card, calm and simple",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "11 · cta · motion_gfx",
+        "layers": [],
+        "evidence_card_path": null,
+        "evidence_card_rotate_deg": -6.0
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "K70 — UNDERSTAND THE ECONOMY",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        },
+        {
+          "type": "lower_third",
+          "text": "K70 FINANCE",
+          "sub": "Understand the economy.",
+          "y": 0.5,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "cta",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    }
+  ],
+  "audio": {
+    "voiceover_path": null,
+    "music_path": null,
+    "music_gain_db": -18.0,
+    "voiceover_gain_db": 0.0,
+    "duck_music": true,
+    "duck_amount_db": -9.0,
+    "music_mood": "",
+    "music_envelope": [],
+    "music_fade_in_sec": 1.5,
+    "music_fade_out_sec": 2.0
+  },
+  "captions": [],
+  "sfx": [],
+  "storyboard": {
+    "version": "1.0",
+    "scenes": [
+      {
+        "scene_id": "sb_s1",
+        "source_scene_id": "s1",
+        "narration": "While you watch this video, tens of billions of dollars will change hands in a market almost nobody outside a bank has ever actually seen work.",
+        "duration_estimate": 6.4,
+        "visual_objective": "Cinematic dawn shot of a financial district skyline, glass towers, real city — the market hiding in plain sight",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "urgent",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s2",
+        "source_scene_id": "s2",
+        "narration": "It's called the foreign exchange market — forex — and according to the Bank for International Settlements, it now moves more than nine and a half trillion dollars, every single day.",
+        "duration_estimate": 7.5,
+        "visual_objective": "A hero counter rolling up to $9.6T, branded, sourced on screen",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "$9.6 trillion"
+        ],
+        "emotion": "urgent",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s3",
+        "source_scene_id": "s3",
+        "narration": "And it's growing fast — up twenty-eight percent from seven and a half trillion a day, just three years earlier.",
+        "duration_estimate": 5.2,
+        "visual_objective": "A simple two-point growth chart, 2022 to 2025, branded and sourced",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "$7.5 trillion",
+          "28%"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s4",
+        "source_scene_id": "s4",
+        "narration": "So what actually is this market — and why does it move more money in one day than most countries produce in an entire year?",
+        "duration_estimate": 5.4,
+        "visual_objective": "The question that structures the rest of the video, held on black",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "WHAT IS THIS MARKET, ACTUALLY?"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s5",
+        "source_scene_id": "s5",
+        "narration": "Forex is simply the market where one country's currency gets traded for another's.",
+        "duration_estimate": 4.6,
+        "visual_objective": "Real currency notes from multiple countries, clean overhead shot",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s6",
+        "source_scene_id": "s6",
+        "narration": "No single building. No opening bell. No central exchange anywhere on Earth.",
+        "duration_estimate": 4.2,
+        "visual_objective": "Three quick negations in type — what forex is NOT",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "NO EXCHANGE. NO OPENING BELL. NO SINGLE BUILDING."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s7",
+        "source_scene_id": "s7",
+        "narration": "It's a network of banks, governments, funds and brokers trading directly with each other, twenty-four hours a day, five days a week.",
+        "duration_estimate": 5.8,
+        "visual_objective": "Real bank dealing-room / trading terminal footage, multiple screens, professional",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s8",
+        "source_scene_id": "s8",
+        "narration": "It opens in Sydney. Hands off to Tokyo. Then London. Then New York. And by the time New York closes, Sydney is already opening again.",
+        "duration_estimate": 7.2,
+        "visual_objective": "Globe flight following the 24-hour session handoff: Sydney → Tokyo → London → New York",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "OPEN 24 HOURS"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s9",
+        "source_scene_id": "s9",
+        "narration": "Here's why this market exists. Say a US company wants to buy machine parts from a supplier in Japan.",
+        "duration_estimate": 5.6,
+        "visual_objective": "Real cargo port / shipping containers, international trade in motion",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s10",
+        "source_scene_id": "s10",
+        "narration": "That supplier doesn't want dollars. They want yen — because that's what pays their workers and their bills.",
+        "duration_estimate": 5.2,
+        "visual_objective": "Real factory floor / manufacturing footage, workers, everyday and concrete",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s11",
+        "source_scene_id": "s11",
+        "narration": "Somewhere in that transaction, dollars get converted into yen. That conversion IS the forex market.",
+        "duration_estimate": 5.0,
+        "visual_objective": "Dollars converting to yen, rendered as clean kinetic type",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "$ → ¥   THAT CONVERSION IS FOREX"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s12",
+        "source_scene_id": "s12",
+        "narration": "It happens at an airport currency counter, when a company pays an overseas supplier, or when an investor buys a foreign bond.",
+        "duration_estimate": 6.0,
+        "visual_objective": "Real airport currency exchange kiosk, a traveler at the counter",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s13",
+        "source_scene_id": "s13",
+        "narration": "Because you're always trading one currency FOR another, forex prices always come as a pair.",
+        "duration_estimate": 4.8,
+        "visual_objective": "Two currency codes locking together as one unit",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [
+          "EUR / USD"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s14",
+        "source_scene_id": "s14",
+        "narration": "The world's most heavily traded pair is the euro against the US dollar — written EUR slash USD.",
+        "duration_estimate": 5.4,
+        "visual_objective": "EUR/USD rendered as the hero pair, branded card",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s15",
+        "source_scene_id": "s15",
+        "narration": "The first currency is the 'base.' The second is the 'quote.' The price tells you how many dollars it takes to buy one euro.",
+        "duration_estimate": 6.0,
+        "visual_objective": "BASE / QUOTE labeled directly on the EUR/USD pair",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "BASE  /  QUOTE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s16",
+        "source_scene_id": "s16",
+        "narration": "So if EUR/USD is quoted at, say, one-ten, that means one euro costs you a dollar ten.",
+        "duration_estimate": 5.0,
+        "visual_objective": "A simple illustrative price example — explicitly framed as an example, not a live quote",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s17",
+        "source_scene_id": "s17",
+        "narration": "Here's something most beginners never get explained: every forex quote is actually two prices, not one.",
+        "duration_estimate": 5.0,
+        "visual_objective": "Real trading terminal close-up, two-sided price ladder visible",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s18",
+        "source_scene_id": "s18",
+        "narration": "The 'bid' is what a broker pays you. The 'ask' is what they charge you — and it's always a little higher.",
+        "duration_estimate": 6.0,
+        "visual_objective": "Bid vs ask shown as a clean delta — illustrative values",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s19",
+        "source_scene_id": "s19",
+        "narration": "That gap is called the spread — and it's how most brokers make money, whether you win or lose your trade.",
+        "duration_estimate": 5.4,
+        "visual_objective": "THE SPREAD, isolated and defined",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "THE SPREAD — THE GAP BETWEEN BID AND ASK"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s20",
+        "source_scene_id": "s20",
+        "narration": "So why does the price of a currency change at all?",
+        "duration_estimate": 3.4,
+        "visual_objective": "The chapter question, simple and direct",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [
+          "WHY DO CURRENCIES MOVE?"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s21",
+        "source_scene_id": "s21",
+        "narration": "Simple version: supply and demand. More demand pushes the price up. Less demand pushes it down.",
+        "duration_estimate": 5.6,
+        "visual_objective": "A demand-up / demand-down comparison, minimal and clean",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s22",
+        "source_scene_id": "s22",
+        "narration": "What drives that demand is interest rates, inflation, trade flows, politics, and market sentiment.",
+        "duration_estimate": 5.4,
+        "visual_objective": "Real newsroom / financial broadcast screens, headlines moving",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s23",
+        "source_scene_id": "s23",
+        "narration": "The single biggest driver, most of the time, is what central banks do with interest rates.",
+        "duration_estimate": 5.4,
+        "visual_objective": "Real Federal Reserve building exterior, Washington D.C.",
+        "primary_entity": "Federal Reserve",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Washington, D.C.",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.8
+      },
+      {
+        "scene_id": "sb_s24",
+        "source_scene_id": "s24",
+        "narration": "When the Fed raises interest rates, global investors want to hold dollars more — because their money earns more just sitting in them.",
+        "duration_estimate": 6.6,
+        "visual_objective": "Higher rate → higher return → more demand, shown as a simple causal chain",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "HIGHER RATES → HIGHER RETURN → MORE DEMAND"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s25",
+        "source_scene_id": "s25",
+        "narration": "That pulls in foreign capital chasing the better return, pushing the currency's value up.",
+        "duration_estimate": 5.4,
+        "visual_objective": "Capital flowing INTO one economy — comparison towers, rates vs capital inflow",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "threejs",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": false,
+        "threejs_candidate": true,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s26",
+        "source_scene_id": "s26",
+        "narration": "So when the Fed and the European Central Bank move rates in different directions, EUR/USD tends to move too.",
+        "duration_estimate": 6.0,
+        "visual_objective": "Real European Central Bank building exterior, Frankfurt",
+        "primary_entity": "European Central Bank",
+        "secondary_entities": [],
+        "company": "",
+        "location": "Frankfurt, Germany",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.8
+      },
+      {
+        "scene_id": "sb_s27",
+        "source_scene_id": "s27",
+        "narration": "This is also why traders obsess over jobs reports, inflation numbers, and GDP growth.",
+        "duration_estimate": 5.0,
+        "visual_objective": "Real economic data on screen, spreadsheets, analyst reviewing charts",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s28",
+        "source_scene_id": "s28",
+        "narration": "Not because the number matters alone — but because it changes what people expect the central bank to do next.",
+        "duration_estimate": 5.6,
+        "visual_objective": "DATA changing into EXPECTATION, kinetic type",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "THE DATA → THE EXPECTATION"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s29",
+        "source_scene_id": "s29",
+        "narration": "Markets don't just react to the news. They react to the news being different from what everyone already expected.",
+        "duration_estimate": 6.0,
+        "visual_objective": "EXPECTED vs ACTUAL, the gap between them highlighted",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "EXPECTED vs. ACTUAL — THE GAP IS WHAT MOVES THE PRICE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s30",
+        "source_scene_id": "s30",
+        "narration": "That's why 'good' news can send a currency DOWN — if traders expected something even better.",
+        "duration_estimate": 5.6,
+        "visual_objective": "A counterintuitive good-news-down illustration",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s31",
+        "source_scene_id": "s31",
+        "narration": "Now here's the part that draws in a lot of beginners — and hurts a lot of them too: leverage.",
+        "duration_estimate": 5.2,
+        "visual_objective": "Real trading app / platform interface, order ticket visible",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s32",
+        "source_scene_id": "s32",
+        "narration": "Leverage lets you control a large position with a small amount of your own money. US regulators cap retail forex leverage at fifty-to-one on major pairs.",
+        "duration_estimate": 7.4,
+        "visual_objective": "The 50:1 cap, branded and sourced to the CFTC",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "50:1"
+        ],
+        "emotion": "curious",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s33",
+        "source_scene_id": "s33",
+        "narration": "That means with two thousand dollars of your own money, you could control a hundred thousand dollars in currency.",
+        "duration_estimate": 6.0,
+        "visual_objective": "$2,000 controlling $100,000 — the multiplier made concrete",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s34",
+        "source_scene_id": "s34",
+        "narration": "Leverage multiplies your gains. But it multiplies your losses exactly the same way.",
+        "duration_estimate": 5.0,
+        "visual_objective": "Symmetric arrows — gains up, losses down, same size",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "LEVERAGE MULTIPLIES BOTH DIRECTIONS"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s35",
+        "source_scene_id": "s35",
+        "narration": "A move that would barely register without leverage can wipe out your account with it. That's just the math.",
+        "duration_estimate": 5.8,
+        "visual_objective": "The math stated plainly, no dramatization needed",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "THAT'S NOT A WARNING. THAT'S THE MATH."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s36",
+        "source_scene_id": "s36",
+        "narration": "Which raises something most retail traders don't realize: this market wasn't really built for them.",
+        "duration_estimate": 5.4,
+        "visual_objective": "Real institutional trading floor, scale and seriousness",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s37",
+        "source_scene_id": "s37",
+        "narration": "More than four trillion dollars a day moves through FX swaps alone — used almost entirely by banks and institutions moving real money.",
+        "duration_estimate": 7.2,
+        "visual_objective": "FX swaps as the largest single instrument, branded and sourced",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [
+          "$4 trillion"
+        ],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s38",
+        "source_scene_id": "s38",
+        "narration": "Individual retail traders make up a small slice of that nine-point-six-trillion-dollar total.",
+        "duration_estimate": 5.2,
+        "visual_objective": "Retail slice shown as small against the total",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "RETAIL TRADERS: A SMALL SLICE OF A HUGE MARKET"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s39",
+        "source_scene_id": "s39",
+        "narration": "Institutions get tighter spreads, faster execution, and far more information. Retail gets access — not the same playing field.",
+        "duration_estimate": 6.4,
+        "visual_objective": "Institutional vs retail advantages, side by side",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s40",
+        "source_scene_id": "s40",
+        "narration": "That gap is exactly what a lot of 'get rich trading forex' content online quietly leaves out.",
+        "duration_estimate": 5.6,
+        "visual_objective": "Real phone/social media scrolling footage, generic and unbranded",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "tense",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s41",
+        "source_scene_id": "s41",
+        "narration": "Forex isn't a shortcut. It's one of the most competitive markets on Earth — and you're trading against professionals who do this all day.",
+        "duration_estimate": 6.2,
+        "visual_objective": "The reframe, stated plainly",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "curious",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "NOT A SHORTCUT. THE MOST COMPETITIVE MARKET ON EARTH."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s42",
+        "source_scene_id": "s42",
+        "narration": "Most beginners don't fail because forex is rigged. They oversize trades, ignore the spread, and treat leverage like free money instead of borrowed risk.",
+        "duration_estimate": 6.4,
+        "visual_objective": "Three concrete failure modes, listed plainly",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "cautionary",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "OVERSIZED TRADES. IGNORED SPREADS. LEVERAGE MISTAKEN FOR FREE MONEY."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s43",
+        "source_scene_id": "s43",
+        "narration": "So — forex isn't secretive, and it isn't rigged. It's just enormous, fast, and mostly invisible.",
+        "duration_estimate": 5.4,
+        "visual_objective": "Wide dusk establishing shot, callback to the cold open",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "exact_footage",
+          "licensed_image",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "fade",
+        "overlay_text": [],
+        "visual_confidence_score": 0.72
+      },
+      {
+        "scene_id": "sb_s44",
+        "source_scene_id": "s44",
+        "narration": "Nine point six trillion dollars a day — moving between banks, corporations and traders, every hour the sun is up somewhere on Earth.",
+        "duration_estimate": 6.8,
+        "visual_objective": "Callback to the hook counter — same number, now understood",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s45",
+        "source_scene_id": "s45",
+        "narration": "It's a market — not a machine that prints money. Understanding how it actually works is the difference between using it, and being used by it.",
+        "duration_estimate": 6.8,
+        "visual_objective": "The thesis line, closing the loop opened in the cold open",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "urgent",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "A MARKET. NOT A MACHINE."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s46",
+        "source_scene_id": "s46",
+        "narration": "If you want to actually understand how markets work — instead of guessing at them — that's exactly what this channel is for.",
+        "duration_estimate": 6.0,
+        "visual_objective": "Channel CTA card, calm and simple",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "urgent",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "K70 — UNDERSTAND THE ECONOMY",
+          "K70 FINANCE"
+        ],
+        "visual_confidence_score": 0.92
+      }
+    ]
+  },
+  "asset_provenance": [],
+  "threejs_provenance": [],
+  "motion_graphics_provenance": [],
+  "ai_broll_provenance": [],
+  "paperima_provenance": [],
+  "brand_identity_provenance": null,
+  "variety": {},
+  "brand_id": "k70"
+}

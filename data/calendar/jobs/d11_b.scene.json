@@ -1,0 +1,205 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d11_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Wall Street Called This Fund 'Un-American' in 1976",
+    "hook": "In 1976, Wall Street mocked this fund as 'un-American.' It now anchors trillions of dollars.",
+    "description": "John Bogle launched the First Index Investment Trust at Vanguard on August 31, 1976, aiming to simply track the market instead of beat it. It raised just over $11 million against a $50-150 million goal and was ridiculed by critics \u2014 but the low-cost index approach it pioneered now underpins trillions of dollars in assets. Educational content only, not financial advice.",
+    "tags": [
+      "index funds",
+      "john bogle",
+      "vanguard",
+      "investing history",
+      "investing for beginners"
+    ],
+    "hashtags": [
+      "#indexfunds",
+      "#investing",
+      "#vanguard",
+      "#shorts"
+    ],
+    "thumbnail_text": "\u2018UN-AMERICAN\u2019, 1976"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "In nineteen seventy-six, Wall Street mocked this fund as un-American.",
+      "duration_sec": 4.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "bogle index fund mockery"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "vintage stock ticker archival trading",
+        "visual_intent": "An archival stock ticker board with scrolling numbers, dim trading room, film grain",
+        "broll_keywords": [
+          "vintage stock ticker board",
+          "archival trading floor numbers",
+          "old market ticker screen"
+        ],
+        "decision_reason": "hook beat: the striking historical reaction"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "John Bogle launched the First Index Investment Trust at Vanguard in August nineteen seventy-six.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "bogle vanguard launch"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "businessman 1970s office portrait archival",
+        "visual_intent": "A man in 1970s business attire in an office setting, archival warm tone",
+        "broll_keywords": [
+          "1970s businessman office archival",
+          "vintage executive portrait office",
+          "retro office businessman"
+        ],
+        "decision_reason": "launch fact, Vanguard/Fool-sourced"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Instead of picking stocks, it simply held the entire market and tried to match it, not beat it.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "index fund concept"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "basket of many stocks icons graphic",
+        "visual_intent": "A graphic basket filled with many small icons representing a broad market, clean render",
+        "broll_keywords": [
+          "basket many items graphic",
+          "diversified collection icons visual",
+          "broad market concept graphic"
+        ],
+        "decision_reason": "defines the index-fund concept, definitional"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Bogle hoped to raise fifty to a hundred fifty million dollars. The fund raised just over eleven million.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "underwhelming launch"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "small pile of money against goal chart",
+        "visual_intent": "A small stack of cash beside a much larger empty outline space, symbolic of falling short, clean composition",
+        "broll_keywords": [
+          "small cash stack symbolic shortfall",
+          "money pile against target",
+          "underwhelming fund visual"
+        ],
+        "decision_reason": "reported underwriting target vs actual raise, Fool.com/Kiplinger-sourced"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Goal: $50-150M \u00b7 Raised: $11M",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "Critics called indexing a guaranteed path to mediocrity. Why settle for average?",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "critic skepticism"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "newspaper financial section critical headline",
+        "visual_intent": "A financial newspaper section spread on a table, dim reading light",
+        "broll_keywords": [
+          "newspaper financial section table",
+          "business press pages spread",
+          "financial news print close"
+        ],
+        "decision_reason": "represents contemporaneous critic sentiment, widely reported"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Within about two decades, that fund and the index-investing movement it sparked had grown into the hundreds of billions of dollars.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "long term growth"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "growing bar chart data screen dark",
+        "visual_intent": "A bar chart rising steadily across a dark financial display, teal and gold accents",
+        "broll_keywords": [
+          "rising bar chart screen dark",
+          "growing financial data graphic",
+          "upward trend chart display"
+        ],
+        "decision_reason": "qualitative growth framing to avoid implying an annual investment-return figure"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "Bogle's bet was that low costs beat stock-picking skill over time. Index funds now hold trillions on that same bet.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "modern investor phone app portfolio",
+        "visual_intent": "A person calmly viewing a diversified portfolio on a phone app, natural light, still",
+        "broll_keywords": [
+          "investor phone portfolio app",
+          "checking investments phone calm",
+          "modern investing app screen"
+        ],
+        "decision_reason": "closing payoff, no personalized advice"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "d16_a",
+  "day": 16,
+  "slot": "A",
+  "category": "business_wealth_story",
+  "content_type": "evergreen",
+  "topic": "Airbnb's 2008 cereal-box fundraiser kept the company alive",
+  "sources": [
+    {
+      "claim": "Airbnb's founders sold Obama O's and Cap'n McCain's cereal during the 2008 campaign to raise operating cash",
+      "source": "CNBC interview with Airbnb CEO Brian Chesky",
+      "url": "https://www.cnbc.com/2023/04/18/airbnb-ceo-says-he-wooed-first-investors-with-boxes-of-cereal.html",
+      "type": "reputable_secondary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": true,
+  "disclaimer": "",
+  "status": "READY"
+}

@@ -1,0 +1,88 @@
+# ───────────────────────────────────────────────────────────────────────────
+# PRODUCTION PRESET · long-form finance documentary / explainer
+#
+# Single-episode landscape (16:9) explainer, 4-6 minutes, for K70 Finance.
+# Cloned from `documentary_series.yaml` (the proven long-form spine used for
+# the Bitcoin history episode — 641s, 156 scenes, full QA PASS except the
+# wall-time budget, which this preset raises) with the channel/niche/story
+# doctrine swapped to finance and AI generation kept OFF: this preset is for
+# authored (`--from-json`) episodes only, never Director-generated.
+#
+#   .venv/bin/python scripts/build_forex_ep01.py
+#   .venv/bin/python scripts/produce.py --preset documentary_finance \
+#       --from-json data/series/forex_explainer/ep01/scene_graph.json --keep
+# ───────────────────────────────────────────────────────────────────────────
+name: documentary_finance
+channel_id: k70_economy
+niche: usa_finance
+
+env:
+  RENDER_BACKEND: ffmpeg
+  VISUAL_ACCURACY_MODE: strict
+  LAYERED_RENDER: "1"
+  CHARACTER_MEMORY: "0"          # explainer has no recurring on-screen character
+  QA_ENABLED: "1"
+  AI_VIDEO_ENABLED: "0"
+  ENABLE_IMAGE_TO_VIDEO: "0"
+  COMFYUI_ENABLED: "0"
+
+  # A ~5-minute explainer still has real per-chapter hero moments (spread,
+  # leverage, the 24-hour session handoff), but this brief calls for real
+  # footage/charts/motion-graphics over AI recreation wherever possible — see
+  # documentary_series.yaml for the full rationale on these numbers; kept
+  # generous here only as headroom, not as a target to fill.
+  LAYERED_AI_STILL_BUDGET: "8"
+  LAYERED_MAX_HERO_SCENES: "4"
+  LAYERED_FFMPEG_THREADS: "4"
+  LAYERED_SUBJECT_MATTE: oval
+  LAYERED_MIN_FREE_MB: "2000"
+
+  # Same known-bad-path guard as documentary_series: Pollinations has no SLA,
+  # rate-limits, and its FluxAdapter bypasses the normal timeout/logging path
+  # (see documentary_series.yaml's note — measured 27 minutes silent on one
+  # socket). Kept OFF. If an "ai" beat is ever used it gets the free local
+  # cinematic PLATE (graded gradient/grain/vignette), never a live AI image —
+  # for THIS brief we plan to avoid the ai_broll channel entirely and lean on
+  # real footage, charts, threejs and motion graphics instead.
+  AI_IMAGE_DEMO: "1"
+  AI_BROLL_TIMEOUT_S: "180"
+  POLLINATIONS_ENABLED: "0"
+
+  # ── Six-channel visual mix ───────────────────────────────────────────────
+  STORYBOARD_ENGINE_ENABLED: "1"
+  MULTI_SOURCE_ASSET_ENGINE_ENABLED: "1"
+  MOTION_GRAPHICS_ENGINE_ENABLED: "1"
+  THREEJS_VISUAL_ENGINE_ENABLED: "1"
+  AI_BROLL_ENGINE_ENABLED: "0"
+
+  THREEJS_QUALITY: preview
+
+  # A 5-minute, ~45-scene render measured well past the Shorts-tuned 900s
+  # default on the Bitcoin episode precedent (2877s for a 641s/156-scene
+  # episode). Raised generously rather than let a real, on-time render get
+  # flagged as a false QA failure. Quality over speed — see brief.
+  QA_RENDER_BUDGET_S: "3600"
+
+# Finance explainers are host-led narration, not a recurring on-screen character.
+character:
+  name: ""
+  desc: ""
+  style: ""
+
+story:
+  pacing: "cold open on the scale of the market → mechanics, one concept at a time → risk, honestly stated → close"
+  hook_style: "Open on the number nobody has really felt: how much money is actually moving, right now, in a market most viewers have never seen."
+  hero_beat: "the moment a concept clicks — the spread as a real cost, the leverage multiplier, the 24-hour handoff between trading sessions"
+  visual_doctrine: >
+    Every mechanic gets a visual explanation, not a stock metaphor. EUR/USD,
+    bid/ask/spread, interest-rate differentials and leverage are built as
+    branded charts, kinetic typography or Three.js comparisons — never
+    described over generic footage of someone typing. Real trading-terminal,
+    market and currency footage is a support shot for texture, not the
+    explanation itself. Numbers are attributed on screen to their source
+    (BIS, CFTC/NFA) the moment they are spoken. No AI recreation unless a
+    concept is genuinely unfilmable, and even then it is disclosed — this
+    brief prioritises real footage and real charts over synthetic imagery.
+    No talking heads, no "trader staring at monitors" filler, no promises of
+    easy money.
+  music_mood: finance

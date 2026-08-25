@@ -1,0 +1,255 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# MONETISATION SAFETY RULES
+#
+# Applied by pipeline/compliance.py to narration, overlays, title, description,
+# tags and thumbnail text — everything a reviewer or an advertiser can see.
+#
+# Two mechanisms:
+#   rewrites  — a regex that MUST NOT ship, plus the wording that replaces it.
+#               Applied automatically; each substitution is recorded on the graph.
+#   flags     — patterns that can't be safely auto-rewritten. These FAIL the
+#               compliance gate and go back to the Director for a real rewrite,
+#               because silently deleting a claim can change its meaning.
+#
+# Writing rules:
+#   * `pattern` is a case-insensitive regex. Use \b word boundaries.
+#   * Keep the sentence grammatical — the result is SPOKEN, so a clumsy
+#     substitution is audible. Replacements must slot into the original's
+#     grammatical role (noun phrase for noun phrase, verb for verb).
+#   * Rules apply IN ORDER, so put the longest, most specific phrasings first and
+#     let them consume the whole clause. Two short rules firing on overlapping
+#     text is how you get word salad in the voiceover.
+#   * Avoid capture groups. An optional group that doesn't match expands to
+#     nothing and silently truncates a word ("compan").
+#   * Prefer descriptive framing ("historically returned") over prescriptive
+#     ("will return"). YPP and advertisers object to advice, not to information.
+# ─────────────────────────────────────────────────────────────────────────────
+version: 1
+
+# The disclaimer burned into the video and prepended to the description.
+disclaimer:
+  short: "Educational purposes only. Not financial advice."
+  # Longer form for the description block.
+  long: >-
+    Educational purposes only. Not financial advice. This video is general
+    information about markets, business and economics, and does not consider your
+    personal circumstances. Always do your own research and consider speaking to a
+    licensed financial professional before making any financial decision.
+  # Where the short form appears in the video.
+  show_early: true          # a quiet band a couple of seconds in
+  show_on_outro: true       # full width on the end card
+
+# ── Automatic rewrites ──────────────────────────────────────────────────────
+rewrites:
+
+  # --- absolute-certainty language ------------------------------------------
+  - pattern: '\bguaranteed\b'
+    replace: 'historically consistent'
+    reason: "'guaranteed' implies a promised outcome — the single most flagged word in finance content"
+  - pattern: '\bguarantees\b'
+    replace: 'has historically delivered'
+    reason: "promissory framing"
+  - pattern: '\bguarantee\b'
+    replace: 'strong track record'
+    reason: "promissory framing"
+  - pattern: '\brisk[- ]free\b'
+    replace: 'lower-risk'
+    reason: "no investment is risk-free; the claim is factually false and advertiser-hostile"
+  - pattern: '\bno risk\b'
+    replace: 'lower risk'
+    reason: "absolute risk claim"
+  - pattern: '\bcan[’'']?t lose\b'
+    replace: 'has rarely lost'
+    reason: "absolute outcome claim"
+  - pattern: '\bsure thing\b'
+    replace: 'widely expected outcome'
+    reason: "absolute outcome claim"
+  - pattern: '\bfoolproof\b'
+    replace: 'well-established'
+    reason: "absolute outcome claim"
+
+  # --- get-rich / easy-money framing ----------------------------------------
+  - pattern: '\bget rich quick\b'
+    replace: 'build wealth quickly'
+    reason: "'get rich quick' reads as a scheme; a top advertiser-exclusion trigger"
+  - pattern: '\bget rich\b'
+    replace: 'build wealth'
+    reason: "get-rich framing"
+  - pattern: '\beasy money\b'
+    replace: 'returns that looked easy'
+    reason: "easy-money framing implies effortless gain"
+  - pattern: '\bfree money\b'
+    replace: 'unusually cheap capital'
+    reason: "easy-money framing"
+  - pattern: '\bprinting money\b'
+    replace: 'generating unusually high margins'
+    reason: "easy-money framing"
+  - pattern: '\bpassive income hack\b'
+    replace: 'income strategy'
+    reason: "'hack' framing"
+  - pattern: '\bmake you rich\b'
+    replace: 'build long-term wealth'
+    reason: "personal enrichment promise"
+  - pattern: '\bdouble your money\b'
+    replace: 'deliver strong returns'
+    reason: "specific return promise"
+  - pattern: '\b(\d+)x your money\b'
+    replace: 'multiply returns'
+    reason: "specific return promise"
+
+  # --- direct investment advice (the YPP / advertiser red line) --------------
+  # Longest first: these consume the whole clause so a second rule can't fire on
+  # what the first one left behind.
+  - pattern: '\bthe best stocks? to buy( right now| now| today)?\b'
+    replace: 'the most widely discussed companies'
+    reason: "a buy recommendation; this channel describes, it does not recommend"
+  - pattern: '\bbest stocks? to buy\b'
+    replace: 'most widely discussed companies'
+    reason: "a buy recommendation"
+  - pattern: '\bbest (?:crypto|coins?|tokens?) to buy\b'
+    replace: 'most widely discussed digital assets'
+    reason: "a buy recommendation"
+  - pattern: '\bdo(?:n[’'']?t| not) miss (?:out on )?(?:this|it)(?: last chance)?\b'
+    replace: 'this is worth understanding'
+    reason: "urgency/FOMO pressure"
+  - pattern: '\b(?:this is your |your )?last chance to (?:buy|invest|get in)\b'
+    replace: 'a narrowing window to participate'
+    reason: "urgency/FOMO pressure"
+  - pattern: '\blast chance\b'
+    replace: 'a narrowing window'
+    reason: "urgency/FOMO pressure"
+  - pattern: '\bbefore it(?:[’'']s| is| was) too late\b'
+    replace: 'while it is still developing'
+    reason: "urgency/FOMO pressure"
+  - pattern: '\byou (?:should|need to|have to|must) (buy|sell|invest in|get into)\b'
+    replace: 'some investors choose to \1'
+    reason: "prescriptive personal advice"
+  - pattern: '\b(?:you should )?(?:buy|sell) (?:this|that) (stock|coin|token|company)\b'
+    replace: 'watch this \1'
+    reason: "a direct trade instruction"
+  - pattern: '\bbuy now\b'
+    replace: 'is drawing attention now'
+    reason: "a direct call to action on a security"
+  - pattern: '\bload up on\b'
+    replace: 'increase exposure to'
+    reason: "a direct trade instruction"
+  - pattern: '\ball in on\b'
+    replace: 'heavily concentrated in'
+    reason: "a direct trade instruction"
+  - pattern: '\bto the moon\b'
+    replace: 'sharply higher'
+    reason: "hype framing associated with pump content"
+
+  # --- unsupported superlatives / sensationalism ----------------------------
+  - pattern: '\bwill (crash|collapse|explode|skyrocket)\b'
+    replace: 'could \1'
+    reason: "a stated prediction becomes a hedged possibility"
+  - pattern: '\bis about to (crash|collapse|explode|skyrocket)\b'
+    replace: 'may be at risk of a \1'
+    reason: "a stated prediction becomes a hedged possibility"
+  # "alleged" is the standard journalistic fix: it keeps the noun (so the
+  # sentence still parses) while removing the unproven assertion.
+  - pattern: '\b(?:a )?total scam\b'
+    replace: 'an alleged scam'
+    reason: "an unproven accusation invites a legal claim and demonetisation"
+  # The lookbehind stops this from re-firing on text the rule above already
+  # hedged ("an alleged alleged scam").
+  - pattern: '(?<!alleged )\bscam\b'
+    replace: 'alleged scam'
+    reason: "an unproven accusation invites a legal claim and demonetisation"
+  - pattern: '(?<!alleged )\bponzi scheme\b'
+    replace: 'alleged Ponzi scheme'
+    reason: "an unproven accusation"
+  - pattern: '(?<!alleged )\bponzi\b(?! scheme)'
+    replace: 'alleged Ponzi scheme'
+    reason: "an unproven accusation"
+  - pattern: '\bthey don[’'']?t want you to know\b'
+    replace: 'is rarely discussed'
+    reason: "conspiracy framing damages advertiser suitability"
+  - pattern: '\bsecret (the )?(banks|government|rich) (don[’'']?t|do not) want\b'
+    replace: 'detail rarely explained'
+    reason: "conspiracy framing"
+
+# ── Patterns that must go back to the Director ──────────────────────────────
+# These change meaning if machine-rewritten, so the gate fails and the repair
+# loop asks for a real rewrite.
+flags:
+  - pattern: '\b(i|we) recommend\b'
+    reason: "first-person recommendation — restate as what others do, or cut it"
+  - pattern: '\bmy (top|favou?rite) (pick|stock|play)\b'
+    reason: "personal recommendation"
+  - pattern: '\bprice target\b'
+    reason: "a price target is analyst advice; attribute it to a named firm or cut it"
+  - pattern: '\bfinancial advice\b(?!\s*[.’]?\s*$)'
+    reason: "avoid the phrase except in the disclaimer itself"
+  - pattern: '\bguaranteed returns?\b'
+    reason: "promised returns — rewrite the claim entirely"
+
+# ── Advertiser-suitability warnings (non-blocking) ──────────────────────────
+# Reported, never rewritten. These are legitimate documentary subjects; the point
+# is that the operator knows a video may attract limited ads before it publishes.
+advisories:
+  - pattern: '\b(suicide|overdose|murdered?|killing)\b'
+    note: "sensitive event language may limit ad suitability"
+  - pattern: '\b(bankrupt|bankruptcy|fraud|indicted|convicted)\b'
+    note: "legal/financial-distress language: keep it sourced and neutral"
+  - pattern: '\b(war|invasion|airstrike|missile)\b'
+    note: "conflict language may limit ad suitability"
+  - pattern: '\b(gambling|casino|betting)\b'
+    note: "gambling references restrict some advertiser categories"
+
+# ── AI / synthetic-content disclosure ───────────────────────────────────────
+# YouTube requires disclosure when synthetic media could make a viewer believe a
+# real person did or said something, or that a real event happened. Generic
+# animation, charts and stylised backgrounds do NOT require it.
+ai_disclosure:
+  # Subjects that make an AI-generated visual REALISTIC-PERSON or REAL-EVENT.
+  realistic_subjects:
+    - president
+    - senator
+    - congressman
+    - ceo
+    - billionaire
+    - politician
+    - candidate
+    - crowd
+    - protest
+    - riot
+    - courtroom
+    - press conference
+    - interview
+    - testimony
+    - arrest
+    - disaster
+    - crash site
+    - war
+    - soldier
+    - police
+    - hospital
+    - newsroom
+    - anchor
+    - reenactment
+    - re-enactment
+    - recreation
+    - archival
+    - historical footage
+    - security camera
+    - cctv
+    - body cam
+    - surveillance
+  # Words that signal photoreal intent in a generation prompt.
+  photoreal_markers:
+    - photoreal
+    - photorealistic
+    - realistic
+    - documentary photo
+    - news footage
+    - 35mm
+    - cinematic still
+    - hyperreal
+    - lifelike
+  reminder: >-
+    This video contains AI-generated imagery that could be mistaken for real
+    people or real events. Before publishing, enable YouTube's "Altered or
+    Synthetic Content" disclosure in YouTube Studio → Video details → Show more →
+    Altered content → Yes.

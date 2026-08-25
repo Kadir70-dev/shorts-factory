@@ -1,0 +1,110 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d02_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Inflation Isn't One Number. Here's What The CPI Actually Tracks.",
+    "hook": "When you hear 'inflation is 3 percent,' that number comes from tracking thousands of specific prices, not one.",
+    "description": "The Consumer Price Index, published monthly by the Bureau of Labor Statistics, tracks price changes across a fixed basket of goods and services — housing, food, transportation, medical care and more — weighted by how much a typical household actually spends on each. It's why inflation can feel different in your own life than the headline number suggests: your personal spending mix rarely matches the national average basket exactly.",
+    "tags": ["inflation", "cpi", "consumer price index", "bls", "economics explained", "cost of living", "macro economics"],
+    "hashtags": ["#inflation", "#economics", "#cpi", "#money", "#shorts"],
+    "thumbnail_text": "NOT ONE PRICE"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "When you hear inflation is three percent, that number isn't tracking one price. It's tracking thousands.",
+      "duration_sec": 4.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["cpi headline number", "inflation explained"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "grocery store price tags shelf close up",
+        "visual_intent": "Close up of grocery store price tags on a shelf edge, bright retail light, shallow focus",
+        "broll_keywords": ["grocery price tags shelf", "supermarket shelf prices close up", "retail price label close up"],
+        "decision_reason": "hook beat: the tangible prices behind the abstract number"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "The Bureau of Labor Statistics tracks a fixed basket of goods and services every single month.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["bureau of labor statistics", "cpi basket"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "pan_lr",
+        "query": "shopping cart full groceries store aisle",
+        "visual_intent": "A shopping cart moving down a grocery aisle full of varied products, natural retail light",
+        "broll_keywords": ["shopping cart grocery aisle", "grocery cart full products", "supermarket aisle shopping"],
+        "decision_reason": "visualizes the 'basket' concept"
+      },
+      "overlays": [{"type": "source", "text": "Source: U.S. Bureau of Labor Statistics", "y": 0.85}]
+    },
+    {
+      "id": "s3",
+      "narration": "Housing, food, transportation, medical care — each category gets weighted by how much the average household actually spends on it.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["cpi weighting", "household spending"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_out",
+        "query": "pie chart budget categories screen",
+        "visual_intent": "A branded pie-chart-style breakdown of household spending categories on a dark screen, teal and gold",
+        "broll_keywords": ["budget pie chart screen", "household spending categories graphic", "financial breakdown chart"],
+        "decision_reason": "visualizes the weighting mechanism"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "That's why the headline number can feel wrong. Your own spending mix almost never matches the national average basket.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["personal inflation gap", "cpi limitation"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "none",
+        "query": "person reviewing bills receipts kitchen table",
+        "visual_intent": "A person at a kitchen table reviewing bills and receipts, warm home light, contemplative",
+        "broll_keywords": ["reviewing bills kitchen table", "person checking receipts home", "budgeting paperwork table"],
+        "decision_reason": "the personal-vs-average gap"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "If you spend heavily on rent and gas, your real inflation can run well above or below the reported rate.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["rent gas weighting", "individual variance"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "zoom_in",
+        "query": "gas station pump price sign",
+        "visual_intent": "A gas station price sign with digits visible, late-day light, slight motion blur from passing traffic",
+        "broll_keywords": ["gas station price sign", "fuel pump price display", "gas prices sign road"],
+        "decision_reason": "concrete example of a high-weight category"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The CPI isn't wrong. It's just an average — and nobody actually lives an average life. Follow for more.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["cpi is an average", "closing"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "ken_burns",
+        "query": "diverse american neighborhood street daily life",
+        "visual_intent": "A quiet American residential street with everyday activity, warm afternoon light",
+        "broll_keywords": ["american neighborhood street", "residential street daily life", "suburban street afternoon"],
+        "decision_reason": "closing summary and CTA"
+      }
+    }
+  ]
+}

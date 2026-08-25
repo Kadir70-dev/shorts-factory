@@ -1,0 +1,782 @@
+[
+  {
+    "day": 1,
+    "slots": {
+      "A": {
+        "job_id": "d01_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "IKEA flat-pack origin",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d01_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "How the Fed actually moves interest rates",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d01_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How credit card companies profit even when you pay in full",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 2,
+    "slots": {
+      "A": {
+        "job_id": "d02_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Blockbuster passed on buying Netflix",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d02_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "What CPI actually measures",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d02_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How mortgage interest front-loads the early years",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 3,
+    "slots": {
+      "A": {
+        "job_id": "d03_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Southwest's one-aircraft-type strategy",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d03_b",
+        "category": "markets_economics_education",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      },
+      "C": {
+        "job_id": "d03_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How fractional reserve banking works",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 4,
+    "slots": {
+      "A": {
+        "job_id": "d04_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Netflix's DVD-to-streaming pivot",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d04_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "Why an inverted yield curve signals recession risk",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d04_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "Where the FICO credit score came from",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 5,
+    "slots": {
+      "A": {
+        "job_id": "d05_a",
+        "category": "business_wealth_story",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      },
+      "B": {
+        "job_id": "d05_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "How an IPO actually works",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d05_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "Compound interest with a concrete example",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 6,
+    "slots": {
+      "A": {
+        "job_id": "d06_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Amazon's thin-margin reinvestment strategy",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d06_b",
+        "category": "markets_economics_education",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      },
+      "C": {
+        "job_id": "d06_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How insurance companies actually profit",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 7,
+    "slots": {
+      "A": {
+        "job_id": "d07_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "McDonald's real estate business",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d07_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "What a stock split really changes",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d07_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "Why store credit cards carry brutal interest rates",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 8,
+    "slots": {
+      "A": {
+        "job_id": "d08_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Gillette's razor-and-blades pricing",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d08_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "How short selling works and its unique risk",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d08_c",
+        "category": "money_mechanics_finance",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      }
+    }
+  },
+  {
+    "day": 9,
+    "slots": {
+      "A": {
+        "job_id": "d09_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Nike owns no factories",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d09_b",
+        "category": "markets_economics_education",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      },
+      "C": {
+        "job_id": "d09_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How Visa and Mastercard make money without lending",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 10,
+    "slots": {
+      "A": {
+        "job_id": "d10_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Sears catalog dominance to bankruptcy",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d10_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "What a bond actually is",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d10_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "What a 401k match actually is",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 11,
+    "slots": {
+      "A": {
+        "job_id": "d11_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Kodak invented and buried the digital camera",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d11_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "Why index funds beat most active managers",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d11_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How payday loans trap borrowers",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 12,
+    "slots": {
+      "A": {
+        "job_id": "d12_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Amazon's garage origin and Day 1 philosophy",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d12_b",
+        "category": "markets_economics_education",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      },
+      "C": {
+        "job_id": "d12_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "Why your paycheck withholding isn't your final tax bill",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 13,
+    "slots": {
+      "A": {
+        "job_id": "d13_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Musk's PayPal payout funded Tesla and SpaceX",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d13_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "How stock buybacks work",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d13_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How debt consolidation actually works",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 14,
+    "slots": {
+      "A": {
+        "job_id": "d14_a",
+        "category": "business_wealth_story",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      },
+      "B": {
+        "job_id": "d14_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "What GDP measures and what it leaves out",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d14_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "Why leasing a car is structured differently than buying",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 15,
+    "slots": {
+      "A": {
+        "job_id": "d15_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Warby Parker's direct-to-consumer eyewear model",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d15_b",
+        "category": "markets_economics_education",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      },
+      "C": {
+        "job_id": "d15_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How buy-now-pay-later apps make money",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 16,
+    "slots": {
+      "A": {
+        "job_id": "d16_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Airbnb's 2008 cereal box survival story",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d16_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "How the bid-ask spread quietly costs traders",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d16_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "What FDIC insurance actually covers",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 17,
+    "slots": {
+      "A": {
+        "job_id": "d17_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Standard Oil's breakup created today's oil giants",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d17_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "What a recession technically is",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d17_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How overdraft fees became a bank revenue stream",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 18,
+    "slots": {
+      "A": {
+        "job_id": "d18_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Disney's IP acquisition strategy",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d18_b",
+        "category": "markets_economics_education",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      },
+      "C": {
+        "job_id": "d18_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "Why 0% balance transfer offers exist",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 19,
+    "slots": {
+      "A": {
+        "job_id": "d19_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Enron's accounting collapse",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d19_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "Why gold became a 'safe haven' asset",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d19_c",
+        "category": "money_mechanics_finance",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      }
+    }
+  },
+  {
+    "day": 20,
+    "slots": {
+      "A": {
+        "job_id": "d20_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "BlackBerry's fall from smartphone leader",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d20_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "ETFs vs mutual funds: the tax efficiency gap",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d20_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How title loans work and why they're risky",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 21,
+    "slots": {
+      "A": {
+        "job_id": "d21_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Costco's Kirkland Signature private-label strategy",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d21_b",
+        "category": "markets_economics_education",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      },
+      "C": {
+        "job_id": "d21_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "Why credit utilization moves your score fast",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 22,
+    "slots": {
+      "A": {
+        "job_id": "d22_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Toys R Us bankruptcy and private equity debt",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d22_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "How margin trading amplifies gains and losses",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d22_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How rewards credit cards are funded",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 23,
+    "slots": {
+      "A": {
+        "job_id": "d23_a",
+        "category": "business_wealth_story",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      },
+      "B": {
+        "job_id": "d23_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "Why the S&P 500 is market-cap weighted",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d23_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "Why renters insurance is cheap but often skipped",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 24,
+    "slots": {
+      "A": {
+        "job_id": "d24_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Walmart's everyday-low-price origins",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d24_b",
+        "category": "markets_economics_education",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      },
+      "C": {
+        "job_id": "d24_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How student loan interest capitalization works",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 25,
+    "slots": {
+      "A": {
+        "job_id": "d25_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Tesla's Gigafactory vertical integration bet",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d25_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "What quantitative easing actually does",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d25_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "What a HELOC actually is",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 26,
+    "slots": {
+      "A": {
+        "job_id": "d26_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Levi's 501 jeans origin",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d26_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "How stock market circuit breakers work",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d26_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "The limits of identity theft protection services",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 27,
+    "slots": {
+      "A": {
+        "job_id": "d27_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Coca-Cola's secret formula and the New Coke failure",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d27_b",
+        "category": "markets_economics_education",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      },
+      "C": {
+        "job_id": "d27_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "Why term life costs so much less than whole life",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 28,
+    "slots": {
+      "A": {
+        "job_id": "d28_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Starbucks' site-selection science",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d28_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "What 'priced in' means",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d28_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How check-cashing stores profit from the unbanked",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 29,
+    "slots": {
+      "A": {
+        "job_id": "d29_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "LEGO's 2003 near-bankruptcy turnaround",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d29_b",
+        "category": "markets_economics_education",
+        "content_type": "evergreen",
+        "topic": "Dollar-cost averaging vs lump-sum investing",
+        "status": "READY"
+      },
+      "C": {
+        "job_id": "d29_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "What a credit freeze actually does",
+        "status": "READY"
+      }
+    }
+  },
+  {
+    "day": 30,
+    "slots": {
+      "A": {
+        "job_id": "d30_a",
+        "category": "business_wealth_story",
+        "content_type": "evergreen",
+        "topic": "Berkshire Hathaway's origin as a failing textile mill",
+        "status": "READY"
+      },
+      "B": {
+        "job_id": "d30_b",
+        "category": "markets_economics_education",
+        "content_type": "trend",
+        "topic": "TREND SLOT \u2014 researched at publish time",
+        "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+      },
+      "C": {
+        "job_id": "d30_c",
+        "category": "money_mechanics_finance",
+        "content_type": "evergreen",
+        "topic": "How subscription free trials are engineered",
+        "status": "READY"
+      }
+    }
+  }
+]

@@ -1,0 +1,82 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# VISUAL BUDGET
+#
+# Target share of SCREEN TIME per visual source. Edited here, never hardcoded —
+# a different channel or a different show can retune the mix without touching
+# pipeline code.
+#
+# These are BANDS, not quotas. `lo` is what the allocator tries to reach when the
+# storyboard supports it; `hi` is a hard ceiling it will not cross. A topic that
+# genuinely has nothing to film will under-fill `stock`, and that is correct
+# behaviour — forcing a band would put irrelevant footage on screen, which is the
+# problem this system exists to prevent.
+#
+# Percentages are measured by DURATION, and every scene is assigned exactly ONE
+# channel, so the reported mix sums to 100% by construction.
+# ─────────────────────────────────────────────────────────────────────────────
+version: 1
+
+# 2026-08-22 (Day 04 rule): motion_gfx (full-screen kinetic typography, the
+# "blue text card") was hitting 25-47% of screen time per Short — a text
+# slideshow, not a visual story. Capped to a single beat max (~1 scene) and
+# threejs zeroed out (engine disabled in this environment; routing scenes to
+# it produced broken/blank frames). The freed share moves to real footage,
+# AI cinematic recreation and charts. Revert from visual_budget.yaml.day04.bak
+# if the old 25-35% motion_gfx default is ever wanted back.
+bands:
+  motion_gfx:  {lo: 0.00, hi: 0.17}   # kinetic typography — ONE beat max, never the default
+  threejs:     {lo: 0.00, hi: 0.00}   # engine disabled here; do not route scenes to it
+  official:    {lo: 0.10, hi: 0.30}   # government, SEC, company IR, Wikimedia
+  ai_broll:    {lo: 0.20, hi: 0.45}   # cinematic recreation, nothing licensable
+  stock:       {lo: 0.15, hi: 0.40}   # Pexels / Pixabay — real-world & relevant footage
+  charts:      {lo: 0.10, hi: 0.25}   # data visualisation, maps, icons, logos
+
+# Order the allocator fills bands in. Scarce, content-gated channels go FIRST:
+# a beat that can carry official footage is rare, so claim it before a channel
+# that could have taken any beat consumes it.
+fill_order: [charts, official, threejs, ai_broll, stock, motion_gfx]
+
+# Hard rules. These are constraints, not preferences — the allocator cannot
+# produce a plan that violates them.
+rules:
+  # A scene gets exactly one visual source. This is what makes "never exceed
+  # 100%" structural rather than a check, and it is what stops an AI still being
+  # generated for a scene that already renders as motion graphics or 3D.
+  one_channel_per_scene: true
+  # Channels whose frames are fully generated in-pipeline. Nothing is fetched or
+  # generated externally for a scene assigned to one of these.
+  self_rendering: [motion_gfx, threejs, charts]
+  # Stock is a fallback, never a first choice. A beat is only allowed to use
+  # stock if it scored no better on any of these.
+  stock_yields_to: [official, ai_broll, threejs, charts]
+  # Minimum eligibility a scene needs before a channel will take it. Below this
+  # the allocator leaves the band under-filled rather than forcing a bad fit.
+  min_eligibility: 0.35
+
+# Eligibility weights. Raising a weight makes that signal count for more when
+# scoring a scene against a channel.
+signals:
+  charts:
+    has_series_data: 1.00        # Scene.data present and valid
+    numeric_narration: 0.45      # a figure spoken but not charted
+  threejs:
+    comparable_series: 0.90      # >=3 comparable values — reads well in 3D
+    geographic: 0.85             # a place, region, map or route
+    scale_concept: 0.75          # size / height / volume / "bigger than"
+    has_series_data: 0.40
+  official:
+    institutional_source: 0.90   # BEA, SEC, Fed, Census, NASA, gov, IR
+    named_institution: 0.70      # institution named in the line itself
+    historical_event: 0.55
+  ai_broll:
+    cinematic_subject: 0.85      # a scene no camera could have captured
+    historical_recreation: 0.80
+    abstract_concept: 0.60
+    concrete_unfilmable: 0.70
+  stock:
+    everyday_subject: 0.75       # shoppers, streets, offices — real and generic
+    has_search_terms: 0.55
+  motion_gfx:
+    showable_line: 0.70          # a short line worth setting in type
+    no_filmable_subject: 0.65
+    baseline: 0.35               # universal floor: every scene can fall back here

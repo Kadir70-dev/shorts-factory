@@ -1,0 +1,41 @@
+{
+  "id": "d14_b",
+  "day": 14,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "What GDP measures and the well-known gap in what it leaves out",
+  "sources": [
+    {
+      "claim": "US nominal GDP was $30.762 trillion in 2025",
+      "source": "U.S. Bureau of Economic Analysis, GDP (Second Estimate) 4th Quarter and Year 2025 release",
+      "url": "https://www.bea.gov/news/2026/gdp-second-estimate-4th-quarter-and-year-2025",
+      "type": "primary"
+    },
+    {
+      "claim": "GDP only counts market transactions and excludes unpaid household/care work",
+      "source": "Standard BEA/economics definition of GDP scope",
+      "url": "https://www.bea.gov/",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "GDP",
+      "note": "said as 'G-D-P', three letters"
+    }
+  ],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 7,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.29
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

@@ -67,9 +67,11 @@ def guess_niche(topic: str) -> str:
 
 
 async def run(topic: str, niche: str, channel_id: str) -> None:
+    from app.brand import load_theme
     from app.config import load_channel
-    from app.director import get_director
-    from app.pipeline import broll, captions, music, postprocess, render, sfx, tts
+    from app.director import get_director, structures
+    from app.pipeline import (broll, captions, compliance, music, postprocess,
+                              render, sfx, tts, variety)
     from app.schemas.video_spec import Niche, VideoSpec
 
     niche_enum = Niche(NICHE_CHANNEL[niche][0])     # friendly name -> slug -> enum
@@ -84,21 +86,32 @@ async def run(topic: str, niche: str, channel_id: str) -> None:
     graph = await get_director(channel).build_scene_graph(spec)
     print(f"[director] OK — '{graph.meta.title}'")
 
-    print("[tts] synthesizing voiceover…")
+    # Variety plan first: the visual engine, the music picker and the renderer all
+    # read the same decisions, so it has to exist before any of them run.
+    choice = structures.choose(spec.id, channel_id, niche_enum.value,
+                               forced=graph.meta.structure_id, record=False)
+    plan = variety.plan(spec.id, channel_id, load_theme(graph.brand_id or "k70"),
+                        choice)
+    variety.apply(graph, plan)
+    print(f"[variety] {plan.summary()}")
+
+    print("[tts] synthesizing voiceover in the channel's cloned voice…")
     graph = await tts.synthesize(graph, spec, channel)
     print("[captions] timing captions…")
     graph = await captions.transcribe(graph)
-    print("[assets] smart scene decision engine → resolving visuals…")
+    print("[assets] visual ladder → resolving visuals…")
     graph = await broll.resolve_assets(graph, spec)
     _print_visual_mix(graph, spec)
-    print("[music] scoring niche bed + smart envelope…")
-    graph = await music.add_music(graph, channel)
+    print("[music] scoring bed + beat-aware envelope…")
+    graph = await music.add_music(graph, channel, family=plan.music_family)
     print(f"[music] mood: {graph.audio.music_mood} · "
           f"{len(graph.audio.music_envelope)} envelope keyframes")
     print("[sfx] designing retention sound cues…")
     graph = await sfx.add_sound_design(graph)
     print(f"[sfx] {len(graph.sfx)} cues: "
           f"{', '.join(sorted({c.role for c in graph.sfx})) or 'none'}")
+    report = compliance.apply(graph, strict=False)
+    print("[compliance] " + report.format().replace("\n", "\n[compliance] "))
     print("[render] building mp4…")
     raw = await render.render_remotion(graph)
     print("[post] finishing…")

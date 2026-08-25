@@ -27,6 +27,17 @@ class Niche(str, Enum):
     business = "usa_business"
     # Cybersecurity / cybercrime storytelling (dark Netflix-doc bucket).
     cybersecurity = "cybersecurity"
+    # Fashion vertical (Fashion-Shorts). Same engine, fashion content buckets —
+    # values match the `niche:` field of config/channels/fs_*.yaml.
+    fashion_business = "fashion_business"
+    fashion_luxury = "fashion_luxury"
+    fashion_history = "fashion_history"
+    fashion_trends = "fashion_trends"
+    fashion_manufacturing = "fashion_manufacturing"
+    fashion_supply_chain = "fashion_supply_chain"
+    fashion_streetwear = "streetwear"
+    fashion_sneakers = "sneaker_culture"
+    fashion_textile = "textile_industry"
 
 
 class Platform(str, Enum):

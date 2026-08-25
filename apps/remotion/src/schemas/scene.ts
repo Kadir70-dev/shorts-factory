@@ -9,7 +9,8 @@ export const SCHEMA_VERSION = "1.5";
 
 export const Visual = z.object({
   type: z
-    .enum(["broll", "ai_video", "ai_image", "manim", "image", "solid"])
+    .enum(["broll", "ai_video", "ai_image", "manim", "dataviz", "motion_gfx",
+           "threejs", "branded", "image", "solid"])
     .default("broll"),
   query: z.string().default(""),
   // B-roll engine fields (Director-authored visual intent). Remotion ignores
@@ -28,7 +29,7 @@ export const Visual = z.object({
   // Smart Scene Decision Engine (Phase 5.5) — render-irrelevant; the asset
   // resolver consumes these. Accepted so props validate.
   strategy: z
-    .enum(["real", "ai_image", "ai_video", "motion_gfx", "hybrid"])
+    .enum(["dataviz", "real", "ai_image", "ai_video", "motion_gfx", "branded", "hybrid"])
     .default("real"),
   decision_reason: z.string().default(""),
 });
@@ -47,7 +48,8 @@ export const Scene = z.object({
   duration_sec: z.number().min(0.8).max(12),
   visual: Visual.default({}),
   overlays: z.array(Overlay).default([]),
-  transition_in: z.enum(["cut", "fade", "slide_l", "whip"]).default("cut"),
+  transition_in: z.enum(["cut", "fade", "slide_l", "whip", "dip_to_black",
+                         "push_up", "crossfade"]).default("cut"),
   keywords: z.array(z.string()).default([]),
   // factual reliability label (see scene.py). Remotion uses it to tag forecasts.
   confidence: z.enum(["confirmed", "probable", "speculative"]).default("confirmed"),
@@ -114,6 +116,36 @@ export const SceneGraph = z.object({
   audio: AudioTrack.default({}),
   captions: z.array(Caption).default([]),
   sfx: z.array(SfxCue).default([]),
+  threejs_provenance: z.array(z.object({
+    scene_id: z.string(), storyboard_scene_id: z.string(), template: z.string(),
+    template_version: z.string(), status: z.string(), render_path: z.string().nullable(),
+    cache_key: z.string(), seed: z.number(), fps: z.number(), width: z.number(),
+    height: z.number(), quality: z.string(), brand_id: z.string(),
+    brand_fingerprint: z.string(), render_ms: z.number(), peak_rss_mb: z.number(),
+    error: z.string(), legacy_decision: z.string(),
+  })).default([]),
+  motion_graphics_provenance: z.array(z.object({
+    scene_id: z.string(), storyboard_scene_id: z.string(), template: z.string(),
+    template_version: z.string(), status: z.string(), render_path: z.string().nullable(),
+    cache_key: z.string(), seed: z.number(), fps: z.number(), width: z.number(),
+    height: z.number(), quality: z.string(), brand_id: z.string(),
+    brand_fingerprint: z.string(), render_ms: z.number(), peak_rss_mb: z.number(),
+    error: z.string(), existing_decision: z.string(), clarity_reason: z.string(),
+  })).default([]),
+  ai_broll_provenance: z.array(z.object({
+    scene_id: z.string(), storyboard_scene_id: z.string(), status: z.string(),
+    provider: z.string(), model: z.string(), asset_type: z.string(),
+    synthetic: z.boolean(), render_path: z.string().nullable(), cache_key: z.string(),
+    prompt_spec: z.record(z.string(), z.unknown()), quality: z.string(),
+    prompt_generation_ms: z.number(), provider_dispatch_ms: z.number(),
+    peak_rss_mb: z.number(), error: z.string(), selection_reason: z.string(),
+  })).default([]),
+  brand_identity_provenance: z.object({
+    brand_id: z.string(), brand_fingerprint: z.string(), manager_version: z.string(),
+    enabled: z.boolean(), modules: z.array(z.string()), palette: z.record(z.string(), z.string()),
+    fonts: z.record(z.string(), z.string()), safe_margins: z.record(z.string(), z.number()),
+    consistency_checks: z.record(z.string(), z.boolean()),
+  }).nullable().optional(),
 });
 
 export type TSceneGraph = z.infer<typeof SceneGraph>;

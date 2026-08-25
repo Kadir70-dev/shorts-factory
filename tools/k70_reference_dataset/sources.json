@@ -1,0 +1,65 @@
+{
+  "schema": "k70-reference-sources/v1",
+  "audited_at": "2026-08-25",
+  "bulk_download_enabled": false,
+  "pilot": {
+    "completed_at": "2026-08-25",
+    "openverse_seen": 69,
+    "openverse_unique_added": 66,
+    "openverse_request_errors": 0,
+    "wikimedia_status": "BLOCKED_REQUIRES_REAL_CONTACT_USER_AGENT",
+    "top_100_gate": "FAILED_INSUFFICIENT_RELEVANT_AUTHORIZED_POOL",
+    "images_downloaded": 0
+  },
+  "license_policy": {
+    "accepted": ["CC0", "PDM", "CC-BY", "CC-BY-SA"],
+    "metadata_only": ["UNKNOWN", "ALL-RIGHTS-RESERVED", "RESTRICTIVE"],
+    "verify_at_original_source": true,
+    "project_license_does_not_imply_gallery_image_license": true
+  },
+  "sources": [
+    {
+      "id": "openverse",
+      "tier": "A",
+      "mode": "discovery",
+      "api": "https://api.openverse.org/v1/images/",
+      "enabled_for_pilot": true,
+      "download_requires_original_verification": true,
+      "concurrency": 1,
+      "requests_per_minute": 20
+    },
+    {
+      "id": "wikimedia_commons",
+      "tier": "A",
+      "mode": "discovery_and_download",
+      "api": "https://commons.wikimedia.org/w/api.php",
+      "enabled_for_pilot": true,
+      "concurrency": 2,
+      "requests_per_minute": 60
+    },
+    {
+      "id": "flickr",
+      "tier": "B",
+      "mode": "metadata_only_pending_storage_review",
+      "api": "https://www.flickr.com/services/rest/",
+      "enabled_for_pilot": false,
+      "requires_api_key": true,
+      "requests_per_hour": 3600
+    },
+    {
+      "id": "modrinth",
+      "tier": "B",
+      "mode": "metadata_only_unless_item_license_explicit",
+      "api": "https://api.modrinth.com/v2/",
+      "enabled_for_pilot": false,
+      "concurrency": 1,
+      "requests_per_minute": 60
+    },
+    {"id": "github", "tier": "C", "mode": "per_repository_opt_in", "enabled_for_pilot": false},
+    {"id": "planet_minecraft", "tier": "C", "mode": "human_discovery_only", "enabled_for_pilot": false},
+    {"id": "community_forums", "tier": "C", "mode": "human_discovery_only", "enabled_for_pilot": false},
+    {"id": "artstation", "tier": "REJECT", "mode": "none", "enabled_for_pilot": false},
+    {"id": "sketchfab", "tier": "REJECT", "mode": "none", "enabled_for_pilot": false},
+    {"id": "curseforge", "tier": "REJECT", "mode": "none", "enabled_for_pilot": false}
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "d29_c",
+  "day": 29,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "What a credit freeze actually does",
+  "sources": [
+    {
+      "claim": "A credit freeze restricts access to a credit file and is free to place or lift",
+      "source": "Federal Trade Commission consumer guidance",
+      "url": "https://consumer.ftc.gov/credit-freeze-or-fraud-alert-right-you",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

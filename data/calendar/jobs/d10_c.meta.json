@@ -1,0 +1,30 @@
+{
+  "id": "d10_c",
+  "day": 10,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "What a 401k match actually is",
+  "sources": [
+    {
+      "claim": "401k employer matches are additional compensation contingent on employee contribution; a common real-world match format is a partial match up to a percentage of pay (used here as an illustrative example, not a universal figure)",
+      "source": "US Department of Labor 401(k) plan overview / IRS retirement plan guidance",
+      "url": "https://www.dol.gov/general/topic/retirement/typesofplans",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 7,
+    "us_relevance": 9,
+    "originality": 7,
+    "average": 8.14
+  },
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

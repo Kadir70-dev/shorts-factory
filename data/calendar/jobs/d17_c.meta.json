@@ -1,0 +1,36 @@
+{
+  "id": "d17_c",
+  "day": 17,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "How overdraft fees compound and their recent multi-billion dollar scale",
+  "sources": [
+    {
+      "claim": "Overdraft/NSF fees historically generated billions annually and could stack from a single low balance via transaction ordering",
+      "source": "CFPB research on overdraft/NSF fee revenue and bank practices",
+      "url": "https://www.consumerfinance.gov/data-research/research-reports/data-spotlight-overdraft-nsf-revenue-in-2023-down-more-than-50-versus-pre-pandemic-levels-saving-consumers-over-6-billion-annually/",
+      "type": "primary"
+    },
+    {
+      "claim": "Overdraft/NSF revenue is down more than 50% versus pre-pandemic levels",
+      "source": "CFPB Data Spotlight, 2023 overdraft/NSF revenue report",
+      "url": "https://www.consumerfinance.gov/data-research/research-reports/data-spotlight-overdraft-nsf-revenue-in-2023-down-more-than-50-versus-pre-pandemic-levels-saving-consumers-over-6-billion-annually/",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 7,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.29
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

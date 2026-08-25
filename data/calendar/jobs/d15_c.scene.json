@@ -1,0 +1,176 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d15_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "The Store Doesn't Pay For 'Buy Now, Pay Later.' You Do, Just Not With Interest.",
+    "hook": "A four-payment checkout plan can feel free to the shopper because the merchant helps fund the system.",
+    "description": "Buy-now-pay-later apps like Affirm and Klarna make most of their money from merchant fees, not from you. Retailers pay these providers a cut of every sale, often around 6% plus a small flat fee, in exchange for a boost in checkout conversions and average order size. Late fees on missed payments are a secondary revenue source, not the main one. Educational content only, not financial advice.",
+    "tags": [
+      "buy now pay later",
+      "bnpl",
+      "affirm",
+      "klarna",
+      "consumer finance",
+      "personal finance"
+    ],
+    "hashtags": [
+      "#bnpl",
+      "#personalfinance",
+      "#money",
+      "#finance",
+      "#shorts"
+    ],
+    "thumbnail_text": "THE STORE PAYS MORE"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "A four-payment checkout plan can feel free to the shopper because the merchant helps fund the system.",
+      "duration_sec": 7.51,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "bnpl checkout"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "phone checkout screen split payments option",
+        "visual_intent": "A phone screen at checkout showing a split-payment option, warm ambient light, close shot",
+        "broll_keywords": [
+          "phone checkout screen payment",
+          "online shopping phone close up",
+          "mobile payment app screen"
+        ],
+        "decision_reason": "hook: the counterintuitive framing"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Buy now, pay later typically splits a purchase into four installments, with the first payment due at checkout.",
+      "duration_sec": 7.51,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "bnpl revenue model"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "app logos payment icons screen",
+        "visual_intent": "Simple payment app icons on a dark financial screen, clean motion graphic",
+        "broll_keywords": [
+          "payment app icons screen",
+          "fintech app interface graphic",
+          "mobile finance app display"
+        ],
+        "decision_reason": "corrects the common assumption"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "CFPB data show merchant discount fees are an important source of provider revenue from these transactions.",
+      "duration_sec": 7.51,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "merchant discount rate"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "percentage fee cut from transaction screen",
+        "visual_intent": "A transaction amount on screen with a percentage slice highlighted as a fee, clean financial graphic",
+        "broll_keywords": [
+          "transaction fee percentage graphic",
+          "merchant fee chart screen",
+          "financial cut diagram display"
+        ],
+        "decision_reason": "the merchant discount rate, sourced from recent BNPL industry reporting"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Merchants accept the cost because BNPL providers market the service as a way to increase conversion and order size.",
+      "duration_sec": 7.51,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "conversion boost"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "shopping cart filling up items",
+        "visual_intent": "A shopping cart filling with items on a store shelf, warm retail light, cinematic",
+        "broll_keywords": [
+          "shopping cart filling items",
+          "retail store shopping aisle",
+          "customer browsing shelf"
+        ],
+        "decision_reason": "explains why merchants accept the fee"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Some plans charge late fees, and missed automatic payments can also trigger bank overdraft or insufficient-funds fees.",
+      "duration_sec": 7.51,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "late fees secondary"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "overdue payment notification phone screen",
+        "visual_intent": "A phone showing a payment reminder notification, dim evening light, close shot",
+        "broll_keywords": [
+          "phone notification reminder screen",
+          "payment due alert phone",
+          "mobile app notification close"
+        ],
+        "decision_reason": "keeps late fees as a secondary, not primary, revenue point"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "So zero interest does not mean zero economics. The product shifts revenue toward merchant fees while keeping credit risk with the provider.",
+      "duration_sec": 7.51,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "consumer takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_out",
+        "query": "receipt and phone side by side desk",
+        "visual_intent": "A store receipt and a phone showing a payment plan side by side on a table, calm light",
+        "broll_keywords": [
+          "receipt phone desk close",
+          "payment plan receipt shot",
+          "checkout summary table close"
+        ],
+        "decision_reason": "closing reframe + CTA"
+      }
+    }
+  ]
+}

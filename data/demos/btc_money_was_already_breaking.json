@@ -1,0 +1,661 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "btc_money_was_already_breaking",
+    "channel_id": "k70_history",
+    "niche": "usa_history",
+    "title": "Money Was Already Breaking Before Bitcoin Arrived",
+    "hook": "This is the story of how the world lost trust in money.",
+    "description": "",
+    "tags": [],
+    "hashtags": [],
+    "thumbnail_text": "",
+    "structure_id": "",
+    "disclaimer": "",
+    "compliance_notes": [],
+    "requires_ai_disclosure": false,
+    "ai_disclosure_reasons": []
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s10",
+      "narration": "And when they came back down, the thing in your wallet was no longer what you thought it was.",
+      "duration_sec": 5.8,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "WHAT IS THIS, REALLY?",
+        "broll_keywords": [],
+        "visual_intent": "A dollar bill dissolving into pure type — the promise leaving the paper",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 · turn · motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "WHAT IS THIS, REALLY?",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "turn",
+      "transition_in": "dip_to_black",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s11",
+      "narration": "This is the story of how the world lost trust in money.",
+      "duration_sec": 4.4,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "THE COMPLETE HISTORY OF BITCOIN",
+        "broll_keywords": [],
+        "visual_intent": "Series title card in the brand display face",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "00 · context · motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "THE COMPLETE HISTORY OF BITCOIN",
+          "sub": null,
+          "y": 0.34,
+          "emphasis": "normal"
+        },
+        {
+          "type": "lower_third",
+          "text": "EPISODE ONE",
+          "sub": "The World Before Bitcoin · 1970-2008",
+          "y": 0.46,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s126",
+      "narration": "Within weeks the central bank would print a one hundred trillion dollar note.",
+      "duration_sec": 6.2,
+      "visual": {
+        "type": "image",
+        "query": "Zimbabwe 100 trillion dollar banknote 2009 photograph",
+        "broll_keywords": [
+          "zimbabwe 100 trillion dollar note",
+          "hyperinflation banknote zimbabwe"
+        ],
+        "visual_intent": "The Z$100,000,000,000,000 banknote, held flat, all the zeroes readable",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "07 · reveal · official",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Z$100,000,000,000,000",
+          "sub": "issued 16 January 2009",
+          "y": 0.2,
+          "emphasis": "normal"
+        },
+        {
+          "type": "source",
+          "text": "Hanke & Kwok, Cato Journal 29(2), 2009",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [
+        "zimbabwe 100 trillion dollar note",
+        "hyperinflation banknote zimbabwe"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s139",
+      "narration": "September fifteenth, one forty-five in the morning: Lehman Brothers filed for bankruptcy.",
+      "duration_sec": 7.0,
+      "visual": {
+        "type": "image",
+        "query": "Lehman Brothers employees carrying boxes September 15 2008 photograph",
+        "broll_keywords": [
+          "lehman brothers collapse employees boxes",
+          "lehman headquarters 2008"
+        ],
+        "visual_intent": "Staff carrying boxes out of 745 Seventh Avenue in the dark",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "08 · turn · official",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "Lehman Brothers Holdings Chapter 11 petition, 15",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "turn",
+      "transition_in": "cut",
+      "keywords": [
+        "lehman brothers collapse employees boxes",
+        "lehman headquarters 2008"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s134",
+      "narration": "It was the first run on a British bank in a hundred and forty-one years.",
+      "duration_sec": 6.4,
+      "visual": {
+        "type": "dataviz",
+        "query": "",
+        "broll_keywords": [],
+        "visual_intent": "The gap between the last British bank run and this one",
+        "scene_visual_type": "data_viz",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "dataviz",
+        "budget_channel": "charts",
+        "decision_reason": "08 · reveal · charts",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "H.S. Shin, Reflections on Northern Rock (BIS)",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": {
+        "kind": "delta",
+        "title": "Runs on a British retail bank",
+        "points": [
+          {
+            "label": "1866",
+            "value": 1866.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "2007",
+            "value": 2007.0,
+            "emphasis": "negative"
+          }
+        ],
+        "prefix": "",
+        "suffix": "",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 1,
+        "source": "Overend & Gurney, 1866 → Northern Rock, 2007",
+        "note": "141 years between them"
+      },
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s106",
+      "narration": "Ask e-gold.",
+      "duration_sec": 2.8,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "ASK E-GOLD.",
+        "broll_keywords": [],
+        "visual_intent": "Two words as a hard chapter turn",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "06 · context · motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "ASK E-GOLD.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "context",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s108",
+      "narration": "In April two thousand and seven, the Justice Department indicted it.",
+      "duration_sec": 5.6,
+      "visual": {
+        "type": "image",
+        "query": "Department of Justice press release April 27 2007 e-gold indictment",
+        "broll_keywords": [],
+        "visual_intent": "The DOJ press release, the charge lines highlighted",
+        "scene_visual_type": "real_footage",
+        "asset_path": null,
+        "motion": "ken_burns",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "real",
+        "budget_channel": "official",
+        "decision_reason": "06 · turn · official",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "source",
+          "text": "U.S. DOJ, 27 April 2007",
+          "sub": null,
+          "y": 0.1,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "turn",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s154",
+      "narration": "someone was quietly writing a nine-page document",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "NINE PAGES",
+        "broll_keywords": [],
+        "visual_intent": "Nine blank pages fanning open, none of them legible",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "09 · reveal · motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "NINE PAGES",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "reveal",
+      "transition_in": "cut",
+      "keywords": [],
+      "confidence": "confirmed"
+    },
+    {
+      "id": "s155",
+      "narration": "that would change money forever.",
+      "duration_sec": 4.6,
+      "visual": {
+        "type": "motion_gfx",
+        "query": "THAT WOULD CHANGE MONEY FOREVER.",
+        "broll_keywords": [],
+        "visual_intent": "The final line landing, then black",
+        "scene_visual_type": "dramatic",
+        "asset_path": null,
+        "motion": "none",
+        "camera_movement": "slow_zoom",
+        "fallback_color": "#15233a",
+        "strategy": "motion_gfx",
+        "budget_channel": "motion_gfx",
+        "decision_reason": "09 · payoff · motion_gfx",
+        "layers": []
+      },
+      "overlays": [
+        {
+          "type": "headline",
+          "text": "THAT WOULD CHANGE MONEY FOREVER.",
+          "sub": null,
+          "y": 0.3,
+          "emphasis": "normal"
+        }
+      ],
+      "data": null,
+      "beat_role": "payoff",
+      "transition_in": "dip_to_black",
+      "keywords": [],
+      "confidence": "confirmed"
+    }
+  ],
+  "audio": {
+    "voiceover_path": null,
+    "music_path": null,
+    "music_gain_db": -18.0,
+    "voiceover_gain_db": 0.0,
+    "duck_music": true,
+    "duck_amount_db": -9.0,
+    "music_mood": "",
+    "music_envelope": [],
+    "music_fade_in_sec": 1.5,
+    "music_fade_out_sec": 2.0
+  },
+  "captions": [],
+  "sfx": [],
+  "storyboard": {
+    "version": "1.0",
+    "scenes": [
+      {
+        "scene_id": "sb_s10",
+        "source_scene_id": "s10",
+        "narration": "And when they came back down, the thing in your wallet was no longer what you thought it was.",
+        "duration_estimate": 5.8,
+        "visual_objective": "A dollar bill dissolving into pure type — the promise leaving the paper",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "WHAT IS THIS, REALLY?"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s11",
+        "source_scene_id": "s11",
+        "narration": "This is the story of how the world lost trust in money.",
+        "duration_estimate": 4.4,
+        "visual_objective": "Series title card in the brand display face",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "THE COMPLETE HISTORY OF BITCOIN",
+          "EPISODE ONE"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s126",
+        "source_scene_id": "s126",
+        "narration": "Within weeks the central bank would print a one hundred trillion dollar note.",
+        "duration_estimate": 6.2,
+        "visual_objective": "The Z$100,000,000,000,000 banknote, held flat, all the zeroes readable",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2009,
+        "financial_numbers": [
+          "100 trillion"
+        ],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "Z$100,000,000,000,000"
+        ],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s139",
+        "source_scene_id": "s139",
+        "narration": "September fifteenth, one forty-five in the morning: Lehman Brothers filed for bankruptcy.",
+        "duration_estimate": 7.0,
+        "visual_objective": "Staff carrying boxes out of 745 Seventh Avenue in the dark",
+        "primary_entity": "Lehman Brothers",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2008,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s134",
+        "source_scene_id": "s134",
+        "narration": "It was the first run on a British bank in a hundred and forty-one years.",
+        "duration_estimate": 6.4,
+        "visual_objective": "The gap between the last British bank run and this one",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2007,
+        "financial_numbers": [
+          "141 years"
+        ],
+        "emotion": "surprising",
+        "recommended_visual_type": "dataviz",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s106",
+        "source_scene_id": "s106",
+        "narration": "Ask e-gold.",
+        "duration_estimate": 2.8,
+        "visual_objective": "Two words as a hard chapter turn",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "neutral",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "ASK E-GOLD."
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s108",
+        "source_scene_id": "s108",
+        "narration": "In April two thousand and seven, the Justice Department indicted it.",
+        "duration_estimate": 5.6,
+        "visual_objective": "The DOJ press release, the charge lines highlighted",
+        "primary_entity": "e-gold",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": 2007,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "real",
+        "recommended_camera_movement": "ken_burns",
+        "motion_graphics_needed": false,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "licensed_image",
+          "exact_footage",
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [],
+        "visual_confidence_score": 0.78
+      },
+      {
+        "scene_id": "sb_s154",
+        "source_scene_id": "s154",
+        "narration": "someone was quietly writing a nine-page document",
+        "duration_estimate": 5.0,
+        "visual_objective": "Nine blank pages fanning open, none of them legible",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "surprising",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "cut",
+        "overlay_text": [
+          "NINE PAGES"
+        ],
+        "visual_confidence_score": 0.92
+      },
+      {
+        "scene_id": "sb_s155",
+        "source_scene_id": "s155",
+        "narration": "that would change money forever.",
+        "duration_estimate": 4.6,
+        "visual_objective": "The final line landing, then black",
+        "primary_entity": "",
+        "secondary_entities": [],
+        "company": "",
+        "location": "",
+        "year": null,
+        "financial_numbers": [],
+        "emotion": "confident",
+        "recommended_visual_type": "motion_gfx",
+        "recommended_camera_movement": "none",
+        "motion_graphics_needed": true,
+        "threejs_candidate": false,
+        "ai_broll_candidate": false,
+        "asset_priority": [
+          "local_graphics",
+          "branded_fallback"
+        ],
+        "transition": "dip_to_black",
+        "overlay_text": [
+          "THAT WOULD CHANGE MONEY FOREVER."
+        ],
+        "visual_confidence_score": 0.92
+      }
+    ]
+  },
+  "asset_provenance": [],
+  "threejs_provenance": [],
+  "motion_graphics_provenance": [],
+  "ai_broll_provenance": [],
+  "brand_identity_provenance": null,
+  "variety": {},
+  "brand_id": "k70"
+}

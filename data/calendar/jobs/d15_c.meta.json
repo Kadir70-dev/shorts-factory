@@ -1,0 +1,39 @@
+{
+  "id": "d15_c",
+  "day": 15,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "BNPL apps profit mainly from merchant fees, not consumer interest",
+  "sources": [
+    {
+      "claim": "Typical BNPL divides purchases into four installments; merchant discount fees are a documented revenue source and missed payments may trigger fees",
+      "source": "CFPB BNPL market report",
+      "url": "https://files.consumerfinance.gov/f/documents/cfpb_buy-now-pay-later-market-trends-consumer-impacts_report_2022-09.pdf",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "Affirm",
+      "note": "said 'uh-FIRM'"
+    },
+    {
+      "term": "Klarna",
+      "note": "said 'KLAR-na'"
+    }
+  ],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": true,
+  "disclaimer": "",
+  "status": "READY"
+}

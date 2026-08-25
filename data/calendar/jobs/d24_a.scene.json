@@ -1,0 +1,207 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d24_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Walmart Built An Empire By Making Sales Less Exciting",
+    "hook": "Walmart's breakthrough was promising low prices every day, not waiting for a sale.",
+    "description": "Sam Walton opened the first Walmart in Rogers, Arkansas, in 1962. The company's core strategy emphasized consistently low prices, supported by tight cost control, distribution scale, and fast information sharing rather than depending only on promotional spikes.",
+    "tags": [
+      "Walmart",
+      "Sam Walton",
+      "business strategy",
+      "retail history"
+    ],
+    "hashtags": [
+      "#walmart",
+      "#business",
+      "#retail",
+      "#shorts"
+    ],
+    "thumbnail_text": "LOW EVERY DAY"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Walmart's breakthrough was making sales less exciting: low prices every day, instead of only during promotions.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "discount retail aisle",
+        "low price signs store"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "discount store price signs aisle",
+        "visual_intent": "A discount-store aisle with simple low-price signs",
+        "broll_keywords": [
+          "discount retail aisle",
+          "low price signs store",
+          "grocery aisle prices"
+        ],
+        "decision_reason": "Walmart history describes lowest prices anytime, anywhere"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Everyday low prices",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "Sam Walton opened the first Walmart in Rogers, Arkansas, in nineteen sixty-two with that value promise at its core.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "1960s discount store",
+        "vintage retail exterior"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "pan_lr",
+        "query": "vintage discount store exterior 1960s",
+        "visual_intent": "A vintage small-town discount storefront",
+        "broll_keywords": [
+          "1960s discount store",
+          "vintage retail exterior",
+          "small town store archive"
+        ],
+        "decision_reason": "Walmart official history confirms date and location"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "1962 - Rogers, Arkansas",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "narration": "Consistent prices gave shoppers a simple reason to return without waiting for a coupon, holiday, or weekly ad.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "weekly ads coupons",
+        "sale flyer close up"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "weekly sale flyers coupons",
+        "visual_intent": "Sale flyers and coupons crossed out beside a steady price tag",
+        "broll_keywords": [
+          "weekly ads coupons",
+          "sale flyer close up",
+          "stable price tag"
+        ],
+        "decision_reason": "Explains everyday-low-price customer behavior without unsupported numbers"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Behind the shelf, Walmart squeezed operating costs and built distribution systems that could move huge volumes efficiently.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "retail distribution center",
+        "warehouse pallets conveyor"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "warehouse distribution pallets",
+        "visual_intent": "Pallets moving efficiently through a distribution center",
+        "broll_keywords": [
+          "retail distribution center",
+          "warehouse pallets conveyor",
+          "supply chain scale"
+        ],
+        "decision_reason": "Walmart corporate materials connect low prices with low operating costs"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Lower operating cost",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "The company later linked stores with data technology, helping inventory information travel faster across an expanding network.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "retail inventory system",
+        "store data terminals"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "store inventory data screens",
+        "visual_intent": "Inventory data moving across store terminals",
+        "broll_keywords": [
+          "retail inventory system",
+          "store data terminals",
+          "supply chain information"
+        ],
+        "decision_reason": "Walmart history documents point-of-sale and satellite-network adoption"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Low prices were not just advertising. They were the output of an operating system built to remove cost at scale.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "large retail store aerial",
+        "distribution network map"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "walmart scale retail aerial",
+        "visual_intent": "A vast store and distribution network seen from above",
+        "broll_keywords": [
+          "large retail store aerial",
+          "distribution network map",
+          "big box retail scale"
+        ],
+        "decision_reason": "Closing synthesis of the documented strategy"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Price is the output",
+          "y": 0.18
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "d14_c",
+  "day": 14,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "Why lease payments are priced on depreciation, not full price",
+  "sources": [
+    {
+      "claim": "Vehicle leases charge for depreciation plus rent charges, taxes, and fees; the vehicle is returned unless purchased",
+      "source": "Federal Trade Commission vehicle-leasing guidance",
+      "url": "https://consumer.ftc.gov/articles/keys-vehicle-leasing",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": true,
+  "disclaimer": "",
+  "status": "READY"
+}

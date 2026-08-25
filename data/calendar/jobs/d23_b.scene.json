@@ -1,0 +1,207 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d23_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "The S&P 500 Doesn't Give Every Company One Vote",
+    "hook": "In the S&P 500, the biggest companies move the index the most.",
+    "description": "The S&P 500 weights constituents by float-adjusted market capitalization. A company's tradable market value determines its influence, so a small group of giants can move the index more than many smaller members combined. Educational content only, not financial advice.",
+    "tags": [
+      "S&P 500",
+      "market cap",
+      "index funds",
+      "investing education"
+    ],
+    "hashtags": [
+      "#sp500",
+      "#investing",
+      "#stockmarket",
+      "#shorts"
+    ],
+    "thumbnail_text": "NOT EQUAL"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "In the S and P five hundred, the biggest companies move the index the most. It is not one company, one vote.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "market cap towers",
+        "large companies skyline"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "large stock market towers",
+        "visual_intent": "Giant company blocks towering above smaller ones",
+        "broll_keywords": [
+          "market cap towers",
+          "large companies skyline",
+          "stock size comparison"
+        ],
+        "decision_reason": "S&P DJI methodology confirms float-adjusted market-cap weighting"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Biggest moves most",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "S and P uses float-adjusted market capitalization: share price times shares available for public trading.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "market cap calculation",
+        "shares price calculator"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "pan_lr",
+        "query": "shares outstanding calculator",
+        "visual_intent": "A calculator multiplying price by tradable shares",
+        "broll_keywords": [
+          "market cap calculation",
+          "shares price calculator",
+          "financial formula screen"
+        ],
+        "decision_reason": "S&P DJI defines float-adjusted market value"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Price x public shares",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "narration": "A company worth twice as much gets roughly twice the index weight, before the methodology's other adjustments.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "weighted index scale",
+        "company size blocks"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "weighted scale company blocks",
+        "visual_intent": "A balance scale with one large corporate block",
+        "broll_keywords": [
+          "weighted index scale",
+          "company size blocks",
+          "market weight concept"
+        ],
+        "decision_reason": "Direct consequence of proportional weighting"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "That means a large stock's one-percent move matters far more than the same move in a small constituent.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "index impact chart",
+        "large small stock chart"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "stock chart large small impact",
+        "visual_intent": "Two equal percentage moves producing different index impact",
+        "broll_keywords": [
+          "index impact chart",
+          "large small stock chart",
+          "weighted return graphic"
+        ],
+        "decision_reason": "Direct consequence of proportional weighting"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Same move, different impact",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "This design makes the index track where public-market value actually sits, but it can also create concentration.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "market concentration chart",
+        "index weights pie"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "market concentration pie chart",
+        "visual_intent": "A pie chart with several visibly dominant slices",
+        "broll_keywords": [
+          "market concentration chart",
+          "index weights pie",
+          "large cap concentration"
+        ],
+        "decision_reason": "Balanced explanation of the methodology's tradeoff"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Owning the index means owning all its members in unequal sizes. That weighting rule shapes every headline move.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "stock index company grid",
+        "portfolio weights graphic"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "index portfolio grid companies",
+        "visual_intent": "A grid of company tiles in deliberately unequal sizes",
+        "broll_keywords": [
+          "stock index company grid",
+          "portfolio weights graphic",
+          "market map tiles"
+        ],
+        "decision_reason": "Closing summary of verified index construction"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Unequal weights",
+          "y": 0.18
+        }
+      ]
+    }
+  ]
+}

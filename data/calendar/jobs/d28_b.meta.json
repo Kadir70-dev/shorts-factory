@@ -1,0 +1,30 @@
+{
+  "id": "d28_b",
+  "day": 28,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "What 'priced in' means",
+  "sources": [
+    {
+      "claim": "Security prices incorporate market participants' information and expectations; price reactions depend on news relative to those expectations",
+      "source": "Investor.gov introduction to markets and investing",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/how-stock-markets-work",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": true,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

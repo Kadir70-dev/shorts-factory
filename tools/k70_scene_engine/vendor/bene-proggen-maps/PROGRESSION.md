@@ -1,0 +1,451 @@
+# Progression
+
+Visual version history for procgen_maps. Each entry shows what the generator
+actually produced at that point — screenshots and renders, not just commit
+messages. Presets/seeds are noted so any image can be reproduced exactly.
+
+---
+
+## v0.9.0 — Dungeon interiors, park/parking vibrancy, driver-based animation (current)
+
+Scoped from the user's list after v0.8.1 shipped: "improve the dungeon, make
+animation and better tree / terrain and fountain, park, parking spaces, less
+cars to make it more vibrant and more."
+
+**Dungeon rooms were open-topped, unmaterialed shells with corridors
+dead-ending against solid walls.** `generators/dungeon.py` built only a
+floor + 4 flat walls per room - no ceiling, no doorway where a corridor
+actually connects, no materials, no lighting. Rewritten so every corridor
+segment's start-or-end point is exactly some room's own `.center` (true by
+construction of `connect()`), which means the wall a corridor exits
+through - and where along it - can be read directly off that segment's own
+direction, no geometric intersection test needed. `_find_doorways` +
+`_wall_segments_with_gaps` use this to cut real gaps in the walls; rooms
+now get floor + ceiling + 4 walls-with-doorways across 3 material slots
+(new `materials/dungeon_mat.py`), the largest room is tinted as the "boss"
+room and the smallest as the "start" room, and a torch (bracket mesh +
+warm point light) lights every doorway.
+
+**Tree canopies were only ever a plain cone or a plain sphere.** Added a
+third "cluster" shape - 3 overlapping icospheres at different sizes/offsets
+- cycled across the 12 tree variants alongside the existing two, so a
+street doesn't read as identical balls-on-sticks.
+
+**Parks had trees and benches but no centerpiece.** Large park blocks
+(>= 400 sqm) now get a fountain (stone base, a tinted water ring, a
+central pillar) placed before the tree/bench scatter, so those naturally
+avoid overlapping it via the same collision grid every other prop uses.
+
+**Supermarkets had no parking, and every local street was lined bumper to
+bumper with cars.** Supermarket footprint shrink dropped from 0.92 to 0.55
+- shrinking a block-centered footprint frees an equal margin on all 4
+sides, and the entrance-facing margin now becomes a real parking lot (new
+`generators/city/parking.py`): a terrain-following asphalt pad, painted
+stall-divider lines, and a grid of parked cars in one or two rows with a
+drive aisle. Roadside car spacing widened from 6m to 10m so cars read as
+parked, not welded together - parking lots pick up the slack for a livelier
+feel overall.
+
+**Static cities felt static.** Added lightweight, keyframe-free animation
+via Blender's driver expressions (`sin(frame*freq+phase)*amplitude` -
+`frame` is available directly in a scripted driver's expression namespace,
+no variable needed, confirmed by direct test): every tree Empty gets a
+subtle back-and-forth sway on its own X/Y rotation, frequency/phase/
+amplitude seeded from its own location so a row of trees doesn't sway in
+lockstep. Lit building windows (`materials/city_mat.py`) get a slow
+sine-driven emission pulse layered on top of the existing night-mode
+emission strength, phased per-building using each building's own
+`procgen_maps_tint` attribute (already computed for facade-color
+variation) - one shared material, one driver, no per-window objects
+needed, verified by checking the driven node's evaluated value and the
+actual rendered pixel brightness both change across frames.
+
+**Kleinstadt/Metropole, various seeds — a fully enclosed dungeon room with a doorway cut into the wall, a torch lighting it, and the boss room's warm floor tint:**
+![Dungeon interior](docs/progression/v0.9.0-dungeon-interior.png)
+
+**Top-down check of a full BSP layout — every room now has a ceiling and real doorway gaps instead of solid walls:**
+![Dungeon overview](docs/progression/v0.9.0-dungeon-overview.png)
+
+**Metropole, seed 12 — a supermarket's new parking lot (two rows, painted stalls, drive aisle) plus a cluster-canopy tree in the background:**
+![Parking lot](docs/progression/v0.9.0-parking-lot.png)
+
+**Metropole, seed 12 — the new park fountain centerpiece:**
+![Fountain](docs/progression/v0.9.0-fountain.png)
+
+**Kleinstadt, seed 4 — the new 3-lobe "cluster" tree canopy shape, close up:**
+![Cluster tree canopy](docs/progression/v0.9.0-tree-cluster.png)
+
+---
+
+## v0.8.1 — Street/terrain follow-up, a real interior-view tool, higher render quality
+
+Direct follow-up to v0.8.0's bug list, scoped narrowly per request.
+
+**Streets still clipped into terrain on long runs.** v0.8.0 fixed buildings
+sitting flush on the ground; streets had the same root cause in a
+different shape - `_build_road_strip` built exactly one flat quad per
+edge regardless of length, sampling terrain height only at its 4 corners.
+A 100m+ arterial can have real undulation between those two endpoints
+that never gets sampled, so the strip either clips into a hill or leaves
+a gap over a dip along its length even though both ends match the ground
+exactly. Fixed by chopping any edge longer than 12m into chunks, each
+sampling its own corners - the same reason the terrain mesh itself is a
+fine grid and not one giant quad.
+
+**"How do I render a building's interior?"** - added a real one-click
+answer: a **Render Interior View** button (targets the selected building,
+or the first one found) that frames a camera at the entrance and renders
+through the glass. Getting this to actually show something took two real
+fixes: an occlusion-safe camera placement (a straight-line raycast backs
+the camera off in 1m steps until the entrance isn't blocked by a
+neighboring building across a narrow street - block gaps can be under the
+naive 8m default), and, more fundamentally, discovering that **EEVEE
+Next's screen-space transmission cannot show a room whose only
+visibility is through the very window being looked through** - screen-space
+methods only reflect/refract data already visible somewhere on screen,
+and an interior with no other line of sight has nothing else to draw
+from, so EEVEE rendered a flat, empty-looking wall no matter how the
+camera was aimed. Confirmed by rendering the identical camera and scene
+in Cycles (true ray tracing) - the interior light and furniture read
+clearly. The new button renders with Cycles specifically for this
+reason; slower (roughly a minute or two vs. seconds), but it's the only
+engine that actually delivers what the feature promises.
+
+**4K quality, a second pass.** Beyond the resolution/sample bump already
+in v0.8.0, enabled ambient occlusion (`use_gtao`, quality 1.0) and pushed
+shadow ray/step counts and diffuse GI bounces up - all one-off costs
+worth paying for a hero render, not the live viewport.
+
+**Kleinstadt, seed 7 — a long arterial now follows terrain the whole way, not just at its endpoints:**
+![Street terrain check](docs/progression/v0.8.1-street-terrain-check.png)
+
+**Kleinstadt, seed 7 — Cycles interior view: the ground-floor light and room structure visible through the entrance glass, where EEVEE showed nothing:**
+![Interior view](docs/progression/v0.8.1-interior-view.png)
+
+**Live Blender session — new "Render Interior View (Cycles)" button, building selected:**
+![Blender screenshot](docs/progression/v0.8.1-blender-screenshot.png)
+
+---
+
+## v0.8.0 — Bugfix round: terrain grounding, signage clutter/traffic lights, raytraced glass, 4K defaults
+
+A direct user bug report ("terrain still bugging and overlapping, many signs
+not on the street, cars not aligned, too many street signs and no traffic
+lights, no glass for windows/no interior visible") drove this round. Root
+causes, investigated with a live diagnostic pipeline (headless renders of a
+worst-case sloped building, a top-down car/street check, and a raytracing
+on/off comparison) before touching any code:
+
+- **Terrain "overlapping"**: the visible terrain mesh was far too coarse
+  (256x256 over a 1000m world, ~3.9m/cell) relative to the noise detail
+  every building/street/prop/sign samples *exactly* via
+  `sample_world_height` - the coarse mesh simply couldn't agree with the
+  precise value everything else used, so buildings could clip into or
+  float above the ground on any real slope (measured up to 8m of height
+  variance under one building's own footprint). Fixed two ways:
+  terrain resolution doubled to 512, noise gentled (broader scale, one
+  fewer octave, roughly half the old amplitude) so the mesh and the
+  sampled field agree far better everywhere; and a new
+  `generators/terrain.py:flatten_terrain_for_footprints`, called from
+  `generate_city` right after building placement, locally reshapes the
+  ground mesh under every building footprint to match that building's
+  own already-chosen base height, with a smooth blend at the edges - a
+  building's foundation is now guaranteed flush with the visible ground,
+  not just statistically likely to be close.
+- **Too many stop signs, no traffic lights**: `signage.py`'s stop-sign
+  rule now exempts the one pair of incident edges most nearly opposite
+  each other at any intersection (`_find_through_pair`) - the priority
+  "through" route, mirroring how a real minor junction works - roughly
+  halving stop-sign counts at ordinary 4-way intersections. Any
+  intersection with 2+ arterial approaches gets a new decorative
+  red/yellow/green traffic light instead of nothing (previously an
+  accepted gap). Speed-limit repeater spacing was also widened.
+- **Signs not on the street**: the stop-sign/street-name setback distance
+  was never clamped against the incident edge's own length - on a short
+  block-corner edge it could push the sign's position past the far
+  endpoint entirely. Now capped at 40% of the edge's own length.
+- **No glass, no visible interiors**: window transmission
+  (`materials/city_mat.py`'s glass material) only actually renders as
+  see-through with EEVEE Next's raytracing enabled - which was previously
+  only ever turned on inside the one-off Showcase Render button, never
+  for the main generate flow or the live viewport. Both `Generate
+  Terrain` and `Generate City` now enable it by default.
+- **4K quality defaults**: Showcase Render resolution default raised to
+  3840x2160 at 256 samples (from 1280x800/128).
+- Investigated but not a bug: parked-car rotation/offset math checked out
+  correct (length axis matches the street direction, offset matches the
+  curb-clearance formula exactly) - the "not aligned" impression traces
+  back to the same terrain-mismatch root cause above, now much reduced.
+
+**Kleinstadt, seed 7 — 4K hero overview (3840x2160, buildings now flush with the ground):**
+![4K hero overview](docs/progression/v0.8.0-hero-overview-4k.png)
+
+**Kleinstadt, seed 7 — a new traffic light at an arterial crossing, POLICE/HOSPITAL/SCHOOL special buildings nearby:**
+![Traffic light intersection](docs/progression/v0.8.0-traffic-light-intersection.png)
+
+**Live Blender session — Lighting panel + 4K showcase defaults visible, city properly grounded:**
+![Blender screenshot](docs/progression/v0.8.0-blender-screenshot.png)
+
+---
+
+## v0.7.0 — Street signage/traffic logic + a Lighting configuration panel
+
+Two features this round. **Street signage** (`generators/city/signage.py`):
+deterministic, rule-based sign placement driven by the street graph's own
+intersection degree and street_class hierarchy, not a random density
+roll. A local approach at any real (3+-way) intersection gets a stop
+sign; an all-arterial intersection gets none (no traffic-light feature
+exists here - an accepted scope boundary); every street gets speed-limit
+repeater signs (50 km/h arterial, 30 km/h local) at a class-dependent
+interval; and every arterial approach at a real intersection gets a
+street-name sign, one name per edge (a small deterministic word bank) so
+both ends agree. All three are bespoke mesh+FONT objects built directly
+in the new module (mirroring `special_buildings.py`'s sign-building
+idiom), collision-checked against buildings/props/other signs via the
+same `SpatialHashGrid` pattern `props.py` uses.
+
+Discovered along the way: raster-mode presets (Metropole, Industrial)
+currently produce a street graph where *every* node has degree 1 - no
+real intersections at all - because `_raster_street_segments` computes
+each block's street-exit point per-neighbor from that neighbor's own
+center-line direction, so a block touching 3+ neighbors never gets
+coincident exit points to snap into one junction. Stop signs and
+street-name signs are therefore grid-mode-only (Kleinstadt, Dorf) for
+now; speed-limit signs are unaffected (purely per-edge). Documented in
+signage.py's module docstring as a known, pre-existing limitation rather
+than silently worked around - fixing the raster topology itself is a
+separate, larger change.
+
+**Lighting panel** (`ui/panels.py`): promotes what used to be hardcoded
+constants scattered across `operators.py`/`world_mat.py`/`city_mat.py`
+(sun elevation/rotation, day/night sun energy, night-mode window glow
+strength, street lamp energy) into seven live-tunable Scene properties,
+each wired through a `night_mode`-style `update=` callback (no separate
+"Apply" button - these are cheap in-place property writes, not a
+regenerate). An adversarial review pass (multi-agent) caught two real
+gaps before shipping: the Showcase Render operator was still using its
+own independent hardcoded sun constants instead of the new panel values
+(fixed - `ensure_showcase_sun` now accepts the panel's elevation/rotation,
+converted between the Nishita sky's elevation-from-horizon convention and
+the Sun light object's zenith-angle convention), and the new
+`set_sun_energy`/`set_sun_position` functions could have silently
+overwritten an unrelated World's settings if dragged before "Generate
+Terrain" was ever clicked (fixed - both now check `world.name` first).
+
+**Kleinstadt, seed 7 — stop signs + a street-name sign at a real intersection (dense with lamps/trees/cars too):**
+![Signage intersection](docs/progression/v0.7.0-signage-intersection.png)
+
+**Kleinstadt, seed 7 — a speed-limit sign along a local street:**
+![Speed limit sign](docs/progression/v0.7.0-signage-speed-limit.png)
+
+**Live Blender session — new Lighting panel expanded (Sun/Night Mode fields visible):**
+![Blender screenshot](docs/progression/v0.7.0-blender-screenshot.png)
+
+---
+
+## v0.6.0 — Special buildings: supermarket, police station, hospital, fire station, school
+
+Five unique, zone-targeted building types beyond the 12 generic facades,
+placed by explicit selection logic (`generators/city/special_buildings.py`)
+rather than the random per-block facade pick `buildings.plan_buildings`
+uses: each city gets one police station, hospital, fire station and school
+(largest available block in an allowed zone), plus a supermarket every ~45
+blocks (so bigger cities get more than one). Reuses `buildings.BuildingPlan`/
+`FacadeType` directly - each special type is just a `FacadeType` with its
+own fixed floor count/height and an extended material_index (12-16 in
+`city_mat.py`'s facade color ramp) instead of a randomly rolled one, so the
+exact same shell/window/roof/interior mesh construction applies unchanged.
+`generate_city` now reserves each special building's block before handing
+the rest to `plan_buildings`, so a block never gets both.
+
+Every special building gets an illuminated sign - a real Blender Text
+object mounted on the entrance facade, not a texture, so it's readable at
+any render distance - plus, for hospitals specifically, a rooftop helipad
+(a flat disc + a raised "H" marking). Furniture catalog
+(`assets/library.py`) extended with per-type interior sets (hospital beds,
+police desks, supermarket shelving/counters, etc.) for the ground-floor
+interiors every building already gets.
+
+New pytest coverage in `test_generators.py`: reserved-block/plan bookkeeping
+is consistent, special buildings never land on park blocks or reuse a
+regular building's block, `min_blocks_required` correctly gates small
+cities out of types they're too small for, supermarket count scales with
+city size, planning is deterministic for a given seed, and every spec has a
+unique material index.
+
+**Kleinstadt, seed 7 — hospital close-up (sign + rooftop helipad), with the neighboring police station and school also in frame:**
+![Hospital closeup](docs/progression/v0.6.0-hospital-closeup.png)
+
+**Kleinstadt, seed 7 — supermarket close-up (two placed in this city, per the every-45-blocks scaling):**
+![Supermarket closeup](docs/progression/v0.6.0-supermarket-closeup.png)
+
+**Kleinstadt, seed 7 — full city overview:**
+![Kleinstadt overview](docs/progression/v0.6.0-kleinstadt-overview.png)
+
+**Live Blender session — actual screenshot, N-panel open:**
+![Blender screenshot](docs/progression/v0.6.0-blender-screenshot.png)
+
+---
+
+## v0.5.0 — New feature: "Render Showcase Image" tool
+
+Every render/screenshot in this document up to now came from a one-off
+Python script written by hand each time (bounding-box math, camera
+placement, sun setup, EEVEE settings) - none of that lived in the addon
+itself. This turns it into a real, reusable feature: a new `rendering/`
+subsystem (`framing.py`, pure-Python bounding-box-to-camera-placement math,
+fully pytest-covered; `showcase.py`, the bpy build step that creates the
+camera/sun and configures+triggers the render) plus a **Render Showcase
+Image** button in a new N-panel section, with an angle dropdown (Overview /
+Close-up / Low Angle) and a resolution field. One click auto-frames a
+camera on whatever's been generated, sets up sun position for day/night,
+turns on raytracing for correct glass transmission, and renders straight to
+the export directory - no more hand-tuning a script per screenshot. This is
+meant to keep improving over future rounds (more angle presets, depth of
+field, compositor-based color grading, etc.).
+
+**Kleinstadt, seed 12 — produced by clicking the actual button (well, calling the same operator the button calls):**
+![Showcase render](docs/progression/v0.5.0-showcase-render.png)
+
+**Live Blender session, N-panel open (Procgen Maps tab visible in the sidebar):**
+![Blender screenshot](docs/progression/v0.5.0-blender-screenshot.png)
+
+---
+
+## v0.4.0 — Procedural sky + facade/terrain material detail for higher-quality rendering
+
+First rendering-quality pass (materials only - no new generator logic).
+Every `generate_terrain` call now sets up a real Nishita procedural sky
+world (`materials/world_mat.py`) instead of a flat background color, so
+renders get physically-based sky gradient, sun, and ambient lighting for
+free; night mode dips the same sky's sun below the horizon rather than
+swapping to a separate flat-color night world. The city facade material
+mixes in an Object-space noise "grain" (stable per building, not flickering
+with world position) on top of the flat per-facade color, plus a matching
+Bump for micro-surface detail - and the terrain material got the same
+treatment (speckle noise breaking up the flat height-band colors, finer
+noise driving its own bump). All purely procedural shading tricks - no
+image textures, no extra geometry/subdivision - consistent with the
+addon's no-baked-assets approach everywhere else.
+
+**Kleinstadt, seed 8 — rendered, raytracing on:**
+![Kleinstadt render](docs/progression/v0.4.0-kleinstadt-render.png)
+
+**Live Blender session — actual screenshot, grain clearly visible on facades:**
+![Blender screenshot](docs/progression/v0.4.0-blender-screenshot.png)
+
+---
+
+## v0.3.1 — Fixed remaining block/building overlaps in raster-mode presets
+
+A live-session screenshot on Metropole showed buildings visibly overlapping
+each other - a bug the v0.3.0 prop/building overlap fix didn't cover, since
+that fix only kept *props* out of buildings, not buildings out of each
+other. Root cause: raster-mode blocks (Metropole, Industrial) are built
+from the axis-aligned bounding box of an irregular Voronoi-like cell, and
+for non-convex or oddly-shaped cells that bbox can still extend into a
+neighboring seed's actual territory even after the existing fill-factor
+shrink - so two blocks (and the buildings placed on them) could overlap.
+Grid-mode presets (Dorf, Kleinstadt) were never affected. Measured 156
+overlapping block pairs / 41 overlapping buildings on Metropole and 37 / 11
+on Industrial before the fix.
+
+Rather than trying to reconstruct the true (possibly concave) cell polygon
+just for a tighter initial estimate, `generate_layout` now resolves the
+*invariant* directly: any pair of blocks whose rectangles still overlap
+gets shrunk along whichever axis has the smaller overlap until their
+projections on that axis no longer intersect, which by the AABB
+separating-axis test guarantees no overlap regardless of the other axis.
+A few passes settle chains of mutually-touching blocks. Blocks shrunk down
+to a sliver by this process are dropped. Verified 0 block and 0 building
+overlaps across all 4 presets, with a regression test added.
+
+**Metropole, seed 1 — rendered (raytracing enabled, no more transmission ghosting either):**
+![Metropole render](docs/progression/v0.3.1-metropole-render.png)
+
+**Live Blender session — actual screenshot:**
+![Blender screenshot](docs/progression/v0.3.1-blender-screenshot.png)
+
+---
+
+## v0.3.0 — Detail pass, ground-floor interiors, overlap fix
+
+Building facades got real per-instance variety (jittered window frequency/
+pitch/floor height so same-facade buildings stop looking identical), a
+proper wide entrance recess on the ground floor, and a chance at a rooftop
+utility unit on flat-roofed buildings. Every building now gets a simple
+furnished ground-floor interior (floor, ceiling, warm light, 2-3
+facade-appropriate furniture pieces from a new catalog) visible through
+actually-transmissive window glass. Also fixed two real bugs surfaced by
+this pass: props could still spawn overlapping buildings in the denser
+raster-layout presets (Metropole, Industrial) because `SpatialHashGrid`'s
+collision search radius didn't account for large registered items (like a
+building's bounding circle) — only the query's own small radius. Verified
+0 overlaps across all 4 presets after the fix, with a regression test
+locking it in.
+
+**Kleinstadt, seed 21 — rendered:**
+![Kleinstadt render](docs/progression/v0.3.0-kleinstadt-render.png)
+
+**Live Blender session — actual screenshot, not a render:**
+![Blender screenshot](docs/progression/v0.3.0-blender-screenshot.png)
+
+**Dorf, seed 30 — rendered:**
+![Dorf day](docs/progression/v0.3.0-dorf-day.png)
+
+**Kleinstadt, seed 30, night mode:**
+![Kleinstadt night](docs/progression/v0.3.0-kleinstadt-night.png)
+
+---
+
+## v0.2.0 — Core bug fixes: grounded props, real materials, working windows/roofs
+
+Fixed the issues visible in the first end-to-end test: props (trees, lamps,
+benches) were floating above or buried under sloped terrain because
+`props.py` hardcoded z=0 instead of sampling the heightmap; nothing had a
+real material assigned (props showed as flat gray, and Blender's Solid
+viewport shading ignores shader node graphs entirely, reading a separate
+`diffuse_color` field instead); and — the deepest bug of this round —
+window/roof detail had never actually rendered because of a `bmesh` quirk:
+`extrude_face_region`'s own return value only reports the single moved top
+face and silently drops the 4 newly-created side faces every time, so the
+window-carving code had been running against nothing since it was written.
+Fixed with a proper before/after face diff, added a real gable roof (ridge +
+two slopes, not a single-point pyramid poke), and nested `ProcgenMaps_City`
+correctly under the addon's root collection instead of as a stray sibling.
+
+**Dorf, seed 7:**
+![Dorf day v0.2.0](docs/progression/v0.2.0-dorf-day.png)
+
+**Metropole, seed 1:**
+![Metropole day v0.2.0](docs/progression/v0.2.0-metropole-day.png)
+
+---
+
+## v0.1.0 — Initial functional build
+
+First end-to-end pass: 4 presets, terrain, the full layout → zones → streets
+→ buildings → props pipeline, a BSP dungeon generator, and glTF/FBX/USDZ/
+SVG/JSON export, all verified via a headless Blender smoke test. Visually
+rough: props floating/buried relative to terrain, flat gray materials, and
+buildings that were plain extruded boxes with no visible window or roof
+detail — the issues v0.2.0 above fixes. No image captured for this
+milestone (issues were reported via a live screenshot in conversation,
+not saved to a file at the time).
+
+---
+
+## Reproducing any of these
+
+```
+blender --background --factory-startup --python your_script.py
+```
+```python
+import procgen_maps
+procgen_maps.register()
+bpy.context.scene.procgen_maps.preset = "KLEINSTADT"  # or DORF / METROPOLE / INDUSTRIAL
+bpy.context.scene.procgen_maps.seed = 21
+bpy.ops.procgen_maps.generate_terrain()
+bpy.ops.procgen_maps.generate_city()
+```
+See DEPLOYMENT.md for the full headless workflow.

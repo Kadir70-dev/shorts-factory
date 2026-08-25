@@ -1,78 +1,78 @@
 """
-Smart Scene Decision Engine (Phase 5.5) — the brain of the cinematic visual layer.
+Visual Decision Engine — which of the five visual tiers each beat gets.
 
-For EVERY scene it decides, automatically, ONE primary visual strategy:
+The audit's finding was that numbers were being paired with random stock clips and
+abstract claims were being illustrated with generic corporate footage. Both are the
+same failure: falling back to stock as a DEFAULT rather than as a last resort.
 
-  A) real       — real moving footage (Pexels/Pixabay).            [the default]
-  B) ai_image   — AI cinematic documentary still + Ken Burns motion.
-  C) motion_gfx — chart / animated graphics (manim).
-  D) hybrid     — AI base composited WITH on-screen graphics (overlays/stat).
+The ladder, strictly in priority order:
 
-  (ai_video is disabled in the local CPU pipeline — never allocated.)
+  1. SUBJECT-SPECIFIC  — the exact thing the line names. Real footage of that
+     subject if it exists; an AI recreation of that exact subject if no camera
+     could have been there. Never "a football match" for "Brazil, 1970".
+  2. MOTION GRAPHICS   — the claim itself, built on screen in the channel's type
+     over a live branded field. For beats whose content IS the words: mechanisms,
+     definitions, contrasts, reveals with no filmable subject.
+  3. ANIMATED CHARTS   — every important number. This one OUTRANKS the others in
+     practice: a beat that states a real figure gets a chart of that figure, not
+     footage that happens to be nearby. It is the most explicit instruction in the
+     brief and the one the old pipeline got most wrong.
+  4. BRANDED GRAPHICS  — a branded plate. The floor a beat lands on when nothing
+     above fits.
+  5. STOCK FOOTAGE     — only when a subject-specific search actually returns
+     something on-topic. Generic stock is no longer a default; it is a rescue.
 
-It is a PURE function (no I/O, deterministic) so it is cheap to dry-run and easy
-to verify. The asset resolver (`broll.py`) consumes the decision and still keeps
-real footage as the safety net for every AI beat — so a generation failure or a
-missing provider key degrades to real footage; it never breaks the render.
+Everyday-realism beats (grocery aisles, gas pumps, voting lines, crowds) remain a
+hard veto on AI: those look uncanny generated and are exactly what real footage is
+good at. That rule predates this rewrite and survives it.
 
-Two things drive the decision:
-
-1. SUBJECT ELIGIBILITY (what the beat is ABOUT) — the Phase-5.5 doctrine:
-   USE AI for things a camera can't truthfully shoot or that look fake as stock:
-     • HISTORY      — recreations, presidents, scandals, secret meetings, old
-                      newspapers, dark corridors, White House atmosphere.
-     • POLITICS     — symbolic/dramatic election imagery, campaign tension,
-                      red-vs-blue mood, cinematic White House.
-     • BUSINESS/TECH— billionaire / luxury boardroom / monopoly / AI-future mood.
-     • ABSTRACT     — inflation fear, broken middle class, anxiety, hidden
-                      systems, money psychology.
-   DO NOT use AI for everyday realism — restaurants, grocery stores, gas
-   stations, normal streets, voting lines, crowds. Those MUST be real footage
-   (AI versions read as uncanny stock slop). These are hard `force_real`.
-
-2. MIX BUDGET — across the whole short we target the local ratio:
-     real ~70% · ai_image ~20% · motion_gfx 5–10% · ai_video 0%
-   We turn the ratio into integer caps for this scene count and allocate the AI
-   slots to the highest-affinity eligible beats, so a typical 4–6 scene short
-   gets ~1 AI image, ~0–1 chart, and the rest real.
+The engine is a PURE function — no I/O, deterministic — so it is cheap to dry-run
+and easy to test. `broll.py` turns the decision into a file on disk and keeps a
+safety net under every tier.
 """
 from __future__ import annotations
 
+import copy
+import re
+import time
 from dataclasses import dataclass, field
 
 from ..config import settings
 from ..schemas.scene import Scene, SceneGraph
 from ..schemas.video_spec import VideoSpec
+from . import dataviz
 
 # strategy labels (mirror schema Visual.strategy)
+DATAVIZ = "dataviz"
 REAL = "real"
 AI_IMAGE = "ai_image"
 AI_VIDEO = "ai_video"
 MOTION_GFX = "motion_gfx"
+BRANDED = "branded"
 HYBRID = "hybrid"
 
-# Local-only visual-mix target (fractions of the timeline). AI VIDEO is disabled
-# for the stable CPU pipeline, so its budget is folded into real footage + AI
-# stills: real footage is the backbone, local AI images are the cinematic
-# seasoning on beats a camera can't truthfully shoot, charts fill the rest.
-#   ~70% real footage · ~20% local AI images · 5–10% charts · 0% AI video
+# Target mix over a whole short. Charts and graphics are no longer a rounding
+# error: a documentary explainer that never shows a number or a built claim is
+# just narrated stock footage.
+#   ~45% subject-specific real · ~20% charts · ~15% motion graphics
+#   ~15% AI recreation · ~5% branded plate
 MIX_TARGET: dict[str, tuple[float, float]] = {
-    REAL: (0.65, 0.78),         # ~70% (absorbs the old AI-video budget)
-    AI_IMAGE: (0.15, 0.25),     # ~20% cinematic stills (Ken Burns motion)
-    MOTION_GFX: (0.05, 0.10),   # 5–10% charts / motion graphics
+    REAL: (0.38, 0.52),
+    DATAVIZ: (0.15, 0.28),
+    MOTION_GFX: (0.10, 0.22),
+    AI_IMAGE: (0.10, 0.20),
 }
 
-# OPT-IN image-to-video band (Picsart). Allocated ONLY when
-# settings().enable_image_to_video AND spec.allow_ai_video — otherwise this band
-# is ignored and the mix is exactly as above (no ai_video beats). Hard-capped by
-# settings().max_ai_video_scenes so a weak laptop / budget never overspends. The
-# slots come out of the AI-image budget (a still that would have gotten Ken Burns
-# instead gets real cinematic motion), so real footage stays the backbone.
-AI_VIDEO_BAND: tuple[float, float] = (0.10, 0.20)   # ~15% of the timeline, when ON
+# OPT-IN image-to-video band (Picsart), allocated only when both
+# settings().enable_image_to_video and spec.allow_ai_video are on.
+AI_VIDEO_BAND: tuple[float, float] = (0.10, 0.20)
 
-# --- subject taxonomy ------------------------------------------------------- #
-# AI-eligible buckets. A scene matching one of these is a candidate for an AI
-# image/video — the "cinematic seasoning" beats real footage can't serve.
+# --------------------------------------------------------------------------- #
+# Subject taxonomy
+# --------------------------------------------------------------------------- #
+# AI-eligible buckets: subjects a camera cannot truthfully shoot, or that look
+# fake as stock. A match here makes the beat a candidate for an AI RECREATION of
+# that exact subject — not for generic AI mood imagery.
 _AI_SUBJECTS: dict[str, list[str]] = {
     "history": [
         "history", "historic", "historical", "1800s", "1900s", "century",
@@ -110,11 +110,9 @@ _AI_SUBJECTS: dict[str, list[str]] = {
     ],
 }
 
-# Everyday-realism subjects that MUST stay real footage (hard veto on AI).
-# Phase-5.5: restaurants, grocery, gas, streets, voting lines, crowds.
+# Everyday realism — a hard veto on AI. These read uncanny when generated and are
+# precisely what stock footage libraries are genuinely good at.
 _FORCE_REAL: list[str] = [
-    # NOTE: no bare "server " — it false-matches computer servers (cyber/tech
-    # recreations). Restaurant context is covered by waiter/waitress/diner/menu.
     "restaurant", "diner", "cafe", "café", "waiter", "waitress",
     "tip ", "tipping", "tips ", "menu", "grocery", "groceries", "supermarket",
     "checkout", "cashier", "shopping cart", "shopper", "shoppers",
@@ -126,42 +124,68 @@ _FORCE_REAL: list[str] = [
     "kitchen table", "everyday", "ordinary people",
 ]
 
-# Niche-level lean: history/politics/business niches are AI-friendlier overall;
-# facts/finance lean real (they live on everyday cost-of-living realism).
-_NICHE_AI_LEAN: dict[str, float] = {
-    "usa_history": 1.0,
-    "usa_politics": 0.7,
-    "usa_election": 0.7,
-    "usa_business": 0.7,
-    "usa_finance": 0.3,
-    "usa_facts": 0.2,
-    # Cybercrime is recreation-heavy: leaked tables, login pages, exposure moments
-    # rarely exist as real footage → lean AI for the exact-event recreations.
-    "cybersecurity": 0.85,
-}
+# Beat roles whose content IS the words — prime motion-graphics territory.
+_GFX_ROLES = {"mechanism", "myth", "reveal", "turn", "lesson", "contrast"}
+
+# Search phrases so generic they signal "no real subject was identified". A beat
+# whose keywords are all of this shape has nothing specific to film.
+_GENERIC_KEYWORDS = re.compile(
+    r"^(business|corporate|office|meeting|handshake|money|finance|financial|"
+    r"success|growth|technology|abstract|concept|background|professional|"
+    r"team|teamwork|working|computer|data|chart|graph|stock market|economy)"
+    r"[a-z ]*$", re.IGNORECASE)
 
 
 @dataclass
 class Decision:
     """The engine's verdict for one scene (also written onto scene.visual)."""
-
     scene_id: str
-    strategy: str                 # real / ai_image / ai_video / motion_gfx / hybrid
-    reason: str                   # human-readable WHY (verification artifact)
-    ai_eligible: bool             # subject qualifies for AI at all
-    force_real: bool              # everyday realism — AI vetoed
-    score: float                  # AI affinity (higher = stronger AI candidate)
-    category: str = ""            # which AI subject bucket matched (if any)
-    hero: bool = False            # the single highest-emotion ai_video beat (→ hero model)
+    strategy: str
+    reason: str
+    tier: int                     # 1..5 — which rung of the ladder
+    ai_eligible: bool
+    force_real: bool
+    score: float                  # AI-recreation affinity
+    has_data: bool = False        # a real figure the chart engine can render
+    concrete: bool = False        # names a specific, filmable subject
+    category: str = ""
+    hero: bool = False
+    specific_subject: bool = False     # Director authored a non-generic filmable phrase
+
+
+@dataclass(frozen=True)
+class DecisionMetrics:
+    """Cheap semantic-quality signals used to compare decision policies."""
+    grounded_pct: float
+    subject_match_pct: float
+    generic_real_pct: float
+    adjacent_repeat_pct: float
+    score: float
+
+
+@dataclass(frozen=True)
+class ComparisonReport:
+    existing: DecisionMetrics
+    enhanced: DecisionMetrics
+    changed_scenes: tuple[str, ...]
+    existing_ms: float
+    enhanced_ms: float
+
+    @property
+    def score_delta(self) -> float:
+        return round(self.enhanced.score - self.existing.score, 2)
 
 
 @dataclass
 class MixReport:
-    """Summary of one short's visual mix vs the Phase-5.5 target."""
-
     decisions: list[Decision]
     counts: dict[str, int] = field(default_factory=dict)
     pct: dict[str, float] = field(default_factory=dict)
+    comparison: ComparisonReport | None = None
+
+    def format(self) -> str:
+        parts = [f"{k} {v}" for k, v in self.counts.items() if v]
+        return "visual mix: " + " · ".join(parts)
 
 
 def _scene_text(s: Scene) -> str:
@@ -172,14 +196,37 @@ def _scene_text(s: Scene) -> str:
     ]).lower()
 
 
+def _is_concrete(s: Scene) -> bool:
+    """Does this beat name something specific enough to actually film?
+
+    Two signals: a proper noun that isn't just the sentence opener, and
+    subject-specific search keywords. Beats whose keywords are all generic
+    ("business meeting", "financial growth") have nothing to point a camera at,
+    and that is precisely when the old pipeline reached for stock.
+    """
+    words = s.narration.split()
+    proper = sum(1 for w in words[1:]
+                 if w[:1].isupper() and len(w) > 2 and w.isalpha())
+    has_year = bool(re.search(r"\b(1[5-9]\d{2}|20\d{2})\b", s.narration))
+    specific_kw = [k for k in s.visual.broll_keywords
+                   if k and not _GENERIC_KEYWORDS.match(k.strip())]
+    return bool(proper or has_year) and bool(specific_kw)
+
+
+def _has_showable_text(s: Scene) -> bool:
+    """Is there a line worth setting in type? A headline always is; a narration
+    line is only if it's short enough to read at speed — a 30-word sentence on
+    screen is a wall, not a graphic."""
+    if any(o.type == "headline" and o.text.strip() for o in s.overlays):
+        return True
+    return 3 <= len(s.narration.split()) <= 16
+
+
 def _classify(s: Scene, niche: str) -> Decision:
-    """Score one scene's AI affinity from its subject, role and niche."""
     text = _scene_text(s)
     v = s.visual
-
     force_real = any(k in text for k in _FORCE_REAL)
 
-    # which AI buckets does the subject hit, and how strongly
     matched: list[str] = []
     hits = 0
     for cat, kws in _AI_SUBJECTS.items():
@@ -187,140 +234,352 @@ def _classify(s: Scene, niche: str) -> Decision:
         if n:
             matched.append(cat)
             hits += n
-    category = matched[0] if matched else ""
 
     score = 0.0
     bits: list[str] = []
-
-    # Director explicitly asked for an AI motion insert — strongest signal.
-    director_ai_video = v.type == "ai_video"
-    if director_ai_video:
+    if v.type == "ai_video":
         score += 5.0
         bits.append("Director flagged ai_video")
-
-    # editorial role
     if v.scene_visual_type == "abstract":
         score += 3.0
-        bits.append("abstract concept (no literal footage)")
+        bits.append("abstract concept")
     elif v.scene_visual_type == "dramatic":
         score += 1.5
-        bits.append("dramatic/high-tension beat")
-
-    # subject buckets
+        bits.append("dramatic beat")
     if matched:
         score += 1.5 * len(matched) + 0.4 * hits
         bits.append(f"subject={'+'.join(matched)}")
 
-    # niche lean
     lean = _NICHE_AI_LEAN.get(niche, 0.4)
     score += lean
-    if lean >= 0.7:
-        bits.append(f"{niche.replace('usa_','')} niche leans cinematic")
-
-    # everyday realism vetoes AI no matter the score
     if force_real:
         bits = ["everyday realism → real footage (AI would look fake)"]
         score = -10.0
 
-    reason = "; ".join(bits) or "literal subject → real footage"
-    ai_eligible = bool(matched or director_ai_video or
-                       v.scene_visual_type == "abstract") and not force_real
+    specific_keywords = [keyword for keyword in v.broll_keywords
+                         if keyword.strip()
+                         and not _GENERIC_KEYWORDS.match(keyword.strip())]
+    specific_subject = any(
+        len(re.findall(r"[A-Za-z0-9]+", keyword)) >= 2
+        for keyword in specific_keywords)
     return Decision(
-        scene_id=s.id,
-        strategy=REAL,                 # provisional; allocator may upgrade
-        reason=reason,
-        ai_eligible=ai_eligible,
-        force_real=force_real,
-        score=score,
-        category=category,
+        scene_id=s.id, strategy=REAL, reason="; ".join(bits) or "literal subject",
+        tier=1,
+        ai_eligible=bool(matched or v.type == "ai_video"
+                         or v.scene_visual_type == "abstract") and not force_real,
+        force_real=force_real, score=score,
+        has_data=dataviz.from_scene(s) is not None,
+        concrete=_is_concrete(s),
+        category=matched[0] if matched else "",
+        specific_subject=specific_subject,
     )
+
+
+def _classify_enhanced(s: Scene, niche: str) -> Decision:
+    """Use precise subject phrases already authored by the Director.
+
+    The existing concreteness test requires a proper noun/year *and* a specific
+    search phrase. That can demote literal, filmable beats such as "a grocery
+    checkout" or "an oil rig" to typography. The enhanced path trusts a precise
+    multi-word b-roll phrase while retaining the generic-keyword and everyday-
+    realism safeguards. It never fetches or routes assets.
+    """
+    decision = _classify(s, niche)
+    if decision.specific_subject:
+        if not decision.concrete:
+            decision.reason = (
+                decision.reason + "; precise authored subject phrase").strip("; ")
+        decision.concrete = True
+    return decision
+
+
+_NICHE_AI_LEAN: dict[str, float] = {
+    "usa_history": 1.0, "usa_politics": 0.7, "usa_election": 0.7,
+    "usa_business": 0.7, "usa_finance": 0.3, "usa_facts": 0.2,
+    "cybersecurity": 0.85,
+    # Fashion: real garment/atelier/retail footage is abundant and always beats a
+    # generated approximation, so the AI lean stays low everywhere except the
+    # archival history bucket where no footage exists.
+    "fashion_luxury": 0.3, "fashion_business": 0.2, "fashion_supply_chain": 0.2,
+    "fashion_manufacturing": 0.2, "textile_industry": 0.25, "streetwear": 0.25,
+    "sneaker_culture": 0.25, "fashion_trends": 0.25, "fashion_history": 0.8,
+}
+
+
+_BUDGET_STRATEGY = {
+    "charts": DATAVIZ, "motion_gfx": MOTION_GFX, "threejs": "threejs",
+    "official": REAL, "stock": REAL, "ai_broll": AI_IMAGE,
+}
+
+
+def _decide_from_budget(graph: SceneGraph) -> MixReport:
+    """Translate the whole-video budget allocation into resolver strategies.
+
+    `official` and `stock` both resolve as REAL footage; they differ in which
+    SOURCES the resolver is allowed to draw from, which `visual.budget_channel`
+    carries downstream.
+    """
+    decisions: list[Decision] = []
+    for s in graph.scenes:
+        ch = s.visual.budget_channel or "motion_gfx"
+        strategy = _BUDGET_STRATEGY.get(ch, MOTION_GFX)
+        s.visual.strategy = strategy
+        if ch in ("charts", "motion_gfx", "threejs"):
+            s.visual.type = {"charts": "dataviz", "motion_gfx": "motion_gfx",
+                             "threejs": "threejs"}[ch]
+        decisions.append(Decision(
+            scene_id=s.id, strategy=strategy,
+            reason=s.visual.decision_reason or f"visual budget → {ch}",
+            tier=1, ai_eligible=(ch == "ai_broll"),
+            force_real=(ch in ("official", "stock")),
+            score=0.0, has_data=bool(s.data and s.data.valid()), concrete=True,
+            # generate_semantic() reads this to weight beat confidence; the budget
+            # only assigns a channel to a beat it judged specific enough for it.
+            specific_subject=True,
+        ))
+    n = len(decisions) or 1
+    counts: dict[str, int] = {}
+    for d in decisions:
+        counts[d.strategy] = counts.get(d.strategy, 0) + 1
+    return MixReport(decisions=decisions, counts=counts,
+                     pct={k: round(100 * v / n, 1) for k, v in counts.items()})
 
 
 def _cap(n: int, lo: float, hi: float) -> int:
-    """Integer slot cap for a mix band over n scenes (round to the band mid)."""
     return int(round(n * (lo + hi) / 2))
 
 
-def decide(graph: SceneGraph, spec: VideoSpec) -> MixReport:
-    """Assign a visual strategy to every scene, enforcing the Phase-5.5 mix.
-    Mutates `scene.visual.strategy` / `.decision_reason` and returns a report."""
+# --------------------------------------------------------------------------- #
+def _decide_policy(graph: SceneGraph, spec: VideoSpec, classifier) -> MixReport:
+    """Assign a visual tier to every scene. Mutates `scene.visual.strategy` and
+    `.decision_reason`, and sets `visual.type` for the locally-rendered tiers."""
     scenes = graph.scenes
     n = len(scenes)
-    decisions = [_classify(s, graph.meta.niche) for s in scenes]
+    if not n:
+        return MixReport(decisions=[])
+    decisions = [classifier(s, graph.meta.niche) for s in scenes]
     by_id = {d.scene_id: d for d in decisions}
 
-    # 1) MOTION GRAPHICS — charts are charts. manim or a data_viz numbers beat.
-    gfx_cap = max(1, _cap(n, *MIX_TARGET[MOTION_GFX])) if any(
-        s.visual.type == "manim" or s.visual.scene_visual_type == "data_viz"
-        for s in scenes
-    ) else 0
+    # ── TIER 3 first: every important NUMBER gets its own animated chart. ──────
+    # Ranked above the others deliberately. When a beat states a real figure, the
+    # figure IS the visual; pairing it with footage that merely feels related is
+    # the exact behaviour this rewrite exists to remove.
+    #
+    # AUTHORED data (the Director wrote out a series) is never capped: it said
+    # this beat is about these numbers, and capping it would drop the chart and
+    # substitute footage — the precise failure being fixed. The cap applies only
+    # to charts PROMOTED from a bare stat overlay, which is a guess and can
+    # reasonably be rationed so a short doesn't become a slide deck.
+    promoted_cap = max(1, _cap(n, *MIX_TARGET[DATAVIZ]))
+    promoted = 0
+    for s in scenes:
+        d = by_id[s.id]
+        if not d.has_data:
+            continue
+        authored = s.data is not None and s.data.valid()
+        if not authored:
+            if promoted >= promoted_cap:
+                continue
+            promoted += 1
+        viz = dataviz.from_scene(s)
+        d.strategy, d.tier = DATAVIZ, 3
+        d.reason = (f"states a real figure → animated chart ({viz.kind})"
+                    + ("" if authored else ", promoted from its stat overlay"))
+        s.data = viz
+        s.visual.type = "dataviz"
+
+    remaining = [by_id[s.id] for s in scenes if by_id[s.id].strategy != DATAVIZ]
+
+    # ── TIER 1: subject-specific footage / recreation ────────────────────────
+    # A beat that names something concrete is filmable. Whether that resolves to
+    # real footage or an AI recreation of the SAME subject is decided by whether a
+    # camera could plausibly have been there.
+    ai_cap = _cap(n, *MIX_TARGET[AI_IMAGE]) if spec.allow_ai_image else 0
+    ai_used = 0
+    for d in sorted(remaining, key=lambda x: -x.score):
+        if not d.concrete:
+            continue
+        if d.ai_eligible and ai_used < ai_cap and not d.force_real:
+            d.strategy, d.tier = AI_IMAGE, 1
+            d.reason = f"specific subject a camera couldn't reach → AI recreation — {d.reason}"
+            ai_used += 1
+        else:
+            d.strategy, d.tier = REAL, 1
+            d.reason = f"specific subject → exact-match footage — {d.reason}"
+
+    # ── TIER 2: motion graphics for beats whose content is the WORDS ─────────
+    gfx_cap = max(1, _cap(n, *MIX_TARGET[MOTION_GFX]))
     gfx_used = 0
     for s in scenes:
         d = by_id[s.id]
-        is_chart = s.visual.type == "manim" or s.visual.scene_visual_type == "data_viz"
-        if is_chart and gfx_used < gfx_cap:
-            d.strategy = MOTION_GFX
-            d.reason = "numbers/trend beat → animated chart (motion graphics)"
+        if d.strategy != REAL or d.concrete or gfx_used >= gfx_cap:
+            continue
+        role = (s.beat_role or "").lower()
+        wordy = role in _GFX_ROLES or s.visual.scene_visual_type == "abstract"
+        if wordy or not d.concrete:
+            d.strategy, d.tier = MOTION_GFX, 2
+            d.reason = ("no filmable subject; the claim IS the content → "
+                        "kinetic typography")
+            s.visual.type = "motion_gfx"
             gfx_used += 1
 
-    # candidates = AI-eligible scenes not already locked to a chart, best-first
-    cands = sorted(
-        (by_id[s.id] for s in scenes
-         if by_id[s.id].ai_eligible and by_id[s.id].strategy != MOTION_GFX),
-        key=lambda d: d.score, reverse=True,
-    )
+    # ── TIER 4: branded plate — the floor, and genuinely a last resort ───────
+    # A beat that reached here has no filmable subject. If it has a line worth
+    # putting on screen, motion graphics is strictly better than a blank plate,
+    # so the tier-2 budget is allowed to overflow rather than leave the frame
+    # empty — a run of three identical plates would be worse than the stock
+    # footage this whole ladder replaced.
+    for s in scenes:
+        d = by_id[s.id]
+        if d.strategy != REAL or d.concrete:
+            continue
+        if _has_showable_text(s):
+            d.strategy, d.tier = MOTION_GFX, 2
+            d.reason = ("no filmable subject, but the line carries the beat → "
+                        "kinetic typography")
+            s.visual.type = "motion_gfx"
+        else:
+            d.strategy, d.tier = BRANDED, 4
+            d.reason = ("nothing specific to show and nothing worth setting in "
+                        "type → branded plate")
+            s.visual.type = "branded"
 
-    # 2) AI VIDEO (Picsart image→video) — OPT-IN. Off by default → never allocated
-    #    (folded into real + AI images, exactly as the stable CPU pipeline). When
-    #    ENABLE_IMAGE_TO_VIDEO=1 and the request allows it, the highest-emotion
-    #    eligible beats (hero / dramatic / anime — `cands` is score-sorted) get a
-    #    cinematic motion clip, hard-capped by MAX_AI_VIDEO_SCENES. The resolver
-    #    still keeps the still + real footage as the safety net, so a failure
-    #    degrades gracefully — it never breaks the render.
+    # ── OPT-IN: AI video on the highest-emotion beat ─────────────────────────
     cfg = settings()
-    vid_used = 0
-    if cfg.enable_image_to_video and spec.allow_ai_video and cands:
-        vid_cap = min(cfg.max_ai_video_scenes, _cap(n, *AI_VIDEO_BAND))
-        vid_cap = max(1, vid_cap) if cfg.max_ai_video_scenes >= 1 else 0
-        for d in cands:
-            if vid_used >= vid_cap:
-                break
-            d.strategy = AI_VIDEO
-            d.hero = vid_used == 0          # top-scored beat → optional hero model
-            tag = "HERO " if d.hero else ""
-            d.reason = f"{tag}high-emotion beat → image→video motion — {d.reason}"
-            vid_used += 1
+    if cfg.enable_image_to_video and spec.allow_ai_video:
+        cands = sorted((d for d in decisions if d.strategy == AI_IMAGE),
+                       key=lambda d: -d.score)
+        cap = min(cfg.max_ai_video_scenes, max(1, _cap(n, *AI_VIDEO_BAND)))
+        for i, d in enumerate(cands[:cap]):
+            d.strategy, d.hero = AI_VIDEO, i == 0
+            d.reason = f"{'HERO ' if i == 0 else ''}image→video motion — {d.reason}"
 
-    # 3) AI IMAGE — cinematic stills on the best eligible beats (~20%). Guarantees
-    #    at least one when an eligible beat remains and images are allowed. Beats
-    #    already promoted to ai_video above are excluded here.
-    img_cands = [d for d in cands if d.strategy != AI_VIDEO]
-    img_cap = _cap(n, *MIX_TARGET[AI_IMAGE]) if spec.allow_ai_image else 0
-    if spec.allow_ai_image and img_cands:
-        img_cap = max(1, img_cap)
+    # ── HYBRID: a visual carrying on-screen graphics too ─────────────────────
+    for s in scenes:
+        d = by_id[s.id]
+        if d.strategy in (AI_IMAGE, REAL) and any(
+                o.type in ("stat", "headline") for o in s.overlays):
+            if d.strategy == AI_IMAGE:
+                d.strategy = HYBRID
+                d.reason = f"AI base + on-screen graphics — {d.reason}"
 
-    img_used = 0
-    for d in img_cands:
-        if img_used >= img_cap:
-            break                       # budget spent → remaining beats stay real
-        scene = next(s for s in scenes if s.id == d.scene_id)
-        has_gfx = any(o.type in ("stat", "headline") for o in scene.overlays)
-        # hybrid = AI image that ALSO carries on-screen graphics composited.
-        d.strategy = HYBRID if has_gfx else AI_IMAGE
-        kind = "hybrid AI image + on-screen graphics" if has_gfx \
-            else "AI cinematic documentary image"
-        d.reason = f"{kind} — {d.reason}"
-        img_used += 1
-
-    # write back onto the scene graph
     for s in scenes:
         d = by_id[s.id]
         s.visual.strategy = d.strategy
         s.visual.decision_reason = d.reason
 
-    counts: dict[str, int] = {REAL: 0, AI_IMAGE: 0, AI_VIDEO: 0,
-                              MOTION_GFX: 0, HYBRID: 0}
+    counts = {k: 0 for k in (DATAVIZ, REAL, AI_IMAGE, AI_VIDEO, MOTION_GFX,
+                             BRANDED, HYBRID)}
     for d in decisions:
         counts[d.strategy] += 1
-    pct = {k: round(100 * c / n, 1) for k, c in counts.items()} if n else {}
+    pct = {k: round(100 * c / n, 1) for k, c in counts.items()}
     return MixReport(decisions=decisions, counts=counts, pct=pct)
+
+
+def _decide_existing(graph: SceneGraph, spec: VideoSpec) -> MixReport:
+    return _decide_policy(graph, spec, _classify)
+
+
+def _decide_enhanced(graph: SceneGraph, spec: VideoSpec) -> MixReport:
+    report = _decide_policy(graph, spec, _classify_enhanced)
+    changed = {decision.scene_id for decision in report.decisions
+               if "precise authored subject phrase" in decision.reason}
+    for scene in graph.scenes:
+        if scene.id in changed:
+            scene.visual.decision_reason += " [visual-intelligence]"
+    return report
+
+
+def measure(report: MixReport) -> DecisionMetrics:
+    """Score decision quality without resolving or rendering any assets."""
+    decisions = report.decisions
+    n = len(decisions)
+    if not n:
+        return DecisionMetrics(100.0, 100.0, 0.0, 0.0, 100.0)
+    grounded = sum(
+        decision.has_data and decision.strategy == DATAVIZ
+        or decision.force_real and decision.strategy == REAL
+        or decision.concrete and decision.strategy in (REAL, AI_IMAGE, AI_VIDEO, HYBRID)
+        or not decision.concrete and decision.strategy in (MOTION_GFX, BRANDED)
+        for decision in decisions)
+    generic_real = sum(decision.strategy == REAL and not decision.concrete
+                       for decision in decisions)
+    authored = [decision for decision in decisions if decision.specific_subject]
+    subject_matches = sum(
+        decision.strategy in (REAL, AI_IMAGE, AI_VIDEO, HYBRID)
+        for decision in authored)
+    repeats = sum(a.strategy == b.strategy
+                  for a, b in zip(decisions, decisions[1:]))
+    grounded_pct = 100.0 * grounded / n
+    generic_pct = 100.0 * generic_real / n
+    subject_match_pct = (100.0 * subject_matches / len(authored)
+                         if authored else 100.0)
+    repeat_pct = 100.0 * repeats / max(1, n - 1)
+    score = max(0.0, min(100.0,
+                        0.70 * grounded_pct + 0.30 * subject_match_pct
+                        - 0.20 * generic_pct - 0.05 * repeat_pct))
+    return DecisionMetrics(*(round(value, 2) for value in
+                             (grounded_pct, subject_match_pct, generic_pct,
+                              repeat_pct, score)))
+
+
+def compare(graph: SceneGraph, spec: VideoSpec) -> ComparisonReport:
+    """Run both pure policies on copies; never mutate the caller's graph."""
+    existing_graph = copy.deepcopy(graph)
+    enhanced_graph = copy.deepcopy(graph)
+    started = time.perf_counter()
+    existing = _decide_existing(existing_graph, spec)
+    existing_ms = (time.perf_counter() - started) * 1000.0
+    started = time.perf_counter()
+    enhanced = _decide_enhanced(enhanced_graph, spec)
+    enhanced_ms = (time.perf_counter() - started) * 1000.0
+    changed = tuple(
+        old.scene_id for old, new in zip(existing.decisions, enhanced.decisions)
+        if (old.strategy, old.tier, old.concrete) !=
+           (new.strategy, new.tier, new.concrete))
+    return ComparisonReport(
+        existing=measure(existing), enhanced=measure(enhanced),
+        changed_scenes=changed, existing_ms=round(existing_ms, 3),
+        enhanced_ms=round(enhanced_ms, 3))
+
+
+def decide(graph: SceneGraph, spec: VideoSpec) -> MixReport:
+    """Stable asset-resolver boundary; enhanced policy is opt-in and compared."""
+    # The Visual Budget Manager allocates across the WHOLE video, which is a
+    # decision this per-scene engine cannot make. When it has run, honour it:
+    # re-deriving here silently overwrote the allocation, so a correctly-planned
+    # 6-channel mix still rendered as 39% type / 61% charts.
+    if any(s.visual.budget_channel for s in graph.scenes):
+        # Falls through to the shared tail below — an early return here skipped
+        # storyboard generation, which is what starved the Three.js, official and
+        # AI-B-roll resolvers of the beat metadata they gate on.
+        report = _decide_from_budget(graph)
+    elif not settings().visual_intelligence_enabled:
+        report = _decide_existing(graph, spec)
+    else:
+        baseline_graph = copy.deepcopy(graph)
+        started = time.perf_counter()
+        baseline = _decide_existing(baseline_graph, spec)
+        baseline_ms = (time.perf_counter() - started) * 1000.0
+        started = time.perf_counter()
+        report = _decide_enhanced(graph, spec)
+        enhanced_ms = (time.perf_counter() - started) * 1000.0
+        changed = tuple(
+            old.scene_id for old, new in zip(baseline.decisions, report.decisions)
+            if (old.strategy, old.tier, old.concrete) !=
+               (new.strategy, new.tier, new.concrete))
+        report.comparison = ComparisonReport(
+            existing=measure(baseline), enhanced=measure(report),
+            changed_scenes=changed, existing_ms=round(baseline_ms, 3),
+            enhanced_ms=round(enhanced_ms, 3))
+        print("[visual-intelligence] existing "
+              f"{report.comparison.existing.score:.1f} → enhanced "
+              f"{report.comparison.enhanced.score:.1f} "
+              f"(Δ {report.comparison.score_delta:+.1f}; "
+              f"{len(changed)} scene(s) changed)", flush=True)
+    if settings().storyboard_engine_enabled:
+        from . import storyboard as storyboard_engine
+        graph.storyboard = storyboard_engine.generate_semantic(graph, report)
+        print(f"[storyboard] {len(graph.storyboard.scenes)} semantic beat(s)",
+              flush=True)
+    return report

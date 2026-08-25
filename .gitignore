@@ -21,3 +21,44 @@ data/topic_intelligence/
 .env
 node_modules/
 apps/remotion/node_modules/
+apps/remotion/dist-threejs/
+apps/remotion/dist-paperima/
+.venv-win/
+
+# Local assistant permissions and environment backups (may contain secrets).
+.claude/
+.env.bak*
+
+# Generated runtime outputs and user-owned voice recordings.
+output/
+data/ambience/
+data/ambience_proof/
+data/renders/
+data/state/
+data/voice/
+data/previews/
+data/reference/block_world_cinematic/
+logs/
+
+# Graphify code-graph cache/output (regenerable via `graphify update .`).
+graphify-out/
+
+# One-off machine-specific render diagnostics; reusable tooling lives in scripts/.
+/diagnose*.sh
+/finalize.sh
+/fix_*.sh
+/make_thumbs.sh
+/probe*.sh
+/run_parallel.sh
+/run_shorts.sh
+/validate*.sh
+/verify_audio.sh
+/watch_mem.sh
+tools/k70_scene_engine/.blender_portable/
+tools/k70_scene_engine/catalog/catalog.sqlite3
+tools/k70_scene_engine/.test_renders/
+
+# Vendored installer archives over GitHub's 100MB hard limit.
+tools/k70_scene_engine/vendor/natron_win/natron.zip
+tools/k70_scene_engine/vendor/synfig_win/synfig.zip
+tools/k70_scene_engine/vendor/mb-lab/mblab_1_8_1.zip

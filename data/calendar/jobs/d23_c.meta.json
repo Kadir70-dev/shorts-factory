@@ -1,0 +1,30 @@
+{
+  "id": "d23_c",
+  "day": 23,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "What renters insurance actually covers",
+  "sources": [
+    {
+      "claim": "A landlord's policy does not cover a renter's belongings; renters policies generally cover personal property and liability",
+      "source": "National Association of Insurance Commissioners consumer guidance",
+      "url": "https://content.naic.org/article/consumer_insight_renting_your_home_protect_your_belongings_renters_insurance.htm",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

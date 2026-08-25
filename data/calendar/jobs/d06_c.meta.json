@@ -1,0 +1,30 @@
+{
+  "id": "d06_c",
+  "day": 6,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "How insurance companies actually profit",
+  "sources": [
+    {
+      "claim": "Insurers earn through underwriting results and investment results; premiums are collected before claims and reserves can earn investment income",
+      "source": "NAIC: A Regulator's Introduction to the Insurance Industry",
+      "url": "https://content.naic.org/sites/default/files/inline-files/prod_serv_marketreg_rii_zb.pdf",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

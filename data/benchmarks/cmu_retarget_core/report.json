@@ -1,0 +1,106 @@
+{
+  "source_rest_pose": "CMU MotionBuilder BVH neutral/T-like hierarchy",
+  "target_rest_pose": "Mesh2Motion production humanoid A-like rest pose",
+  "source_matrix_world": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "target_matrix_world": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "source_basis": [
+    [
+      -0.9999858140945435,
+      0.0001359348971163854,
+      0.00532887689769268
+    ],
+    [
+      0.0,
+      0.9996747970581055,
+      -0.025500811636447906
+    ],
+    [
+      0.005330610554665327,
+      0.025500450283288956,
+      0.9996606111526489
+    ]
+  ],
+  "target_basis": [
+    [
+      -1.0,
+      -4.397276498480096e-08,
+      -3.4652285485492484e-09
+    ],
+    [
+      -4.410909326679757e-08,
+      0.9969093799591064,
+      0.07856067270040512
+    ],
+    [
+      1.1206826109743263e-14,
+      -0.07856067270040512,
+      0.9969093799591064
+    ]
+  ],
+  "source_height": 0.6433472782373428,
+  "target_height": 1.7338305711746216,
+  "target_mesh_height": 2.782996892929077,
+  "scale_factor": 2.695015009506233,
+  "source_root": "Hips translation split to target root; Hips rotation to pelvis",
+  "target_root": "root translation with pelvis local rotation",
+  "per_bone_corrections": 20,
+  "initial_root_error": 0.0,
+  "final_root_error": 0.0,
+  "maximum_ground_error": 0.06236031651496887,
+  "maximum_foot_sliding": 0.06597031676706286,
+  "manual_coordinate_adjustment": false,
+  "action": "K70_CMU_walk_retargeted",
+  "frames": 48,
+  "video": "C:\\Users\\Admin\\shorts-factory\\data\\benchmarks\\cmu_retarget_core\\preview.mp4",
+  "contact_sheet": "C:\\Users\\Admin\\shorts-factory\\data\\benchmarks\\cmu_retarget_core\\contact_sheet.jpg"
+}

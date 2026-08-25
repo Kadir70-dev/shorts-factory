@@ -1,0 +1,578 @@
+[
+  {
+    "scene_id": "s1",
+    "chapter": "00",
+    "beat_role": "hook",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "gold bars stacked macro cinematic lighting",
+    "search_terms": [
+      "gold bars stacked macro shot",
+      "gold bullion close up cinematic"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s2",
+    "chapter": "00",
+    "beat_role": "hook",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "WHAT IS XAU/USD, ACTUALLY?",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s3",
+    "chapter": "00",
+    "beat_role": "context",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "XAU / USD \u2014 one troy ounce of gold, in US dollars",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s4",
+    "chapter": "00",
+    "beat_role": "evidence",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "RATES \u00b7 THE DOLLAR \u00b7 INFLATION \u00b7 FEAR \u2014 ONE PRICE",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s5",
+    "chapter": "01",
+    "beat_role": "context",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "gold bar hallmark stamp close up macro",
+    "search_terms": [
+      "gold bullion bar stamp close up",
+      "gold bar serial number macro"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s6",
+    "chapter": "01",
+    "beat_role": "reveal",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "XAU \u2014 TREATED AS A CURRENCY, NOT A STOCK",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s7",
+    "chapter": "02",
+    "beat_role": "context",
+    "channel": "official",
+    "strategy": "real",
+    "acquisition": "archival / official \u2014 real photograph, sourced",
+    "query_or_prompt": "Federal Reserve building Washington DC exterior",
+    "search_terms": [
+      "Federal Reserve building exterior",
+      "US Treasury building Washington"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s8",
+    "chapter": "02",
+    "beat_role": "evidence",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "cargo shipping port containers international trade wide",
+    "search_terms": [
+      "cargo shipping port wide shot",
+      "international trade containers port"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s9",
+    "chapter": "02",
+    "beat_role": "context",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "A STRUCTURAL FACT \u2014 NOT A PREDICTION",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s10",
+    "chapter": "03",
+    "beat_role": "mechanism",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "illustrative example: XAU/USD = 2,000",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s11",
+    "chapter": "03",
+    "beat_role": "mechanism",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "PRICE UP: GOLD COSTS MORE.  PRICE DOWN: GOLD, OR THE DOLLAR, CHANGED.",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s12",
+    "chapter": "04",
+    "beat_role": "question",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "WHAT MOVES XAU/USD? USUALLY FOUR THINGS.",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s13",
+    "chapter": "05",
+    "beat_role": "mechanism",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "US dollar bills close up macro cinematic",
+    "search_terms": [
+      "US dollar bills close up macro",
+      "hundred dollar bills stack cinematic"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s14",
+    "chapter": "05",
+    "beat_role": "evidence",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "USD strength vs. gold price (conceptual)",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s15",
+    "chapter": "06",
+    "beat_role": "context",
+    "channel": "official",
+    "strategy": "real",
+    "acquisition": "archival / official \u2014 real photograph, sourced",
+    "query_or_prompt": "Federal Reserve seal building entrance Washington DC",
+    "search_terms": [
+      "Federal Reserve entrance sign",
+      "Federal Reserve building columns"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s16",
+    "chapter": "06",
+    "beat_role": "mechanism",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "BONDS PAY YOU TO WAIT. GOLD DOESN'T.",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s17",
+    "chapter": "07",
+    "beat_role": "reveal",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "NOMINAL YIELD \u2212 EXPECTED INFLATION = REAL YIELD",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s18",
+    "chapter": "07",
+    "beat_role": "mechanism",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "THE GAP BETWEEN RATE AND INFLATION IS WHAT MOVES GOLD",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s19",
+    "chapter": "07",
+    "beat_role": "mechanism",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "High real yields vs. low real yields (conceptual)",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s20",
+    "chapter": "07",
+    "beat_role": "payoff",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "OPPORTUNITY COST: WHAT YOU GIVE UP TO HOLD GOLD INSTEAD",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s21",
+    "chapter": "08",
+    "beat_role": "context",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "grocery store shopping receipt prices everyday",
+    "search_terms": [
+      "grocery store aisle shopping",
+      "retail checkout receipt close up"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s22",
+    "chapter": "08",
+    "beat_role": "mechanism",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "NOT TODAY'S NUMBER \u2014 WHERE INFLATION IS EXPECTED TO GO",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s23",
+    "chapter": "09",
+    "beat_role": "tension",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "financial news broadcast screens headlines wide",
+    "search_terms": [
+      "financial news studio screens",
+      "business news broadcast monitors"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s24",
+    "chapter": "09",
+    "beat_role": "reveal",
+    "channel": "threejs",
+    "strategy": "threejs",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "Gold as a cross-border, no-single-issuer asset",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s25",
+    "chapter": "10",
+    "beat_role": "evidence",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "Central bank gold purchases \u2014 three straight years over 1,000 tonnes",
+    "search_terms": [],
+    "citation": {
+      "label": "World Gold Council, Gold Demand Trends \u2014 Full Year 2024",
+      "url": "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-full-year-2024",
+      "license": "public data / editorial use"
+    },
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s26",
+    "chapter": "10",
+    "beat_role": "evidence",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "Central bank gold buying: 2010s average vs. now (conceptual)",
+    "search_terms": [],
+    "citation": {
+      "label": "World Gold Council, Gold Demand Trends \u2014 Full Year 2024",
+      "url": "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-full-year-2024",
+      "license": "public data / editorial use"
+    },
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s27",
+    "chapter": "10",
+    "beat_role": "payoff",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "Share of global reserves, 2024",
+    "search_terms": [],
+    "citation": {
+      "label": "European Central Bank, International Role of the Euro (June 2025) \u2014 gold overtakes euro as 2nd-largest reserve asset",
+      "url": "https://www.cnbc.com/2025/06/11/gold-overtakes-euro-as-second-biggest-global-reserve-asset.html",
+      "license": "public data / editorial use"
+    },
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s28",
+    "chapter": "11",
+    "beat_role": "tension",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "GOLD DOESN'T ALWAYS FOLLOW THE TEXTBOOK",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s29",
+    "chapter": "11",
+    "beat_role": "evidence",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "financial analyst reviewing multiple charts screens",
+    "search_terms": [
+      "analyst reviewing financial charts",
+      "trading desk multiple monitors analysis"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s30",
+    "chapter": "11",
+    "beat_role": "mechanism",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "FOUR FORCES. PRICED AT ONCE. NOT ALWAYS ALIGNED.",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s31",
+    "chapter": "12",
+    "beat_role": "tension",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "trading platform interface order ticket screen",
+    "search_terms": [
+      "trading app interface screen",
+      "trading platform order entry close up"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s32",
+    "chapter": "12",
+    "beat_role": "mechanism",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "US law: leveraged retail metals \u2014 28-day delivery or a regulated exchange",
+    "search_terms": [],
+    "citation": {
+      "label": "CFTC, \"Gold Is No Safe Investment\" consumer advisory",
+      "url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/gold_is_no_safe_investment.htm",
+      "license": "US government work (public domain)"
+    },
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s33",
+    "chapter": "12",
+    "beat_role": "consequence",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "CFTC ENFORCEMENT: $38M ORDERED AGAINST AN UNREGISTERED LEVERAGED-METALS SCHEME",
+    "search_terms": [],
+    "citation": {
+      "label": "CFTC press release 8643-22 \u2014 Monex Deposit Co. ordered to pay $38M for off-exchange leveraged precious metals fraud",
+      "url": "https://www.cftc.gov/PressRoom/PressReleases/8643-22",
+      "license": "US government work (public domain)"
+    },
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s34",
+    "chapter": "12",
+    "beat_role": "payoff",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "LEVERAGE ON A VOLATILE ASSET IS EXACTLY AS RISKY AS IT SOUNDS",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s35",
+    "chapter": "13",
+    "beat_role": "turn",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "UNDERSTANDING WHY \u2260 PREDICTING WHAT'S NEXT",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s36",
+    "chapter": "13",
+    "beat_role": "consequence",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "institutional trading floor professionals wide shot",
+    "search_terms": [
+      "bank trading floor wide shot",
+      "institutional dealing room professionals"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s37",
+    "chapter": "14",
+    "beat_role": "payoff",
+    "channel": "stock",
+    "strategy": "real",
+    "acquisition": "stock video API (Pexels/Pixabay) \u2014 real footage",
+    "query_or_prompt": "gold bars stacked wide cinematic warm light",
+    "search_terms": [
+      "gold bullion bars wide shot",
+      "gold bars vault cinematic lighting"
+    ],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s38",
+    "chapter": "14",
+    "beat_role": "payoff",
+    "channel": "charts",
+    "strategy": "dataviz",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "XAU / USD \u2014 callback",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s39",
+    "chapter": "14",
+    "beat_role": "cta",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "REACTING TO GOLD. OR UNDERSTANDING IT.",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  },
+  {
+    "scene_id": "s40",
+    "chapter": "14",
+    "beat_role": "cta",
+    "channel": "motion_gfx",
+    "strategy": "motion_gfx",
+    "acquisition": "rendered in-pipeline",
+    "query_or_prompt": "K70 \u2014 UNDERSTAND THE ECONOMY",
+    "search_terms": [],
+    "citation": null,
+    "confidence": "confirmed",
+    "synthetic": false
+  }
+]

@@ -1,0 +1,184 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# K70 NETWORK SOLUTION — permanent brand package
+#
+# This file is the single source of truth for how EVERY Short looks. The renderer
+# derives the watermark, lower thirds, intro/outro, caption styling, overlay
+# typography, chart colours and the colour grade from these values, so a viewer
+# recognises the channel in the first half-second of any upload.
+#
+# Changing a value here re-skins the entire back catalogue's future renders. The
+# generated PNG assets are content-addressed by a hash of this file, so an edit
+# automatically rebuilds them — no manual asset cleanup.
+#
+# Theme: FINANCE DOCUMENTARY — deep navy-black, restrained ink, one gold accent,
+# signal green/red reserved exclusively for real up/down data. Serious, sourced,
+# advertiser-safe. Never meme, never neon.
+# ─────────────────────────────────────────────────────────────────────────────
+id: k70
+name: K70 Network Solution
+tagline: Money, systems, and the stories behind them
+
+# ── Colour palette ──────────────────────────────────────────────────────────
+# `ink`/`bg` carry the documentary base; `primary` is the channel signature used
+# on the watermark rule, lower-third bar and caption keyword highlight. `positive`
+# and `negative` are RESERVED for genuine data direction — never decoration.
+palette:
+  bg: "#0b1220"            # deep navy-black — the documentary base
+  bg_soft: "#141d31"       # panel / lower-third fill
+  ink: "#f4f6fb"           # primary text
+  ink_dim: "#a8b3c7"       # attribution, sources, secondary lines
+  primary: "#f5b301"       # channel signature gold — accents and rules only
+  secondary: "#3d7bfd"     # cool blue — comparison series, neutral emphasis
+  positive: "#16c784"      # data UP only
+  negative: "#ea3943"      # data DOWN only
+  warn: "#ff8a3d"          # risk / caution framing
+  grid: "#22304d"          # chart gridlines, dividers
+  shadow: "#000000"
+
+# ── Type system ─────────────────────────────────────────────────────────────
+# `family` lists preferred fonts best-first; the resolver picks the first one
+# actually installed and falls back to the bundled DejaVu/Ubuntu faces, so a
+# fresh machine still renders correctly (just less distinctively).
+# Run scripts/fetch_brand_fonts.sh to install the real faces.
+type:
+  display:                  # hooks, headlines, big statements
+    family: [Archivo Black, Anton, Oswald, Barlow Condensed, Ubuntu, DejaVu Sans]
+    weight: bold
+    tracking: -0.01
+    case: upper
+  body:                     # captions, lower thirds
+    family: [Inter, Barlow, Roboto, Ubuntu, DejaVu Sans]
+    weight: bold
+    tracking: 0.0
+    case: upper
+  mono:                     # numbers, tickers, chart axes — tabular figures
+    family: [JetBrains Mono, IBM Plex Mono, Roboto Mono, Ubuntu Mono, DejaVu Sans Mono]
+    weight: bold
+    tracking: 0.0
+    case: none
+  # Base sizes at 1080x1920; the renderer scales proportionally for other sizes.
+  sizes:
+    hook: 96
+    headline: 62
+    stat_number: 168
+    stat_label: 46
+    caption: 78     # bumped from 66: read as small next to papercraft's document type
+    lower_third: 44
+    lower_third_sub: 32
+    source: 30
+    chart_title: 52
+    chart_label: 34
+    disclaimer: 30
+
+# ── Logo / watermark ────────────────────────────────────────────────────────
+# A generated wordmark bug. Drop a real PNG at `custom_path` to override; the
+# generator is only the fallback so the channel is never un-branded.
+watermark:
+  text: "K70"
+  sub: "NETWORK"
+  custom_path: ""           # e.g. data/assets/brand/k70/logo.png
+  position: top_right       # top_left | top_right | bottom_left | bottom_right
+  margin_px: 46
+  # At 1080 wide this yields ~50px lettering — small enough to stay furniture,
+  # large enough to actually read on a phone. Below ~220 the sub-line becomes
+  # illegible mush.
+  width_px: 240
+  opacity: 0.72
+  # Fade the bug out during the last CTA beat so the end card owns the frame.
+  hide_on_outro: true
+
+# ── Lower thirds ────────────────────────────────────────────────────────────
+lower_third:
+  style: bar_slide          # bar_slide | box_fade | rule_wipe
+  height_px: 150
+  y: 0.615                  # kept clear of the caption band (~0.78)
+  accent_bar_px: 10
+  in_sec: 0.42
+  out_sec: 0.30
+  bg_opacity: 0.86
+
+# ── Intro (first beat) ──────────────────────────────────────────────────────
+# A restrained 0.7s brand stamp — a rule wipe plus the wordmark under the hook.
+# Documentary channels earn trust with restraint; no logo animation circus.
+intro:
+  enabled: true
+  style: rule_wipe          # rule_wipe | stamp | none
+  duration_sec: 0.7
+  show_wordmark: true
+
+# ── Outro / end card ────────────────────────────────────────────────────────
+outro:
+  enabled: true
+  style: endcard           # endcard | rule_out | none
+  duration_sec: 1.4
+  show_cta: true
+  show_disclaimer: true     # the finance disclaimer lands here, full-width
+
+# ── Captions ────────────────────────────────────────────────────────────────
+# `animations` is the ROTATION POOL — variety.py picks one per video so the
+# caption rhythm changes between uploads while the type system stays constant.
+captions:
+  animations: [word_pop, karaoke_fill, line_rise, keyword_flash, block_cut]
+  y: 0.775
+  max_words: 4
+  outline_px: 5
+  shadow_px: 3
+  highlight_color: primary  # palette key used for the emphasised keyword
+  box: false
+
+# ── Colour grade ────────────────────────────────────────────────────────────
+# `variants` rotate per video (subtly) so uploads don't share an identical look;
+# all stay inside the finance-documentary envelope.
+grade:
+  variants:
+    neutral_doc:   {contrast: 1.06, saturation: 1.04, brightness: -0.015, gamma: 1.00, vignette: 5.0}
+    cool_archive:  {contrast: 1.09, saturation: 0.94, brightness: -0.025, gamma: 0.98, vignette: 4.5}
+    warm_premium:  {contrast: 1.05, saturation: 1.10, brightness: -0.010, gamma: 1.02, vignette: 5.5}
+    high_contrast: {contrast: 1.12, saturation: 1.02, brightness: -0.030, gamma: 0.97, vignette: 4.0}
+
+# ── Charts / data visualisation ─────────────────────────────────────────────
+chart:
+  series_colors: [primary, secondary, positive, negative, ink_dim]
+  grid_opacity: 0.5
+  bar_radius_px: 8
+  line_width_px: 9
+  dot_radius_px: 16
+  animate_sec: 1.6          # geometry draw-on time; the counter runs alongside
+  counter_steps: 26         # quantisation of the animated number roll-up
+
+# ── Safe areas (fractions of height) ────────────────────────────────────────
+# Shorts UI eats the top ~8% and bottom ~18%. Nothing readable may sit outside.
+safe:
+  top: 0.09
+  bottom: 0.19
+  side: 0.055
+
+# ── Unified Phase 7 component language ─────────────────────────────────────
+title_card:
+  style: documentary_rule
+  eyebrow_color: primary
+  max_lines: 3
+background:
+  texture: fine_grid
+  texture_opacity: 0.10
+  panel_radius_px: 18
+timeline:
+  line_color: grid
+  active_color: primary
+  marker_style: solid_circle
+  line_width_px: 8
+icons:
+  style: outline
+  stroke_color: ink
+  accent_color: primary
+  stroke_width_px: 4
+transitions:
+  style: restrained_documentary
+  allowed: [cut, fade, dip_to_black, push_up]
+  accent_color: primary
+cta:
+  style: endcard
+  accent_color: primary
+  background_color: bg
+  text_color: ink
+  max_lines: 3

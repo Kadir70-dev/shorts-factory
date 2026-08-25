@@ -1,0 +1,141 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d04_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "This Chart Has Predicted Almost Every US Recession. It's Called The Yield Curve.",
+    "hook": "There's a single chart that has preceded almost every US recession for the last 50 years — and it's about interest rates, not stocks.",
+    "description": "Normally, longer-term government bonds pay higher interest than short-term ones, because lending money for longer carries more risk. When that flips — when short-term Treasury yields rise above long-term yields — it's called a yield curve inversion, and it has historically preceded most US recessions. It reflects investors betting the Fed will need to cut rates later because growth is slowing. Educational content only, not financial advice.",
+    "tags": ["yield curve", "recession indicator", "treasury bonds", "economics explained", "macro economics", "investing education"],
+    "hashtags": ["#economics", "#recession", "#yieldcurve", "#investing", "#shorts"],
+    "thumbnail_text": "THE INVERTED CURVE"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "There's one chart that has come before almost every US recession for decades — and it's not about stocks at all.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["recession indicator", "yield curve"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "abstract", "motion": "none",
+        "query": "financial chart line graph screen dark",
+        "visual_intent": "A bold claim with no single filmable subject — the setup line for the whole story",
+        "broll_keywords": ["financial line chart screen", "stock chart dark background", "data chart glowing screen"],
+        "decision_reason": "hook beat: the claim itself — motion graphics territory"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "It's about government bonds. Normally, lending money for longer pays a higher interest rate than lending it for a few months.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["treasury bonds", "yield basics"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "pan_lr",
+        "query": "us treasury building washington exterior",
+        "visual_intent": "The U.S. Treasury building exterior, classical architecture, clear daylight",
+        "broll_keywords": ["us treasury building exterior", "washington government building", "treasury department building"],
+        "decision_reason": "introduces the Treasury bond context"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "That makes sense: more time means more risk, so long-term bonds should pay more. That's the normal curve.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["risk and time", "normal curve"],
+      "visual": {
+        "type": "dataviz", "strategy": "real", "scene_visual_type": "data_viz", "motion": "none",
+        "query": "upward sloping line chart finance",
+        "visual_intent": "A branded line chart showing yield rising with maturity — the normal, un-inverted curve",
+        "broll_keywords": ["upward line chart screen", "rising trend chart dark", "financial curve graphic"],
+        "decision_reason": "the beat states the shape of the normal curve — chart, not stock"
+      },
+      "data": {
+        "kind": "line_trend",
+        "title": "Normal Yield Curve",
+        "points": [
+          {"label": "3-Month", "value": 3.9, "emphasis": "normal"},
+          {"label": "2-Year", "value": 4.1, "emphasis": "normal"},
+          {"label": "10-Year", "value": 4.5, "emphasis": "normal"},
+          {"label": "30-Year", "value": 4.7, "emphasis": "positive"}
+        ],
+        "suffix": "%",
+        "decimals": 1,
+        "abbreviate": false,
+        "highlight": 3,
+        "source": "Illustrative shape, not live market data",
+        "note": "longer maturity, higher yield"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "But sometimes short-term rates rise above long-term rates. That's called an inversion, and it's rare.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["yield curve inversion", "rare signal"],
+      "visual": {
+        "type": "dataviz", "strategy": "real", "scene_visual_type": "data_viz", "motion": "none",
+        "query": "inverted line chart crossing finance screen",
+        "visual_intent": "The same branded line chart, now sloping downward — short-term yields above long-term",
+        "broll_keywords": ["crossing lines chart screen", "inverted trend chart", "financial lines crossing dark"],
+        "decision_reason": "the beat states the shape of the inverted curve — chart, not stock"
+      },
+      "data": {
+        "kind": "line_trend",
+        "title": "Inverted Yield Curve",
+        "points": [
+          {"label": "3-Month", "value": 5.3, "emphasis": "negative"},
+          {"label": "2-Year", "value": 4.7, "emphasis": "normal"},
+          {"label": "10-Year", "value": 4.2, "emphasis": "normal"},
+          {"label": "30-Year", "value": 4.3, "emphasis": "normal"}
+        ],
+        "suffix": "%",
+        "decimals": 1,
+        "abbreviate": false,
+        "highlight": 0,
+        "source": "Illustrative shape, not live market data",
+        "note": "short-term yield now above long-term"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "It happens when investors expect the Fed will have to cut rates later, because growth is slowing down.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["investor expectations", "fed rate cuts"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "none",
+        "query": "trader looking at screens concerned",
+        "visual_intent": "A trader studying multiple financial screens intently, cool office light, focused",
+        "broll_keywords": ["trader looking screens concerned", "financial analyst monitors", "trading desk focused"],
+        "decision_reason": "the investor-expectation mechanism"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "It's not a perfect predictor, and the timing varies. But historically, when this curve flips, a recession has usually followed. Follow for more.",
+      "duration_sec": 8.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["historical track record", "closing"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "wall street sign street view",
+        "visual_intent": "The Wall Street street sign with financial district buildings behind, wide shot",
+        "broll_keywords": ["wall street sign", "financial district street", "new york stock exchange area"],
+        "decision_reason": "closing visual and CTA"
+      }
+    }
+  ]
+}

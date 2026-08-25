@@ -1,0 +1,202 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d13_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Why Companies Buy Back Their Own Stock",
+    "hook": "A company can raise its own stock price without selling a single new product.",
+    "description": "A stock buyback is a company using its own cash to purchase its own shares on the open market. That shrinks the number of shares outstanding, which raises earnings per remaining share even if total profit stays flat. US public companies collectively spend hundreds of billions of dollars a year on buybacks. Educational content only, not financial advice.",
+    "tags": [
+      "stock buybacks",
+      "share repurchase",
+      "earnings per share",
+      "corporate finance",
+      "stock market explained",
+      "investing basics"
+    ],
+    "hashtags": [
+      "#stockmarket",
+      "#investing",
+      "#buybacks",
+      "#finance",
+      "#shorts"
+    ],
+    "thumbnail_text": "FEWER SHARES"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "A company can make its own stock look more valuable without selling one extra product.",
+      "duration_sec": 4.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "stock buyback",
+        "corporate finance"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "stock certificate shares close up",
+        "visual_intent": "A stack of stock certificates under warm light, camera pushing in slowly, cinematic",
+        "broll_keywords": [
+          "stock certificate close up",
+          "financial documents desk",
+          "corporate boardroom table"
+        ],
+        "decision_reason": "hook: the counterintuitive claim"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "It's called a buyback. The company uses its own cash to purchase its own shares.",
+      "duration_sec": 4.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "share repurchase",
+        "corporate cash"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "financial chart bars screen office",
+        "visual_intent": "A glowing financial chart on an office monitor, shares icon shrinking, minimal render",
+        "broll_keywords": [
+          "financial chart office monitor",
+          "stock trading screen numbers",
+          "corporate finance office"
+        ],
+        "decision_reason": "the mechanism defined"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "Buying its own shares off the market shrinks the total number left outstanding.",
+      "duration_sec": 4.6,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "shares outstanding"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "pie chart pieces shrinking screen",
+        "visual_intent": "A donut chart on screen with one segment visibly shrinking, clean data visualization",
+        "broll_keywords": [
+          "pie chart shrinking screen",
+          "data visualization office screen",
+          "financial diagram monitor"
+        ],
+        "decision_reason": "explains the supply mechanism"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Fewer shares means the same total profit gets divided among fewer owners. Each share is worth more of the company.",
+      "duration_sec": 6.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "earnings per share"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "pizza slices fewer people concept",
+        "visual_intent": "A pie being divided among fewer plates, each portion visibly larger, simple visual metaphor, cinematic",
+        "broll_keywords": [
+          "pie divided fewer portions",
+          "slices getting larger concept",
+          "division visual metaphor"
+        ],
+        "decision_reason": "the causal EPS explanation, kept as a visual metaphor"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "It's one reason companies sometimes prefer buybacks over paying out a dividend.",
+      "duration_sec": 4.4,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "dividends vs buybacks"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "two paths money flow diagram",
+        "visual_intent": "A split-path diagram, cash flowing two directions, minimal branded graphic",
+        "broll_keywords": [
+          "money flow diagram screen",
+          "financial decision split path",
+          "corporate cash allocation"
+        ],
+        "decision_reason": "the dividend contrast, kept general"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "US public companies collectively spend hundreds of billions of dollars a year buying back their own stock.",
+      "duration_sec": 5.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "aggregate buyback spending"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "large financial data chart trillion scale dark",
+        "visual_intent": "A large-scale financial chart with a towering bar, dark background, gold highlight, cinematic",
+        "broll_keywords": [
+          "financial chart tall bar dark",
+          "stock market data screen wide",
+          "corporate earnings report document"
+        ],
+        "decision_reason": "aggregate S&P 500 buyback spending is well documented at hundreds of billions annually (S&P Dow Jones Indices tracks this); kept as an order-of-magnitude claim rather than a single year's exact figure to stay evergreen"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "It doesn't create new value out of nothing. It just changes who owns a bigger slice of what's already there. Follow for more.",
+      "duration_sec": 6.8,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "ownership concentration"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "hand holding larger slice of pie",
+        "visual_intent": "A hand holding a noticeably larger slice on a plate, warm light, closing composition, cinematic",
+        "broll_keywords": [
+          "hand holding larger portion",
+          "ownership concept close up",
+          "financial closing shot desk"
+        ],
+        "decision_reason": "closing nuance + CTA"
+      }
+    }
+  ]
+}

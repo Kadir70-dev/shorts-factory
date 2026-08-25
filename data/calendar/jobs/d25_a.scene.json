@@ -1,0 +1,208 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d25_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Tesla Bet The Car On One Giant Battery Factory",
+    "hook": "Tesla's first Gigafactory was designed around one problem: batteries cost too much.",
+    "description": "Tesla broke ground on Gigafactory 1 in Nevada in 2014. The company designed the factory to scale battery-cell and pack production, reduce logistics and manufacturing cost, and secure supply for mass-market electric vehicles.",
+    "tags": [
+      "Tesla",
+      "Gigafactory",
+      "batteries",
+      "vertical integration",
+      "business strategy"
+    ],
+    "hashtags": [
+      "#tesla",
+      "#business",
+      "#manufacturing",
+      "#shorts"
+    ],
+    "thumbnail_text": "THE BATTERY BET"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Tesla's first Gigafactory was designed around one brutal problem: batteries cost too much for a mass-market electric car.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "EV battery factory",
+        "battery pack assembly"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "electric car battery pack factory",
+        "visual_intent": "A battery pack moving down an advanced factory line",
+        "broll_keywords": [
+          "EV battery factory",
+          "battery pack assembly",
+          "electric car production"
+        ],
+        "decision_reason": "Tesla says batteries were the costliest EV component"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Battery cost bottleneck",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "The company broke ground in Nevada in twenty fourteen and planned battery production at unprecedented scale.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "Nevada factory construction",
+        "desert industrial aerial"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "pan_lr",
+        "query": "nevada factory construction aerial",
+        "visual_intent": "A huge industrial site under construction in desert",
+        "broll_keywords": [
+          "Nevada factory construction",
+          "desert industrial aerial",
+          "gigafactory build"
+        ],
+        "decision_reason": "Tesla reports groundbreaking in 2014"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Nevada - 2014",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "narration": "Instead of treating batteries like a component to simply order, Tesla pulled cell and pack production closer together.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "battery cell production",
+        "lithium ion factory"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "battery cells assembly line",
+        "visual_intent": "Rows of cylindrical cells moving through production",
+        "broll_keywords": [
+          "battery cell production",
+          "lithium ion factory",
+          "battery assembly line"
+        ],
+        "decision_reason": "Tesla describes integrated cell and pack manufacturing"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "That meant fewer logistics steps, tighter manufacturing feedback, and a factory designed specifically around battery cost.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "factory flow diagram",
+        "vertical integration graphic"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "factory logistics arrows diagram",
+        "visual_intent": "A compact factory-flow diagram with shortened routes",
+        "broll_keywords": [
+          "factory flow diagram",
+          "vertical integration graphic",
+          "manufacturing logistics"
+        ],
+        "decision_reason": "Tesla impact report links factory efficiencies to lower battery cost"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Design around cost",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "Tesla's original plan targeted more than a thirty-percent reduction in pack cost per kilowatt-hour at scale.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "battery cost chart",
+        "cost per kwh graph"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "battery cost per kwh chart down",
+        "visual_intent": "A cost-per-kilowatt-hour chart dropping sharply",
+        "broll_keywords": [
+          "battery cost chart",
+          "cost per kwh graph",
+          "manufacturing cost decline"
+        ],
+        "decision_reason": "Tesla's 2014 Gigafactory presentation stated the greater-than-30% target"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": ">30% target",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "narration": "The Gigafactory was not just a bigger plant. It was a bet that controlling the bottleneck could unlock the whole market.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "electric vehicle factory",
+        "large battery plant"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "electric vehicle factory wide",
+        "visual_intent": "A completed EV factory glowing at dusk",
+        "broll_keywords": [
+          "electric vehicle factory",
+          "large battery plant",
+          "modern factory dusk"
+        ],
+        "decision_reason": "Strategic synthesis without claiming guaranteed results"
+      }
+    }
+  ]
+}

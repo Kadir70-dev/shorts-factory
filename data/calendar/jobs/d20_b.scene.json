@@ -1,0 +1,77 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d20_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Two Funds, Same Stocks, Totally Different Tax Bills. Here's Why.",
+    "hook": "Two funds can hold the exact same stocks and tax you completely differently.",
+    "description": "ETFs and mutual funds can hold nearly identical portfolios but generate very different tax bills. Mutual funds often sell securities to cover investor redemptions, which can trigger capital-gains distributions to every shareholder, even ones who didn't sell. ETFs mostly avoid this through in-kind creation and redemption with authorized participants, swapping baskets of stock instead of cash. Educational content only, not financial advice.",
+    "tags": ["etf vs mutual fund", "investing basics", "index funds", "capital gains tax", "investing for beginners", "personal finance", "stock market"],
+    "hashtags": ["#etf", "#investing", "#personalfinance", "#markets", "#shorts"],
+    "thumbnail_text": "SAME STOCKS, DIFF TAXES"
+  },
+  "fps": 60, "width": 1080, "height": 1920,
+  "scenes": [
+    {
+      "id": "s1", "narration": "Two funds can hold the exact same stocks and tax you completely differently.",
+      "duration_sec": 4.4, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["etf vs mutual fund tax"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "two identical documents side by side desk",
+        "visual_intent": "Two nearly identical financial statements placed side by side on a desk, symmetrical framing",
+        "broll_keywords": ["two documents side by side", "financial statements comparison desk", "investment paperwork pair"],
+        "decision_reason": "hook beat: the counterintuitive claim, hard cut"}
+    },
+    {
+      "id": "s2", "narration": "A mutual fund often has to sell stock to pay investors who cash out. Selling can trigger a taxable gain.",
+      "duration_sec": 6.6, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["mutual fund redemptions", "capital gains distribution"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "trading floor sell order screen red",
+        "visual_intent": "A trading screen showing a sell order executing, red indicator, transactional urgency",
+        "broll_keywords": ["sell order trading screen", "stock sale execution monitor", "trading floor red numbers"],
+        "decision_reason": "explains the redemption-driven sale mechanism, standard fund-structure mechanics"}
+    },
+    {
+      "id": "s3", "narration": "And that gain gets distributed to every shareholder in the fund, even the ones who never sold a single share.",
+      "duration_sec": 6.8, "confidence": "confirmed", "transition_in": "fade",
+      "keywords": ["distributed to all shareholders"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "abstract", "motion": "zoom_out",
+        "query": "crowd of people silhouettes standing together",
+        "visual_intent": "A crowd of anonymous silhouettes standing together, representing shareholders sharing an outcome none of them chose",
+        "broll_keywords": ["crowd silhouettes standing", "group of people outline", "anonymous crowd shot"],
+        "decision_reason": "visualizes the shared/unwanted tax bill across all fund holders"}
+    },
+    {
+      "id": "s4", "narration": "ETFs mostly sidestep this. Large investors trade baskets of stock directly for ETF shares, instead of cash, so the fund rarely has to sell anything.",
+      "duration_sec": 8.4, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["etf in-kind creation redemption", "authorized participants"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "none",
+        "query": "financial baskets goods exchange trade concept",
+        "visual_intent": "A visual metaphor of baskets of goods being exchanged rather than money changing hands, clean and structural",
+        "broll_keywords": ["exchange goods baskets concept", "trade swap concept visual", "financial exchange mechanism"],
+        "decision_reason": "explains in-kind creation/redemption, the core structural reason ETFs are more tax-efficient, standard SEC/Investopedia-level mechanics"}
+    },
+    {
+      "id": "s5", "narration": "That's not a smarter fund manager. It's just different plumbing under the hood.",
+      "duration_sec": 5.2, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["structural difference", "fund mechanics"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "none",
+        "query": "machine gears mechanism close up industrial",
+        "visual_intent": "Close-up of interlocking mechanical gears turning smoothly, the 'plumbing' metaphor made literal",
+        "broll_keywords": ["gears mechanism close up", "machine gears turning", "industrial mechanism macro"],
+        "decision_reason": "the payoff reframing: structure, not skill"}
+    },
+    {
+      "id": "s6", "narration": "Same stocks. Same market. A completely different tax bill in April, just from how the fund is built.",
+      "duration_sec": 6.6, "confidence": "confirmed", "transition_in": "fade",
+      "keywords": ["tax bill difference", "fund structure"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "ken_burns",
+        "query": "tax documents calculator calendar april",
+        "visual_intent": "Tax paperwork and a calculator on a desk with a calendar showing April, closing the loop on the real-world stakes",
+        "broll_keywords": ["tax documents calculator desk", "tax season paperwork", "calendar april tax forms"],
+        "decision_reason": "closing beat, ties the mechanism back to a real consequence"}
+    }
+  ]
+}

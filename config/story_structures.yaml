@@ -1,0 +1,231 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# STORY STRUCTURE LIBRARY
+#
+# Replaces the fixed 7-scene template. Every Short is built on ONE structure
+# drawn from this library; `director/structures.py` rotates them with a cooldown
+# so consecutive uploads never share a skeleton.
+#
+# Each structure defines:
+#   beats        — the narrative spine. One beat ≈ one scene. `role` is machine-
+#                  readable (music envelope, SFX, visual strategy and the data-viz
+#                  engine all key off it), `purpose` is what the Director must
+#                  actually write.
+#   scenes       — [min, max] scene count. The variety planner picks inside this,
+#                  so even the same structure yields different lengths.
+#   hook_styles  — opening moves; one is drawn per video.
+#   cta_styles   — closing moves; one is drawn per video.
+#   music        — preferred bed families, best-first (music.py rotates within).
+#   weight       — base selection weight before the cooldown multiplier.
+#   niches       — restrict to these niches; omit/empty means "any".
+#
+# Beat roles used across the pipeline:
+#   hook, tension, context, evidence, turn, reveal, contrast, mechanism,
+#   consequence, stakes, payoff, cta
+# ─────────────────────────────────────────────────────────────────────────────
+version: 2
+
+structures:
+
+  # ── 1 ──────────────────────────────────────────────────────────────────────
+  - id: mystery_reveal_lesson
+    name: Mystery → Reveal → Lesson
+    weight: 1.0
+    scenes: [5, 7]
+    music: [mystery, documentary]
+    summary: >
+      Open on something that does not add up, deepen the strangeness, reveal the
+      mechanism, then land what it teaches.
+    hook_styles:
+      - "State the anomaly as a flat fact, no set-up."
+      - "Ask the question the viewer can't answer yet."
+      - "Name the impossible-sounding number first."
+    cta_styles:
+      - "Close on the lesson, then invite the next one."
+      - "End with what to watch for next time."
+    beats:
+      - {role: hook,        purpose: "The anomaly. Something true that shouldn't be.", words: [8, 16]}
+      - {role: tension,     purpose: "Make it stranger — add the detail that rules out the obvious explanation.", words: [10, 20]}
+      - {role: evidence,    purpose: "The sourced fact or number that anchors the mystery in reality.", words: [10, 22], wants_data: true}
+      - {role: reveal,      purpose: "The actual mechanism. This is the payoff — be specific, not clever.", words: [12, 24]}
+      - {role: consequence, purpose: "What this means for ordinary people or the wider system.", words: [10, 20]}
+      - {role: cta,         purpose: "The lesson in one line, plus the channel close.", words: [8, 16]}
+
+  # ── 2 ──────────────────────────────────────────────────────────────────────
+  - id: timeline_twist_conclusion
+    name: Timeline → Twist → Conclusion
+    weight: 1.0
+    scenes: [5, 7]
+    music: [documentary, finance]
+    summary: >
+      Walk events forward in time, hit the moment everything inverted, then say
+      what it actually was all along.
+    hook_styles:
+      - "Start at the end state, then rewind to the beginning."
+      - "Open on the date everything changed."
+    cta_styles:
+      - "Name what the timeline proves, then close."
+      - "Point at what happens next."
+    beats:
+      - {role: hook,      purpose: "The end state, stated as a hook — where this story lands.", words: [8, 16]}
+      - {role: context,   purpose: "The starting conditions. Set the year and the situation.", words: [10, 20]}
+      - {role: evidence,  purpose: "The middle of the timeline — what built up, with a sourced figure.", words: [12, 24], wants_data: true}
+      - {role: turn,      purpose: "The twist. The moment the trajectory inverted.", words: [10, 22]}
+      - {role: payoff,    purpose: "What the whole sequence actually was, seen from now.", words: [10, 20]}
+      - {role: cta,       purpose: "The conclusion plus the channel close.", words: [8, 16]}
+
+  # ── 3 ──────────────────────────────────────────────────────────────────────
+  - id: problem_solution_impact
+    name: Problem → Solution → Impact
+    weight: 1.0
+    scenes: [4, 6]
+    music: [corporate, finance]
+    summary: >
+      A concrete problem, the specific fix someone applied, and the measurable
+      result. The cleanest structure for business and policy topics.
+    hook_styles:
+      - "State the problem in its most painful form."
+      - "Lead with the cost of the problem."
+    cta_styles:
+      - "Generalise the lesson beyond this case."
+      - "Ask what else this pattern explains."
+    beats:
+      - {role: hook,        purpose: "The problem, stated with its cost. Concrete and specific.", words: [8, 16]}
+      - {role: stakes,      purpose: "Why the obvious fixes failed or who was hurt.", words: [10, 20]}
+      - {role: mechanism,   purpose: "The actual solution and HOW it worked — the mechanism, not the slogan.", words: [12, 24]}
+      - {role: evidence,    purpose: "The measurable impact, sourced.", words: [10, 22], wants_data: true}
+      - {role: cta,         purpose: "What this generalises to, plus the channel close.", words: [8, 16]}
+
+  # ── 4 ──────────────────────────────────────────────────────────────────────
+  - id: myth_vs_reality
+    name: Myth → Reality
+    weight: 1.0
+    scenes: [4, 6]
+    music: [documentary, mystery]
+    summary: >
+      State the belief everyone holds, then dismantle it with sourced facts and
+      explain why the myth persists.
+    hook_styles:
+      - "State the myth as if you believe it, then puncture it."
+      - "Open with 'almost everyone gets this backwards'-style framing."
+    cta_styles:
+      - "Name the corrected mental model."
+      - "Ask what else they've been told wrong."
+    beats:
+      - {role: hook,      purpose: "The widely-held belief, stated cleanly.", words: [8, 16]}
+      - {role: tension,   purpose: "Why it FEELS true — steelman it before breaking it.", words: [10, 20]}
+      - {role: evidence,  purpose: "The sourced data that contradicts it. This is the core beat.", words: [12, 24], wants_data: true}
+      - {role: reveal,    purpose: "What is actually true, and why the myth survives anyway.", words: [12, 24]}
+      - {role: cta,       purpose: "The corrected model in one line, plus the channel close.", words: [8, 16]}
+
+  # ── 5 ──────────────────────────────────────────────────────────────────────
+  - id: before_after
+    name: Before → After
+    weight: 0.9
+    scenes: [4, 6]
+    music: [documentary, premium]
+    summary: >
+      Two states of the world separated by one change. The structure lives on the
+      contrast, so both sides need real numbers.
+    hook_styles:
+      - "Put the two numbers side by side immediately."
+      - "Describe the 'before' as if it were normal, because it was."
+    cta_styles:
+      - "Ask which direction the next decade goes."
+      - "Name what changed and let it sit."
+    beats:
+      - {role: hook,      purpose: "The contrast, compressed to one line.", words: [8, 16]}
+      - {role: context,   purpose: "The BEFORE state in detail, with its number.", words: [10, 22], wants_data: true}
+      - {role: turn,      purpose: "The specific change — event, policy, technology, decision.", words: [10, 22]}
+      - {role: contrast,  purpose: "The AFTER state with its number, directly comparable to the before.", words: [10, 22], wants_data: true}
+      - {role: cta,       purpose: "What the gap means, plus the channel close.", words: [8, 16]}
+
+  # ── 6 ──────────────────────────────────────────────────────────────────────
+  - id: hidden_strategy
+    name: Hidden Business Strategy
+    weight: 1.0
+    scenes: [5, 7]
+    music: [premium, corporate]
+    summary: >
+      A company's visible behaviour looks irrational; the hidden strategy explains
+      it. The signature structure for the business niche.
+    niches: [usa_business, usa_finance, usa_facts]
+    hook_styles:
+      - "State the irrational-looking behaviour as fact."
+      - "Lead with the money they appear to be losing."
+    cta_styles:
+      - "Name the strategy so it becomes a lens."
+      - "Ask where else they've seen this play."
+    beats:
+      - {role: hook,        purpose: "The behaviour that makes no sense on its face.", words: [8, 16]}
+      - {role: tension,     purpose: "Quantify how irrational it looks — the apparent loss.", words: [10, 20], wants_data: true}
+      - {role: mechanism,   purpose: "The hidden strategy. What they're ACTUALLY buying.", words: [12, 26]}
+      - {role: evidence,    purpose: "The sourced result that proves the strategy worked.", words: [10, 22], wants_data: true}
+      - {role: consequence, purpose: "Who else runs this play, or what it costs the rest of us.", words: [10, 20]}
+      - {role: cta,         purpose: "The strategy named as a portable lens, plus the channel close.", words: [8, 16]}
+
+  # ── 7 ──────────────────────────────────────────────────────────────────────
+  - id: one_number_story
+    name: The Number That Changed Everything
+    weight: 0.9
+    scenes: [4, 6]
+    music: [finance, documentary]
+    summary: >
+      Built around a single figure: what it is, how it got there, and what it
+      predicts. Data-led by construction — the chart engine carries this one.
+    hook_styles:
+      - "Say the number and nothing else."
+      - "Describe what the number means before naming it."
+    cta_styles:
+      - "Give the number to watch next."
+      - "Say what would have to change for it to move."
+    beats:
+      - {role: hook,      purpose: "The number, delivered bare. No preamble.", words: [6, 14], wants_data: true}
+      - {role: context,   purpose: "What the number measures and why it isn't boring.", words: [10, 22]}
+      - {role: evidence,  purpose: "How it moved — the trend, sourced.", words: [12, 24], wants_data: true}
+      - {role: consequence, purpose: "What it changes for real people or markets.", words: [10, 22]}
+      - {role: cta,       purpose: "The number to watch next, plus the channel close.", words: [8, 16]}
+
+  # ── 8 ──────────────────────────────────────────────────────────────────────
+  - id: autopsy
+    name: Case Study Autopsy
+    weight: 0.8
+    scenes: [5, 7]
+    music: [mystery, documentary]
+    summary: >
+      Something failed. Reconstruct the decision chain that made the failure
+      inevitable. Dark-documentary register — analytical, never gloating.
+    hook_styles:
+      - "Open at the moment of collapse."
+      - "State how much was lost, then rewind."
+    cta_styles:
+      - "Name the warning sign that generalises."
+      - "Ask who's making the same call right now."
+    beats:
+      - {role: hook,        purpose: "The failure, stated with its scale.", words: [8, 16], wants_data: true}
+      - {role: context,     purpose: "How solid it looked beforehand.", words: [10, 20]}
+      - {role: mechanism,   purpose: "The decision that started the chain — the first domino.", words: [12, 24]}
+      - {role: turn,        purpose: "The point where recovery stopped being possible.", words: [10, 22]}
+      - {role: evidence,    purpose: "The sourced number that measures the damage.", words: [10, 22], wants_data: true}
+      - {role: cta,         purpose: "The portable warning sign, plus the channel close.", words: [8, 16]}
+
+  # ── 9 ──────────────────────────────────────────────────────────────────────
+  - id: two_paths
+    name: Two Paths Compared
+    weight: 0.8
+    scenes: [4, 6]
+    music: [corporate, premium]
+    summary: >
+      Two actors faced the same conditions and chose differently. The comparison
+      IS the argument, so both paths need equal weight and real figures.
+    hook_styles:
+      - "Name both actors and the identical starting point."
+      - "State the outcome gap first, then explain it."
+    cta_styles:
+      - "Name the variable that actually decided it."
+      - "Ask which path the viewer's own situation resembles."
+    beats:
+      - {role: hook,      purpose: "Same starting conditions, wildly different endings.", words: [8, 16]}
+      - {role: context,   purpose: "Path A: the choice and its reasoning.", words: [10, 22]}
+      - {role: contrast,  purpose: "Path B: the opposite choice and ITS reasoning. Be fair to both.", words: [10, 22]}
+      - {role: evidence,  purpose: "The outcome gap, sourced and directly comparable.", words: [10, 22], wants_data: true}
+      - {role: cta,       purpose: "The deciding variable, plus the channel close.", words: [8, 16]}

@@ -1,0 +1,87 @@
+# ───────────────────────────────────────────────────────────────────────────
+# PRODUCTION PRESET · long-form ambience  ·  🔥 Cozy Fireplace
+#
+# Unlike the short-form presets, this one drives NO LLM, NO TTS and NO stock
+# lookup. Every pixel and every sample is synthesised procedurally from the seed
+# below, which is what makes the output original, copyright-safe and
+# monetisation-safe by construction rather than by review.
+#
+# The duration maths matters: total_seconds must be an exact whole multiple of
+# loop_seconds (7200 / 90 = 80), because the master is built by stream-copying
+# the loop rather than re-encoding it.
+#
+# Run:  .venv/bin/python scripts/produce_ambience.py --preset ambience_fireplace
+# ───────────────────────────────────────────────────────────────────────────
+name: ambience_fireplace
+kind: longform_ambience
+slug: cozy_fireplace
+
+env:
+  RENDER_BACKEND: numpy_ffmpeg
+  AI_VIDEO_ENABLED: "0"
+  COMFYUI_ENABLED: "0"
+  QA_ENABLED: "1"
+
+video:
+  total_seconds: 7200        # exactly 2 hours
+  loop_seconds: 90           # 80 loops -> 7200s exactly
+  width: 3840
+  height: 2160
+  fps: 60
+  seed: 7
+  sim_divisor: 3             # flame/smoke simulated at 1280x720, plate is native 4K
+  crf: 19
+  preset: faster
+
+audio:
+  sample_rate: 48000
+  channels: 2
+  crackles_per_sec: 7.0
+  pops_per_sec: 0.28
+  bed_level: 0.085
+  target_peak: 0.89
+  music: false               # brief: no music
+
+# Creative direction, kept as text so a future scene module can read it.
+scene:
+  look: >
+    Ultra-realistic cinematic fireplace inside a dark sooty firebox. Natural
+    orange flames with smooth random movement, real burning wood with cylindrical
+    split logs, glowing coals and bark cracks, soft rising smoke, warm cosy cabin
+    atmosphere. The fire is the ONLY light source; every flicker relights the
+    logs and the back wall in sympathy.
+  constraints:
+    - no text
+    - no watermark
+    - no logos
+    - no people
+    - no AI artifacts
+    - family friendly
+    - monetisation friendly
+    - copyright safe
+    - original assets only
+
+seo:
+  title: "🔥 2 Hours Cozy Fireplace | Crackling Fire Sounds for Study, Sleep & Relaxation (4K)"
+  description: >
+    Relax with 2 hours of realistic fireplace ambience featuring natural crackling
+    fire sounds. Perfect for studying, sleeping, meditation, reading, relaxation
+    and creating a cozy atmosphere.
+  tags:
+    - fireplace
+    - fire sounds
+    - crackling fire
+    - cozy fireplace
+    - sleep sounds
+    - study ambience
+    - relaxation
+    - 4k fireplace
+    - ambience
+    - fireplace ambience
+    - cozy cabin
+    - burning wood
+    - sleep
+    - study
+    - meditation
+    - white noise
+  thumbnail: "Warm cinematic fireplace close-up with glowing embers and orange flames."

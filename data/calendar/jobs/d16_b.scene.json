@@ -1,0 +1,175 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d16_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "The Hidden Cost Every Trader Pays That Never Shows Up As A Fee",
+    "hook": "You can buy and sell a stock and lose money instantly, with zero fees.",
+    "description": "Every stock has two prices at once: the bid, what buyers will pay, and the ask, what sellers want. That gap is the spread. Buy at the ask and sell at the bid a second later, and you lose the spread even if the price never moved. On heavily traded stocks it's tiny; on thinly traded ones it can quietly cost far more than a broker's commission. Educational content only, not financial advice.",
+    "tags": [
+      "bid ask spread",
+      "stock trading costs",
+      "investing basics",
+      "market mechanics",
+      "how stocks work"
+    ],
+    "hashtags": [
+      "#stockmarket",
+      "#investing",
+      "#trading",
+      "#finance",
+      "#shorts"
+    ],
+    "thumbnail_text": "THE INVISIBLE FEE"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "You can buy a stock, sell it one second later, and lose money. With zero fees charged.",
+      "duration_sec": 5.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "hidden trading cost"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "stock trading screen buy sell buttons",
+        "visual_intent": "A trading app screen showing buy and sell buttons, close and dramatic, dark background",
+        "broll_keywords": [
+          "trading app screen buttons",
+          "stock trading interface close",
+          "buy sell buttons app"
+        ],
+        "decision_reason": "hook: the counterintuitive claim"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "Every stock actually has two prices at once. The bid, what buyers will pay. The ask, what sellers want.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "bid and ask defined"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "two prices side by side trading screen",
+        "visual_intent": "Two glowing price figures side by side on a trading screen, bid and ask labeled, clean graphic",
+        "broll_keywords": [
+          "two prices trading screen",
+          "bid ask display graphic",
+          "stock quote numbers screen"
+        ],
+        "decision_reason": "defines the two prices"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "That small gap between them is called the spread. And it's not a fee. It's built into the price itself.",
+      "duration_sec": 5.8,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "the spread"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "small gap highlighted between two numbers",
+        "visual_intent": "A small highlighted gap between two adjacent numbers on a screen, minimal financial graphic",
+        "broll_keywords": [
+          "price gap highlighted screen",
+          "spread visualization graphic",
+          "financial gap diagram"
+        ],
+        "decision_reason": "names the mechanism"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Buy at the ask, then sell at the bid a moment later, and you lose that gap. Even if the stock price never moved.",
+      "duration_sec": 6.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "spread cost mechanic"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "stock chart flat line no movement",
+        "visual_intent": "A flat, unmoving stock chart line on a dark screen, tense stillness, cinematic",
+        "broll_keywords": [
+          "flat stock chart line",
+          "unchanged price chart screen",
+          "static trading graph"
+        ],
+        "decision_reason": "the causal payoff of the mechanism"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "On a heavily traded stock, that gap is tiny, often a penny or less. On a thinly traded one, it can be much wider.",
+      "duration_sec": 6.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "liquidity affects spread"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "wide gap versus narrow gap comparison screen",
+        "visual_intent": "Two price gaps compared side by side, one narrow one wide, clean data graphic",
+        "broll_keywords": [
+          "gap comparison screen graphic",
+          "wide narrow spread chart",
+          "liquidity comparison display"
+        ],
+        "decision_reason": "the liquidity dependency, a standard market-microstructure fact"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "It never shows up as a line item. But every trade quietly pays it. Follow for more.",
+      "duration_sec": 5.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "receipt with blank fee line highlighted",
+        "visual_intent": "A trading confirmation screen with no visible fee line, quiet and deliberate close shot",
+        "broll_keywords": [
+          "trading confirmation screen close",
+          "receipt blank line shot",
+          "transaction summary close up"
+        ],
+        "decision_reason": "closing takeaway + CTA"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "d29_b",
+  "day": 29,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "Dollar-cost averaging versus lump-sum investing",
+  "sources": [
+    {
+      "claim": "Vanguard found immediate lump-sum investing historically outperformed cost averaging roughly two-thirds of the time, while cost averaging temporarily reduced risk",
+      "source": "Vanguard Research: Cost averaging",
+      "url": "https://corporate.vanguard.com/content/dam/corp/research/pdf/cost_averaging_invest_now_or_temporarily_hold_your_cash.pdf",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

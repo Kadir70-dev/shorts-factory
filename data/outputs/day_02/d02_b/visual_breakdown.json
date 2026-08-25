@@ -1,0 +1,143 @@
+{
+  "total_seconds": 42.815,
+  "channels": {
+    "motion_gfx": {
+      "label": "Motion Graphics (2D)",
+      "percent": 51.82,
+      "seconds": 22.186,
+      "scenes": [
+        "s1",
+        "s3",
+        "s5"
+      ],
+      "target_lo": 0.25,
+      "target_hi": 0.35,
+      "within_band": false
+    },
+    "threejs": {
+      "label": "Three.js (3D)",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": 0.15,
+      "target_hi": 0.25,
+      "within_band": false
+    },
+    "official": {
+      "label": "Official/Public Domain",
+      "percent": 14.25,
+      "seconds": 6.101,
+      "scenes": [
+        "s2"
+      ],
+      "target_lo": 0.15,
+      "target_hi": 0.25,
+      "within_band": false
+    },
+    "ai_broll": {
+      "label": "AI Cinematic B-roll",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": 0.15,
+      "target_hi": 0.25,
+      "within_band": false
+    },
+    "stock": {
+      "label": "Pexels/Pixabay",
+      "percent": 33.93,
+      "seconds": 14.528,
+      "scenes": [
+        "s4",
+        "s6"
+      ],
+      "target_lo": 0.1,
+      "target_hi": 0.2,
+      "within_band": false
+    },
+    "charts": {
+      "label": "Charts/Maps/Icons/Logos",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": 0.1,
+      "target_hi": 0.2,
+      "within_band": false
+    },
+    "unresolved": {
+      "label": "UNRESOLVED (blank)",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": null,
+      "target_hi": null,
+      "within_band": false
+    }
+  },
+  "assignments": [
+    {
+      "scene_id": "s1",
+      "channel": "motion_gfx",
+      "seconds": 6.336,
+      "score": 0.0,
+      "reason": "rendered by the Scribus Paper Craft engine",
+      "scores": {
+        "planned": "motion_gfx"
+      }
+    },
+    {
+      "scene_id": "s2",
+      "channel": "official",
+      "seconds": 6.101,
+      "score": 0.0,
+      "reason": "official / public-domain source (wikimedia_commons)",
+      "scores": {
+        "planned": "official"
+      }
+    },
+    {
+      "scene_id": "s3",
+      "channel": "motion_gfx",
+      "seconds": 8.789,
+      "score": 0.0,
+      "reason": "kinetic typography",
+      "scores": {
+        "planned": "motion_gfx"
+      }
+    },
+    {
+      "scene_id": "s4",
+      "channel": "stock",
+      "seconds": 7.275,
+      "score": 0.0,
+      "reason": "footage of unrecorded provenance",
+      "scores": {
+        "planned": "ai_broll"
+      }
+    },
+    {
+      "scene_id": "s5",
+      "channel": "motion_gfx",
+      "seconds": 7.061,
+      "score": 0.0,
+      "reason": "rendered by the Scribus Paper Craft engine",
+      "scores": {
+        "planned": "motion_gfx"
+      }
+    },
+    {
+      "scene_id": "s6",
+      "channel": "stock",
+      "seconds": 7.253,
+      "score": 0.0,
+      "reason": "footage of unrecorded provenance",
+      "scores": {
+        "planned": "stock"
+      }
+    }
+  ],
+  "notes": [
+    "s4: planned ai_broll \u2192 delivered stock (resolver could not supply the planned source)"
+  ],
+  "unused_generated_assets": []
+}

@@ -1,0 +1,17 @@
+__pycache__
+.idea/
+.idea/encodings.xml
+.idea/MB-Lab.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+Runblender.bat.lnk
+.idea/inspectionProfiles/Project_Default.xml
+/mb-lab_282_updater
+/.vscode/settings.json
+/.vscode/launch.json
+/.vscode
+notes.txt
+mb-lab_updater/MB-Lab_updater_status.json
+data/humanoid_library.blend1

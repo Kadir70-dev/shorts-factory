@@ -1,0 +1,28 @@
+{
+  "sources": [
+    {
+      "claim": "In 2000 Netflix co-founders offered to sell the company to Blockbuster for $50 million and were turned down",
+      "source": "Newsweek fact-check; Yahoo Finance; multiple corroborating reports citing Netflix co-founder accounts",
+      "url": "https://www.newsweek.com/fact-check-did-blockbuster-turn-down-chance-buy-netflix-50-million-1575557",
+      "type": "reputable_secondary"
+    },
+    {
+      "claim": "Blockbuster's then-CEO John Antioco has disputed that a serious sale discussion took place, despite the Netflix founders' account",
+      "source": "Newsweek fact-check",
+      "url": "https://www.newsweek.com/fact-check-did-blockbuster-turn-down-chance-buy-netflix-50-million-1575557",
+      "type": "reputable_secondary"
+    },
+    {
+      "claim": "Netflix launched streaming ('Watch Now') on January 16, 2007, initially as an add-on to the DVD subscription to reduce churn",
+      "source": "Netflix company history reporting (multiple corroborating sources)",
+      "url": "",
+      "type": "reputable_secondary"
+    },
+    {
+      "claim": "Blockbuster filed for Chapter 11 bankruptcy in 2010",
+      "source": "Widely reported business history",
+      "url": "",
+      "type": "reputable_secondary"
+    }
+  ]
+}

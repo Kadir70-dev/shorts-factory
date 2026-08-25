@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ColorParam &mdash; Natron 2.5.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ColorTuple" href="ColorTuple.html" />
+    <link rel="prev" title="ChoiceParam" href="ChoiceParam.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Natron
+            <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2.5
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_group.html">Reference Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Developers Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../APIReference.html">Python API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">NatronEngine</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html#detailed-description">Detailed Description</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../NatronGui/index.html">NatronGui</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devel-faq.html">Natron Python FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Natron</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Developers Guide</a> &raquo;</li>
+          <li><a href="../../APIReference.html">Python API</a> &raquo;</li>
+          <li><a href="index.html">NatronEngine</a> &raquo;</li>
+      <li>ColorParam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/devel/PythonReference/NatronEngine/ColorParam.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="module-NatronEngine"></span><section id="colorparam">
+<span id="id1"></span><h1>ColorParam<a class="headerlink" href="#colorparam" title="Permalink to this heading"></a></h1>
+<p><strong>Inherits</strong> <a class="reference internal" href="AnimatedParam.html"><span class="doc">AnimatedParam</span></a></p>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
+<p>A color parameter is a RGB[A] value that can be animated throughout the time.
+See <a class="reference internal" href="#color-details"><span class="std std-ref">detailed</span></a> description…</p>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>def <a class="reference internal" href="#id0" title="NatronEngine.NatronEngine.ColorParam.get"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get</span></code></a> ()</p></li>
+<li><p>def <a class="reference internal" href="#id0" title="NatronEngine.NatronEngine.ColorParam.get"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get</span></code></a> (frame)</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.getDefaultValue" title="NatronEngine.NatronEngine.ColorParam.getDefaultValue"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getDefaultValue</span></code></a> ([dimension=0])</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.getDisplayMaximum" title="NatronEngine.NatronEngine.ColorParam.getDisplayMaximum"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getDisplayMaximum</span></code></a> (dimension)</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.getDisplayMinimum" title="NatronEngine.NatronEngine.ColorParam.getDisplayMinimum"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getDisplayMinimum</span></code></a> (dimension)</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.getMaximum" title="NatronEngine.NatronEngine.ColorParam.getMaximum"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getMaximum</span></code></a> ([dimension=0])</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.getMinimum" title="NatronEngine.NatronEngine.ColorParam.getMinimum"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getMinimum</span></code></a> ([dimension=0])</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.getValue" title="NatronEngine.NatronEngine.ColorParam.getValue"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getValue</span></code></a> ([dimension=0])</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.getValueAtTime" title="NatronEngine.NatronEngine.ColorParam.getValueAtTime"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getValueAtTime</span></code></a> (time[, dimension=0])</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.restoreDefaultValue" title="NatronEngine.NatronEngine.ColorParam.restoreDefaultValue"><code class="xref py py-meth docutils literal notranslate"><span class="pre">restoreDefaultValue</span></code></a> ([dimension=0])</p></li>
+<li><p>def <a class="reference internal" href="#id2" title="NatronEngine.NatronEngine.ColorParam.set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set</span></code></a> (r, g, b, a)</p></li>
+<li><p>def <a class="reference internal" href="#id2" title="NatronEngine.NatronEngine.ColorParam.set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set</span></code></a> (r, g, b, a, frame)</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.setDefaultValue" title="NatronEngine.NatronEngine.ColorParam.setDefaultValue"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setDefaultValue</span></code></a> (value[, dimension=0])</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.setDisplayMaximum" title="NatronEngine.NatronEngine.ColorParam.setDisplayMaximum"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setDisplayMaximum</span></code></a> (maximum[, dimension=0])</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.setDisplayMinimum" title="NatronEngine.NatronEngine.ColorParam.setDisplayMinimum"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setDisplayMinimum</span></code></a> (minimum[, dimension=0])</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.setMaximum" title="NatronEngine.NatronEngine.ColorParam.setMaximum"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setMaximum</span></code></a> (maximum[, dimension=0])</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.setMinimum" title="NatronEngine.NatronEngine.ColorParam.setMinimum"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setMinimum</span></code></a> (minimum[, dimension=0])</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.setValue" title="NatronEngine.NatronEngine.ColorParam.setValue"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setValue</span></code></a> (value[, dimension=0])</p></li>
+<li><p>def <a class="reference internal" href="#NatronEngine.NatronEngine.ColorParam.setValueAtTime" title="NatronEngine.NatronEngine.ColorParam.setValueAtTime"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setValueAtTime</span></code></a> (value, time[, dimension=0])</p></li>
+</ul>
+</section>
+</section>
+<section id="detailed-description">
+<span id="color-details"></span><h2>Detailed Description<a class="headerlink" href="#detailed-description" title="Permalink to this heading"></a></h2>
+<p>A color parameter can either be of dimension 3 (RGB) or dimension 4 (RGBA).
+The user interface for this parameter looks like this:</p>
+<figure class="align-default">
+<img alt="../../../_images/colorParam.png" src="../../../_images/colorParam.png" />
+</figure>
+<p>This parameter type is very similar to a <a class="reference internal" href="Double3DParam.html"><span class="doc">Double3DParam</span></a> except that it can have
+4 dimensions and has some more controls.</p>
+<section id="member-functions-description">
+<h3>Member functions description<a class="headerlink" href="#member-functions-description" title="Permalink to this heading"></a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.get">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.get" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>frame</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ColorTuple.html#NatronEngine.ColorTuple" title="NatronEngine.ColorTuple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColorTuple</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Returns a <a class="reference internal" href="ColorTuple.html"><span class="doc">ColorTuple</span></a> of the color held by the parameter at the given <em>frame</em>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ColorTuple.html#NatronEngine.ColorTuple" title="NatronEngine.ColorTuple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColorTuple</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Returns a <a class="reference internal" href="ColorTuple.html"><span class="doc">ColorTuple</span></a> of the color held by the parameter at the current timeline’s time.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.getDefaultValue">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">getDefaultValue</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">dimension=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.getDefaultValue" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Returns the default value for this parameter at the given <em>dimension</em>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.getDisplayMaximum">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">getDisplayMaximum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.getDisplayMaximum" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Returns the display maximum for this parameter at the given <em>dimension</em>.
+The display maximum is the maximum value visible on the slider, internally the value
+can exceed this range.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.getDisplayMinimum">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">getDisplayMinimum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.getDisplayMinimum" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Returns the display minimum for this parameter at the given <em>dimension</em>.
+The display minimum is the minimum value visible on the slider, internally the value
+can exceed this range.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.getMaximum">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">getMaximum</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">dimension=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.getMaximum" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Returns the maximum for this parameter at the given <em>dimension</em>.
+The maximum value cannot be exceeded and any higher value will be clamped to this value.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.getMinimum">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">getMinimum</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">dimension=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.getMinimum" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Returns the minimum for this parameter at the given <em>dimension</em>.
+The minimum value cannot be exceeded and any lower value will be clamped to this value.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.getValue">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">getValue</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">dimension=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.getValue" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Returns the value of this parameter at the given <em>dimension</em> at the current timeline’s time.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.getValueAtTime">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">getValueAtTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">dimension=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.getValueAtTime" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Returns the value of this parameter at the given <em>dimension</em> at the given <em>time</em>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.restoreDefaultValue">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">restoreDefaultValue</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">dimension=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.restoreDefaultValue" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Removes all animation and expression set on this parameter and set the value
+to be the default value.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.set">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.set" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>r</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>g</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>b</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>a</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>frame</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Set a keyframe on each of the 4 animations curves at [r,g,b,a] for the given <em>frame</em>.
+If this parameter is 3-dimensional, the <em>a</em> value is ignored.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>r</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>g</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>b</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>a</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Set the value of this parameter to be [<em>r</em>,*g*,*b*,*a*].
+If this parameter is animated (see <a class="reference internal" href="AnimatedParam.html#NatronEngine.NatronEngine.AnimatedParam.getIsAnimated" title="NatronEngine.NatronEngine.AnimatedParam.getIsAnimated"><code class="xref py py-func docutils literal notranslate"><span class="pre">getIsAnimated(dimension)</span></code></a>
+then this function will automatically add a keyframe at the timeline’s current time.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.setDefaultValue">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">setDefaultValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">dimension=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.setDefaultValue" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Set the default value of this parameter at the given <em>dimension</em> to be <em>value</em>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.setDisplayMaximum">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">setDisplayMaximum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maximum</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">dimension=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.setDisplayMaximum" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>maximum</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Set the display maximum of the parameter to be <em>maximum</em> for the given <em>dimension</em>.
+See <code class="xref py py-func docutils literal notranslate"><span class="pre">getDisplayMaximum</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.setDisplayMinimum">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">setDisplayMinimum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minimum</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">dimension=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.setDisplayMinimum" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>minimum</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Set the display minimum of the parameter to be <em>minmum</em> for the given <em>dimension</em>.
+See <code class="xref py py-func docutils literal notranslate"><span class="pre">getDisplayMinimum</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.setMaximum">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">setMaximum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maximum</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">dimension=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.setMaximum" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>maximum</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Set the maximum of the parameter to be <em>maximum</em> for the given <em>dimension</em>.
+See <code class="xref py py-func docutils literal notranslate"><span class="pre">getMaximum</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.setMinimum">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">setMinimum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minimum</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">dimension=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.setMinimum" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>minimum</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Set the minimum of the parameter to be <em>minimum</em> for the given <em>dimension</em>.
+See <code class="xref py py-func docutils literal notranslate"><span class="pre">getMinimum</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.setValue">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">setValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">dimension=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.setValue" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Set the value of this parameter at the given <em>dimension</em> to be <em>value</em>.
+If this parameter is animated (see <a class="reference internal" href="AnimatedParam.html#NatronEngine.NatronEngine.AnimatedParam.getIsAnimated" title="NatronEngine.NatronEngine.AnimatedParam.getIsAnimated"><code class="xref py py-func docutils literal notranslate"><span class="pre">getIsAnimated(dimension)</span></code></a>
+then this function will automatically add a keyframe at the timeline’s current time.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NatronEngine.NatronEngine.ColorParam.setValueAtTime">
+<span class="sig-prename descclassname"><span class="pre">NatronEngine.ColorParam.</span></span><span class="sig-name descname"><span class="pre">setValueAtTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">dimension=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NatronEngine.NatronEngine.ColorParam.setValueAtTime" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><strong>time</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><strong>dimension</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Set a keyframe on each of the animation curve at the given <em>dimension</em>. The keyframe will
+be at the given <em>time</em> with the given <em>value</em>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ChoiceParam.html" class="btn btn-neutral float-left" title="ChoiceParam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ColorTuple.html" class="btn btn-neutral float-right" title="ColorTuple" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013-2022 The Natron documentation authors, licensed under CC BY-SA 4.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

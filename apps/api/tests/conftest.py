@@ -44,6 +44,10 @@ os.environ.update({
     "NEWS_API_KEY": "",
     "TI_AUTO_ENQUEUE": "false",
     "DIRECTOR_MODE": "mock",
+    # Existing router tests predate authentication and exercise their own logic.
+    # Auth-specific tests explicitly enable this against isolated auth tables.
+    "AUTH_REQUIRED": "false",
+    "AUTH_SECRET_KEY": "test-only-auth-secret-that-is-long-and-stable",
 })
 
 

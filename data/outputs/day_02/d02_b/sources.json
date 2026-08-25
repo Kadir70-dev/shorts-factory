@@ -1,0 +1,10 @@
+{
+  "sources": [
+    {
+      "claim": "The Consumer Price Index tracks a fixed basket of goods/services, weighted by household expenditure patterns, published monthly by BLS",
+      "source": "U.S. Bureau of Labor Statistics, CPI methodology",
+      "url": "https://www.bls.gov/cpi/",
+      "type": "primary"
+    }
+  ]
+}

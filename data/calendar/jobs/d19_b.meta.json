@@ -1,0 +1,13 @@
+{
+  "id": "d19_b", "day": 19, "slot": "B", "category": "markets_economics_education",
+  "content_type": "evergreen", "topic": "Why gold became a 'safe haven' asset",
+  "sources": [
+    {"claim": "Gold generates no yield/dividend/interest; value proposition is lack of counterparty risk vs stocks/bonds", "source": "Standard finance-education concept (SEC Investor.gov / Federal Reserve educational materials describe stocks/bonds as claims on issuers; gold's zero-yield, no-counterparty-risk framing is textbook-level, non-disputed mechanics)", "url": "", "type": "reputable_secondary"},
+    {"claim": "In 1971 the US ended dollar convertibility to gold (the 'Nixon Shock')", "source": "Widely-documented historical event, Federal Reserve History", "url": "https://www.federalreservehistory.org/essays/gold-convertibility-ends", "type": "reputable_secondary"}
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {"hook": 8, "clarity": 9, "retention": 8, "fact_confidence": 9, "visual_potential": 8, "us_relevance": 8, "originality": 8, "average": 8.29},
+  "rewritten": true,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

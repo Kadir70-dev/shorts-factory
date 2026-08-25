@@ -1,0 +1,30 @@
+{
+  "id": "d18_c",
+  "day": 18,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "The economics behind 0% balance-transfer credit card offers",
+  "sources": [
+    {
+      "claim": "Balance transfer offers typically carry an upfront fee (a few percent) and a promotional 0% window after which the standard APR applies",
+      "source": "CFPB and standard card-issuer disclosure practices for balance transfer offers",
+      "url": "https://www.consumerfinance.gov/",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 7,
+    "us_relevance": 8,
+    "originality": 8,
+    "average": 8.14
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

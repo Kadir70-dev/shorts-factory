@@ -1,0 +1,22 @@
+schema_version = "1.0.0"
+
+id = "thomas_rig_legacy"
+version = "1.2.8"
+name = "Thomas Rig Legacy"
+tagline = "Addon for this rig"
+maintainer = "BlueEvilGFX"
+type = "add-on"
+
+tags = ["Animation", "Rigging"]
+
+blender_version_min = "4.2.0"
+
+license = [
+  "SPDX:GPL-3.0-or-later",
+]
+
+wheels = []
+
+[permissions]
+network = "To download a skin with the Minecraft/Mojang API"
+files = "To save the skin to Blender-tmp & read MC textures"

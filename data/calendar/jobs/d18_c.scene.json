@@ -1,0 +1,175 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d18_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Why Credit Card Companies Offer You 0% Interest",
+    "hook": "A credit card company offering you 0% interest is betting you won't actually pay it off in time.",
+    "description": "Balance transfer cards let you move existing credit card debt onto a new card at 0% interest for a limited promotional window, usually charging an upfront transfer fee of a few percent. The offer works for the issuer because a meaningful share of balances aren't fully paid off before the promotional period ends, after which the remaining balance starts accruing interest at the card's regular rate. Educational content only, not financial advice.",
+    "tags": [
+      "balance transfer",
+      "credit cards",
+      "0% apr",
+      "personal finance",
+      "credit card debt"
+    ],
+    "hashtags": [
+      "#creditcards",
+      "#personalfinance",
+      "#money",
+      "#finance",
+      "#shorts"
+    ],
+    "thumbnail_text": "THE 0% CATCH"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "A credit card company offering you zero percent interest is betting you won't pay it off in time.",
+      "duration_sec": 6.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "0% offer hook"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "credit card offer mail envelope close",
+        "visual_intent": "A credit card promotional offer letter on a table, warm light, close detail shot",
+        "broll_keywords": [
+          "credit card offer letter",
+          "promotional mail envelope close",
+          "credit offer document close"
+        ],
+        "decision_reason": "hook: reframes the offer as a bet"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "It's called a balance transfer. You move existing credit card debt onto a new card.",
+      "duration_sec": 5.7,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "balance transfer defined"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "balance moving between two cards screen",
+        "visual_intent": "A balance figure moving from one card icon to another on screen, clean financial motion graphic",
+        "broll_keywords": [
+          "balance moving cards screen",
+          "debt transfer diagram graphic",
+          "two cards balance shift"
+        ],
+        "decision_reason": "the mechanism defined"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "At zero percent interest, for a limited window. Usually with an upfront transfer fee of a few percent.",
+      "duration_sec": 6.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "promo window and fee"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "countdown timer promotional period screen",
+        "visual_intent": "A countdown timer graphic on a dark financial screen, clean motion design",
+        "broll_keywords": [
+          "countdown timer screen graphic",
+          "promotional period clock display",
+          "time limit graphic screen"
+        ],
+        "decision_reason": "standard balance-transfer structure, widely documented by card issuers/CFPB"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "The offer works for the card company because a meaningful share of people don't pay the balance off before that window closes.",
+      "duration_sec": 7.8,
+      "confidence": "probable",
+      "transition_in": "fade",
+      "keywords": [
+        "issuer bet"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "calendar deadline missed concept",
+        "visual_intent": "A calendar with a circled deadline passing unmet, symbolic and quiet, cinematic",
+        "broll_keywords": [
+          "calendar deadline missed",
+          "circled date calendar close",
+          "deadline passing symbolic"
+        ],
+        "decision_reason": "general, well-understood issuer economics; kept qualitative since exact miss-rate isn't a single verifiable figure"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Once the promotional period ends, whatever's left starts accruing interest at the card's regular rate.",
+      "duration_sec": 6.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "post promo interest"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "interest rate jumping higher screen",
+        "visual_intent": "An interest rate percentage jumping to a higher figure on screen, sharp financial graphic",
+        "broll_keywords": [
+          "interest rate jumping screen",
+          "rate increase graphic display",
+          "percentage rising chart"
+        ],
+        "decision_reason": "the standard post-promo rate reversion, documented card issuer practice"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "It's not a free pass. It's a countdown, with a fee at the start. Follow for more.",
+      "duration_sec": 5.7,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "closing takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_out",
+        "query": "hourglass sand falling close up",
+        "visual_intent": "An hourglass with sand falling, close and deliberate, warm dramatic light, cinematic",
+        "broll_keywords": [
+          "hourglass sand falling close",
+          "time passing hourglass shot",
+          "countdown symbolic close up"
+        ],
+        "decision_reason": "closing takeaway + CTA"
+      }
+    }
+  ]
+}

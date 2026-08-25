@@ -1,0 +1,19 @@
+{
+  "armature": "Armature",
+  "actions": [
+    "Walk_Armature",
+    "Sitting_Enter_Armature",
+    "Sitting_Talking_Armature",
+    "Sitting_Exit_Armature"
+  ],
+  "frames": 48,
+  "qa": {
+    "max_ground_error": 0.1549546718597412,
+    "max_planted_foot_velocity": 0.0,
+    "max_chair_contact_error": 0.31086773993000266,
+    "extreme_joint_rotations": 0,
+    "transition_discontinuities": 0
+  },
+  "automatic_foot_lock": true,
+  "automatic_chair_contact": true
+}

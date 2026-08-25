@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "metrics": {
+    "render_seconds": 0.0,
+    "ram_peak_mb": 0,
+    "min_free_mb": null,
+    "duration_s": 43.4,
+    "black_seconds": 0.0,
+    "size_mb": 14.9,
+    "consistency_pct": null,
+    "silent_downgrade_count": null,
+    "silent_downgrade_rate": null
+  },
+  "checks": [
+    {
+      "name": "render completed (no timeout)",
+      "passed": true,
+      "detail": "finished in time",
+      "severity": "error"
+    },
+    {
+      "name": "playable file written",
+      "passed": true,
+      "detail": "14.9MB",
+      "severity": "error"
+    },
+    {
+      "name": "has video stream",
+      "passed": true,
+      "detail": "video audio",
+      "severity": "error"
+    },
+    {
+      "name": "has audio stream",
+      "passed": true,
+      "detail": "audio present",
+      "severity": "warn"
+    },
+    {
+      "name": "resolution 9:16",
+      "passed": true,
+      "detail": "1080x1920 (want 1080x1920)",
+      "severity": "error"
+    },
+    {
+      "name": "duration matches timeline",
+      "passed": true,
+      "detail": "43.4s (timeline 43.4s)",
+      "severity": "error"
+    },
+    {
+      "name": "black-frame fraction",
+      "passed": true,
+      "detail": "0.00s black (0.0% \u2264 6%)",
+      "severity": "error"
+    },
+    {
+      "name": "every scene non-black",
+      "passed": true,
+      "detail": "all scenes lit",
+      "severity": "error"
+    },
+    {
+      "name": "RAM peak within budget",
+      "passed": true,
+      "detail": "~0MB (\u2264 4000MB)",
+      "severity": "error"
+    },
+    {
+      "name": "render within wall-time budget",
+      "passed": true,
+      "detail": "0s (\u2264 900s)",
+      "severity": "error"
+    }
+  ]
+}

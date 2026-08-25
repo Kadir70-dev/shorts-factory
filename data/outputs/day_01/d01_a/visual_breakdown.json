@@ -1,0 +1,142 @@
+{
+  "total_seconds": 43.03,
+  "channels": {
+    "motion_gfx": {
+      "label": "Motion Graphics (2D)",
+      "percent": 47.15,
+      "seconds": 20.288,
+      "scenes": [
+        "s1",
+        "s4",
+        "s5"
+      ],
+      "target_lo": 0.25,
+      "target_hi": 0.35,
+      "within_band": false
+    },
+    "threejs": {
+      "label": "Three.js (3D)",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": 0.15,
+      "target_hi": 0.25,
+      "within_band": false
+    },
+    "official": {
+      "label": "Official/Public Domain",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": 0.15,
+      "target_hi": 0.25,
+      "within_band": false
+    },
+    "ai_broll": {
+      "label": "AI Cinematic B-roll",
+      "percent": 35.94,
+      "seconds": 15.467,
+      "scenes": [
+        "s2",
+        "s6"
+      ],
+      "target_lo": 0.15,
+      "target_hi": 0.25,
+      "within_band": false
+    },
+    "stock": {
+      "label": "Pexels/Pixabay",
+      "percent": 16.91,
+      "seconds": 7.275,
+      "scenes": [
+        "s3"
+      ],
+      "target_lo": 0.1,
+      "target_hi": 0.2,
+      "within_band": true
+    },
+    "charts": {
+      "label": "Charts/Maps/Icons/Logos",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": 0.1,
+      "target_hi": 0.2,
+      "within_band": false
+    },
+    "unresolved": {
+      "label": "UNRESOLVED (blank)",
+      "percent": 0.0,
+      "seconds": 0,
+      "scenes": [],
+      "target_lo": null,
+      "target_hi": null,
+      "within_band": false
+    }
+  },
+  "assignments": [
+    {
+      "scene_id": "s1",
+      "channel": "motion_gfx",
+      "seconds": 6.208,
+      "score": 0.0,
+      "reason": "kinetic typography",
+      "scores": {
+        "planned": "motion_gfx"
+      }
+    },
+    {
+      "scene_id": "s2",
+      "channel": "ai_broll",
+      "seconds": 6.763,
+      "score": 0.0,
+      "reason": "AI-generated",
+      "scores": {
+        "planned": "ai_broll"
+      }
+    },
+    {
+      "scene_id": "s3",
+      "channel": "stock",
+      "seconds": 7.275,
+      "score": 0.0,
+      "reason": "footage of unrecorded provenance",
+      "scores": {
+        "planned": "stock"
+      }
+    },
+    {
+      "scene_id": "s4",
+      "channel": "motion_gfx",
+      "seconds": 7.893,
+      "score": 0.0,
+      "reason": "kinetic typography",
+      "scores": {
+        "planned": "motion_gfx"
+      }
+    },
+    {
+      "scene_id": "s5",
+      "channel": "motion_gfx",
+      "seconds": 6.187,
+      "score": 0.0,
+      "reason": "kinetic typography",
+      "scores": {
+        "planned": "motion_gfx"
+      }
+    },
+    {
+      "scene_id": "s6",
+      "channel": "ai_broll",
+      "seconds": 8.704,
+      "score": 0.0,
+      "reason": "AI-generated",
+      "scores": {
+        "planned": "official"
+      }
+    }
+  ],
+  "notes": [
+    "s6: planned official \u2192 delivered ai_broll (resolver could not supply the planned source)"
+  ]
+}

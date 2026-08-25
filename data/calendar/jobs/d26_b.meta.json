@@ -1,0 +1,18 @@
+{
+  "id": "d26_b",
+  "day": 26,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "How stock market circuit breakers work",
+  "sources": [
+    {"claim": "Market-wide circuit breakers trigger at 7%, 13%, 20% declines in S&P 500 vs prior close", "source": "NYSE Market-Wide Circuit Breakers FAQ; Investor.gov glossary", "url": "https://www.nyse.com/publicdocs/nyse/NYSE_MWCB_FAQ.pdf", "type": "primary"},
+    {"claim": "Level 1/2 halt trading minimum 15 minutes if triggered between 9:30am-3:25pm; Level 3 halts for the rest of the day at any time", "source": "NYSE Market-Wide Circuit Breakers FAQ", "url": "https://www.nyse.com/publicdocs/nyse/NYSE_MWCB_FAQ.pdf", "type": "primary"},
+    {"claim": "SEC approved changing thresholds from 10/20/30% (DJIA-based) to 7/13/20% (S&P 500-based), effective Feb 4, 2013", "source": "SEC rule filing history, reported via NASDAQ Trader circuit breaker page", "url": "https://www.nasdaqtrader.com/trader.aspx?id=CircuitBreaker", "type": "primary"}
+  ],
+  "pronunciation_notes": [{"term": "S&P 500", "note": "said as 'S and P five hundred'"}],
+  "quality_scores": {"hook": 9, "clarity": 9, "retention": 8, "fact_confidence": 9, "visual_potential": 8, "us_relevance": 9, "originality": 8, "average": 8.57},
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "d01_a",
+  "topic": "IKEA flat-pack origin",
+  "content_type": "evergreen",
+  "sources": [
+    {
+      "claim": "In 1956 IKEA designer Gillis Lundgren removed a table's legs to fit it in his car, originating the flat-pack concept",
+      "source": "Guinness World Records / Inc.com (Gillis Lundgren profile)",
+      "url": "https://www.guinnessworldrecords.com/world-records/107974-first-flatpack-furniture",
+      "type": "reputable_secondary"
+    },
+    {
+      "claim": "Flat-pack shipping/self-assembly became the core of IKEA's low-cost retail model, credited to Ingvar Kamprad and Lundgren",
+      "source": "Inc.com / Wikipedia (Gillis Lundgren)",
+      "url": "https://www.inc.com/ilan-mochari/ikea-design-gillis-lundgren.html",
+      "type": "reputable_secondary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "Ingvar Kamprad",
+      "note": "ING-var KAM-prahd"
+    },
+    {
+      "term": "Gillis Lundgren",
+      "note": "not spoken in final narration; referenced in overlay only"
+    }
+  ],
+  "disclaimer": ""
+}

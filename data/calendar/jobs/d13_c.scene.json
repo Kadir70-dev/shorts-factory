@@ -1,0 +1,175 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d13_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Debt Consolidation Doesn't Erase What You Owe. Here's What It Actually Does.",
+    "hook": "Debt consolidation can lower one payment while quietly increasing the total amount you pay.",
+    "description": "A debt consolidation loan combines several debts, like credit cards, into one new loan with one payment. If the new rate is lower than your old average rate, it can genuinely cut what you pay in interest. But the total amount owed doesn't shrink the moment you sign, and it can grow again if old cards get used again. Educational content only, not financial advice.",
+    "tags": [
+      "debt consolidation",
+      "personal finance",
+      "credit card debt",
+      "loans explained",
+      "money management"
+    ],
+    "hashtags": [
+      "#debt",
+      "#personalfinance",
+      "#creditcards",
+      "#money",
+      "#shorts"
+    ],
+    "thumbnail_text": "SAME DEBT, ONE BILL"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Debt consolidation can lower one payment while quietly increasing the total amount you pay.",
+      "duration_sec": 7.44,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "debt consolidation"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "stack of credit cards bills close up",
+        "visual_intent": "A messy stack of bills and credit cards on a table, single overhead light, cinematic",
+        "broll_keywords": [
+          "credit card bills stack",
+          "unpaid bills desk close up",
+          "financial paperwork pile"
+        ],
+        "decision_reason": "hook: correcting the common misconception"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "It replaces several debts with one new loan or balance, giving you one due date instead of many.",
+      "duration_sec": 7.44,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "single loan"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "multiple arrows merging into one screen graphic",
+        "visual_intent": "Several thin lines merging into a single thick line on a dark screen, clean data visualization",
+        "broll_keywords": [
+          "arrows merging diagram screen",
+          "financial consolidation graphic",
+          "multiple lines converging"
+        ],
+        "decision_reason": "the mechanism defined"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "A genuinely lower rate can reduce interest, but advertised low rates may be temporary or unavailable to weaker borrowers.",
+      "duration_sec": 7.44,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "interest rate comparison"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "two interest rate numbers compared screen",
+        "visual_intent": "Two glowing percentage figures side by side, one visibly smaller, minimal financial graphic",
+        "broll_keywords": [
+          "percentage comparison screen graphic",
+          "interest rate chart display",
+          "financial numbers comparison"
+        ],
+        "decision_reason": "the genuine-benefit case, stated conditionally"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "A smaller monthly payment can also come from stretching repayment across more years, which may increase total cost.",
+      "duration_sec": 7.44,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "total debt unchanged"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "single folder replacing scattered papers desk",
+        "visual_intent": "Scattered papers being gathered into a single closed folder, symbolic overhead shot, cinematic",
+        "broll_keywords": [
+          "papers gathering into folder",
+          "organizing documents desk",
+          "single folder closing"
+        ],
+        "decision_reason": "the correction beat, plain and visual"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Fees matter too, and reusing newly cleared credit cards can leave you owing both the new loan and fresh balances.",
+      "duration_sec": 7.44,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "debt relapse risk"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "credit card swiping again store counter",
+        "visual_intent": "A credit card being swiped at a checkout counter, close and deliberate, cautionary tone, cinematic",
+        "broll_keywords": [
+          "credit card swipe checkout",
+          "card payment counter close up",
+          "shopper paying card store"
+        ],
+        "decision_reason": "the risk case, kept as a real behavioral pattern not a guess"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Consolidation changes the structure of debt. Only the rate, fees, term, and repayment behavior determine whether it saves money.",
+      "duration_sec": 7.44,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "personal finance lesson"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "single organized ledger closing shot",
+        "visual_intent": "A single tidy ledger book closing on a desk, warm light, calm resolution, cinematic",
+        "broll_keywords": [
+          "ledger book closing desk",
+          "organized finances calm shot",
+          "notebook closing warm light"
+        ],
+        "decision_reason": "closing takeaway + CTA"
+      }
+    }
+  ]
+}

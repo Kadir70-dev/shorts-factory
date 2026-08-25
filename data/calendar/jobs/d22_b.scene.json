@@ -1,0 +1,78 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d22_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Borrow Half To Buy A Stock, And You Can Lose More Than 100% Of Your Cash",
+    "hook": "Borrow half the money to buy a stock, and you can lose more than everything you put in.",
+    "description": "Margin trading lets investors borrow against their brokerage account to buy more stock than their cash alone would cover. Federal Reserve Regulation T caps that initial loan at 50% of the purchase price, and FINRA rules require investors keep at least 25% equity in the position afterward. If a stock drops enough to breach that floor, the broker can force a sale — sometimes at the worst possible moment — and because the loan doesn't shrink with the stock price, losses can exceed the original investment. Educational content only, not financial advice.",
+    "tags": ["margin trading", "margin call", "investing risk", "stock market basics", "brokerage account", "investing for beginners", "finra"],
+    "hashtags": ["#investing", "#stockmarket", "#margintrading", "#markets", "#shorts"],
+    "thumbnail_text": "LOSE MORE THAN 100%"
+  },
+  "fps": 60, "width": 1080, "height": 1920,
+  "scenes": [
+    {
+      "id": "s1", "narration": "Borrow half the money to buy a stock, and you can lose more than everything you put in.",
+      "duration_sec": 4.8, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["margin trading risk"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "red stock chart falling sharply screen",
+        "visual_intent": "A red stock chart falling sharply on a trading screen, tense close framing",
+        "broll_keywords": ["red stock chart falling", "trading screen decline", "stock price drop monitor"],
+        "decision_reason": "hook beat: the counterintuitive risk claim, hard cut"}
+    },
+    {
+      "id": "s2", "narration": "That's margin trading. Brokerages let you borrow against your account to buy more stock than your cash alone would cover.",
+      "duration_sec": 6.6, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["margin account definition"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "brokerage trading app phone screen numbers",
+        "visual_intent": "A brokerage trading app on a phone screen showing a buy order, everyday and familiar",
+        "broll_keywords": ["trading app phone screen", "brokerage app buy order", "stock trading interface phone"],
+        "decision_reason": "defines the mechanism"}
+    },
+    {
+      "id": "s3", "narration": "Federal rules cap that initial loan at fifty percent of the purchase price. After that, regulators require you keep at least twenty-five percent equity in the position.",
+      "duration_sec": 8.6, "confidence": "confirmed", "transition_in": "fade",
+      "keywords": ["reg t 50 percent", "finra 25 percent maintenance"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "none",
+        "query": "percentage meter split half screen graphic",
+        "visual_intent": "A split-screen style percentage visualization, 50/50 then narrowing to a 25% floor, clean and structural",
+        "broll_keywords": ["percentage split graphic", "gauge meter dashboard", "financial ratio visualization"],
+        "decision_reason": "Reg T 50% initial margin, FINRA 25% maintenance margin — confirmed via FINRA.org / SEC investor bulletin"},
+      "overlays": [{"type": "stat", "text": "50% INITIAL / 25% MIN", "y": 0.18}]
+    },
+    {
+      "id": "s4", "narration": "If the stock drops enough to breach that floor, you get a margin call. Pay up immediately, or the broker sells your position for you.",
+      "duration_sec": 7.4, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["margin call forced sale"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "phone notification alert warning screen",
+        "visual_intent": "A phone lighting up with an urgent notification alert, red warning tone, immediate tension",
+        "broll_keywords": ["phone alert notification screen", "warning notification phone", "urgent alert mobile screen"],
+        "decision_reason": "explains the margin call and forced liquidation mechanism, FINRA-documented"}
+    },
+    {
+      "id": "s5", "narration": "Often at the worst possible moment, right as the market is already falling.",
+      "duration_sec": 4.4, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["forced selling timing"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "none",
+        "query": "stock market crash chart panic red",
+        "visual_intent": "A chaotic red market crash chart, panic energy, worst-case timing visualized",
+        "broll_keywords": ["market crash chart panic", "financial crisis chart red", "stock crash screen"],
+        "decision_reason": "the compounding-risk payoff"}
+    },
+    {
+      "id": "s6", "narration": "The loan doesn't shrink just because the stock did. Your losses are measured against your equity, which means they can outrun what you originally invested.",
+      "duration_sec": 8.0, "confidence": "confirmed", "transition_in": "fade",
+      "keywords": ["losses exceed investment"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_out",
+        "query": "empty wallet pockets turned out",
+        "visual_intent": "An empty wallet with pockets turned inside out on a table, stark and blunt closing image",
+        "broll_keywords": ["empty wallet pockets turned", "wallet no money table", "empty pockets close up"],
+        "decision_reason": "closing beat: leverage risk stated plainly"}
+    }
+  ]
+}

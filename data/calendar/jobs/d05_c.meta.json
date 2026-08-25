@@ -1,0 +1,17 @@
+{
+  "id": "d05_c",
+  "day": 5,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "Compound interest with a concrete example",
+  "sources": [
+    {"claim": "$10,000 compounded at 8% annually for 40 years grows to ~$217,245; for 30 years grows to ~$100,627 (verified by direct calculation: 10000*1.08^40 and 10000*1.08^30)",
+     "source": "Direct mathematical calculation (compound interest formula), verified with Python during production", "url": "", "type": "primary"}
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {"hook": 8, "clarity": 9, "retention": 8, "fact_confidence": 10, "visual_potential": 8, "us_relevance": 7, "originality": 7, "average": 8.14},
+  "rewritten": false,
+  "disclaimer": "This is a hypothetical illustrative example using an assumed constant return, not a projection or promise of actual investment performance. Not financial advice.",
+  "status": "READY"
+}

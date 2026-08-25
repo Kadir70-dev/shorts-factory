@@ -1,0 +1,26 @@
+{
+  "id": "d04_c",
+  "topic": "Where the FICO credit score came from",
+  "content_type": "evergreen",
+  "sources": [
+    {
+      "claim": "Fair Isaac Corporation launched the first standardized consumer FICO score in February 1989, subsequently adopted by the major credit bureaus",
+      "source": "myFICO 'History of the FICO Score'; corroborated by multiple credit-history retrospectives",
+      "url": "https://www.myfico.com/credit-education/blog/history-of-the-fico-score",
+      "type": "reputable_secondary"
+    },
+    {
+      "claim": "Fair Isaac Corporation itself was founded earlier, in 1956, by Bill Fair and Earl Isaac (not stated in final script, background only)",
+      "source": "myFICO company history",
+      "url": "https://www.myfico.com/credit-education/blog/history-of-the-fico-score",
+      "type": "reputable_secondary"
+    }
+  ],
+  "pronunciation_notes": [
+    {
+      "term": "FICO",
+      "note": "said as 'FY-koh'"
+    }
+  ],
+  "disclaimer": ""
+}

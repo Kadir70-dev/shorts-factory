@@ -1,0 +1,175 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d17_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "A Recession Isn't Officially Declared The Way Most People Think",
+    "hook": "Most people think a recession needs two straight quarters of shrinking GDP. That's not actually the rule.",
+    "description": "The common rule of thumb, two consecutive quarters of falling GDP, isn't the official US definition. Recessions are actually dated by the National Bureau of Economic Research, a private nonprofit, which looks at a broader mix of measures including employment, income, and spending before making a call, sometimes months after a downturn has already started. Educational content only, not financial advice.",
+    "tags": [
+      "recession definition",
+      "nber",
+      "economics explained",
+      "macroeconomics",
+      "us economy"
+    ],
+    "hashtags": [
+      "#economics",
+      "#recession",
+      "#macro",
+      "#finance",
+      "#shorts"
+    ],
+    "thumbnail_text": "NOT WHAT YOU THINK"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Most people think a recession needs two straight quarters of shrinking GDP. That's not actually the rule.",
+      "duration_sec": 7.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "recession misconception"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "declining chart line red screen",
+        "visual_intent": "A red declining chart line on a dark financial screen, sharp and stark, cinematic",
+        "broll_keywords": [
+          "declining chart red screen",
+          "falling line graph dark",
+          "negative trend chart display"
+        ],
+        "decision_reason": "hook: corrects the common rule of thumb"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "In the US, recessions are officially dated by a group called the NBER. Not the government, a private nonprofit.",
+      "duration_sec": 7.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "nber defined"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "committee meeting table discussion",
+        "visual_intent": "A small committee seated around a table reviewing documents, muted office light, documentary tone",
+        "broll_keywords": [
+          "committee meeting table review",
+          "economists discussion table",
+          "research committee office"
+        ],
+        "decision_reason": "NBER is the official, well-documented US recession-dating body"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "They look at a broader mix. Employment, income, spending, industrial output, all at once.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "broad measures"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "multiple data charts overlapping screen",
+        "visual_intent": "Several overlapping data charts on one dark screen, layered financial graphic",
+        "broll_keywords": [
+          "multiple charts overlapping screen",
+          "layered economic data graphic",
+          "combined indicators display"
+        ],
+        "decision_reason": "NBER's documented multi-indicator methodology"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "Not just GDP. And not just two quarters.",
+      "duration_sec": 3.6,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "not just two quarters"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_in",
+        "query": "calendar quarters crossed out concept",
+        "visual_intent": "A calendar with two quarters crossed out, symbolic correction, minimal graphic",
+        "broll_keywords": [
+          "calendar crossed out graphic",
+          "quarters marked symbolic",
+          "correction concept display"
+        ],
+        "decision_reason": "reinforces the correction"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Which means the call sometimes comes months after a downturn already started, once the fuller data is in.",
+      "duration_sec": 7.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "dating lag"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "calendar pages turning delay concept",
+        "visual_intent": "Calendar pages turning forward, symbolic of delay, warm desk light, cinematic",
+        "broll_keywords": [
+          "calendar pages turning",
+          "time passing symbolic shot",
+          "delay concept calendar close"
+        ],
+        "decision_reason": "the well-documented dating lag of NBER announcements"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The rule of thumb is a shortcut. The real definition is slower, and more careful. Follow for more.",
+      "duration_sec": 7.3,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing distinction"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "magnifying glass over economic report",
+        "visual_intent": "A magnifying glass held over a printed economic report, close and deliberate, cinematic",
+        "broll_keywords": [
+          "magnifying glass report close",
+          "economic document review close",
+          "careful analysis document shot"
+        ],
+        "decision_reason": "closing distinction + CTA"
+      }
+    }
+  ]
+}

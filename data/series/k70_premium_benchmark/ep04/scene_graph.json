@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "video_id": "k70_premium_benchmark_ep04",
+    "channel_id": "k70_finance",
+    "niche": "personal_finance",
+    "title": "K70 PREMIUM SCENE ENGINE -- INTERNAL BENCHMARK EP04 (not for publication)",
+    "hook": "How much house can John actually afford?",
+    "structure_id": "k70_premium_internal_benchmark_ep04"
+  },
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "scenes": [
+    {
+      "id": "s0",
+      "narration": "This is John. Like a lot of people, he has been renting for years, watching prices climb every single spring.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s1",
+      "narration": "Today he is walking through a neighborhood he actually likes, seriously asking himself whether a five hundred thousand dollar house is realistic for him.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s2",
+      "narration": "So he sits down with a banker, inside a properly furnished financial office, to get real numbers instead of guesses.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s3",
+      "narration": "The banker breaks it down clearly: the home price, the down payment John would need up front, and the loan amount that's actually left to pay off over time.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": {
+        "kind": "bar_compare",
+        "title": "$500,000 home -- how it breaks down",
+        "points": [
+          {
+            "label": "Home price",
+            "value": 500000.0,
+            "emphasis": "normal"
+          },
+          {
+            "label": "Down payment (10%)",
+            "value": 50000.0,
+            "emphasis": "primary"
+          },
+          {
+            "label": "Loan amount",
+            "value": 450000.0,
+            "emphasis": "normal"
+          }
+        ],
+        "prefix": "$",
+        "decimals": 0,
+        "abbreviate": false,
+        "highlight": 1,
+        "note": "Illustrative example"
+      },
+      "beat_role": "body"
+    },
+    {
+      "id": "s4",
+      "narration": "An investor across town is weighing a very different kind of decision -- where to put capital this quarter, and how much risk actually makes sense right now.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s5",
+      "narration": "Zoom out far enough, and John's decision is really just one small piece of a much bigger, constantly moving economy.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s6",
+      "narration": "Meanwhile Sarah is having her own version of this conversation, at her own workplace, with her own paycheck and her own budget.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s7",
+      "narration": "So is a business owner deciding whether to reinvest profit back into the company or finally take some of it home.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s8",
+      "narration": "And a worker clocking in for another shift is doing the exact same math on a much smaller number, which somehow makes it matter even more.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s9",
+      "narration": "Underneath all of these different lives, the same three things keep showing up: the bank, the money, and the house.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s10",
+      "narration": "The money moving between them.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s11",
+      "narration": "And the house at the other end of it.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s12",
+      "narration": "Which brings John back to the real question -- not what a bank is willing to lend him, but what he can actually afford without it controlling his life.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    },
+    {
+      "id": "s13",
+      "narration": "That's the real decision behind every mortgage conversation -- not the biggest number you qualify for, but the one you can actually live with.",
+      "duration_sec": 5.0,
+      "visual": {
+        "type": "image",
+        "motion": "ken_burns"
+      },
+      "data": null,
+      "beat_role": "body"
+    }
+  ]
+}

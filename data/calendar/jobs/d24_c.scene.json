@@ -1,0 +1,207 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d24_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "How Student Loan Interest Starts Charging Interest",
+    "hook": "Student loan interest can become part of the balance that future interest is calculated on.",
+    "description": "Interest capitalization occurs when unpaid interest is added to a student loan's principal. Future interest then accrues on the larger principal balance, increasing total cost. The timing and rules depend on loan type and repayment status. Educational content only, not personalized financial advice.",
+    "tags": [
+      "student loans",
+      "interest capitalization",
+      "debt",
+      "personal finance"
+    ],
+    "hashtags": [
+      "#studentloans",
+      "#debt",
+      "#personalfinance",
+      "#shorts"
+    ],
+    "thumbnail_text": "INTEREST ON INTEREST"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Student loan interest can become part of the balance that future interest is calculated on. That is capitalization.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "student loan statement",
+        "principal interest balance"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "student loan balance statement",
+        "visual_intent": "A student-loan statement with principal and interest separated",
+        "broll_keywords": [
+          "student loan statement",
+          "principal interest balance",
+          "loan account screen"
+        ],
+        "decision_reason": "Federal Student Aid servicer guidance defines capitalization"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Capitalization",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "narration": "Interest may keep accruing during certain periods when required payments are paused, depending on the loan type and status.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "payment pause calendar",
+        "interest accruing concept"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "real_footage",
+        "motion": "pan_lr",
+        "query": "pause button calendar payments",
+        "visual_intent": "A calendar beside a pause symbol and accumulating coins",
+        "broll_keywords": [
+          "payment pause calendar",
+          "interest accruing concept",
+          "deferment timeline"
+        ],
+        "decision_reason": "Capitalization timing varies by loan type and status"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "When a capitalization event occurs, unpaid interest is added to principal. The official balance gets larger.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "capitalized interest diagram",
+        "principal plus interest"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "interest added to principal graphic",
+        "visual_intent": "Two labeled amounts merging into one larger balance",
+        "broll_keywords": [
+          "capitalized interest diagram",
+          "principal plus interest",
+          "loan balance graphic"
+        ],
+        "decision_reason": "Official definition: unpaid interest is added to principal"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Interest -> principal",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "narration": "After that, the daily interest calculation uses the new, higher principal, increasing the loan's total cost.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "daily interest calculation",
+        "loan calculator close up"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "daily interest calculator",
+        "visual_intent": "A calculator showing interest on a larger balance",
+        "broll_keywords": [
+          "daily interest calculation",
+          "loan calculator close up",
+          "interest formula screen"
+        ],
+        "decision_reason": "Official guidance says future interest accrues on the larger balance"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Larger balance",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "narration": "Federal rules limit when capitalization can happen, so it is not correct to assume every pause triggers it.",
+      "duration_sec": 6.2,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "student loan terms document",
+        "federal aid paperwork"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "federal student aid rules document",
+        "visual_intent": "Official-looking loan terms with event dates highlighted",
+        "broll_keywords": [
+          "student loan terms document",
+          "federal aid paperwork",
+          "loan capitalization rules"
+        ],
+        "decision_reason": "Caveat reflects current federal capitalization rules"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "The key is to separate accrued interest from principal and check exactly when your loan terms combine them.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "loan dashboard balances",
+        "principal accrued interest"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "principal interest account dashboard",
+        "visual_intent": "An account dashboard separating principal and accrued interest",
+        "broll_keywords": [
+          "loan dashboard balances",
+          "principal accrued interest",
+          "student aid account screen"
+        ],
+        "decision_reason": "Practical explanation tied to the verified mechanism"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Check the trigger",
+          "y": 0.18
+        }
+      ]
+    }
+  ]
+}

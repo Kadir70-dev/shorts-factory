@@ -1,0 +1,21 @@
+{
+  "id": "d04_a",
+  "topic": "Why gas stations barely profit from gasoline itself",
+  "content_type": "evergreen",
+  "sources": [
+    {
+      "claim": "Fuel retail margins are notoriously thin, often just a few cents per gallon of net profit after costs, and can turn negative during price swings",
+      "source": "Widely reported convenience-retail industry data (NACS/convenience-store trade press) and business journalism on fuel retailing economics",
+      "url": "",
+      "type": "reputable_secondary"
+    },
+    {
+      "claim": "In-store convenience items (snacks, drinks, prepared food/coffee) carry far higher percentage profit margins than fuel, and represent the bulk of a station's actual profit",
+      "source": "Widely reported convenience-retail industry data on in-store vs. fuel margins",
+      "url": "",
+      "type": "reputable_secondary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "disclaimer": ""
+}

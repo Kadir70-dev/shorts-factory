@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with color &mdash; Natron 2.5.0 documentation</title>
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Stereoscopic compositing" href="compositing-stereo.html" />
+    <link rel="prev" title="Transforming elements" href="compositing-transform.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Natron
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2.5
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">What is compositing?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getstarted.html">Getting started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="compositing.html">Compositing</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="compositing-projects.html">Managing Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compositing-reformat.html">Reformatting elements (empty)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compositing-channels.html">Channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compositing-merge.html">Merging images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compositing-denoise.html">Noise removal (empty)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compositing-keying.html">Keying (empty)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compositing-rotopaint.html">Using Roto / Rotopaint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compositing-tracking.html">Tracking and stabilizing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compositing-transform.html">Transforming elements</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Working with color</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-nodes">The nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="compositing-stereo.html">Stereoscopic compositing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compositing-exprs.html">Expressions (empty)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="thenodes.html">The Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../_group.html">Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/index.html">Developers Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Natron</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">User Guide</a> &raquo;</li>
+          <li><a href="compositing.html">Compositing</a> &raquo;</li>
+      <li>Working with color</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/guide/compositing-color.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="working-with-color">
+<h1>Working with color<a class="headerlink" href="#working-with-color" title="Permalink to this heading"></a></h1>
+<p>How to use Natron color correction nodes and tools to adjust the appearance of the images in your composites.
+When starting out, this information provides a good overview of Natron scopes and color-correction nodes,
+however not all options are covered here.</p>
+<section id="the-nodes">
+<h2>The nodes<a class="headerlink" href="#the-nodes" title="Permalink to this heading"></a></h2>
+<p>Really important nodes are marked with an asterix:</p>
+<p><strong>Add*</strong></p>
+<p>This node affects all values within the image in the same way: literally adding to them.
+Positive values will brighten all parts of the image. As a stand alone color manipulation it is of limited use, though it is ideal for lightening the blacks of distant objects.</p>
+<p><strong>Multiply*</strong></p>
+<p>It can be used to brighten or darken an image, or to fix a color cast. In maths, Multiply has no effect upon zero (black). Hence, the Multiply node will have no effect upon the blacks of an image.</p>
+<p><strong>Clamp</strong></p>
+<p>The Clamp node, like the ColorLookup node, is not explicitly designed to provide feedback on images, however it can easily be used to do so.
+It functions in much the same way as the ClipTest node: it flattens out the user-defined lower and upper lightness range of the image and,
+if you tick MinClampTo and MaxClampTo, can replace these values with user defined colors.
+Properly used it can provide clearer information than the ClipTest node.</p>
+<p><strong>ColorLookup*</strong></p>
+<p>A color lookup is what image editors Curves tool does.
+It is a very powerful tool, capable of replicating the function of many other color nodes.
+Its disadvantage is that it requires more processing than many of those nodes.
+The curve of a color lookup can also be a bit more difficult to read than nodes featuring sliders.</p>
+<p><strong>ColorSpace</strong></p>
+<p>Engineers think of color as existing in things called spaces which are mathematical, 3D models the purpose of which is to organise them. Different color spaces serve different purposes: some are meant for printing, some are meant for screen-based work, some are meant for TV. The ColorSpace can move an image from one color space to another. The neat thing about this is that it makes it possible to use channels from exotic color spaces as masks to simple RGB operations or to perform adjustments on images to produce results that would have been impossible in ordinary RGB space. The workflow is: convert from Natron default Linear color space into the color space of your choice, perform your funky magic, then convert back to linear.
+The saturation channel of HSL can, for example, have a contrast adjustment applied to it which could desaturate the less saturated parts of an image and super saturate the remainder. Woot! Try that in Photoshop!
+Lab color space is another useful fellow. It is the quantum physics of the color world and I shall but kiss the shadow of it’s vast and complex form. The fascinating thing about this space is that it separates the lightness values of an image (the L channel) from it’s hue and saturation (the a and b channel combined). HSL also does this but not nearly so well. You can take the a and b and move them into those of another image.
+The effect of this is similar to image editors hue blend mode. I have found it useful to augment the colorfulness of a dull sky by using the blurred color values from a vivid sunset.
+Try also blurring the a and b channels. This will blur only the hue and saturation components of an image and leave its lightness values alone.
+A novel use for the ColorSpace node can be found in the Assets page (see the Double Rainbows asset).</p>
+<p><strong>ColorCorrect*</strong></p>
+<p>Artists have for thousands of years been separating the lightness values of their paintings into three bands: shadows, midtones and highlights. The ColorCorrect node is a collection of operations that not only can effect the entire image but can address separately these three ranges</p>
+<p><strong>Gamma</strong></p>
+<p>This raises or lowers the middle-ish point of the color curve. The default value is one, with smaller numbers darkening the lower registers and higher numbers lightening them. There is a Gamma node but I find that stand-alone gamma adjustments are best done using ColorLookup so as to give you flexibility over where the ‘grab point‘ of your curve is. Both ColorCorrect and Grade have built in Gamma value sliders.</p>
+<p><strong>Grade*</strong></p>
+<p>This node is a collection of operations that combine to work upon the lightness and hue values of an image. It is mostly a fixer: used for correcting and matching, though of course it can also be used for more aesthetically lavish purposes.</p>
+<p><strong>Histogram</strong></p>
+<p><strong>HueCorrect*</strong></p>
+<p>This can be a very tricky node to get to know.
+We can conclude that the perception of the amount of hue within a color (its chroma) is linked to two things: saturation and lightness.
+When adjusting color it is important to have separate control over these values, which is something that the HueCorrect node offers.
+This effect it masks by two further values: hue and saturation. Its interface offers control over nine values:</p>
+<p>Saturation (sat)
+This can change the saturation value of an image, with respect to particular regions of hue.</p>
+<p>Luminance (lum)
+This can change the luminosity (i.e. brightness) value of an image, with respect to particular regions of hue.</p>
+<p>Luminance components (red, blue, green)
+This can change the r, g and b channels of an image, with respect to particular regions of hue.</p>
+<p>Suppression (r_sup, g_sup, b_sup)
+This is similar to adjusting the luminance components, but instead of nullifying them (replacing them with black), replaces them with white.</p>
+<p>Saturation threshold (sat_thrsh)
+This only effects the image if first the ‘Luminance’ or ‘Luminance components’ have been adjusted. Adjustments to this value will act as ‘per hue’ saturation level mask to the effect.</p>
+<p><strong>HSVTool</strong></p>
+<p>The HSVTool has three functions: Color replacement, Color adjust, Hue keyer</p>
+<p><strong>Saturation*</strong></p>
+<p>A color becomes a grey if its RGB values are all identical.
+The Saturation node desaturates an image by averaging its RGB channels.
+More localised control over saturation is offered by the HueCorrect node.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="compositing-transform.html" class="btn btn-neutral float-left" title="Transforming elements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="compositing-stereo.html" class="btn btn-neutral float-right" title="Stereoscopic compositing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013-2022 The Natron documentation authors, licensed under CC BY-SA 4.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

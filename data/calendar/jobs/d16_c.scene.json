@@ -1,0 +1,182 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d16_c",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Your Bank Deposit Insurance Has A Limit Most People Don't Know",
+    "hook": "If your bank fails, the government doesn't cover everything in your account. It covers up to a specific number.",
+    "description": "FDIC deposit insurance protects up to $250,000 per depositor, per insured bank, per ownership category, not an unlimited amount and not the whole bank. A single account over that limit isn't automatically fully covered; married couples and different account types can each extend coverage further. It's one of the more misunderstood safety nets in American banking. Educational content only, not financial advice.",
+    "tags": [
+      "fdic insurance",
+      "bank safety",
+      "personal finance",
+      "banking basics",
+      "deposit insurance"
+    ],
+    "hashtags": [
+      "#banking",
+      "#personalfinance",
+      "#fdic",
+      "#money",
+      "#shorts"
+    ],
+    "thumbnail_text": "$250,000 LIMIT"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "If your bank fails, the government doesn't cover everything in your account.",
+      "duration_sec": 5.2,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "fdic misconception"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "bank building exterior closed sign",
+        "visual_intent": "A bank branch exterior with a closed sign, overcast light, tense documentary tone",
+        "broll_keywords": [
+          "bank branch exterior closed",
+          "closed bank sign shot",
+          "bank building overcast day"
+        ],
+        "decision_reason": "hook: corrects the common assumption"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "It covers up to a specific number. Two hundred fifty thousand dollars.",
+      "duration_sec": 5.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "fdic limit"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "large number 250000 screen graphic",
+        "visual_intent": "A large glowing dollar figure on a dark financial screen, clean and stark",
+        "broll_keywords": [
+          "large dollar figure screen",
+          "fdic coverage graphic",
+          "insurance limit display"
+        ],
+        "decision_reason": "the exact statutory figure"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "$250,000 LIMIT",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "narration": "That's per depositor, per bank, per ownership category. Not per account, and not unlimited.",
+      "duration_sec": 7.6,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "per depositor per bank"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "three separate boxes labeled coverage categories",
+        "visual_intent": "Three separate glowing boxes on screen representing coverage categories, clean motion graphic",
+        "broll_keywords": [
+          "three categories graphic screen",
+          "coverage boxes diagram",
+          "insurance categories display"
+        ],
+        "decision_reason": "the precise scope, straight from FDIC rules"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "So a single account with four hundred thousand dollars in it isn't automatically fully covered.",
+      "duration_sec": 7.3,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "over the limit risk"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "bank statement large balance close up",
+        "visual_intent": "A bank statement showing a large balance figure, dim office light, close and deliberate shot",
+        "broll_keywords": [
+          "bank statement balance close",
+          "account statement paper close",
+          "financial document close up"
+        ],
+        "decision_reason": "the practical risk case"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "But married couples, and different account types at the same bank, can each add their own coverage on top.",
+      "duration_sec": 7.8,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "multiple ownership categories"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "multiple accounts family coverage diagram",
+        "visual_intent": "Multiple account icons connecting to separate coverage shields, clean financial motion graphic",
+        "broll_keywords": [
+          "multiple accounts diagram screen",
+          "family coverage graphic display",
+          "account shields icons screen"
+        ],
+        "decision_reason": "the standard FDIC ownership-category extension rule"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "It's one of the most misunderstood safety nets in American banking. Follow for more.",
+      "duration_sec": 6.3,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "FDIC sign bank window close up",
+        "visual_intent": "An FDIC member sign on a bank window, close and steady, calm resolution shot",
+        "broll_keywords": [
+          "fdic sign bank window",
+          "bank window signage close",
+          "insured bank sign shot"
+        ],
+        "decision_reason": "closing takeaway + CTA"
+      }
+    }
+  ]
+}

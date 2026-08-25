@@ -1,0 +1,20 @@
+{
+  "id": "d12_b",
+  "day": 12,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "trend",
+  "intended_category": "markets_economics_education",
+  "research_query": "latest Federal Reserve decision, CPI/jobs report release, or major market-moving macro event within the last 72 hours",
+  "source_requirements": [
+    "Prefer the primary release itself: federalreserve.gov (FOMC statement/minutes), bls.gov (CPI/jobs report), bea.gov (GDP), treasury.gov.",
+    "If explaining market reaction, corroborate the move with at least one reputable financial outlet (Reuters, Bloomberg, WSJ, AP) alongside the primary data release.",
+    "Story must reference the most recent scheduled release/decision relative to the publish date \u2014 do not use stale data from a prior cycle."
+  ],
+  "script_template": "0-2s HOOK: state the single most concrete, surprising fact from the verified story (a number, a decision, a name) \u2014 no 'breaking news' filler. 2-8s SETUP: what happened, who, when \u2014 plain, specific. 8-30s STORY/EXPLANATION: why it happened / the mechanism behind it, in causal, visual language \u2014 one central idea only. 30-45s PAYOFF: what it actually means for the viewer or the wider economy \u2014 the 'so what', hedged per the story's real confidence level (confirmed vs analysts-expect language). Final seconds: one sharp, memorable closing line; 'Follow for more.' only if it fits naturally. Total 35-55s, ~90-130 spoken words, natural American English, no guaranteed-return or buy/sell-call language. Build the actual SceneGraph using the same schema as the evergreen jobs (see _job_spec_reference.md) once the real story and its sources are confirmed.",
+  "freshness_requirements": "Research must run within 24-48 hours of this slot's scheduled publish day (day 12 of the 30-day cycle), not at backlog-build time. If no story clears the source requirements and the 72-hour freshness bar, fall back to the next unused evergreen topic in the same category (do not force a weak or unverified story into this slot).",
+  "sources": [],
+  "quality_scores": null,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "TREND \u2014 RESEARCH ON PUBLISH DATE"
+}

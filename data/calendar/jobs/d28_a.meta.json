@@ -1,0 +1,31 @@
+{
+  "id": "d28_a",
+  "day": 28,
+  "slot": "A",
+  "category": "business_wealth_story",
+  "content_type": "evergreen",
+  "topic": "Starbucks' site-selection science",
+  "sources": [
+    {
+      "claim": "Starbucks evaluates store locations and faces risks from poor site selection, traffic, competition, and lease economics",
+      "source": "Starbucks annual reports and risk disclosures",
+      "url": "https://investor.starbucks.com/financial-data/annual-reports/default.aspx",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": true,
+  "rewrite_note": "Original draft cited specific income-figure comparisons ($53k vs $43k) from a non-authoritative data-science student blog; removed and replaced with qualitative/structural claims only, several scenes marked 'probable' rather than 'confirmed' since the exact methodology isn't Starbucks-disclosed. Fact confidence intentionally capped below 9 as a result \u2014 this is the accurate, honest score, not a gate failure to push further.",
+  "disclaimer": "",
+  "status": "READY"
+}

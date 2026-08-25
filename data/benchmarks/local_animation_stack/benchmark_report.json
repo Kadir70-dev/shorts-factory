@@ -1,0 +1,41 @@
+{
+  "A": {
+    "armature": "Armature",
+    "actions": [
+      "Idle_A_Armature",
+      "Walk_Formal_Armature",
+      "Idle_A_Armature",
+      "Interact_Armature"
+    ],
+    "frames": 48,
+    "clip": "C:\\Users\\Admin\\shorts-factory\\data\\benchmarks\\local_animation_stack\\test_a\\benchmark.mp4",
+    "seconds": 0.666
+  },
+  "B": {
+    "frames": 49,
+    "mesh_count": 14,
+    "vertex_hashes_unchanged": true,
+    "forbidden_deformers": [],
+    "rigid_geometry_preserved": true,
+    "actions": [
+      "idle_neutral",
+      "walk_normal",
+      "turn_left",
+      "point_screen"
+    ],
+    "clip": "C:\\Users\\Admin\\shorts-factory\\data\\benchmarks\\local_animation_stack\\test_b\\benchmark.mp4",
+    "seconds": 283.56
+  },
+  "C": {
+    "armature": "Armature",
+    "actions": [
+      "Walk_Armature",
+      "Sitting_Enter_Armature",
+      "Sitting_Talking_Armature",
+      "Sitting_Exit_Armature"
+    ],
+    "frames": 48,
+    "clip": "C:\\Users\\Admin\\shorts-factory\\data\\benchmarks\\local_animation_stack\\test_c\\benchmark.mp4",
+    "seconds": 326.258
+  }
+}

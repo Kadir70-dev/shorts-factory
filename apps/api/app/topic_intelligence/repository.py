@@ -210,6 +210,179 @@ class TopicIntelligenceRepository:
                 s.add(r)
             s.commit()
 
+    # -------------------------------------------------- Phase 2B: review writes
+    # All of these mutate the Phase 2A tables in place. No new schema.
+    def create_ledger_row(self, **fields) -> TopicLedger:
+        """Low-level ledger append for the review workflow, which works from
+        persisted rows rather than in-memory domain objects."""
+        with self._session_factory() as s:
+            row = TopicLedger(**fields)
+            s.add(row)
+            s.commit()
+            s.refresh(row)
+            return row
+
+    def update_ledger_row(
+        self,
+        ledger_id: int,
+        *,
+        status: str | None = None,
+        job_id: str | None = None,
+        override_reason: str | None = None,
+    ) -> Optional[TopicLedger]:
+        with self._session_factory() as s:
+            row = s.get(TopicLedger, ledger_id)
+            if row is None:
+                return None
+            if status is not None:
+                row.status = status
+                if status == "published" and row.published_at is None:
+                    row.published_at = datetime.now(timezone.utc)
+            if job_id is not None:
+                row.job_id = job_id
+            if override_reason is not None:
+                row.override_reason = override_reason
+            s.add(row)
+            s.commit()
+            s.refresh(row)
+            return row
+
+    def set_run_selection(self, run_id: str, topic_id: str) -> None:
+        """Move the run's selection to another ranked candidate, keeping the
+        per-result `selected` flags consistent with `run.selected_topic_id`."""
+        with self._session_factory() as s:
+            run = s.get(TopicRankingRun, run_id)
+            if run is not None:
+                run.selected_topic_id = topic_id
+                s.add(run)
+            stmt = select(TopicRankingResult).where(
+                TopicRankingResult.run_id == run_id
+            )
+            for r in s.exec(stmt):
+                r.selected = r.topic_id == topic_id
+                s.add(r)
+            s.commit()
+
+    def set_run_enqueued(self, run_id: str, job_id: str) -> None:
+        with self._session_factory() as s:
+            run = s.get(TopicRankingRun, run_id)
+            if run is None:
+                return
+            run.enqueued_job_id = job_id
+            s.add(run)
+            s.commit()
+
+    def append_run_warning(self, run_id: str, warning: str) -> None:
+        with self._session_factory() as s:
+            run = s.get(TopicRankingRun, run_id)
+            if run is None:
+                return
+            try:
+                warnings = json.loads(run.warnings_json or "[]")
+            except json.JSONDecodeError:
+                warnings = []
+            if not isinstance(warnings, list):
+                warnings = []
+            warnings.append(warning)
+            run.warnings_json = json.dumps(warnings)
+            s.add(run)
+            s.commit()
+
+    def annotate_topic(
+        self,
+        run_id: str,
+        topic_id: str,
+        *,
+        eligible_for_production: bool | None = None,
+        dedup_status: str | None = None,
+        add_rejection_reason: str | None = None,
+    ) -> None:
+        """Stamp a review decision onto BOTH the candidate row and the ranking
+        result row, so the audit reads the same from either side."""
+        with self._session_factory() as s:
+            rows: list = []
+            rows += list(s.exec(
+                select(TopicCandidateRow)
+                .where(TopicCandidateRow.run_id == run_id)
+                .where(TopicCandidateRow.topic_id == topic_id)
+            ))
+            result_rows = list(s.exec(
+                select(TopicRankingResult)
+                .where(TopicRankingResult.run_id == run_id)
+                .where(TopicRankingResult.topic_id == topic_id)
+            ))
+            rows += result_rows
+            for row in rows:
+                if eligible_for_production is not None:
+                    row.eligible_for_production = eligible_for_production
+                if dedup_status is not None and hasattr(row, "dedup_status"):
+                    row.dedup_status = dedup_status
+                if add_rejection_reason:
+                    existing = row.rejection_reasons or ""
+                    row.rejection_reasons = (
+                        f"{existing} | {add_rejection_reason}" if existing
+                        else add_rejection_reason
+                    )
+                s.add(row)
+            s.commit()
+
+    # --------------------------------------------------- Phase 2B: review reads
+    def list_runs(
+        self, *, channel_id: str | None = None, limit: int = 25
+    ) -> list[TopicRankingRun]:
+        with self._session_factory() as s:
+            stmt = select(TopicRankingRun)
+            if channel_id:
+                stmt = stmt.where(TopicRankingRun.channel_id == channel_id)
+            rows = list(s.exec(stmt))
+        rows.sort(key=lambda r: _dt(r.started_at) or datetime.min.replace(
+            tzinfo=timezone.utc), reverse=True)
+        return rows[:limit]
+
+    def ranking_result(self, run_id: str, topic_id: str) -> Optional[TopicRankingResult]:
+        with self._session_factory() as s:
+            stmt = select(TopicRankingResult).where(
+                TopicRankingResult.run_id == run_id
+            ).where(TopicRankingResult.topic_id == topic_id)
+            return next(iter(s.exec(stmt)), None)
+
+    def candidate_in_run(self, run_id: str, topic_id: str) -> Optional[TopicCandidateRow]:
+        with self._session_factory() as s:
+            stmt = select(TopicCandidateRow).where(
+                TopicCandidateRow.run_id == run_id
+            ).where(TopicCandidateRow.topic_id == topic_id)
+            return next(iter(s.exec(stmt)), None)
+
+    def run_candidates(self, run_id: str) -> list[TopicCandidateRow]:
+        with self._session_factory() as s:
+            stmt = select(TopicCandidateRow).where(TopicCandidateRow.run_id == run_id)
+            return list(s.exec(stmt))
+
+    def run_evidence(self, run_id: str) -> list[TopicEvidence]:
+        with self._session_factory() as s:
+            stmt = select(TopicEvidence).where(TopicEvidence.run_id == run_id)
+            return list(s.exec(stmt))
+
+    def ledger_row(self, *, run_id: str, topic_id: str) -> Optional[TopicLedger]:
+        with self._session_factory() as s:
+            stmt = select(TopicLedger).where(
+                TopicLedger.run_id == run_id
+            ).where(TopicLedger.topic_id == topic_id).order_by(TopicLedger.id.desc())
+            return next(iter(s.exec(stmt)), None)
+
+    def ledger_rows_by_key(
+        self, *, channel_id: str, canonical_key: str, statuses: tuple[str, ...]
+    ) -> list[TopicLedger]:
+        """Every ledger row for one story, whichever run produced it. This is how
+        `approve` detects that the same topic is already in the pipeline."""
+        if not canonical_key:
+            return []
+        with self._session_factory() as s:
+            stmt = select(TopicLedger).where(
+                TopicLedger.channel_id == channel_id
+            ).where(TopicLedger.canonical_key == canonical_key)
+            return [r for r in s.exec(stmt) if r.status in statuses]
+
     # ------------------------------------------------------------------- reads
     def ledger_entries(
         self, channel_id: str, *, days: int, statuses: tuple[str, ...] | None = None

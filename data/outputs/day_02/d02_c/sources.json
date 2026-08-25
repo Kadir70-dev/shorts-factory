@@ -1,0 +1,10 @@
+{
+  "sources": [
+    {
+      "claim": "Fixed-rate mortgage amortization applies a larger share of early payments to interest and a smaller share to principal, gradually reversing over the loan term",
+      "source": "Standard amortization mathematics (CFPB consumer mortgage education materials describe this structure)",
+      "url": "https://www.consumerfinance.gov/",
+      "type": "primary"
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d13_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Elon Musk's PayPal Payout Almost Wasn't Enough To Save Tesla",
+    "hook": "Elon Musk's PayPal windfall became fuel for two companies that were both under extreme pressure by two thousand eight.",
+    "description": "When eBay bought PayPal in 2002, Elon Musk walked away with roughly $165 million. He put nearly all of it into two new companies: Tesla and SpaceX. By 2008, both were almost out of cash at the same time, and Musk had to choose which one to save. Educational content only, not financial advice.",
+    "tags": [
+      "elon musk",
+      "paypal",
+      "tesla history",
+      "spacex history",
+      "startup funding",
+      "business risk",
+      "entrepreneurship"
+    ],
+    "hashtags": [
+      "#elonmusk",
+      "#tesla",
+      "#spacex",
+      "#business",
+      "#shorts"
+    ],
+    "thumbnail_text": "$165M BET"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Elon Musk's PayPal windfall became fuel for two companies that were both under extreme pressure by two thousand eight.",
+      "duration_sec": 6.66,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "paypal sale",
+        "ebay acquisition"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "man walking away from office building silhouette",
+        "visual_intent": "A lone figure walking away from a glass office tower at dusk, long shadow, cinematic",
+        "broll_keywords": [
+          "businessman walking away office",
+          "silhouette man leaving building",
+          "corporate exit dramatic"
+        ],
+        "decision_reason": "sets up the sale as an ending, not the real story"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "eBay acquired PayPal in two thousand two for one point five billion dollars, giving Musk a nine-figure payout.",
+      "duration_sec": 6.66,
+      "confidence": "probable",
+      "transition_in": "cut",
+      "keywords": [
+        "paypal ebay deal",
+        "musk payout"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "financial chart bars rising screen dark",
+        "visual_intent": "Glowing bar columns rising on a dark financial display, minimal cinematic render",
+        "broll_keywords": [
+          "financial chart bars screen",
+          "business data analytics monitor",
+          "stock deal numbers screen"
+        ],
+        "decision_reason": "figure widely reported near $165M; some outlets cite $180M, so hedged as probable"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "~$165M PAYOUT",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "narration": "He used much of that fortune to build SpaceX and finance Tesla instead of leaving it in safer assets.",
+      "duration_sec": 6.66,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "tesla founding",
+        "spacex founding"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_out",
+        "query": "rocket on launch pad early morning",
+        "visual_intent": "A rocket standing on a launch pad at dawn, mist rolling across the ground, wide cinematic shot",
+        "broll_keywords": [
+          "rocket launch pad dawn",
+          "electric car factory floor",
+          "startup garage workshop"
+        ],
+        "decision_reason": "the reinvestment turn"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "SpaceX suffered three failed launches before its fourth rocket reached orbit in September two thousand eight.",
+      "duration_sec": 6.66,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "2008 financial crisis",
+        "tesla near bankruptcy"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "none",
+        "query": "empty bank vault dark financial crisis",
+        "visual_intent": "A nearly empty industrial space, dim overhead light, a single figure checking a clipboard, tense",
+        "broll_keywords": [
+          "financial crisis empty office",
+          "2008 recession newspaper headline",
+          "empty factory floor dim light"
+        ],
+        "decision_reason": "the crisis beat: both bets failing simultaneously"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Tesla was also struggling to finance production during the financial crisis and needed another funding round.",
+      "duration_sec": 6.66,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "personal funding decision"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "hand hovering over two paths decision close up",
+        "visual_intent": "A close shot of a hand pausing between two open ledgers, warm desk light, tense stillness",
+        "broll_keywords": [
+          "hand hesitating decision desk",
+          "two open books choice",
+          "businessman thinking desk close up"
+        ],
+        "decision_reason": "the forced-choice tension beat"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "Both companies survived that year, but neither outcome was assured when Musk concentrated his capital in them.",
+      "duration_sec": 6.66,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "tesla spacex 2008 funding round"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "pan_lr",
+        "query": "rocket factory and car factory split screen concept wide",
+        "visual_intent": "Two industrial floors, one with a rocket frame, one with a car chassis, both under working light, wide cinematic",
+        "broll_keywords": [
+          "rocket assembly factory floor",
+          "electric car chassis assembly",
+          "factory workers night shift"
+        ],
+        "decision_reason": "the actual resolution, widely reported in Musk biographies and interviews"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "DAYS FROM ZERO",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "narration": "The PayPal exit did not end his risk. It financed a much larger one.",
+      "duration_sec": 6.66,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "tesla valuation",
+        "spacex valuation"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "rocket launching into sky success",
+        "visual_intent": "A rocket lifting off against a clear sky, camera tilting up, triumphant but restrained, cinematic",
+        "broll_keywords": [
+          "rocket launch success sky",
+          "electric car reveal event",
+          "company valuation chart rising"
+        ],
+        "decision_reason": "the payoff, kept intentionally non-specific since combined valuation shifts daily"
+      }
+    },
+    {
+      "id": "s8",
+      "narration": "One successful company became the bankroll for two uncertain experiments.",
+      "duration_sec": 6.66,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "long term risk",
+        "entrepreneurship lesson"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "zoom_in",
+        "query": "two paths converging light at end",
+        "visual_intent": "Two industrial pathways converging toward a bright exit, symbolic composition, cinematic",
+        "broll_keywords": [
+          "two paths converging light",
+          "factory exit bright light",
+          "success pathway symbolic"
+        ],
+        "decision_reason": "closing takeaway and CTA"
+      }
+    }
+  ]
+}

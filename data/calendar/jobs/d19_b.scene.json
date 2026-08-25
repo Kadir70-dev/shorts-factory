@@ -1,0 +1,88 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d19_b",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Gold Pays No Dividend, No Interest, Nothing. Investors Still Want It.",
+    "hook": "Gold pays no dividend. No interest. No cash flow at all.",
+    "description": "Gold's appeal as a 'safe haven' asset doesn't come from any income it generates — it generates none. It comes from being nobody else's liability: unlike a stock or a bond, owning gold doesn't depend on a company or government paying you back. That's why central banks and investors have leaned on it for centuries during currency instability and market stress. Educational content only, not financial advice.",
+    "tags": ["gold", "safe haven asset", "investing basics", "market volatility", "central banks", "portfolio diversification", "economics explained"],
+    "hashtags": ["#gold", "#investing", "#economics", "#markets", "#shorts"],
+    "thumbnail_text": "0% YIELD, STILL WANTED"
+  },
+  "fps": 60, "width": 1080, "height": 1920,
+  "scenes": [
+    {
+      "id": "s1", "narration": "Gold pays no dividend. No interest. No cash flow at all.",
+      "duration_sec": 3.8, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["gold investing", "no yield"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "gold bars stacked close up macro shine",
+        "visual_intent": "Macro shot of stacked gold bars catching hard light, still and heavy, no motion graphics needed",
+        "broll_keywords": ["gold bars stacked macro", "gold bullion close up", "precious metal bars shine"],
+        "decision_reason": "hook beat: the counterintuitive fact stated flat, hard cut"},
+      "overlays": [{"type": "stat", "text": "0% YIELD", "y": 0.18}]
+    },
+    {
+      "id": "s2", "narration": "So why do investors and entire central banks still hold billions of it?",
+      "duration_sec": 3.6, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["central bank gold reserves"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "pan_lr",
+        "query": "bank vault door heavy steel secure",
+        "visual_intent": "A heavy steel bank vault door slowly framed, weight and security implied",
+        "broll_keywords": ["bank vault door steel", "secure vault interior", "gold reserve vault"],
+        "decision_reason": "sets up the curiosity gap"}
+    },
+    {
+      "id": "s3", "narration": "Because a stock is a claim on a company's future profit. A bond is a promise from a borrower to pay you back. Both depend on someone else keeping their word.",
+      "duration_sec": 8.2, "confidence": "confirmed", "transition_in": "fade",
+      "keywords": ["counterparty risk", "financial assets"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "none",
+        "query": "stock certificate document contract signing",
+        "visual_intent": "A financial contract or stock certificate on a desk, formal and paper-based, contrasts with the physical gold shot",
+        "broll_keywords": ["contract document signing desk", "financial paperwork close up", "loan agreement paper"],
+        "decision_reason": "explains counterparty risk as the contrast concept, standard finance-education content"}
+    },
+    {
+      "id": "s4", "narration": "Gold isn't a promise from anyone. It's just there, physically, regardless of what any government or company does.",
+      "duration_sec": 6.4, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["gold no counterparty risk"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_out",
+        "query": "gold coins pile texture close up",
+        "visual_intent": "A pile of gold coins in raw texture, tactile and physical, camera pulling back slowly",
+        "broll_keywords": ["gold coins pile close up", "gold coin texture macro", "precious metal coins stack"],
+        "decision_reason": "the payoff turn: physicality as the actual value proposition"}
+    },
+    {
+      "id": "s5", "narration": "In nineteen seventy-one, the US even cut the dollar loose from gold entirely. Gold still didn't lose its appeal.",
+      "duration_sec": 5.6, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["nixon shock 1971", "gold standard end"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "none",
+        "query": "archival vintage news footage 1970s black white president",
+        "visual_intent": "Archival-feel black and white footage of a 1970s presidential address, film grain, historical weight",
+        "broll_keywords": ["archival 1970s news footage", "vintage television broadcast", "historical presidential address film"],
+        "decision_reason": "the 1971 end of dollar-gold convertibility (Nixon shock) is a well-corroborated, widely taught historical fact"}
+    },
+    {
+      "id": "s6b", "narration": "That's why it still holds its value when currencies wobble or markets panic. Not because it grows. Because it doesn't depend on anything else working.",
+      "duration_sec": 7.4, "confidence": "confirmed", "transition_in": "fade",
+      "keywords": ["market stress hedge", "currency instability"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "financial chart volatile market screen red green",
+        "visual_intent": "A volatile market chart swinging on screen, chaotic energy against the calm stillness of gold shots before",
+        "broll_keywords": ["volatile stock chart screen", "market crash chart red", "financial data screen chaos"],
+        "decision_reason": "visualizes market stress as the context where the safe-haven behavior shows up"}
+    },
+    {
+      "id": "s6", "narration": "It's the one asset whose value doesn't rely on anyone else's balance sheet. That's the whole appeal.",
+      "duration_sec": 6.2, "confidence": "confirmed", "transition_in": "cut",
+      "keywords": ["safe haven appeal", "gold summary"],
+      "visual": {"type": "broll", "strategy": "real", "scene_visual_type": "subtle", "motion": "ken_burns",
+        "query": "single gold bar spotlight dark background",
+        "visual_intent": "A single gold bar under a spotlight against total darkness, minimal and final",
+        "broll_keywords": ["gold bar spotlight dark", "single gold ingot lit", "gold bar dramatic lighting"],
+        "decision_reason": "closing image, sharp one-line takeaway"}
+    }
+  ]
+}

@@ -24,6 +24,26 @@ env:
   LAYERED_SUBJECT_MATTE: oval
   LAYERED_MIN_FREE_MB: "2000"
 
+  # ── Six-channel visual mix ───────────────────────────────────────────────
+  STORYBOARD_ENGINE_ENABLED: "1"
+  MULTI_SOURCE_ASSET_ENGINE_ENABLED: "1"
+  MOTION_GRAPHICS_ENGINE_ENABLED: "1"
+  THREEJS_VISUAL_ENGINE_ENABLED: "1"
+  AI_BROLL_ENGINE_ENABLED: "1"
+
+  # Three.js renders at PREVIEW resolution (360x640, upscaled by the renderer)
+  # rather than 1080x1920. This is a memory ceiling, not a speed preference, and
+  # raising the timeout does not help. Measured on a 4-core / 3.7 GB WSL box:
+  #
+  #   360x640    30 frames   13.2s   440 ms/frame   1395 MB RSS
+  #   1080x1920  30 frames   17.6s   588 ms/frame   2049 MB RSS
+  #   1080x1920 186 frames   >900s  (thrashing — 588 ms/frame predicts ~109s)
+  #
+  # The browser alone reaches 2 GB at full resolution, against 3.7 GB total, so a
+  # full-length beat swaps rather than renders. Set this to `final` on a host with
+  # 8 GB+ free; the pipeline reads it per render and nothing else changes.
+  THREEJS_QUALITY: preview
+
 # Explainers are concept-led, not character-led.
 character:
   name: ""

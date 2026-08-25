@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "dist-paperima",
+    "module": "ESNext",
+    "moduleResolution": "bundler"
+  },
+  "include": ["src/paperima/worker.ts"]
+}

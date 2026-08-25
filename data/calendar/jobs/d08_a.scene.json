@@ -1,0 +1,214 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d08_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "Gillette's Cheap-Razor Trick Wasn't Day-One Genius",
+    "hook": "Gillette didn't invent cheap razors and pricey blades on day one. Patents forced the wait.",
+    "description": "King Camp Gillette patented the disposable safety razor blade in 1904 and sold premium-priced razor sets while the patent held. Only after the patent expired in 1921, and rivals could copy the blade, did Gillette introduce a near-cost razor to lock in customers for its blades \u2014 the pricing strategy now taught in business schools.",
+    "tags": [
+      "gillette",
+      "razor and blades",
+      "business model",
+      "pricing strategy",
+      "business history"
+    ],
+    "hashtags": [
+      "#business",
+      "#pricingstrategy",
+      "#economics",
+      "#shorts"
+    ],
+    "thumbnail_text": "THE PATENT TWIST"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "Everyone credits Gillette for inventing cheap razors and expensive blades. That's not quite how it happened.",
+      "duration_sec": 4.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "gillette history",
+        "razor blade myth"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "vintage razor blade close up macro",
+        "visual_intent": "A vintage safety razor and blade on a wooden surface, dramatic side light, macro",
+        "broll_keywords": [
+          "vintage safety razor macro",
+          "old razor blade close up",
+          "classic shaving razor product"
+        ],
+        "decision_reason": "hook beat: correcting the popular myth"
+      }
+    },
+    {
+      "id": "s2",
+      "narration": "King Camp Gillette patented the disposable safety razor blade in nineteen-oh-four.",
+      "duration_sec": 5.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "patent 1904"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "old patent document paper archival",
+        "visual_intent": "An aged patent document with technical drawings, archival lighting, close pan",
+        "broll_keywords": [
+          "patent document archival close up",
+          "old technical drawing paper",
+          "vintage invention blueprint"
+        ],
+        "decision_reason": "patent filing fact"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "Patented 1904",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "narration": "For the next seventeen years, while the patent held, Gillette sold razor sets at a premium. Both pieces cost real money.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "premium pricing era"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "pan_lr",
+        "query": "cash register vintage store counter",
+        "visual_intent": "A vintage-style store counter with a cash register, warm sepia tone, archival feel",
+        "broll_keywords": [
+          "vintage cash register counter",
+          "old store counter archival",
+          "classic retail counter sepia"
+        ],
+        "decision_reason": "patent-protected premium pricing period, HBR-sourced"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "The patent expired in nineteen twenty-one. Competitors could finally copy the blade. That's when the strategy flipped.",
+      "duration_sec": 6.5,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "patent expiration 1921"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "dramatic",
+        "motion": "zoom_in",
+        "query": "factory workers assembly line vintage",
+        "visual_intent": "A vintage factory assembly line with workers, black and white documentary style",
+        "broll_keywords": [
+          "vintage factory assembly line",
+          "old manufacturing workers archival",
+          "factory production line history"
+        ],
+        "decision_reason": "patent expiration turning point"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "Gillette introduced a one-dollar razor, priced near cost, and let the blades you kept buying carry the margin.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "brownie razor",
+        "razor blade model"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "data_viz",
+        "motion": "zoom_out",
+        "query": "razor and blades product display",
+        "visual_intent": "A razor handle beside a stack of replacement blades, product-style lighting, clean composition",
+        "broll_keywords": [
+          "razor and blade refills display",
+          "shaving product lineup",
+          "razor cartridge refill pack"
+        ],
+        "decision_reason": "the low-cost razor / priced blades pivot, HBR-sourced"
+      },
+      "overlays": [
+        {
+          "type": "stat",
+          "text": "$1 razor \u2192 recurring blade sales",
+          "y": 0.18
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "narration": "The move locked in millions of shavers before a single competitor could undercut the razor price.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": [
+        "market lock-in"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "pan_lr",
+        "query": "crowd of people walking city street vintage",
+        "visual_intent": "A busy vintage city street with crowds walking, archival documentary tone",
+        "broll_keywords": [
+          "vintage city street crowd archival",
+          "busy sidewalk people walking old",
+          "historic street scene crowd"
+        ],
+        "decision_reason": "market-share consequence of the pivot"
+      }
+    },
+    {
+      "id": "s7",
+      "narration": "The 'give away the razor' idea wasn't the original genius. Reacting fast when protection ran out was.",
+      "duration_sec": 5.5,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": [
+        "closing takeaway"
+      ],
+      "visual": {
+        "type": "broll",
+        "strategy": "real",
+        "scene_visual_type": "subtle",
+        "motion": "none",
+        "query": "modern razor product close up clean",
+        "visual_intent": "A single modern razor on a plain background, clean studio light, still",
+        "broll_keywords": [
+          "modern razor product studio",
+          "clean razor close up",
+          "shaving product still life"
+        ],
+        "decision_reason": "closing reframe payoff"
+      }
+    }
+  ]
+}

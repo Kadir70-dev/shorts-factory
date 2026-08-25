@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkShortcutsWindow" id="shortcuts_window">
+    <child>
+      <object class="GtkShortcutsSection">
+        <property name="visible">true</property>
+        <property name="section-name">navigation</property>
+        <property name="title" translatable="yes" context="shortcuts window">Navigation Shortcuts</property>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="visible">true</property>
+            <property name="title" translatable="yes" context="shortcuts window">Play/Pause</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="title" translatable="yes" context="shortcuts window">Play/Pause</property>
+                <property name="accelerator">space</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="visible">true</property>
+            <property name="title" translatable="yes" context="shortcuts window">Keyframe seeker</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="title" translatable="yes" context="shortcuts window">Next</property>
+                <property name="accelerator">bracketright</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="title" translatable="yes" context="shortcuts window">Previous</property>
+                <property name="accelerator">bracketleft</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="visible">true</property>
+            <property name="title" translatable="yes" context="shortcuts window">Frame seeker</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="title" translatable="yes" context="shortcuts window">Next</property>
+                <property name="accelerator">period</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="title" translatable="yes" context="shortcuts window">Previous</property>
+                <property name="accelerator">comma</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="title" translatable="yes" context="shortcuts window">Jump forward</property>
+                <property name="accelerator">&lt;Shift&gt;greater</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="title" translatable="yes" context="shortcuts window">Jump backward</property>
+                <property name="accelerator">&lt;Shift&gt;less</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="title" translatable="yes" context="shortcuts window">Jump to end</property>
+                <property name="accelerator">&lt;Ctrl&gt;&lt;Shift&gt;greater</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="title" translatable="yes" context="shortcuts window">Jump to begin</property>
+                <property name="accelerator">&lt;Ctrl&gt;&lt;Shift&gt;less</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+	</child>  
+	<child>  
+      <object class="GtkShortcutsSection">
+        <property name="visible">true</property>
+        <property name="section-name">zoom</property>
+        <property name="title" translatable="yes" context="shortcuts window">Zoom Shortcuts</property>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="visible">true</property>
+            <property name="title" translatable="yes" context="shortcuts window">Canvas Zoom</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="title" translatable="yes" context="shortcuts window">Zoom In</property>
+                <property name="accelerator">&lt;Ctrl&gt;equal equal</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="title" translatable="yes" context="shortcuts window">Zoom Out</property>
+                <property name="accelerator">&lt;Ctrl&gt;minus minus</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="title" translatable="yes" context="shortcuts window">Zoom Fit</property>
+                <property name="accelerator">&lt;Ctrl&gt;0 0</property>
+              </object>
+            </child>			
+          </object>
+        </child>				
+      </object>
+    </child>
+  </object>
+</interface>

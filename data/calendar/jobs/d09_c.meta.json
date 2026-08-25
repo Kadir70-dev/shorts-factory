@@ -1,0 +1,30 @@
+{
+  "id": "d09_c",
+  "day": 9,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "How Visa and Mastercard make money without lending",
+  "sources": [
+    {
+      "claim": "Visa/Mastercard operate the payment network and earn network fees per transaction; issuing banks extend the actual credit and bear lending/default risk",
+      "source": "Standard payments-industry structure (Visa/Mastercard investor materials describe themselves as network operators, not card issuers or lenders)",
+      "url": "https://usa.visa.com/about-visa.html",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 7,
+    "us_relevance": 8,
+    "originality": 8,
+    "average": 8.14
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

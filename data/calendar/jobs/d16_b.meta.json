@@ -1,0 +1,30 @@
+{
+  "id": "d16_b",
+  "day": 16,
+  "slot": "B",
+  "category": "markets_economics_education",
+  "content_type": "evergreen",
+  "topic": "The bid-ask spread as a hidden, structural trading cost",
+  "sources": [
+    {
+      "claim": "The bid-ask spread is the gap between the highest buy offer and lowest sell offer and functions as an implicit trading cost",
+      "source": "SEC.gov investor education materials on market structure/bid-ask spread",
+      "url": "https://www.sec.gov/",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 7,
+    "us_relevance": 8,
+    "originality": 8,
+    "average": 8.14
+  },
+  "rewritten": false,
+  "disclaimer": "",
+  "status": "READY"
+}

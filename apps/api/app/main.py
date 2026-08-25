@@ -1,14 +1,17 @@
 """FastAPI app entry. Thin — all logic lives in routers + pipeline."""
 from __future__ import annotations
 
+import logging
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .config import log_provider_validation
+from .auth.repository import init_auth_db
+from .auth.security import initialize_signing_secret
+from .config import log_provider_validation, settings
 from .db import init_db
-from .routers import generate, jobs
+from .routers import auth, generate, jobs
 from .topic_intelligence.router import router as topic_intelligence_router
 
 
@@ -20,6 +23,12 @@ async def lifespan(app: FastAPI):
     from .topic_intelligence.repository import init_ti_db
 
     init_ti_db()
+    init_auth_db()
+    initialize_signing_secret()
+    if not settings().auth_required:
+        logging.warning(
+            "[auth] WARNING: AUTHENTICATION IS DISABLED; PROTECTED ROUTES ARE PUBLIC"
+        )
     log_provider_validation()       # non-fatal: warn on incomplete provider config
     yield
 
@@ -36,6 +45,7 @@ app.add_middleware(
 app.include_router(generate.router)
 app.include_router(jobs.router)
 app.include_router(topic_intelligence_router)
+app.include_router(auth.router)
 
 
 @app.get("/health")

@@ -1,0 +1,30 @@
+{
+  "id": "d22_c",
+  "day": 22,
+  "slot": "C",
+  "category": "money_mechanics_finance",
+  "content_type": "evergreen",
+  "topic": "How rewards credit cards are funded",
+  "sources": [
+    {
+      "claim": "Credit-card issuers earn interchange income on purchases, while interest and fees are issuer income and rewards are issuer costs",
+      "source": "Federal Reserve FEDS: Who Pays for Your Rewards?",
+      "url": "https://www.federalreserve.gov/econres/feds/files/2023007pap.pdf",
+      "type": "primary"
+    }
+  ],
+  "pronunciation_notes": [],
+  "quality_scores": {
+    "hook": 8,
+    "clarity": 9,
+    "retention": 8,
+    "fact_confidence": 9,
+    "visual_potential": 8,
+    "us_relevance": 9,
+    "originality": 8,
+    "average": 8.43
+  },
+  "rewritten": false,
+  "disclaimer": "Educational content only. Not financial advice.",
+  "status": "READY"
+}

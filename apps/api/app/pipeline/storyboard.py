@@ -14,8 +14,11 @@ still, not six. The FFmpeg Layer Composer (Phase 3) consumes scene.visual.layers
 """
 from __future__ import annotations
 
+import re
+
 from ..config import settings
-from ..schemas.scene import Layer, SceneGraph
+from ..schemas.scene import (Layer, Scene, SceneGraph, StoryboardData,
+                             StoryboardScene)
 from . import character as char
 
 # Small, anime-first FX palette per niche (loopable transparent assets in
@@ -25,8 +28,213 @@ from . import character as char
 _FX: dict[str, list[str]] = {
     "cybersecurity": ["scanlines.png", "glow.png", "grain.png"],
     "usa_history":   ["grain.png", "glow.png"],
+    # Fashion: film grain only. Editorial restraint — no scanlines/glow furniture
+    # over a garment; the fabric is the texture.
+    "fashion_luxury":  ["grain.png"],
+    "fashion_history": ["grain.png", "glow.png"],
     "default":       ["grain.png"],
 }
+
+_COMPANIES = (
+    "Apple", "Amazon", "Berkshire Hathaway", "BlackRock", "Costco", "Google",
+    "Goldman Sachs", "JPMorgan", "Meta", "Microsoft", "Morgan Stanley", "Nvidia",
+    "Tesla", "Walmart",
+)
+_LOCATIONS = (
+    "United States", "America", "New York", "Washington", "California", "Texas",
+    "Wall Street", "Silicon Valley", "Europe", "China", "Japan", "London",
+)
+_ENTITY_EXCLUDE = {
+    "A", "An", "And", "According", "But", "Follow", "For", "Here", "In",
+    "It", "Its", "That", "The", "This", "To", "What", "When", "Why",
+}
+_FINANCIAL = re.compile(
+    r"(?:[$€£¥]\s?\d[\d,]*(?:\.\d+)?(?:\s?(?:[KMBT]|million|billion|trillion))?"
+    r"|\b\d[\d,]*(?:\.\d+)?\s?(?:%|percent|basis points|bps|dollars?|euros?|"
+    r"pounds?|million|billion|trillion)\b)", re.IGNORECASE)
+_YEAR = re.compile(r"\b(1[5-9]\d{2}|20\d{2}|21\d{2})\b")
+
+
+def semantic_beats(narration: str, max_words: int = 22) -> list[str]:
+    """Split narration into readable semantic units without an LLM call."""
+    text = " ".join(narration.split()).strip()
+    if not text:
+        return []
+    sentences = re.split(r"(?<=[.!?;])\s+", text)
+    beats: list[str] = []
+    for sentence in sentences:
+        sentence = sentence.strip()
+        if not sentence:
+            continue
+        clauses = [sentence]
+        if len(sentence.split()) > max_words:
+            clauses = [part.strip() for part in re.split(
+                r"\s+(?:—|–)\s+|:\s+|,\s+(?=(?:but|while|because|yet|and then)\b)",
+                sentence, flags=re.IGNORECASE) if part.strip()]
+        for clause in clauses:
+            words = clause.split()
+            if len(words) <= max_words:
+                beats.append(clause)
+            else:
+                beats.extend(" ".join(words[i:i + max_words])
+                             for i in range(0, len(words), max_words))
+    # Avoid a dangling fragment created only by the hard word cap.
+    if len(beats) > 1 and len(beats[-1].split()) < 4:
+        beats[-2] = f"{beats[-2]} {beats[-1]}"
+        beats.pop()
+    return beats
+
+
+def _entities(text: str) -> list[str]:
+    found = re.findall(r"\b(?:[A-Z][A-Za-z&'.-]*)(?:\s+[A-Z][A-Za-z&'.-]*)*", text)
+    out: list[str] = []
+    for value in found:
+        value = value.strip(" .,'")
+        if value in _ENTITY_EXCLUDE or value in out:
+            continue
+        out.append(value)
+    return out
+
+
+def _company(text: str) -> str:
+    lower = text.lower()
+    return next((company for company in _COMPANIES if company.lower() in lower), "")
+
+
+def _location(text: str) -> str:
+    lower = text.lower()
+    return next((location for location in _LOCATIONS if location.lower() in lower), "")
+
+
+def _emotion(scene: Scene, beat: str) -> str:
+    role = scene.beat_role.lower()
+    text = beat.lower()
+    if role in ("hook", "tension") or any(word in text for word in ("crash", "urgent")):
+        return "urgent" if role == "hook" else "tense"
+    if role in ("reveal", "turn") or any(word in text for word in ("surpris", "actually")):
+        return "surprising"
+    if role in ("warning", "risk") or any(word in text for word in ("risk", "warning")):
+        return "cautionary"
+    if role in ("cta", "lesson", "close"):
+        return "confident"
+    if beat.rstrip().endswith("?"):
+        return "curious"
+    return "neutral"
+
+
+def _asset_priority_for_channel(channel: str) -> list[str] | None:
+    """Source order for a budget-allocated beat.
+
+    `official` and `stock` both resolve as real footage but must never draw from
+    the same pool: official leads with government and regulatory archives, stock
+    is support-only and never sees them. Deriving this from `strategy` alone
+    cannot express that difference, which is why the budget channel carries it.
+    """
+    # `asset_priority` is a fixed vocabulary of abstract TIERS, not provider
+    # names — the concrete provider order lives in asset_engine.source_priority().
+    # official and stock therefore share tiers here; what separates them is
+    # `visual.budget_channel`, which the resolver reads to decide whether the
+    # archive providers are in scope for the beat at all.
+    if channel in ("official", "stock"):
+        return ["exact_footage", "licensed_image", "branded_fallback"]
+    if channel == "threejs":
+        return ["local_graphics", "branded_fallback"]
+    if channel == "ai_broll":
+        return ["ai_recreation", "licensed_image", "branded_fallback"]
+    if channel == "charts":
+        return ["local_graphics", "exact_footage", "branded_fallback"]
+    if channel == "motion_gfx":
+        return ["local_graphics", "branded_fallback"]
+    return None
+
+
+def _asset_priority(strategy: str) -> list[str]:
+    if strategy == "dataviz":
+        return ["local_graphics", "exact_footage", "branded_fallback"]
+    if strategy == "motion_gfx":
+        return ["local_graphics", "branded_fallback"]
+    if strategy in ("ai_image", "ai_video", "hybrid"):
+        return ["ai_recreation", "exact_footage", "licensed_image",
+                "branded_fallback"]
+    if strategy == "branded":
+        return ["branded_fallback"]
+    return ["exact_footage", "licensed_image", "ai_recreation",
+            "branded_fallback"]
+
+
+def generate_semantic(graph: SceneGraph, decision_report) -> StoryboardData:
+    """Create validated beat metadata; never render, fetch, or mutate scenes."""
+    decisions = {decision.scene_id: decision for decision in decision_report.decisions}
+    result: list[StoryboardScene] = []
+    for scene in graph.scenes:
+        decision = decisions[scene.id]
+        beats = semantic_beats(scene.narration)
+        for index, beat in enumerate(beats, 1):
+            entities = _entities(beat)
+            company = _company(beat)
+            location = _location(beat)
+            year_match = _YEAR.search(beat)
+            numbers = list(dict.fromkeys(match.group(0) for match in _FINANCIAL.finditer(beat)))
+            # A beat can state a figure in words ("nearly a fifth") while the
+            # scene holds the real series. Three.js template mapping keys off
+            # `financial_numbers`, so without this a data-rich scene reads as
+            # having no numbers and silently loses its 3D treatment.
+            if not numbers and scene.data and scene.data.valid():
+                # "Finance 17", not "17". `_number()` still parses the value, and
+                # map_template builds its axis labels from these strings — with
+                # bare values the 3D chart labelled every bar with its own number
+                # repeated ("17 17") instead of naming the category.
+                numbers = [f"{point.label} {point.value:g}".strip()
+                           for point in scene.data.points]
+            primary = company or location or (entities[0] if entities else "")
+            secondary = [entity for entity in entities if entity != primary]
+            objective = scene.visual.visual_intent.strip()
+            if objective:
+                objective = f"{objective.rstrip('.')} — illustrate: {beat}"
+            else:
+                objective = f"Make the viewer understand: {beat}"
+            strategy = decision.strategy
+            channel = scene.visual.budget_channel
+            confidence = 0.45
+            confidence += 0.22 if decision.specific_subject else 0.0
+            confidence += 0.12 if primary else 0.0
+            confidence += 0.14 if numbers else 0.0
+            confidence += 0.07 if scene.visual.visual_intent.strip() else 0.0
+            result.append(StoryboardScene(
+                scene_id=f"{scene.id}.b{index}", source_scene_id=scene.id,
+                narration=beat,
+                duration_estimate=max(0.8, min(12.0, len(beat.split()) / 2.6)),
+                visual_objective=objective, primary_entity=primary,
+                secondary_entities=secondary, company=company, location=location,
+                year=int(year_match.group(1)) if year_match else None,
+                financial_numbers=numbers, emotion=_emotion(scene, beat),
+                recommended_visual_type=strategy,
+                recommended_camera_movement=scene.visual.motion,
+                motion_graphics_needed=(channel == "motion_gfx") if channel
+                else strategy in ("dataviz", "motion_gfx", "hybrid"),
+                # When the Visual Budget Manager has allocated this beat, IT is
+                # the authority on which channel may claim it. The heuristics
+                # below stay as the fallback for graphs that ran without a
+                # budget, but letting both decide produced beats that were
+                # simultaneously a Three.js candidate and an AI candidate — and
+                # then resolved as neither.
+                threejs_candidate=(channel == "threejs") if channel else bool(
+                    numbers or scene.visual.scene_visual_type == "abstract"
+                    or scene.beat_role.lower() == "mechanism"),
+                ai_broll_candidate=(channel == "ai_broll") if channel else bool(
+                    decision.ai_eligible and not decision.force_real),
+                asset_priority=(_asset_priority_for_channel(channel)
+                                or _asset_priority(strategy)),
+                transition=scene.transition_in if index == 1 else "cut",
+                # The figure usually lives in the stat overlay's `sub` ("2 WEEKS",
+                # "36 HOURS"), not its label. Dropping `sub` left every fashion
+                # beat looking numberless, so Three.js template mapping declined.
+                overlay_text=[text for overlay in scene.overlays
+                              for text in (overlay.text, getattr(overlay, "sub", ""))
+                              if text],
+                visual_confidence_score=min(1.0, confidence),
+            ))
+    return StoryboardData(scenes=result)
 
 
 def _hero_index(graph: SceneGraph) -> int:

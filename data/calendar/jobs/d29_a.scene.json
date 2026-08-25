@@ -1,0 +1,110 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "video_id": "vid_fin_d29_a",
+    "channel_id": "usa_finance",
+    "niche": "usa_finance",
+    "title": "LEGO Was $800M In Debt And Months From Bankruptcy",
+    "hook": "In 2003, LEGO was $800 million in debt and months from bankruptcy.",
+    "description": "By 2003 LEGO had expanded into theme parks, clothing lines and video games, lost nearly $300 million that year, and had $800 million in debt with sales down 30% over two years. New CEO Jorgen Vig Knudstorp diagnosed the problem as too little focus, not too little innovation — selling the theme parks and cutting the product catalog from 13,000 parts to about 7,000. By 2015, LEGO had passed Mattel as the world's most profitable toy company.",
+    "tags": ["lego", "business turnaround", "corporate failure", "business strategy", "business history", "company comeback"],
+    "hashtags": ["#lego", "#businesshistory", "#turnaround", "#shorts"],
+    "thumbnail_text": "$800M IN DEBT"
+  },
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "narration": "In two thousand three, LEGO was eight hundred million dollars in debt and months from bankruptcy.",
+      "duration_sec": 5.2,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["lego debt 2003", "near bankruptcy"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "colorful building blocks toy pieces close up",
+        "visual_intent": "Colorful plastic building blocks scattered on a table, macro close focus",
+        "broll_keywords": ["building blocks close up toy", "plastic bricks macro shot", "toy blocks pile colorful"],
+        "decision_reason": "hook beat: figure corroborated by multiple business-turnaround analyses (Art of the Brand, The Strategy Institute)"
+      },
+      "overlays": [{"type": "stat", "text": "$800M debt", "y": 0.18}]
+    },
+    {
+      "id": "s2",
+      "narration": "It wasn't a toy problem. LEGO had turned itself into a sprawling company: theme parks, clothing lines, video games, all at once.",
+      "duration_sec": 6.4,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["lego overexpansion"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "pan_lr",
+        "query": "theme park rollercoaster wide shot",
+        "visual_intent": "A theme park rollercoaster track against the sky, wide establishing shot",
+        "broll_keywords": ["theme park rollercoaster wide", "amusement park ride sky", "theme park attraction exterior"],
+        "decision_reason": "LEGOLAND theme park diversification, corroborated by multiple turnaround case studies"
+      }
+    },
+    {
+      "id": "s3",
+      "narration": "That same year the company lost nearly three hundred million dollars, and sales had fallen thirty percent over two years.",
+      "duration_sec": 6.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["lego 300 million loss"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "zoom_out",
+        "query": "financial chart declining bars red screen",
+        "visual_intent": "A declining bar chart on a dark financial screen, red emphasis on the drop",
+        "broll_keywords": ["declining bar chart red", "financial loss chart screen", "falling sales data graphic"],
+        "decision_reason": "2003 loss ~$300M and 30% sales drop over two years, per business-turnaround case analyses"
+      }
+    },
+    {
+      "id": "s4",
+      "narration": "In two thousand four, new CEO Jorgen Vig Knudstorp made a blunt diagnosis: the problem wasn't too little innovation. It was too little focus.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["knudstorp ceo 2004"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "dramatic", "motion": "zoom_in",
+        "query": "executive boardroom presentation serious",
+        "visual_intent": "A serious executive presenting at a boardroom table, focused corporate light",
+        "broll_keywords": ["boardroom presentation executive", "ceo meeting table serious", "corporate strategy meeting"],
+        "decision_reason": "Jorgen Vig Knudstorp became CEO in 2004, corroborated across multiple sources"
+      }
+    },
+    {
+      "id": "s5",
+      "narration": "He sold the theme parks, cut the clothing lines, and slashed the product catalog from thirteen thousand parts down to about seven thousand.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "cut",
+      "keywords": ["lego sku reduction"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "data_viz", "motion": "pan_lr",
+        "query": "warehouse shelves toy boxes sorted",
+        "visual_intent": "Warehouse shelving with product boxes being sorted or reduced, industrial light",
+        "broll_keywords": ["warehouse shelves boxes sorted", "inventory shelves industrial", "product boxes warehouse wide"],
+        "decision_reason": "SKU cut from 13,000 to 7,000, corroborated by multiple turnaround case studies"
+      }
+    },
+    {
+      "id": "s6",
+      "narration": "By twenty fifteen, LEGO had passed Mattel to become the world's most profitable toy company, built by making fewer things. Follow for more.",
+      "duration_sec": 7.0,
+      "confidence": "confirmed",
+      "transition_in": "fade",
+      "keywords": ["lego most profitable toy company"],
+      "visual": {
+        "type": "broll", "strategy": "real", "scene_visual_type": "real_footage", "motion": "zoom_in",
+        "query": "building blocks assembled structure colorful",
+        "visual_intent": "A completed colorful block structure, satisfying final composition, bright light",
+        "broll_keywords": ["assembled building blocks structure", "colorful brick creation close", "toy blocks final build"],
+        "decision_reason": "closing takeaway; 2015 milestone corroborated by multiple business press retrospectives"
+      }
+    }
+  ]
+}

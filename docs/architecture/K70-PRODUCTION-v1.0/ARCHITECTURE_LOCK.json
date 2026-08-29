@@ -1,0 +1,58 @@
+{
+  "status": "FROZEN",
+  "architecture_family": "K70",
+  "job": "k70_national_debt_ep01",
+  "discovered_working_layer_count": 14,
+  "version": "K70-PRODUCTION-v1.0",
+  "reference_master": "national_debt_14layer_preview_v3_pika_fullcaptions_clean.mp4",
+  "frozen_on": "2026-08-29",
+  "architecture_changes_require_explicit_user_authorization": true,
+  "semantic_rules": {
+    "AI_PIKA": "FEEL",
+    "CHARTS_DATA": "PROVE",
+    "SKETCH_VECTOR": "UNDERSTAND",
+    "REAL_FOOTAGE_DOCUMENTS": "TRUST"
+  },
+  "pika_system": "LOCKED",
+  "full_caption_system": "LOCKED",
+  "old_selective_captions": "DEPRECATED_FORBIDDEN",
+  "protected_masters": [
+    "national_debt_14layer_preview_v1.mp4",
+    "national_debt_14layer_preview_v2.mp4",
+    "national_debt_14layer_preview_v3.mp4",
+    "national_debt_14layer_preview_v3_pika.mp4",
+    "national_debt_14layer_preview_v3_pika_fullcaptions.mp4",
+    "national_debt_14layer_preview_v3_pika_fullcaptions_clean.mp4"
+  ],
+  "excluded_scope": [
+    "14layer_v4_audit",
+    "14layer_v4_pika_audit",
+    "14layer_v4_voice_package"
+  ],
+  "freeze_package_files": [
+    "ARCHITECTURE_FREEZE.md",
+    "WORKING_LAYERS.json",
+    "LAYER_DEPENDENCY_MAP.md",
+    "PIPELINE_MAP.md",
+    "LOCKED_COMPONENTS.md",
+    "DEPRECATED_COMPONENTS.md",
+    "CHANGE_POLICY.md",
+    "BASELINE_HASHES.json",
+    "ARCHITECTURE_LOCK.json",
+    "check_architecture_drift.py"
+  ],
+  "drift_validator": "architecture_freeze/check_architecture_drift.py",
+  "ruflo_coordination": {
+    "used": true,
+    "parent_task_id": "task-1788003311217-27cy13",
+    "stage_task_ids": {
+      "discovery": "task-1788003316965-57gxui",
+      "architecture_mapping": "task-1788003318807-hgop8h",
+      "dependency_mapping": "task-1788003320344-wdfx3x",
+      "validation": "task-1788003322414-3ak1eo",
+      "freeze_creation": "task-1788003324649-jg7h0c",
+      "hash_baseline": "task-1788003326149-rbkvef",
+      "final_verification": "task-1788003327761-0rdohd"
+    }
+  }
+}

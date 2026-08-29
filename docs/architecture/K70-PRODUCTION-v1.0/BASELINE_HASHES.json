@@ -1,0 +1,218 @@
+{
+ "version": "K70-PRODUCTION-v1.0",
+ "generated_by": "_compute_baseline_hashes.py",
+ "critical_scripts": {
+  "scripts/build_national_debt_documentary.py": {
+   "path": "scripts/build_national_debt_documentary.py",
+   "sha256": "e26d3aed4c044f9dfb01d406ede05a51da8f066840cc0d8854a1f235422923b9",
+   "size": 42178,
+   "mtime": 1787844923.6619997
+  },
+  "scripts/edit_national_debt_v2.py": {
+   "path": "scripts/edit_national_debt_v2.py",
+   "sha256": "ed4e312137b5f245098b9cae53be30ca9d7cd43850ff980f32d2459d9976b791",
+   "size": 17730,
+   "mtime": 1787853763.567559
+  },
+  "scripts/build_14layer_preview.py": {
+   "path": "scripts/build_14layer_preview.py",
+   "sha256": "8033f5f07f330f6de26a10f510fba27e9030e60e61826d761ed86b5b7e1f1e1d",
+   "size": 17084,
+   "mtime": 1787877482.151849
+  },
+  "scripts/build_14layer_v2.py": {
+   "path": "scripts/build_14layer_v2.py",
+   "sha256": "0bdd3df5c95b1675bd41f159866d706b9bdf14789edfac926ddcc31b883a4493",
+   "size": 8883,
+   "mtime": 1787914546.8643456
+  },
+  "scripts/build_14layer_v3_captions.py": {
+   "path": "scripts/build_14layer_v3_captions.py",
+   "sha256": "fe75091aaff2fe965d6e583e20097d5409ff47e0a55deaf801e46446f0a02f7f",
+   "size": 10615,
+   "mtime": 1787925905.2340977
+  },
+  "scripts/report_14layer.py": {
+   "path": "scripts/report_14layer.py",
+   "sha256": "bc5bb6b914f483cfd2f79981699e12b261de2c6b4aab8fe9449f955c2a307ecf",
+   "size": 12648,
+   "mtime": 1787877630.426954
+  },
+  "scripts/render_national_debt_sketch_v1.py": {
+   "path": "scripts/render_national_debt_sketch_v1.py",
+   "sha256": "6ddfc4ce4fdde60a6dfe801f31dbf538881123f843806603ce3b9bcb0ace8d51",
+   "size": 17185,
+   "mtime": 1787875928.1419215
+  },
+  "scripts/render_national_debt_vector_v3.py": {
+   "path": "scripts/render_national_debt_vector_v3.py",
+   "sha256": "98bd39212b5c0e05fb7ed29c2f62473493d5848eb5d7e4e67b5d6f361c6240ef",
+   "size": 13834,
+   "mtime": 1787865422.2591584
+  },
+  "scripts/render_national_debt_collage_v1.py": {
+   "path": "scripts/render_national_debt_collage_v1.py",
+   "sha256": "859d1c249c20645ff06d8ba89cd6f8131ba5db4fae862dd5de01fd827d23d910",
+   "size": 18634,
+   "mtime": 1787873491.2178063
+  },
+  "apps/api/app/pipeline/pure_code_engine.py": {
+   "path": "apps/api/app/pipeline/pure_code_engine.py",
+   "sha256": "48fe1eca491fb95bfa9b5ee6562d4c45607687a54fbbd4dde612b03d7dff60ad",
+   "size": 4720,
+   "mtime": 1787695043.3399272
+  },
+  "apps/api/app/pipeline/pure_code_director.py": {
+   "path": "apps/api/app/pipeline/pure_code_director.py",
+   "sha256": "6cda3e4eb632b70fa291e4166be4bf351f909f0d4deb5e10e8bedc7974d137de",
+   "size": 14743,
+   "mtime": 1787696902.3544123
+  },
+  "apps/api/app/pipeline/hft_threejs.py": {
+   "path": "apps/api/app/pipeline/hft_threejs.py",
+   "sha256": "1eb2812c3b1ee1f77f2ee495f65fa6ac9b4c53b772666e5ecec91d69517e4018",
+   "size": 4214,
+   "mtime": 1787697428.5981524
+  },
+  "apps/api/app/pipeline/broll.py": {
+   "path": "apps/api/app/pipeline/broll.py",
+   "sha256": "791b8aa31b0556df896872dc31b6cd64e2229119e43642c0167cecfb8b34b464",
+   "size": 69065,
+   "mtime": 1786899660.8134363
+  }
+ },
+ "job_local_scripts": {
+  "14layer_v3_pika/build_v3_pika.py": {
+   "path": "14layer_v3_pika/build_v3_pika.py",
+   "sha256": "5f0e47265ec668dd08a3087d5660183a12acdb7fc501d80fbebfef73c1adee46",
+   "size": 7227,
+   "mtime": 1787944733.7955377
+  },
+  "14layer_v3_pika/finalize_v3_pika.py": {
+   "path": "14layer_v3_pika/finalize_v3_pika.py",
+   "sha256": "d21bf59d367b2cd6ef30bea3bf6868e778a4e51e05b7ea7a1f5a40340b3c68f7",
+   "size": 4422,
+   "mtime": 1787947264.9023516
+  },
+  "14layer_v3_pika_fullcaptions/build_fullcaptions.py": {
+   "path": "14layer_v3_pika_fullcaptions/build_fullcaptions.py",
+   "sha256": "ccddb8c4e91528861f497c12360e67b540285745f178f26c8c5dbf0a5c673d97",
+   "size": 11837,
+   "mtime": 1788000313.2882125
+  },
+  "14layer_v3_pika_fullcaptions/build_fullcaptions_clean.py": {
+   "path": "14layer_v3_pika_fullcaptions/build_fullcaptions_clean.py",
+   "sha256": "0dbbce917817e2139eef2ac32f29a9823313def3b71230600df46692fd9e3ab8",
+   "size": 6199,
+   "mtime": 1788002047.7975929
+  }
+ },
+ "critical_manifests": {
+  "shot_manifest.json": {
+   "path": "shot_manifest.json",
+   "sha256": "bdf65d6a6ac6e0a0526bc8cc925e9fc223f3af073fa9a0de4a68e8163f91737a",
+   "size": 19560,
+   "mtime": 1787846358.7625053
+  },
+  "voiceover_manifest.json": {
+   "path": "voiceover_manifest.json",
+   "sha256": "1321cc64e0ac71f029300d6e900b57824198f1a8f03a724e7f4ed7badb82281b",
+   "size": 14555,
+   "mtime": 1787846358.764514
+  },
+  "data_manifest.json": {
+   "path": "data_manifest.json",
+   "sha256": "c1b8b5616864216a1fea7af69a92775cf6517f12b75761761018ba8047fe1f78",
+   "size": 6736,
+   "mtime": 1787846358.764514
+  },
+  "asset_manifest.json": {
+   "path": "asset_manifest.json",
+   "sha256": "9e4cd0941b3387fae385fcd1d9756e85df079ae7ef3a54e998bfdc8fbe2dec55",
+   "size": 745,
+   "mtime": 1787846358.764514
+  },
+  "music_manifest.json": {
+   "path": "music_manifest.json",
+   "sha256": "77d9da5b6467e3fb1529802ed78dcf7c87267454dd3d1ec7832454c2f2bf9d8d",
+   "size": 1698,
+   "mtime": 1787846358.764514
+  },
+  "sfx_manifest.json": {
+   "path": "sfx_manifest.json",
+   "sha256": "ebbb225befc91d78e6fd96c59b3aabb68d552bc167afe2031024868ca8936082",
+   "size": 9214,
+   "mtime": 1787846358.764514
+  },
+  "_v3_sfx_cues.json": {
+   "path": "_v3_sfx_cues.json",
+   "sha256": "7f97e851e4c082f3873f71be233188f0334903a619971921f145123be5dc3d73",
+   "size": 6919,
+   "mtime": 1787859838.9783368
+  },
+  "14layer_v3_pika/integration_manifest.json": {
+   "path": "14layer_v3_pika/integration_manifest.json",
+   "sha256": "7f330d16db1ed675f60416389217bab0d77d785d2624d715bb1b73b2a4935a86",
+   "size": 2535,
+   "mtime": 1787948043.1306453
+  },
+  "14layer_v3_pika_fullcaptions/fullcaptions_manifest.json": {
+   "path": "14layer_v3_pika_fullcaptions/fullcaptions_manifest.json",
+   "sha256": "0335aa97ab1b9aee2bee90f33a2068c40012608a51ce21229157a511c5993b26",
+   "size": 30873,
+   "mtime": 1788001097.0090258
+  },
+  "14layer_v3_pika_fullcaptions/fullcaptions_clean_manifest.json": {
+   "path": "14layer_v3_pika_fullcaptions/fullcaptions_clean_manifest.json",
+   "sha256": "7e7dfaebd533801b3c0b4f808a732ba11a52a07f6b84fcb75689e8646cf8c071",
+   "size": 31056,
+   "mtime": 1788002722.0480447
+  }
+ },
+ "protected_masters": {
+  "national_debt_14layer_preview_v1.mp4": {
+   "path": "national_debt_14layer_preview_v1.mp4",
+   "sha256": "03691c4595cf964854e1bfb10c635ec1129c662022e8440fbda96fadd980e832",
+   "size": 128347193,
+   "mtime": 1787882492.2831402
+  },
+  "national_debt_14layer_preview_v2.mp4": {
+   "path": "national_debt_14layer_preview_v2.mp4",
+   "sha256": "74ee9a4be2f96540f80388cf7b3490db16aef4348d103424fb88c3ef407f5f92",
+   "size": 124735527,
+   "mtime": 1787923192.086286
+  },
+  "national_debt_14layer_preview_v3.mp4": {
+   "path": "national_debt_14layer_preview_v3.mp4",
+   "sha256": "5c632942a5bbd80ed3139c9f83868cf978bc13b8794e3cb4eb54f95eb41e34ea",
+   "size": 135414186,
+   "mtime": 1787926467.297672
+  },
+  "national_debt_14layer_preview_v3_pika.mp4": {
+   "path": "national_debt_14layer_preview_v3_pika.mp4",
+   "sha256": "2f6ece1a80aecf776ab26e8200971aa6dbed958ae9e3df296881bb7349955d29",
+   "size": 131391610,
+   "mtime": 1787948042.942448
+  },
+  "national_debt_14layer_preview_v3_pika_fullcaptions.mp4": {
+   "path": "national_debt_14layer_preview_v3_pika_fullcaptions.mp4",
+   "sha256": "299d0c0a67006fdb47b9c4d89b908f993839e39d32fb963f7b5a3d225bd0feea",
+   "size": 172951159,
+   "mtime": 1788001096.1281936
+  },
+  "national_debt_14layer_preview_v3_pika_fullcaptions_clean.mp4": {
+   "path": "national_debt_14layer_preview_v3_pika_fullcaptions_clean.mp4",
+   "sha256": "17b0bdbde074701520b5f8432ba33bbf47323f11bd56e58a774f6dd3b6a27de3",
+   "size": 171215704,
+   "mtime": 1788002721.7898803
+  }
+ },
+ "freeze_docs": {
+  "WORKING_LAYERS.json": {
+   "path": "WORKING_LAYERS.json",
+   "sha256": "984cf22124f91445ba74ae0c970f0f10bcbd912a6002ddad46ce09fb9975f73a",
+   "size": 14575,
+   "mtime": 1788003666.133049
+  }
+ }
+}

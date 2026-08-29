@@ -135,6 +135,59 @@ Graphics shots now require a real semantic visualization (money flow, balance
 sheet, network/flow diagram) or the beat must be reclassified to a different
 shot type instead of falling back to a generic shape.
 
+## K70 Production Architecture
+
+**Version:** K70-PRODUCTION-v1.0 · **Status:** FROZEN · **Working Layers:** 14/14
+
+The 14-layer production architecture behind K70's long-form documentary pipeline
+was validated end-to-end against the working *National Debt* documentary
+(`data/jobs/k70_national_debt_ep01/`) and frozen at
+**[docs/architecture/K70-PRODUCTION-v1.0/](docs/architecture/K70-PRODUCTION-v1.0/)**
+(tracked reference copy; the live copy the render pipeline and drift validator
+actually run against lives alongside that job's own local, `.gitignore`d
+artifacts at `data/jobs/k70_national_debt_ep01/architecture_freeze/`).
+
+Frozen production systems (see `WORKING_LAYERS.json` for the full per-layer
+record — purpose, input, output, responsible script, dependencies, status):
+
+- **Timeline & compositing architecture** — shot sequencing/timing and the
+  cross-dissolve/overlay assembly that stitches every visual layer together
+  into the final render.
+- **Visual/render pipeline**, six engines behind seven layer slots:
+  - **CHART / DATA** — PURE_CODE counters, bar charts, comparison diagrams
+  - **THREE_JS** — spatial/3D diagrams
+  - **SKETCH**, **VECTOR**, **PAPER_COLLAGE** — episode-approved stylized
+    renderers for conceptual/thematic beats
+  - **Real footage / documentary assets** — sourced stock footage and real
+    document/photo stills
+  - **Pika cinematic integration** — approved AI video inserts, segment-replacing
+    a small, fixed set of windows over an already-composited base
+- **Narration** — TTS voiceover, the timing spine every other layer derives from
+- **Music / SFX** — chapter-aligned music beds and event-tied sound effects
+- **Continuous full-caption system** — the current, authoritative typography layer
+
+Semantic rules (preserved, not redesigned):
+
+| Layer family | Role |
+|---|---|
+| AI / Pika | **FEEL** |
+| Charts / data | **PROVE** |
+| Sketch / vector | **UNDERSTAND** |
+| Real footage / documents | **TRUST** |
+
+**Full-caption system:** 131 cues across 31/31 narrated shots (~99% narration
+coverage). The earlier 18-cue *selective* caption pass is **deprecated /
+forbidden** and must never automatically become the active caption layer again.
+
+**Architecture protection:** the freeze package (`ARCHITECTURE_LOCK.json`,
+`BASELINE_HASHES.json` — a 34-file SHA256 baseline — and
+`check_architecture_drift.py`) locks layer count, dependency definitions, and
+every critical script/manifest/protected master. Architecture-level changes
+(adding/removing/merging/reordering layers, changing rendering systems or
+visual semantics, reintroducing the deprecated caption pipeline) require
+explicit user authorization; episode-specific content changes (new footage,
+new chart data, new narration, new Pika clips within an existing layer) do not.
+
 ## Phase map
 - **P1** skeleton + schemas + infra ✅ (this repo)
 - **P2** Director engine (`app/director/`) — structured tool-use + repair loop

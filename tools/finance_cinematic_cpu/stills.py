@@ -147,9 +147,21 @@ def _cache_hit(prompt: str, seed: int) -> Path | None:
     return path if path.exists() else None
 
 
-async def _pollinations(prompt: str, seed: int) -> Path:
+FREE_LIMIT_RETRIES = 3          # the free 45s/IP window is shared by everything on the IP
+
+
+async def _pollinations(prompt: str, seed: int, *, retries: int = FREE_LIMIT_RETRIES,
+                        wait_sec: float = 50.0) -> Path:
+    """Existing free provider; on a free-tier 402 wait out the window and retry."""
     from app.pipeline.providers import _pollinations_image
-    return Path(await _pollinations_image(prompt, seed))
+    for attempt in range(retries + 1):
+        try:
+            return Path(await _pollinations_image(prompt, seed))
+        except RuntimeError as e:
+            if '402' not in str(e) or attempt == retries:
+                raise
+            await asyncio.sleep(wait_sec)
+    raise RuntimeError('unreachable')
 
 
 def resolve_stills(items: list[dict], episode_dir: Path, out_dir: Path, *,

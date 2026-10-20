@@ -195,3 +195,26 @@ def test_refinement_recorded_in_provenance_and_validated(tmp_path):
         with pytest.raises(EngineError, match='invalid refinement'):
             stills.resolve_stills([{'scene_id': 'a', 'query': 'orig'}], tmp_path, tmp_path/'o',
                                   generator=gen, refinements={'a': bad})
+
+
+def test_pollinations_wrapper_retries_only_free_limit(monkeypatch, tmp_path):
+    import asyncio
+    from app.pipeline import providers
+    calls = []
+
+    async def fake(prompt, seed):
+        calls.append(1)
+        if len(calls) < 3:
+            raise RuntimeError('pollinations unavailable after 13s (402 application/json)')
+        return str(tmp_path/'ok.jpg')
+    monkeypatch.setattr(providers, '_pollinations_image', fake)
+    assert asyncio.run(stills._pollinations('p', 1, wait_sec=0)).name == 'ok.jpg' and len(calls) == 3
+
+    async def down(prompt, seed):
+        calls.append(1)
+        raise RuntimeError('pollinations unavailable (503)')
+    monkeypatch.setattr(providers, '_pollinations_image', down)
+    calls.clear()
+    with pytest.raises(RuntimeError, match='503'):
+        asyncio.run(stills._pollinations('p', 1, wait_sec=0))
+    assert len(calls) == 1

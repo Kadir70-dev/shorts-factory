@@ -22,6 +22,7 @@ and preserves its exact duration. Breaking that rule desyncs the whole video.
 from __future__ import annotations
 
 import asyncio
+import functools
 import hashlib
 import json
 import subprocess
@@ -580,7 +581,7 @@ async def _finish(graph: SceneGraph, silent: Path, out: Path,
     # no OS argument-length ceiling on either platform.
     script = work / "filter_complex.txt"
     script.write_text(";".join(filters), encoding="utf-8")
-    await _ff(*inputs, "-/filter_complex", str(script), *maps,
+    await _ff(*inputs, _filter_script_flag(), str(script), *maps,
               "-c:v", "libx264", *_DELIVERY, "-pix_fmt", "yuv420p",
               "-fps_mode", "cfr", "-r", str(graph.fps), "-c:a", "aac",
               "-shortest", "-movflags", "+faststart", "-y", str(out))
@@ -685,6 +686,19 @@ def _env_expr(envelope) -> str:
 
 def _g(db: float) -> float:
     return round(10 ** (db / 20), 4)
+
+
+@functools.lru_cache(maxsize=1)
+def _filter_script_flag() -> str:
+    """`-/filter_complex <file>` needs FFmpeg 7+; 6.x reads the same file via
+    `-filter_complex_script` (deprecated in 7, removed later). Same filtergraph."""
+    try:
+        out = subprocess.run(["ffmpeg", "-version"], capture_output=True,
+                             text=True, timeout=10).stdout.split()
+        major = int(out[2].lstrip("n").split(".")[0])
+    except Exception:  # noqa: BLE001 — unknown build: keep the modern syntax
+        return "-/filter_complex"
+    return "-/filter_complex" if major >= 7 else "-filter_complex_script"
 
 
 async def _ff(*args: str) -> None:

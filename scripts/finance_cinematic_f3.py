@@ -33,6 +33,9 @@ def main():
     p.add_argument('--spacing-sec', type=float, default=25)
     p.add_argument('--width', type=int, default=640)
     p.add_argument('--fps', type=int, default=18)
+    p.add_argument('--variant', action='append', default=[], metavar='SCENE=N',
+                   help='force a new free generation with seed variant N (keeps provenance)')
+    p.add_argument('--refine', type=Path, help='JSON {scene_id: reviewed prompt}; original kept in provenance')
     p.add_argument('--out-video', type=Path, help='NEW full render; needs narration audio present')
     a = p.parse_args()
     from app.schemas.scene import SceneGraph
@@ -45,12 +48,20 @@ def main():
         p.error(f'{new_graph} exists; choose a fresh --out-dir')
     if a.out_video and (not a.render_clips or a.out_video.resolve().exists()):
         p.error('--out-video needs --render-clips and a path that does not exist yet')
+    variants = {}
+    for v in a.variant:
+        sid, _, n = v.partition('=')
+        if not n.isdigit() or not 1 <= int(n) <= 99:
+            p.error(f'bad --variant {v!r}; use SCENE=N with N in 1..99')
+        variants[sid] = int(n)
     graph = SceneGraph.model_validate_json(original.read_text(encoding='utf-8'))
     items = load_missing(a.missing)
     ok, skipped = eligible(graph, items, limit=a.limit)
     print(json.dumps({'eligible': [i['scene_id'] for i in ok], 'skipped': skipped}, indent=2))
     t0 = time.monotonic()
-    results = resolve_stills(ok, original.parent, out/'stills', generate=not a.no_generate)
+    results = resolve_stills(ok, original.parent, out/'stills', generate=not a.no_generate,
+                             variants=variants,
+                             refinements=json.loads(a.refine.read_text()) if a.refine else None)
     for r in results:
         print(f'{r.scene_id:6} {r.status:10} {r.elapsed_sec:6.1f}s {r.path or r.detail}')
     edited = graph_with_stills(graph, results)

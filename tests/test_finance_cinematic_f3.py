@@ -23,6 +23,7 @@ def _photo(path, size=(768, 1344)):
 
 @pytest.fixture(autouse=True)
 def _no_cache(monkeypatch):
+    monkeypatch.setattr(stills, '_LAST_CALL', {})
     monkeypatch.setattr(stills, '_cache_hit', lambda prompt, seed: None)
     monkeypatch.setattr(stills, 'full_prompt', lambda q: q + '. style')
 
@@ -81,8 +82,8 @@ def test_failed_or_placeholder_generation_is_not_attached(tmp_path):
         p = tmp_path/'flat.jpg'
         Image.new('RGB', (800, 1400), 'navy').save(p)
         return p
-    r1 = stills.resolve_stills([{'scene_id': 'a', 'query': 'q'}], tmp_path, tmp_path/'o1', generator=boom)
-    r2 = stills.resolve_stills([{'scene_id': 'a', 'query': 'q'}], tmp_path, tmp_path/'o2', generator=flat)
+    r1 = stills.resolve_stills([{'scene_id': 'a', 'query': 'q'}], tmp_path, tmp_path/'o1', generator=boom, min_interval_sec=0)
+    r2 = stills.resolve_stills([{'scene_id': 'a', 'query': 'q'}], tmp_path, tmp_path/'o2', generator=flat, min_interval_sec=0)
     assert r1[0].status == 'failed' and 'rate limited' in r1[0].detail
     assert r2[0].status == 'failed' and 'placeholder' in r2[0].detail
     g = _graph(_scene('a'))
@@ -109,3 +110,88 @@ def test_free_tier_calls_are_paced(tmp_path):
     stills.resolve_stills(items, tmp_path, tmp_path/'o', generator=gen,
                           min_interval_sec=50, sleep=waits.append)
     assert len(waits) == 2 and all(45 < w <= 50 for w in waits)
+
+
+# ---- hardening regressions -------------------------------------------------
+@pytest.mark.parametrize('bad', ['../x', 'a/b', '..', '', 'a b', 's1\x00', 'x' * 65, 7])
+def test_unsafe_scene_ids_rejected_everywhere(tmp_path, bad):
+    f = tmp_path/'m.json'
+    f.write_text(json.dumps([{'scene_id': bad, 'query': 'q'}]))
+    with pytest.raises(EngineError):
+        stills.load_missing(f)
+    with pytest.raises(EngineError, match='unsafe scene_id'):
+        stills.resolve_stills([{'scene_id': bad, 'query': 'q'}], tmp_path, tmp_path/'o',
+                              generator=lambda p, s: _photo(tmp_path/'g.jpg'))
+    ok, skipped = stills.eligible(_graph(_scene('a')), [{'scene_id': bad, 'query': 'q'}])
+    assert not ok and skipped[0]['reason'] == 'unsafe_scene_id'
+    assert not list(tmp_path.parent.glob('x*.jpg'))
+
+
+def test_unknown_and_duplicate_scene_ids_skipped():
+    items = [{'scene_id': 'ghost', 'query': 'q'}, {'scene_id': 'a', 'query': 'q'},
+             {'scene_id': 'a', 'query': 'q2'}]
+    ok, skipped = stills.eligible(_graph(_scene('a')), items)
+    assert [i['scene_id'] for i in ok] == ['a']
+    assert {(s['scene_id'], s['reason']) for s in skipped} == {
+        ('ghost', 'unknown_scene_id'), ('a', 'duplicate_scene_id')}
+
+
+@pytest.mark.parametrize('rel', ['../outside.jpg', '/abs/outside.jpg', 'link.jpg'])
+def test_suggested_file_outside_episode_is_never_recovered(tmp_path, rel):
+    ep = tmp_path/'ep'
+    ep.mkdir()
+    outside = _photo(tmp_path/'outside.jpg')
+    (ep/'link.jpg').symlink_to(outside)              # symlink escaping the episode dir
+    if rel.startswith('/abs'):
+        rel = str(outside)
+    calls = []
+    gen = lambda p, s: calls.append(s) or _photo(tmp_path/f'g{s}.jpg')
+    res = stills.resolve_stills([{'scene_id': 'a', 'query': 'q', 'suggested_file': rel}],
+                                ep, tmp_path/'o', generator=gen, min_interval_sec=0)
+    assert res[0].status == 'generated' and len(calls) == 1
+    assert stills.inside(ep, rel) is None
+
+
+def test_suggested_file_inside_episode_still_recovered(tmp_path):
+    ep = tmp_path/'ep'
+    (ep/'assets').mkdir(parents=True)
+    _photo(ep/'assets/a.jpg')
+    res = stills.resolve_stills([{'scene_id': 'a', 'query': 'q', 'suggested_file': 'assets/../assets/a.jpg'}],
+                                ep, tmp_path/'o', generator=lambda p, s: 1/0)
+    assert res[0].status == 'recovered'
+
+
+def test_variant_forces_new_image_and_keeps_provenance_history(tmp_path):
+    gen = lambda p, s: _photo(tmp_path/f'g{s}.jpg', (768 + s % 7, 1344))
+    item = [{'scene_id': 'a', 'query': 'q'}]
+    first = stills.resolve_stills(item, tmp_path, tmp_path/'o', generator=gen, min_interval_sec=0)
+    second = stills.resolve_stills(item, tmp_path, tmp_path/'o', generator=gen, min_interval_sec=0,
+                                   variants={'a': 1})
+    assert second[0].status == 'generated' and second[0].variant == 1
+    assert second[0].seed != first[0].seed and second[0].path.endswith('a.v1.jpg')
+    assert Path(first[0].path).is_file()              # original still kept
+    prov = json.loads((tmp_path/'o/provenance.json').read_text())['stills']
+    assert [(x['variant'], x['status']) for x in prov] == [(0, 'generated'), (1, 'generated')]
+
+
+def test_pacing_spans_separate_calls_and_failures_keep_variant(tmp_path):
+    waits = []
+    gen = lambda p, s: _photo(tmp_path/f'g{s}.jpg')
+    stills.resolve_stills([{'scene_id': 'a', 'query': 'q'}], tmp_path, tmp_path/'o',
+                          generator=gen, min_interval_sec=50, sleep=waits.append)
+    res = stills.resolve_stills([{'scene_id': 'b', 'query': 'q'}], tmp_path, tmp_path/'o',
+                                generator=lambda p, s: 1/0, min_interval_sec=50,
+                                sleep=waits.append, variants={'b': 3})
+    assert len(waits) == 1 and res[0].status == 'failed' and res[0].variant == 3
+
+
+def test_refinement_recorded_in_provenance_and_validated(tmp_path):
+    gen = lambda p, s: _photo(tmp_path/f'g{s}.jpg')
+    res = stills.resolve_stills([{'scene_id': 'a', 'query': 'orig'}], tmp_path, tmp_path/'o',
+                                generator=gen, min_interval_sec=0, variants={'a': 1},
+                                refinements={'a': 'still life chain on black velvet, no people'})
+    assert res[0].original_query == 'orig' and 'velvet' in res[0].prompt
+    for bad in ('short', 'historical photograph of the vault'):
+        with pytest.raises(EngineError, match='invalid refinement'):
+            stills.resolve_stills([{'scene_id': 'a', 'query': 'orig'}], tmp_path, tmp_path/'o',
+                                  generator=gen, refinements={'a': bad})

@@ -13,6 +13,7 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import json
+import re
 import time
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -26,6 +27,8 @@ PAID_PROVIDERS = ('google_ai', 'huggingface', 'comfyui_remote')
 MIN_SHORT_SIDE = 512
 MIN_LUMA_STDDEV = 12.0          # rejects flat/blank plates and solid placeholders
 MAX_STILLS = 24
+_LAST_CALL: dict[str, float] = {}     # provider -> monotonic time, process-wide
+SCENE_ID_RE = re.compile(r'^[A-Za-z0-9_-]{1,64}$')
 FREE_MIN_INTERVAL_SEC = {'pollinations': 50.0}   # free tier: 1 image / 45s / IP
 
 
@@ -40,6 +43,8 @@ class StillResult:
     detail: str = ''
     sha256: str | None = None
     elapsed_sec: float = 0.0
+    variant: int = 0
+    original_query: str | None = None    # set when a reviewed refinement replaced it
 
 
 def load_missing(path: Path) -> list[dict]:
@@ -49,7 +54,26 @@ def load_missing(path: Path) -> list[dict]:
     for it in items:
         if not isinstance(it, dict) or not it.get('scene_id') or not it.get('query'):
             raise EngineError('each missing item needs scene_id and query')
+        if not isinstance(it['scene_id'], str) or not SCENE_ID_RE.match(it['scene_id']):
+            raise EngineError(f'unsafe scene_id {it["scene_id"]!r}')
+        if not isinstance(it['query'], str):
+            raise EngineError('query must be a string')
     return items
+
+
+def safe_scene_id(sid: Any) -> str:
+    if not isinstance(sid, str) or not SCENE_ID_RE.match(sid):
+        raise EngineError(f'unsafe scene_id {sid!r}')
+    return sid
+
+
+def inside(base: Path, rel: Any) -> Path | None:
+    """Resolve a relative path under base (symlinks followed); None if it escapes."""
+    if not isinstance(rel, str) or not rel or Path(rel).is_absolute():
+        return None
+    root = Path(base).resolve()
+    cand = (root / rel).resolve()
+    return cand if cand.is_relative_to(root) else None
 
 
 def eligible(graph: Any, items: list[dict], *, limit: int = 8) -> tuple[list[dict], list[dict]]:
@@ -58,11 +82,18 @@ def eligible(graph: Any, items: list[dict], *, limit: int = 8) -> tuple[list[dic
         raise EngineError(f'limit must be 1..{MAX_STILLS}')
     report = select_scenes(graph, max_clips=20, spacing_sec=0)
     reasons = {x['scene_id']: x['reason'] for x in report['skipped']}
-    ok, skipped = [], []
+    known = {scene.id for scene in graph.scenes}
+    ok, skipped, seen = [], [], set()
     for it in items:
-        sid = it['scene_id']
+        sid = it.get('scene_id')
         reason = reasons.get(sid)
-        if reason not in (None, 'missing_or_unsupported_source_still', 'clip_budget_or_spacing'):
+        if not isinstance(sid, str) or not SCENE_ID_RE.match(sid):
+            skipped.append({'scene_id': str(sid)[:64], 'reason': 'unsafe_scene_id'})
+        elif sid not in known:
+            skipped.append({'scene_id': sid, 'reason': 'unknown_scene_id'})
+        elif sid in seen:
+            skipped.append({'scene_id': sid, 'reason': 'duplicate_scene_id'})
+        elif reason not in (None, 'missing_or_unsupported_source_still', 'clip_budget_or_spacing'):
             skipped.append({'scene_id': sid, 'reason': reason})
         elif any(t in it['query'].lower() for t in UNSAFE_TERMS):
             skipped.append({'scene_id': sid, 'reason': 'prompt_requests_authentic_material'})
@@ -70,6 +101,7 @@ def eligible(graph: Any, items: list[dict], *, limit: int = 8) -> tuple[list[dic
             skipped.append({'scene_id': sid, 'reason': 'batch_limit'})
         else:
             ok.append(it)
+            seen.add(sid)
     return ok, skipped
 
 
@@ -79,8 +111,9 @@ def full_prompt(query: str) -> str:
     return f'{query.strip()}. {AI_IMAGE_STYLE}. Avoid: {AI_IMAGE_NEGATIVE}.'.strip('. ')
 
 
-def seed_for(scene_id: str, query: str) -> int:
-    return int(hashlib.sha256(f'{scene_id}:{query}'.encode()).hexdigest()[:8], 16) % 1_000_000
+def seed_for(scene_id: str, query: str, variant: int = 0) -> int:
+    key = f'{scene_id}:{query}' + (f':v{variant}' if variant else '')
+    return int(hashlib.sha256(key.encode()).hexdigest()[:8], 16) % 1_000_000
 
 
 def validate_still(path: Path) -> str | None:
@@ -123,7 +156,9 @@ def resolve_stills(items: list[dict], episode_dir: Path, out_dir: Path, *,
                    generate: bool = True, provider: str = 'pollinations',
                    generator: Callable[[str, int], Any] | None = None,
                    min_interval_sec: float | None = None,
-                   sleep: Callable[[float], None] = time.sleep) -> list[StillResult]:
+                   sleep: Callable[[float], None] = time.sleep,
+                   variants: dict[str, int] | None = None,
+                   refinements: dict[str, str] | None = None) -> list[StillResult]:
     """Recover or generate one still per item into out_dir/<scene_id>.jpg."""
     if provider in PAID_PROVIDERS:
         raise EngineError(f'{provider} is billed; show cost estimate and get approval first')
@@ -131,30 +166,43 @@ def resolve_stills(items: list[dict], episode_dir: Path, out_dir: Path, *,
         raise EngineError(f'unknown provider {provider!r}')
     gen = generator or _pollinations
     gap = FREE_MIN_INTERVAL_SEC.get(provider, 0.0) if min_interval_sec is None else min_interval_sec
-    last_call: float | None = None
-    out_dir = Path(out_dir)
+    variants, refinements = variants or {}, refinements or {}
+    out_dir = Path(out_dir).resolve()
     out_dir.mkdir(parents=True, exist_ok=True)
     results = []
     for it in items:
-        sid, query = it['scene_id'], it['query']
-        prompt, seed = full_prompt(query), seed_for(sid, query)
-        target = out_dir / f'{sid}.jpg'
+        sid, query = safe_scene_id(it.get('scene_id')), it['query']
+        original = None
+        if sid in refinements:                 # reviewed wording; same visual intent
+            refined = refinements[sid]
+            if not isinstance(refined, str) or not 10 <= len(refined) <= 600 \
+                    or any(t in refined.lower() for t in UNSAFE_TERMS):
+                raise EngineError(f'invalid refinement for {sid}')
+            original, query = query, refined.strip()
+        variant = int(variants.get(sid, 0))
+        prompt, seed = full_prompt(query), seed_for(sid, query, variant)
+        target = out_dir / (f'{sid}.v{variant}.jpg' if variant else f'{sid}.jpg')
+        if not target.parent == out_dir:
+            raise EngineError(f'output path escapes {out_dir}')
         started = time.monotonic()
         src, how = None, None
-        suggested = it.get('suggested_file')
-        for cand in ([episode_dir / suggested] if suggested else []) + [target]:
+        suggested = inside(episode_dir, it.get('suggested_file')) if it.get('suggested_file') else None
+        # A forced variant must produce a NEW image, so skip local recovery for it.
+        local = [] if variant else ([suggested] if suggested else []) + [target]
+        for cand in local:
             if validate_still(cand) is None:
                 src, how = cand, 'recovered'
                 break
         if src is None and (hit := _cache_hit(prompt, seed)) and validate_still(hit) is None:
             src, how = hit, 'recovered'
         if src is None and not generate:
-            results.append(StillResult(sid, 'skipped', None, None, prompt, seed, 'generation disabled'))
+            results.append(StillResult(sid, 'skipped', None, None, prompt, seed, 'generation disabled', variant=variant, original_query=original))
             continue
         if src is None:
+            last_call = _LAST_CALL.get(provider)
             if last_call is not None and (wait := gap - (time.monotonic() - last_call)) > 0:
                 sleep(wait)                       # respect free-tier rate limit
-            last_call = time.monotonic()
+            _LAST_CALL[provider] = time.monotonic()
             try:
                 src = Path(asyncio.run(gen(prompt, seed)) if asyncio.iscoroutinefunction(gen)
                            else gen(prompt, seed))
@@ -162,12 +210,12 @@ def resolve_stills(items: list[dict], episode_dir: Path, out_dir: Path, *,
             except Exception as e:  # noqa: BLE001
                 results.append(StillResult(sid, 'failed', None, provider, prompt, seed,
                                            f'{type(e).__name__}: {str(e)[:160]}',
-                                           elapsed_sec=round(time.monotonic()-started, 2)))
+                                           elapsed_sec=round(time.monotonic()-started, 2), variant=variant, original_query=original))
                 continue
         bad = validate_still(src)
         if bad:
             results.append(StillResult(sid, 'failed', None, provider, prompt, seed, f'rejected:{bad}',
-                                       elapsed_sec=round(time.monotonic()-started, 2)))
+                                       elapsed_sec=round(time.monotonic()-started, 2), variant=variant, original_query=original))
             continue
         if src.resolve() != target.resolve():
             with Image.open(src) as im:
@@ -175,15 +223,23 @@ def resolve_stills(items: list[dict], episode_dir: Path, out_dir: Path, *,
         results.append(StillResult(sid, how, str(target.resolve()),
                                    provider if how == 'generated' else 'local',
                                    prompt, seed, sha256=_sha(target),
-                                   elapsed_sec=round(time.monotonic()-started, 2)))
+                                   elapsed_sec=round(time.monotonic()-started, 2),
+                                   variant=variant, original_query=original))
     write_provenance(results, out_dir / 'provenance.json')
     return results
 
 
 def write_provenance(results: list[StillResult], path: Path) -> None:
+    """Append-only history: earlier entries (e.g. replaced variants) are kept."""
+    path = Path(path)
+    old = json.loads(path.read_text(encoding='utf-8')).get('stills', []) if path.exists() else []
+    new = [asdict(r) for r in results]
+    keep = [o for o in old if (o.get('scene_id'), o.get('seed'), o.get('status'))
+            not in {(n['scene_id'], n['seed'], n['status']) for n in new}]
     data = {'engine': 'finance_cinematic_f3', 'ai_generated_illustration': True,
-            'note': 'AI-generated illustrative stills; not archival photographs or evidence.',
-            'stills': [asdict(r) for r in results]}
+            'note': 'AI-generated illustrative stills; not archival photographs or evidence. '
+                    'Provider marks are left intact per provider terms.',
+            'stills': keep + new}
     Path(path).write_text(json.dumps(data, indent=2), encoding='utf-8')
 
 

@@ -33,8 +33,11 @@ stock just to meet an automatic visual quota would make a worse documentary.
    graph SHA256 fingerprint, plus a readable Markdown full-film review.
 6. **Optional revised copy:** with an explicit flag, creates a NEW SceneGraph
    that adjusts only eligible cut -> crossfade transitions on unrendered,
-   asset-free scenes. Refuses existing narration audio, captions, SFX, resolved
-   footage/layers, mismatching/stale plans. Always keeps 3D/AI video/chart types.
+   asset-free scenes and promotes *fallback text/solid cards* carrying sourced
+   numeric points into the existing dataviz engine. A named source alone is not
+   independently verified: authors must verify numbers. Refuses existing audio,
+   captions, SFX, rendered provenance, resolved footage/layers or stale plans.
+   Keeps authored 3D, AI video, actual footage and existing charts untouched.
 
 **P3 does NOT:** inspect actual video pixels, create 3D or AI content, fetch
 source evidence, rewrite narration, replace footage, bypass the existing visual
@@ -62,7 +65,9 @@ source graph, never starts a render, and does not need any Claude API key.
       --out-dir data/finance_p3/new_episode_cut_v1 \
       --apply-transitions-to-copy
 
-Adds a third output: scene_graph_editorial_copy.json.
+Adds a third output: scene_graph_editorial_copy.json. The only visual
+changes allowed are sourced-data fallback cards -> existing dataviz type.
+Other visual improvements stay proposals pending real evidence/asset review.
 
 The copy is still **not a finished documentary**. Have a human reviewer approve
 cut points before handing the copy to the existing (frozen) storyboarding,

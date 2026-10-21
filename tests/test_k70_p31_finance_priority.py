@@ -47,37 +47,64 @@ def test_scope_ignores_shorts_other_niches_and_portrait():
     assert prio.authored_chart_ids(sample_graph()) == set()
 
 
-def test_known_bitcoin_ep01_metadata_is_explicitly_whitelisted_but_other_history_is_not():
-    source = json.loads((ROOT / "data/series/bitcoin_history/ep01/scene_graph.json").read_text())
-    assert source["meta"]["niche"] == "usa_history"
-    assert source["meta"]["channel_id"] == "k70_history"
-    assert source["width"] == 1080 and source["height"] == 1920
-    assert len(source["scenes"]) == 156
-    assert prio.is_legacy_bitcoin_history(source["meta"], 156)
-    legacy = Obj(meta=Obj(**source["meta"]),
-                 scenes=[Obj(duration_sec=row["duration_sec"]) for row in source["scenes"]],
-                 width=source["width"], height=source["height"])
+def test_bitcoin_f4_p0_job_metadata_changes_but_narrative_fingerprint_is_stable():
+    baseline = json.loads((ROOT / "data/series/bitcoin_history/ep01/scene_graph.json").read_text())
+    voiced = copy.deepcopy(baseline)
+    assert prio.is_legacy_bitcoin_history(baseline["meta"], 156)
+    assert prio.is_bitcoin_episode_content(baseline["scenes"])
+    # Simulate real local F4 and voiced P0 files: job-specific metadata and two
+    # altered voiceover lines; neither is a different 156-beat film.
+    baseline["meta"].update(video_id="finance_history_ep01_f4",
+                            niche="usa_history",
+                            channel_id="k70_finance_longform",
+                            title="Bitcoin Episode 1 — Authored F4")
+    voiced["meta"].update(video_id="k70_f4_bitcoin_ep01",
+                          niche="usa_history",
+                          channel_id="legacy_documentary_job",
+                          title="F4 premium Bitcoin documentary")
+    voiced["scenes"][29]["narration"] = "A race sharply higher."
+    voiced["scenes"][125]["narration"] = (
+        "Within weeks the central bank would print an one hundred trillion dollar note.")
+    assert prio.is_bitcoin_episode_content(baseline["scenes"])
+    assert prio.is_bitcoin_episode_content(voiced["scenes"])
+    legacy = Obj(meta=Obj(**voiced["meta"]),
+                 scenes=[Obj(id=row["id"], narration=row["narration"],
+                             duration_sec=row["duration_sec"]) for row in voiced["scenes"]],
+                 width=1080, height=1920)
     assert prio.is_finance_longform(legacy)
-    assert repair.inspect(source, source, ROOT)["scope"] == "legacy_bitcoin_history_ep01"
-
-    # Same label and portrait are NOT sufficient for the exception.
-    unrelated = copy.deepcopy(source)
-    unrelated["meta"]["video_id"] = "unrelated_history_episode"
-    assert not prio.is_legacy_bitcoin_history(unrelated["meta"], 156)
-    with pytest.raises(ValueError, match="only usa_finance"):
-        repair.inspect(unrelated, unrelated, ROOT)
-
-    renamed = copy.deepcopy(source)
-    renamed["meta"]["title"] = "Unrelated history episode"
-    assert not prio.is_legacy_bitcoin_history(renamed["meta"], 156)
+    report = repair.inspect(baseline, voiced, ROOT)
+    assert report["scope"] == "legacy_bitcoin_history_ep01"
+    assert report["total_scenes"] == 156
+    assert all(item["scene_id"] not in ("s30", "s126")
+               for item in report["lost_sourced_charts"])
 
 
-def test_baseline_must_belong_to_same_film():
-    source = json.loads((ROOT / "data/series/bitcoin_history/ep01/scene_graph.json").read_text())
-    other = copy.deepcopy(source)
-    other["meta"]["video_id"] = "another_video"
+def test_unrelated_history_content_does_not_gain_finance_repair_access():
+    original = json.loads((ROOT / "data/series/bitcoin_history/ep01/scene_graph.json").read_text())
+    unrelated = copy.deepcopy(original)
+    # Metadata is not an identity proof; changing narrative identity must
+    # reject even if the name, channel and number of scenes remain similar.
+    for i in (34, 66, 81, 125):
+        unrelated["scenes"][i]["narration"] = "Unrelated history topic."
+    assert not prio.is_bitcoin_episode_content(unrelated["scenes"])
+    with pytest.raises(ValueError, match="not an identified K70 Bitcoin"):
+        repair.inspect(original, unrelated, ROOT)
+
+    # A mismatched baseline with the right scene IDs is not sufficient.
+    with pytest.raises(ValueError, match="not an identified K70 Bitcoin"):
+        repair.inspect(unrelated, original, ROOT)
+
+
+def test_standard_finance_jobs_still_need_matching_video_ids():
+    names = [f"s{i}" for i in range(1, 31)]
+    meta = {"video_id": "test_finance_film", "niche": "usa_finance"}
+    original = {"meta": copy.deepcopy(meta),
+                "scenes": [p0_scene(id) for id in names]}
+    voiced = {"meta": {"video_id": "different_film", "niche": "usa_finance"},
+              "scenes": copy.deepcopy(original["scenes"]), "width": 640, "height": 360}
     with pytest.raises(ValueError, match="same video ID"):
-        repair.inspect(other, source, ROOT)
+        repair.inspect(original, voiced, ROOT)
+
 
 
 def test_explicit_source_backed_chart_only():

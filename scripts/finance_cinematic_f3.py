@@ -17,6 +17,7 @@ REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(REPO/'apps'/'api'))
 from tools.finance_cinematic_cpu.auto import auto_apply, select_scenes
+from tools.finance_cinematic_cpu.p0 import spread_items
 from tools.finance_cinematic_cpu.stills import (eligible, graph_with_stills, load_missing,
                                                 resolve_stills)
 
@@ -30,6 +31,8 @@ def main():
     p.add_argument('--no-generate', action='store_true', help='recover local stills only')
     p.add_argument('--render-clips', action='store_true', help='run F1/F2 on recovered stills')
     p.add_argument('--max-clips', type=int, default=8)
+    p.add_argument('--balanced', action='store_true',
+                   help='P0: spread eligible new AI stills across the entire episode')
     p.add_argument('--spacing-sec', type=float, default=25)
     p.add_argument('--width', type=int, default=640)
     p.add_argument('--fps', type=int, default=18)
@@ -56,7 +59,16 @@ def main():
         variants[sid] = int(n)
     graph = SceneGraph.model_validate_json(original.read_text(encoding='utf-8'))
     items = load_missing(a.missing)
-    ok, skipped = eligible(graph, items, limit=a.limit)
+    if a.balanced:
+        # First validate all candidates with unchanged F3 safety rules, then
+        # distribute the requested batch across the FULL timeline.
+        all_ok, skipped = eligible(graph, items, limit=24)
+        ok = spread_items(graph, all_ok, limit=a.limit)
+        picked = {item['scene_id'] for item in ok}
+        skipped += [{'scene_id': item['scene_id'], 'reason': 'balanced_batch_limit'}
+                    for item in all_ok if item['scene_id'] not in picked]
+    else:
+        ok, skipped = eligible(graph, items, limit=a.limit)
     print(json.dumps({'eligible': [i['scene_id'] for i in ok], 'skipped': skipped}, indent=2))
     t0 = time.monotonic()
     results = resolve_stills(ok, original.parent, out/'stills', generate=not a.no_generate,

@@ -22,7 +22,7 @@ Read-only review:
 
     .venv/bin/python scripts/k70_p31_evidence_repair.py \
       --graph data/finance_p0/cinematic_balanced/scene_graph_p0.json \
-      --baseline data/series/bitcoin_history/ep01/scene_graph.json \
+      --baseline data/series/bitcoin_history/ep01_f4/scene_graph.json \
       --out-dir data/finance_p31/bitcoin_review_v1
 
 The tool outputs a repair_report.json, with lost chart IDs, qualified cached archives, scenes requiring identity review and a disk-space report. It never overwrites the original P0 graph, MP4, narration or captions.
@@ -31,7 +31,7 @@ The tool outputs a repair_report.json, with lost chart IDs, qualified cached arc
 
     .venv/bin/python scripts/k70_p31_evidence_repair.py \
       --graph data/finance_p0/cinematic_balanced/scene_graph_p0.json \
-      --baseline data/series/bitcoin_history/ep01/scene_graph.json \
+      --baseline data/series/bitcoin_history/ep01_f4/scene_graph.json \
       --out-dir data/finance_p31/bitcoin_repaired_v1 --apply
 
 The --apply command creates a **NEW** copied graph and renders only lost source-backed charts using the existing local CPU dataviz renderer. Its default disk gate is 2 GiB free. Source charts cannot be restored from a text label alone; actual authored data and attribution must be present. It does not render the complete documentary.

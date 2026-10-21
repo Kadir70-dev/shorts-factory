@@ -644,6 +644,10 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
         for scene in graph.scenes:
             if scene.id in enhanced or scene.id in local_success:
                 continue
+            # Finance documentary's authored evidence charts must reach the
+            # existing local chart renderer, not be claimed early by AI B-roll.
+            if scene.id in finance_authored_charts:
+                continue
             beat = next((candidate for candidate in by_source.get(scene.id, [])
                          if candidate.ai_broll_candidate), None)
             if beat is None:

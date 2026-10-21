@@ -38,7 +38,7 @@ from .util import visual_cache_path, visual_cache_store
 
 # Bump when the drawing code changes shape: it namespaces every cache entry, so
 # old frames can never be served for new geometry.
-_CACHE_VERSION = 3  # bumped: fixed label fade-out staying visible 0.6s past the next label's start (ghosting)
+_CACHE_VERSION = 4  # P0: authored type-card layouts and first-frame readable typography
 
 
 def cache_key(form: str, theme: BrandTheme, w: int, h: int, fps: int,
@@ -68,6 +68,68 @@ def _cached(key: str, out: Path) -> Path | None:
 # Background treatments. Rotated per beat so consecutive graphic scenes in one
 # short don't share a look.
 TREATMENTS = ["grid_drift", "rule_field", "orbit", "strata", "pulse_dots"]
+
+# P0: six distinct original K70 editorial compositions. Chosen by the existing
+# scene order (not process-randomized Python hash); no new dependencies or GPU.
+LAYOUTS = (
+    "editorial_center", "split_left", "split_right",
+    "masthead", "lower_focus", "side_accent",
+)
+
+
+def kinetic_layout_geometry(layout: str, w: int, h: int, block_h: int) -> tuple[int, str, str]:
+    """Pure placement contract: layout diversity without covering captions."""
+    if layout not in LAYOUTS:
+        raise ValueError(f"unknown K70 kinetic layout: {layout}")
+    anchor = {
+        "editorial_center": 0.43,
+        "split_left": 0.42,
+        "split_right": 0.42,
+        "masthead": 0.29,
+        "lower_focus": 0.59,
+        "side_accent": 0.42,
+    }[layout]
+    y = max(int(h * .12), int(h * anchor - block_h / 2))
+    gutter = int(w * 0.095)
+    x = {
+        "editorial_center": "(w-text_w)/2",
+        "split_left": str(gutter),
+        "split_right": f"w-text_w-{gutter}",
+        "masthead": "(w-text_w)/2",
+        "lower_focus": "(w-text_w)/2",
+        "side_accent": str(gutter),
+    }[layout]
+    align = "center" if x == "(w-text_w)/2" else "left" if layout != "split_right" else "right"
+    return y, x, align
+
+
+def _layout_graphic(c: Canvas, theme: BrandTheme, layout: str,
+                    t: float, w: int, h: int, y_top: int, block_h: int) -> None:
+    """CPU-cheap, animated geometry with a recognizable silhouette per layout."""
+    ink, accent, grid = theme.rgb("ink_dim"), theme.rgb("primary"), theme.rgb("grid")
+    shift = 0.5 + 0.5 * math.sin(t * .8)
+    if layout == "split_left":
+        c.rect(w*.075, h*.16, 3, h*.64, accent, alpha=.55+.3*shift)
+        c.rect(w*.68, h*.14, w*.23, h*.52, grid, alpha=.16, radius=18)
+    elif layout == "split_right":
+        c.rect(w*.92, h*.16, 3, h*.64, accent, alpha=.55+.3*shift)
+        c.rect(w*.09, h*.14, w*.23, h*.52, grid, alpha=.16, radius=18)
+    elif layout == "masthead":
+        c.rect(w*.07, h*.11, w*.86, 4, accent, alpha=.9)
+        c.rect(w*.07, h*.125, w*.86, 2, grid, alpha=.55)
+        c.rect(w*.15, h*.64, w*.70, 2, accent, alpha=.35+.2*shift)
+    elif layout == "lower_focus":
+        c.rect(w*.06, h*.17, w*.88, h*.18, grid, alpha=.16, radius=20)
+        c.rect(w*.12, h*.205, w*.42 * (.8+.2*shift), 6, accent, alpha=.85, radius=3)
+        c.rect(w*.12, h*.235, w*.30, 3, ink, alpha=.35)
+    elif layout == "side_accent":
+        c.rect(w*.075, max(h*.14, y_top-30), w*.025, block_h+55,
+               accent, alpha=.65+.3*shift, radius=7)
+        c.rect(w*.70, h*.72, w*.20, 4, grid, alpha=.6)
+    else:
+        c.rect(w*.16, h*.17, w*.68, 2, grid, alpha=.48)
+        c.rect(w*.16, h*.70, w*.68, 2, grid, alpha=.48)
+
 
 
 def brand_treatment(theme: BrandTheme, rng: random.Random,
@@ -177,15 +239,18 @@ async def plate(theme: BrandTheme, out: Path, w: int, h: int, fps: int,
 
 async def kinetic(theme: BrandTheme, out: Path, w: int, h: int, fps: int,
                   duration: float, headline: str, kicker: str = "",
-                  source: str = "", seed: int = 0, treatment: str = "") -> Path:
+                  source: str = "", seed: int = 0, treatment: str = "",
+                  layout: str = "editorial_center") -> Path:
     """TIER 2 — the beat's key line, built on screen over a live branded field.
 
     Lines arrive in sequence rather than all at once: the eye reads the first
     while the second is still arriving, which is what makes kinetic type feel
     authored instead of like a slide.
     """
+    if layout not in LAYOUTS:
+        raise ValueError(f"unknown K70 kinetic layout: {layout}")
     key = cache_key("kinetic", theme, w, h, fps, duration, seed, treatment,
-                    headline=headline, kicker=kicker, source=source)
+                    headline=headline, kicker=kicker, source=source, layout=layout)
     hit = _cached(key, out)
     if hit is not None:
         return hit
@@ -206,7 +271,7 @@ async def kinetic(theme: BrandTheme, out: Path, w: int, h: int, fps: int,
     block_h = leading * len(lines)
     # Centre the block on the upper-middle third: high enough to clear the caption
     # band at ~0.775, low enough that the frame doesn't read as top-heavy.
-    y_top = int(h * 0.44 - block_h / 2)
+    y_top, text_x, alignment = kinetic_layout_geometry(layout, w, h, block_h)
 
     # per-line stagger, finishing comfortably before the beat ends
     build = min(1.05, max(0.5, duration * 0.45))
@@ -218,10 +283,13 @@ async def kinetic(theme: BrandTheme, out: Path, w: int, h: int, fps: int,
             t = f / fps
             c = base.copy()
             _draw_treatment(c, theme, kind, t, w, h, rng)
-            # an accent rule that grows under the text as the lines land
+            _layout_graphic(c, theme, layout, t, w, h, y_top, block_h)
+            # The first line is readable at frame 0; only the accent builds.
             prog = ease_out_cubic(t / max(0.3, build))
-            rule_w = w * 0.60 * prog
-            c.rect((w - rule_w) / 2, rule_y, rule_w, 5, theme.rgb("primary"),
+            rule_w = w * 0.54 * prog
+            rx = ((w - rule_w) / 2 if alignment == "center"
+                  else (w*.095 if alignment == "left" else w*.905-rule_w))
+            c.rect(rx, rule_y, rule_w, 5, theme.rgb("primary"),
                    alpha=1.0, radius=3)
             yield c
 
@@ -230,7 +298,7 @@ async def kinetic(theme: BrandTheme, out: Path, w: int, h: int, fps: int,
         ksize = theme.size("lower_third", h)
         filters.append(tx.drawtext(
             theme.body.apply_case(kicker), font=theme.body.path, size=ksize,
-            color=theme.ff("primary"), x="(w-text_w)/2",
+            color=theme.ff("primary"), x=text_x,
             y=str(max(0, y_top - int(ksize * 2.0))),
             alpha=tx.fade_alpha(0.05, duration + 1.0, fade=0.28), shadow=3))
 
@@ -238,14 +306,15 @@ async def kinetic(theme: BrandTheme, out: Path, w: int, h: int, fps: int,
         start = i * step
         filters.append(tx.drawtext(
             line, font=theme.display.path, size=size, color=theme.ff("ink"),
-            x="(w-text_w)/2", y=str(y_top + i * leading),
-            alpha=tx.fade_alpha(start, duration + 1.0, fade=0.24), shadow=4))
+            x=text_x, y=str(y_top + i * leading),
+            alpha=(1.0 if i == 0 else tx.fade_alpha(start, duration + 1.0, fade=0.18)),
+            shadow=4))
 
     if source:
         filters.append(tx.drawtext(
             source[:60], font=theme.body.path, size=theme.size("source", h),
-            color=theme.ff("ink_dim"), x="(w-text_w)/2",
-            y=str(rule_y + int(h * 0.045)),
+            color=theme.ff("ink_dim"), x=text_x,
+            y=str(rule_y + int(h * 0.03)),
             alpha=tx.fade_alpha(build * 0.6, duration + 1.0, fade=0.3), shadow=2))
 
     result = await write_video(gen(), w, h, fps, out,

@@ -78,8 +78,14 @@ def _usable_archive(scene: dict, graph: dict, root: Path) -> dict | None:
              if row.get("source_scene_id") == sid}
     if not beats:
         return None
+    # An original authored graph can have storyboard beats but no archival
+    # provenance. Keep report-only mode stdlib until there is something real to
+    # license-check; this also lets isolated CI run without the API dependency set.
+    records = graph.get("asset_provenance") or []
+    if not records:
+        return None
     from app.pipeline.asset_engine import SAFE_LICENSES
-    for record in graph.get("asset_provenance", []):
+    for record in records:
         if record.get("status") != "resolved" or record.get("scene_id") not in beats:
             continue
         for c in record.get("candidates", []):

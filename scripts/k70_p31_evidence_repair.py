@@ -168,10 +168,25 @@ def _apply_archive(scene: dict, receipt: dict) -> None:
     visual["layers"] = []
 
 
+def _validate_without_retiming(raw: dict):
+    """Build a temporary Pydantic graph while preserving the actual 0.747s clips.
+
+    P0's measured TTS can legitimately be shorter than Scene.duration_sec's
+    authored 0.8s minimum. Like the existing checkpoint loader, clamp ONLY
+    the in-memory validation copy. Never touch the returned/output graph.
+    """
+    from app.schemas.scene import SceneGraph
+    validated = copy.deepcopy(raw)
+    for scene in validated.get("scenes", []):
+        duration = scene.get("duration_sec")
+        if isinstance(duration, (float, int)) and 0 < duration < 0.8:
+            scene["duration_sec"] = 0.8
+    return SceneGraph.model_validate(validated)
+
+
 async def repair(source: dict, baseline: dict, report: dict,
                  directory: Path) -> dict:
-    from app.schemas.scene import SceneGraph
-    graph = SceneGraph.model_validate(copy.deepcopy(source))
+    graph = _validate_without_retiming(source)
     revised = copy.deepcopy(source)
     lookup = {s["id"]: s for s in revised["scenes"]}
     old = {s["id"]: s for s in baseline["scenes"]}
@@ -202,7 +217,7 @@ async def repair(source: dict, baseline: dict, report: dict,
     for key in ("audio", "captions", "sfx", "meta", "threejs_provenance", "ai_broll_provenance"):
         if revised.get(key) != source.get(key):
             raise AssertionError(f"changed protected top-level field {key}")
-    SceneGraph.model_validate(revised)
+    _validate_without_retiming(revised)
     return revised
 
 

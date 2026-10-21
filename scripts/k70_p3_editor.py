@@ -28,7 +28,7 @@ def main() -> None:
     parser.add_argument("--graph", type=Path, required=True, help="existing SceneGraph JSON, read-only")
     parser.add_argument("--out-dir", type=Path, required=True, help="new directory for output reports")
     parser.add_argument("--apply-transitions-to-copy", action="store_true",
-                        help="opt in ONLY on unrendered, asset-free graph; creates NEW copy")
+                        help="opt in on unrendered graph; creates NEW copy with safe cuts + sourced charts")
     args = parser.parse_args()
     try:
         graph = json.loads(args.graph.read_text(encoding="utf-8"))
@@ -54,7 +54,7 @@ def main() -> None:
         print(f"EDITOR REPORT: {directory}")
         print(f"SCENES: {report['scene_count']} · REVIEW ISSUES: {len(report['review_issues'])}")
         if args.apply_transitions_to_copy:
-            print("COPY ONLY: no video rendered, no original data modified.")
+            print("COPY ONLY: safe transition/chart decisions; no video rendered or original data modified.")
         else:
             print("READ-ONLY: visual and transition proposals, no graph edits.")
     except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:

@@ -47,6 +47,35 @@ def test_scope_ignores_shorts_other_niches_and_portrait():
     assert prio.authored_chart_ids(sample_graph()) == set()
 
 
+def test_known_bitcoin_ep01_metadata_is_explicitly_whitelisted_but_other_history_is_not():
+    source = json.loads((ROOT / "data/series/bitcoin_history/ep01/scene_graph.json").read_text())
+    assert source["meta"]["niche"] == "usa_history"
+    assert source["meta"]["channel_id"] == "k70_history"
+    assert source["width"] == 1080 and source["height"] == 1920
+    assert len(source["scenes"]) == 156
+    assert prio.is_legacy_bitcoin_history(source["meta"], 156)
+    assert repair.inspect(source, source, ROOT)["scope"] == "legacy_bitcoin_history_ep01"
+
+    # Same label and portrait are NOT sufficient for the exception.
+    unrelated = copy.deepcopy(source)
+    unrelated["meta"]["video_id"] = "unrelated_history_episode"
+    assert not prio.is_legacy_bitcoin_history(unrelated["meta"], 156)
+    with pytest.raises(ValueError, match="only usa_finance"):
+        repair.inspect(unrelated, unrelated, ROOT)
+
+    renamed = copy.deepcopy(source)
+    renamed["meta"]["title"] = "Unrelated history episode"
+    assert not prio.is_legacy_bitcoin_history(renamed["meta"], 156)
+
+
+def test_baseline_must_belong_to_same_film():
+    source = json.loads((ROOT / "data/series/bitcoin_history/ep01/scene_graph.json").read_text())
+    other = copy.deepcopy(source)
+    other["meta"]["video_id"] = "another_video"
+    with pytest.raises(ValueError, match="same video ID"):
+        repair.inspect(other, source, ROOT)
+
+
 def test_explicit_source_backed_chart_only():
     graph = sample_graph()
     graph.scenes[0] = simple_scene("s0", "dataviz", with_data=True)
@@ -95,8 +124,9 @@ def p0_scene(sid, *, kind="broll", chart=False, narrator="Historical fact."):
 
 def test_repair_plan_finds_only_lost_data_charts_and_keeps_narration():
     names = [f"s{i}" for i in range(1, 31)]
-    baseline = {"scenes": [p0_scene(sid) for sid in names]}
-    voiced = {"meta": {"niche": "usa_finance"}, "width": 640, "height": 360,
+    meta = {"video_id": "test_finance_film", "niche": "usa_finance"}
+    baseline = {"meta": copy.deepcopy(meta), "scenes": [p0_scene(sid) for sid in names]}
+    voiced = {"meta": copy.deepcopy(meta), "width": 640, "height": 360,
               "scenes": copy.deepcopy(baseline["scenes"])}
     for sid in ("s35", "s67"):
         baseline["scenes"].append(p0_scene(sid, kind="dataviz", chart=True))

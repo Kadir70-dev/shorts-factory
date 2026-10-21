@@ -14,14 +14,35 @@ ARCHIVE_PROVIDERS = frozenset({"wikimedia_commons", "government_public_domain",
 RENDERABLE = frozenset({".jpg", ".jpeg", ".png", ".webp", ".mp4", ".mov", ".webm"})
 
 
+def is_legacy_bitcoin_history(meta: Any, scene_count: int) -> bool:
+    """Specific 156-scene K70 finance-history documentary authored as usa_history.
+
+    The original Bitcoin ep01 SceneGraph is portrait and labeled k70_history.
+    Narrow identification avoids enabling these overrides for other history
+    episodes or for the Shorts pipeline.
+    """
+    def value(key: str) -> str:
+        if isinstance(meta, dict):
+            return str(meta.get(key) or "")
+        return str(getattr(meta, key, "") or "")
+
+    return (scene_count == 156
+            and value("video_id") == "btc_ep01_world_before_bitcoin"
+            and value("channel_id") == "k70_history"
+            and value("niche") == "usa_history"
+            and "the world before bitcoin" in value("title").lower())
+
+
 def is_finance_longform(graph: Any) -> bool:
-    """Conservative scope: finance, landscape, >=20 beats, >=4 minutes."""
+    """Finance docs plus the precisely identified legacy Bitcoin history film."""
     meta = getattr(graph, "meta", None)
     scenes = getattr(graph, "scenes", ())
+    if len(scenes) < 20 or sum(float(s.duration_sec) for s in scenes) < 240:
+        return False
+    if is_legacy_bitcoin_history(meta, len(scenes)):
+        return True
     return (getattr(meta, "niche", "") == "usa_finance"
-            and int(getattr(graph, "width", 0)) > int(getattr(graph, "height", 0))
-            and len(scenes) >= 20
-            and sum(float(s.duration_sec) for s in scenes) >= 240)
+            and int(getattr(graph, "width", 0)) > int(getattr(graph, "height", 0)))
 
 
 def authored_chart_ids(graph: Any) -> set[str]:

@@ -202,3 +202,27 @@ All 21 source files are public domain, CC0, CC BY or CC BY-SA, so all are compat
 - The 14 generic-stock scenes listed in section 8 are unchanged.
 - Card runs of 4 remain (s8–s11, s97–s100), plus runs of 3. Crossfades are still 63% of transitions.
 - Full-film QA (full render plus a human frame review) has not been done.
+
+---
+
+## 10. Revision 2: PR #9 blocker closure (2026-10-22)
+
+The rows below **supersede** the matching rows in sections 2, 3 and 9. The previous graph, change log and plates were moved (not deleted) to `superseded_v1/`.
+
+| Blocker | Resolution |
+|---|---|
+| **s56** weak PD claim | Replaced with "Shopping for groceries in a Washington, D.C. supermarket", July 1974: EPA DOCUMERICA photo by Erik Calonius, NARA 555651, **PD-USGov-EPA**. |
+| **s126** currency reproduction | Zimbabwean reproduction rules could not be verified from an authoritative source, so the **banknote image is removed**. The scene is now a typography plate ("RESERVE BANK OF ZIMBABWE · 100,000,000,000,000 · dollars, on a single banknote"). The Z$100T stat and source overlays still render; a test clip was checked. |
+| **CC BY-SA** s112, s129, s146 | Replaced with CC0 / PD equivalents: door knocker (CC0, Bernard Gagnon); U.S. suburb, 2016 (CC0, Nathan Anderson/Unsplash); U.S. Treasury (PD-Highsmith, Library of Congress). |
+| **CC BY-SA** s117, s121 | No PD or CC0 corralito imagery exists on Commons, so these are kept. Each plate carries an on-screen credit ("Photo: Barcex · CC BY-SA 3.0 · adapted"), and `P32_ASSET_CREDITS.md` states that the adapted plates are licensed CC BY-SA 3.0. **Legal sign-off is still required.** |
+| **s82** identity | **Verified.** The original Flickr post by the official Web Summit account reads: "7 November 2018; David Chaum, Elixxir on Moneyconf Stage… Photo by Harry Murphy/Web Summit via Sportsfile." The label now reads "David Chaum · Web Summit, Nov 2018", with an on-plate credit. |
+| **s96** identity | **Partially verified.** The identification rests on photographer Joi Ito's caption "Adam Back" (2014-12-02) and on a human Commons Flickr review (2023-10-27); the Flickr original now returns 403. The plate is dated and credited, and nothing implies endorsement. **The editor should confirm it**, or revert s96 to its original card. |
+| **s111** date | **Verified.** *U.S. v. von NotHaus*, W.D.N.C. No. 5:09CR27-RLV, order of 1 Dec 2014: the search of the Liberty Dollar HQ in Evansville occurred on **November 14, 2007**, and the Sunshine Minting search ran 14–15 Nov 2007. The plate text is unchanged. |
+| **On-plate attribution** | Every CC BY / BY-SA plate now carries a small credit: s28, s80, s82, s96, s117, s121. |
+
+## 11. s115 inspection: recommend it should NOT remain
+
+- **What the image shows:** the source (`Jaixak euki ebazan Caixak.jpg`, CC BY-SA 2.5, Javier Mediavilla Ezquibela) is a burned, graffiti-covered Caixa cash machine in the Basque Country, Spain.
+- **Why it misleads:** it sits right before "December first, two thousand and one. Buenos Aires." Viewers would very likely read it as Argentine riot damage from 2001.
+- **Other problems:** it is cover-cropped with no label, and as a BY-SA 2.5 file used without credit it also fails the attribution requirement.
+- **Recommendation:** replace it. Options are a hard cut or dip into the s116 Buenos Aires 3D beat with a neutral plate, or a short typography beat. This was **not changed** in P3.2 because the brief asked for inspection only, so it remains a blocker.

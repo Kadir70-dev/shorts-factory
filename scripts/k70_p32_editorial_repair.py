@@ -83,7 +83,9 @@ def build(decisions: dict, out: Path, allow_fetch: bool) -> tuple[dict, dict]:
                 path = Path(src["local"])
             else:
                 ext = ".png" if src["file_url"].lower().endswith(".png") else ".jpg"
-                path = out / "assets" / "source" / f"{sid}_{n}{ext}"
+                # title hash: a replaced source never reuses a stale download
+                tag = hashlib.sha1(src["title"].encode()).hexdigest()[:8]
+                path = out / "assets" / "source" / f"{sid}_{n}_{tag}{ext}"
                 if not path.is_file() and not allow_fetch:
                     raise FileNotFoundError(f"{sid}: source not cached; pass --fetch")
                 fetch(src, path)
@@ -96,7 +98,7 @@ def build(decisions: dict, out: Path, allow_fetch: bool) -> tuple[dict, dict]:
         if action == "archival_plate":
             plates.archival_plate(local[0], plate, label=d.get("label", ""),
                                   crop=d.get("crop"), max_h=d.get("max_h", 1060),
-                                  text=d.get("text", ()))
+                                  text=d.get("text", ()), credit=d.get("credit", ""))
         elif action == "triptych":
             plates.triptych_plate(list(zip(local, d["labels"])), plate)
         else:

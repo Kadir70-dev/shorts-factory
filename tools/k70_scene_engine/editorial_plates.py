@@ -70,7 +70,8 @@ def _wrap(draw: ImageDraw.ImageDraw, text: str, font, width: int) -> list[str]:
 
 def archival_plate(src: Path, out: Path, *, label: str = "",
                    crop: Sequence[float] | None = None,
-                   max_h: int = 1060, text: Sequence[str] = ()) -> Path:
+                   max_h: int = 1060, text: Sequence[str] = (),
+                   credit: str = "") -> Path:
     im = _open(src, crop)
     canvas = _backdrop(im)
     k = min(SAFE_W / im.width, max_h / im.height)   # fit; small sources upscale
@@ -81,7 +82,11 @@ def archival_plate(src: Path, out: Path, *, label: str = "",
     canvas.paste(fg, (x, y))
     _tag(canvas, label, x + 16, y + fg.height - 62)
     draw = ImageDraw.Draw(canvas)
-    ty = y + fg.height + 34
+    if credit:                         # on-screen attribution (CC BY / BY-SA)
+        f = _font(22)
+        draw.text((x + fg.width - draw.textlength(credit, font=f), y + fg.height + 8),
+                  credit, font=f, fill=(200, 196, 188))
+    ty = y + fg.height + (60 if credit else 34)
     for i, line in enumerate(text):
         f = _font(48 if i == 0 else 34, bold=(i == 0), serif=(i == 0))
         tw = draw.textlength(line, font=f)

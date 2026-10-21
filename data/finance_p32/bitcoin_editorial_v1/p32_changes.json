@@ -45,7 +45,7 @@
       "action": "archival_plate",
       "from_type": "image",
       "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s56.jpg",
-      "why": "Replaces a 1905 Brisbane fruit shop with an American supermarket of the period."
+      "why": "U.S. supermarket of the period; EPA DOCUMERICA photo by Erik Calonius (NARA 555651), PD-USGov-EPA."
     },
     {
       "scene_id": "s58",
@@ -66,7 +66,7 @@
       "action": "archival_plate",
       "from_type": "broll",
       "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s82.jpg",
-      "why": "Identity per Web Summit's own caption (CC BY 2.0). Dated 2018 so it is not presented as a 1982 image."
+      "why": "Identity and date from the original Flickr post by the official Web Summit account: '7 November 2018; David Chaum, Elixxir on Moneyconf Stage… Photo by Harry Murphy/Web Summit via Sportsfile'. Editorial use; no endorsement implied."
     },
     {
       "scene_id": "s88",
@@ -87,14 +87,14 @@
       "action": "typography_plate",
       "from_type": "image",
       "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s111.jpg",
-      "why": "No licensed Liberty Dollar or raid imagery found (search returned 19th-century Seated Liberty coins). Factual typography restating the narration; the existing source overlay remains."
+      "why": "No licensed Liberty Dollar or raid imagery found (search returned 19th-century Seated Liberty coins). Factual typography restating the narration; the existing source overlay remains. Date verified: U.S. v. von NotHaus, W.D.N.C. No. 5:09CR27-RLV, order of 1 Dec 2014: the search of the Liberty Dollar HQ in Evansville occurred on November 14, 2007 (Sunshine Minting search 14–15 Nov 2007)."
     },
     {
       "scene_id": "s112",
       "action": "archival_plate",
       "from_type": "image",
       "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s112.jpg",
-      "why": "Replaces a 1918-38 China lantern slide with a closed front door with knocker (illustrative metaphor, no historical claim)."
+      "why": "Door knocker on a wooden door (illustrative metaphor, no historical claim). CC0, Bernard Gagnon."
     },
     {
       "scene_id": "s114",
@@ -112,24 +112,24 @@
     },
     {
       "scene_id": "s126",
-      "action": "archival_plate",
+      "action": "typography_plate",
       "from_type": "image",
       "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s126.jpg",
-      "why": "Replaces a framed 16-note set with the exact Z$100,000,000,000,000 note, whole note visible."
+      "why": "Factual typography; banknote image withdrawn pending currency-reproduction clearance. The 'Z$100T' stat overlay and the Hanke & Kwok source overlay still render."
     },
     {
       "scene_id": "s129",
       "action": "archival_plate",
       "from_type": "image",
       "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s129.jpg",
-      "why": "Replaces a street in Pune, India with an American suburban street, matching 'not here, not to us'."
+      "why": "Quiet U.S. suburb for 'not here, not to us'. CC0 (Unsplash, pre-June-2017 CC0 era), Nathan Anderson."
     },
     {
       "scene_id": "s146",
       "action": "archival_plate",
       "from_type": "image",
       "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s146.jpg",
-      "why": "Replaces a Taipei tower with the Treasury, which administered TARP's public money (illustrative)."
+      "why": "U.S. Treasury, which administered TARP's public money (illustrative). Carol M. Highsmith, Library of Congress, PD-Highsmith."
     },
     {
       "scene_id": "s38",
@@ -157,7 +157,7 @@
       "action": "archival_plate",
       "from_type": "motion_gfx",
       "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s96.jpg",
-      "why": "Breaks the s93-s100 card run on the Hashcash beat (Back built Hashcash). The card's overlays are kept."
+      "why": "Breaks the s93-s100 card run on the Hashcash beat (Back built Hashcash). The card's overlays are kept. Identity per photographer Joi Ito's caption ('Adam Back') and Commons human Flickr review (2023-10-27); the Flickr original is not publicly reachable now. Editorial use; no endorsement implied."
     }
   ],
   "notes": [
@@ -174,7 +174,7 @@
     {
       "scene_id": "s115",
       "action": "manual_review",
-      "why": "Review: unidentified ATM/wall (Basque 'Caixak'); not false, but not relevant. No better verified asset chosen; left for manual decision."
+      "why": "Inspected 2026-10-22: see report section 10."
     }
   ],
   "overlays": [
@@ -423,7 +423,7 @@
         "description": "Photomechanical print (postcard) : halftone, colored \nDivided back",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s23_0.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s23_0_9cc36923.jpg",
         "sha256": "161da671a50e5832d6bc9dbff89b6ece01fda496fb7eea4174f3e0f907f2ff95"
       }
     ],
@@ -439,7 +439,7 @@
         "description": "U.S. Army Bell UH-1D helicopters airlift members of the 2nd Battalion, 14th Infantry Regiment from the Filhol Rubber Plantation area to a new staging area, during Operation \"Wahiawa\", a search and destroy mission conducted by the 25th Infantry Division, northeast of Cu Chi, South Vietnam, 1966.",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s30_0.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s30_0_ea841afd.jpg",
         "sha256": "b23ab4ed0790d857ccbe3278a3e742baeb13d10af8a371ec4c62a9828974de7b"
       },
       {
@@ -453,7 +453,7 @@
         "description": "President Lyndon B. Johnson signs the Poverty Bill (also known as the Economic Opportunity Act) in the Rose Garden, White House, while press and supporters of the bill look on.",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s30_1.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s30_1_125bc444.jpg",
         "sha256": "0ace22206ddac5078e6692e522df490127ba8b00904650c4acd5900521fb021b"
       },
       {
@@ -467,7 +467,7 @@
         "description": "The Apollo 11 mission launched from the Kennedy Space Center, Florida on July 16, 1969. The Saturn V vehicle produced a holocaust of flames as it rose from its pad at Launch complex 39.",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s30_2.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s30_2_a0449ee9.jpg",
         "sha256": "eb83d40711cc21ba07bc1af45d43aabe78b699254d3813cd3213e35195749edf"
       }
     ],
@@ -483,7 +483,7 @@
         "description": "Official Presidential Portrait, 07/08/1971.",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s42_0.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s42_0_288ab4c6.jpg",
         "sha256": "c27c633faa9c83701a375279eef1bd1b21b41c8727344a719b9795c5814a1c51"
       }
     ],
@@ -499,24 +499,24 @@
         "description": "A red and white \"WIN\" button from President Gerald R. Ford's 1974 \"Whip Inflation Now\" economic initiative.",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s52_0.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s52_0_c6ab8915.jpg",
         "sha256": "2ca52cb9f9b24921d90cf9dba0e0f377ff9ca253131cf59bbaf0f1b2e453b6bb"
       }
     ],
     "s56": [
       {
         "provider": "wikimedia_commons",
-        "title": "File:Jumbo supermarket in Annandale, Virginia in the 1970s.jpg",
-        "page_url": "https://commons.wikimedia.org/wiki/File:Jumbo_supermarket_in_Annandale,_Virginia_in_the_1970s.jpg",
-        "file_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Jumbo_supermarket_in_Annandale%2C_Virginia_in_the_1970s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "title": "File:SHOPPING FOR GROCERIES IN A WASHINGTON, DISTRICT OF COLUMBIA SUPERMARKET - NARA - 555651.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:SHOPPING_FOR_GROCERIES_IN_A_WASHINGTON,_DISTRICT_OF_COLUMBIA_SUPERMARKET_-_NARA_-_555651.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/SHOPPING_FOR_GROCERIES_IN_A_WASHINGTON%2C_DISTRICT_OF_COLUMBIA_SUPERMARKET_-_NARA_-_555651.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
         "license": "Public domain",
-        "artist": "Photo courtesy of United Natural Foods, Inc.",
-        "date": "between 1978 and 1979date QS:P,+1978-00-00T00:00:00Z/8,P1319",
-        "description": "Jumbo supermarket in Annandale, Virginia in the 1970s",
+        "artist": "Erik Calonius",
+        "date": "July 1974date QS:P571,+1974-07-00T00:00:00Z/10",
+        "description": "",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s56_0.jpg",
-        "sha256": "1d16ea953d9bc5ce738d19f43575b58ce5f8f5b570b077ee6df72cb4ce279bcf"
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s56_0_f2d9e838.jpg",
+        "sha256": "7c5ddbf0de8196cf501a2b2ae3da1633e9648bb071a8dca573207bdd2c0f19b2"
       }
     ],
     "s58": [
@@ -531,7 +531,7 @@
         "description": "Savings Account Passbook - Allentown National Bank",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s58_0.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s58_0_20c5ae7b.jpg",
         "sha256": "6da403f13435da5e3df1abfbdf4fc23179097bcd10ec62015236a3f06f9e7c47"
       }
     ],
@@ -547,7 +547,7 @@
         "description": "Began in 1909 as a branch of the Bank of Los Banos, it was first located in a storefront in the rear of the Miller & Lux building, whose owners had a controlling interest of that bank. It was sold to the newly formed Bank of Gustine in 1913, who put up this building kitty corner to the old location ",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s80_0.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s80_0_3b0b75f6.jpg",
         "sha256": "14a2cf1940d9c0ef5f0d066763ca68be5b1951d1b6d17898d75d90dd7738c68a"
       }
     ],
@@ -563,7 +563,7 @@
         "description": "7 November 2018; David Chaum, Elixxir on Moneyconf Stage during day two of Web Summit 2018 at the Altice Arena in Lisbon, Portugal. Photo by Harry Murphy/Web Summit via Sportsfile",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s82_0.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s82_0_868fbfe4.jpg",
         "sha256": "3b05b5a43fb767e7c68fdaac3651c15fdab1f1066cebbe2b28ce04d5680ef3fd"
       }
     ],
@@ -579,24 +579,24 @@
         "description": "Export-restricted encryption code printed on T-shirt as a protest against US encryption export restrictions.",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s95_0.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s95_0_ada29836.jpg",
         "sha256": "dff7a08c4260ba78f486d1af3c1cc1601060772ca3865ed2f9f0e15e0b4a73b7"
       }
     ],
     "s112": [
       {
         "provider": "wikimedia_commons",
-        "title": "File:Halden 27, Altstadt-Haustür in Aarau (2021).jpg",
-        "page_url": "https://commons.wikimedia.org/wiki/File:Halden_27,_Altstadt-Haust%C3%BCr_in_Aarau_(2021).jpg",
-        "file_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Halden_27%2C_Altstadt-Haust%C3%BCr_in_Aarau_%282021%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "license": "CC BY-SA 4.0",
-        "artist": "JoachimKohler-HB",
-        "date": "2021-10-16 10:09:02",
-        "description": "Front door in the old town of Aarau with door knocker and pull-cord doorbell.",
+        "title": "File:Door knocker in Taranto 01.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Door_knocker_in_Taranto_01.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Door_knocker_in_Taranto_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "Bernard Gagnon",
+        "date": "2022-05-03",
+        "description": "Door knocker in Taranto, Italy",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s112_0.jpg",
-        "sha256": "982d3ccb6ee3e4fcdf732a933cfac8bcfefade015fef4274423e8e7a8aadfd26"
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s112_0_b37aed1b.jpg",
+        "sha256": "74f7b4f28656fa509853d983fbf0b92a4efdf7de43c70512e0520fa70edefa92"
       }
     ],
     "s114": [
@@ -611,7 +611,7 @@
         "description": "Oak door and door frame, made of broad planks with large iron nails, made in Ipswich, England between 1500 and 1530, Victoria and Albert Museum number A.25-1913",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s114_0.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s114_0_0f4888f5.jpg",
         "sha256": "f8443e6a8d67724b8a948bdd2ce727f2b715bddf7b9acba7906b68abed120008"
       }
     ],
@@ -627,56 +627,40 @@
         "description": "Manifestación de ahorristas argentinos contra el Corralito financiero frente a la una sucursal del BBVA Banco Francés ubicada en calle Florida, Buenos Aires, Argentina.",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s117_0.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s117_0_22f630fc.jpg",
         "sha256": "06d65ef21f89e3dcdbeb6e1bc2206ae5aac188fe622bf319094b69c63b432c61"
-      }
-    ],
-    "s126": [
-      {
-        "provider": "wikimedia_commons",
-        "title": "File:Zimbabwe $100 trillion 2009 Obverse.jpg",
-        "page_url": "https://commons.wikimedia.org/wiki/File:Zimbabwe_$100_trillion_2009_Obverse.jpg",
-        "file_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Zimbabwe_%24100_trillion_2009_Obverse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "license": "Public domain",
-        "artist": "Reserve Bank of Zimbabwe",
-        "date": "2009",
-        "description": "The obverse of the 2009 Zimbabwe $100 trillion banknote.",
-        "retrieved": "2026-10-22",
-        "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s126_0.jpg",
-        "sha256": "d5c69779d97394606260ac646639ff6ea3910ce774eaba34f6d2de0435c3ec6e"
       }
     ],
     "s129": [
       {
         "provider": "wikimedia_commons",
-        "title": "File:Typical suburban street in the United States.tif",
-        "page_url": "https://commons.wikimedia.org/wiki/File:Typical_suburban_street_in_the_United_States.tif",
-        "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Typical_suburban_street_in_the_United_States.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "license": "CC BY-SA 4.0",
-        "artist": "Michael E. Arth",
-        "date": "2008",
-        "description": "This is an all-too-common American suburban street: wide, built for cars, with front-loading garages that take up half of the front of the house. Above-ground power lines are also quite common, although they are not usually in the front.",
+        "title": "File:Suburban houses near a forest (Unsplash).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Suburban_houses_near_a_forest_(Unsplash).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Suburban_houses_near_a_forest_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "Nathan Anderson nathananderson",
+        "date": "2016-12-26",
+        "description": "Birmingham, United States",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s129_0.jpg",
-        "sha256": "2917d37ad64dbe4f39387f161702b6545a24e7cc3b0d1cff5f651be651a526f6"
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s129_0_a587a908.jpg",
+        "sha256": "32750f09148cf895788894cc4749ed67454ea6116e643f863aa727e17c9ca1a0"
       }
     ],
     "s146": [
       {
         "provider": "wikimedia_commons",
-        "title": "File:United States Treasury Building.JPG",
-        "page_url": "https://commons.wikimedia.org/wiki/File:United_States_Treasury_Building.JPG",
-        "file_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/United_States_Treasury_Building.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "license": "CC BY-SA 3.0",
-        "artist": "Rchuon24",
-        "date": "Taken on 12 August 2012, 18:00:29",
-        "description": "This is an image of a place or building that is listed on the National Register of Historic Places in the United States of America. Its reference number is 71001007 (Wikidata).",
+        "title": "File:U.S. Treasury building, Washington, D.C LCCN2011631001.tif",
+        "page_url": "https://commons.wikimedia.org/wiki/File:U.S._Treasury_building,_Washington,_D.C_LCCN2011631001.tif",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/U.S._Treasury_building%2C_Washington%2C_D.C_LCCN2011631001.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Carol M. Highsmith",
+        "date": "between 1980 and 2006",
+        "description": "Title: U.S. Treasury building, Washington, D.C\nPhysical description: 1 transparency : color ; 4 x 5 in. or smaller.\n\nNotes: Title, date, and keywords provided by the photographer.; Digital image produced by Carol M. Highsmith to represent her original film transparency; some details may differ betwe",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s146_0.jpg",
-        "sha256": "ccc98d828ae4886cccee2ffde90dd7b599fd8aa76bac893ec96da20eaceff4f8"
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s146_0_3f95b75b.jpg",
+        "sha256": "6b51c0034a0e66a905003cd352efe688f94e2e0d683fad9fb8b6217b40fd6283"
       }
     ],
     "s38": [
@@ -723,7 +707,7 @@
         "description": "US068 Washington The Capitol Capitol 1964",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s28_0.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s28_0_b514e39d.jpg",
         "sha256": "0acc3cddaf694d372dbea63f34f70a1ba296de78c8f4e6de55c27ec3cb436eff"
       }
     ],
@@ -739,7 +723,7 @@
         "description": "Adam Back",
         "retrieved": "2026-10-22",
         "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s96_0.jpg",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s96_0_d74a834f.jpg",
         "sha256": "835c90493c146b03d5dffc5f7ab63448e368d06dea8f83883b6e3c1ea3e2140b"
       }
     ]

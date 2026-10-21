@@ -125,3 +125,7 @@ def test_plates_are_portrait_and_keep_whole_source(tmp_path):
     assert Image.open(typo).size == (1080, 1920)
     with pytest.raises(ValueError):
         plates.archival_plate(wide, tmp_path / "bad.jpg", crop=(0.5, 0, 0.2, 1))
+    plain = Image.open(plates.archival_plate(wide, tmp_path / "a.jpg", label="x"))
+    credited = Image.open(plates.archival_plate(wide, tmp_path / "b.jpg", label="x",
+                                                credit="Photo: A · CC BY-SA 3.0 · adapted"))
+    assert plain.tobytes() != credited.tobytes()      # on-plate attribution drawn

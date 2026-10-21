@@ -6,17 +6,16 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Main_Street%2C_looking_north%2C_Greenville.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "Public domain",
    "license_url": "",
-   "usage_terms": "Public domain",
    "attribution_required": "false",
-   "copyrighted": "False",
    "artist": "Asheville Post Card Co. (publisher)",
    "credit": "Digital scan of postcard",
-   "attribution": "",
    "restrictions": "",
    "date": "circa 1958date QS:P,+1958-00-00T00:00:00Z/9,P1480,Q5727902",
-   "local_sha256": "161da671a50e5832d6bc9dbff89b6ece01fda496fb7eea4174f3e0f907f2ff95",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s23_0.jpg",
-   "flag_cats": []
+   "license_templates": [
+    "Location",
+    "PD-US-not renewed"
+   ],
+   "local_sha256": "161da671a50e5832d6bc9dbff89b6ece01fda496fb7eea4174f3e0f907f2ff95"
   }
  ],
  "s30": [
@@ -26,17 +25,16 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/UH-1D_helicopters_in_Vietnam_1966.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "Public domain",
    "license_url": "",
-   "usage_terms": "Public domain",
    "attribution_required": "false",
-   "copyrighted": "False",
    "artist": "James K. F. Dung, SFC, Photographer",
    "credit": "This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.",
-   "attribution": "",
    "restrictions": "",
    "date": "Taken on 16 May 1966",
-   "local_sha256": "b23ab4ed0790d857ccbe3278a3e742baeb13d10af8a371ec4c62a9828974de7b",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s30_0.jpg",
-   "flag_cats": []
+   "license_templates": [
+    "NARA-image",
+    "PD-USGov-Military"
+   ],
+   "local_sha256": "b23ab4ed0790d857ccbe3278a3e742baeb13d10af8a371ec4c62a9828974de7b"
   },
   {
    "title": "File:Signing of the EOA.jpg",
@@ -44,19 +42,15 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Signing_of_the_EOA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "Public domain",
    "license_url": "",
-   "usage_terms": "Public domain",
    "attribution_required": "false",
-   "copyrighted": "False",
    "artist": "Cecil W. Stoughton",
    "credit": "LBJ Library C661-4-WH64",
-   "attribution": "",
    "restrictions": "",
    "date": "1964-08-20",
-   "local_sha256": "0ace22206ddac5078e6692e522df490127ba8b00904650c4acd5900521fb021b",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s30_1.jpg",
-   "flag_cats": [
-    "CC-PD-Mark"
-   ]
+   "license_templates": [
+    "PD-USGov"
+   ],
+   "local_sha256": "0ace22206ddac5078e6692e522df490127ba8b00904650c4acd5900521fb021b"
   },
   {
    "title": "File:Apollo 11 Launched Via Saturn V Rocket.jpg",
@@ -64,17 +58,15 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Apollo_11_Launched_Via_Saturn_V_Rocket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "Public domain",
    "license_url": "",
-   "usage_terms": "Public domain",
    "attribution_required": "false",
-   "copyrighted": "False",
    "artist": "NASA",
    "credit": "Marshall Image Exchange (image link)",
-   "attribution": "",
    "restrictions": "",
    "date": "1969-07-16",
-   "local_sha256": "eb83d40711cc21ba07bc1af45d43aabe78b699254d3813cd3213e35195749edf",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s30_2.jpg",
-   "flag_cats": []
+   "license_templates": [
+    "PD-USGov-NASA"
+   ],
+   "local_sha256": "eb83d40711cc21ba07bc1af45d43aabe78b699254d3813cd3213e35195749edf"
   }
  ],
  "s42": [
@@ -84,19 +76,15 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Nixon_Official_Presidential_Portrait_07-08-1971_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "Public domain",
    "license_url": "",
-   "usage_terms": "Public domain",
    "attribution_required": "false",
-   "copyrighted": "False",
    "artist": "Unknown authorUnknown authorDerivative work:  TharonXX",
    "credit": "This image has been extracted from another file",
-   "attribution": "",
    "restrictions": "",
    "date": "1971-07-08",
-   "local_sha256": "c27c633faa9c83701a375279eef1bd1b21b41c8727344a719b9795c5814a1c51",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s42_0.jpg",
-   "flag_cats": [
-    "CC-PD-Mark"
-   ]
+   "license_templates": [
+    "PD-USGov"
+   ],
+   "local_sha256": "c27c633faa9c83701a375279eef1bd1b21b41c8727344a719b9795c5814a1c51"
   }
  ],
  "s52": [
@@ -106,41 +94,37 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/A_button_from_the_%22Whip_Inflation_Now%22_initiative_of_the_1970%27s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "Public domain",
    "license_url": "",
-   "usage_terms": "Public domain",
    "attribution_required": "false",
-   "copyrighted": "False",
    "artist": "",
    "credit": "This file was provided to Wikimedia Commons by the Gerald R. Ford Presidential Library and Museum as part of a cooperation project. The Gerald R. Ford Presidential Library and Museum is part of the National Archives and Records Administration's presidential library and houses documents and audio-vis",
-   "attribution": "",
    "restrictions": "",
    "date": "",
-   "local_sha256": "2ca52cb9f9b24921d90cf9dba0e0f377ff9ca253131cf59bbaf0f1b2e453b6bb",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s52_0.jpg",
-   "flag_cats": [
-    "CC-PD-Mark"
-   ]
+   "license_templates": [
+    "PD-USGov"
+   ],
+   "local_sha256": "2ca52cb9f9b24921d90cf9dba0e0f377ff9ca253131cf59bbaf0f1b2e453b6bb"
   }
  ],
  "s56": [
   {
-   "title": "File:Jumbo supermarket in Annandale, Virginia in the 1970s.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Jumbo_supermarket_in_Annandale,_Virginia_in_the_1970s.jpg",
-   "file_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Jumbo_supermarket_in_Annandale%2C_Virginia_in_the_1970s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "File:SHOPPING FOR GROCERIES IN A WASHINGTON, DISTRICT OF COLUMBIA SUPERMARKET - NARA - 555651.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:SHOPPING_FOR_GROCERIES_IN_A_WASHINGTON,_DISTRICT_OF_COLUMBIA_SUPERMARKET_-_NARA_-_555651.jpg",
+   "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/SHOPPING_FOR_GROCERIES_IN_A_WASHINGTON%2C_DISTRICT_OF_COLUMBIA_SUPERMARKET_-_NARA_-_555651.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "Public domain",
    "license_url": "",
-   "usage_terms": "Public domain",
    "attribution_required": "false",
-   "copyrighted": "False",
-   "artist": "Photo courtesy of United Natural Foods, Inc.",
-   "credit": "https://www.facebook.com/RetroGroceryStores/posts/pfbid025h8JqepSo5f4S45LnsesryVFLEht8zaVJbqjiDeCmoRZRMFZeYhR5mHJ9EGrjtsTl",
-   "attribution": "",
+   "artist": "Erik Calonius",
+   "credit": "U.S. National Archives and Records Administration",
    "restrictions": "",
-   "date": "between 1978 and 1979date QS:P,+1978-00-00T00:00:00Z/8,P1319,+1978-00-00T00:00:0",
-   "local_sha256": "1d16ea953d9bc5ce738d19f43575b58ce5f8f5b570b077ee6df72cb4ce279bcf",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s56_0.jpg",
-   "flag_cats": [
-    "PD-US missing SDC copyright status"
-   ]
+   "date": "July 1974date QS:P571,+1974-07-00T00:00:00Z/10",
+   "license_templates": [
+    "NARA-image-full",
+    "NARA-Author",
+    "NARA-Place",
+    "NARA-cooperation",
+    "PD-USGov-EPA"
+   ],
+   "local_sha256": "7c5ddbf0de8196cf501a2b2ae3da1633e9648bb071a8dca573207bdd2c0f19b2"
   }
  ],
  "s58": [
@@ -150,17 +134,15 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/1953_-_Savings_Account_Passbook_-_Allentown_National_Bank_-_Allentown_PA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "Public domain",
    "license_url": "",
-   "usage_terms": "Public domain",
    "attribution_required": "false",
-   "copyrighted": "False",
    "artist": "unknown",
    "credit": "unknown",
-   "attribution": "",
    "restrictions": "",
    "date": "1953",
-   "local_sha256": "6da403f13435da5e3df1abfbdf4fc23179097bcd10ec62015236a3f06f9e7c47",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s58_0.jpg",
-   "flag_cats": []
+   "license_templates": [
+    "PD-US-pre1978"
+   ],
+   "local_sha256": "6da403f13435da5e3df1abfbdf4fc23179097bcd10ec62015236a3f06f9e7c47"
   }
  ],
  "s80": [
@@ -170,19 +152,13 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Bank_of_Gustine%2C_CA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "CC BY 4.0",
    "license_url": "https://creativecommons.org/licenses/by/4.0",
-   "usage_terms": "Creative Commons Attribution 4.0",
    "attribution_required": "true",
-   "copyrighted": "True",
    "artist": "Publichall",
    "credit": "Own work",
-   "attribution": "",
    "restrictions": "",
    "date": "2017-07-13 12:50:54",
-   "local_sha256": "14a2cf1940d9c0ef5f0d066763ca68be5b1951d1b6d17898d75d90dd7738c68a",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s80_0.jpg",
-   "flag_cats": [
-    "CC-BY-4.0"
-   ]
+   "license_templates": [],
+   "local_sha256": "14a2cf1940d9c0ef5f0d066763ca68be5b1951d1b6d17898d75d90dd7738c68a"
   }
  ],
  "s82": [
@@ -192,20 +168,15 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Web_Summit_2018_-_MoneyConf_-_Day_2%2C_November_7_HM1_7012_%2845041353684%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "CC BY 2.0",
    "license_url": "https://creativecommons.org/licenses/by/2.0",
-   "usage_terms": "Creative Commons Attribution 2.0",
    "attribution_required": "true",
-   "copyrighted": "True",
    "artist": "Web Summit",
    "credit": "HM1_7012",
-   "attribution": "",
    "restrictions": "",
    "date": "2018-11-07 12:07",
-   "local_sha256": "3b05b5a43fb767e7c68fdaac3651c15fdab1f1066cebbe2b28ce04d5680ef3fd",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s82_0.jpg",
-   "flag_cats": [
-    "CC-BY-2.0",
-    "Flickr images reviewed by FlickreviewR 2"
-   ]
+   "license_templates": [
+    "cc-by-2.0"
+   ],
+   "local_sha256": "3b05b5a43fb767e7c68fdaac3651c15fdab1f1066cebbe2b28ce04d5680ef3fd"
   }
  ],
  "s95": [
@@ -215,41 +186,33 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Munitions_T-shirt_%28front%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "CC0",
    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-   "usage_terms": "Creative Commons Zero, Public Domain Dedication",
    "attribution_required": "false",
-   "copyrighted": "True",
    "artist": "Adam Back",
    "credit": "http://www.cypherspace.org/adam/rsa/uk-shirt.html",
-   "attribution": "",
    "restrictions": "",
    "date": "1997",
-   "local_sha256": "dff7a08c4260ba78f486d1af3c1cc1601060772ca3865ed2f9f0e15e0b4a73b7",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s95_0.jpg",
-   "flag_cats": [
-    "CC-Zero"
-   ]
+   "license_templates": [
+    "cc-zero"
+   ],
+   "local_sha256": "dff7a08c4260ba78f486d1af3c1cc1601060772ca3865ed2f9f0e15e0b4a73b7"
   }
  ],
  "s112": [
   {
-   "title": "File:Halden 27, Altstadt-Haustür in Aarau (2021).jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Halden_27,_Altstadt-Haust%C3%BCr_in_Aarau_(2021).jpg",
-   "file_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Halden_27%2C_Altstadt-Haust%C3%BCr_in_Aarau_%282021%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "usage_terms": "Creative Commons Attribution-Share Alike 4.0",
-   "attribution_required": "true",
-   "copyrighted": "True",
-   "artist": "JoachimKohler-HB",
+   "title": "File:Door knocker in Taranto 01.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Door_knocker_in_Taranto_01.jpg",
+   "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Door_knocker_in_Taranto_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "attribution_required": "false",
+   "artist": "Bernard Gagnon",
    "credit": "Own work",
-   "attribution": "",
    "restrictions": "",
-   "date": "2021-10-16 10:09:02",
-   "local_sha256": "982d3ccb6ee3e4fcdf732a933cfac8bcfefade015fef4274423e8e7a8aadfd26",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s112_0.jpg",
-   "flag_cats": [
-    "CC-BY-SA-4.0"
-   ]
+   "date": "2022-05-03",
+   "license_templates": [
+    "Location"
+   ],
+   "local_sha256": "74f7b4f28656fa509853d983fbf0b92a4efdf7de43c70512e0520fa70edefa92"
   }
  ],
  "s114": [
@@ -259,19 +222,13 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Door_and_Door_Frame%2C_Y%26A_London.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "CC0",
    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-   "usage_terms": "Creative Commons Zero, Public Domain Dedication",
    "attribution_required": "false",
-   "copyrighted": "True",
    "artist": "14GTR",
    "credit": "Own work",
-   "attribution": "",
    "restrictions": "",
    "date": "2024-02-25 15:14:07",
-   "local_sha256": "f8443e6a8d67724b8a948bdd2ce727f2b715bddf7b9acba7906b68abed120008",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s114_0.jpg",
-   "flag_cats": [
-    "CC-Zero"
-   ]
+   "license_templates": [],
+   "local_sha256": "f8443e6a8d67724b8a948bdd2ce727f2b715bddf7b9acba7906b68abed120008"
   }
  ],
  "s117": [
@@ -281,94 +238,52 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-17.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "CC BY-SA 3.0",
    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
-   "usage_terms": "Creative Commons Attribution-Share Alike 3.0",
    "attribution_required": "true",
-   "copyrighted": "True",
    "artist": "Taken by the uploader, w:es:Usuario:Barcex",
    "credit": "Taken by the uploader, w:es:Usuario:Barcex",
-   "attribution": "",
    "restrictions": "",
    "date": "2002-02-06",
-   "local_sha256": "06d65ef21f89e3dcdbeb6e1bc2206ae5aac188fe622bf319094b69c63b432c61",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s117_0.jpg",
-   "flag_cats": [
-    "CC-BY-SA-2.5",
-    "CC-BY-SA-3.0-migrated",
-    "FoP-Argentina",
-    "License migration redundant"
-   ]
-  }
- ],
- "s126": [
-  {
-   "title": "File:Zimbabwe $100 trillion 2009 Obverse.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Zimbabwe_$100_trillion_2009_Obverse.jpg",
-   "file_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Zimbabwe_%24100_trillion_2009_Obverse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "license": "Public domain",
-   "license_url": "",
-   "usage_terms": "Public domain",
-   "attribution_required": "false",
-   "copyrighted": "False",
-   "artist": "Reserve Bank of Zimbabwe",
-   "credit": "Self-scan by (Marianian) followed by minor Photoshop enhancements to improve appearance and reduce size. Second version scan by (Camp0s) with original color preserved. Transferred from en.wikipedia to Commons by User:Avicennasis using CommonsHelper.",
-   "attribution": "",
-   "restrictions": "currency",
-   "date": "2009",
-   "local_sha256": "d5c69779d97394606260ac646639ff6ea3910ce774eaba34f6d2de0435c3ec6e",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s126_0.jpg",
-   "flag_cats": [
-    "100000000000000 Zimbabwean dollar banknotes",
-    "Files that may be protected by currency protection laws",
-    "PD-ZW-currency",
-    "Valued images missing SDC copyright license",
-    "Valued images missing SDC copyright status",
-    "With currency"
-   ]
+   "license_templates": [
+    "FoP-Argentina"
+   ],
+   "local_sha256": "06d65ef21f89e3dcdbeb6e1bc2206ae5aac188fe622bf319094b69c63b432c61"
   }
  ],
  "s129": [
   {
-   "title": "File:Typical suburban street in the United States.tif",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Typical_suburban_street_in_the_United_States.tif",
-   "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Typical_suburban_street_in_the_United_States.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "usage_terms": "Creative Commons Attribution-Share Alike 4.0",
-   "attribution_required": "true",
-   "copyrighted": "True",
-   "artist": "Michael E. Arth",
-   "credit": "Own work",
-   "attribution": "",
+   "title": "File:Suburban houses near a forest (Unsplash).jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Suburban_houses_near_a_forest_(Unsplash).jpg",
+   "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Suburban_houses_near_a_forest_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "attribution_required": "false",
+   "artist": "Nathan Anderson nathananderson",
+   "credit": "https://unsplash.com/photos/vtZQNphir8c\nImage at the Wayback Machine\n\nGallery at the Wayback Machine",
    "restrictions": "",
-   "date": "2008",
-   "local_sha256": "2917d37ad64dbe4f39387f161702b6545a24e7cc3b0d1cff5f651be651a526f6",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s129_0.jpg",
-   "flag_cats": [
-    "CC-BY-SA-4.0"
-   ]
+   "date": "2016-12-26",
+   "license_templates": [
+    "Unsplash"
+   ],
+   "local_sha256": "32750f09148cf895788894cc4749ed67454ea6116e643f863aa727e17c9ca1a0"
   }
  ],
  "s146": [
   {
-   "title": "File:United States Treasury Building.JPG",
-   "page_url": "https://commons.wikimedia.org/wiki/File:United_States_Treasury_Building.JPG",
-   "file_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/United_States_Treasury_Building.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "license": "CC BY-SA 3.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-   "usage_terms": "Creative Commons Attribution-Share Alike 3.0",
-   "attribution_required": "true",
-   "copyrighted": "True",
-   "artist": "Rchuon24",
-   "credit": "Own work",
-   "attribution": "",
+   "title": "File:U.S. Treasury building, Washington, D.C LCCN2011631001.tif",
+   "page_url": "https://commons.wikimedia.org/wiki/File:U.S._Treasury_building,_Washington,_D.C_LCCN2011631001.tif",
+   "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/U.S._Treasury_building%2C_Washington%2C_D.C_LCCN2011631001.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license": "Public domain",
+   "license_url": "",
+   "attribution_required": "false",
+   "artist": "Carol M. Highsmith",
+   "credit": "Library of Congress\n\nCatalog: http://lccn.loc.gov/2011631001\nImage download: https://cdn.loc.gov/master/pnp/highsm/12800/12807a.tif\nOriginal url: https://hdl.loc.gov/loc.pnp/highsm.12807",
    "restrictions": "",
-   "date": "Taken on 12 August 2012, 18:00:29",
-   "local_sha256": "ccc98d828ae4886cccee2ffde90dd7b599fd8aa76bac893ec96da20eaceff4f8",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s146_0.jpg",
-   "flag_cats": [
-    "CC-BY-SA-3.0",
-    "WLM 2012 United States reviewed"
-   ]
+   "date": "between 1980 and 2006",
+   "license_templates": [
+    "LOC-image",
+    "PD-Highsmith"
+   ],
+   "local_sha256": "6b51c0034a0e66a905003cd352efe688f94e2e0d683fad9fb8b6217b40fd6283"
   }
  ],
  "s38": [
@@ -378,19 +293,17 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Bank_Run_in_Michigan%2C_USA%2C_February_1933.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "Public domain",
    "license_url": "",
-   "usage_terms": "Public domain",
    "attribution_required": "false",
-   "copyrighted": "False",
    "artist": "Photographer not credited.",
    "credit": "This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.",
-   "attribution": "",
    "restrictions": "",
    "date": "1933-02-28",
-   "local_sha256": "6439388db3e062afc2b2204a7e06027c7262ba92c3ab67c1ed4d705947cfe152",
-   "local": "/home/kadir70/shorts-factory/data/cache/multi_source/asset_6b08e206a5f7841bb92112f9.jpg",
-   "flag_cats": [
-    "PD-US missing SDC copyright status"
-   ]
+   "license_templates": [
+    "NARA-image",
+    "NARA-image",
+    "PD-US"
+   ],
+   "local_sha256": "6439388db3e062afc2b2204a7e06027c7262ba92c3ab67c1ed4d705947cfe152"
   }
  ],
  "s121": [
@@ -400,21 +313,15 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-05.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "CC BY-SA 3.0",
    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
-   "usage_terms": "Creative Commons Attribution-Share Alike 3.0",
    "attribution_required": "true",
-   "copyrighted": "True",
    "artist": "Taken by the uploader, w:es:Usuario:Barcex",
    "credit": "Taken by the uploader, w:es:Usuario:Barcex",
-   "attribution": "",
    "restrictions": "",
    "date": "2002-02-06",
-   "local_sha256": "bc50c4bc311855b8307f23f0606caaf8a1b9f9f23ab51d714026f28735f9cb2a",
-   "local": "/home/kadir70/shorts-factory/data/cache/multi_source/asset_e0b35e76d0c7c16f86d5311f.jpg",
-   "flag_cats": [
-    "CC-BY-SA-2.5",
-    "CC-BY-SA-3.0-migrated",
-    "License migration redundant"
-   ]
+   "license_templates": [
+    "Location"
+   ],
+   "local_sha256": "bc50c4bc311855b8307f23f0606caaf8a1b9f9f23ab51d714026f28735f9cb2a"
   }
  ],
  "s28": [
@@ -424,20 +331,15 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/US068_Washington_The_Capitol_Capitol_1964_%2851187727394%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "CC BY 2.0",
    "license_url": "https://creativecommons.org/licenses/by/2.0",
-   "usage_terms": "Creative Commons Attribution 2.0",
    "attribution_required": "true",
-   "copyrighted": "True",
    "artist": "wilford peloquin",
    "credit": "US068 Washington The Capitol Capitol 1964",
-   "attribution": "",
    "restrictions": "",
    "date": "2003-09-12 18:20",
-   "local_sha256": "0acc3cddaf694d372dbea63f34f70a1ba296de78c8f4e6de55c27ec3cb436eff",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s28_0.jpg",
-   "flag_cats": [
-    "CC-BY-2.0",
-    "Flickr images reviewed by FlickreviewR 2"
-   ]
+   "license_templates": [
+    "cc-by-2.0"
+   ],
+   "local_sha256": "0acc3cddaf694d372dbea63f34f70a1ba296de78c8f4e6de55c27ec3cb436eff"
   }
  ],
  "s96": [
@@ -447,20 +349,16 @@
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Adam_Back_2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "CC BY 2.0",
    "license_url": "https://creativecommons.org/licenses/by/2.0",
-   "usage_terms": "Creative Commons Attribution 2.0",
    "attribution_required": "true",
-   "copyrighted": "True",
    "artist": "Joi Ito",
    "credit": "https://flickr.com/photos/joi/15753708050",
-   "attribution": "",
    "restrictions": "",
    "date": "2014-12-02",
-   "local_sha256": "835c90493c146b03d5dffc5f7ab63448e368d06dea8f83883b6e3c1ea3e2140b",
-   "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s96_0.jpg",
-   "flag_cats": [
-    "CC-BY-2.0",
-    "Flickr images reviewed by trusted users"
-   ]
+   "license_templates": [
+    "Cc-by-2.0",
+    "Flickrreview"
+   ],
+   "local_sha256": "835c90493c146b03d5dffc5f7ab63448e368d06dea8f83883b6e3c1ea3e2140b"
   }
  ]
 }

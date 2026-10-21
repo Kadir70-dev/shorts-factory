@@ -141,7 +141,7 @@ def test_draft_cli_prompt_only_and_review_are_non_destructive(tmp_path, scenario
         capture_output=True, text=True, timeout=25)
     assert inspected.returncode == 0, inspected.stderr
     report = json.loads((review_dir / "chapter_narration_review.json").read_text())
-    assert report["chapter_count"] if "chapter_count" in report else len(report["chapters"]) == 8
+    assert len(report["chapters"]) == 8
     assert report["ready_for_TTS"] is False
     assert plan_file.read_text() == json.dumps(plan)
     assert evidence_file.read_text() == json.dumps(evidence)

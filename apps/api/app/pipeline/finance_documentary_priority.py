@@ -6,7 +6,7 @@ No I/O, model calls, downloads, changing layer counts, or fabrication.
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 # Keep in sync with the source resolver license policy (not a new license grant).
 ARCHIVE_PROVIDERS = frozenset({"wikimedia_commons", "government_public_domain",
@@ -33,7 +33,8 @@ def authored_chart_ids(graph: Any) -> set[str]:
             and s.data.valid() and bool(s.data.source.strip())}
 
 
-def archive_choice(graph: Any, scene_id: str, path: str) -> dict | None:
+def archive_choice(graph: Any, scene_id: str, path: str,
+                   *, license_ok: Callable[[Any], bool]) -> dict | None:
     """Accept already-selected institutional/licensed media, not arbitrary stock.
 
     The multi-source engine performs actual discovery/license validation.
@@ -61,8 +62,7 @@ def archive_choice(graph: Any, scene_id: str, path: str) -> dict | None:
                 continue
             # License legality comes from the established asset engine. Its
             # eligibility floor alone is weaker than our subject threshold.
-            from .asset_engine import legal
-            if not legal(c):
+            if not license_ok(c):
                 continue
             return {"scene_id": scene_id, "source_url": c.source_url,
                     "license": c.license,

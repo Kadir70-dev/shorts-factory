@@ -20,6 +20,7 @@ from ..config import settings
 from ..schemas.scene import (Layer, Scene, SceneGraph, StoryboardData,
                              StoryboardScene)
 from . import character as char
+from . import geo_data
 
 # Small, anime-first FX palette per niche (loopable transparent assets in
 # data/assets/fx/). Screen-blended foreground for cinematic depth — never clichéd.
@@ -173,6 +174,12 @@ def generate_semantic(graph: SceneGraph, decision_report) -> StoryboardData:
             entities = _entities(beat)
             company = _company(beat)
             location = _location(beat)
+            # An authored 3D beat names its place in `visual.query` ("Japan");
+            # the prose often names the story's ORIGIN instead ("dollars flowed
+            # out into the world"), so the globe flew to the wrong country.
+            if scene.visual.budget_channel == "threejs" and scene.visual.query.strip() \
+                    and geo_data.resolve(scene.visual.query) is not None:
+                location = scene.visual.query.strip()
             year_match = _YEAR.search(beat)
             numbers = list(dict.fromkeys(match.group(0) for match in _FINANCIAL.finditer(beat)))
             # A beat can state a figure in words ("nearly a fifth") while the

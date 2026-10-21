@@ -33,6 +33,7 @@ so footage never repeats, while staying deterministic.
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 
 from pathlib import Path
@@ -300,10 +301,18 @@ async def _render_self(scene: Scene, graph: SceneGraph) -> bool:
         headline = _display_headline(scene)
         source = next((o.text for o in scene.overlays if o.type == "source"), "")
         out = _local_asset(graph.meta.video_id, scene.id, "gfx.mp4")
+        # P0: deterministic rotation by documentary timeline position.
+        # Process-randomized hash(scene.id) previously changed between runs,
+        # defeating style reproducibility and the render cache.
+        index = next((i for i, s in enumerate(graph.scenes) if s.id == scene.id), 0)
+        seed = int.from_bytes(hashlib.sha256(scene.id.encode("utf-8")).digest()[:4],
+                              "big") % 9973
         scene.visual.asset_path = str(await motiongfx.kinetic(
             _theme(graph), out, graph.width, graph.height, graph.fps,
             max(2.5, scene.duration_sec), headline=headline, source=source,
-            seed=abs(hash(scene.id)) % 9973))
+            seed=seed,
+            treatment=motiongfx.TREATMENTS[index % len(motiongfx.TREATMENTS)],
+            layout=motiongfx.LAYOUTS[index % len(motiongfx.LAYOUTS)]))
         scene.visual.type, scene.visual.motion = "motion_gfx", "none"
         return True
     except Exception as e:                       # noqa: BLE001

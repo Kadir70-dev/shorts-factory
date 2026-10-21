@@ -1,0 +1,39 @@
+name: K70 P1 storytelling
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tools/k70_scene_engine/storytelling.py"
+      - "tools/k70_scene_engine/story_draft.py"
+      - "scripts/k70_p1_storytelling.py"
+      - "tests/test_k70_p1_storytelling.py"
+      - "tests/test_k70_p1_story_draft.py"
+      - ".github/workflows/k70-p1-storytelling.yml"
+  pull_request:
+    paths:
+      - "tools/k70_scene_engine/storytelling.py"
+      - "tools/k70_scene_engine/story_draft.py"
+      - "scripts/k70_p1_storytelling.py"
+      - "tests/test_k70_p1_storytelling.py"
+      - "tests/test_k70_p1_story_draft.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  p1-unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install isolated test dependency
+        run: python -m pip install pytest
+      - name: Run no-network story tests
+        run: python -m pytest -q tests/test_k70_p1_storytelling.py tests/test_k70_p1_story_draft.py

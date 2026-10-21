@@ -48,7 +48,8 @@ def caption_words(graph: Mapping[str, Any], sid: str) -> list[str]:
     return words
 
 
-def polish_transitions(scenes: list[dict], keep: set[str] = frozenset()) -> list[dict]:
+def polish_transitions(scenes: list[dict], keep: set[str] = frozenset(),
+                       cinematic_ids: set[str] = frozenset()) -> list[dict]:
     """crossfade -> cut between cards, into a card from footage, and on short beats.
 
     Transitions are in-clip, duration-preserving effects in render_ffmpeg, so a
@@ -61,7 +62,8 @@ def polish_transitions(scenes: list[dict], keep: set[str] = frozenset()) -> list
                 or cur["id"] in PROTECTED_CHARTS):
             continue
         pt, ct = prev["visual"]["type"], cur["visual"]["type"]
-        if pt in CINEMATIC or ct in CINEMATIC:
+        if (pt in CINEMATIC or ct in CINEMATIC
+                or prev["id"] in cinematic_ids or cur["id"] in cinematic_ids):
             continue
         reason = ("card_to_card" if pt in CARDS and ct in CARDS else
                   "card_entry" if ct in CARDS and pt in FOOTAGE else
@@ -122,17 +124,24 @@ def apply_decisions(source: Mapping[str, Any], decisions: Mapping[str, Any],
             continue
         if action not in VISUAL_ACTIONS:
             raise ValueError(f"{sid}: unknown action {action}")
-        if sid in PROTECTED_CHARTS or lookup[sid]["visual"]["type"] in CINEMATIC:
+        kind = lookup[sid]["visual"]["type"]
+        ai_swap = kind == "ai_video" and d.get("replaces_unverified_ai") is True
+        if sid in PROTECTED_CHARTS or (kind in CINEMATIC and not ai_swap):
             raise ValueError(f"{sid}: protected chart/3D/cinematic scene")
         if sid not in plates:
             raise ValueError(f"{sid}: plate missing")
         before = lookup[sid]["visual"]["type"]
         _visual(lookup[sid], plates[sid], d)
+        if str(plates[sid]).endswith(".mp4"):              # 2.5D motion clip
+            lookup[sid]["visual"].update({"type": "broll", "motion": "none"})
         if d.get("run_break"):
             run_breaks.add(sid)
         changes["visuals"].append({"scene_id": sid, "action": action, "from_type": before,
                                    "plate": plates[sid], "why": d.get("why", "")})
-    changes["transitions"] = polish_transitions(graph["scenes"], keep=run_breaks)
+    swapped = {d["scene_id"] for d in decisions.get("scenes", [])
+               if d.get("replaces_unverified_ai") is True}
+    changes["transitions"] = polish_transitions(graph["scenes"], keep=run_breaks,
+                                                cinematic_ids=swapped)
     validate(source, graph, decisions)
     return graph, changes
 
@@ -152,7 +161,9 @@ def validate(source: Mapping[str, Any], graph: Mapping[str, Any],
                 continue
             if a.get(key) != b.get(key):
                 raise AssertionError(f"{a['id']}: protected field {key} changed")
-        if a["visual"]["type"] in CINEMATIC or a["id"] in PROTECTED_CHARTS:
+        swapped = {x["scene_id"] for x in decisions.get("scenes", [])
+                   if x.get("replaces_unverified_ai") is True}
+        if (a["visual"]["type"] in CINEMATIC and a["id"] not in swapped) or a["id"] in PROTECTED_CHARTS:
             if a["visual"] != b["visual"] or a["transition_in"] != b["transition_in"]:
                 raise AssertionError(f"{a['id']}: protected 3D/cinematic/chart changed")
         path = b["visual"].get("asset_path")

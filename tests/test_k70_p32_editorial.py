@@ -160,3 +160,29 @@ def test_graphic_plate_is_marked_not_archival(graph, tmp_path):
                              {"s30": plate})
     v = out["scenes"][3]["visual"]
     assert v["strategy"] == "branded" and "not archival" in v["decision_reason"]
+
+
+def test_ai_insert_replaced_only_when_rights_flag_set(graph, tmp_path):
+    clip = tmp_path / "c.mp4"
+    clip.write_bytes(b"0" * 300)
+    with pytest.raises(ValueError, match="protected"):
+        apply_decisions(graph, {"scenes": [{"scene_id": "s8", "action": "graphic_plate"}]},
+                        {"s8": str(clip)})
+    dec = {"scenes": [{"scene_id": "s8", "action": "graphic_plate", "replaces_unverified_ai": True}]}
+    out, _ = apply_decisions(graph, dec, {"s8": str(clip)})
+    assert out["scenes"][7]["visual"]["type"] == "broll"
+    assert out["scenes"][7]["transition_in"] == graph["scenes"][7]["transition_in"]
+    with pytest.raises(ValueError, match="protected"):           # 3D never swappable
+        apply_decisions(graph, {"scenes": [{"scene_id": "s1", "action": "graphic_plate",
+                                            "replaces_unverified_ai": True}]}, {"s1": str(clip)})
+
+
+def test_new_original_graphics_render(tmp_path):
+    from tools.k70_scene_engine import explainer_graphics as gfx
+    outs = [gfx.broken_link_plate(tmp_path / "a.jpg", left="DOLLAR", right="GOLD"),
+            gfx.wall_plate(tmp_path / "b.jpg"), gfx.empty_room_plate(tmp_path / "c.jpg"),
+            gfx.house_sign_plate(tmp_path / "d.jpg", sign=["FORECLOSED"]),
+            gfx.mail_plate(tmp_path / "e.jpg", header=[("To", "majordomo@toad.com")],
+                           body=["subscribe cypherpunks"]),
+            gfx.ledger_plate(tmp_path / "f.jpg", rows=[("Year", "1998")], top=720)]
+    assert all(Image.open(o).size == (1080, 1920) for o in outs)

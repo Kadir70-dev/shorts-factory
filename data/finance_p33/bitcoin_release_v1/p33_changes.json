@@ -1,0 +1,1166 @@
+{
+  "narration": [
+    {
+      "scene_id": "s30",
+      "from": "A war in Vietnam. A war on poverty. A race sharply higher.",
+      "to": "A war in Vietnam. A war on poverty. A race to the moon."
+    },
+    {
+      "scene_id": "s126",
+      "from": "Within weeks the central bank would print an one hundred trillion dollar note.",
+      "to": "Within weeks the central bank would print a one hundred trillion dollar note."
+    }
+  ],
+  "visuals": [
+    {
+      "scene_id": "s23",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s23.jpg",
+      "why": "Replaces a roadside-motel postcard with busy mid-century American commerce for 'it worked beautifully'."
+    },
+    {
+      "scene_id": "s30",
+      "action": "triptych",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s30.jpg",
+      "why": "Matches the three spoken items in order: Vietnam (US Army, 1966), LBJ signing the Economic Opportunity Act (1964), Apollo 11 launch (NASA, 1969)."
+    },
+    {
+      "scene_id": "s42",
+      "action": "archival_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s42.jpg",
+      "why": "No licensed frame of the 15 Aug 1971 broadcast was found on Commons. Uses a verified 1971 White House portrait plus a dated evidence line; it does not claim to be the broadcast."
+    },
+    {
+      "scene_id": "s52",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s52.jpg",
+      "why": "Replaces a 2025 Hong Kong supermarket with a period artifact of 1970s inflation (Ford's WIN campaign)."
+    },
+    {
+      "scene_id": "s56",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s56.jpg",
+      "why": "U.S. supermarket of the period; EPA DOCUMERICA photo by Erik Calonius (NARA 555651), PD-USGov-EPA."
+    },
+    {
+      "scene_id": "s58",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s58.jpg",
+      "why": "Replaces a 19th-century coin table with a savings passbook (illustrative object; dated honestly)."
+    },
+    {
+      "scene_id": "s80",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s80.jpg",
+      "why": "Replaces a 2024 Portland tower with an ordinary bank branch facade (illustrative)."
+    },
+    {
+      "scene_id": "s82",
+      "action": "archival_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s82.jpg",
+      "why": "Identity and date from the original Flickr post by the official Web Summit account: '7 November 2018; David Chaum, Elixxir on Moneyconf Stage… Photo by Harry Murphy/Web Summit via Sportsfile'. Editorial use; no endorsement implied."
+    },
+    {
+      "scene_id": "s88",
+      "action": "typography_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s88.jpg",
+      "why": "No licensed DigiCash imagery found; factual typography consistent with s86/s89 narration. The existing 'TEN YEARS EARLY' headline overlay still renders."
+    },
+    {
+      "scene_id": "s95",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s95.jpg",
+      "why": "Replaces a store keyboard aisle with a 1990s cypherpunk artifact: export-restricted encryption code printed on a shirt (CC0, Adam Back)."
+    },
+    {
+      "scene_id": "s111",
+      "action": "typography_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s111.jpg",
+      "why": "No licensed Liberty Dollar or raid imagery found (search returned 19th-century Seated Liberty coins). Factual typography restating the narration; the existing source overlay remains. Date verified: U.S. v. von NotHaus, W.D.N.C. No. 5:09CR27-RLV, order of 1 Dec 2014: the search of the Liberty Dollar HQ in Evansville occurred on November 14, 2007 (Sunshine Minting search 14–15 Nov 2007)."
+    },
+    {
+      "scene_id": "s112",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s112.jpg",
+      "why": "Door knocker on a wooden door (illustrative metaphor, no historical claim). CC0, Bernard Gagnon."
+    },
+    {
+      "scene_id": "s114",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s114.jpg",
+      "why": "Replaces an Electricity photo with a bare door and frame (illustrative metaphor for 'no door')."
+    },
+    {
+      "scene_id": "s117",
+      "action": "graphic_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s117.jpg",
+      "why": "Original K70 explanatory graphic. Facts: Decree 1570/2001 was signed 1 Dec 2001 and published in the Boletín Oficial on 3 Dec 2001 (Marval O'Farrell Mairal, 'Restricciones bancarias en la Argentina: el corralito'). It contains no numbers beyond the decree; the 250-peso limit stays with the s118 chart."
+    },
+    {
+      "scene_id": "s126",
+      "action": "typography_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s126.jpg",
+      "why": "Factual typography; banknote image withdrawn pending currency-reproduction clearance. The 'Z$100T' stat overlay and the Hanke & Kwok source overlay still render."
+    },
+    {
+      "scene_id": "s129",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s129.jpg",
+      "why": "Quiet U.S. suburb for 'not here, not to us'. CC0 (Unsplash, pre-June-2017 CC0 era), Nathan Anderson."
+    },
+    {
+      "scene_id": "s146",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s146.jpg",
+      "why": "U.S. Treasury, which administered TARP's public money (illustrative). Carol M. Highsmith, Library of Congress, PD-Highsmith."
+    },
+    {
+      "scene_id": "s38",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s38.jpg",
+      "why": "Review: genuine 1933 bank-run photo used as an analogy. Kept, but dated on screen so it is not read as 1971."
+    },
+    {
+      "scene_id": "s121",
+      "action": "graphic_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s121.jpg",
+      "why": "Original K70 illustration of a closed bank shutter ('CERRADO' = closed). Labelled 'Illustration: K70 (not archival)'. The dates cover the cacerolazo protests from December 2001 into 2002."
+    },
+    {
+      "scene_id": "s15",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s15.jpg",
+      "why": "Reichsbanknote, 5 million marks, dated 20 Aug 1923. PD-scan (PD-Germany-§134-KUG; PD-1996 in the US). Demonetized Papiermark: not confusable 'im Zahlungsverkehr' (§128 OWiG); no Commons currency-restriction tag."
+    },
+    {
+      "scene_id": "s115",
+      "action": "graphic_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s115.jpg",
+      "why": "Original K70 map graphic (Natural Earth outline, public domain) leading into the s116 Buenos Aires beat. Neutral; not archival."
+    },
+    {
+      "scene_id": "s28",
+      "action": "archival_plate",
+      "from_type": "motion_gfx",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s28.jpg",
+      "why": "Breaks the s26-s29 four-card run: 'Congress listened politely' over the Capitol. The card's text overlay is kept."
+    },
+    {
+      "scene_id": "s96",
+      "action": "graphic_plate",
+      "from_type": "motion_gfx",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s96.jpg",
+      "why": "Original K70 proof-of-work illustration with real SHA-1 hashes computed at build time (Hashcash uses SHA-1). Terminal styling differs from the motion_gfx cards, so it still breaks the s93-s100 run. The headline and lower-third overlays still render."
+    },
+    {
+      "scene_id": "s5",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s5.jpg",
+      "why": "Where U.S. gold was held; PD (published by the Committee on Architectural... per Commons)."
+    },
+    {
+      "scene_id": "s6",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s6.jpg",
+      "why": "Presidential helicopter in Nixon's term (NARA 194719, PD, Robert L. Knudsen). Dated; not claimed as 13 Aug 1971."
+    },
+    {
+      "scene_id": "s9",
+      "action": "archival_plate",
+      "from_type": "motion_gfx",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s9.jpg",
+      "why": "Camp David lodge, NARA 194350, PD. Dated; the secret meeting there was 13–15 Aug 1971. Breaks the s8–s11 card run; overlays kept."
+    },
+    {
+      "scene_id": "s16",
+      "action": "archival_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s16.jpg",
+      "why": "Period artifact (Mittweida, Saxony, 1923), reverse reads 'Am 15. Nov. 1923 kostete 1 Pfund Brot 80 Milliarden'. PD per Commons."
+    },
+    {
+      "scene_id": "s105",
+      "action": "archival_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s105.jpg",
+      "why": "Neutral object for 'a person can be arrested'. CC0."
+    },
+    {
+      "scene_id": "s107",
+      "action": "archival_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s107.jpg",
+      "why": "e-gold was described as backed by bullion; illustrative CC0 image, not e-gold's vault."
+    },
+    {
+      "scene_id": "s108",
+      "action": "archival_plate",
+      "from_type": "motion_gfx",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s108.jpg",
+      "why": "DOJ headquarters for 'the Justice Department indicted it' (Apr 2007). Breaks the s106–s110 run."
+    },
+    {
+      "scene_id": "s149",
+      "action": "archival_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s149.jpg",
+      "why": "The central bank behind 'Trust us'. PD (Federal Reserve photo)."
+    },
+    {
+      "scene_id": "s25",
+      "action": "graphic_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s25.jpg",
+      "why": "Original document-style graphic. Facts from the JEC hearing record: 'Employment, Growth, and Price Levels', 26–30 Oct 1959, Part 9A (Triffin statement p. 2905) via FRASER / St. Louis Fed."
+    },
+    {
+      "scene_id": "s147",
+      "action": "graphic_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s147.jpg",
+      "why": "Original illustration for 'handed eviction notices'; no PD/CC0 photo found. Contains no names, figures or dates."
+    },
+    {
+      "scene_id": "s1",
+      "action": "archival_plate",
+      "from_type": "ai_video",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/clips/s1_cinematic.mp4",
+      "why": "Empty Treasury corridor, Historic American Buildings Survey, PD. Pollinations model alias 'flux' (proven by cache key); FLUX.1 schnell mapping not proven for the legacy image.pollinations.ai endpoint and provider ToS (2026-10-10) grants no output licence ('Model licences vary; verify before commercial use'). Rights UNRESOLVED, so replaced; original clip preserved."
+    },
+    {
+      "scene_id": "s33",
+      "action": "archival_plate",
+      "from_type": "ai_video",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/clips/s33_cinematic.mp4",
+      "why": "Vault with gold bars, NARA 296609, PD. Pollinations model alias 'flux' (proven by cache key); FLUX.1 schnell mapping not proven for the legacy image.pollinations.ai endpoint and provider ToS (2026-10-10) grants no output licence ('Model licences vary; verify before commercial use'). Rights UNRESOLVED, so replaced; original clip preserved."
+    },
+    {
+      "scene_id": "s46",
+      "action": "graphic_plate",
+      "from_type": "ai_video",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/clips/s46_cinematic.mp4",
+      "why": "Original illustration of the dollar-gold link breaking (the date matches the film's s41). Pollinations model alias 'flux' (proven by cache key); FLUX.1 schnell mapping not proven for the legacy image.pollinations.ai endpoint and provider ToS (2026-10-10) grants no output licence ('Model licences vary; verify before commercial use'). Rights UNRESOLVED, so replaced; original clip preserved."
+    },
+    {
+      "scene_id": "s71",
+      "action": "archival_plate",
+      "from_type": "ai_video",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/clips/s71_cinematic.mp4",
+      "why": "CC0 museum mainframe for 'just the machine'. Pollinations model alias 'flux' (proven by cache key); FLUX.1 schnell mapping not proven for the legacy image.pollinations.ai endpoint and provider ToS (2026-10-10) grants no output licence ('Model licences vary; verify before commercial use'). Rights UNRESOLVED, so replaced; original clip preserved."
+    },
+    {
+      "scene_id": "s79",
+      "action": "archival_plate",
+      "from_type": "ai_video",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/clips/s79_cinematic.mp4",
+      "why": "CC0 period personal computer. Pollinations model alias 'flux' (proven by cache key); FLUX.1 schnell mapping not proven for the legacy image.pollinations.ai endpoint and provider ToS (2026-10-10) grants no output licence ('Model licences vary; verify before commercial use'). Rights UNRESOLVED, so replaced; original clip preserved."
+    },
+    {
+      "scene_id": "s101",
+      "action": "graphic_plate",
+      "from_type": "ai_video",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/clips/s101_cinematic.mp4",
+      "why": "Original illustration for 'the same wall'. Pollinations model alias 'flux' (proven by cache key); FLUX.1 schnell mapping not proven for the legacy image.pollinations.ai endpoint and provider ToS (2026-10-10) grants no output licence ('Model licences vary; verify before commercial use'). Rights UNRESOLVED, so replaced; original clip preserved."
+    },
+    {
+      "scene_id": "s123",
+      "action": "graphic_plate",
+      "from_type": "ai_video",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/clips/s123_cinematic.mp4",
+      "why": "Original illustration of an emptied apartment; no place or person claimed. Pollinations model alias 'flux' (proven by cache key); FLUX.1 schnell mapping not proven for the legacy image.pollinations.ai endpoint and provider ToS (2026-10-10) grants no output licence ('Model licences vary; verify before commercial use'). Rights UNRESOLVED, so replaced; original clip preserved."
+    },
+    {
+      "scene_id": "s145",
+      "action": "graphic_plate",
+      "from_type": "ai_video",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/clips/s145_cinematic.mp4",
+      "why": "Original illustration for 'Foreclosed.' Pollinations model alias 'flux' (proven by cache key); FLUX.1 schnell mapping not proven for the legacy image.pollinations.ai endpoint and provider ToS (2026-10-10) grants no output licence ('Model licences vary; verify before commercial use'). Rights UNRESOLVED, so replaced; original clip preserved."
+    },
+    {
+      "scene_id": "s139",
+      "action": "archival_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s139.jpg",
+      "why": "Replaces an unrelated stock clip (person writing on a flyer). Taken on the day of the filing; CC BY 2.0."
+    },
+    {
+      "scene_id": "s92",
+      "action": "graphic_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s92.jpg",
+      "why": "Replaces a 'hooded hacker' stereotype clip. Facts: list founded 1992; subscribe by mailing majordomo@toad.com with 'subscribe cypherpunks' (Wikipedia: Cypherpunk)."
+    },
+    {
+      "scene_id": "s98",
+      "action": "graphic_plate",
+      "from_type": "motion_gfx",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/plates/s98.jpg",
+      "why": "Breaks the s97-s100 card run with a document-style plate (different visual grammar from motion_gfx); facts restate the narration (s98, s100)."
+    }
+  ],
+  "notes": [
+    {
+      "scene_id": "s132",
+      "action": "keep",
+      "why": "Provisional keep per brief: Northern Rock queue, 2007 (CC BY 2.0)."
+    }
+  ],
+  "overlays": [
+    {
+      "scene_id": "s126",
+      "from": {
+        "type": "stat",
+        "text": "Z$100,000,000,000,000",
+        "sub": "issued 16 January 2009",
+        "y": 0.2,
+        "emphasis": "normal"
+      },
+      "to": {
+        "type": "stat",
+        "text": "one hundred trillion dollars · issued 16 January 2009",
+        "sub": "Z$100T",
+        "y": 0.2,
+        "emphasis": "normal"
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "scene_id": "s3",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s5",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "short_punch_beat"
+    },
+    {
+      "scene_id": "s11",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s19",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s20",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s24",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s26",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s27",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s36",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s43",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s44",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s45",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s50",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s54",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s55",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s57",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s59",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s60",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s66",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s68",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s69",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s78",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s83",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s84",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s85",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s89",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s92",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "short_punch_beat"
+    },
+    {
+      "scene_id": "s93",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s94",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s95",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "short_punch_beat"
+    },
+    {
+      "scene_id": "s97",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s99",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s100",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s103",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s106",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s109",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s110",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s113",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s118",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s119",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s120",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s127",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "short_punch_beat"
+    },
+    {
+      "scene_id": "s134",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s135",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s136",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s137",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "short_punch_beat"
+    },
+    {
+      "scene_id": "s138",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s140",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s141",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s142",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s144",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s154",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s156",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    }
+  ],
+  "source_graph": "/home/kadir70/shorts-factory/data/finance_p31/bitcoin_repaired_v1/scene_graph_p31_repaired.json",
+  "source_sha256": "6f5175d2b1ba72ac39f2d1a984fef83a6492059b3377a77d970088d3d953d1c2",
+  "provenance": {
+    "s23": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Main Street, looking north, Greenville.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Main_Street,_looking_north,_Greenville.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Main_Street%2C_looking_north%2C_Greenville.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Asheville Post Card Co. (publisher)",
+        "date": "circa 1958date QS:P,+1958-00-00T00:00:00Z/9,P1480,Q5727902",
+        "description": "Photomechanical print (postcard) : halftone, colored \nDivided back",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s23_0_9cc36923.jpg",
+        "sha256": "161da671a50e5832d6bc9dbff89b6ece01fda496fb7eea4174f3e0f907f2ff95"
+      }
+    ],
+    "s30": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:UH-1D helicopters in Vietnam 1966.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:UH-1D_helicopters_in_Vietnam_1966.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/UH-1D_helicopters_in_Vietnam_1966.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "James K. F. Dung, SFC, Photographer",
+        "date": "Taken on 16 May 1966",
+        "description": "U.S. Army Bell UH-1D helicopters airlift members of the 2nd Battalion, 14th Infantry Regiment from the Filhol Rubber Plantation area to a new staging area, during Operation \"Wahiawa\", a search and destroy mission conducted by the 25th Infantry Division, northeast of Cu Chi, South Vietnam, 1966.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s30_0_ea841afd.jpg",
+        "sha256": "b23ab4ed0790d857ccbe3278a3e742baeb13d10af8a371ec4c62a9828974de7b"
+      },
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Signing of the EOA.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Signing_of_the_EOA.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Signing_of_the_EOA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Cecil W. Stoughton",
+        "date": "1964-08-20",
+        "description": "President Lyndon B. Johnson signs the Poverty Bill (also known as the Economic Opportunity Act) in the Rose Garden, White House, while press and supporters of the bill look on.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s30_1_125bc444.jpg",
+        "sha256": "0ace22206ddac5078e6692e522df490127ba8b00904650c4acd5900521fb021b"
+      },
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Apollo 11 Launched Via Saturn V Rocket.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Apollo_11_Launched_Via_Saturn_V_Rocket.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Apollo_11_Launched_Via_Saturn_V_Rocket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "NASA",
+        "date": "1969-07-16",
+        "description": "The Apollo 11 mission launched from the Kennedy Space Center, Florida on July 16, 1969. The Saturn V vehicle produced a holocaust of flames as it rose from its pad at Launch complex 39.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s30_2_a0449ee9.jpg",
+        "sha256": "eb83d40711cc21ba07bc1af45d43aabe78b699254d3813cd3213e35195749edf"
+      }
+    ],
+    "s42": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Nixon Official Presidential Portrait 07-08-1971 (cropped).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Nixon_Official_Presidential_Portrait_07-08-1971_(cropped).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Nixon_Official_Presidential_Portrait_07-08-1971_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Unknown authorUnknown authorDerivative work:  TharonXX",
+        "date": "1971-07-08",
+        "description": "Official Presidential Portrait, 07/08/1971.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s42_0_288ab4c6.jpg",
+        "sha256": "c27c633faa9c83701a375279eef1bd1b21b41c8727344a719b9795c5814a1c51"
+      }
+    ],
+    "s52": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:A button from the \"Whip Inflation Now\" initiative of the 1970's.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:A_button_from_the_%22Whip_Inflation_Now%22_initiative_of_the_1970%27s.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/A_button_from_the_%22Whip_Inflation_Now%22_initiative_of_the_1970%27s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "",
+        "date": "",
+        "description": "A red and white \"WIN\" button from President Gerald R. Ford's 1974 \"Whip Inflation Now\" economic initiative.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s52_0_c6ab8915.jpg",
+        "sha256": "2ca52cb9f9b24921d90cf9dba0e0f377ff9ca253131cf59bbaf0f1b2e453b6bb"
+      }
+    ],
+    "s56": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:SHOPPING FOR GROCERIES IN A WASHINGTON, DISTRICT OF COLUMBIA SUPERMARKET - NARA - 555651.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:SHOPPING_FOR_GROCERIES_IN_A_WASHINGTON,_DISTRICT_OF_COLUMBIA_SUPERMARKET_-_NARA_-_555651.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/SHOPPING_FOR_GROCERIES_IN_A_WASHINGTON%2C_DISTRICT_OF_COLUMBIA_SUPERMARKET_-_NARA_-_555651.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Erik Calonius",
+        "date": "July 1974date QS:P571,+1974-07-00T00:00:00Z/10",
+        "description": "",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s56_0_f2d9e838.jpg",
+        "sha256": "7c5ddbf0de8196cf501a2b2ae3da1633e9648bb071a8dca573207bdd2c0f19b2"
+      }
+    ],
+    "s58": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:1953 - Savings Account Passbook - Allentown National Bank - Allentown PA.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:1953_-_Savings_Account_Passbook_-_Allentown_National_Bank_-_Allentown_PA.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/1953_-_Savings_Account_Passbook_-_Allentown_National_Bank_-_Allentown_PA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "unknown",
+        "date": "1953",
+        "description": "Savings Account Passbook - Allentown National Bank",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s58_0_20c5ae7b.jpg",
+        "sha256": "6da403f13435da5e3df1abfbdf4fc23179097bcd10ec62015236a3f06f9e7c47"
+      }
+    ],
+    "s80": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Bank of Gustine, CA.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Bank_of_Gustine,_CA.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Bank_of_Gustine%2C_CA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY 4.0",
+        "artist": "Publichall",
+        "date": "2017-07-13 12:50:54",
+        "description": "Began in 1909 as a branch of the Bank of Los Banos, it was first located in a storefront in the rear of the Miller & Lux building, whose owners had a controlling interest of that bank. It was sold to the newly formed Bank of Gustine in 1913, who put up this building kitty corner to the old location ",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s80_0_3b0b75f6.jpg",
+        "sha256": "14a2cf1940d9c0ef5f0d066763ca68be5b1951d1b6d17898d75d90dd7738c68a"
+      }
+    ],
+    "s82": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Web Summit 2018 - MoneyConf - Day 2, November 7 HM1 7012 (45041353684).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Web_Summit_2018_-_MoneyConf_-_Day_2,_November_7_HM1_7012_(45041353684).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Web_Summit_2018_-_MoneyConf_-_Day_2%2C_November_7_HM1_7012_%2845041353684%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY 2.0",
+        "artist": "Web Summit",
+        "date": "2018-11-07 12:07",
+        "description": "7 November 2018; David Chaum, Elixxir on Moneyconf Stage during day two of Web Summit 2018 at the Altice Arena in Lisbon, Portugal. Photo by Harry Murphy/Web Summit via Sportsfile",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s82_0_868fbfe4.jpg",
+        "sha256": "3b05b5a43fb767e7c68fdaac3651c15fdab1f1066cebbe2b28ce04d5680ef3fd"
+      }
+    ],
+    "s95": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Munitions T-shirt (front).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Munitions_T-shirt_(front).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Munitions_T-shirt_%28front%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "Adam Back",
+        "date": "1997",
+        "description": "Export-restricted encryption code printed on T-shirt as a protest against US encryption export restrictions.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s95_0_ada29836.jpg",
+        "sha256": "dff7a08c4260ba78f486d1af3c1cc1601060772ca3865ed2f9f0e15e0b4a73b7"
+      }
+    ],
+    "s112": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Door knocker in Taranto 01.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Door_knocker_in_Taranto_01.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Door_knocker_in_Taranto_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "Bernard Gagnon",
+        "date": "2022-05-03",
+        "description": "Door knocker in Taranto, Italy",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s112_0_b37aed1b.jpg",
+        "sha256": "74f7b4f28656fa509853d983fbf0b92a4efdf7de43c70512e0520fa70edefa92"
+      }
+    ],
+    "s114": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Door and Door Frame, Y&A London.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Door_and_Door_Frame,_Y%26A_London.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Door_and_Door_Frame%2C_Y%26A_London.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "14GTR",
+        "date": "2024-02-25 15:14:07",
+        "description": "Oak door and door frame, made of broad planks with large iron nails, made in Ipswich, England between 1500 and 1530, Victoria and Albert Museum number A.25-1913",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s114_0_0f4888f5.jpg",
+        "sha256": "f8443e6a8d67724b8a948bdd2ce727f2b715bddf7b9acba7906b68abed120008"
+      }
+    ],
+    "s129": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Suburban houses near a forest (Unsplash).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Suburban_houses_near_a_forest_(Unsplash).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Suburban_houses_near_a_forest_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "Nathan Anderson nathananderson",
+        "date": "2016-12-26",
+        "description": "Birmingham, United States",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s129_0_a587a908.jpg",
+        "sha256": "32750f09148cf895788894cc4749ed67454ea6116e643f863aa727e17c9ca1a0"
+      }
+    ],
+    "s146": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:U.S. Treasury building, Washington, D.C LCCN2011631001.tif",
+        "page_url": "https://commons.wikimedia.org/wiki/File:U.S._Treasury_building,_Washington,_D.C_LCCN2011631001.tif",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/U.S._Treasury_building%2C_Washington%2C_D.C_LCCN2011631001.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Carol M. Highsmith",
+        "date": "between 1980 and 2006",
+        "description": "Title: U.S. Treasury building, Washington, D.C\nPhysical description: 1 transparency : color ; 4 x 5 in. or smaller.\n\nNotes: Title, date, and keywords provided by the photographer.; Digital image produced by Carol M. Highsmith to represent her original film transparency; some details may differ betwe",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s146_0_3f95b75b.jpg",
+        "sha256": "6b51c0034a0e66a905003cd352efe688f94e2e0d683fad9fb8b6217b40fd6283"
+      }
+    ],
+    "s38": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Bank_Run_in_Michigan%2C_USA%2C_February_1933.jpg",
+        "page_url": "",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Bank_Run_in_Michigan%2C_USA%2C_February_1933.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Photographer not credited.",
+        "date": "February 1933",
+        "description": "Bank run in Michigan, USA, February 1933",
+        "local": "/home/kadir70/shorts-factory/data/cache/multi_source/asset_6b08e206a5f7841bb92112f9.jpg",
+        "retrieved": "P3.1 cache",
+        "license_verification": "from P3.1 provenance; human legal review still required",
+        "sha256": "6439388db3e062afc2b2204a7e06027c7262ba92c3ab67c1ed4d705947cfe152"
+      }
+    ],
+    "s15": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:5 Millionen Mark 1923-08-20.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:5_Millionen_Mark_1923-08-20.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/5_Millionen_Mark_1923-08-20.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Deutsche Reichsbank",
+        "date": "1923",
+        "description": "5 Million Mark from 1923-08-20",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s15_0_c0ecb45e.jpg",
+        "sha256": "c42ea8c602f303857543b9ed179c0b27ad107d6389054430a37a536f84d7fee1"
+      }
+    ],
+    "s28": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:US068 Washington The Capitol Capitol 1964 (51187727394).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:US068_Washington_The_Capitol_Capitol_1964_(51187727394).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/US068_Washington_The_Capitol_Capitol_1964_%2851187727394%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY 2.0",
+        "artist": "wilford peloquin",
+        "date": "2003-09-12 18:20",
+        "description": "US068 Washington The Capitol Capitol 1964",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s28_0_b514e39d.jpg",
+        "sha256": "0acc3cddaf694d372dbea63f34f70a1ba296de78c8f4e6de55c27ec3cb436eff"
+      }
+    ],
+    "s5": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:United States Bullion Depository 1939.tiff",
+        "page_url": "https://commons.wikimedia.org/wiki/File:United_States_Bullion_Depository_1939.tiff",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/United_States_Bullion_Depository_1939.tiff?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Published by Committee on Architectural Surveys and Public Works Administration.",
+        "date": "1939",
+        "description": "Photograph shows exterior view of United Stated Bullion Depository at Fort Knox from outside the gated entrance.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s5_0_97acc33a.jpg",
+        "sha256": "d3dd40d20693f2a00b1e12d073c6717b78a387c8c11a6919764e1d9a9f15ae84"
+      }
+    ],
+    "s6": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:\"Marine One\" in flight - NARA - 194719.tif",
+        "page_url": "https://commons.wikimedia.org/wiki/File:%22Marine_One%22_in_flight_-_NARA_-_194719.tif",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/%22Marine_One%22_in_flight_-_NARA_-_194719.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Robert LeRoy Knudsen",
+        "date": "10 March 1971date QS:P571,+1971-03-10T00:00:00Z/11",
+        "description": "\nScope and content:  Subject: Helicopters.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s6_0_ac94345f.jpg",
+        "sha256": "6611739e21a03fdb9f66068fc3930e0ed2fca709e1e99858bd87d1589ac85d7f"
+      }
+    ],
+    "s9": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Exterior of Camp David lodge with swimming pool in foreground. - NARA - 194350.tif",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Exterior_of_Camp_David_lodge_with_swimming_pool_in_foreground._-_NARA_-_194350.tif",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Exterior_of_Camp_David_lodge_with_swimming_pool_in_foreground._-_NARA_-_194350.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Karl Schumacher",
+        "date": "9 February 1971date QS:P571,+1971-02-09T00:00:00Z/11",
+        "description": "\nScope and content:  Subject: Camp David.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s9_0_8e11103f.jpg",
+        "sha256": "e7e9dfe2c9f0a734acf178c2c0651ffaafb2c1b843dcef4d3a617eb00eedc1c4"
+      }
+    ],
+    "s16": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:1923 Germany rampant Inflation Medal, Mittweida, Saxony, reverse.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:1923_Germany_rampant_Inflation_Medal,_Mittweida,_Saxony,_reverse.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/1923_Germany_rampant_Inflation_Medal%2C_Mittweida%2C_Saxony%2C_reverse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Berlin-George",
+        "date": "1923",
+        "description": "1923 Germany rampant Inflation Medal, Mittweida, Saxony\nBronze medallion, d. = 32 mm.\nA distressed couple with child in front of a barrier of thorns, monogram MM in exergue. / 8 lines: \"AM 15. NOV. 1923 KOSTETE 1 PFUND BROT 80 MILLIARDEN 1 PFUND FLEISCH 900 MILLIARDEN  1 GLAS BIER 52 MILLIARD.\"\nMint",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s16_0_635e977c.jpg",
+        "sha256": "81e1faf29e4caa38d2ad6b9c8ee2df0f9cb9adc81bc2979fd1aec50b5e96cd99"
+      }
+    ],
+    "s105": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Handcuffs and Key (Taipei New Culture Memorial Hall).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Handcuffs_and_Key_(Taipei_New_Culture_Memorial_Hall).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Handcuffs_and_Key_%28Taipei_New_Culture_Memorial_Hall%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "Battlesnake1",
+        "date": "2022-09-13 16:36:22",
+        "description": "Handcuffs and Key Enclosed in a Glass Case in the old Japanese police station at Datong District, Taipei, Taiwan",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s105_0_bdb1b6ce.jpg",
+        "sha256": "b771a2907066b97b04d2d0efc079d868db632b111c0d4eab3420747aaec6f8e6"
+      }
+    ],
+    "s107": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Gold bullion bars.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Gold_bullion_bars.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Gold_bullion_bars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "Stevebidmead",
+        "date": "2018-06-17",
+        "description": "A pile of stacked gold bars",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s107_0_fd8a1334.jpg",
+        "sha256": "dd4e69d61f094c620599f46668ac40f44aa2c078a362fc7a8dffb33a54ff59cd"
+      }
+    ],
+    "s108": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Robert F. Kennedy Department of Justice Building.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Robert_F._Kennedy_Department_of_Justice_Building.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Robert_F._Kennedy_Department_of_Justice_Building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY 4.0",
+        "artist": "APK",
+        "date": "2026-03-31 11:57:44",
+        "description": "Robert F. Kennedy Department of Justice Building in Washington, D.C.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s108_0_79c03915.jpg",
+        "sha256": "53064e71a30240628c95b78aa7d23fd0f57b215d94d0d8e07bdd8d11cd02ba5c"
+      }
+    ],
+    "s149": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Eccles Building (26088200676).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Eccles_Building_(26088200676).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Eccles_Building_%2826088200676%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Federalreserve",
+        "date": "2011-03-29 11:47",
+        "description": "The Eccles Building of the Federal Reserve, the central banking system of the United States.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s149_0_686e2036.jpg",
+        "sha256": "79ecb485fd82bd352445767ec5869847739a337ce13da0d148e9d17bd4a2837c"
+      }
+    ],
+    "s1": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:INTERIOR, FIRST FLOOR, MAIN CORRIDOR, LOOKING NORTH - U.S. Department of the Interior, Eighteenth and C Streets Northwest, Washington, District of Columbia, DC HABS DC,WASH,528-31.tif",
+        "page_url": "https://commons.wikimedia.org/wiki/File:INTERIOR,_FIRST_FLOOR,_MAIN_CORRIDOR,_LOOKING_NORTH_-_U.S._Department_of_the_Interior,_Eighteenth_and_C_Streets_Northwest,_Washington,_District_of_Columbia,_DC_HABS_DC,WASH,528-31.tif",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/INTERIOR%2C_FIRST_FLOOR%2C_MAIN_CORRIDOR%2C_LOOKING_NORTH_-_U.S._Department_of_the_Interior%2C_Eighteenth_and_C_Streets_Northwest%2C_Washington%2C_District_of_Columbia%2C_DC_HABS_DC%2CWASH%2C528-31.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "\nRelated names:\n\nWood, Waddy",
+        "date": "Documentation compiled after 1933",
+        "description": "",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s1_0_3b23b236.jpg",
+        "sha256": "ca0cef4443cef4b3a4e8ab00b8174604a1856e572e90130ff2f988bcb15ebf79"
+      }
+    ],
+    "s33": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Photograph of a vault with gold bars - NARA - 296609.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Photograph_of_a_vault_with_gold_bars_-_NARA_-_296609.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Photograph_of_a_vault_with_gold_bars_-_NARA_-_296609.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "\nUnknown authorUnknown author or not provided",
+        "date": "circa 1935date QS:P571,+1935-00-00T00:00:00Z/9,P1480,Q572790",
+        "description": "",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s33_0_53c382f2.jpg",
+        "sha256": "6388f7f53f55f6b068e6a8e0e16c88e47b7903635db3102aad3d2fb564e157ac"
+      }
+    ],
+    "s71": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:NTT DIPS in NTT History Center of Technologies.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:NTT_DIPS_in_NTT_History_Center_of_Technologies.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/NTT_DIPS_in_NTT_History_Center_of_Technologies.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "SuFlyer",
+        "date": "2023-02-24 15:48:54",
+        "description": "DIPS-11/45 転送制御装置（CHC、左側）および中央演算装置（CPU、右側）。",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s71_0_8c33d70f.jpg",
+        "sha256": "c6ba10165fa4c8177d5a16ce7bbcfc0d61ce52d8a1b0a6dd00e093fec65682f9"
+      }
+    ],
+    "s79": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Apple Museum (Prague) Macintosh IIsi (1990).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Apple_Museum_(Prague)_Macintosh_IIsi_(1990).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Apple_Museum_%28Prague%29_Macintosh_IIsi_%281990%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "Benoît Prieur",
+        "date": "2019-07-21 20:39:26",
+        "description": "Apple Museum (Prague) Macintosh IIsi (1990).",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s79_0_08f4fbc6.jpg",
+        "sha256": "6c911a576f92891333107d9bdea2162018cc20d9251656325eaa2f43cc9659ef"
+      }
+    ],
+    "s139": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Lehman Brothers-NYC-20080915.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Lehman_Brothers-NYC-20080915.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Lehman_Brothers-NYC-20080915.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY 2.0",
+        "artist": "Robert Scoble",
+        "date": "2008-09-15",
+        "description": "w:Lehman Brothers headquarters in New York City",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p33/bitcoin_release_v1/assets/source/s139_0_bbc7ff9a.jpg",
+        "sha256": "12cf36c2cb1294c1eaba598a61ae1ac85a7c77089f13b3bc50c4e65a2368a98c"
+      }
+    ]
+  }
+}

@@ -16,6 +16,7 @@ import argparse
 import copy
 import hashlib
 import json
+import shutil
 import sys
 import time
 import urllib.error
@@ -108,7 +109,25 @@ def build(decisions: dict, out: Path, allow_fetch: bool) -> tuple[dict, dict]:
             plates.typography_plate([tuple(x) for x in d["lines"]], plate,
                                     kicker=d.get("kicker", ""))
         built[sid] = str(plate)
+        if d.get("motion"):
+            built[sid] = _motion_clip(sid, plate, d["motion"], out)
     return built, provenance
+
+
+def _motion_clip(sid: str, plate: Path, motion: dict, out: Path) -> str:
+    """Same local 2.5D engine the AI inserts used, fed a rights-cleared plate."""
+    from tools.finance_cinematic_cpu.engine import render_clip
+    spec_dir = out / "assets" / "motion" / sid
+    spec_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(plate, spec_dir / "plate.jpg")
+    spec = {"background": "plate.jpg", "width": 720, "height": 1280, "fps": 30,
+            "duration_sec": float(motion["duration_sec"]), "camera": motion.get("camera", "dolly_in"),
+            "camera_strength": float(motion.get("camera_strength", 0.08)),
+            "seed": int(motion.get("seed", 7)), "effects": motion.get("effects", {}), "layers": []}
+    (spec_dir / "shot.json").write_text(json.dumps(spec, indent=2), encoding="utf-8")
+    target = out / "assets" / "clips" / f"{sid}_cinematic.mp4"
+    render_clip(spec_dir / "shot.json", target)
+    return str(target)
 
 
 def _graphic(d: dict, plate: Path, out: Path) -> None:
@@ -126,6 +145,11 @@ def _graphic(d: dict, plate: Path, out: Path) -> None:
     elif kind == "ledger":
         p["rows"] = [tuple(r) for r in p.get("rows", [])]
         graphics.ledger_plate(plate, **p)
+    elif kind == "mail":
+        p["header"] = [tuple(r) for r in p.get("header", [])]
+        graphics.mail_plate(plate, **p)
+    elif kind in ("broken_link", "wall", "empty_room", "house_sign"):
+        getattr(graphics, f"{kind}_plate")(plate, **p)
     else:
         raise ValueError(f"{d['scene_id']}: unknown graphic kind {kind}")
 
@@ -146,13 +170,14 @@ def main() -> None:
     ap.add_argument("--decisions", type=Path, required=True, help="reviewed decision JSON")
     ap.add_argument("--out-dir", type=Path, required=True)
     ap.add_argument("--fetch", action="store_true", help="download named Commons files")
+    ap.add_argument("--tag", default="p32", choices=("p32", "p33"), help="output file tag")
     args = ap.parse_args()
     try:
         out = args.out_dir.expanduser().resolve()
         src_path = args.graph.expanduser().resolve()
         if not out.is_relative_to(ROOT / "data") or out == src_path.parent:
             raise ValueError("--out-dir must be a separate folder under data/")
-        target = out / "scene_graph_p32.json"
+        target = out / f"scene_graph_{args.tag}.json"
         if target.exists():
             raise FileExistsError(f"{target} exists; refusing to overwrite")
         source = json.loads(src_path.read_text(encoding="utf-8"))
@@ -163,9 +188,9 @@ def main() -> None:
         changes.update({"source_graph": str(src_path), "source_sha256": _sha(src_path),
                         "provenance": provenance})
         target.write_text(json.dumps(graph, indent=2, ensure_ascii=False), encoding="utf-8")
-        (out / "p32_changes.json").write_text(json.dumps(changes, indent=2, ensure_ascii=False),
+        (out / f"{args.tag}_changes.json").write_text(json.dumps(changes, indent=2, ensure_ascii=False),
                                               encoding="utf-8")
-        print(f"P3.2: {len(changes['visuals'])} visual repairs, "
+        print(f"{args.tag.upper()}: {len(changes['visuals'])} visual repairs, "
               f"{len(changes['narration'])} narration text fixes, "
               f"{len(changes['transitions'])} crossfade->cut; wrote {target}")
     except (OSError, ValueError, AssertionError, RuntimeError, KeyError,

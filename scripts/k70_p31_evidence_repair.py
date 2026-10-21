@@ -7,13 +7,13 @@ files to stock. No external APIs, full-film render, voiceover or caption edits.
 
   .venv/bin/python scripts/k70_p31_evidence_repair.py \
     --graph data/finance_p0/cinematic_balanced/scene_graph_p0.json \
-    --baseline data/series/bitcoin_history/ep01/scene_graph.json \
+    --baseline data/series/bitcoin_history/ep01_f4/scene_graph.json \
     --out-dir data/finance_p31/bitcoin_review_v1
 
   # AFTER freeing enough disk space, separate new folder:
   .venv/bin/python scripts/k70_p31_evidence_repair.py \
     --graph data/finance_p0/cinematic_balanced/scene_graph_p0.json \
-    --baseline data/series/bitcoin_history/ep01/scene_graph.json \
+    --baseline data/series/bitcoin_history/ep01_f4/scene_graph.json \
     --out-dir data/finance_p31/bitcoin_repaired_v1 --apply
 """
 from __future__ import annotations

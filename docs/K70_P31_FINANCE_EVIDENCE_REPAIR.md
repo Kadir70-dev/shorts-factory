@@ -1,6 +1,6 @@
 # K70 P3.1 — Finance Archival Priority and Chart Recovery
 
-Scope: finance documentaries only (usa_finance, landscape, 20+ scenes, 240+ seconds). No changes to the global visual budget, frozen 14-layer structure, protected masters or Shorts behavior.
+Scope: long-form landscape usa_finance documentaries, PLUS the exact original 156-scene K70 Bitcoin history episode (video_id btc_ep01_world_before_bitcoin, niche usa_history, channel k70_history, including its original portrait frame format). No other usa_history episodes or Shorts are enabled. The global visual budget, frozen 14-layer structure and protected masters stay unchanged.
 
 ## Production routing update
 

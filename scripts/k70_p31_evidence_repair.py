@@ -73,10 +73,12 @@ def _usable_archive(scene: dict, graph: dict, root: Path) -> dict | None:
     allowed = {"wikimedia_commons", "government_public_domain", "sec_regulatory", "company_ir"}
     # Existing asset engine is the policy authority; it provides license rules
     # without network calls, but only when explicitly evaluating an asset.
-    from app.pipeline.asset_engine import SAFE_LICENSES
     beats = {row.get("scene_id") for row in
              (graph.get("storyboard") or {}).get("scenes", [])
              if row.get("source_scene_id") == sid}
+    if not beats:
+        return None
+    from app.pipeline.asset_engine import SAFE_LICENSES
     for record in graph.get("asset_provenance", []):
         if record.get("status") != "resolved" or record.get("scene_id") not in beats:
             continue
@@ -233,8 +235,8 @@ def main() -> None:
         if args.apply and free < args.min_free_gb * (1024 ** 3):
             raise ValueError(f"disk too full: {report['free_space_gib']} GiB; "
                              f"need at least {args.min_free_gb} GiB (no files changed)")
-        copy_graph = asyncio.run(repair(source, original, report, out)) if args.apply else None
         out.mkdir(parents=True, exist_ok=False)
+        copy_graph = asyncio.run(repair(source, original, report, out)) if args.apply else None
         (out / "repair_report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
         if copy_graph is not None:
             (out / "scene_graph_p31_repaired.json").write_text(

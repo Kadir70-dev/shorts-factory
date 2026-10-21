@@ -125,3 +125,12 @@ def test_cli_outputs_are_real_and_never_overwritten(tmp_path: Path):
     assert aud.returncode == 0, aud.stderr
     assert json.loads((audit_dir / "narrative_qa.json").read_text())["questions"] == 1
     assert graph_file.read_text() == json.dumps({"scenes": [_scene("s1", "Why now?", 120)]})
+
+
+def test_director_brief_states_research_status_and_never_claims_verification():
+    bare = write_director_brief(build_plan("Gold standard", duration_sec=600))
+    assert "**Research status:** RESEARCH REQUIRED" in bare
+    sourced = write_director_brief(build_plan("Gold standard", duration_sec=600, sources=[
+        {"id": "src1", "title": "Treasury bulletin", "url": "https://example.gov/x"}]))
+    assert "NOT independently verified" in sourced
+    assert "RESEARCH REQUIRED" not in sourced

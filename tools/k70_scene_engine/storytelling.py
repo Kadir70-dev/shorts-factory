@@ -145,6 +145,9 @@ def write_director_brief(plan: Mapping[str, Any]) -> str:
         f"**Topic:** {plan['topic']}",
         f"**Audience:** {plan['audience']}",
         f"**Editorial target:** {duration / 60:.1f} minutes (TTS owns real durations)",
+        ("**Research status:** RESEARCH REQUIRED — no sources supplied"
+         if plan.get("research_status") == "RESEARCH_REQUIRED" else
+         "**Research status:** sources supplied, NOT independently verified"),
         "",
         "Produce an ORIGINAL, source-grounded finance documentary. Follow this",
         "outline as narrative intent, not as a replacement for the locked renderer.",

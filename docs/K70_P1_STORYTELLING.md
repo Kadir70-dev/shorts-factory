@@ -108,3 +108,84 @@ Actual A/B video quality requires listening and watching the rendered file.
 - No paid API calls, outside datasets or new mandatory dependencies.
 - No edits to existing source narration, timestamps or 3D/AI assets.
 - The CLI produces authored writing guidance, not an automatic TTS rewrite.
+
+
+## P1.2: From story plan to grounded chapter narration (new)
+
+The K70 long-form Director handoff is now executable via the existing
+scripts/k70_p1_storytelling.py CLI. This is deliberately SEPARATE from the
+20–45-second Shorts Director, and does not modify protected documentary layers.
+
+First, have a researcher/editor read primary sources and create an evidence
+pack JSON. A planning source reference is NOT proof of accuracy.
+
+Example SHAPE (text and URL placeholders; not real sourced facts):
+
+    {
+      "facts": [
+        {
+          "id": "fact-001",
+          "source_id": "source-001",
+          "claim": "A verified factual point from the referenced document",
+          "excerpt": "A short relevant quotation from the actual source"
+        }
+      ]
+    }
+
+Every source_id must exist in the story plan's source_manifest, which is
+populated by the plan command's --sources file. **Read and verify** the actual
+source before approval; the software marks excerpts as unverified.
+
+Generate only the constrained chapter writing prompt (offline, NO model call):
+
+    python3 scripts/k70_p1_storytelling.py draft \
+      --plan data/finance_p1/gold_standard_v1/story_plan.json \
+      --evidence PATH/verified_evidence_pack.json \
+      --out-dir data/finance_p1/gold_standard_draft_prompt
+
+When your laptop's Claude Code CLI is installed, you may EXPLICITLY opt in to
+a locally invoked model writing the eight chapter narrations:
+
+    python3 scripts/k70_p1_storytelling.py draft \
+      --plan data/finance_p1/gold_standard_v1/story_plan.json \
+      --evidence PATH/verified_evidence_pack.json \
+      --out-dir data/finance_p1/gold_standard_draft_generation \
+      --generate
+
+The local CLI is run with no tools, maximum one turn and no paid-API
+fallback. It uses the user's existing Claude CLI configuration and may
+consume subscription usage. The system does not claim that CLI execution
+occurred just because the option exists. Use a NEW output folder.
+
+Files generated when --generate is requested:
+
+- chapter_draft_prompt.md — exact instructions and source evidence.
+- chapter_narration_draft.json — eight chapters, text and linked FACT IDs.
+- chapter_narration_review.json — word-count/time estimate, question and
+  analogy checks, unknown-number flags, human-review requirements.
+
+Validate any manually edited narration JSON in a separate read-only pass:
+
+    python3 scripts/k70_p1_storytelling.py review \
+      --plan data/finance_p1/gold_standard_v1/story_plan.json \
+      --evidence PATH/verified_evidence_pack.json \
+      --draft PATH/edited_chapter_narration.json \
+      --out-dir data/finance_p1/gold_standard_edited_review
+
+Validation rejects unknown fact IDs, wrong chapter order and empty text, and
+flags unmatched numerical claims. It does NOT establish historical truth or
+guarantee word-level source fidelity. A responsible editor still checks
+figures, primary sources, fair framing and analogy limitations.
+
+**Crucial production boundary:** these files are editorial chapter drafts.
+They do not replace a rendered, voiced SceneGraph. After human approval, use
+the existing K70 storyboarding/scene-authoring workflow to produce a NEW
+SceneGraph, then TTS, full captions and 14-layer rendering as normal. Never
+overwrite a finished job or silently retime existing audio.
+
+### Additional isolated tests
+
+    .venv/bin/python -m pytest -q tests/test_k70_p1_story_draft.py \
+      tests/test_k70_p1_storytelling.py
+
+This PR-free direct-main change adds no GPU requirement or paid API.

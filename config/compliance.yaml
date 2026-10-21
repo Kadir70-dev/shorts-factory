@@ -136,7 +136,9 @@ rewrites:
   - pattern: '\ball in on\b'
     replace: 'heavily concentrated in'
     reason: "a direct trade instruction"
-  - pattern: '\bto the moon\b'
+  # Literal space history ("the race to the moon") is not hype; rewriting it
+  # changes the meaning of a factual sentence.
+  - pattern: '(?<!race )(?<!flight )(?<!mission )(?<!journey )(?<!voyage )\bto the moon\b'
     replace: 'sharply higher'
     reason: "hype framing associated with pump content"
 

@@ -168,3 +168,17 @@ def test_disclosure_produces_an_actionable_reminder(graph):
     assert checklist
     assert any("Altered or Synthetic Content" in line for line in checklist), (
         "the reminder must name the actual YouTube setting to tick")
+
+
+def test_untouched_narration_keeps_its_exact_wording():
+    for clean in ("Within weeks the central bank would print a one hundred trillion dollar note.",
+                  "He joined a university in a European city for an hour."):
+        out, notes = C.rewrite(clean)
+        assert (out, notes) == (clean, [])
+
+
+def test_historic_moon_race_is_not_treated_as_hype():
+    line = "A war in Vietnam. A war on poverty. A race to the moon."
+    assert C.rewrite(line) == (line, [])
+    out, notes = C.rewrite("This coin is going to the moon.")
+    assert "to the moon" not in out and notes

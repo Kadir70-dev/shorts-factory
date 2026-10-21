@@ -165,11 +165,17 @@ def rewrite(text: str, pol: Policy | None = None) -> tuple[str, list[str]]:
         out = rule.pattern.sub(_sub, out)
     # rewrites can leave doubled spaces where a phrase shortened
     out = re.sub(r"[ \t]{2,}", " ", out).strip()
-    return _tidy(out), notes
+    # Only repair grammar a substitution could have broken; untouched authored
+    # narration is spoken exactly as written.
+    return (_tidy(out) if notes else out), notes
 
 
-_A_AN = re.compile(r"\b([Aa])n?\s+(?=([aeiouAEIOU]))")
-_AN_A = re.compile(r"\b([Aa])n\s+(?=[^aeiouAEIOU\W\d])")
+# Spelling, not sound, drives these, so skip the common exceptions:
+# "a one-off", "a university", "a European" / "an hour", "an honest".
+_A_AN = re.compile(r"\b([Aa])n?\s+(?=[aeiouAEIOU])"
+                   r"(?!(?:one|once|uni|use|usu|ura|eu|ewe)|(?:One|Once|Uni|Use|Usu|Eu))")
+_AN_A = re.compile(r"\b([Aa])n\s+(?=[^aeiouAEIOU\W\d])"
+                   r"(?!(?:hour|honest|honou?r|heir)|(?:Hour|Honest|Honou?r|Heir))")
 
 
 def _tidy(text: str) -> str:

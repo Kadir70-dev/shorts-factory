@@ -121,7 +121,7 @@ def visual(kind="broll"):
 def p0_scene(sid, *, kind="broll", chart=False, narrator="Historical fact."):
     data = {"source": "Official original document",
             "kind": "counter", "points": [{"label": "Historical", "value": 42}]}
-    return {"id": sid, "narration": narrator, "duration_sec": 6,
+    return {"id": sid, "narration": narrator, "duration_sec": 8,
             "visual": visual(kind), "data": data if chart else None,
             "overlays": [], "transition_in": "cut"}
 

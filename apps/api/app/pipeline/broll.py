@@ -510,7 +510,8 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
         for sid, selected_path in enhanced.items():
             if channels.get(sid) != "stock":
                 continue
-            receipt = finance_priority.archive_choice(graph, sid, selected_path)
+            receipt = finance_priority.archive_choice(
+                graph, sid, selected_path, license_ok=asset_engine.legal)
             if receipt:
                 chosen_archives[sid] = receipt
         enhanced = {sid: chosen_path for sid, chosen_path in enhanced.items()

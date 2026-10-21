@@ -1,6 +1,7 @@
 {
  "s23": [
   {
+   "origin": "p32",
    "title": "File:Main Street, looking north, Greenville.jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:Main_Street,_looking_north,_Greenville.jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Main_Street%2C_looking_north%2C_Greenville.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -20,6 +21,7 @@
  ],
  "s30": [
   {
+   "origin": "p32",
    "title": "File:UH-1D helicopters in Vietnam 1966.jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:UH-1D_helicopters_in_Vietnam_1966.jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/UH-1D_helicopters_in_Vietnam_1966.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -37,6 +39,7 @@
    "local_sha256": "b23ab4ed0790d857ccbe3278a3e742baeb13d10af8a371ec4c62a9828974de7b"
   },
   {
+   "origin": "p32",
    "title": "File:Signing of the EOA.jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:Signing_of_the_EOA.jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Signing_of_the_EOA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -53,6 +56,7 @@
    "local_sha256": "0ace22206ddac5078e6692e522df490127ba8b00904650c4acd5900521fb021b"
   },
   {
+   "origin": "p32",
    "title": "File:Apollo 11 Launched Via Saturn V Rocket.jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:Apollo_11_Launched_Via_Saturn_V_Rocket.jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Apollo_11_Launched_Via_Saturn_V_Rocket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -71,6 +75,7 @@
  ],
  "s42": [
   {
+   "origin": "p32",
    "title": "File:Nixon Official Presidential Portrait 07-08-1971 (cropped).jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:Nixon_Official_Presidential_Portrait_07-08-1971_(cropped).jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Nixon_Official_Presidential_Portrait_07-08-1971_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -89,6 +94,7 @@
  ],
  "s52": [
   {
+   "origin": "p32",
    "title": "File:A button from the \"Whip Inflation Now\" initiative of the 1970's.jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:A_button_from_the_%22Whip_Inflation_Now%22_initiative_of_the_1970%27s.jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/A_button_from_the_%22Whip_Inflation_Now%22_initiative_of_the_1970%27s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -107,6 +113,7 @@
  ],
  "s56": [
   {
+   "origin": "p32",
    "title": "File:SHOPPING FOR GROCERIES IN A WASHINGTON, DISTRICT OF COLUMBIA SUPERMARKET - NARA - 555651.jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:SHOPPING_FOR_GROCERIES_IN_A_WASHINGTON,_DISTRICT_OF_COLUMBIA_SUPERMARKET_-_NARA_-_555651.jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/SHOPPING_FOR_GROCERIES_IN_A_WASHINGTON%2C_DISTRICT_OF_COLUMBIA_SUPERMARKET_-_NARA_-_555651.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -129,6 +136,7 @@
  ],
  "s58": [
   {
+   "origin": "p32",
    "title": "File:1953 - Savings Account Passbook - Allentown National Bank - Allentown PA.jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:1953_-_Savings_Account_Passbook_-_Allentown_National_Bank_-_Allentown_PA.jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/1953_-_Savings_Account_Passbook_-_Allentown_National_Bank_-_Allentown_PA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -147,6 +155,7 @@
  ],
  "s80": [
   {
+   "origin": "p32",
    "title": "File:Bank of Gustine, CA.jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:Bank_of_Gustine,_CA.jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Bank_of_Gustine%2C_CA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -157,12 +166,15 @@
    "credit": "Own work",
    "restrictions": "",
    "date": "2017-07-13 12:50:54",
-   "license_templates": [],
+   "license_templates": [
+    "self"
+   ],
    "local_sha256": "14a2cf1940d9c0ef5f0d066763ca68be5b1951d1b6d17898d75d90dd7738c68a"
   }
  ],
  "s82": [
   {
+   "origin": "p32",
    "title": "File:Web Summit 2018 - MoneyConf - Day 2, November 7 HM1 7012 (45041353684).jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:Web_Summit_2018_-_MoneyConf_-_Day_2,_November_7_HM1_7012_(45041353684).jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Web_Summit_2018_-_MoneyConf_-_Day_2%2C_November_7_HM1_7012_%2845041353684%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -181,6 +193,7 @@
  ],
  "s95": [
   {
+   "origin": "p32",
    "title": "File:Munitions T-shirt (front).jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:Munitions_T-shirt_(front).jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Munitions_T-shirt_%28front%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -199,6 +212,7 @@
  ],
  "s112": [
   {
+   "origin": "p32",
    "title": "File:Door knocker in Taranto 01.jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:Door_knocker_in_Taranto_01.jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Door_knocker_in_Taranto_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -210,13 +224,15 @@
    "restrictions": "",
    "date": "2022-05-03",
    "license_templates": [
-    "Location"
+    "Location",
+    "self"
    ],
    "local_sha256": "74f7b4f28656fa509853d983fbf0b92a4efdf7de43c70512e0520fa70edefa92"
   }
  ],
  "s114": [
   {
+   "origin": "p32",
    "title": "File:Door and Door Frame, Y&A London.jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:Door_and_Door_Frame,_Y%26A_London.jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Door_and_Door_Frame%2C_Y%26A_London.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -227,30 +243,15 @@
    "credit": "Own work",
    "restrictions": "",
    "date": "2024-02-25 15:14:07",
-   "license_templates": [],
-   "local_sha256": "f8443e6a8d67724b8a948bdd2ce727f2b715bddf7b9acba7906b68abed120008"
-  }
- ],
- "s117": [
-  {
-   "title": "File:Buenos Aires - Manifestación contra el Corralito - 20020206-17.JPG",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-17.JPG",
-   "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-17.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "license": "CC BY-SA 3.0",
-   "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
-   "attribution_required": "true",
-   "artist": "Taken by the uploader, w:es:Usuario:Barcex",
-   "credit": "Taken by the uploader, w:es:Usuario:Barcex",
-   "restrictions": "",
-   "date": "2002-02-06",
    "license_templates": [
-    "FoP-Argentina"
+    "self"
    ],
-   "local_sha256": "06d65ef21f89e3dcdbeb6e1bc2206ae5aac188fe622bf319094b69c63b432c61"
+   "local_sha256": "f8443e6a8d67724b8a948bdd2ce727f2b715bddf7b9acba7906b68abed120008"
   }
  ],
  "s129": [
   {
+   "origin": "p32",
    "title": "File:Suburban houses near a forest (Unsplash).jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:Suburban_houses_near_a_forest_(Unsplash).jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Suburban_houses_near_a_forest_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -269,6 +270,7 @@
  ],
  "s146": [
   {
+   "origin": "p32",
    "title": "File:U.S. Treasury building, Washington, D.C LCCN2011631001.tif",
    "page_url": "https://commons.wikimedia.org/wiki/File:U.S._Treasury_building,_Washington,_D.C_LCCN2011631001.tif",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/U.S._Treasury_building%2C_Washington%2C_D.C_LCCN2011631001.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -288,6 +290,7 @@
  ],
  "s38": [
   {
+   "origin": "p32",
    "title": "File:Bank Run in Michigan, USA, February 1933.jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:Bank_Run_in_Michigan,_USA,_February_1933.jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Bank_Run_in_Michigan%2C_USA%2C_February_1933.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -306,26 +309,9 @@
    "local_sha256": "6439388db3e062afc2b2204a7e06027c7262ba92c3ab67c1ed4d705947cfe152"
   }
  ],
- "s121": [
-  {
-   "title": "File:Buenos Aires - Manifestación contra el Corralito - 20020206-05.JPG",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-05.JPG",
-   "file_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-05.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "license": "CC BY-SA 3.0",
-   "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
-   "attribution_required": "true",
-   "artist": "Taken by the uploader, w:es:Usuario:Barcex",
-   "credit": "Taken by the uploader, w:es:Usuario:Barcex",
-   "restrictions": "",
-   "date": "2002-02-06",
-   "license_templates": [
-    "Location"
-   ],
-   "local_sha256": "bc50c4bc311855b8307f23f0606caaf8a1b9f9f23ab51d714026f28735f9cb2a"
-  }
- ],
  "s28": [
   {
+   "origin": "p32",
    "title": "File:US068 Washington The Capitol Capitol 1964 (51187727394).jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:US068_Washington_The_Capitol_Capitol_1964_(51187727394).jpg",
    "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/US068_Washington_The_Capitol_Capitol_1964_%2851187727394%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -342,23 +328,42 @@
    "local_sha256": "0acc3cddaf694d372dbea63f34f70a1ba296de78c8f4e6de55c27ec3cb436eff"
   }
  ],
- "s96": [
+ "s15": [
   {
-   "title": "File:Adam Back 2014.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Adam_Back_2014.jpg",
-   "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Adam_Back_2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "origin": "p31_kept",
+   "title": "File:Five Million Mark Note 1923.JPG",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Five_Million_Mark_Note_1923.JPG",
+   "file_url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Five_Million_Mark_Note_1923.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "license": "CC BY-SA 3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "attribution_required": "true",
+   "artist": "Boeing720",
+   "credit": "Own work",
+   "restrictions": "",
+   "date": "2012-01-16",
+   "license_templates": [
+    "self"
+   ],
+   "local_sha256": null
+  }
+ ],
+ "s132": [
+  {
+   "origin": "p31_kept",
+   "title": "File:Northern Rock Queue.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Northern_Rock_Queue.jpg",
+   "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Northern_Rock_Queue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "license": "CC BY 2.0",
    "license_url": "https://creativecommons.org/licenses/by/2.0",
    "attribution_required": "true",
-   "artist": "Joi Ito",
-   "credit": "https://flickr.com/photos/joi/15753708050",
+   "artist": "Dominic Alves from Brighton, England",
+   "credit": "Northern Rock Queue",
    "restrictions": "",
-   "date": "2014-12-02",
+   "date": "2007-09-14 16:59",
    "license_templates": [
-    "Cc-by-2.0",
-    "Flickrreview"
+    "cc-by-2.0"
    ],
-   "local_sha256": "835c90493c146b03d5dffc5f7ab63448e368d06dea8f83883b6e3c1ea3e2140b"
+   "local_sha256": null
   }
  ]
 }

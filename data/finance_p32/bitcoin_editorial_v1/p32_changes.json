@@ -105,10 +105,10 @@
     },
     {
       "scene_id": "s117",
-      "action": "archival_plate",
+      "action": "graphic_plate",
       "from_type": "image",
       "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s117.jpg",
-      "why": "Replaces a world map with Argentine savers protesting outside a bank; dated Feb 2002 (two months after the freeze)."
+      "why": "Original K70 explanatory graphic. Facts: Decree 1570/2001 was signed 1 Dec 2001 and published in the Boletín Oficial on 3 Dec 2001 (Marval O'Farrell Mairal, 'Restricciones bancarias en la Argentina: el corralito'). It contains no numbers beyond the decree; the 250-peso limit stays with the s118 chart."
     },
     {
       "scene_id": "s126",
@@ -140,10 +140,17 @@
     },
     {
       "scene_id": "s121",
-      "action": "archival_plate",
+      "action": "graphic_plate",
       "from_type": "image",
       "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s121.jpg",
-      "why": "Review: genuine corralito protest, but Feb 2002, not December 2001. Kept and dated on screen."
+      "why": "Original K70 illustration of a closed bank shutter ('CERRADO' = closed). Labelled 'Illustration: K70 (not archival)'. The dates cover the cacerolazo protests from December 2001 into 2002."
+    },
+    {
+      "scene_id": "s115",
+      "action": "graphic_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s115.jpg",
+      "why": "Original K70 map graphic (Natural Earth outline, public domain) leading into the s116 Buenos Aires beat. Neutral; not archival."
     },
     {
       "scene_id": "s28",
@@ -154,10 +161,10 @@
     },
     {
       "scene_id": "s96",
-      "action": "archival_plate",
+      "action": "graphic_plate",
       "from_type": "motion_gfx",
       "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s96.jpg",
-      "why": "Breaks the s93-s100 card run on the Hashcash beat (Back built Hashcash). The card's overlays are kept. Identity per photographer Joi Ito's caption ('Adam Back') and Commons human Flickr review (2023-10-27); the Flickr original is not publicly reachable now. Editorial use; no endorsement implied."
+      "why": "Original K70 proof-of-work illustration with real SHA-1 hashes computed at build time (Hashcash uses SHA-1). Terminal styling differs from the motion_gfx cards, so it still breaks the s93-s100 run. The headline and lower-third overlays still render."
     }
   ],
   "notes": [
@@ -170,11 +177,6 @@
       "scene_id": "s132",
       "action": "keep",
       "why": "Provisional keep per brief: Northern Rock queue, 2007 (CC BY 2.0)."
-    },
-    {
-      "scene_id": "s115",
-      "action": "manual_review",
-      "why": "Inspected 2026-10-22: see report section 10."
     }
   ],
   "overlays": [
@@ -615,22 +617,6 @@
         "sha256": "f8443e6a8d67724b8a948bdd2ce727f2b715bddf7b9acba7906b68abed120008"
       }
     ],
-    "s117": [
-      {
-        "provider": "wikimedia_commons",
-        "title": "File:Buenos Aires - Manifestación contra el Corralito - 20020206-17.JPG",
-        "page_url": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-17.JPG",
-        "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-17.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "license": "CC BY-SA 3.0",
-        "artist": "Taken by the uploader, w:es:Usuario:Barcex",
-        "date": "2002-02-06",
-        "description": "Manifestación de ahorristas argentinos contra el Corralito financiero frente a la una sucursal del BBVA Banco Francés ubicada en calle Florida, Buenos Aires, Argentina.",
-        "retrieved": "2026-10-22",
-        "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s117_0_22f630fc.jpg",
-        "sha256": "06d65ef21f89e3dcdbeb6e1bc2206ae5aac188fe622bf319094b69c63b432c61"
-      }
-    ],
     "s129": [
       {
         "provider": "wikimedia_commons",
@@ -679,22 +665,6 @@
         "sha256": "6439388db3e062afc2b2204a7e06027c7262ba92c3ab67c1ed4d705947cfe152"
       }
     ],
-    "s121": [
-      {
-        "provider": "wikimedia_commons",
-        "title": "File:Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-05.JPG",
-        "page_url": "",
-        "file_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-05.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "license": "CC BY-SA 3.0",
-        "artist": "Taken by the uploader, <a href=\"https://en.wikipedia.org/wiki/es:Usuario:Barcex\" class=\"extiw\" title=\"w:es:Usuario:Barcex\">w:es:Usuario:Barcex</a>",
-        "date": "2002-02-06",
-        "description": "Manifestación contra el Corralito, Buenos Aires",
-        "local": "/home/kadir70/shorts-factory/data/cache/multi_source/asset_e0b35e76d0c7c16f86d5311f.jpg",
-        "retrieved": "P3.1 cache",
-        "license_verification": "from P3.1 provenance; human legal review still required",
-        "sha256": "bc50c4bc311855b8307f23f0606caaf8a1b9f9f23ab51d714026f28735f9cb2a"
-      }
-    ],
     "s28": [
       {
         "provider": "wikimedia_commons",
@@ -709,22 +679,6 @@
         "license_verification": "as stated on Commons file page; human legal review still required",
         "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s28_0_b514e39d.jpg",
         "sha256": "0acc3cddaf694d372dbea63f34f70a1ba296de78c8f4e6de55c27ec3cb436eff"
-      }
-    ],
-    "s96": [
-      {
-        "provider": "wikimedia_commons",
-        "title": "File:Adam Back 2014.jpg",
-        "page_url": "https://commons.wikimedia.org/wiki/File:Adam_Back_2014.jpg",
-        "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Adam_Back_2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "license": "CC BY 2.0",
-        "artist": "Joi Ito",
-        "date": "2014-12-02",
-        "description": "Adam Back",
-        "retrieved": "2026-10-22",
-        "license_verification": "as stated on Commons file page; human legal review still required",
-        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s96_0_d74a834f.jpg",
-        "sha256": "835c90493c146b03d5dffc5f7ab63448e368d06dea8f83883b6e3c1ea3e2140b"
       }
     ]
   }

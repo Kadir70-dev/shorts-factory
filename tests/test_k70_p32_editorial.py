@@ -129,3 +129,27 @@ def test_plates_are_portrait_and_keep_whole_source(tmp_path):
     credited = Image.open(plates.archival_plate(wide, tmp_path / "b.jpg", label="x",
                                                 credit="Photo: A · CC BY-SA 3.0 · adapted"))
     assert plain.tobytes() != credited.tobytes()      # on-plate attribution drawn
+
+
+def test_explainer_graphics_are_original_and_honest(tmp_path):
+    import hashlib
+    from tools.k70_scene_engine import explainer_graphics as gfx
+    n, h = gfx.proof_of_work("t:", zero_hex=3)
+    assert h == hashlib.sha1(f"t:{n}".encode()).hexdigest() and h.startswith("000")
+    assert not any(hashlib.sha1(f"t:{i}".encode()).hexdigest().startswith("000") for i in range(n))
+    geo = tmp_path / "geo.json"
+    geo.write_text('{"features":[{"properties":{"ADMIN":"X"},"geometry":{"type":"Polygon",'
+                   '"coordinates":[[[0,0],[10,0],[10,20],[0,20],[0,0]]]}}]}')
+    outs = [gfx.map_plate(geo, "X", tmp_path / "m.jpg", marker=(5, 10), marker_label="City"),
+            gfx.terminal_plate("t:", tmp_path / "t.jpg", zero_hex=3),
+            gfx.shutter_plate(tmp_path / "s.jpg", notice=["CERRADO"]),
+            gfx.ledger_plate(tmp_path / "l.jpg", rows=[("Decree", "1570/2001")], stamp="FROZEN")]
+    assert all(Image.open(o).size == (1080, 1920) for o in outs)
+
+
+def test_graphic_plate_is_marked_not_archival(graph, tmp_path):
+    plate = _plate(tmp_path)
+    out, _ = apply_decisions(graph, {"scenes": [{"scene_id": "s30", "action": "graphic_plate"}]},
+                             {"s30": plate})
+    v = out["scenes"][3]["visual"]
+    assert v["strategy"] == "branded" and "not archival" in v["decision_reason"]

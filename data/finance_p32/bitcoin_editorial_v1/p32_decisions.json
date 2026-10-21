@@ -308,24 +308,28 @@
   },
   {
    "scene_id": "s117",
-   "action": "archival_plate",
-   "sources": [
-    {
-     "provider": "wikimedia_commons",
-     "title": "File:Buenos Aires - Manifestación contra el Corralito - 20020206-17.JPG",
-     "page_url": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-17.JPG",
-     "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-17.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-     "license": "CC BY-SA 3.0",
-     "artist": "Taken by the uploader, w:es:Usuario:Barcex",
-     "date": "2002-02-06",
-     "description": "Manifestación de ahorristas argentinos contra el Corralito financiero frente a la una sucursal del BBVA Banco Francés ubicada en calle Florida, Buenos Aires, Argentina.",
-     "retrieved": "2026-10-22",
-     "license_verification": "as stated on Commons file page; human legal review still required"
-    }
-   ],
-   "label": "Savers protest the corralito · Buenos Aires, Feb 2002",
-   "why": "Replaces a world map with Argentine savers protesting outside a bank; dated Feb 2002 (two months after the freeze).",
-   "credit": "Photo: Barcex · CC BY-SA 3.0 · adapted"
+   "action": "graphic_plate",
+   "kind": "ledger",
+   "params": {
+    "kicker": "CORRALITO",
+    "sub": "Decree 1570/2001 · signed 1 December 2001",
+    "rows": [
+     [
+      "Account",
+      "Savings deposits"
+     ],
+     [
+      "Cash withdrawals",
+      "Restricted"
+     ],
+     [
+      "Decree",
+      "1570/2001"
+     ]
+    ],
+    "stamp": "FROZEN"
+   },
+   "why": "Original K70 explanatory graphic. Facts: Decree 1570/2001 was signed 1 Dec 2001 and published in the Boletín Oficial on 3 Dec 2001 (Marval O'Farrell Mairal, 'Restricciones bancarias en la Argentina: el corralito'). It contains no numbers beyond the decree; the 250-peso limit stays with the s118 chart."
   },
   {
    "scene_id": "s126",
@@ -408,25 +412,16 @@
   },
   {
    "scene_id": "s121",
-   "action": "archival_plate",
-   "sources": [
-    {
-     "provider": "wikimedia_commons",
-     "title": "File:Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-05.JPG",
-     "page_url": "",
-     "file_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-05.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-     "license": "CC BY-SA 3.0",
-     "artist": "Taken by the uploader, <a href=\"https://en.wikipedia.org/wiki/es:Usuario:Barcex\" class=\"extiw\" title=\"w:es:Usuario:Barcex\">w:es:Usuario:Barcex</a>",
-     "date": "2002-02-06",
-     "description": "Manifestación contra el Corralito, Buenos Aires",
-     "local": "/home/kadir70/shorts-factory/data/cache/multi_source/asset_e0b35e76d0c7c16f86d5311f.jpg",
-     "retrieved": "P3.1 cache",
-     "license_verification": "from P3.1 provenance; human legal review still required"
-    }
-   ],
-   "label": "Corralito protest · Buenos Aires, Feb 2002",
-   "why": "Review: genuine corralito protest, but Feb 2002, not December 2001. Kept and dated on screen.",
-   "credit": "Photo: Barcex · CC BY-SA 3.0 · adapted"
+   "action": "graphic_plate",
+   "kind": "shutter",
+   "params": {
+    "kicker": "CACEROLAZO",
+    "sub": "Buenos Aires · December 2001 – 2002",
+    "notice": [
+     "CERRADO"
+    ]
+   },
+   "why": "Original K70 illustration of a closed bank shutter ('CERRADO' = closed). Labelled 'Illustration: K70 (not archival)'. The dates cover the cacerolazo protests from December 2001 into 2002."
   },
   {
    "scene_id": "s15",
@@ -440,8 +435,20 @@
   },
   {
    "scene_id": "s115",
-   "action": "manual_review",
-   "why": "Inspected 2026-10-22: see report section 10."
+   "action": "graphic_plate",
+   "kind": "map",
+   "params": {
+    "geojson": "assets/geo/ne_50m_admin_0_countries.geojson",
+    "country": "Argentina",
+    "marker": [
+     -58.38,
+     -34.6
+    ],
+    "marker_label": "Buenos Aires",
+    "kicker": "ARGENTINA",
+    "title": "2001"
+   },
+   "why": "Original K70 map graphic (Natural Earth outline, public domain) leading into the s116 Buenos Aires beat. Neutral; not archival."
   },
   {
    "scene_id": "s28",
@@ -467,25 +474,14 @@
   },
   {
    "scene_id": "s96",
-   "action": "archival_plate",
-   "sources": [
-    {
-     "provider": "wikimedia_commons",
-     "title": "File:Adam Back 2014.jpg",
-     "page_url": "https://commons.wikimedia.org/wiki/File:Adam_Back_2014.jpg",
-     "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Adam_Back_2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-     "license": "CC BY 2.0",
-     "artist": "Joi Ito",
-     "date": "2014-12-02",
-     "description": "Adam Back",
-     "retrieved": "2026-10-22",
-     "license_verification": "as stated on Commons file page; human legal review still required"
-    }
-   ],
-   "label": "Adam Back · photographed 2014",
-   "why": "Breaks the s93-s100 card run on the Hashcash beat (Back built Hashcash). The card's overlays are kept. Identity per photographer Joi Ito's caption ('Adam Back') and Commons human Flickr review (2023-10-27); the Flickr original is not publicly reachable now. Editorial use; no endorsement implied.",
+   "action": "graphic_plate",
+   "kind": "terminal",
    "run_break": true,
-   "credit": "Photo: Joi Ito · CC BY 2.0"
+   "params": {
+    "prefix": "hashcash-demo:",
+    "sub": "Easy to check. Costly to make."
+   },
+   "why": "Original K70 proof-of-work illustration with real SHA-1 hashes computed at build time (Hashcash uses SHA-1). Terminal styling differs from the motion_gfx cards, so it still breaks the s93-s100 run. The headline and lower-third overlays still render."
   }
  ],
  "rejected_candidates": [
@@ -528,6 +524,26 @@
    "scene_id": "s126",
    "title": "File:Zimbabwe $100 trillion 2009 Obverse.jpg",
    "why": "Superseded: Commons flags 'Files that may be protected by currency protection laws' (PD-ZW-currency). Zimbabwe reproduction rules could not be verified from an authoritative source, so the banknote is not reproduced."
+  },
+  {
+   "scene_id": "s96",
+   "title": "File:Adam Back 2014.jpg",
+   "why": "Superseded: identification of the person rests only on the photographer's caption; the Flickr original is not publicly reachable, so the identity could not be confirmed from authoritative evidence. Not reused."
+  },
+  {
+   "scene_id": "s115",
+   "title": "(P3.1 cached asset, unchanged in P3.2)",
+   "why": "Removed: a burned, graffiti-covered Caixa ATM in the Basque Country (Spain), CC BY-SA 2.5 and uncredited; it would read as Argentine riot damage from 2001."
+  },
+  {
+   "scene_id": "s117",
+   "title": "File:Buenos Aires - Manifestación contra el Corralito - 20020206-17.JPG",
+   "why": "Option B: CC BY-SA 3.0 Barcex photo replaced by an original graphic. The source file is preserved in the P3.1 cache and in superseded_v1/ for reference."
+  },
+  {
+   "scene_id": "s121",
+   "title": "File:Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-05.JPG",
+   "why": "Option B: CC BY-SA 3.0 Barcex photo replaced by an original graphic. The source file is preserved in the P3.1 cache and in superseded_v1/ for reference."
   }
  ],
  "overlay_corrections": [

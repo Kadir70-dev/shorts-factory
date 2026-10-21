@@ -226,3 +226,27 @@ The rows below **supersede** the matching rows in sections 2, 3 and 9. The previ
 - **Why it misleads:** it sits right before "December first, two thousand and one. Buenos Aires." Viewers would very likely read it as Argentine riot damage from 2001.
 - **Other problems:** it is cover-cropped with no label, and as a BY-SA 2.5 file used without credit it also fails the attribution requirement.
 - **Recommendation:** replace it. Options are a hard cut or dip into the s116 Buenos Aires 3D beat with a neutral plate, or a short typography beat. This was **not changed** in P3.2 because the brief asked for inspection only, so it remains a blocker.
+
+---
+
+## 12. Revision 3: final release-gate patch (2026-10-22)
+
+The rows below **supersede** the matching rows in sections 10 and 11. The previous graph, change log and plates were moved (not deleted) to `superseded_v2/`. The Barcex source files are untouched in the P3.1 cache.
+
+| Item | Resolution |
+|---|---|
+| **P0 · s115** | The burned Spanish ATM is removed. It is replaced by an original K70 map graphic: the Argentina outline from Natural Earth 1:50m (public domain) with a Buenos Aires marker and "ARGENTINA · 2001", tagged "Graphic: K70 · outline: Natural Earth". It is not presented as archival. |
+| **P1 · s96** | Independent identification was **inconclusive**. The only evidence is the photographer's caption; the Flickr original returns 403. I did not attempt face matching, and the photo is no longer used. It is replaced by an original proof-of-work terminal graphic: the SHA-1 hashes are computed at build time, and the winning counter 54,634 gives `0000ba8c…`. Its terminal styling differs from the motion_gfx cards, so the s93–s100 run stays broken. The scene's headline and lower-third overlays still render. |
+| **P2 · s117 / s121** | **Option B.** Original K70 graphics now carry no ShareAlike photography. **s117** is a ledger stamped "FROZEN" ("Decree 1570/2001 · signed 1 December 2001"; the decree was signed 1 Dec 2001 and published in the Boletín Oficial on 3 Dec 2001, per Marval O'Farrell Mairal). There are no extra figures: the 250-peso limit stays with the s118 chart. **s121** is a closed bank shutter with a "CERRADO" notice, "CACEROLAZO · Buenos Aires · December 2001 – 2002", tagged "Illustration: K70 (not archival)". |
+| **P3 · credits** | `FINAL_VIDEO_CREDITS.md` (paste-ready) and `P32_ASSET_CREDITS.md` were regenerated from a fresh live Commons audit. |
+| **P4 · validation** | The timeline is still 656.942 s. Every duration, the captions and the audio are identical. All 20 Three.js and 8 AI cinematic visuals are unchanged, and so are s35/s67 (visual and data). Every media path exists. The voiceover and `final_p0_v2.mp4` exist. The P3.1 graph sha256 is still `6f5175d2b1ba72ac…`. |
+| **Previews** | s96, s115, s117 and s121 were rendered as single-scene clips with the real `render_ffmpeg._scene_clip` (each within a frame of its scene duration) and inspected by eye. |
+| **Tests** | `tests/test_k70_p32_editorial.py`: 8 passed. `tests/`: 124 passed. |
+
+### Remaining release blockers
+
+1. **s15:** still CC BY-SA 3.0. It was kept from P3.1 because the earlier brief said to keep it provisionally. A public-domain file of the same note exists: `GER-90-Reichsbanknote-5 Million Mark (1923).jpg`. This needs approval to swap, or legal sign-off.
+2. **Credits** must be pasted into the description or end card.
+3. **Full-film provenance audit:** stock footage, the music bed, and the Three.js and AI clips were outside the P3.2 scope.
+4. **Editorial:** 14 generic-stock scenes; card runs of 4 at s8–s11 and s97–s100; crossfades still at 63%.
+5. **Full render and human frame-by-frame QA.** Not started, as instructed.

@@ -6,6 +6,7 @@ on:
     paths:
       - "tools/k70_scene_engine/p32_editorial.py"
       - "tools/k70_scene_engine/editorial_plates.py"
+      - "tools/k70_scene_engine/explainer_graphics.py"
       - "scripts/k70_p32_editorial_repair.py"
       - "tests/test_k70_p32_editorial.py"
       - ".github/workflows/k70-p32-editorial.yml"
@@ -13,6 +14,7 @@ on:
     paths:
       - "tools/k70_scene_engine/p32_editorial.py"
       - "tools/k70_scene_engine/editorial_plates.py"
+      - "tools/k70_scene_engine/explainer_graphics.py"
       - "scripts/k70_p32_editorial_repair.py"
       - "tests/test_k70_p32_editorial.py"
       - ".github/workflows/k70-p32-editorial.yml"

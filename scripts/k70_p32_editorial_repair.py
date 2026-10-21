@@ -27,6 +27,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "apps" / "api"))
 from tools.k70_scene_engine import editorial_plates as plates  # noqa: E402
+from tools.k70_scene_engine import explainer_graphics as graphics  # noqa: E402
 from tools.k70_scene_engine.p32_editorial import apply_decisions  # noqa: E402
 
 API = "https://commons.wikimedia.org/w/api.php"
@@ -75,7 +76,7 @@ def build(decisions: dict, out: Path, allow_fetch: bool) -> tuple[dict, dict]:
     built, provenance = {}, {}
     for d in decisions["scenes"]:
         sid, action = d["scene_id"], d["action"]
-        if action not in ("archival_plate", "triptych", "typography_plate"):
+        if action not in ("archival_plate", "triptych", "typography_plate", "graphic_plate"):
             continue
         local = []
         for n, src in enumerate(d.get("sources", [])):
@@ -99,6 +100,8 @@ def build(decisions: dict, out: Path, allow_fetch: bool) -> tuple[dict, dict]:
             plates.archival_plate(local[0], plate, label=d.get("label", ""),
                                   crop=d.get("crop"), max_h=d.get("max_h", 1060),
                                   text=d.get("text", ()), credit=d.get("credit", ""))
+        elif action == "graphic_plate":
+            _graphic(d, plate, out)
         elif action == "triptych":
             plates.triptych_plate(list(zip(local, d["labels"])), plate)
         else:
@@ -106,6 +109,25 @@ def build(decisions: dict, out: Path, allow_fetch: bool) -> tuple[dict, dict]:
                                     kicker=d.get("kicker", ""))
         built[sid] = str(plate)
     return built, provenance
+
+
+def _graphic(d: dict, plate: Path, out: Path) -> None:
+    """Original K70 explainer graphics; params come from the reviewed decision."""
+    kind, p = d["kind"], dict(d.get("params") or {})
+    if kind == "map":
+        geo = (out / p.pop("geojson")).resolve()
+        if not geo.is_relative_to(ROOT / "data") or not geo.is_file():
+            raise FileNotFoundError(f"{d['scene_id']}: map data missing at {geo}")
+        graphics.map_plate(geo, p.pop("country"), plate, marker=tuple(p.pop("marker")), **p)
+    elif kind == "terminal":
+        graphics.terminal_plate(p.pop("prefix"), plate, **p)
+    elif kind == "shutter":
+        graphics.shutter_plate(plate, **p)
+    elif kind == "ledger":
+        p["rows"] = [tuple(r) for r in p.get("rows", [])]
+        graphics.ledger_plate(plate, **p)
+    else:
+        raise ValueError(f"{d['scene_id']}: unknown graphic kind {kind}")
 
 
 def _validate_schema(graph: dict) -> None:

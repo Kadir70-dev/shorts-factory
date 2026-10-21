@@ -18,7 +18,7 @@ PROTECTED_CHARTS = frozenset({"s35", "s67"})
 PROTECTED_TOP = ("audio", "captions", "sfx", "meta", "storyboard", "asset_provenance",
                  "threejs_provenance", "motion_graphics_provenance",
                  "ai_broll_provenance", "fps", "width", "height")
-VISUAL_ACTIONS = frozenset({"archival_plate", "triptych", "typography_plate"})
+VISUAL_ACTIONS = frozenset({"archival_plate", "triptych", "typography_plate", "graphic_plate"})
 NOTE_ACTIONS = frozenset({"keep", "manual_review"})
 _WORD = re.compile(r"[a-z0-9]+")
 
@@ -74,15 +74,18 @@ def polish_transitions(scenes: list[dict], keep: set[str] = frozenset()) -> list
 def _visual(scene: dict, plate: str, decision: Mapping[str, Any]) -> None:
     v = scene["visual"]
     sources = decision.get("sources") or []
-    typo = decision["action"] == "typography_plate"
+    typo = decision["action"] in ("typography_plate", "graphic_plate")
     credit = "; ".join(f"{s['title'].removeprefix('File:')} ({s['license']})" for s in sources)
     v.update({"type": "image", "asset_path": plate, "motion": "ken_burns",
               "strategy": "branded" if typo else "real",
               "budget_channel": "branded" if typo else "official",
               "scene_visual_type": "abstract" if typo else "real_footage",
               "layers": [], "evidence_card_path": None,
-              "decision_reason": ("[P3.2] factual typography; no licensed imagery found"
-                                  if typo else f"[P3.2] reviewed Wikimedia Commons: {credit}")})
+              "decision_reason": (
+                  "[P3.2] original K70 explanatory graphic; not archival"
+                  if decision["action"] == "graphic_plate" else
+                  "[P3.2] factual typography; no licensed imagery found" if typo else
+                  f"[P3.2] reviewed Wikimedia Commons: {credit}")})
 
 
 def apply_decisions(source: Mapping[str, Any], decisions: Mapping[str, Any],

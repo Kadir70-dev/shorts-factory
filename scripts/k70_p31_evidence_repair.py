@@ -121,23 +121,30 @@ def inspect(original: dict, source: dict, root: Path) -> dict:
     if [s.get("id") for s in original["scenes"]] != [
             s.get("id") for s in source["scenes"]]:
         raise ValueError("baseline and voiced graph need identical scene IDs and order")
-    from app.pipeline.finance_documentary_priority import is_legacy_bitcoin_history
+    from app.pipeline.finance_documentary_priority import is_bitcoin_episode_content
     source_meta = source.get("meta") or {}
     baseline_meta = original.get("meta") or {}
-    if source_meta.get("video_id") != baseline_meta.get("video_id"):
-        raise ValueError("baseline and P0 film must have the same video ID")
     if len(source["scenes"]) < 20:
         raise ValueError("long-form source graph must have >=20 scenes")
-    legacy_bitcoin = (is_legacy_bitcoin_history(source_meta, len(source["scenes"]))
-                      and is_legacy_bitcoin_history(baseline_meta, len(original["scenes"])))
-    standard_finance = source_meta.get("niche") == "usa_finance"
+    # The original authoring graph and the F4/P0 job may use DIFFERENT metadata:
+    # job IDs, channel IDs, titles and orientations can change at production.
+    # Match the actual 156-scene film's stable narrative fingerprint instead.
+    legacy_bitcoin = (is_bitcoin_episode_content(source["scenes"])
+                      and is_bitcoin_episode_content(original["scenes"]))
+    standard_finance = (source_meta.get("niche") == "usa_finance"
+                        and baseline_meta.get("niche") == "usa_finance")
     if not (legacy_bitcoin or standard_finance):
-        raise ValueError("only usa_finance or the exact K70 Bitcoin ep01 legacy film is allowed")
-    if (not legacy_bitcoin and
-            float(source.get("width") or 0) <= float(source.get("height") or 0)):
-        raise ValueError("new finance documentary must be landscape")
-    if not legacy_bitcoin and baseline_meta.get("niche") != "usa_finance":
-        raise ValueError("baseline must also be usa_finance")
+        raise ValueError(
+            "not an identified K70 Bitcoin ep01 graph or a usa_finance long-form pair; "
+            f"baseline niche={baseline_meta.get('niche')!r}, "
+            f"P0 niche={source_meta.get('niche')!r}. "
+            "For Bitcoin ep01 the 156 scene IDs and narrated historical anchors "
+            "must match on both inputs.")
+    if not legacy_bitcoin:
+        if source_meta.get("video_id") != baseline_meta.get("video_id"):
+            raise ValueError("standard finance baseline and P0 film must have the same video ID")
+        if float(source.get("width") or 0) <= float(source.get("height") or 0):
+            raise ValueError("new finance documentary must be landscape")
     total = sum(float(row.get("duration_sec") or 0) for row in source["scenes"])
     if total < 240:
         raise ValueError("film is too short for long-form P3.1 repair")

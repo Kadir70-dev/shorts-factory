@@ -460,6 +460,11 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
     # them to a stock slot. Only the long-form finance exception below uses it;
     # Shorts and the global budget config retain their prior behavior.
     finance_authored_charts = finance_priority.authored_chart_ids(graph)
+    finance_authored_protected = (
+        {s.id for s in graph.scenes
+         if s.visual.type in ("threejs", "ai_video", "dataviz")}
+        if finance_priority.is_finance_longform(graph) else set()
+    )
     # 1) decide the per-scene strategy + enforce the visual-mix budget.
     report = sd.decide(graph, spec)
     by_id = {d.scene_id: d for d in report.decisions}
@@ -508,7 +513,7 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
         channels = {s.id: s.visual.budget_channel for s in graph.scenes}
         chosen_archives = {}
         for sid, selected_path in enhanced.items():
-            if channels.get(sid) != "stock":
+            if channels.get(sid) != "stock" or sid in finance_authored_protected:
                 continue
             receipt = finance_priority.archive_choice(
                 graph, sid, selected_path, license_ok=asset_engine.legal)

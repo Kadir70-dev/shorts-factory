@@ -1,0 +1,747 @@
+{
+  "narration": [
+    {
+      "scene_id": "s30",
+      "from": "A war in Vietnam. A war on poverty. A race sharply higher.",
+      "to": "A war in Vietnam. A war on poverty. A race to the moon."
+    },
+    {
+      "scene_id": "s126",
+      "from": "Within weeks the central bank would print an one hundred trillion dollar note.",
+      "to": "Within weeks the central bank would print a one hundred trillion dollar note."
+    }
+  ],
+  "visuals": [
+    {
+      "scene_id": "s23",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s23.jpg",
+      "why": "Replaces a roadside-motel postcard with busy mid-century American commerce for 'it worked beautifully'."
+    },
+    {
+      "scene_id": "s30",
+      "action": "triptych",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s30.jpg",
+      "why": "Matches the three spoken items in order: Vietnam (US Army, 1966), LBJ signing the Economic Opportunity Act (1964), Apollo 11 launch (NASA, 1969)."
+    },
+    {
+      "scene_id": "s42",
+      "action": "archival_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s42.jpg",
+      "why": "No licensed frame of the 15 Aug 1971 broadcast was found on Commons. Uses a verified 1971 White House portrait plus a dated evidence line; it does not claim to be the broadcast."
+    },
+    {
+      "scene_id": "s52",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s52.jpg",
+      "why": "Replaces a 2025 Hong Kong supermarket with a period artifact of 1970s inflation (Ford's WIN campaign)."
+    },
+    {
+      "scene_id": "s56",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s56.jpg",
+      "why": "Replaces a 1905 Brisbane fruit shop with an American supermarket of the period."
+    },
+    {
+      "scene_id": "s58",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s58.jpg",
+      "why": "Replaces a 19th-century coin table with a savings passbook (illustrative object; dated honestly)."
+    },
+    {
+      "scene_id": "s80",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s80.jpg",
+      "why": "Replaces a 2024 Portland tower with an ordinary bank branch facade (illustrative)."
+    },
+    {
+      "scene_id": "s82",
+      "action": "archival_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s82.jpg",
+      "why": "Identity per Web Summit's own caption (CC BY 2.0). Dated 2018 so it is not presented as a 1982 image."
+    },
+    {
+      "scene_id": "s88",
+      "action": "typography_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s88.jpg",
+      "why": "No licensed DigiCash imagery found; factual typography consistent with s86/s89 narration. The existing 'TEN YEARS EARLY' headline overlay still renders."
+    },
+    {
+      "scene_id": "s95",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s95.jpg",
+      "why": "Replaces a store keyboard aisle with a 1990s cypherpunk artifact: export-restricted encryption code printed on a shirt (CC0, Adam Back)."
+    },
+    {
+      "scene_id": "s111",
+      "action": "typography_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s111.jpg",
+      "why": "No licensed Liberty Dollar or raid imagery found (search returned 19th-century Seated Liberty coins). Factual typography restating the narration; the existing source overlay remains."
+    },
+    {
+      "scene_id": "s112",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s112.jpg",
+      "why": "Replaces a 1918-38 China lantern slide with a closed front door with knocker (illustrative metaphor, no historical claim)."
+    },
+    {
+      "scene_id": "s114",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s114.jpg",
+      "why": "Replaces an Electricity photo with a bare door and frame (illustrative metaphor for 'no door')."
+    },
+    {
+      "scene_id": "s117",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s117.jpg",
+      "why": "Replaces a world map with Argentine savers protesting outside a bank; dated Feb 2002 (two months after the freeze)."
+    },
+    {
+      "scene_id": "s126",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s126.jpg",
+      "why": "Replaces a framed 16-note set with the exact Z$100,000,000,000,000 note, whole note visible."
+    },
+    {
+      "scene_id": "s129",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s129.jpg",
+      "why": "Replaces a street in Pune, India with an American suburban street, matching 'not here, not to us'."
+    },
+    {
+      "scene_id": "s146",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s146.jpg",
+      "why": "Replaces a Taipei tower with the Treasury, which administered TARP's public money (illustrative)."
+    },
+    {
+      "scene_id": "s38",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s38.jpg",
+      "why": "Review: genuine 1933 bank-run photo used as an analogy. Kept, but dated on screen so it is not read as 1971."
+    },
+    {
+      "scene_id": "s121",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s121.jpg",
+      "why": "Review: genuine corralito protest, but Feb 2002, not December 2001. Kept and dated on screen."
+    },
+    {
+      "scene_id": "s28",
+      "action": "archival_plate",
+      "from_type": "motion_gfx",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s28.jpg",
+      "why": "Breaks the s26-s29 four-card run: 'Congress listened politely' over the Capitol. The card's text overlay is kept."
+    },
+    {
+      "scene_id": "s96",
+      "action": "archival_plate",
+      "from_type": "motion_gfx",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s96.jpg",
+      "why": "Breaks the s93-s100 card run on the Hashcash beat (Back built Hashcash). The card's overlays are kept."
+    }
+  ],
+  "notes": [
+    {
+      "scene_id": "s15",
+      "action": "keep",
+      "why": "Provisional keep per brief: 1923 five-million-mark note (CC BY-SA 3.0)."
+    },
+    {
+      "scene_id": "s132",
+      "action": "keep",
+      "why": "Provisional keep per brief: Northern Rock queue, 2007 (CC BY 2.0)."
+    },
+    {
+      "scene_id": "s115",
+      "action": "manual_review",
+      "why": "Review: unidentified ATM/wall (Basque 'Caixak'); not false, but not relevant. No better verified asset chosen; left for manual decision."
+    }
+  ],
+  "overlays": [
+    {
+      "scene_id": "s126",
+      "from": {
+        "type": "stat",
+        "text": "Z$100,000,000,000,000",
+        "sub": "issued 16 January 2009",
+        "y": 0.2,
+        "emphasis": "normal"
+      },
+      "to": {
+        "type": "stat",
+        "text": "one hundred trillion dollars · issued 16 January 2009",
+        "sub": "Z$100T",
+        "y": 0.2,
+        "emphasis": "normal"
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "scene_id": "s3",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s5",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "short_punch_beat"
+    },
+    {
+      "scene_id": "s9",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s11",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s20",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s27",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s36",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s44",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s45",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s55",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s60",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s66",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s68",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s69",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s78",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s84",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s85",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s92",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "short_punch_beat"
+    },
+    {
+      "scene_id": "s94",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s95",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "short_punch_beat"
+    },
+    {
+      "scene_id": "s98",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s99",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s100",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s106",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "short_punch_beat"
+    },
+    {
+      "scene_id": "s109",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s110",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s119",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s120",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s127",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "short_punch_beat"
+    },
+    {
+      "scene_id": "s135",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s136",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s137",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "short_punch_beat"
+    },
+    {
+      "scene_id": "s141",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s142",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s156",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_to_card"
+    }
+  ],
+  "source_graph": "/home/kadir70/shorts-factory/data/finance_p31/bitcoin_repaired_v1/scene_graph_p31_repaired.json",
+  "source_sha256": "6f5175d2b1ba72ac39f2d1a984fef83a6492059b3377a77d970088d3d953d1c2",
+  "provenance": {
+    "s23": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Main Street, looking north, Greenville.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Main_Street,_looking_north,_Greenville.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Main_Street%2C_looking_north%2C_Greenville.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Asheville Post Card Co. (publisher)",
+        "date": "circa 1958date QS:P,+1958-00-00T00:00:00Z/9,P1480,Q5727902",
+        "description": "Photomechanical print (postcard) : halftone, colored \nDivided back",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s23_0.jpg",
+        "sha256": "161da671a50e5832d6bc9dbff89b6ece01fda496fb7eea4174f3e0f907f2ff95"
+      }
+    ],
+    "s30": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:UH-1D helicopters in Vietnam 1966.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:UH-1D_helicopters_in_Vietnam_1966.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/UH-1D_helicopters_in_Vietnam_1966.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "James K. F. Dung, SFC, Photographer",
+        "date": "Taken on 16 May 1966",
+        "description": "U.S. Army Bell UH-1D helicopters airlift members of the 2nd Battalion, 14th Infantry Regiment from the Filhol Rubber Plantation area to a new staging area, during Operation \"Wahiawa\", a search and destroy mission conducted by the 25th Infantry Division, northeast of Cu Chi, South Vietnam, 1966.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s30_0.jpg",
+        "sha256": "b23ab4ed0790d857ccbe3278a3e742baeb13d10af8a371ec4c62a9828974de7b"
+      },
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Signing of the EOA.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Signing_of_the_EOA.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Signing_of_the_EOA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Cecil W. Stoughton",
+        "date": "1964-08-20",
+        "description": "President Lyndon B. Johnson signs the Poverty Bill (also known as the Economic Opportunity Act) in the Rose Garden, White House, while press and supporters of the bill look on.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s30_1.jpg",
+        "sha256": "0ace22206ddac5078e6692e522df490127ba8b00904650c4acd5900521fb021b"
+      },
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Apollo 11 Launched Via Saturn V Rocket.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Apollo_11_Launched_Via_Saturn_V_Rocket.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Apollo_11_Launched_Via_Saturn_V_Rocket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "NASA",
+        "date": "1969-07-16",
+        "description": "The Apollo 11 mission launched from the Kennedy Space Center, Florida on July 16, 1969. The Saturn V vehicle produced a holocaust of flames as it rose from its pad at Launch complex 39.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s30_2.jpg",
+        "sha256": "eb83d40711cc21ba07bc1af45d43aabe78b699254d3813cd3213e35195749edf"
+      }
+    ],
+    "s42": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Nixon Official Presidential Portrait 07-08-1971 (cropped).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Nixon_Official_Presidential_Portrait_07-08-1971_(cropped).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Nixon_Official_Presidential_Portrait_07-08-1971_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Unknown authorUnknown authorDerivative work:  TharonXX",
+        "date": "1971-07-08",
+        "description": "Official Presidential Portrait, 07/08/1971.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s42_0.jpg",
+        "sha256": "c27c633faa9c83701a375279eef1bd1b21b41c8727344a719b9795c5814a1c51"
+      }
+    ],
+    "s52": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:A button from the \"Whip Inflation Now\" initiative of the 1970's.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:A_button_from_the_%22Whip_Inflation_Now%22_initiative_of_the_1970%27s.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/A_button_from_the_%22Whip_Inflation_Now%22_initiative_of_the_1970%27s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "",
+        "date": "",
+        "description": "A red and white \"WIN\" button from President Gerald R. Ford's 1974 \"Whip Inflation Now\" economic initiative.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s52_0.jpg",
+        "sha256": "2ca52cb9f9b24921d90cf9dba0e0f377ff9ca253131cf59bbaf0f1b2e453b6bb"
+      }
+    ],
+    "s56": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Jumbo supermarket in Annandale, Virginia in the 1970s.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Jumbo_supermarket_in_Annandale,_Virginia_in_the_1970s.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Jumbo_supermarket_in_Annandale%2C_Virginia_in_the_1970s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Photo courtesy of United Natural Foods, Inc.",
+        "date": "between 1978 and 1979date QS:P,+1978-00-00T00:00:00Z/8,P1319",
+        "description": "Jumbo supermarket in Annandale, Virginia in the 1970s",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s56_0.jpg",
+        "sha256": "1d16ea953d9bc5ce738d19f43575b58ce5f8f5b570b077ee6df72cb4ce279bcf"
+      }
+    ],
+    "s58": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:1953 - Savings Account Passbook - Allentown National Bank - Allentown PA.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:1953_-_Savings_Account_Passbook_-_Allentown_National_Bank_-_Allentown_PA.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/1953_-_Savings_Account_Passbook_-_Allentown_National_Bank_-_Allentown_PA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "unknown",
+        "date": "1953",
+        "description": "Savings Account Passbook - Allentown National Bank",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s58_0.jpg",
+        "sha256": "6da403f13435da5e3df1abfbdf4fc23179097bcd10ec62015236a3f06f9e7c47"
+      }
+    ],
+    "s80": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Bank of Gustine, CA.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Bank_of_Gustine,_CA.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Bank_of_Gustine%2C_CA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY 4.0",
+        "artist": "Publichall",
+        "date": "2017-07-13 12:50:54",
+        "description": "Began in 1909 as a branch of the Bank of Los Banos, it was first located in a storefront in the rear of the Miller & Lux building, whose owners had a controlling interest of that bank. It was sold to the newly formed Bank of Gustine in 1913, who put up this building kitty corner to the old location ",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s80_0.jpg",
+        "sha256": "14a2cf1940d9c0ef5f0d066763ca68be5b1951d1b6d17898d75d90dd7738c68a"
+      }
+    ],
+    "s82": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Web Summit 2018 - MoneyConf - Day 2, November 7 HM1 7012 (45041353684).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Web_Summit_2018_-_MoneyConf_-_Day_2,_November_7_HM1_7012_(45041353684).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Web_Summit_2018_-_MoneyConf_-_Day_2%2C_November_7_HM1_7012_%2845041353684%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY 2.0",
+        "artist": "Web Summit",
+        "date": "2018-11-07 12:07",
+        "description": "7 November 2018; David Chaum, Elixxir on Moneyconf Stage during day two of Web Summit 2018 at the Altice Arena in Lisbon, Portugal. Photo by Harry Murphy/Web Summit via Sportsfile",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s82_0.jpg",
+        "sha256": "3b05b5a43fb767e7c68fdaac3651c15fdab1f1066cebbe2b28ce04d5680ef3fd"
+      }
+    ],
+    "s95": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Munitions T-shirt (front).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Munitions_T-shirt_(front).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Munitions_T-shirt_%28front%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "Adam Back",
+        "date": "1997",
+        "description": "Export-restricted encryption code printed on T-shirt as a protest against US encryption export restrictions.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s95_0.jpg",
+        "sha256": "dff7a08c4260ba78f486d1af3c1cc1601060772ca3865ed2f9f0e15e0b4a73b7"
+      }
+    ],
+    "s112": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Halden 27, Altstadt-Haustür in Aarau (2021).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Halden_27,_Altstadt-Haust%C3%BCr_in_Aarau_(2021).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Halden_27%2C_Altstadt-Haust%C3%BCr_in_Aarau_%282021%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY-SA 4.0",
+        "artist": "JoachimKohler-HB",
+        "date": "2021-10-16 10:09:02",
+        "description": "Front door in the old town of Aarau with door knocker and pull-cord doorbell.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s112_0.jpg",
+        "sha256": "982d3ccb6ee3e4fcdf732a933cfac8bcfefade015fef4274423e8e7a8aadfd26"
+      }
+    ],
+    "s114": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Door and Door Frame, Y&A London.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Door_and_Door_Frame,_Y%26A_London.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Door_and_Door_Frame%2C_Y%26A_London.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "14GTR",
+        "date": "2024-02-25 15:14:07",
+        "description": "Oak door and door frame, made of broad planks with large iron nails, made in Ipswich, England between 1500 and 1530, Victoria and Albert Museum number A.25-1913",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s114_0.jpg",
+        "sha256": "f8443e6a8d67724b8a948bdd2ce727f2b715bddf7b9acba7906b68abed120008"
+      }
+    ],
+    "s117": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Buenos Aires - Manifestación contra el Corralito - 20020206-17.JPG",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-17.JPG",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-17.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY-SA 3.0",
+        "artist": "Taken by the uploader, w:es:Usuario:Barcex",
+        "date": "2002-02-06",
+        "description": "Manifestación de ahorristas argentinos contra el Corralito financiero frente a la una sucursal del BBVA Banco Francés ubicada en calle Florida, Buenos Aires, Argentina.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s117_0.jpg",
+        "sha256": "06d65ef21f89e3dcdbeb6e1bc2206ae5aac188fe622bf319094b69c63b432c61"
+      }
+    ],
+    "s126": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Zimbabwe $100 trillion 2009 Obverse.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Zimbabwe_$100_trillion_2009_Obverse.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Zimbabwe_%24100_trillion_2009_Obverse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Reserve Bank of Zimbabwe",
+        "date": "2009",
+        "description": "The obverse of the 2009 Zimbabwe $100 trillion banknote.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s126_0.jpg",
+        "sha256": "d5c69779d97394606260ac646639ff6ea3910ce774eaba34f6d2de0435c3ec6e"
+      }
+    ],
+    "s129": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Typical suburban street in the United States.tif",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Typical_suburban_street_in_the_United_States.tif",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Typical_suburban_street_in_the_United_States.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY-SA 4.0",
+        "artist": "Michael E. Arth",
+        "date": "2008",
+        "description": "This is an all-too-common American suburban street: wide, built for cars, with front-loading garages that take up half of the front of the house. Above-ground power lines are also quite common, although they are not usually in the front.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s129_0.jpg",
+        "sha256": "2917d37ad64dbe4f39387f161702b6545a24e7cc3b0d1cff5f651be651a526f6"
+      }
+    ],
+    "s146": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:United States Treasury Building.JPG",
+        "page_url": "https://commons.wikimedia.org/wiki/File:United_States_Treasury_Building.JPG",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/United_States_Treasury_Building.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY-SA 3.0",
+        "artist": "Rchuon24",
+        "date": "Taken on 12 August 2012, 18:00:29",
+        "description": "This is an image of a place or building that is listed on the National Register of Historic Places in the United States of America. Its reference number is 71001007 (Wikidata).",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s146_0.jpg",
+        "sha256": "ccc98d828ae4886cccee2ffde90dd7b599fd8aa76bac893ec96da20eaceff4f8"
+      }
+    ],
+    "s38": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Bank_Run_in_Michigan%2C_USA%2C_February_1933.jpg",
+        "page_url": "",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Bank_Run_in_Michigan%2C_USA%2C_February_1933.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Photographer not credited.",
+        "date": "February 1933",
+        "description": "Bank run in Michigan, USA, February 1933",
+        "local": "/home/kadir70/shorts-factory/data/cache/multi_source/asset_6b08e206a5f7841bb92112f9.jpg",
+        "retrieved": "P3.1 cache",
+        "license_verification": "from P3.1 provenance; human legal review still required",
+        "sha256": "6439388db3e062afc2b2204a7e06027c7262ba92c3ab67c1ed4d705947cfe152"
+      }
+    ],
+    "s121": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-05.JPG",
+        "page_url": "",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-05.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY-SA 3.0",
+        "artist": "Taken by the uploader, <a href=\"https://en.wikipedia.org/wiki/es:Usuario:Barcex\" class=\"extiw\" title=\"w:es:Usuario:Barcex\">w:es:Usuario:Barcex</a>",
+        "date": "2002-02-06",
+        "description": "Manifestación contra el Corralito, Buenos Aires",
+        "local": "/home/kadir70/shorts-factory/data/cache/multi_source/asset_e0b35e76d0c7c16f86d5311f.jpg",
+        "retrieved": "P3.1 cache",
+        "license_verification": "from P3.1 provenance; human legal review still required",
+        "sha256": "bc50c4bc311855b8307f23f0606caaf8a1b9f9f23ab51d714026f28735f9cb2a"
+      }
+    ],
+    "s28": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:US068 Washington The Capitol Capitol 1964 (51187727394).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:US068_Washington_The_Capitol_Capitol_1964_(51187727394).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/US068_Washington_The_Capitol_Capitol_1964_%2851187727394%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY 2.0",
+        "artist": "wilford peloquin",
+        "date": "2003-09-12 18:20",
+        "description": "US068 Washington The Capitol Capitol 1964",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s28_0.jpg",
+        "sha256": "0acc3cddaf694d372dbea63f34f70a1ba296de78c8f4e6de55c27ec3cb436eff"
+      }
+    ],
+    "s96": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Adam Back 2014.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Adam_Back_2014.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Adam_Back_2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY 2.0",
+        "artist": "Joi Ito",
+        "date": "2014-12-02",
+        "description": "Adam Back",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s96_0.jpg",
+        "sha256": "835c90493c146b03d5dffc5f7ab63448e368d06dea8f83883b6e3c1ea3e2140b"
+      }
+    ]
+  }
+}

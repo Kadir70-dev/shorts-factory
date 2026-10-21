@@ -115,12 +115,26 @@ def inspect(original: dict, source: dict, root: Path) -> dict:
     if [s.get("id") for s in original["scenes"]] != [
             s.get("id") for s in source["scenes"]]:
         raise ValueError("baseline and voiced graph need identical scene IDs and order")
-    if (source.get("meta") or {}).get("niche") != "usa_finance":
-        raise ValueError("finance-only repair refuses a different niche")
+    from app.pipeline.finance_documentary_priority import is_legacy_bitcoin_history
+    source_meta = source.get("meta") or {}
+    baseline_meta = original.get("meta") or {}
+    if source_meta.get("video_id") != baseline_meta.get("video_id"):
+        raise ValueError("baseline and P0 film must have the same video ID")
     if len(source["scenes"]) < 20:
         raise ValueError("long-form source graph must have >=20 scenes")
-    if not (float(source.get("width") or 0) > float(source.get("height") or 0)):
-        raise ValueError("finance documentary must be landscape")
+    legacy_bitcoin = (is_legacy_bitcoin_history(source_meta, len(source["scenes"]))
+                      and is_legacy_bitcoin_history(baseline_meta, len(original["scenes"])))
+    standard_finance = source_meta.get("niche") == "usa_finance"
+    if not (legacy_bitcoin or standard_finance):
+        raise ValueError("only usa_finance or the exact K70 Bitcoin ep01 legacy film is allowed")
+    if (not legacy_bitcoin and
+            float(source.get("width") or 0) <= float(source.get("height") or 0)):
+        raise ValueError("new finance documentary must be landscape")
+    if not legacy_bitcoin and baseline_meta.get("niche") != "usa_finance":
+        raise ValueError("baseline must also be usa_finance")
+    total = sum(float(row.get("duration_sec") or 0) for row in source["scenes"])
+    if total < 240:
+        raise ValueError("film is too short for long-form P3.1 repair")
     charts, archives, identity = [], [], []
     for a, b in zip(original["scenes"], source["scenes"]):
         sid = b["id"]
@@ -133,6 +147,7 @@ def inspect(original: dict, source: dict, root: Path) -> dict:
         if cand:
             archives.append({"scene_id": sid, **cand})
     return {"mode": "review_only_until_apply", "total_scenes": len(source["scenes"]),
+            "scope": "legacy_bitcoin_history_ep01" if legacy_bitcoin else "usa_finance_longform",
             "lost_sourced_charts": charts, "qualified_archive_replacements": archives,
             "identity_review_only": identity,
             "warnings": ["Citations and archives still require human factual/visual review.",

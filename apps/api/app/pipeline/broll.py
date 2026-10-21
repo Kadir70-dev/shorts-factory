@@ -248,6 +248,10 @@ async def _render_papercraft(scene: Scene, graph: SceneGraph) -> bool:
     percentages never move."""
     if not settings().papercraft_engine_enabled:
         return False
+    # An explicitly authored, attributed finance chart is EVIDENCE, not an
+    # eligible decorative document-card: it must reach dataviz.render.
+    if scene.visual.decision_reason.startswith("[finance sourced-chart priority]"):
+        return False
     if scene.visual.budget_channel not in ("official", "charts", "motion_gfx"):
         return False
     from . import papercraft

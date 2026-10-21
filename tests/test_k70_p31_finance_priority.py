@@ -54,6 +54,10 @@ def test_known_bitcoin_ep01_metadata_is_explicitly_whitelisted_but_other_history
     assert source["width"] == 1080 and source["height"] == 1920
     assert len(source["scenes"]) == 156
     assert prio.is_legacy_bitcoin_history(source["meta"], 156)
+    legacy = Obj(meta=Obj(**source["meta"]),
+                 scenes=[Obj(duration_sec=row["duration_sec"]) for row in source["scenes"]],
+                 width=source["width"], height=source["height"])
+    assert prio.is_finance_longform(legacy)
     assert repair.inspect(source, source, ROOT)["scope"] == "legacy_bitcoin_history_ep01"
 
     # Same label and portrait are NOT sufficient for the exception.

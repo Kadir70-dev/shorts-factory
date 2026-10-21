@@ -55,7 +55,7 @@ def test_sourced_data_chart_gets_priority_without_demoting_authored_media():
     data = graph([first, second, third])
     result = plan_documentary(data)
     assert result["decisions"][0]["suggested_visual_intent"] == "dataviz"
-    assert result["decisions"][0]["visual_protected"] is True
+    assert result["decisions"][0]["visual_protected"] is False  # sourced unrendered fallback can be promoted
     assert result["decisions"][1]["visual_protected"] is True
     assert result["decisions"][2]["visual_protected"] is True
     assert all(d["requires_asset_or_editor_approval_for_visual_change"]
@@ -107,6 +107,25 @@ def test_transitions_safe_unrendered_copy_and_protected_media_unchanged():
     assert edited["scenes"][0]["transition_in"] == "cut"
     assert edited["scenes"][1]["narration"] == b["narration"]
     assert edited["scenes"][1]["visual"] == b["visual"]
+
+
+def test_opt_in_promotes_only_sourced_fallback_chart_not_existing_footage():
+    fallback = scene("s1", "The verified report contains the figure 200.",
+                     "motion_gfx", 8, "evidence", "headline")
+    fallback["data"] = {"points": [{"label": "2025", "value": 200.0}],
+                        "source": "Source attribution supplied by author"}
+    footage = scene("s2", "Data shows a change.", "broll", 8, "evidence",
+                    "historical footage")
+    footage["data"] = {"points": [{"label": "2025", "value": 200.0}],
+                       "source": "Attribution"}
+    draft = graph([fallback, footage])
+    recommendations = plan_documentary(draft)
+    revised = safe_transition_copy(draft, recommendations)
+    assert draft["scenes"][0]["visual"]["type"] == "motion_gfx"
+    assert revised["scenes"][0]["visual"]["type"] == "dataviz"
+    assert revised["scenes"][0]["visual"]["strategy"] == "dataviz"
+    assert revised["scenes"][0]["data"] == fallback["data"]
+    assert revised["scenes"][1]["visual"] == footage["visual"]
 
 
 def test_refuses_stale_report_and_rendered_media_edit():

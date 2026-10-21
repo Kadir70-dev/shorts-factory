@@ -51,6 +51,7 @@ from . import paperima_engine
 from . import ram
 from . import scene_director as sd
 from . import asset_engine
+from . import finance_documentary_priority as finance_priority
 from . import fashion_viz_bridge
 from . import ai_broll
 from . import finance_motion
@@ -455,9 +456,25 @@ async def _dispatch_scene(scene: Scene, idx: int, graph: SceneGraph,
 
 async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
     _reset_rank_pool(graph.meta.video_id)
+    # Snapshot AUTHOR-INTENDED source-backed charts BEFORE allocation can demote
+    # them to a stock slot. Only the long-form finance exception below uses it;
+    # Shorts and the global budget config retain their prior behavior.
+    finance_authored_charts = finance_priority.authored_chart_ids(graph)
     # 1) decide the per-scene strategy + enforce the visual-mix budget.
     report = sd.decide(graph, spec)
     by_id = {d.scene_id: d for d in report.decisions}
+    if finance_authored_charts:
+        for scene in graph.scenes:
+            if scene.id not in finance_authored_charts:
+                continue
+            scene.visual.budget_channel = "charts"
+            scene.visual.strategy = "dataviz"
+            scene.visual.type = "dataviz"
+            scene.visual.asset_path = None
+            scene.visual.layers = []
+            scene.visual.decision_reason = (
+                "[finance sourced-chart priority] authored numeric evidence"
+            )
     if ((settings().multi_source_asset_engine_enabled
          or settings().threejs_visual_engine_enabled
          or settings().motion_graphics_engine_enabled
@@ -483,11 +500,29 @@ async def resolve_assets(graph: SceneGraph, spec: VideoSpec) -> SceneGraph:
         enhanced = await asset_engine.resolve(
             graph, multi_source_candidates, download_asset_candidate,
             providers=discovery)
-        # This engine may only keep what it was allocated. Anything else it
-        # happened to resolve is released so the allocated engine still runs.
+        # This engine normally keeps only allocated official beats. However,
+        # for LANDSCAPE LONG-FORM FINANCE, an exact licensed archival selection
+        # must not be thrown away in favor of a mismatched generic stock clip.
+        # Every exception needs a validated chosen-source provenance receipt.
+        # No source URL is invented, no external lookup is repeated.
         channels = {s.id: s.visual.budget_channel for s in graph.scenes}
-        enhanced = {sid: path for sid, path in enhanced.items()
-                    if channels.get(sid, "") in ("", "official")}
+        chosen_archives = {}
+        for sid, selected_path in enhanced.items():
+            if channels.get(sid) != "stock":
+                continue
+            receipt = finance_priority.archive_choice(graph, sid, selected_path)
+            if receipt:
+                chosen_archives[sid] = receipt
+        enhanced = {sid: chosen_path for sid, chosen_path in enhanced.items()
+                    if channels.get(sid, "") in ("", "official")
+                    or sid in chosen_archives}
+        for scene in graph.scenes:
+            if scene.id in chosen_archives:
+                scene.visual.budget_channel = "official"
+                scene.visual.decision_reason = (
+                    "[finance archival-over-stock] licensed chosen source: "
+                    + chosen_archives[scene.id]["provider"]
+                )
         for record in graph.asset_provenance:
             source_id = next((b.source_scene_id for b in graph.storyboard.scenes
                               if b.scene_id == record.scene_id), "")

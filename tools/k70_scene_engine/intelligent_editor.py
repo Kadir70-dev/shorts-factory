@@ -65,7 +65,7 @@ def _chart_ready(scene: Mapping[str, Any]) -> bool:
 def _is_locked(scene: Mapping[str, Any]) -> bool:
     visual = _object(scene.get("visual"))
     return bool(visual.get("asset_path") or visual.get("layers") or
-                visual.get("type") in _PRESERVE_TYPES or _chart_ready(scene))
+                visual.get("type") in _PRESERVE_TYPES)
 
 
 def _semantic(scene: Mapping[str, Any]) -> dict[str, Any]:
@@ -249,9 +249,11 @@ def plan_documentary(graph: Mapping[str, Any]) -> dict[str, Any]:
 def safe_transition_copy(graph: Mapping[str, Any], report: Mapping[str, Any]) -> dict:
     """Opt-in editorial copy for UNRENDERED drafts; never overwrite inputs.
 
-    Applied transition changes are only 'cut' -> 'crossfade', and only on
-    ordinary unrendered scenes. A copied film with voiceover, captions or any
-    asset already resolved is refused to protect audio/visual synchronization.
+    Only 'cut' -> 'crossfade' is allowed for ordinary unrendered scenes.
+    An unrendered text fallback with actual authored sourced numeric points
+    may also become 'dataviz'. Existing footage, 3D and cinematic inserts stay
+    unchanged. A film with voiceover, captions, provenance or resolved media
+    is refused to protect synchronization and editorial source integrity.
     """
     if report.get("source_graph_sha256") != graph_fingerprint(graph):
         raise ValueError("editorial report does not match exact source graph")

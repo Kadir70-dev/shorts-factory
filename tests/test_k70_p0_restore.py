@@ -116,3 +116,20 @@ def test_protected_content_check_flags_narration_overlay_and_stray_visuals():
     after = NS(scenes=[s("s1", vis="clip"), s("s2", text="changed"), s("s3", vis="x")])
     assert balance.protected_unchanged(before, after, {"s1"}) == ["s2", "s3"]
     assert balance.mmss(125.5) == "2:05.5"
+
+
+def test_render_v2_refuses_bad_overrides_and_existing_output(tmp_path):
+    import asyncio
+    import pytest
+    from scripts import k70_p0_render_v2 as v2
+    clip = tmp_path / "card.mp4"
+    clip.write_bytes(b"x")
+    assert v2.parse_overrides([f"s102={clip}"]) == {"s102": clip.resolve()}
+    for bad in ("s102", f"={clip}", f"s1={tmp_path/'none.mp4'}", f"s1={tmp_path}"):
+        with pytest.raises(SystemExit):
+            v2.parse_overrides([bad])
+    taken = tmp_path / "out"
+    taken.mkdir()
+    args = NS(out_dir=taken, job=tmp_path, graph=tmp_path / "g.json", override=[])
+    with pytest.raises(SystemExit, match="never overwrite"):
+        asyncio.run(v2.run(args))

@@ -1,6 +1,6 @@
 # K70 P3.1 — Finance Archival Priority and Chart Recovery
 
-Scope: long-form landscape usa_finance documentaries, PLUS the exact original 156-scene K70 Bitcoin history episode (video_id btc_ep01_world_before_bitcoin, niche usa_history, channel k70_history, including its original portrait frame format). No other usa_history episodes or Shorts are enabled. The global visual budget, frozen 14-layer structure and protected masters stay unchanged.
+Scope: long-form landscape usa_finance documentaries, PLUS the original 156-scene K70 Bitcoin history episode and its F4/P0 production copies. Their video IDs, channel, title, and format may legitimately differ across authoring and production. Identification now requires matching sequential s1..s156 scene IDs and at least 3 of 4 distinct history-story narration anchors (gold reserves, savings-and-loan cleanup, David Chaum, Zimbabwe note) **in both graphs**. This avoids blindly trusting a renamed video or enabling an entire usa_history channel. The global visual budget, frozen 14-layer structure and protected masters stay unchanged.
 
 ## Production routing update
 

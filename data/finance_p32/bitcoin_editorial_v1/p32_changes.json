@@ -146,6 +146,13 @@
       "why": "Original K70 illustration of a closed bank shutter ('CERRADO' = closed). Labelled 'Illustration: K70 (not archival)'. The dates cover the cacerolazo protests from December 2001 into 2002."
     },
     {
+      "scene_id": "s15",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s15.jpg",
+      "why": "Reichsbanknote, 5 million marks, dated 20 Aug 1923. PD-scan (PD-Germany-§134-KUG; PD-1996 in the US). Demonetized Papiermark: not confusable 'im Zahlungsverkehr' (§128 OWiG); no Commons currency-restriction tag."
+    },
+    {
       "scene_id": "s115",
       "action": "graphic_plate",
       "from_type": "image",
@@ -165,14 +172,79 @@
       "from_type": "motion_gfx",
       "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s96.jpg",
       "why": "Original K70 proof-of-work illustration with real SHA-1 hashes computed at build time (Hashcash uses SHA-1). Terminal styling differs from the motion_gfx cards, so it still breaks the s93-s100 run. The headline and lower-third overlays still render."
+    },
+    {
+      "scene_id": "s5",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s5.jpg",
+      "why": "Where U.S. gold was held; PD (published by the Committee on Architectural... per Commons)."
+    },
+    {
+      "scene_id": "s6",
+      "action": "archival_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s6.jpg",
+      "why": "Presidential helicopter in Nixon's term (NARA 194719, PD, Robert L. Knudsen). Dated; not claimed as 13 Aug 1971."
+    },
+    {
+      "scene_id": "s9",
+      "action": "archival_plate",
+      "from_type": "motion_gfx",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s9.jpg",
+      "why": "Camp David lodge, NARA 194350, PD. Dated; the secret meeting there was 13–15 Aug 1971. Breaks the s8–s11 card run; overlays kept."
+    },
+    {
+      "scene_id": "s16",
+      "action": "archival_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s16.jpg",
+      "why": "Period artifact (Mittweida, Saxony, 1923), reverse reads 'Am 15. Nov. 1923 kostete 1 Pfund Brot 80 Milliarden'. PD per Commons."
+    },
+    {
+      "scene_id": "s105",
+      "action": "archival_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s105.jpg",
+      "why": "Neutral object for 'a person can be arrested'. CC0."
+    },
+    {
+      "scene_id": "s107",
+      "action": "archival_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s107.jpg",
+      "why": "e-gold was described as backed by bullion; illustrative CC0 image, not e-gold's vault."
+    },
+    {
+      "scene_id": "s108",
+      "action": "archival_plate",
+      "from_type": "motion_gfx",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s108.jpg",
+      "why": "DOJ headquarters for 'the Justice Department indicted it' (Apr 2007). Breaks the s106–s110 run."
+    },
+    {
+      "scene_id": "s149",
+      "action": "archival_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s149.jpg",
+      "why": "The central bank behind 'Trust us'. PD (Federal Reserve photo)."
+    },
+    {
+      "scene_id": "s25",
+      "action": "graphic_plate",
+      "from_type": "broll",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s25.jpg",
+      "why": "Original document-style graphic. Facts from the JEC hearing record: 'Employment, Growth, and Price Levels', 26–30 Oct 1959, Part 9A (Triffin statement p. 2905) via FRASER / St. Louis Fed."
+    },
+    {
+      "scene_id": "s147",
+      "action": "graphic_plate",
+      "from_type": "image",
+      "plate": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/plates/s147.jpg",
+      "why": "Original illustration for 'handed eviction notices'; no PD/CC0 photo found. Contains no names, figures or dates."
     }
   ],
   "notes": [
-    {
-      "scene_id": "s15",
-      "action": "keep",
-      "why": "Provisional keep per brief: 1923 five-million-mark note (CC BY-SA 3.0)."
-    },
     {
       "scene_id": "s132",
       "action": "keep",
@@ -212,22 +284,34 @@
       "reason": "short_punch_beat"
     },
     {
-      "scene_id": "s9",
-      "from": "crossfade",
-      "to": "cut",
-      "reason": "card_to_card"
-    },
-    {
       "scene_id": "s11",
       "from": "crossfade",
       "to": "cut",
       "reason": "card_to_card"
     },
     {
+      "scene_id": "s19",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
       "scene_id": "s20",
       "from": "crossfade",
       "to": "cut",
       "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s24",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s26",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
     },
     {
       "scene_id": "s27",
@@ -242,6 +326,12 @@
       "reason": "card_to_card"
     },
     {
+      "scene_id": "s43",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
       "scene_id": "s44",
       "from": "crossfade",
       "to": "cut",
@@ -254,10 +344,34 @@
       "reason": "card_to_card"
     },
     {
+      "scene_id": "s50",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s54",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
       "scene_id": "s55",
       "from": "crossfade",
       "to": "cut",
       "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s57",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s59",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
     },
     {
       "scene_id": "s60",
@@ -290,6 +404,12 @@
       "reason": "card_to_card"
     },
     {
+      "scene_id": "s83",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
       "scene_id": "s84",
       "from": "crossfade",
       "to": "cut",
@@ -302,10 +422,22 @@
       "reason": "card_to_card"
     },
     {
+      "scene_id": "s89",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
       "scene_id": "s92",
       "from": "crossfade",
       "to": "cut",
       "reason": "short_punch_beat"
+    },
+    {
+      "scene_id": "s93",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
     },
     {
       "scene_id": "s94",
@@ -318,6 +450,12 @@
       "from": "crossfade",
       "to": "cut",
       "reason": "short_punch_beat"
+    },
+    {
+      "scene_id": "s97",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
     },
     {
       "scene_id": "s98",
@@ -338,22 +476,40 @@
       "reason": "card_to_card"
     },
     {
+      "scene_id": "s103",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
       "scene_id": "s106",
       "from": "crossfade",
       "to": "cut",
-      "reason": "short_punch_beat"
+      "reason": "card_entry"
     },
     {
       "scene_id": "s109",
       "from": "crossfade",
       "to": "cut",
-      "reason": "card_to_card"
+      "reason": "card_entry"
     },
     {
       "scene_id": "s110",
       "from": "crossfade",
       "to": "cut",
       "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s113",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s118",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
     },
     {
       "scene_id": "s119",
@@ -374,6 +530,12 @@
       "reason": "short_punch_beat"
     },
     {
+      "scene_id": "s134",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
       "scene_id": "s135",
       "from": "crossfade",
       "to": "cut",
@@ -392,6 +554,18 @@
       "reason": "short_punch_beat"
     },
     {
+      "scene_id": "s138",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s140",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
       "scene_id": "s141",
       "from": "crossfade",
       "to": "cut",
@@ -402,6 +576,18 @@
       "from": "crossfade",
       "to": "cut",
       "reason": "card_to_card"
+    },
+    {
+      "scene_id": "s144",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
+    },
+    {
+      "scene_id": "s154",
+      "from": "crossfade",
+      "to": "cut",
+      "reason": "card_entry"
     },
     {
       "scene_id": "s156",
@@ -665,6 +851,22 @@
         "sha256": "6439388db3e062afc2b2204a7e06027c7262ba92c3ab67c1ed4d705947cfe152"
       }
     ],
+    "s15": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:5 Millionen Mark 1923-08-20.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:5_Millionen_Mark_1923-08-20.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/5_Millionen_Mark_1923-08-20.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Deutsche Reichsbank",
+        "date": "1923",
+        "description": "5 Million Mark from 1923-08-20",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s15_0_c0ecb45e.jpg",
+        "sha256": "c42ea8c602f303857543b9ed179c0b27ad107d6389054430a37a536f84d7fee1"
+      }
+    ],
     "s28": [
       {
         "provider": "wikimedia_commons",
@@ -679,6 +881,134 @@
         "license_verification": "as stated on Commons file page; human legal review still required",
         "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s28_0_b514e39d.jpg",
         "sha256": "0acc3cddaf694d372dbea63f34f70a1ba296de78c8f4e6de55c27ec3cb436eff"
+      }
+    ],
+    "s5": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:United States Bullion Depository 1939.tiff",
+        "page_url": "https://commons.wikimedia.org/wiki/File:United_States_Bullion_Depository_1939.tiff",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/United_States_Bullion_Depository_1939.tiff?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Published by Committee on Architectural Surveys and Public Works Administration.",
+        "date": "1939",
+        "description": "Photograph shows exterior view of United Stated Bullion Depository at Fort Knox from outside the gated entrance.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s5_0_97acc33a.jpg",
+        "sha256": "d3dd40d20693f2a00b1e12d073c6717b78a387c8c11a6919764e1d9a9f15ae84"
+      }
+    ],
+    "s6": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:\"Marine One\" in flight - NARA - 194719.tif",
+        "page_url": "https://commons.wikimedia.org/wiki/File:%22Marine_One%22_in_flight_-_NARA_-_194719.tif",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/%22Marine_One%22_in_flight_-_NARA_-_194719.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Robert LeRoy Knudsen",
+        "date": "10 March 1971date QS:P571,+1971-03-10T00:00:00Z/11",
+        "description": "\nScope and content:  Subject: Helicopters.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s6_0_ac94345f.jpg",
+        "sha256": "6611739e21a03fdb9f66068fc3930e0ed2fca709e1e99858bd87d1589ac85d7f"
+      }
+    ],
+    "s9": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Exterior of Camp David lodge with swimming pool in foreground. - NARA - 194350.tif",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Exterior_of_Camp_David_lodge_with_swimming_pool_in_foreground._-_NARA_-_194350.tif",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Exterior_of_Camp_David_lodge_with_swimming_pool_in_foreground._-_NARA_-_194350.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Karl Schumacher",
+        "date": "9 February 1971date QS:P571,+1971-02-09T00:00:00Z/11",
+        "description": "\nScope and content:  Subject: Camp David.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s9_0_8e11103f.jpg",
+        "sha256": "e7e9dfe2c9f0a734acf178c2c0651ffaafb2c1b843dcef4d3a617eb00eedc1c4"
+      }
+    ],
+    "s16": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:1923 Germany rampant Inflation Medal, Mittweida, Saxony, reverse.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:1923_Germany_rampant_Inflation_Medal,_Mittweida,_Saxony,_reverse.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/1923_Germany_rampant_Inflation_Medal%2C_Mittweida%2C_Saxony%2C_reverse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Berlin-George",
+        "date": "1923",
+        "description": "1923 Germany rampant Inflation Medal, Mittweida, Saxony\nBronze medallion, d. = 32 mm.\nA distressed couple with child in front of a barrier of thorns, monogram MM in exergue. / 8 lines: \"AM 15. NOV. 1923 KOSTETE 1 PFUND BROT 80 MILLIARDEN 1 PFUND FLEISCH 900 MILLIARDEN  1 GLAS BIER 52 MILLIARD.\"\nMint",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s16_0_635e977c.jpg",
+        "sha256": "81e1faf29e4caa38d2ad6b9c8ee2df0f9cb9adc81bc2979fd1aec50b5e96cd99"
+      }
+    ],
+    "s105": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Handcuffs and Key (Taipei New Culture Memorial Hall).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Handcuffs_and_Key_(Taipei_New_Culture_Memorial_Hall).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Handcuffs_and_Key_%28Taipei_New_Culture_Memorial_Hall%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "Battlesnake1",
+        "date": "2022-09-13 16:36:22",
+        "description": "Handcuffs and Key Enclosed in a Glass Case in the old Japanese police station at Datong District, Taipei, Taiwan",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s105_0_bdb1b6ce.jpg",
+        "sha256": "b771a2907066b97b04d2d0efc079d868db632b111c0d4eab3420747aaec6f8e6"
+      }
+    ],
+    "s107": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Gold bullion bars.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Gold_bullion_bars.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Gold_bullion_bars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC0",
+        "artist": "Stevebidmead",
+        "date": "2018-06-17",
+        "description": "A pile of stacked gold bars",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s107_0_fd8a1334.jpg",
+        "sha256": "dd4e69d61f094c620599f46668ac40f44aa2c078a362fc7a8dffb33a54ff59cd"
+      }
+    ],
+    "s108": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Robert F. Kennedy Department of Justice Building.jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Robert_F._Kennedy_Department_of_Justice_Building.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Robert_F._Kennedy_Department_of_Justice_Building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY 4.0",
+        "artist": "APK",
+        "date": "2026-03-31 11:57:44",
+        "description": "Robert F. Kennedy Department of Justice Building in Washington, D.C.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s108_0_79c03915.jpg",
+        "sha256": "53064e71a30240628c95b78aa7d23fd0f57b215d94d0d8e07bdd8d11cd02ba5c"
+      }
+    ],
+    "s149": [
+      {
+        "provider": "wikimedia_commons",
+        "title": "File:Eccles Building (26088200676).jpg",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Eccles_Building_(26088200676).jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Eccles_Building_%2826088200676%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "Public domain",
+        "artist": "Federalreserve",
+        "date": "2011-03-29 11:47",
+        "description": "The Eccles Building of the Federal Reserve, the central banking system of the United States.",
+        "retrieved": "2026-10-22",
+        "license_verification": "as stated on Commons file page; human legal review still required",
+        "local": "/home/kadir70/shorts-factory/data/finance_p32/bitcoin_editorial_v1/assets/source/s149_0_686e2036.jpg",
+        "sha256": "79ecb485fd82bd352445767ec5869847739a337ce13da0d148e9d17bd4a2837c"
       }
     ]
   }

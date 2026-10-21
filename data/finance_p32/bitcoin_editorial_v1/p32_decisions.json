@@ -425,8 +425,23 @@
   },
   {
    "scene_id": "s15",
-   "action": "keep",
-   "why": "Provisional keep per brief: 1923 five-million-mark note (CC BY-SA 3.0)."
+   "action": "archival_plate",
+   "sources": [
+    {
+     "provider": "wikimedia_commons",
+     "title": "File:5 Millionen Mark 1923-08-20.jpg",
+     "page_url": "https://commons.wikimedia.org/wiki/File:5_Millionen_Mark_1923-08-20.jpg",
+     "file_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/5_Millionen_Mark_1923-08-20.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "license": "Public domain",
+     "artist": "Deutsche Reichsbank",
+     "date": "1923",
+     "description": "5 Million Mark from 1923-08-20",
+     "retrieved": "2026-10-22",
+     "license_verification": "as stated on Commons file page; human legal review still required"
+    }
+   ],
+   "label": "5 million marks · 20 August 1923",
+   "why": "Reichsbanknote, 5 million marks, dated 20 Aug 1923. PD-scan (PD-Germany-§134-KUG; PD-1996 in the US). Demonetized Papiermark: not confusable 'im Zahlungsverkehr' (§128 OWiG); no Commons currency-restriction tag."
   },
   {
    "scene_id": "s132",
@@ -482,6 +497,215 @@
     "sub": "Easy to check. Costly to make."
    },
    "why": "Original K70 proof-of-work illustration with real SHA-1 hashes computed at build time (Hashcash uses SHA-1). Terminal styling differs from the motion_gfx cards, so it still breaks the s93-s100 run. The headline and lower-third overlays still render."
+  },
+  {
+   "scene_id": "s5",
+   "action": "archival_plate",
+   "sources": [
+    {
+     "provider": "wikimedia_commons",
+     "title": "File:United States Bullion Depository 1939.tiff",
+     "page_url": "https://commons.wikimedia.org/wiki/File:United_States_Bullion_Depository_1939.tiff",
+     "file_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/United_States_Bullion_Depository_1939.tiff?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "license": "Public domain",
+     "artist": "Published by Committee on Architectural Surveys and Public Works Administration.",
+     "date": "1939",
+     "description": "Photograph shows exterior view of United Stated Bullion Depository at Fort Knox from outside the gated entrance.",
+     "retrieved": "2026-10-22",
+     "license_verification": "as stated on Commons file page; human legal review still required"
+    }
+   ],
+   "label": "U.S. Bullion Depository, Fort Knox · 1939",
+   "why": "Where U.S. gold was held; PD (published by the Committee on Architectural... per Commons)."
+  },
+  {
+   "scene_id": "s6",
+   "action": "archival_plate",
+   "sources": [
+    {
+     "provider": "wikimedia_commons",
+     "title": "File:\"Marine One\" in flight - NARA - 194719.tif",
+     "page_url": "https://commons.wikimedia.org/wiki/File:%22Marine_One%22_in_flight_-_NARA_-_194719.tif",
+     "file_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/%22Marine_One%22_in_flight_-_NARA_-_194719.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "license": "Public domain",
+     "artist": "Robert LeRoy Knudsen",
+     "date": "10 March 1971date QS:P571,+1971-03-10T00:00:00Z/11",
+     "description": "\nScope and content:  Subject: Helicopters.",
+     "retrieved": "2026-10-22",
+     "license_verification": "as stated on Commons file page; human legal review still required"
+    }
+   ],
+   "label": "Marine One in flight · March 1971",
+   "why": "Presidential helicopter in Nixon's term (NARA 194719, PD, Robert L. Knudsen). Dated; not claimed as 13 Aug 1971."
+  },
+  {
+   "scene_id": "s9",
+   "action": "archival_plate",
+   "sources": [
+    {
+     "provider": "wikimedia_commons",
+     "title": "File:Exterior of Camp David lodge with swimming pool in foreground. - NARA - 194350.tif",
+     "page_url": "https://commons.wikimedia.org/wiki/File:Exterior_of_Camp_David_lodge_with_swimming_pool_in_foreground._-_NARA_-_194350.tif",
+     "file_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Exterior_of_Camp_David_lodge_with_swimming_pool_in_foreground._-_NARA_-_194350.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "license": "Public domain",
+     "artist": "Karl Schumacher",
+     "date": "9 February 1971date QS:P571,+1971-02-09T00:00:00Z/11",
+     "description": "\nScope and content:  Subject: Camp David.",
+     "retrieved": "2026-10-22",
+     "license_verification": "as stated on Commons file page; human legal review still required"
+    }
+   ],
+   "label": "Camp David · February 1971",
+   "why": "Camp David lodge, NARA 194350, PD. Dated; the secret meeting there was 13–15 Aug 1971. Breaks the s8–s11 card run; overlays kept.",
+   "run_break": true
+  },
+  {
+   "scene_id": "s16",
+   "action": "archival_plate",
+   "sources": [
+    {
+     "provider": "wikimedia_commons",
+     "title": "File:1923 Germany rampant Inflation Medal, Mittweida, Saxony, reverse.jpg",
+     "page_url": "https://commons.wikimedia.org/wiki/File:1923_Germany_rampant_Inflation_Medal,_Mittweida,_Saxony,_reverse.jpg",
+     "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/1923_Germany_rampant_Inflation_Medal%2C_Mittweida%2C_Saxony%2C_reverse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "license": "Public domain",
+     "artist": "Berlin-George",
+     "date": "1923",
+     "description": "1923 Germany rampant Inflation Medal, Mittweida, Saxony\nBronze medallion, d. = 32 mm.\nA distressed couple with child in front of a barrier of thorns, monogram MM in exergue. / 8 lines: \"AM 15. NOV. 1923 KOSTETE 1 PFUND BROT 80 MILLIARDEN 1 PFUND FLEISCH 900 MILLIARDEN  1 GLAS BIER 52 MILLIARD.\"\nMint",
+     "retrieved": "2026-10-22",
+     "license_verification": "as stated on Commons file page; human legal review still required"
+    }
+   ],
+   "label": "1923 inflation medal: 1 lb of bread = 80 billion marks",
+   "why": "Period artifact (Mittweida, Saxony, 1923), reverse reads 'Am 15. Nov. 1923 kostete 1 Pfund Brot 80 Milliarden'. PD per Commons."
+  },
+  {
+   "scene_id": "s105",
+   "action": "archival_plate",
+   "sources": [
+    {
+     "provider": "wikimedia_commons",
+     "title": "File:Handcuffs and Key (Taipei New Culture Memorial Hall).jpg",
+     "page_url": "https://commons.wikimedia.org/wiki/File:Handcuffs_and_Key_(Taipei_New_Culture_Memorial_Hall).jpg",
+     "file_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Handcuffs_and_Key_%28Taipei_New_Culture_Memorial_Hall%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "license": "CC0",
+     "artist": "Battlesnake1",
+     "date": "2022-09-13 16:36:22",
+     "description": "Handcuffs and Key Enclosed in a Glass Case in the old Japanese police station at Datong District, Taipei, Taiwan",
+     "retrieved": "2026-10-22",
+     "license_verification": "as stated on Commons file page; human legal review still required"
+    }
+   ],
+   "label": "Handcuffs (museum display)",
+   "why": "Neutral object for 'a person can be arrested'. CC0."
+  },
+  {
+   "scene_id": "s107",
+   "action": "archival_plate",
+   "sources": [
+    {
+     "provider": "wikimedia_commons",
+     "title": "File:Gold bullion bars.jpg",
+     "page_url": "https://commons.wikimedia.org/wiki/File:Gold_bullion_bars.jpg",
+     "file_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Gold_bullion_bars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "license": "CC0",
+     "artist": "Stevebidmead",
+     "date": "2018-06-17",
+     "description": "A pile of stacked gold bars",
+     "retrieved": "2026-10-22",
+     "license_verification": "as stated on Commons file page; human legal review still required"
+    }
+   ],
+   "label": "Gold bullion bars (illustrative)",
+   "why": "e-gold was described as backed by bullion; illustrative CC0 image, not e-gold's vault."
+  },
+  {
+   "scene_id": "s108",
+   "action": "archival_plate",
+   "sources": [
+    {
+     "provider": "wikimedia_commons",
+     "title": "File:Robert F. Kennedy Department of Justice Building.jpg",
+     "page_url": "https://commons.wikimedia.org/wiki/File:Robert_F._Kennedy_Department_of_Justice_Building.jpg",
+     "file_url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Robert_F._Kennedy_Department_of_Justice_Building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "license": "CC BY 4.0",
+     "artist": "APK",
+     "date": "2026-03-31 11:57:44",
+     "description": "Robert F. Kennedy Department of Justice Building in Washington, D.C.",
+     "retrieved": "2026-10-22",
+     "license_verification": "as stated on Commons file page; human legal review still required"
+    }
+   ],
+   "label": "U.S. Department of Justice, Washington",
+   "why": "DOJ headquarters for 'the Justice Department indicted it' (Apr 2007). Breaks the s106–s110 run.",
+   "credit": "Photo: APK · CC BY 4.0",
+   "run_break": true
+  },
+  {
+   "scene_id": "s149",
+   "action": "archival_plate",
+   "sources": [
+    {
+     "provider": "wikimedia_commons",
+     "title": "File:Eccles Building (26088200676).jpg",
+     "page_url": "https://commons.wikimedia.org/wiki/File:Eccles_Building_(26088200676).jpg",
+     "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Eccles_Building_%2826088200676%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "license": "Public domain",
+     "artist": "Federalreserve",
+     "date": "2011-03-29 11:47",
+     "description": "The Eccles Building of the Federal Reserve, the central banking system of the United States.",
+     "retrieved": "2026-10-22",
+     "license_verification": "as stated on Commons file page; human legal review still required"
+    }
+   ],
+   "label": "Federal Reserve, Eccles Building · 2011",
+   "why": "The central bank behind 'Trust us'. PD (Federal Reserve photo)."
+  },
+  {
+   "scene_id": "s25",
+   "action": "graphic_plate",
+   "kind": "ledger",
+   "params": {
+    "kicker": "U.S. CONGRESS · OCTOBER 1959",
+    "sub": "Hearings, 26–30 October 1959 · Part 9A",
+    "rows": [
+     [
+      "Committee",
+      "Joint Economic Committee"
+     ],
+     [
+      "Inquiry",
+      "Employment, Growth & Price Levels"
+     ],
+     [
+      "Witness",
+      "Robert Triffin, Yale"
+     ]
+    ],
+    "tag": "Illustration: K70 (not archival) · source: JEC hearings, 86th Congress (FRASER)"
+   },
+   "why": "Original document-style graphic. Facts from the JEC hearing record: 'Employment, Growth, and Price Levels', 26–30 Oct 1959, Part 9A (Triffin statement p. 2905) via FRASER / St. Louis Fed."
+  },
+  {
+   "scene_id": "s147",
+   "action": "graphic_plate",
+   "kind": "ledger",
+   "params": {
+    "kicker": "FORECLOSURE",
+    "rows": [
+     [
+      "Notice",
+      "To vacate"
+     ],
+     [
+      "Reason",
+      "Mortgage foreclosure"
+     ]
+    ],
+    "stamp": "EVICTED",
+    "sub": "Illustrative notice, not a real document"
+   },
+   "why": "Original illustration for 'handed eviction notices'; no PD/CC0 photo found. Contains no names, figures or dates."
   }
  ],
  "rejected_candidates": [
@@ -544,6 +768,51 @@
    "scene_id": "s121",
    "title": "File:Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-05.JPG",
    "why": "Option B: CC BY-SA 3.0 Barcex photo replaced by an original graphic. The source file is preserved in the P3.1 cache and in superseded_v1/ for reference."
+  },
+  {
+   "scene_id": "s15",
+   "title": "File:Five Million Mark Note 1923.JPG",
+   "why": "Superseded: CC BY-SA 3.0. Replaced by a PD scan of the same denomination, as the user requested."
+  },
+  {
+   "scene_id": "s5",
+   "title": "Voyager Golden Record cover (Wikimedia)",
+   "why": "Removed as historically inaccurate or misleading: Golden Record is unrelated to gold reserves."
+  },
+  {
+   "scene_id": "s6",
+   "title": "Marine One with President Donald Trump (CC BY 2.0)",
+   "why": "Removed as historically inaccurate or misleading: Anachronistic: a Trump-era helicopter for Nixon's 13 Aug 1971 departure."
+  },
+  {
+   "scene_id": "s16",
+   "title": "Pexels 29558224 (modern German town)",
+   "why": "Removed as historically inaccurate or misleading: Modern street scene presented as Germany 1923."
+  },
+  {
+   "scene_id": "s25",
+   "title": "Pexels 34550101 (actress at a hearing)",
+   "why": "Removed as historically inaccurate or misleading: Implied a recreation with a woman as Robert Triffin."
+  },
+  {
+   "scene_id": "s105",
+   "title": "Pexels 35088454 (veiled woman's eyes)",
+   "why": "Removed as historically inaccurate or misleading: Stereotyping pairing of a veiled woman with 'can be arrested'."
+  },
+  {
+   "scene_id": "s107",
+   "title": "Pexels 8370542 (Bitcoin coins in soil)",
+   "why": "Removed as historically inaccurate or misleading: Anachronistic: Bitcoin coins for e-gold (1996)."
+  },
+  {
+   "scene_id": "s147",
+   "title": "File:Hanging sign for the 'Bank Stores' (CC BY-SA 2.0)",
+   "why": "Removed as historically inaccurate or misleading: Unrelated UK pub/shop sign; ShareAlike."
+  },
+  {
+   "scene_id": "s149",
+   "title": "Pexels 7467745 (uniformed man holding a Bible)",
+   "why": "Removed as historically inaccurate or misleading: Implied religious/military endorsement of 'Trust us'."
   }
  ],
  "overlay_corrections": [

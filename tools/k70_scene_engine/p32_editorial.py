@@ -14,6 +14,7 @@ from typing import Any, Mapping
 
 CINEMATIC = frozenset({"threejs", "ai_video"})
 CARDS = frozenset({"motion_gfx", "dataviz"})
+FOOTAGE = frozenset({"image", "broll"})
 PROTECTED_CHARTS = frozenset({"s35", "s67"})
 PROTECTED_TOP = ("audio", "captions", "sfx", "meta", "storyboard", "asset_provenance",
                  "threejs_provenance", "motion_graphics_provenance",
@@ -48,7 +49,7 @@ def caption_words(graph: Mapping[str, Any], sid: str) -> list[str]:
 
 
 def polish_transitions(scenes: list[dict], keep: set[str] = frozenset()) -> list[dict]:
-    """crossfade -> cut between consecutive cards and on short punch beats.
+    """crossfade -> cut between cards, into a card from footage, and on short beats.
 
     Transitions are in-clip, duration-preserving effects in render_ffmpeg, so a
     cut never shifts the audio/caption timeline. Dissolves into or out of 3D and
@@ -63,7 +64,8 @@ def polish_transitions(scenes: list[dict], keep: set[str] = frozenset()) -> list
         if pt in CINEMATIC or ct in CINEMATIC:
             continue
         reason = ("card_to_card" if pt in CARDS and ct in CARDS else
-                  "short_punch_beat" if float(cur["duration_sec"]) < 2.0 else "")
+                  "card_entry" if ct in CARDS and pt in FOOTAGE else
+                  "short_punch_beat" if float(cur["duration_sec"]) < 2.5 else "")
         if reason:
             cur["transition_in"] = "cut"
             changes.append({"scene_id": cur["id"], "from": "crossfade", "to": "cut",

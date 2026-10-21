@@ -250,3 +250,52 @@ The rows below **supersede** the matching rows in sections 10 and 11. The previo
 3. **Full-film provenance audit:** stock footage, the music bed, and the Three.js and AI clips were outside the P3.2 scope.
 4. **Editorial:** 14 generic-stock scenes; card runs of 4 at s8–s11 and s97–s100; crossfades still at 63%.
 5. **Full render and human frame-by-frame QA.** Not started, as instructed.
+
+---
+
+## 13. Revision 4: s15 swap and full-film audit (2026-10-22)
+
+The previous graph and plates were moved (not deleted) to `superseded_v3/`.
+
+**s15**
+- The CC BY-SA note was replaced by the user-specified file `5 Millionen Mark 1923-08-20.jpg`.
+- Licence: PD-scan of PD-Germany-§134-KUG, plus PD-1996 in the US. Commons carries no currency-restriction tag.
+- Currency risk: the Papiermark has been demonetized for about 100 years. §128 OWiG only covers images that could be confused with money "im Zahlungsverkehr" (in payment). This is assessed as low risk; it is not legal advice.
+
+**Full-film audit:** see `FULL_FILM_PROVENANCE_AUDIT.md`, which covers all 156 scenes layer by layer.
+- **Stock:** all 21 stock clips were traced offline to Pexels by matching sha1(URL) from the P3 search cache against the cache filenames. The list is in `p32_stock_provenance.json`.
+- **Music and SFX:** synthesized with ffmpeg. **Fonts:** SIL OFL. **Voice:** Kokoro v1.0 (Apache-2.0). **Three.js data:** Natural Earth and US Census (PD).
+- **AI stills:** from Pollinations `flux`, where the output rights are **unverified**.
+
+**Historical accuracy:** a frame review of every stock clip and kept still found 8 inaccurate or misleading scenes, now replaced with verified PD/CC0 assets or original graphics.
+
+| Scene | Was | Now |
+|---|---|---|
+| s5 | Voyager Golden Record | Fort Knox Bullion Depository, 1939 |
+| s6 | Trump-era Marine One | Nixon-era Marine One, March 1971 (NARA) |
+| s16 | Modern German town | 1923 inflation medal ("1 lb bread = 80 billion marks", 15 Nov 1923) |
+| s25 | Actress at a "hearing" | JEC hearing document graphic, 26–30 Oct 1959 (verified via FRASER) |
+| s105 | Veiled woman's eyes | Handcuffs |
+| s107 | Bitcoin coins | Gold bullion (illustrative) |
+| s147 | UK sign, CC BY-SA | Original foreclosure-notice illustration |
+| s149 | Uniformed man holding a Bible | Federal Reserve Eccles Building |
+
+Still flagged: s92 and s139 (recommend replacement), plus weak matches at s13, s21, s40, s70, s133 and s148.
+
+**Pacing:**
+- **Card runs:** s9 is now a Camp David photo (NARA, Feb 1971) and s108 is the DOJ building (CC BY 4.0, credited on the plate). This breaks the s8–s11 and s106–s110 runs.
+- **Crossfades:** the new `card_entry` rule cuts into a card from footage, and the short-beat threshold is now 2.5 s. Crossfades drop from 133 (85%) in P3.1 to 79 (51%).
+- **Remaining card runs:** s97–s100 (4 cards), and 3-card runs at s43–s45, s63–s65, s83–s85 and s154–s156.
+
+**Validation**
+- Timeline is still 656.942 s; captions and audio are identical.
+- All 20 Three.js and 8 AI cinematic scenes are unchanged, and so are s35/s67.
+- Every media path exists.
+- 11 single-scene previews were rendered and inspected. Inspection caught a label overlap in the ledger graphic, which was fixed with auto-fit.
+
+**Remaining blockers**
+1. Confirm Pollinations output rights for the 8 AI cinematic clips.
+2. Re-render the 20 Three.js clips: they were rendered at preview quality (360×640).
+3. Replace s92 and s139.
+4. Paste the credits and tick AI disclosure at upload.
+5. Full render and human QA.

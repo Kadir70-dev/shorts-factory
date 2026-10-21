@@ -82,6 +82,13 @@ def test_visual_repair_protects_cinematic_and_sourced_charts(graph, tmp_path):
                             {sid: plate})
 
 
+def test_transition_polish_cuts_into_cards_from_footage(graph):
+    scenes = copy.deepcopy(graph["scenes"])
+    scenes[4]["id"] = "s34"                                   # unprotected chart
+    changes = {c["scene_id"]: c["reason"] for c in polish_transitions(scenes, keep=set())}
+    assert changes["s34"] == "card_entry"
+
+
 def test_transition_polish_is_selective(graph):
     scenes = copy.deepcopy(graph["scenes"])
     changes = {c["scene_id"]: c["reason"] for c in polish_transitions(scenes, keep=set())}

@@ -185,8 +185,13 @@ def ledger_plate(out: Path, *, kicker: str = "", title: str = "", sub: str = "",
     draw.rounded_rectangle((x0, y0, x1, y1), radius=18, fill=(236, 230, 214))
     y = y0 + 60
     for label, value in rows:
-        draw.text((x0 + 50, y), label, font=_font(30), fill=(90, 84, 74))
-        f = _font(34, bold=True)
+        lf = _font(30)
+        draw.text((x0 + 50, y), label, font=lf, fill=(90, 84, 74))
+        room = (x1 - x0 - 100) - draw.textlength(label, font=lf) - 30
+        size = 34
+        while size > 18 and draw.textlength(value, font=_font(size, bold=True)) > room:
+            size -= 2                                  # fit long values beside the label
+        f = _font(size, bold=True)
         draw.text((x1 - 50 - draw.textlength(value, font=f), y), value, font=f, fill=(30, 30, 30))
         draw.line((x0 + 50, y + 58, x1 - 50, y + 58), fill=(196, 188, 170), width=2)
         y += 96

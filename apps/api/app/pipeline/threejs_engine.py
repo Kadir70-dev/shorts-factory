@@ -337,7 +337,16 @@ async def _ensure_worker() -> asyncio.subprocess.Process:
             "PATH and ~/.nvm/versions/node). Install Node, or set NODE_BIN.")
     if not compiler.is_file():
         raise RuntimeError(
-            f"Three.js worker needs its npm packages: run `npm install` in {app}")
+            f"Three.js worker compiler missing: run `npm ci` in {app}")
+    # A present tsc binary is NOT proof that the actual worker dependencies
+    # exist; half-installed node_modules previously converted ~20 3D beats
+    # into repeated 2D fallback cards without a useful error.
+    missing = [name for name in ("three", "puppeteer")
+               if not (app / "node_modules" / name / "package.json").is_file()]
+    if missing:
+        raise RuntimeError(
+            f"Three.js worker dependencies missing ({', '.join(missing)}). "
+            f"Run `npm ci` in {app} AFTER the current render finishes.")
     # The child must see node on PATH too: `tsc` here is a shim whose shebang is
     # `#!/usr/bin/env node`, and the worker resolves its own tooling the same way.
     env = os.environ.copy()

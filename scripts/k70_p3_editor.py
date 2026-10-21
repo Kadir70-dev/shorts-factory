@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from tools.k70_scene_engine.intelligent_editor import (
-    plan_documentary, review_markdown, safe_transition_copy,
+    compare_graphs, plan_documentary, review_markdown, safe_transition_copy,
 )
 
 
@@ -29,13 +29,20 @@ def main() -> None:
     parser.add_argument("--out-dir", type=Path, required=True, help="new directory for output reports")
     parser.add_argument("--apply-transitions-to-copy", action="store_true",
                         help="opt in on unrendered graph; creates NEW copy with safe cuts + sourced charts")
+    parser.add_argument("--baseline", type=Path,
+                        help="earlier SceneGraph of the same film, read-only; reports what changed")
     args = parser.parse_args()
     try:
         graph = json.loads(args.graph.read_text(encoding="utf-8"))
         report = plan_documentary(graph)
+        comparison = None
+        if args.baseline:
+            baseline = json.loads(args.baseline.read_text(encoding="utf-8"))
+            comparison = compare_graphs(baseline, graph)
+            report["baseline_comparison"] = comparison
         outputs = {
             "editorial_plan.json": _json(report),
-            "editorial_review.md": review_markdown(report),
+            "editorial_review.md": review_markdown(report, comparison),
         }
         if args.apply_transitions_to_copy:
             safe_copy = safe_transition_copy(graph, report)

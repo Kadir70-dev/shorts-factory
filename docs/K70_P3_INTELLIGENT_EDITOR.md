@@ -25,8 +25,16 @@ stock just to meet an automatic visual quota would make a worse documentary.
    episodes whose 20+ scenes are >40% cards by count.
 3. **Relevance checker:** flags generic financial B-roll queries, visually
    suspicious foreign banknotes during narration specifically about US dollars,
-   and possible keyword mismatches between narration and visual direction.
+   and possible keyword mismatches between narration and visual direction
+   (footage-type visuals only; cards, charts and 3D show authored content).
+   Also flags sourced chart data shown as a non-chart visual
+   (`sourced_chart_not_shown`), stock clips standing in for a resolved licensed
+   archival asset (`resolved_archival_source_not_used`), and stock clips for a
+   named person/place/year (`named_subject_on_generic_stock`).
    Text-match warnings are heuristic: inspect frames before changing clips.
+   Film-level: reused asset files (`duplicate_visual_asset`), one soft
+   transition on >50% of scenes (`transition_monotony`), and narration changed
+   by the compliance layer (`compliance_rewrite_changed_narration`).
 4. **Editorial transitions:** recommends restrained cuts or crossfades at real
    argument/chapter changes; preserves already-authored transition effects.
 5. **Non-destructive reports:** produces JSON per-scene rationale and source
@@ -58,6 +66,17 @@ Produces:
 Use a fresh output directory each time. This mode never writes back to the
 source graph, never starts a render, and does not need any Claude API key.
 
+Compare a later pass with its earlier graph (read-only, both files):
+
+    python3 scripts/k70_p3_editor.py \
+      --graph data/finance_p0/cinematic_balanced/scene_graph_p0.json \
+      --baseline data/series/bitcoin_history/ep01/scene_graph.json \
+      --out-dir data/finance_p3/bitcoin_ep01_p0_review_v2
+
+Adds `baseline_comparison` to the plan: scene order, visual type changes,
+sourced charts and authored 3D/cinematic scenes that were replaced, and every
+narration change.
+
 ## Only for an unrendered NEW episode
 
     python3 scripts/k70_p3_editor.py \
@@ -85,7 +104,7 @@ source videos will not be overwritten by a heuristic algorithm.
 
 ## Regression tests
 
-    python3 -m pytest -q tests/test_k70_p3_intelligent_editor.py
+    python3 -m pytest -q tests/test_k70_p3_intelligent_editor.py tests/test_k70_p1_p3_workflow.py
 
 Dedicated workflow: .github/workflows/k70-p3-editor.yml.
 

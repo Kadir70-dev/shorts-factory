@@ -12,7 +12,8 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from tools.k70_scene_engine.intelligent_editor import (
-    graph_fingerprint, plan_documentary, review_markdown, safe_transition_copy,
+    compare_graphs, graph_fingerprint, plan_documentary, review_markdown,
+    safe_transition_copy,
 )
 
 
@@ -188,3 +189,75 @@ def test_cli_read_only_and_opt_in_copy(tmp_path):
     revision = json.loads((out_copy / "scene_graph_editorial_copy.json").read_text())
     assert revision["scenes"][1]["transition_in"] == "crossfade"
     assert source.read_text() == original
+
+
+def test_lexical_mismatch_only_reviews_footage_and_flags_unshown_sourced_chart():
+    card = scene("s1", "Nixon closed the gold window abruptly.", "motion_gfx",
+                 visual_query="kinetic typography headline")
+    globe = scene("s2", "Nixon closed the gold window abruptly.", "threejs",
+                  visual_query="rotating planet flight")
+    footage = scene("s3", "Nixon closed the gold window abruptly.", "broll",
+                    visual_query="tropical beach sunset")
+    chart = scene("s4", "Holdings fell.", "broll", visual_query="vault")
+    chart["data"] = {"points": [{"label": "1971", "value": 8133}], "source": "U.S. Treasury"}
+    report = plan_documentary(graph([card, globe, footage, chart]))
+    flagged = [i["scene_ids"][0] for i in report["review_issues"]
+               if i["code"] == "narration_visual_terms_differ_review"]
+    assert flagged == ["s3"]
+    assert ["s4"] == [i["scene_ids"][0] for i in report["review_issues"]
+                      if i["code"] == "sourced_chart_not_shown"]
+
+
+def test_film_level_reuse_monotony_and_compliance_rewrite_review():
+    scenes = [scene(f"s{i}", seconds=3) for i in range(1, 22)]
+    for s in scenes[1:]:
+        s["transition_in"] = "crossfade"
+    scenes[3]["visual"]["asset_path"] = scenes[7]["visual"]["asset_path"] = "/x/clip.mp4"
+    data = graph(scenes)
+    data["meta"]["compliance_notes"] = ["s5: 'to the moon' → 'sharply higher' (hype)"]
+    codes = {i["code"]: i for i in plan_documentary(data)["review_issues"]}
+    assert codes["duplicate_visual_asset"]["scene_ids"] == ["s4", "s8"]
+    assert codes["transition_monotony"]["transition"] == "crossfade"
+    assert codes["compliance_rewrite_changed_narration"]["scene_ids"] == ["s5"]
+    scenes[1]["transition_in"] = "cut"
+    for s in scenes[2:12]:
+        s["transition_in"] = "cut"
+    assert "transition_monotony" not in plan_documentary(graph(scenes))["issue_counts"]
+
+
+def test_compare_graphs_reports_replaced_charts_3d_and_narration_edits():
+    chart = scene("s1", "Gold fell.", "dataviz")
+    chart["data"] = {"points": [{"label": "1971", "value": 8133}], "source": "U.S. Treasury"}
+    before = graph([chart, scene("s2", "A race to the moon.", "threejs"), scene("s3")])
+    after = copy.deepcopy(before)
+    after["scenes"][0]["visual"]["type"] = "broll"
+    after["scenes"][1]["visual"]["type"] = "motion_gfx"
+    after["scenes"][1]["narration"] = "A race sharply higher."
+    diff = compare_graphs(before, after)
+    assert diff["same_scene_order"] and not diff["missing_scene_ids"]
+    assert diff["sourced_charts_replaced"] == ["s1"]
+    assert diff["authored_3d_or_cinematic_replaced"] == ["s2"]
+    assert [row["scene_id"] for row in diff["narration_changed"]] == ["s2"]
+    md = review_markdown(plan_documentary(after), diff)
+    assert "Sourced charts replaced: s1" in md and "sharply higher" in md
+
+
+def test_stock_substitutes_for_archival_and_named_subjects_are_flagged():
+    nixon = scene("s1", "The President went on television.", "broll",
+                  visual_query="Nixon address to the nation August 15 1971")
+    nixon["visual"]["budget_channel"] = "stock"
+    street = scene("s2", "Not here. Not to us.", "broll",
+                   visual_query="quiet suburban street houses afternoon")
+    street["visual"]["budget_channel"] = "stock"
+    archival = scene("s3", "Gold bars.", "image", visual_query="gold bars stacked")
+    data = graph([nixon, street, archival])
+    data["asset_provenance"] = [
+        {"scene_id": "s1.b1", "status": "resolved", "selected_source_url": "https://x/nixon.jpg"},
+        {"scene_id": "s3.b1", "status": "resolved", "selected_source_url": "https://x/gold.jpg"},
+        {"scene_id": "s2.b1", "status": "manual_review", "selected_source_url": None}]
+    issues = plan_documentary(data)["review_issues"]
+    by_code = {}
+    for issue in issues:
+        by_code.setdefault(issue["code"], []).extend(issue["scene_ids"])
+    assert by_code["resolved_archival_source_not_used"] == ["s1"]
+    assert by_code["named_subject_on_generic_stock"] == ["s1"]

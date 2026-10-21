@@ -7,12 +7,16 @@ on:
       - "tools/k70_scene_engine/intelligent_editor.py"
       - "scripts/k70_p3_editor.py"
       - "tests/test_k70_p3_intelligent_editor.py"
+      - "tests/test_k70_p1_p3_workflow.py"
+      - "tools/k70_scene_engine/story_draft.py"
+      - "tools/k70_scene_engine/storytelling.py"
       - ".github/workflows/k70-p3-editor.yml"
   pull_request:
     paths:
       - "tools/k70_scene_engine/intelligent_editor.py"
       - "scripts/k70_p3_editor.py"
       - "tests/test_k70_p3_intelligent_editor.py"
+      - "tests/test_k70_p1_p3_workflow.py"
   workflow_dispatch:
 
 permissions:
@@ -30,4 +34,4 @@ jobs:
       - name: Install standalone test runner
         run: python -m pip install pytest
       - name: Run P3 semantic editor tests (no model calls)
-        run: python -m pytest -q tests/test_k70_p3_intelligent_editor.py
+        run: python -m pytest -q tests/test_k70_p3_intelligent_editor.py tests/test_k70_p1_p3_workflow.py

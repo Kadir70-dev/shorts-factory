@@ -772,10 +772,16 @@ async def _resolve(scene: Scene, idx: int, graph: SceneGraph, spec: VideoSpec,
             source = next((o.text for o in scene.overlays
                            if o.type == "source"), "")
             out = _local_asset(graph.meta.video_id, scene.id, "gfx.mp4")
+            # Match the same P0 deterministic layout rotation as _render_self.
+            index = next((i for i, s in enumerate(graph.scenes) if s.id == scene.id), 0)
+            seed = int.from_bytes(hashlib.sha256(scene.id.encode("utf-8")).digest()[:4],
+                                  "big") % 9973
             v.asset_path = str(await motiongfx.kinetic(
                 _theme(graph), out, graph.width, graph.height, graph.fps,
                 max(2.5, scene.duration_sec), headline=headline, kicker=kicker,
-                source=source, seed=abs(hash(scene.id)) % 9973))
+                source=source, seed=seed,
+                treatment=motiongfx.TREATMENTS[index % len(motiongfx.TREATMENTS)],
+                layout=motiongfx.LAYOUTS[index % len(motiongfx.LAYOUTS)]))
             v.type = "motion_gfx"
             return
         except Exception as e:                   # noqa: BLE001

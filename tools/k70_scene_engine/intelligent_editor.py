@@ -256,7 +256,11 @@ def safe_transition_copy(graph: Mapping[str, Any], report: Mapping[str, Any]) ->
     if report.get("source_graph_sha256") != graph_fingerprint(graph):
         raise ValueError("editorial report does not match exact source graph")
     if graph.get("captions") or graph.get("sfx"):
-        raise ValueError("refuse transition edits after captions/SFX authoring")
+        raise ValueError("refuse editorial edits after captions/SFX authoring")
+    if any(graph.get(k) for k in ("asset_provenance", "threejs_provenance",
+                                 "motion_graphics_provenance", "ai_broll_provenance",
+                                 "paperima_provenance", "brand_identity_provenance")):
+        raise ValueError("refuse editorial edits after asset/render provenance exists")
     audio = _object(graph.get("audio"))
     if any(audio.get(k) for k in ("voiceover_path", "music_path", "music_bed_path")):
         raise ValueError("refuse transition edits after audio exists")
@@ -276,8 +280,15 @@ def safe_transition_copy(graph: Mapping[str, Any], report: Mapping[str, Any]) ->
         proposed = decision.get("suggested_transition")
         if old not in _TRANSITIONS or proposed not in _TRANSITIONS:
             raise ValueError("unrecognized transition type")
+        kind = str(_object(scene.get("visual")).get("type") or "")
+        # Only chart-ready *fallback* cards can be promoted. Existing authored
+        # footage, 3D, cinematic inserts, and evidence charts are never demoted.
+        if kind in _MOTION_TYPES and _chart_ready(scene):
+            scene["visual"]["type"] = "dataviz"
+            scene["visual"]["strategy"] = "dataviz"
+            kind = "dataviz"
         if (old == "cut" and proposed == "crossfade" and
-                str(_object(scene.get("visual")).get("type") or "") not in _PRESERVE_TYPES):
+                kind not in _PRESERVE_TYPES):
             scene["transition_in"] = "crossfade"
     return result
 

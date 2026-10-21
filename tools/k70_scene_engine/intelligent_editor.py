@@ -7,6 +7,8 @@ Untrusted semantic hints are labeled suggestions, not visual truth.
 from __future__ import annotations
 
 import copy
+import hashlib
+import json
 import re
 from collections import Counter
 from typing import Any, Mapping
@@ -135,6 +137,13 @@ def _transition(scene: Mapping[str, Any], idx: int,
     return "cut", "keep factual explanation fast and legible"
 
 
+def graph_fingerprint(graph: Mapping[str, Any]) -> str:
+    """Stable binding of editorial recommendations to the exact source graph."""
+    raw = json.dumps(graph, ensure_ascii=False, sort_keys=True,
+                     separators=(",", ":"), allow_nan=False)
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()
+
+
 def plan_documentary(graph: Mapping[str, Any]) -> dict[str, Any]:
     """Review the whole film, preserve timing and authored rendered assets."""
     if not isinstance(graph, Mapping):
@@ -215,6 +224,7 @@ def plan_documentary(graph: Mapping[str, Any]) -> dict[str, Any]:
     report = {
         "version": "K70-P3-EDITOR-v1",
         "mode": "read_only_semantic_editorial_plan",
+        "source_graph_sha256": graph_fingerprint(graph),
         "documentary_title": str(_object(graph.get("meta")).get("title") or ""),
         "scene_count": len(scenes), "duration_sec": round(duration, 2),
         "existing_visual_seconds": {key: round(val, 2) for key, val in sorted(mix.items())},
@@ -243,6 +253,8 @@ def safe_transition_copy(graph: Mapping[str, Any], report: Mapping[str, Any]) ->
     ordinary unrendered scenes. A copied film with voiceover, captions or any
     asset already resolved is refused to protect audio/visual synchronization.
     """
+    if report.get("source_graph_sha256") != graph_fingerprint(graph):
+        raise ValueError("editorial report does not match exact source graph")
     if graph.get("captions") or graph.get("sfx"):
         raise ValueError("refuse transition edits after captions/SFX authoring")
     audio = _object(graph.get("audio"))

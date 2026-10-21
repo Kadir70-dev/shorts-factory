@@ -24,6 +24,7 @@ sys.path.insert(0, str(ROOT))
 from tools.k70_scene_engine.storytelling import (
     audit_graph, build_plan, write_audit_brief, write_director_brief,
 )
+from tools.k70_scene_engine.story_draft import draft_prompt, local_claude, review_draft
 
 
 def _json_list(path: Path) -> list[dict]:
@@ -75,6 +76,46 @@ def run_audit(args: argparse.Namespace) -> None:
           f"warnings={len(report['warnings'])}")
 
 
+
+def _read_json_object(path: Path) -> dict:
+    value = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
+        raise ValueError(f"{path} must contain a JSON object")
+    return value
+
+
+def run_draft(args: argparse.Namespace) -> None:
+    """Default: write an offline source-scoped prompt. --generate invokes Claude."""
+    plan = _read_json_object(args.plan)
+    evidence = _read_json_object(args.evidence)
+    prompt = draft_prompt(plan, evidence)
+    outputs = {"chapter_draft_prompt.md": prompt}
+    if args.generate:
+        draft = local_claude(prompt, binary=args.claude_bin,
+                             model=args.model, timeout=args.timeout_sec)
+        review = review_draft(plan, evidence, draft)
+        outputs["chapter_narration_draft.json"] = (
+            json.dumps(draft, ensure_ascii=False, indent=2) + "\n")
+        outputs["chapter_narration_review.json"] = (
+            json.dumps(review, ensure_ascii=False, indent=2) + "\n")
+        print("DRAFT GENERATED; NOT APPROVED FOR TTS. Review every source claim.")
+    else:
+        print("Prompt-only mode: no model or paid API called.")
+    _write_outputs(args.out_dir, outputs)
+
+
+def run_review(args: argparse.Namespace) -> None:
+    plan = _read_json_object(args.plan)
+    evidence = _read_json_object(args.evidence)
+    draft = _read_json_object(args.draft)
+    review = review_draft(plan, evidence, draft)
+    _write_outputs(args.out_dir, {
+        "chapter_narration_review.json": json.dumps(
+            review, ensure_ascii=False, indent=2) + "\n",
+    })
+    print("Text/evidence heuristics only. Manual fact verification mandatory.")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="K70 P1: preproduction finance storytelling; frozen 14 layers unchanged")
@@ -92,6 +133,23 @@ def main() -> None:
     audit.add_argument("--graph", type=Path, required=True)
     audit.add_argument("--out-dir", type=Path, required=True)
     audit.set_defaults(fn=run_audit)
+    draft = commands.add_parser(
+        "draft", help="Create evidence-scoped narration prompt; local Claude opt-in")
+    draft.add_argument("--plan", type=Path, required=True)
+    draft.add_argument("--evidence", type=Path, required=True)
+    draft.add_argument("--out-dir", type=Path, required=True)
+    draft.add_argument("--generate", action="store_true",
+                       help="Explicitly invoke local Claude CLI; never API fallback")
+    draft.add_argument("--claude-bin", default="claude")
+    draft.add_argument("--model", default="opus")
+    draft.add_argument("--timeout-sec", type=int, default=360)
+    draft.set_defaults(fn=run_draft)
+    review = commands.add_parser("review", help="Validate a chapter script without model calls")
+    review.add_argument("--plan", type=Path, required=True)
+    review.add_argument("--evidence", type=Path, required=True)
+    review.add_argument("--draft", type=Path, required=True)
+    review.add_argument("--out-dir", type=Path, required=True)
+    review.set_defaults(fn=run_review)
     args = parser.parse_args()
     try:
         args.fn(args)

@@ -8,6 +8,8 @@ on:
       - "tools/k70_scene_engine/editorial_plates.py"
       - "tools/k70_scene_engine/explainer_graphics.py"
       - "scripts/k70_p32_editorial_repair.py"
+      - "scripts/k70_p34_threejs_final.py"
+      - "tests/test_k70_p34_threejs_final.py"
       - "tests/test_k70_p32_editorial.py"
       - ".github/workflows/k70-p32-editorial.yml"
   pull_request:
@@ -16,6 +18,8 @@ on:
       - "tools/k70_scene_engine/editorial_plates.py"
       - "tools/k70_scene_engine/explainer_graphics.py"
       - "scripts/k70_p32_editorial_repair.py"
+      - "scripts/k70_p34_threejs_final.py"
+      - "tests/test_k70_p34_threejs_final.py"
       - "tests/test_k70_p32_editorial.py"
       - ".github/workflows/k70-p32-editorial.yml"
   workflow_dispatch:
@@ -35,6 +39,6 @@ jobs:
       - name: Install test dependencies
         run: python -m pip install pytest pillow
       - name: Compile P3.2 CLI
-        run: python -m py_compile scripts/k70_p32_editorial_repair.py
+        run: python -m py_compile scripts/k70_p32_editorial_repair.py scripts/k70_p34_threejs_final.py
       - name: Run P3.2 editorial tests (offline, no render)
-        run: python -m pytest -q tests/test_k70_p32_editorial.py tests/test_k70_p3_intelligent_editor.py
+        run: python -m pytest -q tests/test_k70_p32_editorial.py tests/test_k70_p34_threejs_final.py tests/test_k70_p3_intelligent_editor.py

@@ -1,0 +1,114 @@
+{
+  "job": "data/jobs/k70_f4_bitcoin_ep01",
+  "quality": "final",
+  "planned": 5,
+  "rendered": 5,
+  "failed": [],
+  "scenes": [
+    {
+      "scene_id": "s76",
+      "authored_place": "New York",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "New York",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 63.7,
+      "peak_rss_mb": 1197.54296875,
+      "clip": "data/finance_p34/threejs_final/batch_3/clips/s76_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 146,
+        "duration_sec": 4.867,
+        "mean_yavg": 44.7,
+        "yavg_range": 16.0
+      },
+      "expected_sec": 4.879
+    },
+    {
+      "scene_id": "s86",
+      "authored_place": "Netherlands",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "Netherlands",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 63.7,
+      "peak_rss_mb": 1341.78125,
+      "clip": "data/finance_p34/threejs_final/batch_3/clips/s86_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 152,
+        "duration_sec": 5.067,
+        "mean_yavg": 44.2,
+        "yavg_range": 12.6
+      },
+      "expected_sec": 5.071
+    },
+    {
+      "scene_id": "s87",
+      "authored_place": "Switzerland",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "Switzerland",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 39.4,
+      "peak_rss_mb": 1721.203125,
+      "clip": "data/finance_p34/threejs_final/batch_3/clips/s87_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 98,
+        "duration_sec": 3.267,
+        "mean_yavg": 44.4,
+        "yavg_range": 14.8
+      },
+      "expected_sec": 3.279
+    },
+    {
+      "scene_id": "s90",
+      "authored_place": "California",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "California",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 83.3,
+      "peak_rss_mb": 1529.5,
+      "clip": "data/finance_p34/threejs_final/batch_3/clips/s90_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 199,
+        "duration_sec": 6.633,
+        "mean_yavg": 45.3,
+        "yavg_range": 17.7
+      },
+      "expected_sec": 6.628
+    },
+    {
+      "scene_id": "s104",
+      "authored_place": "Florida",
+      "delivered_before": "broll",
+      "template": "globe_flight",
+      "label": "Florida",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 62.2,
+      "peak_rss_mb": 1272.63671875,
+      "clip": "data/finance_p34/threejs_final/batch_3/clips/s104_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 152,
+        "duration_sec": 5.067,
+        "mean_yavg": 44.6,
+        "yavg_range": 16.7
+      },
+      "expected_sec": 5.071
+    }
+  ]
+}

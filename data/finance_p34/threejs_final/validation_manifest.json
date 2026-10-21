@@ -1,0 +1,546 @@
+{
+ "generated": "2026-10-22",
+ "ssim_min": 0.95,
+ "clips": [
+  {
+   "scene_id": "s7",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_1/clips/s7_threejs.mp4",
+   "sha256": "05ec598002d2db1c6ab5f3974ddb60c49da7893e1a21e011fdf8da1efebcc882",
+   "preview": "data/finance_p0/threejs_restore/clips/s7_threejs.mp4",
+   "expected_sec": 4.004,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 120,
+    "codec": "h264",
+    "duration_sec": 4.0
+   },
+   "min_yavg": 37.2,
+   "ssim_vs_preview": 0.9927,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s14",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_1/clips/s14_threejs.mp4",
+   "sha256": "fb2b136d616fe29aa1b57c1e0a7bb834ca49df1d7ef4d473eeee5dd2bfeb41eb",
+   "preview": "data/finance_p0/threejs_restore/clips/s14_threejs.mp4",
+   "expected_sec": 8.953,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 269,
+    "codec": "h264",
+    "duration_sec": 8.966667
+   },
+   "min_yavg": 38.4,
+   "ssim_vs_preview": 0.988,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s17",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_1/clips/s17_threejs.mp4",
+   "sha256": "7c3c6089132ed4830afcdba3d4561604671c2ad024e68a02d043a4085ddcb839",
+   "preview": "data/finance_p0/threejs_restore/clips/s17_threejs.mp4",
+   "expected_sec": 4.665,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 140,
+    "codec": "h264",
+    "duration_sec": 4.666667
+   },
+   "min_yavg": 40.2,
+   "ssim_vs_preview": 0.9919,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s22",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_1/clips/s22_threejs.mp4",
+   "sha256": "61c04f2587e518be4e04eddc150ab4323ccfa3639624d10983ba023785004749",
+   "preview": "data/finance_p0/threejs_restore/clips/s22_threejs.mp4",
+   "expected_sec": 5.092,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 153,
+    "codec": "h264",
+    "duration_sec": 5.1
+   },
+   "min_yavg": 41.2,
+   "ssim_vs_preview": 0.9933,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s31",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_1/clips/s31_threejs.mp4",
+   "sha256": "0f8fd6e0fadefc03b72766c739f7654ea042c519cc889e52eaf619be6a4af324",
+   "preview": "data/finance_p0/threejs_restore/clips/s31_threejs.mp4",
+   "expected_sec": 4.388,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 132,
+    "codec": "h264",
+    "duration_sec": 4.4
+   },
+   "min_yavg": 40.4,
+   "ssim_vs_preview": 0.9924,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s37",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_2/clips/s37_threejs.mp4",
+   "sha256": "5f0b15a36c3512194697435d86c32c2271e924536873f9fce898a30141c88166",
+   "preview": "data/finance_p0/threejs_restore/clips/s37_threejs.mp4",
+   "expected_sec": 4.879,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 146,
+    "codec": "h264",
+    "duration_sec": 4.866667
+   },
+   "min_yavg": 39.7,
+   "ssim_vs_preview": 0.9912,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s47",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_2/clips/s47_threejs.mp4",
+   "sha256": "dd782ac0908975d78afed5aeec4fbd9dec7882151e6c323dfc298dc940348203",
+   "preview": "data/finance_p0/threejs_restore/clips/s47_threejs.mp4",
+   "expected_sec": 6.585,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 198,
+    "codec": "h264",
+    "duration_sec": 6.6
+   },
+   "min_yavg": 40.4,
+   "ssim_vs_preview": 0.9868,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s62",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_2/clips/s62_threejs.mp4",
+   "sha256": "25d66b75f62093989466bd8ea4960203e9735250a93a7f216c3f695b860f1af4",
+   "preview": "data/finance_p0/threejs_restore/clips/s62_threejs.mp4",
+   "expected_sec": 5.689,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 171,
+    "codec": "h264",
+    "duration_sec": 5.7
+   },
+   "min_yavg": 36.5,
+   "ssim_vs_preview": 0.9936,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s72",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p33/threejs_final_bench/clips/s72_threejs.mp4",
+   "sha256": "b784fedc213dbddbb47e67b14ba05408b995bd599ee47b51e91d6f1a1597b0ca",
+   "preview": "data/finance_p0/threejs_restore/clips/s72_threejs.mp4",
+   "expected_sec": 3.428,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 103,
+    "codec": "h264",
+    "duration_sec": 3.433333
+   },
+   "min_yavg": 40.9,
+   "ssim_vs_preview": 0.992,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s73",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_2/clips/s73_threejs.mp4",
+   "sha256": "defcf508d6e52f9e07b937949473defe4d9bbc2d359c2b8ef85807b1d8a3dc69",
+   "preview": "data/finance_p0/threejs_restore/clips/s73_threejs.mp4",
+   "expected_sec": 4.132,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 124,
+    "codec": "h264",
+    "duration_sec": 4.133333
+   },
+   "min_yavg": 41.8,
+   "ssim_vs_preview": 0.9913,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s74",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_2/clips/s74_threejs.mp4",
+   "sha256": "cc82c02f50c1dfd1326119cf53333454bb74a9581eb062e408031dbe4671711e",
+   "preview": "data/finance_p0/threejs_restore/clips/s74_threejs.mp4",
+   "expected_sec": 3.577,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 107,
+    "codec": "h264",
+    "duration_sec": 3.566667
+   },
+   "min_yavg": 44.6,
+   "ssim_vs_preview": 0.9917,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s76",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_3/clips/s76_threejs.mp4",
+   "sha256": "6a6899405cda1498a68d54470be44b05a7e13710008b7248c9455004131d6450",
+   "preview": "data/finance_p0/threejs_restore/clips/s76_threejs.mp4",
+   "expected_sec": 4.879,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 146,
+    "codec": "h264",
+    "duration_sec": 4.866667
+   },
+   "min_yavg": 37.4,
+   "ssim_vs_preview": 0.9921,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s86",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_3/clips/s86_threejs.mp4",
+   "sha256": "997d7a1fbb2e2efc9e95bc5b72e1862f5f7aab5358b8f1e8a09588457569b72b",
+   "preview": "data/finance_p0/threejs_restore/clips/s86_threejs.mp4",
+   "expected_sec": 5.071,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 152,
+    "codec": "h264",
+    "duration_sec": 5.066667
+   },
+   "min_yavg": 40.7,
+   "ssim_vs_preview": 0.9909,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s87",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_3/clips/s87_threejs.mp4",
+   "sha256": "97977cace508d7ac0c12dd8c7bb87e91c3271c98c6ee4d5b48635cd9f5f54765",
+   "preview": "data/finance_p0/threejs_restore/clips/s87_threejs.mp4",
+   "expected_sec": 3.279,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 98,
+    "codec": "h264",
+    "duration_sec": 3.266667
+   },
+   "min_yavg": 40.5,
+   "ssim_vs_preview": 0.9902,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s90",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_3/clips/s90_threejs.mp4",
+   "sha256": "bf8a830d63f164163fedd764b7949e64fe98115318784f63637e1ef871215fb8",
+   "preview": "data/finance_p0/threejs_restore/clips/s90_threejs.mp4",
+   "expected_sec": 6.628,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 199,
+    "codec": "h264",
+    "duration_sec": 6.633333
+   },
+   "min_yavg": 37.4,
+   "ssim_vs_preview": 0.9921,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s104",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_3/clips/s104_threejs.mp4",
+   "sha256": "48fc2f0c2abab50d3eb8013e3aebf58ede488e94fdd87ccf40d7de59468b1269",
+   "preview": "data/finance_p0/threejs_restore/clips/s104_threejs.mp4",
+   "expected_sec": 5.071,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 152,
+    "codec": "h264",
+    "duration_sec": 5.066667
+   },
+   "min_yavg": 36.8,
+   "ssim_vs_preview": 0.9922,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s116",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_4/clips/s116_threejs.mp4",
+   "sha256": "beb1ea6d564b5cbccc94e14be0d8c55fdcbfafbce988fe1666009f1a3907ec25",
+   "preview": "data/finance_p0/threejs_restore/clips/s116_threejs.mp4",
+   "expected_sec": 3.833,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 115,
+    "codec": "h264",
+    "duration_sec": 3.833333
+   },
+   "min_yavg": 38.2,
+   "ssim_vs_preview": 0.9922,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s124",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_4/clips/s124_threejs.mp4",
+   "sha256": "1c7df947f04f4735c0be89a24846d24708ef87d3108a2c026d8aaf64d0754dce",
+   "preview": "data/finance_p0/threejs_restore/clips/s124_threejs.mp4",
+   "expected_sec": 3.193,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 96,
+    "codec": "h264",
+    "duration_sec": 3.2
+   },
+   "min_yavg": 41.0,
+   "ssim_vs_preview": 0.9903,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s128",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_4/clips/s128_threejs.mp4",
+   "sha256": "c94d2423f712b4668740e7317cb667cf9281945cc088d3672d153ef919f19f53",
+   "preview": "data/finance_p0/threejs_restore/clips/s128_threejs.mp4",
+   "expected_sec": 4.281,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 128,
+    "codec": "h264",
+    "duration_sec": 4.266667
+   },
+   "min_yavg": 40.4,
+   "ssim_vs_preview": 0.9917,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  },
+  {
+   "scene_id": "s131",
+   "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_4/clips/s131_threejs.mp4",
+   "sha256": "78e343c1667fa17db784a359ac0e84b48a5546e196371b8967f9854c1c97e0a1",
+   "preview": "data/finance_p0/threejs_restore/clips/s131_threejs.mp4",
+   "expected_sec": 4.281,
+   "probe": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 128,
+    "codec": "h264",
+    "duration_sec": 4.266667
+   },
+   "min_yavg": 40.8,
+   "ssim_vs_preview": 0.9895,
+   "checks": {
+    "resolution": true,
+    "duration": true,
+    "frames_decoded": true,
+    "no_black_frames": true,
+    "no_flat_frames": true,
+    "matches_preview_structure": true,
+    "render_report_ok": true
+   },
+   "passed": true,
+   "render_status": "rendered"
+  }
+ ]
+}

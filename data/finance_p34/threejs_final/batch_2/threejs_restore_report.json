@@ -1,0 +1,114 @@
+{
+  "job": "data/jobs/k70_f4_bitcoin_ep01",
+  "quality": "final",
+  "planned": 5,
+  "rendered": 5,
+  "failed": [],
+  "scenes": [
+    {
+      "scene_id": "s37",
+      "authored_place": "France",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "France",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 77.3,
+      "peak_rss_mb": 1507.0390625,
+      "clip": "data/finance_p34/threejs_final/batch_2/clips/s37_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 146,
+        "duration_sec": 4.867,
+        "mean_yavg": 43.9,
+        "yavg_range": 17.1
+      },
+      "expected_sec": 4.879
+    },
+    {
+      "scene_id": "s47",
+      "authored_place": "United States of America",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "United States Of America",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 84.3,
+      "peak_rss_mb": 1290.2734375,
+      "clip": "data/finance_p34/threejs_final/batch_2/clips/s47_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 198,
+        "duration_sec": 6.6,
+        "mean_yavg": 50.7,
+        "yavg_range": 43.3
+      },
+      "expected_sec": 6.585
+    },
+    {
+      "scene_id": "s62",
+      "authored_place": "Ohio",
+      "delivered_before": "image",
+      "template": "globe_flight",
+      "label": "Ohio",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 96.4,
+      "peak_rss_mb": 1740.44140625,
+      "clip": "data/finance_p34/threejs_final/batch_2/clips/s62_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 171,
+        "duration_sec": 5.7,
+        "mean_yavg": 44.2,
+        "yavg_range": 16.1
+      },
+      "expected_sec": 5.689
+    },
+    {
+      "scene_id": "s73",
+      "authored_place": "Indonesia",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "Indonesia",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 54.8,
+      "peak_rss_mb": 1260.765625,
+      "clip": "data/finance_p34/threejs_final/batch_2/clips/s73_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 124,
+        "duration_sec": 4.133,
+        "mean_yavg": 46.0,
+        "yavg_range": 16.8
+      },
+      "expected_sec": 4.132
+    },
+    {
+      "scene_id": "s74",
+      "authored_place": "Russia",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "Russia",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 39.5,
+      "peak_rss_mb": 1317.8046875,
+      "clip": "data/finance_p34/threejs_final/batch_2/clips/s74_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 107,
+        "duration_sec": 3.567,
+        "mean_yavg": 58.8,
+        "yavg_range": 56.9
+      },
+      "expected_sec": 3.577
+    }
+  ]
+}

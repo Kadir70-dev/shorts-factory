@@ -1,0 +1,29 @@
+[
+  {
+    "scene_id": "s72",
+    "clip": "/home/kadir70/shorts-factory/data/finance_p33/threejs_final_bench/clips/s72_threejs.mp4",
+    "sha256": "b784fedc213dbddbb47e67b14ba05408b995bd599ee47b51e91d6f1a1597b0ca",
+    "preview": "data/finance_p0/threejs_restore/clips/s72_threejs.mp4",
+    "expected_sec": 3.428,
+    "probe": {
+      "width": 1080,
+      "height": 1920,
+      "frames": 103,
+      "codec": "h264",
+      "duration_sec": 3.433333
+    },
+    "min_yavg": 40.9,
+    "ssim_vs_preview": 0.992,
+    "checks": {
+      "resolution": true,
+      "duration": true,
+      "frames_decoded": true,
+      "no_black_frames": true,
+      "no_flat_frames": true,
+      "matches_preview_structure": true,
+      "render_report_ok": true
+    },
+    "passed": true,
+    "render_status": "rendered"
+  }
+]

@@ -1,0 +1,93 @@
+{
+  "job": "data/jobs/k70_f4_bitcoin_ep01",
+  "quality": "final",
+  "planned": 4,
+  "rendered": 4,
+  "failed": [],
+  "scenes": [
+    {
+      "scene_id": "s116",
+      "authored_place": "Argentina",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "Argentina",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 53.7,
+      "peak_rss_mb": 1256.87109375,
+      "clip": "data/finance_p34/threejs_final/batch_4/clips/s116_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 115,
+        "duration_sec": 3.833,
+        "mean_yavg": 43.7,
+        "yavg_range": 22.2
+      },
+      "expected_sec": 3.833
+    },
+    {
+      "scene_id": "s124",
+      "authored_place": "Zimbabwe",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "Zimbabwe",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 38.6,
+      "peak_rss_mb": 1143.95703125,
+      "clip": "data/finance_p34/threejs_final/batch_4/clips/s124_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 96,
+        "duration_sec": 3.2,
+        "mean_yavg": 44.2,
+        "yavg_range": 11.0
+      },
+      "expected_sec": 3.193
+    },
+    {
+      "scene_id": "s128",
+      "authored_place": "Hungary",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "Hungary",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 50.2,
+      "peak_rss_mb": 1160.97265625,
+      "clip": "data/finance_p34/threejs_final/batch_4/clips/s128_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 128,
+        "duration_sec": 4.267,
+        "mean_yavg": 44.7,
+        "yavg_range": 15.4
+      },
+      "expected_sec": 4.281
+    },
+    {
+      "scene_id": "s131",
+      "authored_place": "United Kingdom",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "United Kingdom",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 57.3,
+      "peak_rss_mb": 1362.10546875,
+      "clip": "data/finance_p34/threejs_final/batch_4/clips/s131_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 128,
+        "duration_sec": 4.267,
+        "mean_yavg": 43.9,
+        "yavg_range": 11.6
+      },
+      "expected_sec": 4.281
+    }
+  ]
+}

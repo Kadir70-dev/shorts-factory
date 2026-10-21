@@ -1,0 +1,110 @@
+[
+  {
+    "scene_id": "s116",
+    "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_4/clips/s116_threejs.mp4",
+    "sha256": "beb1ea6d564b5cbccc94e14be0d8c55fdcbfafbce988fe1666009f1a3907ec25",
+    "preview": "data/finance_p0/threejs_restore/clips/s116_threejs.mp4",
+    "expected_sec": 3.833,
+    "probe": {
+      "width": 1080,
+      "height": 1920,
+      "frames": 115,
+      "codec": "h264",
+      "duration_sec": 3.833333
+    },
+    "min_yavg": 38.2,
+    "ssim_vs_preview": 0.9922,
+    "checks": {
+      "resolution": true,
+      "duration": true,
+      "frames_decoded": true,
+      "no_black_frames": true,
+      "no_flat_frames": true,
+      "matches_preview_structure": true,
+      "render_report_ok": true
+    },
+    "passed": true,
+    "render_status": "rendered"
+  },
+  {
+    "scene_id": "s124",
+    "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_4/clips/s124_threejs.mp4",
+    "sha256": "1c7df947f04f4735c0be89a24846d24708ef87d3108a2c026d8aaf64d0754dce",
+    "preview": "data/finance_p0/threejs_restore/clips/s124_threejs.mp4",
+    "expected_sec": 3.193,
+    "probe": {
+      "width": 1080,
+      "height": 1920,
+      "frames": 96,
+      "codec": "h264",
+      "duration_sec": 3.2
+    },
+    "min_yavg": 41.0,
+    "ssim_vs_preview": 0.9903,
+    "checks": {
+      "resolution": true,
+      "duration": true,
+      "frames_decoded": true,
+      "no_black_frames": true,
+      "no_flat_frames": true,
+      "matches_preview_structure": true,
+      "render_report_ok": true
+    },
+    "passed": true,
+    "render_status": "rendered"
+  },
+  {
+    "scene_id": "s128",
+    "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_4/clips/s128_threejs.mp4",
+    "sha256": "c94d2423f712b4668740e7317cb667cf9281945cc088d3672d153ef919f19f53",
+    "preview": "data/finance_p0/threejs_restore/clips/s128_threejs.mp4",
+    "expected_sec": 4.281,
+    "probe": {
+      "width": 1080,
+      "height": 1920,
+      "frames": 128,
+      "codec": "h264",
+      "duration_sec": 4.266667
+    },
+    "min_yavg": 40.4,
+    "ssim_vs_preview": 0.9917,
+    "checks": {
+      "resolution": true,
+      "duration": true,
+      "frames_decoded": true,
+      "no_black_frames": true,
+      "no_flat_frames": true,
+      "matches_preview_structure": true,
+      "render_report_ok": true
+    },
+    "passed": true,
+    "render_status": "rendered"
+  },
+  {
+    "scene_id": "s131",
+    "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_4/clips/s131_threejs.mp4",
+    "sha256": "78e343c1667fa17db784a359ac0e84b48a5546e196371b8967f9854c1c97e0a1",
+    "preview": "data/finance_p0/threejs_restore/clips/s131_threejs.mp4",
+    "expected_sec": 4.281,
+    "probe": {
+      "width": 1080,
+      "height": 1920,
+      "frames": 128,
+      "codec": "h264",
+      "duration_sec": 4.266667
+    },
+    "min_yavg": 40.8,
+    "ssim_vs_preview": 0.9895,
+    "checks": {
+      "resolution": true,
+      "duration": true,
+      "frames_decoded": true,
+      "no_black_frames": true,
+      "no_flat_frames": true,
+      "matches_preview_structure": true,
+      "render_report_ok": true
+    },
+    "passed": true,
+    "render_status": "rendered"
+  }
+]

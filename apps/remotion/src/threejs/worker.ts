@@ -231,15 +231,23 @@ async function renderFlat(p: Page, req: Request, frame: number): Promise<void> {
     for (const region of input.regions ?? []) {
       const [x, y, cosc] = project(region.lon, region.lat);
       if (cosc <= .12) continue;
-      const size = Math.max(34, Math.min(H * .062, radius * .17));
+      let size = Math.max(34, Math.min(H * .062, radius * .17));
       g.font = `900 ${size}px ${input.fontFamily}, Arial, sans-serif`;
       g.textAlign = "center"; g.textBaseline = "middle";
       const label = region.label;
+      const margin = W * .04;
+      // A long name ("UNITED KINGDOM") at the 34px floor is wider than a 360px
+      // preview frame, and the clamp below can only push it off the other edge.
+      // Shrink to fit first; the pad scales with the font, so width is linear.
+      const natural = g.measureText(label).width + size * .84;
+      if (natural > W - margin * 2) {
+        size = Math.max(12, size * (W - margin * 2) / natural);
+        g.font = `900 ${size}px ${input.fontFamily}, Arial, sans-serif`;
+      }
       const padX = size * .42, padY = size * .30;
       const w = g.measureText(label).width + padX * 2;
       // Clamp inside the frame. A label anchored to a country near the limb ran
       // off the edge and rendered as "EU", which is worse than not labelling it.
-      const margin = W * .04;
       const lx = Math.max(w / 2 + margin, Math.min(W - w / 2 - margin, x));
       const ly = Math.max(size * 1.4,
                           Math.min(H * .70, y - radius * .10 - size));

@@ -82,7 +82,8 @@ def main():
                'counts': {s: sum(r.status == s for r in results)
                           for s in ('recovered', 'generated', 'failed', 'skipped')}}
     if a.render_clips:
-        report = select_scenes(edited, max_clips=a.max_clips, spacing_sec=a.spacing_sec)
+        report = select_scenes(edited, max_clips=a.max_clips, spacing_sec=a.spacing_sec,
+                               balanced=a.balanced)
         summary['clips_selected'] = report['selected_count']
         if report['selected_count']:
             t1 = time.monotonic()

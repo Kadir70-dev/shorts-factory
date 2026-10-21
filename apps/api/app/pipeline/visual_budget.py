@@ -307,6 +307,20 @@ def allocate(graph: SceneGraph, pol: Policy | None = None) -> BudgetReport:
         assigned[scene_id] = channel
         used_sec[channel] += by_id[scene_id].duration_sec
 
+    # -- Phase 0: honour authored 3D ---------------------------------------- #
+    # An author who wrote `visual.type: threejs` (a globe flight to the place the
+    # beat is about) made a decision the heuristics can't recover. Re-channelling
+    # those scenes was why 20 planned 3D beats on bitcoin ep01 shipped as cards.
+    # Still bounded: the scene must be 3D-eligible and the band ceiling holds.
+    pinned: set[str] = set()
+    band3d = p.bands.get("threejs")
+    for s in scenes:
+        if (s.visual.type == "threejs" and band3d is not None
+                and scores[s.id]["threejs"] >= p.min_eligibility
+                and used_sec["threejs"] + s.duration_sec <= band3d.hi * total):
+            take(s.id, "threejs")
+            pinned.add(s.id)
+
     # -- Phase 1: fill each band to `lo`, scarcest channels first ------------ #
     for ch in p.fill_order:
         band = p.bands.get(ch)
@@ -367,7 +381,7 @@ def allocate(graph: SceneGraph, pol: Policy | None = None) -> BudgetReport:
     # the greedy pass achieved (swapping two scenes only moves seconds when their
     # durations differ) while letting scenes migrate to the channel that actually
     # suits them. Bounded and cheap at this scene count.
-    _improve(scenes, assigned, scores, used_sec, p, total)
+    _improve(scenes, assigned, scores, used_sec, p, total, frozen=pinned)
 
     assignments = []
     for s in scenes:
@@ -419,7 +433,7 @@ def _stock_yields(scene: Scene, stock_score: float,
 
 def _improve(scenes, assigned: dict[str, str], scores: dict[str, dict[str, float]],
              used_sec: dict[str, float], p: Policy, total: float,
-             max_passes: int = 12) -> None:
+             max_passes: int = 12, frozen: set[str] | frozenset = frozenset()) -> None:
     """Hill-climb the assignment by swapping pairs of scenes between channels.
 
     Accepts a swap only when it raises the summed eligibility AND leaves both
@@ -441,7 +455,7 @@ def _improve(scenes, assigned: dict[str, str], scores: dict[str, dict[str, float
 
     for _ in range(max_passes):
         best = None
-        ids = list(assigned)
+        ids = [sid for sid in assigned if sid not in frozen]
         for i, a_id in enumerate(ids):
             for b_id in ids[i + 1:]:
                 ca, cb = assigned[a_id], assigned[b_id]

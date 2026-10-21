@@ -24,7 +24,8 @@ from . import geo_data
 # unchanged storyboard beat — the key hashes the BEAT, not the built payload, so
 # a change inside `_flight()` is invisible to it.
 #   1.1.0 — globe_flight sends its subject as a labelled `region`
-TEMPLATE_VERSION = "1.1.0"
+#   1.1.1 — region labels shrink to fit narrow (360px preview) frames
+TEMPLATE_VERSION = "1.1.1"
 TEMPLATES = (
     "number_counter", "comparison_towers", "share_ownership",
     "dividend_cashflow", "timeline_flythrough", "compound_growth",

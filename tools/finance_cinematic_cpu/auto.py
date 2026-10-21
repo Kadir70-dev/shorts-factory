@@ -32,7 +32,8 @@ class Pick:
 
 
 def select_scenes(graph: Any, *, max_clips: int = 8, spacing_sec: float = 25.0,
-                  min_dur: float = 2.0, max_dur: float = 12.0) -> dict:
+                  min_dur: float = 2.0, max_dur: float = 12.0,
+                  balanced: bool = False) -> dict:
     """Return audit report with accepted/rejected scenes; no filesystem mutations."""
     if not 1 <= max_clips <= 20 or not 0 <= spacing_sec <= 600:
         raise EngineError('Invalid max_clips or spacing_sec')
@@ -81,7 +82,19 @@ def select_scenes(graph: Any, *, max_clips: int = 8, spacing_sec: float = 25.0,
         choices.append(Pick(scene.id, index, round(start, 3), round(duration, 3),
                             str(src.resolve()), score, 'existing_AI_still_safe_to_animate'))
     chosen = []
-    for item in sorted(choices, key=lambda p: (-p.score, p.start_sec, p.scene_id)):
+    if balanced:
+        # P0: score-first selection spent every clip on the cold open. Spread the
+        # budget over equal chapters of the WHOLE film instead (same safety
+        # filters above), still honouring the minimum spacing.
+        from .p0 import spread_items
+        by_id = {p.scene_id: p for p in choices}
+        spaced = [{'scene_id': p.scene_id} for p in choices]
+        for item in spread_items(graph, spaced, limit=min(max_clips, 24)):
+            pick = by_id[item['scene_id']]
+            midpoint = pick.start_sec + pick.duration_sec/2
+            if all(abs(midpoint-(p.start_sec+p.duration_sec/2)) >= spacing_sec for p in chosen):
+                chosen.append(pick)
+    for item in [] if balanced else sorted(choices, key=lambda p: (-p.score, p.start_sec, p.scene_id)):
         midpoint = item.start_sec + item.duration_sec/2
         if all(abs(midpoint-(p.start_sec+p.duration_sec/2)) >= spacing_sec for p in chosen):
             chosen.append(item)
@@ -90,7 +103,7 @@ def select_scenes(graph: Any, *, max_clips: int = 8, spacing_sec: float = 25.0,
     chosen.sort(key=lambda p: p.start_sec)
     unused = [{'scene_id': p.scene_id, 'reason': 'clip_budget_or_spacing'}
               for p in choices if p not in chosen]
-    return {'mode': 'dry_run', 'engine': 'finance_cinematic_f2',
+    return {'mode': 'dry_run', 'engine': 'finance_cinematic_f2', 'balanced': balanced,
             'total_duration_sec': round(t, 3), 'total_scenes': len(graph.scenes),
             'selected_count': len(chosen), 'eligible_count': len(choices),
             'selected': [asdict(p) for p in chosen], 'skipped': rejected+unused,

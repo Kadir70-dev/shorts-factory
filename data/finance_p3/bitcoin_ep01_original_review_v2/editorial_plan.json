@@ -1,0 +1,3431 @@
+{
+  "version": "K70-P3-EDITOR-v1",
+  "mode": "read_only_semantic_editorial_plan",
+  "source_graph_sha256": "4f288eb552c19c1c725d768b56a5d3ff268bd7aa902048e69573c5340bfbf79b",
+  "documentary_title": "The World Before Bitcoin | The Complete History of Bitcoin · Ep. 1",
+  "scene_count": 156,
+  "duration_sec": 856.3,
+  "existing_visual_seconds": {
+    "ai_image": 129.8,
+    "broll": 78.8,
+    "dataviz": 138.4,
+    "image": 152.1,
+    "motion_gfx": 241.8,
+    "threejs": 115.4
+  },
+  "visual_mix_by_quarter_sec": [
+    {
+      "ai_image": 35.8,
+      "broll": 7.2,
+      "dataviz": 24.4,
+      "image": 43.3,
+      "motion_gfx": 65.4,
+      "threejs": 35.6
+    },
+    {
+      "ai_image": 42.0,
+      "broll": 21.8,
+      "dataviz": 46.2,
+      "image": 21.4,
+      "motion_gfx": 51.8,
+      "threejs": 34.0
+    },
+    {
+      "ai_image": 17.0,
+      "broll": 23.0,
+      "dataviz": 12.2,
+      "image": 39.8,
+      "motion_gfx": 92.4,
+      "threejs": 29.6
+    },
+    {
+      "ai_image": 35.0,
+      "broll": 26.8,
+      "dataviz": 55.6,
+      "image": 47.6,
+      "motion_gfx": 32.2,
+      "threejs": 16.2
+    }
+  ],
+  "cinematic_seconds_by_quarter": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "longest_consecutive_card_run": {
+    "count": 5,
+    "duration_sec": 31.2,
+    "ids": [
+      "s96",
+      "s97",
+      "s98",
+      "s99",
+      "s100"
+    ]
+  },
+  "decisions": [
+    {
+      "scene_id": "s1",
+      "index": 0,
+      "start_sec": 0.0,
+      "duration_sec": 5.4,
+      "quarter": 1,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "evidence_review",
+      "visual_protected": false,
+      "rationale": [
+        "numerical claim needs a verified data/chart decision"
+      ],
+      "review_flags": [
+        "numeric_claim_without_chart_source_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "opening frame should be immediate",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s2",
+      "index": 1,
+      "start_sec": 5.4,
+      "duration_sec": 5.2,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s3",
+      "index": 2,
+      "start_sec": 10.6,
+      "duration_sec": 5.2,
+      "quarter": 1,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s4",
+      "index": 3,
+      "start_sec": 15.8,
+      "duration_sec": 3.0,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s5",
+      "index": 4,
+      "start_sec": 18.8,
+      "duration_sec": 4.2,
+      "quarter": 1,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s6",
+      "index": 5,
+      "start_sec": 23.0,
+      "duration_sec": 6.0,
+      "quarter": 1,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s7",
+      "index": 6,
+      "start_sec": 29.0,
+      "duration_sec": 5.0,
+      "quarter": 1,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s8",
+      "index": 7,
+      "start_sec": 34.0,
+      "duration_sec": 4.6,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s9",
+      "index": 8,
+      "start_sec": 38.6,
+      "duration_sec": 6.2,
+      "quarter": 1,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s10",
+      "index": 9,
+      "start_sec": 44.8,
+      "duration_sec": 5.8,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s11",
+      "index": 10,
+      "start_sec": 50.6,
+      "duration_sec": 4.4,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s12",
+      "index": 11,
+      "start_sec": 55.0,
+      "duration_sec": 7.0,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s13",
+      "index": 12,
+      "start_sec": 62.0,
+      "duration_sec": 4.4,
+      "quarter": 1,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s14",
+      "index": 13,
+      "start_sec": 66.4,
+      "duration_sec": 8.0,
+      "quarter": 1,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s15",
+      "index": 14,
+      "start_sec": 74.4,
+      "duration_sec": 4.0,
+      "quarter": 1,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s16",
+      "index": 15,
+      "start_sec": 78.4,
+      "duration_sec": 5.4,
+      "quarter": 1,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s17",
+      "index": 16,
+      "start_sec": 83.8,
+      "duration_sec": 5.0,
+      "quarter": 1,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s18",
+      "index": 17,
+      "start_sec": 88.8,
+      "duration_sec": 3.2,
+      "quarter": 1,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s19",
+      "index": 18,
+      "start_sec": 92.0,
+      "duration_sec": 5.2,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s20",
+      "index": 19,
+      "start_sec": 97.2,
+      "duration_sec": 6.2,
+      "quarter": 1,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s21",
+      "index": 20,
+      "start_sec": 103.4,
+      "duration_sec": 5.2,
+      "quarter": 1,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s22",
+      "index": 21,
+      "start_sec": 108.6,
+      "duration_sec": 6.0,
+      "quarter": 1,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s23",
+      "index": 22,
+      "start_sec": 114.6,
+      "duration_sec": 4.0,
+      "quarter": 1,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s24",
+      "index": 23,
+      "start_sec": 118.6,
+      "duration_sec": 3.4,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s25",
+      "index": 24,
+      "start_sec": 122.0,
+      "duration_sec": 7.9,
+      "quarter": 1,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s26",
+      "index": 25,
+      "start_sec": 129.9,
+      "duration_sec": 8.4,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s27",
+      "index": 26,
+      "start_sec": 138.3,
+      "duration_sec": 5.4,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s28",
+      "index": 27,
+      "start_sec": 143.7,
+      "duration_sec": 5.0,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s29",
+      "index": 28,
+      "start_sec": 148.7,
+      "duration_sec": 4.4,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s30",
+      "index": 29,
+      "start_sec": 153.1,
+      "duration_sec": 5.4,
+      "quarter": 1,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s31",
+      "index": 30,
+      "start_sec": 158.5,
+      "duration_sec": 5.6,
+      "quarter": 1,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s32",
+      "index": 31,
+      "start_sec": 164.1,
+      "duration_sec": 3.6,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s33",
+      "index": 32,
+      "start_sec": 167.7,
+      "duration_sec": 5.8,
+      "quarter": 1,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "evidence_review",
+      "visual_protected": false,
+      "rationale": [
+        "evidence beat needs its exact cited chart or primary document"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s34",
+      "index": 33,
+      "start_sec": 173.5,
+      "duration_sec": 6.4,
+      "quarter": 1,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s35",
+      "index": 34,
+      "start_sec": 179.9,
+      "duration_sec": 6.2,
+      "quarter": 1,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s36",
+      "index": 35,
+      "start_sec": 186.1,
+      "duration_sec": 5.6,
+      "quarter": 1,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s37",
+      "index": 36,
+      "start_sec": 191.7,
+      "duration_sec": 6.0,
+      "quarter": 1,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s38",
+      "index": 37,
+      "start_sec": 197.7,
+      "duration_sec": 5.0,
+      "quarter": 1,
+      "existing_visual": "image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s39",
+      "index": 38,
+      "start_sec": 202.7,
+      "duration_sec": 4.6,
+      "quarter": 1,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s40",
+      "index": 39,
+      "start_sec": 207.3,
+      "duration_sec": 4.4,
+      "quarter": 1,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "whip",
+      "suggested_transition": "whip",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s41",
+      "index": 40,
+      "start_sec": 211.7,
+      "duration_sec": 5.4,
+      "quarter": 2,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s42",
+      "index": 41,
+      "start_sec": 217.1,
+      "duration_sec": 4.6,
+      "quarter": 2,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s43",
+      "index": 42,
+      "start_sec": 221.7,
+      "duration_sec": 8.2,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s44",
+      "index": 43,
+      "start_sec": 229.9,
+      "duration_sec": 3.0,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s45",
+      "index": 44,
+      "start_sec": 232.9,
+      "duration_sec": 5.2,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s46",
+      "index": 45,
+      "start_sec": 238.1,
+      "duration_sec": 6.0,
+      "quarter": 2,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s47",
+      "index": 46,
+      "start_sec": 244.1,
+      "duration_sec": 6.6,
+      "quarter": 2,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s48",
+      "index": 47,
+      "start_sec": 250.7,
+      "duration_sec": 3.0,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s49",
+      "index": 48,
+      "start_sec": 253.7,
+      "duration_sec": 5.2,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s50",
+      "index": 49,
+      "start_sec": 258.9,
+      "duration_sec": 6.2,
+      "quarter": 2,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s51",
+      "index": 50,
+      "start_sec": 265.1,
+      "duration_sec": 6.0,
+      "quarter": 2,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s52",
+      "index": 51,
+      "start_sec": 271.1,
+      "duration_sec": 6.2,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s53",
+      "index": 52,
+      "start_sec": 277.3,
+      "duration_sec": 5.0,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s54",
+      "index": 53,
+      "start_sec": 282.3,
+      "duration_sec": 7.0,
+      "quarter": 2,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s55",
+      "index": 54,
+      "start_sec": 289.3,
+      "duration_sec": 5.6,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s56",
+      "index": 55,
+      "start_sec": 294.9,
+      "duration_sec": 4.8,
+      "quarter": 2,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s57",
+      "index": 56,
+      "start_sec": 299.7,
+      "duration_sec": 7.2,
+      "quarter": 2,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s58",
+      "index": 57,
+      "start_sec": 306.9,
+      "duration_sec": 5.4,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s59",
+      "index": 58,
+      "start_sec": 312.3,
+      "duration_sec": 6.8,
+      "quarter": 2,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s60",
+      "index": 59,
+      "start_sec": 319.1,
+      "duration_sec": 5.8,
+      "quarter": 2,
+      "existing_visual": "image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s61",
+      "index": 60,
+      "start_sec": 324.9,
+      "duration_sec": 5.6,
+      "quarter": 2,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s62",
+      "index": 61,
+      "start_sec": 330.5,
+      "duration_sec": 6.2,
+      "quarter": 2,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s63",
+      "index": 62,
+      "start_sec": 336.7,
+      "duration_sec": 3.8,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s64",
+      "index": 63,
+      "start_sec": 340.5,
+      "duration_sec": 6.4,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s65",
+      "index": 64,
+      "start_sec": 346.9,
+      "duration_sec": 3.2,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s66",
+      "index": 65,
+      "start_sec": 350.1,
+      "duration_sec": 7.6,
+      "quarter": 2,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s67",
+      "index": 66,
+      "start_sec": 357.7,
+      "duration_sec": 5.4,
+      "quarter": 2,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s68",
+      "index": 67,
+      "start_sec": 363.1,
+      "duration_sec": 5.0,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s69",
+      "index": 68,
+      "start_sec": 368.1,
+      "duration_sec": 7.4,
+      "quarter": 2,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s70",
+      "index": 69,
+      "start_sec": 375.5,
+      "duration_sec": 4.8,
+      "quarter": 2,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s71",
+      "index": 70,
+      "start_sec": 380.3,
+      "duration_sec": 4.4,
+      "quarter": 2,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s72",
+      "index": 71,
+      "start_sec": 384.7,
+      "duration_sec": 4.8,
+      "quarter": 2,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s73",
+      "index": 72,
+      "start_sec": 389.5,
+      "duration_sec": 5.4,
+      "quarter": 2,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s74",
+      "index": 73,
+      "start_sec": 394.9,
+      "duration_sec": 5.2,
+      "quarter": 2,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s75",
+      "index": 74,
+      "start_sec": 400.1,
+      "duration_sec": 7.4,
+      "quarter": 2,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s76",
+      "index": 75,
+      "start_sec": 407.5,
+      "duration_sec": 5.8,
+      "quarter": 2,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s77",
+      "index": 76,
+      "start_sec": 413.3,
+      "duration_sec": 3.2,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s78",
+      "index": 77,
+      "start_sec": 416.5,
+      "duration_sec": 5.2,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s79",
+      "index": 78,
+      "start_sec": 421.7,
+      "duration_sec": 7.2,
+      "quarter": 2,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s80",
+      "index": 79,
+      "start_sec": 428.9,
+      "duration_sec": 3.8,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s81",
+      "index": 80,
+      "start_sec": 432.7,
+      "duration_sec": 4.6,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s82",
+      "index": 81,
+      "start_sec": 437.3,
+      "duration_sec": 5.0,
+      "quarter": 3,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s83",
+      "index": 82,
+      "start_sec": 442.3,
+      "duration_sec": 6.6,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "evidence_review",
+      "visual_protected": false,
+      "rationale": [
+        "evidence beat needs its exact cited chart or primary document"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s84",
+      "index": 83,
+      "start_sec": 448.9,
+      "duration_sec": 8.0,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s85",
+      "index": 84,
+      "start_sec": 456.9,
+      "duration_sec": 5.6,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s86",
+      "index": 85,
+      "start_sec": 462.5,
+      "duration_sec": 5.8,
+      "quarter": 3,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s87",
+      "index": 86,
+      "start_sec": 468.3,
+      "duration_sec": 5.0,
+      "quarter": 3,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "evidence_review",
+      "visual_protected": true,
+      "rationale": [
+        "evidence beat needs its exact cited chart or primary document"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s88",
+      "index": 87,
+      "start_sec": 473.3,
+      "duration_sec": 4.0,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s89",
+      "index": 88,
+      "start_sec": 477.3,
+      "duration_sec": 5.8,
+      "quarter": 3,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s90",
+      "index": 89,
+      "start_sec": 483.1,
+      "duration_sec": 6.6,
+      "quarter": 3,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s91",
+      "index": 90,
+      "start_sec": 489.7,
+      "duration_sec": 4.4,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s92",
+      "index": 91,
+      "start_sec": 494.1,
+      "duration_sec": 4.4,
+      "quarter": 3,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s93",
+      "index": 92,
+      "start_sec": 498.5,
+      "duration_sec": 7.0,
+      "quarter": 3,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s94",
+      "index": 93,
+      "start_sec": 505.5,
+      "duration_sec": 3.6,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s95",
+      "index": 94,
+      "start_sec": 509.1,
+      "duration_sec": 2.8,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s96",
+      "index": 95,
+      "start_sec": 511.9,
+      "duration_sec": 8.0,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s97",
+      "index": 96,
+      "start_sec": 519.9,
+      "duration_sec": 8.4,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s98",
+      "index": 97,
+      "start_sec": 528.3,
+      "duration_sec": 4.4,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s99",
+      "index": 98,
+      "start_sec": 532.7,
+      "duration_sec": 5.0,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s100",
+      "index": 99,
+      "start_sec": 537.7,
+      "duration_sec": 5.4,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s101",
+      "index": 100,
+      "start_sec": 543.1,
+      "duration_sec": 4.0,
+      "quarter": 3,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s102",
+      "index": 101,
+      "start_sec": 547.1,
+      "duration_sec": 5.4,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s103",
+      "index": 102,
+      "start_sec": 552.5,
+      "duration_sec": 7.0,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s104",
+      "index": 103,
+      "start_sec": 559.5,
+      "duration_sec": 7.0,
+      "quarter": 3,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s105",
+      "index": 104,
+      "start_sec": 566.5,
+      "duration_sec": 4.6,
+      "quarter": 3,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "whip",
+      "suggested_transition": "whip",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s106",
+      "index": 105,
+      "start_sec": 571.1,
+      "duration_sec": 2.8,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s107",
+      "index": 106,
+      "start_sec": 573.9,
+      "duration_sec": 6.2,
+      "quarter": 3,
+      "existing_visual": "image",
+      "suggested_visual_intent": "evidence_review",
+      "visual_protected": false,
+      "rationale": [
+        "evidence beat needs its exact cited chart or primary document"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s108",
+      "index": 107,
+      "start_sec": 580.1,
+      "duration_sec": 5.6,
+      "quarter": 3,
+      "existing_visual": "image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s109",
+      "index": 108,
+      "start_sec": 585.7,
+      "duration_sec": 4.4,
+      "quarter": 3,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s110",
+      "index": 109,
+      "start_sec": 590.1,
+      "duration_sec": 3.0,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s111",
+      "index": 110,
+      "start_sec": 593.1,
+      "duration_sec": 7.0,
+      "quarter": 3,
+      "existing_visual": "image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s112",
+      "index": 111,
+      "start_sec": 600.1,
+      "duration_sec": 7.4,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s113",
+      "index": 112,
+      "start_sec": 607.5,
+      "duration_sec": 5.4,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s114",
+      "index": 113,
+      "start_sec": 612.9,
+      "duration_sec": 4.0,
+      "quarter": 3,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s115",
+      "index": 114,
+      "start_sec": 616.9,
+      "duration_sec": 3.6,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s116",
+      "index": 115,
+      "start_sec": 620.5,
+      "duration_sec": 5.2,
+      "quarter": 3,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s117",
+      "index": 116,
+      "start_sec": 625.7,
+      "duration_sec": 4.6,
+      "quarter": 3,
+      "existing_visual": "image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s118",
+      "index": 117,
+      "start_sec": 630.3,
+      "duration_sec": 6.4,
+      "quarter": 3,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s119",
+      "index": 118,
+      "start_sec": 636.7,
+      "duration_sec": 6.2,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s120",
+      "index": 119,
+      "start_sec": 642.9,
+      "duration_sec": 5.4,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s121",
+      "index": 120,
+      "start_sec": 648.3,
+      "duration_sec": 6.2,
+      "quarter": 4,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s122",
+      "index": 121,
+      "start_sec": 654.5,
+      "duration_sec": 6.4,
+      "quarter": 4,
+      "existing_visual": "image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s123",
+      "index": 122,
+      "start_sec": 660.9,
+      "duration_sec": 6.6,
+      "quarter": 4,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s124",
+      "index": 123,
+      "start_sec": 667.5,
+      "duration_sec": 5.0,
+      "quarter": 4,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s125",
+      "index": 124,
+      "start_sec": 672.5,
+      "duration_sec": 6.6,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s126",
+      "index": 125,
+      "start_sec": 679.1,
+      "duration_sec": 6.2,
+      "quarter": 4,
+      "existing_visual": "image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s127",
+      "index": 126,
+      "start_sec": 685.3,
+      "duration_sec": 3.6,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s128",
+      "index": 127,
+      "start_sec": 688.9,
+      "duration_sec": 5.6,
+      "quarter": 4,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s129",
+      "index": 128,
+      "start_sec": 694.5,
+      "duration_sec": 5.2,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s130",
+      "index": 129,
+      "start_sec": 699.7,
+      "duration_sec": 4.6,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s131",
+      "index": 130,
+      "start_sec": 704.3,
+      "duration_sec": 5.6,
+      "quarter": 4,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s132",
+      "index": 131,
+      "start_sec": 709.9,
+      "duration_sec": 4.8,
+      "quarter": 4,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s133",
+      "index": 132,
+      "start_sec": 714.7,
+      "duration_sec": 4.6,
+      "quarter": 4,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s134",
+      "index": 133,
+      "start_sec": 719.3,
+      "duration_sec": 6.4,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s135",
+      "index": 134,
+      "start_sec": 725.7,
+      "duration_sec": 8.0,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s136",
+      "index": 135,
+      "start_sec": 733.7,
+      "duration_sec": 6.0,
+      "quarter": 4,
+      "existing_visual": "image",
+      "suggested_visual_intent": "evidence_review",
+      "visual_protected": false,
+      "rationale": [
+        "evidence beat needs its exact cited chart or primary document"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s137",
+      "index": 136,
+      "start_sec": 739.7,
+      "duration_sec": 3.0,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s138",
+      "index": 137,
+      "start_sec": 742.7,
+      "duration_sec": 6.4,
+      "quarter": 4,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s139",
+      "index": 138,
+      "start_sec": 749.1,
+      "duration_sec": 7.0,
+      "quarter": 4,
+      "existing_visual": "image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s140",
+      "index": 139,
+      "start_sec": 756.1,
+      "duration_sec": 7.4,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s141",
+      "index": 140,
+      "start_sec": 763.5,
+      "duration_sec": 7.4,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s142",
+      "index": 141,
+      "start_sec": 770.9,
+      "duration_sec": 7.2,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s143",
+      "index": 142,
+      "start_sec": 778.1,
+      "duration_sec": 4.0,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s144",
+      "index": 143,
+      "start_sec": 782.1,
+      "duration_sec": 7.2,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s145",
+      "index": 144,
+      "start_sec": 789.3,
+      "duration_sec": 5.4,
+      "quarter": 4,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s146",
+      "index": 145,
+      "start_sec": 794.7,
+      "duration_sec": 5.6,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s147",
+      "index": 146,
+      "start_sec": 800.3,
+      "duration_sec": 5.4,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s148",
+      "index": 147,
+      "start_sec": 805.7,
+      "duration_sec": 6.0,
+      "quarter": 4,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s149",
+      "index": 148,
+      "start_sec": 811.7,
+      "duration_sec": 7.0,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s150",
+      "index": 149,
+      "start_sec": 818.7,
+      "duration_sec": 6.0,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s151",
+      "index": 150,
+      "start_sec": 824.7,
+      "duration_sec": 4.4,
+      "quarter": 4,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s152",
+      "index": 151,
+      "start_sec": 829.1,
+      "duration_sec": 7.2,
+      "quarter": 4,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s153",
+      "index": 152,
+      "start_sec": 836.3,
+      "duration_sec": 5.4,
+      "quarter": 4,
+      "existing_visual": "ai_image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s154",
+      "index": 153,
+      "start_sec": 841.7,
+      "duration_sec": 5.0,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": false,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "crossfade",
+      "transition_reason": "meaningful editorial chapter/argument transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s155",
+      "index": 154,
+      "start_sec": 846.7,
+      "duration_sec": 4.6,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s156",
+      "index": 155,
+      "start_sec": 851.3,
+      "duration_sec": 5.0,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": false,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    }
+  ],
+  "review_issues": [
+    {
+      "severity": "review",
+      "code": "numeric_claim_without_chart_source_review",
+      "scene_ids": [
+        "s1"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s3"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s9"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s13"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s15"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s21"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s23"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "repetitive_card_run",
+      "scene_ids": [
+        "s26",
+        "s27",
+        "s28",
+        "s29"
+      ],
+      "duration_sec": 23.2,
+      "suggestion": "replace eligible abstract cards with relevant diagrams, citations or actual footage"
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s38"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s39"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s40"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s41"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s52"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s56"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s58"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s59"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s60"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s70"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s71"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s79"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s92"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "repetitive_card_run",
+      "scene_ids": [
+        "s96",
+        "s97",
+        "s98",
+        "s99",
+        "s100"
+      ],
+      "duration_sec": 31.2,
+      "suggestion": "replace eligible abstract cards with relevant diagrams, citations or actual footage"
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s105"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s109"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s111"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s114"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s115"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s117"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s123"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s129"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s143"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s145"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s146"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s147"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s148"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s151"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s152"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s23"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    }
+  ],
+  "issue_counts": {
+    "named_subject_on_generic_stock": 1,
+    "narration_visual_terms_differ_review": 34,
+    "numeric_claim_without_chart_source_review": 1,
+    "repetitive_card_run": 2
+  },
+  "guardrails": {
+    "frozen_layers_untouched": true,
+    "existing_media_unchanged": true,
+    "no_paid_api_or_generation": true,
+    "visuals_are_recommendations_only": true,
+    "future_threejs_requires_budget_and_valid_existing_engine": true,
+    "note": "Text-based relevance flags are heuristic, not video inspections."
+  }
+}

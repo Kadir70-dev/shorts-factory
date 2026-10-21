@@ -1,0 +1,4047 @@
+{
+  "version": "K70-P3-EDITOR-v1",
+  "mode": "read_only_semantic_editorial_plan",
+  "source_graph_sha256": "b1e2262d21f479cf03aa2913ac5ba5fdc0f3f2022fbe17ce2a85ba058d7e2e78",
+  "documentary_title": "The World Before Bitcoin | The Complete History of Bitcoin · Ep. 1",
+  "scene_count": 156,
+  "duration_sec": 656.94,
+  "existing_visual_seconds": {
+    "ai_video": 36.04,
+    "broll": 188.89,
+    "dataviz": 109.39,
+    "image": 15.59,
+    "motion_gfx": 211.12,
+    "threejs": 95.91
+  },
+  "visual_mix_by_quarter_sec": [
+    {
+      "ai_video": 11.02,
+      "broll": 43.45,
+      "dataviz": 20.3,
+      "image": 7.73,
+      "motion_gfx": 49.11,
+      "threejs": 31.98
+    },
+    {
+      "ai_video": 7.52,
+      "broll": 44.92,
+      "dataviz": 35.27,
+      "image": 4.15,
+      "motion_gfx": 48.26,
+      "threejs": 23.41
+    },
+    {
+      "ai_video": 10.38,
+      "broll": 38.66,
+      "dataviz": 4.37,
+      "motion_gfx": 83.36,
+      "threejs": 28.76
+    },
+    {
+      "ai_video": 7.13,
+      "broll": 61.86,
+      "dataviz": 49.45,
+      "image": 3.71,
+      "motion_gfx": 30.39,
+      "threejs": 11.75
+    }
+  ],
+  "cinematic_seconds_by_quarter": [
+    11.02,
+    7.52,
+    10.38,
+    7.13
+  ],
+  "longest_consecutive_card_run": {
+    "count": 5,
+    "duration_sec": 27.93,
+    "ids": [
+      "s96",
+      "s97",
+      "s98",
+      "s99",
+      "s100"
+    ]
+  },
+  "decisions": [
+    {
+      "scene_id": "s1",
+      "index": 0,
+      "start_sec": 0.0,
+      "duration_sec": 6.18,
+      "quarter": 1,
+      "existing_visual": "ai_video",
+      "suggested_visual_intent": "evidence_review",
+      "visual_protected": true,
+      "rationale": [
+        "numerical claim needs a verified data/chart decision"
+      ],
+      "review_flags": [
+        "numeric_claim_without_chart_source_review",
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "opening frame should be immediate",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s2",
+      "index": 1,
+      "start_sec": 6.18,
+      "duration_sec": 5.03,
+      "quarter": 1,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s3",
+      "index": 2,
+      "start_sec": 11.21,
+      "duration_sec": 4.34,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s4",
+      "index": 3,
+      "start_sec": 15.55,
+      "duration_sec": 1.83,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s5",
+      "index": 4,
+      "start_sec": 17.38,
+      "duration_sec": 1.66,
+      "quarter": 1,
+      "existing_visual": "image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s6",
+      "index": 5,
+      "start_sec": 19.04,
+      "duration_sec": 6.07,
+      "quarter": 1,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow",
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s7",
+      "index": 6,
+      "start_sec": 25.11,
+      "duration_sec": 4.0,
+      "quarter": 1,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s8",
+      "index": 7,
+      "start_sec": 29.11,
+      "duration_sec": 4.05,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s9",
+      "index": 8,
+      "start_sec": 33.16,
+      "duration_sec": 5.78,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s10",
+      "index": 9,
+      "start_sec": 38.94,
+      "duration_sec": 5.22,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s11",
+      "index": 10,
+      "start_sec": 44.16,
+      "duration_sec": 3.24,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s12",
+      "index": 11,
+      "start_sec": 47.39,
+      "duration_sec": 7.57,
+      "quarter": 1,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s13",
+      "index": 12,
+      "start_sec": 54.96,
+      "duration_sec": 3.38,
+      "quarter": 1,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s14",
+      "index": 13,
+      "start_sec": 58.34,
+      "duration_sec": 8.95,
+      "quarter": 1,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s15",
+      "index": 14,
+      "start_sec": 67.3,
+      "duration_sec": 2.47,
+      "quarter": 1,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s16",
+      "index": 15,
+      "start_sec": 69.77,
+      "duration_sec": 4.77,
+      "quarter": 1,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow",
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s17",
+      "index": 16,
+      "start_sec": 74.54,
+      "duration_sec": 4.67,
+      "quarter": 1,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s18",
+      "index": 17,
+      "start_sec": 79.2,
+      "duration_sec": 1.61,
+      "quarter": 1,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s19",
+      "index": 18,
+      "start_sec": 80.82,
+      "duration_sec": 3.88,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s20",
+      "index": 19,
+      "start_sec": 84.69,
+      "duration_sec": 5.62,
+      "quarter": 1,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s21",
+      "index": 20,
+      "start_sec": 90.32,
+      "duration_sec": 4.09,
+      "quarter": 1,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow",
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s22",
+      "index": 21,
+      "start_sec": 94.41,
+      "duration_sec": 5.09,
+      "quarter": 1,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s23",
+      "index": 22,
+      "start_sec": 99.5,
+      "duration_sec": 2.49,
+      "quarter": 1,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s24",
+      "index": 23,
+      "start_sec": 101.99,
+      "duration_sec": 2.06,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s25",
+      "index": 24,
+      "start_sec": 104.05,
+      "duration_sec": 8.1,
+      "quarter": 1,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow",
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s26",
+      "index": 25,
+      "start_sec": 112.15,
+      "duration_sec": 5.82,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow",
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s27",
+      "index": 26,
+      "start_sec": 117.97,
+      "duration_sec": 4.07,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s28",
+      "index": 27,
+      "start_sec": 122.04,
+      "duration_sec": 4.0,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s29",
+      "index": 28,
+      "start_sec": 126.04,
+      "duration_sec": 2.51,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s30",
+      "index": 29,
+      "start_sec": 128.55,
+      "duration_sec": 4.2,
+      "quarter": 1,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s31",
+      "index": 30,
+      "start_sec": 132.75,
+      "duration_sec": 4.39,
+      "quarter": 1,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s32",
+      "index": 31,
+      "start_sec": 137.14,
+      "duration_sec": 2.32,
+      "quarter": 1,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s33",
+      "index": 32,
+      "start_sec": 139.45,
+      "duration_sec": 4.84,
+      "quarter": 1,
+      "existing_visual": "ai_video",
+      "suggested_visual_intent": "evidence_review",
+      "visual_protected": true,
+      "rationale": [
+        "evidence beat needs its exact cited chart or primary document"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s34",
+      "index": 33,
+      "start_sec": 144.29,
+      "duration_sec": 5.58,
+      "quarter": 1,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s35",
+      "index": 34,
+      "start_sec": 149.87,
+      "duration_sec": 4.77,
+      "quarter": 1,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "sourced_chart_not_shown"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s36",
+      "index": 35,
+      "start_sec": 154.65,
+      "duration_sec": 4.07,
+      "quarter": 1,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s37",
+      "index": 36,
+      "start_sec": 158.71,
+      "duration_sec": 4.88,
+      "quarter": 1,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s38",
+      "index": 37,
+      "start_sec": 163.59,
+      "duration_sec": 3.09,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s39",
+      "index": 38,
+      "start_sec": 166.68,
+      "duration_sec": 3.3,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow",
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s40",
+      "index": 39,
+      "start_sec": 169.98,
+      "duration_sec": 3.0,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow",
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "whip",
+      "suggested_transition": "whip",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s41",
+      "index": 40,
+      "start_sec": 172.98,
+      "duration_sec": 4.52,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s42",
+      "index": 41,
+      "start_sec": 177.5,
+      "duration_sec": 3.98,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow",
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s43",
+      "index": 42,
+      "start_sec": 181.48,
+      "duration_sec": 6.61,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s44",
+      "index": 43,
+      "start_sec": 188.09,
+      "duration_sec": 1.23,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s45",
+      "index": 44,
+      "start_sec": 189.32,
+      "duration_sec": 3.79,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s46",
+      "index": 45,
+      "start_sec": 193.11,
+      "duration_sec": 4.88,
+      "quarter": 2,
+      "existing_visual": "ai_video",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s47",
+      "index": 46,
+      "start_sec": 197.99,
+      "duration_sec": 6.58,
+      "quarter": 2,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s48",
+      "index": 47,
+      "start_sec": 204.57,
+      "duration_sec": 0.85,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s49",
+      "index": 48,
+      "start_sec": 205.42,
+      "duration_sec": 3.24,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s50",
+      "index": 49,
+      "start_sec": 208.66,
+      "duration_sec": 5.22,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s51",
+      "index": 50,
+      "start_sec": 213.88,
+      "duration_sec": 4.11,
+      "quarter": 2,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s52",
+      "index": 51,
+      "start_sec": 217.99,
+      "duration_sec": 5.65,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s53",
+      "index": 52,
+      "start_sec": 223.63,
+      "duration_sec": 4.15,
+      "quarter": 2,
+      "existing_visual": "image",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s54",
+      "index": 53,
+      "start_sec": 227.79,
+      "duration_sec": 6.12,
+      "quarter": 2,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s55",
+      "index": 54,
+      "start_sec": 233.9,
+      "duration_sec": 4.54,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s56",
+      "index": 55,
+      "start_sec": 238.44,
+      "duration_sec": 3.36,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s57",
+      "index": 56,
+      "start_sec": 241.8,
+      "duration_sec": 6.54,
+      "quarter": 2,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s58",
+      "index": 57,
+      "start_sec": 248.35,
+      "duration_sec": 4.26,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s59",
+      "index": 58,
+      "start_sec": 252.61,
+      "duration_sec": 5.8,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s60",
+      "index": 59,
+      "start_sec": 258.4,
+      "duration_sec": 4.28,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s61",
+      "index": 60,
+      "start_sec": 262.68,
+      "duration_sec": 3.19,
+      "quarter": 2,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "cut",
+      "suggested_transition": "cut",
+      "transition_reason": "keep factual explanation fast and legible",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s62",
+      "index": 61,
+      "start_sec": 265.88,
+      "duration_sec": 5.69,
+      "quarter": 2,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s63",
+      "index": 62,
+      "start_sec": 271.57,
+      "duration_sec": 2.02,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s64",
+      "index": 63,
+      "start_sec": 273.59,
+      "duration_sec": 4.45,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s65",
+      "index": 64,
+      "start_sec": 278.04,
+      "duration_sec": 1.44,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s66",
+      "index": 65,
+      "start_sec": 279.48,
+      "duration_sec": 7.8,
+      "quarter": 2,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s67",
+      "index": 66,
+      "start_sec": 287.28,
+      "duration_sec": 3.64,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "sourced_chart_not_shown"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s68",
+      "index": 67,
+      "start_sec": 290.92,
+      "duration_sec": 3.51,
+      "quarter": 2,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s69",
+      "index": 68,
+      "start_sec": 294.44,
+      "duration_sec": 7.5,
+      "quarter": 2,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s70",
+      "index": 69,
+      "start_sec": 301.94,
+      "duration_sec": 3.62,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s71",
+      "index": 70,
+      "start_sec": 305.56,
+      "duration_sec": 2.64,
+      "quarter": 2,
+      "existing_visual": "ai_video",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s72",
+      "index": 71,
+      "start_sec": 308.2,
+      "duration_sec": 3.43,
+      "quarter": 2,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s73",
+      "index": 72,
+      "start_sec": 311.63,
+      "duration_sec": 4.13,
+      "quarter": 2,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s74",
+      "index": 73,
+      "start_sec": 315.76,
+      "duration_sec": 3.58,
+      "quarter": 2,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s75",
+      "index": 74,
+      "start_sec": 319.34,
+      "duration_sec": 7.78,
+      "quarter": 2,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s76",
+      "index": 75,
+      "start_sec": 327.12,
+      "duration_sec": 4.88,
+      "quarter": 3,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s77",
+      "index": 76,
+      "start_sec": 331.99,
+      "duration_sec": 1.38,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s78",
+      "index": 77,
+      "start_sec": 333.37,
+      "duration_sec": 3.47,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s79",
+      "index": 78,
+      "start_sec": 336.85,
+      "duration_sec": 7.95,
+      "quarter": 3,
+      "existing_visual": "ai_video",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s80",
+      "index": 79,
+      "start_sec": 344.8,
+      "duration_sec": 2.02,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s81",
+      "index": 80,
+      "start_sec": 346.82,
+      "duration_sec": 2.04,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s82",
+      "index": 81,
+      "start_sec": 348.86,
+      "duration_sec": 3.54,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s83",
+      "index": 82,
+      "start_sec": 352.39,
+      "duration_sec": 6.07,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "evidence_review",
+      "visual_protected": true,
+      "rationale": [
+        "evidence beat needs its exact cited chart or primary document"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s84",
+      "index": 83,
+      "start_sec": 358.47,
+      "duration_sec": 7.7,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s85",
+      "index": 84,
+      "start_sec": 366.16,
+      "duration_sec": 4.43,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s86",
+      "index": 85,
+      "start_sec": 370.59,
+      "duration_sec": 5.07,
+      "quarter": 3,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s87",
+      "index": 86,
+      "start_sec": 375.66,
+      "duration_sec": 3.28,
+      "quarter": 3,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "evidence_review",
+      "visual_protected": true,
+      "rationale": [
+        "evidence beat needs its exact cited chart or primary document"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s88",
+      "index": 87,
+      "start_sec": 378.94,
+      "duration_sec": 2.34,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s89",
+      "index": 88,
+      "start_sec": 381.28,
+      "duration_sec": 4.37,
+      "quarter": 3,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s90",
+      "index": 89,
+      "start_sec": 385.65,
+      "duration_sec": 6.63,
+      "quarter": 3,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s91",
+      "index": 90,
+      "start_sec": 392.28,
+      "duration_sec": 2.64,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s92",
+      "index": 91,
+      "start_sec": 394.92,
+      "duration_sec": 1.96,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s93",
+      "index": 92,
+      "start_sec": 396.87,
+      "duration_sec": 6.31,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s94",
+      "index": 93,
+      "start_sec": 403.18,
+      "duration_sec": 1.83,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s95",
+      "index": 94,
+      "start_sec": 405.01,
+      "duration_sec": 1.21,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s96",
+      "index": 95,
+      "start_sec": 406.22,
+      "duration_sec": 7.29,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s97",
+      "index": 96,
+      "start_sec": 413.51,
+      "duration_sec": 9.38,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s98",
+      "index": 97,
+      "start_sec": 422.89,
+      "duration_sec": 3.11,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s99",
+      "index": 98,
+      "start_sec": 425.99,
+      "duration_sec": 4.52,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s100",
+      "index": 99,
+      "start_sec": 430.51,
+      "duration_sec": 3.64,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s101",
+      "index": 100,
+      "start_sec": 434.15,
+      "duration_sec": 2.42,
+      "quarter": 3,
+      "existing_visual": "ai_video",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s102",
+      "index": 101,
+      "start_sec": 436.58,
+      "duration_sec": 3.62,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s103",
+      "index": 102,
+      "start_sec": 440.2,
+      "duration_sec": 5.95,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s104",
+      "index": 103,
+      "start_sec": 446.14,
+      "duration_sec": 5.07,
+      "quarter": 3,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s105",
+      "index": 104,
+      "start_sec": 451.21,
+      "duration_sec": 1.87,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "whip",
+      "suggested_transition": "whip",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s106",
+      "index": 105,
+      "start_sec": 453.08,
+      "duration_sec": 1.4,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s107",
+      "index": 106,
+      "start_sec": 454.48,
+      "duration_sec": 5.92,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "evidence_review",
+      "visual_protected": true,
+      "rationale": [
+        "evidence beat needs its exact cited chart or primary document"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s108",
+      "index": 107,
+      "start_sec": 460.41,
+      "duration_sec": 4.43,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s109",
+      "index": 108,
+      "start_sec": 464.84,
+      "duration_sec": 2.92,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s110",
+      "index": 109,
+      "start_sec": 467.75,
+      "duration_sec": 1.7,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s111",
+      "index": 110,
+      "start_sec": 469.45,
+      "duration_sec": 7.08,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s112",
+      "index": 111,
+      "start_sec": 476.53,
+      "duration_sec": 5.48,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s113",
+      "index": 112,
+      "start_sec": 482.01,
+      "duration_sec": 3.17,
+      "quarter": 3,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s114",
+      "index": 113,
+      "start_sec": 485.18,
+      "duration_sec": 1.87,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s115",
+      "index": 114,
+      "start_sec": 487.05,
+      "duration_sec": 1.76,
+      "quarter": 3,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s116",
+      "index": 115,
+      "start_sec": 488.81,
+      "duration_sec": 3.83,
+      "quarter": 3,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s117",
+      "index": 116,
+      "start_sec": 492.65,
+      "duration_sec": 3.28,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s118",
+      "index": 117,
+      "start_sec": 495.93,
+      "duration_sec": 4.45,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s119",
+      "index": 118,
+      "start_sec": 500.38,
+      "duration_sec": 4.86,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s120",
+      "index": 119,
+      "start_sec": 505.24,
+      "duration_sec": 3.9,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s121",
+      "index": 120,
+      "start_sec": 509.13,
+      "duration_sec": 4.26,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s122",
+      "index": 121,
+      "start_sec": 513.39,
+      "duration_sec": 5.22,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s123",
+      "index": 122,
+      "start_sec": 518.61,
+      "duration_sec": 4.22,
+      "quarter": 4,
+      "existing_visual": "ai_video",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s124",
+      "index": 123,
+      "start_sec": 522.83,
+      "duration_sec": 3.19,
+      "quarter": 4,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s125",
+      "index": 124,
+      "start_sec": 526.02,
+      "duration_sec": 4.67,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s126",
+      "index": 125,
+      "start_sec": 530.69,
+      "duration_sec": 4.6,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s127",
+      "index": 126,
+      "start_sec": 535.29,
+      "duration_sec": 1.89,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s128",
+      "index": 127,
+      "start_sec": 537.18,
+      "duration_sec": 4.28,
+      "quarter": 4,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s129",
+      "index": 128,
+      "start_sec": 541.46,
+      "duration_sec": 3.51,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s130",
+      "index": 129,
+      "start_sec": 544.97,
+      "duration_sec": 3.02,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s131",
+      "index": 130,
+      "start_sec": 548.0,
+      "duration_sec": 4.28,
+      "quarter": 4,
+      "existing_visual": "threejs",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s132",
+      "index": 131,
+      "start_sec": 552.28,
+      "duration_sec": 3.34,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s133",
+      "index": 132,
+      "start_sec": 555.62,
+      "duration_sec": 2.96,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s134",
+      "index": 133,
+      "start_sec": 558.58,
+      "duration_sec": 4.28,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s135",
+      "index": 134,
+      "start_sec": 562.86,
+      "duration_sec": 6.54,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s136",
+      "index": 135,
+      "start_sec": 569.4,
+      "duration_sec": 4.71,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "evidence_review",
+      "visual_protected": true,
+      "rationale": [
+        "evidence beat needs its exact cited chart or primary document"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s137",
+      "index": 136,
+      "start_sec": 574.11,
+      "duration_sec": 1.74,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s138",
+      "index": 137,
+      "start_sec": 575.85,
+      "duration_sec": 5.11,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "narration names a geography; show the exact location/event"
+      ],
+      "review_flags": [
+        "threejs_map_candidate_only_if_geo_and_render_budget_allow",
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s139",
+      "index": 138,
+      "start_sec": 580.97,
+      "duration_sec": 6.18,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s140",
+      "index": 139,
+      "start_sec": 587.15,
+      "duration_sec": 6.84,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s141",
+      "index": 140,
+      "start_sec": 593.99,
+      "duration_sec": 7.05,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s142",
+      "index": 141,
+      "start_sec": 601.04,
+      "duration_sec": 6.09,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s143",
+      "index": 142,
+      "start_sec": 607.14,
+      "duration_sec": 2.85,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s144",
+      "index": 143,
+      "start_sec": 609.99,
+      "duration_sec": 5.62,
+      "quarter": 4,
+      "existing_visual": "dataviz",
+      "suggested_visual_intent": "dataviz",
+      "visual_protected": true,
+      "rationale": [
+        "scene has sourced numeric series"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s145",
+      "index": 144,
+      "start_sec": 615.62,
+      "duration_sec": 2.92,
+      "quarter": 4,
+      "existing_visual": "ai_video",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s146",
+      "index": 145,
+      "start_sec": 618.53,
+      "duration_sec": 4.09,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s147",
+      "index": 146,
+      "start_sec": 622.62,
+      "duration_sec": 3.71,
+      "quarter": 4,
+      "existing_visual": "image",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s148",
+      "index": 147,
+      "start_sec": 626.33,
+      "duration_sec": 3.28,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s149",
+      "index": 148,
+      "start_sec": 629.61,
+      "duration_sec": 4.6,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s150",
+      "index": 149,
+      "start_sec": 634.21,
+      "duration_sec": 4.73,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s151",
+      "index": 150,
+      "start_sec": 638.94,
+      "duration_sec": 2.08,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "fade",
+      "suggested_transition": "fade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s152",
+      "index": 151,
+      "start_sec": 641.02,
+      "duration_sec": 5.11,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "narration_visual_terms_differ_review"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s153",
+      "index": 152,
+      "start_sec": 646.13,
+      "duration_sec": 2.85,
+      "quarter": 4,
+      "existing_visual": "broll",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s154",
+      "index": 153,
+      "start_sec": 648.98,
+      "duration_sec": 3.49,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "mechanism_diagram",
+      "visual_protected": true,
+      "rationale": [
+        "abstract mechanism needs a meaningful finance explanation"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s155",
+      "index": 154,
+      "start_sec": 652.48,
+      "duration_sec": 1.91,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "dip_to_black",
+      "suggested_transition": "dip_to_black",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    },
+    {
+      "scene_id": "s156",
+      "index": 155,
+      "start_sec": 654.39,
+      "duration_sec": 2.55,
+      "quarter": 4,
+      "existing_visual": "motion_gfx",
+      "suggested_visual_intent": "subject_specific_footage",
+      "visual_protected": true,
+      "rationale": [
+        "prefer an exact subject or documentary source, not filler"
+      ],
+      "review_flags": [
+        "protected_existing_visual_keep",
+        "possible_fullscreen_text_card"
+      ],
+      "current_transition": "crossfade",
+      "suggested_transition": "crossfade",
+      "transition_reason": "preserve authored transition",
+      "requires_asset_or_editor_approval_for_visual_change": true
+    }
+  ],
+  "review_issues": [
+    {
+      "severity": "review",
+      "code": "numeric_claim_without_chart_source_review",
+      "scene_ids": [
+        "s1"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "repetitive_card_run",
+      "scene_ids": [
+        "s8",
+        "s9",
+        "s10",
+        "s11"
+      ],
+      "duration_sec": 18.28,
+      "suggestion": "replace eligible abstract cards with relevant diagrams, citations or actual footage"
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s13"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s15"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s21"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s23"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "repetitive_card_run",
+      "scene_ids": [
+        "s26",
+        "s27",
+        "s28",
+        "s29"
+      ],
+      "duration_sec": 16.4,
+      "suggestion": "replace eligible abstract cards with relevant diagrams, citations or actual footage"
+    },
+    {
+      "severity": "review",
+      "code": "sourced_chart_not_shown",
+      "scene_ids": [
+        "s35"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s38"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s39"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s40"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s52"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s56"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s58"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "sourced_chart_not_shown",
+      "scene_ids": [
+        "s67"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s70"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s71"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s79"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s88"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s92"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "repetitive_card_run",
+      "scene_ids": [
+        "s96",
+        "s97",
+        "s98",
+        "s99",
+        "s100"
+      ],
+      "duration_sec": 27.93,
+      "suggestion": "replace eligible abstract cards with relevant diagrams, citations or actual footage"
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s105"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s111"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s114"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s115"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s117"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s123"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s129"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s143"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s145"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s146"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s147"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s148"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s151"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "narration_visual_terms_differ_review",
+      "scene_ids": [
+        "s152"
+      ]
+    },
+    {
+      "severity": "review",
+      "code": "transition_monotony",
+      "scene_ids": [],
+      "transition": "crossfade",
+      "count": 133,
+      "suggestion": "reserve soft transitions for chapter/argument turns; hard cuts keep factual explanation crisp"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s13"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s15"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Five_Million_Mark_Note_1923.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s15"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s16"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s18"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Chain_Macro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s21"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s23"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Haven_of_Rest_Motel%2C_circa_1950s_-_The_Pines%2C_Indiana_%2849940920246%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s23"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s25"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s30"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Watching_Vietnam_War_Footage.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s30"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s38"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Bank_Run_in_Michigan%2C_USA%2C_February_1933.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s38"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s40"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s42"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Address_to_the_Nation_by_President_George_W._Bush_on_September_11%2C_2001.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s42"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s52"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/HK_SKD_TKO_Po_Lam_Tsui_Lam_Estate_Square_Shopping_Mall_shop_ParknShop_Supermarket_goods_rice_bags_price_July_2025_R12S.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s56"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/StateLibQld_1_103051_G.H._Handy%27s_grocery_and_fruit_shop_in_Paddington%2C_Brisbane%2C_ca._1905.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s56"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s58"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/%28Statistical_Table_to%29Table_of_the_gold_and_silver_coins_of_different_countries%2C_their_names%2C_weight%2C_and_value_in_federal_%28IA_dr_statistical-table-totable-of-the-gold-and-silver-coins-of-different-count-2120165%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s70"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s75"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s80"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Union_Bank_Tower%2C_Portland_%282024%29-L1006272.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s82"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/2022_-_Crypto_PO1_8484_%2852475763207%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s82"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s88"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Historical_and_future_temperature_projections_showing_importance_of_mitigating_short-lived_climate_pollutants.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s92"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s95"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Microcenter_keyboard_isle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s107"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s111"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Eisenhower_dollar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s111"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s112"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Girl_knocking_on_a_door%2C_China%2C_ca._1918-1938_%28MFB-LS0240%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s114"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Electricity_%2883839793%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s115"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Jaixak_euki_ebazan_Caixak.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s117"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/PIIGS_Mk_4_map.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s117"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s121"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Buenos_Aires_-_Manifestaci%C3%B3n_contra_el_Corralito_-_20020206-05.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s121"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s122"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s126"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Zimbabwe_dollars_1_to_100_trillion_2007_08_Reverse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s126"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s129"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Pune_-_A_suburban_residential_street.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s129"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s132"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Northern_Rock_Queue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s132"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s133"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s139"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s143"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s146"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Taipei%2C_architecture_-_Taipei1015097.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "named_subject_on_generic_stock",
+      "scene_ids": [
+        "s149"
+      ],
+      "suggestion": "a stock clip cannot show this specific person/place/event; verify the frame or use archival/diagram"
+    },
+    {
+      "severity": "review",
+      "code": "resolved_archival_source_not_used",
+      "scene_ids": [
+        "s151"
+      ],
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/World_Trade_Center_Collapse_from_Brooklyn_before_and_after.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "suggestion": "use the licensed archival asset, not a stock substitute"
+    },
+    {
+      "severity": "review",
+      "code": "compliance_rewrite_changed_narration",
+      "scene_ids": [
+        "s30"
+      ],
+      "note": "s30: 'to the moon' → 'sharply higher' (hype framing associated with pump content)",
+      "suggestion": "confirm the policy rewrite kept the factual meaning"
+    }
+  ],
+  "issue_counts": {
+    "compliance_rewrite_changed_narration": 1,
+    "named_subject_on_generic_stock": 27,
+    "narration_visual_terms_differ_review": 29,
+    "numeric_claim_without_chart_source_review": 1,
+    "repetitive_card_run": 3,
+    "resolved_archival_source_not_used": 24,
+    "sourced_chart_not_shown": 2,
+    "transition_monotony": 1
+  },
+  "guardrails": {
+    "frozen_layers_untouched": true,
+    "existing_media_unchanged": true,
+    "no_paid_api_or_generation": true,
+    "visuals_are_recommendations_only": true,
+    "future_threejs_requires_budget_and_valid_existing_engine": true,
+    "note": "Text-based relevance flags are heuristic, not video inspections."
+  },
+  "baseline_comparison": {
+    "same_scene_order": true,
+    "missing_scene_ids": [],
+    "added_scene_ids": [],
+    "narration_changed": [
+      {
+        "scene_id": "s30",
+        "before": "A war in Vietnam. A war on poverty. A race to the moon.",
+        "after": "A war in Vietnam. A war on poverty. A race sharply higher."
+      },
+      {
+        "scene_id": "s126",
+        "before": "Within weeks the central bank would print a one hundred trillion dollar note.",
+        "after": "Within weeks the central bank would print an one hundred trillion dollar note."
+      }
+    ],
+    "visual_type_changes": {
+      "ai_image->ai_video": 8,
+      "ai_image->broll": 12,
+      "ai_image->image": 1,
+      "ai_image->motion_gfx": 3,
+      "broll->image": 2,
+      "dataviz->broll": 2,
+      "image->broll": 18,
+      "image->motion_gfx": 8,
+      "motion_gfx->broll": 3,
+      "motion_gfx->dataviz": 1
+    },
+    "sourced_charts_replaced": [
+      "s35",
+      "s67"
+    ],
+    "authored_3d_or_cinematic_replaced": []
+  }
+}

@@ -1,0 +1,137 @@
+[
+  {
+    "scene_id": "s76",
+    "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_3/clips/s76_threejs.mp4",
+    "sha256": "6a6899405cda1498a68d54470be44b05a7e13710008b7248c9455004131d6450",
+    "preview": "data/finance_p0/threejs_restore/clips/s76_threejs.mp4",
+    "expected_sec": 4.879,
+    "probe": {
+      "width": 1080,
+      "height": 1920,
+      "frames": 146,
+      "codec": "h264",
+      "duration_sec": 4.866667
+    },
+    "min_yavg": 37.4,
+    "ssim_vs_preview": 0.9921,
+    "checks": {
+      "resolution": true,
+      "duration": true,
+      "frames_decoded": true,
+      "no_black_frames": true,
+      "no_flat_frames": true,
+      "matches_preview_structure": true,
+      "render_report_ok": true
+    },
+    "passed": true,
+    "render_status": "rendered"
+  },
+  {
+    "scene_id": "s86",
+    "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_3/clips/s86_threejs.mp4",
+    "sha256": "997d7a1fbb2e2efc9e95bc5b72e1862f5f7aab5358b8f1e8a09588457569b72b",
+    "preview": "data/finance_p0/threejs_restore/clips/s86_threejs.mp4",
+    "expected_sec": 5.071,
+    "probe": {
+      "width": 1080,
+      "height": 1920,
+      "frames": 152,
+      "codec": "h264",
+      "duration_sec": 5.066667
+    },
+    "min_yavg": 40.7,
+    "ssim_vs_preview": 0.9909,
+    "checks": {
+      "resolution": true,
+      "duration": true,
+      "frames_decoded": true,
+      "no_black_frames": true,
+      "no_flat_frames": true,
+      "matches_preview_structure": true,
+      "render_report_ok": true
+    },
+    "passed": true,
+    "render_status": "rendered"
+  },
+  {
+    "scene_id": "s87",
+    "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_3/clips/s87_threejs.mp4",
+    "sha256": "97977cace508d7ac0c12dd8c7bb87e91c3271c98c6ee4d5b48635cd9f5f54765",
+    "preview": "data/finance_p0/threejs_restore/clips/s87_threejs.mp4",
+    "expected_sec": 3.279,
+    "probe": {
+      "width": 1080,
+      "height": 1920,
+      "frames": 98,
+      "codec": "h264",
+      "duration_sec": 3.266667
+    },
+    "min_yavg": 40.5,
+    "ssim_vs_preview": 0.9902,
+    "checks": {
+      "resolution": true,
+      "duration": true,
+      "frames_decoded": true,
+      "no_black_frames": true,
+      "no_flat_frames": true,
+      "matches_preview_structure": true,
+      "render_report_ok": true
+    },
+    "passed": true,
+    "render_status": "rendered"
+  },
+  {
+    "scene_id": "s90",
+    "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_3/clips/s90_threejs.mp4",
+    "sha256": "bf8a830d63f164163fedd764b7949e64fe98115318784f63637e1ef871215fb8",
+    "preview": "data/finance_p0/threejs_restore/clips/s90_threejs.mp4",
+    "expected_sec": 6.628,
+    "probe": {
+      "width": 1080,
+      "height": 1920,
+      "frames": 199,
+      "codec": "h264",
+      "duration_sec": 6.633333
+    },
+    "min_yavg": 37.4,
+    "ssim_vs_preview": 0.9921,
+    "checks": {
+      "resolution": true,
+      "duration": true,
+      "frames_decoded": true,
+      "no_black_frames": true,
+      "no_flat_frames": true,
+      "matches_preview_structure": true,
+      "render_report_ok": true
+    },
+    "passed": true,
+    "render_status": "rendered"
+  },
+  {
+    "scene_id": "s104",
+    "clip": "/home/kadir70/shorts-factory/data/finance_p34/threejs_final/batch_3/clips/s104_threejs.mp4",
+    "sha256": "48fc2f0c2abab50d3eb8013e3aebf58ede488e94fdd87ccf40d7de59468b1269",
+    "preview": "data/finance_p0/threejs_restore/clips/s104_threejs.mp4",
+    "expected_sec": 5.071,
+    "probe": {
+      "width": 1080,
+      "height": 1920,
+      "frames": 152,
+      "codec": "h264",
+      "duration_sec": 5.066667
+    },
+    "min_yavg": 36.8,
+    "ssim_vs_preview": 0.9922,
+    "checks": {
+      "resolution": true,
+      "duration": true,
+      "frames_decoded": true,
+      "no_black_frames": true,
+      "no_flat_frames": true,
+      "matches_preview_structure": true,
+      "render_report_ok": true
+    },
+    "passed": true,
+    "render_status": "rendered"
+  }
+]

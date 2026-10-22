@@ -1,0 +1,30 @@
+{
+  "job": "data/jobs/k70_f4_bitcoin_ep01",
+  "quality": "final",
+  "planned": 1,
+  "rendered": 1,
+  "failed": [],
+  "scenes": [
+    {
+      "scene_id": "s72",
+      "authored_place": "Thailand",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "Thailand",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 47.6,
+      "peak_rss_mb": 1640.2109375,
+      "clip": "data/finance_p33/threejs_final_bench/clips/s72_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 103,
+        "duration_sec": 3.433,
+        "mean_yavg": 44.0,
+        "yavg_range": 10.1
+      },
+      "expected_sec": 3.428
+    }
+  ]
+}

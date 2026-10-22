@@ -1,0 +1,29 @@
+{
+  "graph": "data/finance_p34/bitcoin_final_v1/scene_graph_p34.json",
+  "reference": "/home/kadir70/shorts-factory/data/finance_p34/render_full_v3",
+  "context_matches": true,
+  "fingerprint_changed": [
+    "s102"
+  ],
+  "scenes": {
+    "s102": {
+      "index": 101,
+      "asset": "/home/kadir70/shorts-factory/data/finance_p34/bitcoin_final_v1/assets/s102_gfx.mp4",
+      "type": "motion_gfx",
+      "duration_sec": 3.633,
+      "expected_sec": 3.62,
+      "byte_identical_to_reference": true,
+      "ssim_vs_reference": 1.0
+    },
+    "s118": {
+      "index": 117,
+      "asset": "/home/kadir70/shorts-factory/data/finance_p34/bitcoin_final_v1/assets/s118_chart_p34fix.mp4",
+      "type": "dataviz",
+      "duration_sec": 4.467,
+      "expected_sec": 4.452,
+      "byte_identical_to_reference": true,
+      "ssim_vs_reference": 1.0
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,504 @@
+{
+  "master": "data/finance_p34/render_full_v2/final_p34.mp4",
+  "timeline_sec": 656.942,
+  "spec": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "vcodec": "h264",
+    "acodec": "aac",
+    "audio_channels": 2,
+    "audio_rate": "96000",
+    "duration_sec": 656.766667,
+    "video_duration_sec": 656.766667,
+    "audio_duration_sec": 656.759,
+    "size_mb": 226.4
+  },
+  "sync": [
+    {
+      "at": 5.0,
+      "offset_ms": 0.0,
+      "corr": 0.981
+    },
+    {
+      "at": 164.2,
+      "offset_ms": 0.0,
+      "corr": 0.989
+    },
+    {
+      "at": 328.5,
+      "offset_ms": 0.0,
+      "corr": 0.997
+    },
+    {
+      "at": 492.7,
+      "offset_ms": 0.0,
+      "corr": 0.987
+    },
+    {
+      "at": 641.9,
+      "offset_ms": 0.0,
+      "corr": 0.992
+    }
+  ],
+  "detect": {
+    "black_segments": [],
+    "freeze_starts": [
+      12.2667,
+      29.8333,
+      39.2333,
+      81.7,
+      113.333,
+      118.967,
+      173.3,
+      182.367,
+      189.433,
+      209.633,
+      234.067,
+      253.533,
+      259.3,
+      274.467,
+      299.133,
+      333.6,
+      353.167,
+      358.867,
+      366.333,
+      397.733,
+      414.267,
+      426.167,
+      430.533,
+      437.167,
+      440.8,
+      482.033,
+      501.5,
+      545.167,
+      570.133,
+      577.767,
+      634.333,
+      649.033
+    ]
+  },
+  "captions": {
+    "cues": 576,
+    "first_start": 0.0,
+    "last_end": 648.98,
+    "within_video": true,
+    "has_race_to_the_moon": true,
+    "has_print_a_one_hundred": false,
+    "defect_sharply_higher": false,
+    "defect_an_one": false
+  },
+  "scene_frames_failed": [],
+  "scene_frames_dark_for_review": [
+    {
+      "scene_id": "s4",
+      "type": "motion_gfx",
+      "at": 16.47,
+      "yavg": 13.6,
+      "std": 19.9,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s10",
+      "type": "motion_gfx",
+      "at": 41.55,
+      "yavg": 14.0,
+      "std": 22.2,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s11",
+      "type": "motion_gfx",
+      "at": 45.77,
+      "yavg": 15.2,
+      "std": 27.2,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s19",
+      "type": "motion_gfx",
+      "at": 82.76,
+      "yavg": 15.1,
+      "std": 26.2,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s24",
+      "type": "motion_gfx",
+      "at": 103.02,
+      "yavg": 15.2,
+      "std": 26.0,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s27",
+      "type": "motion_gfx",
+      "at": 120.0,
+      "yavg": 15.0,
+      "std": 24.2,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s29",
+      "type": "motion_gfx",
+      "at": 127.3,
+      "yavg": 14.0,
+      "std": 21.7,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s32",
+      "type": "motion_gfx",
+      "at": 138.3,
+      "yavg": 14.5,
+      "std": 24.3,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s41",
+      "type": "motion_gfx",
+      "at": 175.24,
+      "yavg": 13.4,
+      "std": 19.4,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s44",
+      "type": "motion_gfx",
+      "at": 188.7,
+      "yavg": 13.7,
+      "std": 19.6,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s45",
+      "type": "motion_gfx",
+      "at": 191.21,
+      "yavg": 13.9,
+      "std": 21.3,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s46",
+      "type": "broll",
+      "at": 195.55,
+      "yavg": 14.5,
+      "std": 30.4,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s48",
+      "type": "motion_gfx",
+      "at": 205.0,
+      "yavg": 12.7,
+      "std": 15.1,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s55",
+      "type": "motion_gfx",
+      "at": 236.17,
+      "yavg": 14.5,
+      "std": 23.9,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s63",
+      "type": "motion_gfx",
+      "at": 272.58,
+      "yavg": 13.2,
+      "std": 18.0,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s64",
+      "type": "motion_gfx",
+      "at": 275.81,
+      "yavg": 15.0,
+      "std": 26.3,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s65",
+      "type": "motion_gfx",
+      "at": 278.76,
+      "yavg": 13.3,
+      "std": 19.0,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s68",
+      "type": "motion_gfx",
+      "at": 292.68,
+      "yavg": 14.5,
+      "std": 22.4,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s69",
+      "type": "dataviz",
+      "at": 298.19,
+      "yavg": 15.9,
+      "std": 20.8,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s77",
+      "type": "motion_gfx",
+      "at": 332.68,
+      "yavg": 14.0,
+      "std": 22.1,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s78",
+      "type": "motion_gfx",
+      "at": 335.11,
+      "yavg": 14.9,
+      "std": 26.1,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s81",
+      "type": "motion_gfx",
+      "at": 347.84,
+      "yavg": 15.1,
+      "std": 25.4,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s84",
+      "type": "motion_gfx",
+      "at": 362.31,
+      "yavg": 14.8,
+      "std": 24.0,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s85",
+      "type": "motion_gfx",
+      "at": 368.38,
+      "yavg": 14.4,
+      "std": 24.2,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s89",
+      "type": "dataviz",
+      "at": 383.47,
+      "yavg": 15.1,
+      "std": 17.9,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s91",
+      "type": "motion_gfx",
+      "at": 393.6,
+      "yavg": 14.9,
+      "std": 24.4,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s92",
+      "type": "image",
+      "at": 395.89,
+      "yavg": 5.2,
+      "std": 13.8,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s94",
+      "type": "motion_gfx",
+      "at": 404.09,
+      "yavg": 15.0,
+      "std": 25.6,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s96",
+      "type": "image",
+      "at": 409.86,
+      "yavg": 10.3,
+      "std": 34.0,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s99",
+      "type": "motion_gfx",
+      "at": 428.25,
+      "yavg": 13.5,
+      "std": 18.0,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s100",
+      "type": "motion_gfx",
+      "at": 432.33,
+      "yavg": 13.6,
+      "std": 20.6,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s103",
+      "type": "motion_gfx",
+      "at": 443.17,
+      "yavg": 15.2,
+      "std": 26.8,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s106",
+      "type": "motion_gfx",
+      "at": 453.78,
+      "yavg": 13.1,
+      "std": 18.2,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s110",
+      "type": "motion_gfx",
+      "at": 468.6,
+      "yavg": 14.2,
+      "std": 23.4,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s113",
+      "type": "motion_gfx",
+      "at": 483.59,
+      "yavg": 14.5,
+      "std": 24.2,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s119",
+      "type": "motion_gfx",
+      "at": 502.81,
+      "yavg": 15.0,
+      "std": 26.5,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s130",
+      "type": "motion_gfx",
+      "at": 546.49,
+      "yavg": 14.0,
+      "std": 21.8,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s145",
+      "type": "broll",
+      "at": 617.07,
+      "yavg": 14.3,
+      "std": 27.1,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s150",
+      "type": "motion_gfx",
+      "at": 636.57,
+      "yavg": 13.5,
+      "std": 19.6,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s151",
+      "type": "broll",
+      "at": 639.98,
+      "yavg": 7.4,
+      "std": 18.1,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s153",
+      "type": "broll",
+      "at": 647.56,
+      "yavg": 14.8,
+      "std": 38.3,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s154",
+      "type": "motion_gfx",
+      "at": 650.73,
+      "yavg": 13.6,
+      "std": 18.6,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s155",
+      "type": "motion_gfx",
+      "at": 653.43,
+      "yavg": 15.6,
+      "std": 28.4,
+      "ok": true,
+      "review_dark": true
+    },
+    {
+      "scene_id": "s156",
+      "type": "motion_gfx",
+      "at": 655.67,
+      "yavg": 14.0,
+      "std": 15.3,
+      "ok": true,
+      "review_dark": true
+    }
+  ],
+  "scene_frames_checked": 156,
+  "checks": {
+    "resolution_1080x1920": true,
+    "fps_30": true,
+    "codecs_h264_aac": true,
+    "duration_matches_timeline": true,
+    "audio_video_same_length": true,
+    "audio_sync_within_40ms": true,
+    "no_black_segments": true,
+    "scene_midframes_ok": true,
+    "captions_present_and_within_video": true,
+    "captions_corrected_wording": true
+  },
+  "passed": true
+}

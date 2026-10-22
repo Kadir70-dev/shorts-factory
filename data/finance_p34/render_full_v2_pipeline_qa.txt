@@ -1,0 +1,13 @@
+   QA · k70_f4_bitcoin_ep01 · ✗ FAIL
+     [PASS] render completed (no timeout) — finished in time
+     [PASS] playable file written — 226.4MB
+     [PASS] has video stream — video audio
+     [PASS] has audio stream — audio present
+     [PASS] resolution 9:16 — 1080x1920 (want 1080x1920)
+     [PASS] duration matches timeline — 656.8s (timeline 656.9s)
+     [PASS] black-frame fraction — 8.40s black (1.3% ≤ 6%)
+     [PASS] every scene non-black — all scenes lit
+     [FAIL] RAM peak within budget — ~6136MB (≤ 4000MB)
+     [PASS] free RAM stayed above floor — min free 5718MB (≥ 800MB)
+     [PASS] render within wall-time budget — 863s (≤ 3600s)
+     [FAIL] plan-vs-delivery: no silent visual downgrade — 40/156 planned beats (25.6%) silently downgraded — s3: planned official → delivered motion_gfx; s19: planned official → delivered motion_gfx; s25: planned branded → delivered stock; s26: planned threejs → delivered motion_gfx (+36 more)

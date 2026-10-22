@@ -1,0 +1,11 @@
+{
+  "graph": "data/finance_p34/bitcoin_final_v1/scene_graph_p34.json",
+  "job": "/home/kadir70/shorts-factory/data/finance_p34/render_full_v1",
+  "final": "/home/kadir70/shorts-factory/data/finance_p34/render_full_v2/final_p34.mp4",
+  "render_seconds": 862.6,
+  "ram_peak_used_mb": 6136,
+  "min_free_mb": 5718,
+  "overrides": {
+    "s102": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/visuals/s102_gfx.mp4"
+  }
+}

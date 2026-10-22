@@ -1,0 +1,114 @@
+{
+  "job": "data/jobs/k70_f4_bitcoin_ep01",
+  "quality": "final",
+  "planned": 5,
+  "rendered": 5,
+  "failed": [],
+  "scenes": [
+    {
+      "scene_id": "s7",
+      "authored_place": "Maryland",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "Maryland",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 61.6,
+      "peak_rss_mb": 1418.26953125,
+      "clip": "data/finance_p34/threejs_final/batch_1/clips/s7_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 120,
+        "duration_sec": 4.0,
+        "mean_yavg": 44.4,
+        "yavg_range": 15.2
+      },
+      "expected_sec": 4.004
+    },
+    {
+      "scene_id": "s14",
+      "authored_place": "New Hampshire",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "New Hampshire",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 119.6,
+      "peak_rss_mb": 1437.62890625,
+      "clip": "data/finance_p34/threejs_final/batch_1/clips/s14_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 269,
+        "duration_sec": 8.967,
+        "mean_yavg": 44.8,
+        "yavg_range": 14.4
+      },
+      "expected_sec": 8.953
+    },
+    {
+      "scene_id": "s17",
+      "authored_place": "Germany",
+      "delivered_before": "broll",
+      "template": "globe_flight",
+      "label": "Germany",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 68.1,
+      "peak_rss_mb": 1147.98828125,
+      "clip": "data/finance_p34/threejs_final/batch_1/clips/s17_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 140,
+        "duration_sec": 4.667,
+        "mean_yavg": 44.5,
+        "yavg_range": 15.7
+      },
+      "expected_sec": 4.665
+    },
+    {
+      "scene_id": "s22",
+      "authored_place": "India",
+      "delivered_before": "image",
+      "template": "globe_flight",
+      "label": "India",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 71.2,
+      "peak_rss_mb": 1405.19921875,
+      "clip": "data/finance_p34/threejs_final/batch_1/clips/s22_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 153,
+        "duration_sec": 5.1,
+        "mean_yavg": 47.8,
+        "yavg_range": 27.7
+      },
+      "expected_sec": 5.092
+    },
+    {
+      "scene_id": "s31",
+      "authored_place": "Japan",
+      "delivered_before": "motion_gfx",
+      "template": "globe_flight",
+      "label": "Japan",
+      "status": "rendered",
+      "error": "",
+      "wall_sec": 79.1,
+      "peak_rss_mb": 1495.5078125,
+      "clip": "data/finance_p34/threejs_final/batch_1/clips/s31_threejs.mp4",
+      "probe": {
+        "width": 1080,
+        "height": 1920,
+        "frames": 132,
+        "duration_sec": 4.4,
+        "mean_yavg": 43.2,
+        "yavg_range": 8.9
+      },
+      "expected_sec": 4.388
+    }
+  ]
+}

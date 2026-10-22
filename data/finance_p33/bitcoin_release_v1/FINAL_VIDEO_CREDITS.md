@@ -104,7 +104,6 @@ Wood, Waddy, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:INTE
 - s49: https://www.pexels.com/video/39134699/
 - s70: https://www.pexels.com/video/35606045/
 - s75: https://www.pexels.com/video/38721048/
-- s102: https://www.pexels.com/video/5981841/
 - s122: https://www.pexels.com/video/35834801/
 - s127: https://www.pexels.com/video/20573001/
 - s133: https://www.pexels.com/video/7065835/

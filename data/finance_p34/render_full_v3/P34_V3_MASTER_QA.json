@@ -509,6 +509,258 @@
         "ok": true,
         "edge_max": 15
       }
+    ],
+    "s2": [
+      {
+        "at": 8.69,
+        "ok": true,
+        "edge_max": 14
+      },
+      {
+        "at": 10.45,
+        "ok": true,
+        "edge_max": 15
+      }
+    ],
+    "s20": [
+      {
+        "at": 87.51,
+        "ok": true,
+        "edge_max": 14
+      },
+      {
+        "at": 89.48,
+        "ok": true,
+        "edge_max": 15
+      }
+    ],
+    "s34": [
+      {
+        "at": 147.08,
+        "ok": true,
+        "edge_max": 15
+      },
+      {
+        "at": 149.04,
+        "ok": true,
+        "edge_max": 14
+      }
+    ],
+    "s35": [
+      {
+        "at": 152.26,
+        "ok": true,
+        "edge_max": 14
+      },
+      {
+        "at": 153.93,
+        "ok": true,
+        "edge_max": 15
+      }
+    ],
+    "s36": [
+      {
+        "at": 156.68,
+        "ok": true,
+        "edge_max": 14
+      },
+      {
+        "at": 158.1,
+        "ok": true,
+        "edge_max": 14
+      }
+    ],
+    "s51": [
+      {
+        "at": 215.93,
+        "ok": false,
+        "edge_max": 156
+      },
+      {
+        "at": 217.37,
+        "ok": false,
+        "edge_max": 156
+      }
+    ],
+    "s54": [
+      {
+        "at": 230.84,
+        "ok": true,
+        "edge_max": 15
+      },
+      {
+        "at": 232.99,
+        "ok": true,
+        "edge_max": 15
+      }
+    ],
+    "s57": [
+      {
+        "at": 245.08,
+        "ok": true,
+        "edge_max": 15
+      },
+      {
+        "at": 247.37,
+        "ok": true,
+        "edge_max": 15
+      }
+    ],
+    "s61": [
+      {
+        "at": 264.28,
+        "ok": false,
+        "edge_max": 161
+      },
+      {
+        "at": 265.4,
+        "ok": false,
+        "edge_max": 161
+      }
+    ],
+    "s66": [
+      {
+        "at": 283.38,
+        "ok": false,
+        "edge_max": 165
+      },
+      {
+        "at": 286.11,
+        "ok": false,
+        "edge_max": 165
+      }
+    ],
+    "s67": [
+      {
+        "at": 289.1,
+        "ok": true,
+        "edge_max": 15
+      },
+      {
+        "at": 290.38,
+        "ok": true,
+        "edge_max": 14
+      }
+    ],
+    "s69": [
+      {
+        "at": 298.19,
+        "ok": true,
+        "edge_max": 15
+      },
+      {
+        "at": 300.81,
+        "ok": true,
+        "edge_max": 15
+      }
+    ],
+    "s89": [
+      {
+        "at": 383.47,
+        "ok": true,
+        "edge_max": 14
+      },
+      {
+        "at": 384.99,
+        "ok": true,
+        "edge_max": 15
+      }
+    ],
+    "s120": [
+      {
+        "at": 507.18,
+        "ok": false,
+        "edge_max": 162
+      },
+      {
+        "at": 508.55,
+        "ok": false,
+        "edge_max": 162
+      }
+    ],
+    "s125": [
+      {
+        "at": 528.35,
+        "ok": false,
+        "edge_max": 160
+      },
+      {
+        "at": 529.99,
+        "ok": false,
+        "edge_max": 160
+      }
+    ],
+    "s134": [
+      {
+        "at": 560.72,
+        "ok": false,
+        "edge_max": 161
+      },
+      {
+        "at": 562.22,
+        "ok": false,
+        "edge_max": 161
+      }
+    ],
+    "s135": [
+      {
+        "at": 566.13,
+        "ok": true,
+        "edge_max": 15
+      },
+      {
+        "at": 568.42,
+        "ok": true,
+        "edge_max": 14
+      }
+    ],
+    "s140": [
+      {
+        "at": 590.57,
+        "ok": false,
+        "edge_max": 158
+      },
+      {
+        "at": 592.96,
+        "ok": false,
+        "edge_max": 158
+      }
+    ],
+    "s141": [
+      {
+        "at": 597.52,
+        "ok": true,
+        "edge_max": 15
+      },
+      {
+        "at": 599.99,
+        "ok": true,
+        "edge_max": 14
+      }
+    ],
+    "s142": [
+      {
+        "at": 604.09,
+        "ok": true,
+        "edge_max": 14
+      },
+      {
+        "at": 606.22,
+        "ok": true,
+        "edge_max": 14
+      }
+    ],
+    "s144": [
+      {
+        "at": 612.8,
+        "ok": false,
+        "edge_max": 158
+      },
+      {
+        "at": 614.77,
+        "ok": false,
+        "edge_max": 158
+      }
     ]
   },
   "checks": {
@@ -522,8 +774,7 @@
     "scene_midframes_ok": true,
     "captions_present_and_within_video": true,
     "captions_corrected_wording": true,
-    "text_inside_frame": true
+    "text_inside_frame": false
   },
-  "passed": true,
-  "contact_sheet": "data/finance_p34/render_full_v3/contact_sheet_v3.jpg"
+  "passed": false
 }

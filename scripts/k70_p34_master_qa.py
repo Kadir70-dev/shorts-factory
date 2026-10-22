@@ -164,6 +164,8 @@ def main() -> None:
     ap.add_argument("--out", type=Path, default=None)
     ap.add_argument("--edge-scene", action="append", default=[],
                     help="scene id whose frame must have no text off the edges")
+    ap.add_argument("--edge-type", action="append", default=[],
+                    help="check every scene of this visual type (e.g. dataviz)")
     ap.add_argument("--contact-sheet", type=Path, default=None)
     a = ap.parse_args()
     graph = json.loads(a.graph.read_text(encoding="utf-8"))
@@ -180,9 +182,11 @@ def main() -> None:
     for s in graph["scenes"]:
         starts[s["id"]] = (t, float(s["duration_sec"]))
         t += float(s["duration_sec"])
+    edge_ids = list(dict.fromkeys(a.edge_scene + [
+        s["id"] for s in graph["scenes"] if s["visual"]["type"] in a.edge_type]))
     # two samples per scene: mid-roll and after the counter has settled
     edges = {sid: [edge_clear(a.master, starts[sid][0] + starts[sid][1] * f) for f in (0.5, 0.85)]
-             for sid in a.edge_scene}
+             for sid in edge_ids}
     checks = {
         "resolution_1080x1920": (spec["width"], spec["height"]) == (1080, 1920),
         "fps_30": abs(spec["fps"] - 30) < 0.01,

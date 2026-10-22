@@ -78,3 +78,31 @@ def test_s118_fix_refuses_wrong_scene_data():
     src["scenes"][1]["data"]["points"][0]["value"] = 300.0
     with pytest.raises(ValueError):
         s118fix.patch(src, "/new.mp4")
+
+
+s102_spec = importlib.util.spec_from_file_location("s102fix", ROOT / "scripts" / "k70_p34_s102_fix.py")
+s102fix = importlib.util.module_from_spec(s102_spec)
+s102_spec.loader.exec_module(s102fix)
+
+
+def _s102_graph():
+    return {"meta": {}, "captions": [], "scenes": [
+        {"id": "s101", "visual": {"type": "broll", "asset_path": "/x.mp4"}},
+        {"id": "s102", "visual": {"type": "broll", "asset_path": "/pexels.mp4",
+                                  "layers": [{"k": 1}], "motion": "ken_burns"}}]}
+
+
+def test_s102_fix_switches_only_s102_to_approved_card():
+    src = _s102_graph()
+    out = s102fix.patch(src, "/card.mp4")
+    v = out["scenes"][1]["visual"]
+    assert (v["type"], v["asset_path"], v["layers"], v["motion"]) == ("motion_gfx", "/card.mp4", [], "none")
+    assert out["scenes"][0] == src["scenes"][0] and src["scenes"][1]["visual"]["type"] == "broll"
+    assert s102fix.patch(out, "/card.mp4") == out          # idempotent
+
+
+def test_s102_fix_refuses_unexpected_visual_type():
+    src = _s102_graph()
+    src["scenes"][1]["visual"]["type"] = "threejs"
+    with pytest.raises(ValueError):
+        s102fix.patch(src, "/card.mp4")

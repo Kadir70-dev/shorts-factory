@@ -70,3 +70,37 @@ The fix is data-only, made with `scripts/k70_p34_s118_fix.py`. The shared datavi
 
 - PR #9 not merged.
 - Nothing published.
+
+## Release-preparation pass (s102 permanent, verification, cleanup)
+
+### s102
+
+- s102 is now set in the graph itself (`scripts/k70_p34_s102_fix.py patch`). It uses the approved card `bitcoin_final_v1/assets/s102_gfx.mp4` (sha256 `052e5b16…`), copied from F4.
+- The graph is backed up as `scene_graph_p34.pre_s102.json`.
+- Renders no longer need `--override`.
+
+### Verification with the real renderer
+
+`k70_p34_s102_fix.py verify` → `P34_S102_S118_VERIFY.json`:
+- **Re-render:** s102 and s118 were re-rendered through `render_ffmpeg._scene_clip`. Both are **byte-identical** to V3's `scene_101` and `scene_117`.
+- **Other scenes:** the render context matches V3's manifest. The only fingerprint change is s102, because its asset path moved. A rebuild from this graph therefore reuses the other 154 V3 clips unchanged, and narration, captions and timing stay as they are.
+
+### Cleanup
+
+- `render_full_v3/silent.mp4` (990 MB) was deleted. It is a concat intermediate that every render re-creates. Only report text referred to it, and fuser/lsof showed no open handles. It is logged in the deletion manifest.
+- V3 scene clips (156) are kept.
+- V2 and V3 finals are kept, and their checksums re-verified OK.
+- Free space is now 9,129 MiB.
+
+### Credits
+
+The s102 Pexels line was removed from `FINAL_VIDEO_CREDITS.md`, because the clip is no longer used.
+
+### New blocker: chart titles overflow
+
+- QA now has `--edge-type dataviz`, which checks every chart.
+- 8 of 22 charts fail: s51, s61, s66, s120, s125, s134, s140, s144.
+- The titles run to or through the right edge. s140 and s144 are visibly cut.
+- This is a pre-existing F4 chart issue.
+- The fix proposal and the human checklist are in `P34_V3_VIEWING_CHECKLIST.md`.
+- **V3 is not ready for upload review until this is fixed (v4) or explicitly accepted.**

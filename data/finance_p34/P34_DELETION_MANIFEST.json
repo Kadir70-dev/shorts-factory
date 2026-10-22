@@ -1814,6 +1814,20 @@
           "sha256": "d64f8940a638f03ae5921e890206ec02590d4e4d76997439764f60efbeda9068"
         }
       ]
+    },
+    {
+      "date": "2026-10-22",
+      "approval": "user brief: remove render_full_v3/silent.mp4 if reference checks prove it safe",
+      "reason": "concat intermediate re-created by render_ffmpeg.render on every run; referenced only by report text; no open handles (fuser/lsof empty); V3 scene clips and final kept",
+      "files": 1,
+      "bytes": 989680226,
+      "entries": [
+        {
+          "path": "data/finance_p34/render_full_v3/silent.mp4",
+          "bytes": 989680226,
+          "sha256": "4c3ff7d83d4964e7f5ac082ba5b384735f0c6a4e6a57982c3a68d449506efc1d"
+        }
+      ]
     }
   ]
 }

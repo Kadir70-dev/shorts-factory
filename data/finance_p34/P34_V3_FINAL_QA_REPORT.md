@@ -104,3 +104,29 @@ The s102 Pexels line was removed from `FINAL_VIDEO_CREDITS.md`, because the clip
 - This is a pre-existing F4 chart issue.
 - The fix proposal and the human checklist are in `P34_V3_VIEWING_CHECKLIST.md`.
 - **V3 is not ready for upload review until this is fixed (v4) or explicitly accepted.**
+
+## v4: chart-title fix (approved)
+
+- **Master:** `data/finance_p34/render_full_v4/final_p34_v4.mp4`
+  - sha256 `2900ebf096c14193d739fdf9c7a14cf1d43e4fea0028c9c8dca0f9e373cd0133`
+  - 226.5 MB
+  - Not committed.
+- **Fix:** `scripts/k70_p34_chart_titles_fix.py`.
+  - Shortened 8 titles: s51, s61, s66, s120, s125, s134, s140, s144.
+  - Each new title was measured with the real title font: widest 830 px against a 922 px plot width.
+  - Only those charts were re-rendered. Each new clip's outer-edge luma is ≤ 23.
+  - Graph backup: `scene_graph_p34.pre_titles.json`.
+- **Render:** 147 clips reused and 9 rendered, 1051 s.
+  - Only the 8 chart clips differ from v3.
+  - s102 is byte-identical. It re-rendered only because its asset path moved.
+  - The captions file is byte-identical to v3.
+- **QA:** 11/11 PASS (`render_full_v4/P34_V4_MASTER_QA.json`).
+  - 656.767 s; sync 0 ms ×5.
+  - No black segments; 156/156 mid-frames OK.
+  - 576 captions.
+  - text_inside_frame passes on all 22 charts (max edge luma 15).
+  - Contact sheet: `render_full_v4/contact_sheet_v4.jpg`.
+- **Built-in pipeline QA:** the same two informational flags as v2 and v3:
+  - RAM peak 7.5 GB system-wide; min free 4.4 GB.
+  - Plan vs delivery.
+- **V2 and V3 masters:** kept; checksums re-verified OK.

@@ -1,4 +1,6 @@
-# K70 Ep. 1 v3 — viewing checklist (pre-upload review)
+# K70 Ep. 1 — viewing checklist (pre-upload review)
+
+> **Update:** the §6 blocker is fixed in **v4**: `data/finance_p34/render_full_v4/final_p34_v4.mp4` (sha256 `2900ebf0…0133`). v4 replaces v3 as the upload-review candidate. Every other row below applies to v4 unchanged: the captions file is byte-identical, the audio and timeline are the same, and only 8 chart clips differ.
 
 - **Master:** `data/finance_p34/render_full_v3/final_p34_v3.mp4`
   - sha256 `ae33ef82…ab29`, re-verified after cleanup.
@@ -47,7 +49,7 @@
 | s102 | PASS | Original K70 card ("A digital coin is a file…") replaces the near-black Pexels clip. It is now in the graph, not a render override. Re-rendering through the production renderer gives a clip byte-identical to the one in V3. |
 | s118 | PASS | `$250` / "Pesos per week, Dec 2001", Decree 1570/2001. Byte-identical on re-render. |
 | s22 / s31 geography | PASS | India is a Bretton Woods signatory; the Japan shot shows dollars crossing the Pacific |
-| **Chart titles inside the frame** | **FAIL** | See §6 |
+| Chart titles inside the frame | PASS (v4) | 22/22 charts; outer-edge max luma 15. See §6 |
 
 ## 5. Credits
 
@@ -58,7 +60,7 @@
 | s102 Pexels credit | Fixed | Removed, because the clip is no longer in the film |
 | Pasting into YouTube | **Human** | Do this at upload |
 
-## 6. Blocker found in this pass: chart titles overflow the right edge
+## 6. Chart titles overflowing the right edge (FIXED in v4)
 
 - The F4 dataviz renderer wraps chart titles to the full 1080 px width. It does not leave a right margin, while the left pad is 80 px.
 - The new `--edge-type dataviz` QA check samples every chart. Of 22 charts, 8 have bright title pixels in the outer 24 px:
@@ -67,9 +69,9 @@
 - This was already present in v2 and every earlier master.
 - It is the same failure s118 had.
 
-**Proposed fix (needs approval).** Use the same data-only pattern as s118: shorter titles, a re-render of those 8 charts only, and an incremental v4 master (about 18 min and about 2.5 GB disk). The shared Shorts dataviz code stays untouched.
+**Fix (approved and applied in v4).** Use the same data-only pattern as s118: shorter titles, a re-render of those 8 charts only, and an incremental v4 master (about 18 min and about 2.5 GB disk). The shared Shorts dataviz code stays untouched.
 
-| Scene | Current title | Proposed |
+| Scene | Old title | New title (v4) |
 |---|---|---|
 | s51 | Purchasing power of one 1971 dollar | Value of a 1971 dollar |
 | s61 | Effective federal funds rate, peak | Fed funds rate, peak |

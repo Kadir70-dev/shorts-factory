@@ -106,3 +106,34 @@ def test_s102_fix_refuses_unexpected_visual_type():
     src["scenes"][1]["visual"]["type"] = "threejs"
     with pytest.raises(ValueError):
         s102fix.patch(src, "/card.mp4")
+
+
+titles_spec = importlib.util.spec_from_file_location("titlesfix", ROOT / "scripts" / "k70_p34_chart_titles_fix.py")
+titlesfix = importlib.util.module_from_spec(titles_spec)
+titles_spec.loader.exec_module(titlesfix)
+
+
+def _titles_graph():
+    scenes = [{"id": sid, "visual": {"type": "dataviz", "asset_path": f"/old/{sid}.mp4"},
+               "data": {"title": old, "points": [{"value": 1.0}]}}
+              for sid, (old, _) in titlesfix.TITLES.items()]
+    scenes.insert(0, {"id": "s1", "visual": {"type": "image", "asset_path": "/a.jpg"}, "data": None})
+    return {"meta": {}, "captions": [], "scenes": scenes}
+
+
+def test_titles_fix_changes_only_titles_and_assets():
+    src = _titles_graph()
+    out = titlesfix.patch(src, {sid: f"/new/{sid}.mp4" for sid in titlesfix.TITLES})
+    assert out["scenes"][0] == src["scenes"][0]
+    for a, b in zip(src["scenes"][1:], out["scenes"][1:]):
+        assert b["data"]["title"] == titlesfix.TITLES[a["id"]][1]
+        assert b["data"]["points"] == a["data"]["points"]
+        assert b["visual"]["asset_path"] == f"/new/{a['id']}.mp4"
+    assert all(len(new) < len(old) for old, new in titlesfix.TITLES.values())
+
+
+def test_titles_fix_refuses_unexpected_title():
+    src = _titles_graph()
+    src["scenes"][1]["data"]["title"] = "Something else"
+    with pytest.raises(ValueError):
+        titlesfix.patch(src, {sid: "/x.mp4" for sid in titlesfix.TITLES})

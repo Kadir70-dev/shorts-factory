@@ -98,6 +98,41 @@ def scene_frames(master: Path, graph: dict) -> list[dict]:
     return rows
 
 
+def edge_clear(master: Path, at: float, band: int = 24, luma: int = 90) -> dict:
+    """Full-res frame at `at`: text running off the frame leaves bright pixels in
+    the outer columns. On the dark navy chart cards those columns must stay dark."""
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{at:.3f}", "-i", str(master),
+                          "-frames:v", "1", "-vf", "format=gray", "-f", "rawvideo", "-"],
+                         capture_output=True).stdout
+    px = np.frombuffer(raw, dtype=np.uint8)
+    if px.size != 1080 * 1920:
+        return {"at": round(at, 2), "ok": False, "edge_max": None}
+    img = px.reshape(1920, 1080)
+    edge = max(int(img[:, :band].max()), int(img[:, -band:].max()))
+    return {"at": round(at, 2), "ok": edge < luma, "edge_max": edge}
+
+
+def contact_sheet(master: Path, graph: dict, out: Path, cols: int = 13) -> Path:
+    """One mid-frame per scene, tiled (12 rows x 13 = 156), labelled by scene id."""
+    tmp = out.with_suffix("")
+    tmp.mkdir(parents=True, exist_ok=True)
+    t = 0.0
+    for i, s in enumerate(graph["scenes"]):
+        mid = t + float(s["duration_sec"]) / 2
+        t += float(s["duration_sec"])
+        _run("ffmpeg", "-v", "error", "-y", "-ss", f"{mid:.3f}", "-i", str(master),
+             "-frames:v", "1", "-vf",
+             f"scale=180:320,drawtext=text='{s['id']}':x=6:y=6:fontsize=20:"
+             "fontcolor=yellow:box=1:boxcolor=black@0.7", str(tmp / f"{i:03d}.png"))
+    rows = -(-len(graph["scenes"]) // cols)
+    _run("ffmpeg", "-v", "error", "-y", "-framerate", "1", "-i", str(tmp / "%03d.png"),
+         "-vf", f"tile={cols}x{rows}:padding=4:color=black", "-frames:v", "1", str(out))
+    for f in tmp.glob("*.png"):
+        f.unlink()
+    tmp.rmdir()
+    return out
+
+
 def captions(path: Path, video_sec: float) -> dict:
     text = path.read_text(encoding="utf-8", errors="ignore")
     fmt = re.search(r"^\[Events\][^\[]*?^Format:(.*)$", text, re.M | re.S)
@@ -127,6 +162,9 @@ def main() -> None:
     ap.add_argument("--master", type=Path, required=True)
     ap.add_argument("--captions", type=Path, required=True)
     ap.add_argument("--out", type=Path, default=None)
+    ap.add_argument("--edge-scene", action="append", default=[],
+                    help="scene id whose frame must have no text off the edges")
+    ap.add_argument("--contact-sheet", type=Path, default=None)
     a = ap.parse_args()
     graph = json.loads(a.graph.read_text(encoding="utf-8"))
     timeline = round(sum(float(s["duration_sec"]) for s in graph["scenes"]), 3)
@@ -138,6 +176,13 @@ def main() -> None:
     det = detect(a.master)
     frames = scene_frames(a.master, graph)
     cap = captions(a.captions, spec["duration_sec"])
+    starts, t = {}, 0.0
+    for s in graph["scenes"]:
+        starts[s["id"]] = (t, float(s["duration_sec"]))
+        t += float(s["duration_sec"])
+    # two samples per scene: mid-roll and after the counter has settled
+    edges = {sid: [edge_clear(a.master, starts[sid][0] + starts[sid][1] * f) for f in (0.5, 0.85)]
+             for sid in a.edge_scene}
     checks = {
         "resolution_1080x1920": (spec["width"], spec["height"]) == (1080, 1920),
         "fps_30": abs(spec["fps"] - 30) < 0.01,
@@ -153,11 +198,15 @@ def main() -> None:
         "captions_corrected_wording": cap["has_race_to_the_moon"]
                                       and not cap["defect_sharply_higher"] and not cap["defect_an_one"],
     }
+    if edges:
+        checks["text_inside_frame"] = all(r["ok"] for rs in edges.values() for r in rs)
     report = {"master": str(a.master), "timeline_sec": timeline, "spec": spec, "sync": sync,
               "detect": det, "captions": cap, "scene_frames_failed": [r for r in frames if not r["ok"]],
               "scene_frames_dark_for_review": [r for r in frames if r["review_dark"]],
-              "scene_frames_checked": len(frames), "checks": checks, "passed": all(checks.values())}
+              "scene_frames_checked": len(frames), "edge_checks": edges, "checks": checks, "passed": all(checks.values())}
     out = a.out or a.master.with_name("P34_MASTER_QA.json")
+    if a.contact_sheet:
+        report["contact_sheet"] = str(contact_sheet(a.master, graph, a.contact_sheet))
     out.write_text(json.dumps(report, indent=2), encoding="utf-8")
     for k, v in checks.items():
         print(f"{'PASS' if v else 'FAIL'}  {k}")

@@ -48,3 +48,33 @@ def test_build_refuses_unvalidated_or_changed_clips(tmp_path):
     clip.write_bytes(b"tampered")
     with pytest.raises(ValueError, match="changed"):
         p34.build_graph(_graph(), manifest)
+
+
+fix_spec = importlib.util.spec_from_file_location("s118fix", ROOT / "scripts" / "k70_p34_s118_fix.py")
+s118fix = importlib.util.module_from_spec(fix_spec)
+fix_spec.loader.exec_module(s118fix)
+
+
+def _s118_graph():
+    data = {"kind": "counter", "title": "Weekly cash withdrawal limit", "prefix": "$",
+            "suffix": " pesos / week", "points": [{"label": "Dec 2001", "value": 250.0}]}
+    return {"meta": {}, "captions": [], "scenes": [
+        {"id": "s117", "visual": {"asset_path": "/a.jpg"}, "data": None},
+        {"id": "s118", "visual": {"asset_path": "/old.mp4"}, "data": data}]}
+
+
+def test_s118_fix_moves_unit_off_hero_number_only():
+    src = _s118_graph()
+    out = s118fix.patch(src, "/new.mp4")
+    d = out["scenes"][1]["data"]
+    assert d["prefix"] == "$" and d["suffix"] == "" and d["points"][0]["value"] == 250.0
+    assert "per week" in d["points"][0]["label"].lower()
+    assert out["scenes"][1]["visual"]["asset_path"] == "/new.mp4"
+    assert out["scenes"][0] == src["scenes"][0] and src["scenes"][1]["data"]["suffix"]
+
+
+def test_s118_fix_refuses_wrong_scene_data():
+    src = _s118_graph()
+    src["scenes"][1]["data"]["points"][0]["value"] = 300.0
+    with pytest.raises(ValueError):
+        s118fix.patch(src, "/new.mp4")

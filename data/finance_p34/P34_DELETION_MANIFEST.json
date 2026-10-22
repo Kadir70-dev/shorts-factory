@@ -1,0 +1,978 @@
+{
+ "deleted_at": "Thu Oct 22 05:56:24 2026",
+ "approval": "user message 2026-10-22: 'Proceed with the approved P3.4 disk cleanup'",
+ "items": [
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_p0/k70_bitcoin_ep01_premium_v2/silent.mp4",
+   "bytes": 1037137959,
+   "sha256": "c794adbdbf867c5e845d54eac3d75e2a4ae578197bfd4325cd791a34a5e24a4a",
+   "mtime": "Wed Oct 21 20:29:07 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/jobs/k70_f4_bitcoin_ep01/silent.mp4",
+   "bytes": 1119247633,
+   "sha256": "235738e09aa2ef8b48d445518b0bb3da61e93e6c3bf72a7df508f838b3063d8f",
+   "mtime": "Tue Oct 20 14:55:14 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/silent.mp4",
+   "bytes": 1091931000,
+   "sha256": "6cc1c00801b6b48dcac629ddb1c2b3a7eadf6adc3ae0a604c06ff7ad297fbe72",
+   "mtime": "Tue Oct 20 15:19:37 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_00.mp4",
+   "bytes": 7874897,
+   "sha256": "785cb91baf3caf1fa24d11ed60591c1a30794d01fdaf12a98567de08219e4f69",
+   "mtime": "Tue Oct 20 15:18:50 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_01.mp4",
+   "bytes": 3719129,
+   "sha256": "3b5ae2b6fc3cf9b7da1f08ed859bd4d782884eb08af769466dd048a9564af0f4",
+   "mtime": "Tue Oct 20 14:46:12 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_02.mp4",
+   "bytes": 3349138,
+   "sha256": "5c03720a39de7e10295ba20c716ce2478fb912d453786d76d4212211a7dfb042",
+   "mtime": "Tue Oct 20 14:46:15 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_03.mp4",
+   "bytes": 1304049,
+   "sha256": "f19a966d2476373b88fdc141d35742814dea8339c82ebc4121ef8c28d64a1065",
+   "mtime": "Tue Oct 20 14:46:17 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_04.mp4",
+   "bytes": 2535360,
+   "sha256": "c9927c1212c3880bdef57178b971743644ba0bef7776f091e53c40c1fa21c95c",
+   "mtime": "Tue Oct 20 15:18:52 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_05.mp4",
+   "bytes": 32821392,
+   "sha256": "c2f108922a2194a91ee7d3068aba643e16d6dd78e6f706e2f5e2aff95298066e",
+   "mtime": "Tue Oct 20 14:46:27 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_06.mp4",
+   "bytes": 3078765,
+   "sha256": "25340c491f74662250c6bd1474024c7590affff0e337983eefe0d6e175b17d1b",
+   "mtime": "Tue Oct 20 14:46:30 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_07.mp4",
+   "bytes": 2933887,
+   "sha256": "ab218f2cf446d4b2fbc53ed964fed9cbe8476d04b115cba60972680c9015212e",
+   "mtime": "Tue Oct 20 14:46:33 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_08.mp4",
+   "bytes": 4466796,
+   "sha256": "6942c75e529774a88d0b4a11aed9047a2712800e51cd2e8a0d6c627a9c5a1683",
+   "mtime": "Tue Oct 20 14:46:37 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_09.mp4",
+   "bytes": 3885673,
+   "sha256": "f30de49fab6c7227c298853d2f7fe2e59e609ca08e42c9774537cdcf9d68f778",
+   "mtime": "Tue Oct 20 14:46:40 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_10.mp4",
+   "bytes": 2455797,
+   "sha256": "f796bfde01bede686a95130aa17a34573753eeb007d01c096c4ddfab506bae8c",
+   "mtime": "Tue Oct 20 14:46:43 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_100.mp4",
+   "bytes": 2370059,
+   "sha256": "e8f045b268d413a05b740076690f46a3598d0c1fefb77a268088971b4289c4d1",
+   "mtime": "Tue Oct 20 14:52:01 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_101.mp4",
+   "bytes": 2658698,
+   "sha256": "6a7e28b48d02499159a5133fde7af8a212ec488c4e92bab7714c862615cae60b",
+   "mtime": "Tue Oct 20 15:19:25 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_102.mp4",
+   "bytes": 4485862,
+   "sha256": "03533f2cfa6d5e6335b05635ec6279175e4a285b9af6fad107d0e82d4fb8851e",
+   "mtime": "Tue Oct 20 14:52:09 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_103.mp4",
+   "bytes": 31358273,
+   "sha256": "e36a45988393767c630ea50acf97b05568ff4a6b10f469f19fb141898ed7e28b",
+   "mtime": "Tue Oct 20 14:52:13 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_104.mp4",
+   "bytes": 2405107,
+   "sha256": "f0eac3c4628b942cfb450a0006c65bb13e7501cc3976e68a19a6b7b79fb4c554",
+   "mtime": "Tue Oct 20 14:52:15 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_105.mp4",
+   "bytes": 1005851,
+   "sha256": "884da4da0d2dab0c17a021c192f65d5baac1b85c5a29ffda328f43fe71346259",
+   "mtime": "Tue Oct 20 14:52:16 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_106.mp4",
+   "bytes": 15376662,
+   "sha256": "453a58f9b2793bf179ba4168051ce17a58cb3ad4cb17a75588b15bbf33817144",
+   "mtime": "Tue Oct 20 14:52:21 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_107.mp4",
+   "bytes": 3444382,
+   "sha256": "184d2b8b684d170848f0b5549b1ac8c9fba79458d95741b38a3407a187f14945",
+   "mtime": "Tue Oct 20 14:52:25 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_108.mp4",
+   "bytes": 2296029,
+   "sha256": "9464e7f43ad59bc948f184f7205b2134c2cb65ad4bfb0c284e23b4a8ace43d5c",
+   "mtime": "Tue Oct 20 14:52:27 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_109.mp4",
+   "bytes": 1279320,
+   "sha256": "cde9620703d894196cee8ffefe4af01e6123b4dedb7f46224ab494e63000cc5d",
+   "mtime": "Tue Oct 20 14:52:28 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_11.mp4",
+   "bytes": 15270675,
+   "sha256": "e755c3e6b2ffa6dae9fcf5982192155f9c5a6c0d5ae160f94d30c463d348b7fd",
+   "mtime": "Tue Oct 20 14:46:49 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_110.mp4",
+   "bytes": 10670876,
+   "sha256": "04f89ac0129a459190039b56e995d489f67cd9a582700a85135919b4d6cb1ee0",
+   "mtime": "Tue Oct 20 14:52:34 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_111.mp4",
+   "bytes": 7737010,
+   "sha256": "4a128b87e3b9c38adbeaacd33a8da6567cf903fe9fc124d3468b295b33e93923",
+   "mtime": "Tue Oct 20 14:52:38 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_112.mp4",
+   "bytes": 2440990,
+   "sha256": "9c7c437034730e8be3ee12033f6e2047c3a442dcf42989b3a6551e06eac2f1bd",
+   "mtime": "Tue Oct 20 14:52:40 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_113.mp4",
+   "bytes": 8155452,
+   "sha256": "2195f24e2fe165075897463c5f2b40d233b48f7466b61cee0afff0bc9fc2b9e4",
+   "mtime": "Tue Oct 20 14:52:42 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_114.mp4",
+   "bytes": 1988147,
+   "sha256": "9436126df43712e313e57162364f3f9791fa48b0e29156f15532e876a4b40db8",
+   "mtime": "Tue Oct 20 14:52:44 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_115.mp4",
+   "bytes": 2863981,
+   "sha256": "bc47b42fb5b697ae37ccda2d870eb10b58de0169364ebe3c7475ccebcfda1f0b",
+   "mtime": "Tue Oct 20 14:52:47 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_116.mp4",
+   "bytes": 22394854,
+   "sha256": "198ad1f66969f6606868da3d694ec4a2d9fe5cd95fb408fc945686cbc298bf55",
+   "mtime": "Tue Oct 20 14:52:50 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_117.mp4",
+   "bytes": 3444865,
+   "sha256": "407834468da7f3828bc06876f406b8e88910e05b6579290759892fd4ee48b0f8",
+   "mtime": "Tue Oct 20 14:52:53 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_118.mp4",
+   "bytes": 3593766,
+   "sha256": "1c8d8e9a90d46455cf83a336df32ac087d941da34091ecbeae933975bc276396",
+   "mtime": "Tue Oct 20 14:52:56 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_119.mp4",
+   "bytes": 3127590,
+   "sha256": "4e54b2336c17cf0945d9c22af0dc8e939cd50a2fe5cc9fa3cd9c5a2f6b366d89",
+   "mtime": "Tue Oct 20 14:52:59 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_12.mp4",
+   "bytes": 3556714,
+   "sha256": "7848adb2d75150959c27cd346285dda732c0c25a03a112c1427da4b8543018ca",
+   "mtime": "Tue Oct 20 14:46:52 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_120.mp4",
+   "bytes": 8417916,
+   "sha256": "0d2457575b104b9da759f51e13895463d08ff553db77adf50da77a328f7aaee7",
+   "mtime": "Tue Oct 20 14:53:03 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_121.mp4",
+   "bytes": 3321925,
+   "sha256": "8420958d8d7110e3a1a0930cdab30d56b7464d5774389a636ca47b7f4a8a4183",
+   "mtime": "Tue Oct 20 14:53:06 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_122.mp4",
+   "bytes": 8113957,
+   "sha256": "2262cff0161481b542dd980b1e62b61e80883bd1ada166a57c0e892cb51c312b",
+   "mtime": "Tue Oct 20 14:53:10 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_123.mp4",
+   "bytes": 2575449,
+   "sha256": "82bd4efe0697c30c327c9afb0d10fdf261b99bc59d9da6e6d06878bcc4bcc223",
+   "mtime": "Tue Oct 20 14:53:13 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_124.mp4",
+   "bytes": 3656559,
+   "sha256": "ed1490f472df2f7aa507e2b6e1b0b24d8c43b1e1deec0a9760ae398314203a6d",
+   "mtime": "Tue Oct 20 14:53:16 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_125.mp4",
+   "bytes": 10263365,
+   "sha256": "177b74851c97c71c3450653db9cd2b596a1b4b9291dbf87e905a343f8defbdd1",
+   "mtime": "Tue Oct 20 14:53:21 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_126.mp4",
+   "bytes": 2607915,
+   "sha256": "ffada2c56955b358b19d588c05f0287bec0b832d90b08bc8c97a1b533ceb65c5",
+   "mtime": "Tue Oct 20 14:53:23 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_127.mp4",
+   "bytes": 3198127,
+   "sha256": "364bab231197561644adf2bd9febd48df39e414de2620baaedcdea1005c56e57",
+   "mtime": "Tue Oct 20 14:53:26 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_128.mp4",
+   "bytes": 16003089,
+   "sha256": "cf63c314e3759cee3f5d908b2a460591dcec89c66ea3906d19050cab86e98af5",
+   "mtime": "Tue Oct 20 14:53:31 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_129.mp4",
+   "bytes": 2173242,
+   "sha256": "163176012749b60826d22b87faa0647b4212a3e86e415fdaf62712500464a028",
+   "mtime": "Tue Oct 20 14:53:34 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_13.mp4",
+   "bytes": 6672397,
+   "sha256": "37091d529d6d8c896f46d6b2110f1bdde35522232f8231954acc4ddc345f86f4",
+   "mtime": "Tue Oct 20 14:46:58 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_130.mp4",
+   "bytes": 3195389,
+   "sha256": "c42f595864da87043cd4419793c8f2ec2a4e9e2730a99f6efa75de218c3ccf89",
+   "mtime": "Tue Oct 20 14:53:37 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_131.mp4",
+   "bytes": 19208377,
+   "sha256": "4792b58024567f7e9d36acd9e46978da24c3bc9837834ec208284ecd48b62342",
+   "mtime": "Tue Oct 20 14:53:41 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_132.mp4",
+   "bytes": 7992317,
+   "sha256": "2dee5ffc449b631b312b605435757e7fc20be5ef2db1fffb816d4db423e91b08",
+   "mtime": "Tue Oct 20 14:53:44 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_133.mp4",
+   "bytes": 3319725,
+   "sha256": "1481fe813253913f0fffa3e7b7c7579a57108d7247b3e4a94cde15ed467b4d3a",
+   "mtime": "Tue Oct 20 14:53:47 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_134.mp4",
+   "bytes": 4791570,
+   "sha256": "f8fab9cf5b9659ede1b408ab9ba1197380a7209cd6aa420aca03b90d7bde3c75",
+   "mtime": "Tue Oct 20 14:53:51 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_135.mp4",
+   "bytes": 3555941,
+   "sha256": "9bcbb0e5e386109692e91909e0b94b7f4e5d94f3c2f59aa0a37e66703dfa9cf3",
+   "mtime": "Tue Oct 20 14:53:54 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_136.mp4",
+   "bytes": 5127378,
+   "sha256": "b4430fb985c2946deddd0ec7a070a540cf158ade1599fdda19c497790bcb1c1e",
+   "mtime": "Tue Oct 20 14:53:56 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_137.mp4",
+   "bytes": 3960610,
+   "sha256": "4200faeb242615c6bfa1080facaace8b4d98bfa9aa052d11a4eff26ab3a837c1",
+   "mtime": "Tue Oct 20 14:53:59 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_138.mp4",
+   "bytes": 9273081,
+   "sha256": "fb818876b2997e49ec811498ad731adba3548b5c2d6cb80cc34db5759f856965",
+   "mtime": "Tue Oct 20 14:54:05 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_139.mp4",
+   "bytes": 5209971,
+   "sha256": "008340f32e3ed12655d04353612a87667ca808b25218df7e9053b57d515bb8a9",
+   "mtime": "Tue Oct 20 14:54:10 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_14.mp4",
+   "bytes": 7988080,
+   "sha256": "3a7ed3f553a8a03542bbaf86557274fa8554bc60fb3ed2ef4f31bfec4b2b113f",
+   "mtime": "Tue Oct 20 14:47:00 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_140.mp4",
+   "bytes": 5297268,
+   "sha256": "f9b46904ea20fcdaec0721f9305803f6e3fe81ee491aa951d96755569041f89d",
+   "mtime": "Tue Oct 20 14:54:14 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_141.mp4",
+   "bytes": 4526179,
+   "sha256": "22c102333378eac27b57cb2f8f37811bfaac3a2979af38c524646540ee4b6976",
+   "mtime": "Tue Oct 20 14:54:19 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_142.mp4",
+   "bytes": 8933616,
+   "sha256": "d95ede2ae579dc3c7c3977713b7e7c6144286af739800de2f62f02973a260e97",
+   "mtime": "Tue Oct 20 14:54:21 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_143.mp4",
+   "bytes": 4276460,
+   "sha256": "e31df9a305f4773165e4fa230497787228c4fc95b09b4f1a8ff07c266b54ded6",
+   "mtime": "Tue Oct 20 14:54:25 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_144.mp4",
+   "bytes": 6231239,
+   "sha256": "9c99a1614985e767cc18d245226bd3992de83d824576a1e92a62e5e35a1bad2b",
+   "mtime": "Tue Oct 20 14:54:28 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_145.mp4",
+   "bytes": 10494982,
+   "sha256": "c40d816b7f5bd4668550d20fdba4e7bdc80fe0e9b6040d64dea7c89d9574df9c",
+   "mtime": "Tue Oct 20 14:54:32 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_146.mp4",
+   "bytes": 15866942,
+   "sha256": "4e8abd1e3f6214e613608515e26aad255d501a5850ba728bdbf845c9eb85bb03",
+   "mtime": "Tue Oct 20 14:54:36 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_147.mp4",
+   "bytes": 10164822,
+   "sha256": "5956765decc4ed7f628e0678df4649f2ecf2c8e64b530f4e251b5d846f074c61",
+   "mtime": "Tue Oct 20 14:54:40 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_148.mp4",
+   "bytes": 15253003,
+   "sha256": "a138a7f8ff69b6e5909e5a6cf245b2f75096ccd215a6278a7a7d0dea078181df",
+   "mtime": "Tue Oct 20 14:54:44 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_149.mp4",
+   "bytes": 3517396,
+   "sha256": "e07ba8198ffd6efae2a85f7512d7ce53b8bc95cbdbdc8a69f492f723fa7f002c",
+   "mtime": "Tue Oct 20 14:54:47 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_15.mp4",
+   "bytes": 23269127,
+   "sha256": "c69f1d92bb3778b9f4e6c170406339fb87fec728a58d3f37dba4d602fe4729fa",
+   "mtime": "Tue Oct 20 14:47:05 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_150.mp4",
+   "bytes": 6738217,
+   "sha256": "a20b19f866097fd0c0fdd2abd3c667ae0892201eee441c5095350d4513a7c47a",
+   "mtime": "Tue Oct 20 14:54:49 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_151.mp4",
+   "bytes": 36167841,
+   "sha256": "fa366eb672c77cc94e68dbcf24915e0005e7c873871babeaf8a3ba2f8a67b0ee",
+   "mtime": "Tue Oct 20 14:54:53 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_152.mp4",
+   "bytes": 3299997,
+   "sha256": "fb3ef05ff676e820c8ee5af2d1dd829063de40c080cdebfa7f9eea79c9c6871a",
+   "mtime": "Tue Oct 20 14:54:56 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_153.mp4",
+   "bytes": 4169208,
+   "sha256": "4026f8c4d13f852ea2fbb6d65b40f3860b782ab866c66e2512419907087de9ac",
+   "mtime": "Tue Oct 20 14:54:59 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_154.mp4",
+   "bytes": 1430313,
+   "sha256": "5ff23aea984111b2be3029caefccf661c9c386edaff32de01983fa21d48d3d90",
+   "mtime": "Tue Oct 20 14:55:01 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_155.mp4",
+   "bytes": 1921580,
+   "sha256": "3e7d989a2a317a1a07c5c50216966289d5d9f98135cffab3fb3783b89deed51e",
+   "mtime": "Tue Oct 20 14:55:02 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_16.mp4",
+   "bytes": 31685804,
+   "sha256": "82a8cf1fa8b0be59092530a84eac9b390e3c9117bb0c8c46407ec43e1abd0ebe",
+   "mtime": "Tue Oct 20 14:47:09 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_17.mp4",
+   "bytes": 5046141,
+   "sha256": "230eec6ab5374b476e7f1c6c67475fb433612150e825527a433f6af8012f6343",
+   "mtime": "Tue Oct 20 14:47:11 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_18.mp4",
+   "bytes": 2911907,
+   "sha256": "6edb5e5d32b68237ed8c51e97a9b7d778f62016f8b8b49fbf2729bdd023c33a5",
+   "mtime": "Tue Oct 20 14:47:14 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_19.mp4",
+   "bytes": 4203387,
+   "sha256": "759d3d0607acdccc241b96393859abe2265bd2585807e7a20a7d05f385566c95",
+   "mtime": "Tue Oct 20 14:47:17 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_20.mp4",
+   "bytes": 5585723,
+   "sha256": "a5fe5c328986f7c8991bf6ff4aa16ef77a9225910771a427f3f79756ff9a20c8",
+   "mtime": "Tue Oct 20 15:18:57 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_21.mp4",
+   "bytes": 36017648,
+   "sha256": "654250ffec185c786a616c7f2971817b6f430e4ba0c5375b6b551c8c6675b2b1",
+   "mtime": "Tue Oct 20 14:47:27 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_22.mp4",
+   "bytes": 9139692,
+   "sha256": "f98ea5a7d3c964892964044f7ff6112d94f12459fc52f12991c47a3fd1bc6aaf",
+   "mtime": "Tue Oct 20 14:47:29 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_23.mp4",
+   "bytes": 2291118,
+   "sha256": "86f6e1e4e420a02ad6a02631137592d658cdd852a068e92622aeefbcff08a5bb",
+   "mtime": "Tue Oct 20 14:47:31 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_24.mp4",
+   "bytes": 22479559,
+   "sha256": "bafff64e15e0da6cf98fa134d60ada0379c6838bb499dd6958e2c411ae673d73",
+   "mtime": "Tue Oct 20 14:47:38 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_25.mp4",
+   "bytes": 4356676,
+   "sha256": "5d8725d8ea4743c158be629b87bf194deae07c0926448dc8aa3d5e24fa7a3ef2",
+   "mtime": "Tue Oct 20 14:47:42 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_26.mp4",
+   "bytes": 4922148,
+   "sha256": "a5351d294c01c90401a9592a53bab2e1d558f2c6c79f22933ade5a86a0309428",
+   "mtime": "Tue Oct 20 14:47:45 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_27.mp4",
+   "bytes": 4806313,
+   "sha256": "f34574c3381e58daffc58afdc904f2e3e3676da76d93c98ced835eafb6162f54",
+   "mtime": "Tue Oct 20 14:47:47 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_28.mp4",
+   "bytes": 1807064,
+   "sha256": "93ef39cebcd4ae88b194db085dc2095e0ab542630f3c4aecbe485754a84159d2",
+   "mtime": "Tue Oct 20 14:47:49 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_29.mp4",
+   "bytes": 36326036,
+   "sha256": "8fabcdd8072cd2064aab156efe14940e212485810efde0d5df09087266f2e73b",
+   "mtime": "Tue Oct 20 14:47:54 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_30.mp4",
+   "bytes": 5290233,
+   "sha256": "5d13fa559fd8a88cf29f5a2416592f75ad948a143334a624b4da209cf590a658",
+   "mtime": "Tue Oct 20 14:47:57 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_31.mp4",
+   "bytes": 1813250,
+   "sha256": "15f3530b752e6cea8bfc03a05dde390eda0da24eb38328bbfe454e687774c6f5",
+   "mtime": "Tue Oct 20 14:47:58 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_32.mp4",
+   "bytes": 6830810,
+   "sha256": "ffc72e6432e768f7f2471f41ce6d7634c54b2a7c60d1622c4d1988c869c0a22f",
+   "mtime": "Tue Oct 20 15:19:02 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_33.mp4",
+   "bytes": 4323650,
+   "sha256": "4645e07285dfd377315b762a071daf5e3d08132ea249c3e7efb0aa908a50ab35",
+   "mtime": "Tue Oct 20 14:48:06 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_34.mp4",
+   "bytes": 6605465,
+   "sha256": "1d2ce47d628c53f2b5f7ed33e9b9abec2d94619893f3b0d7e5da0bd41dffa764",
+   "mtime": "Tue Oct 20 14:48:09 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_35.mp4",
+   "bytes": 3127415,
+   "sha256": "392ce58b673bb2d74332cfe4f67d43917c1c54169c053907dfafe9c4385fcf1c",
+   "mtime": "Tue Oct 20 14:48:12 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_36.mp4",
+   "bytes": 3731218,
+   "sha256": "f30277e5dba4ad5835fb4c93e8cb55e2ed0df274a13c97fe19f952bede2c1a3f",
+   "mtime": "Tue Oct 20 14:48:16 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_37.mp4",
+   "bytes": 8600676,
+   "sha256": "642bc5c23ba459e70a32d2639d93bddcf220a827d9bb26a4e53c782d99dfd1e5",
+   "mtime": "Tue Oct 20 14:48:19 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_38.mp4",
+   "bytes": 4857380,
+   "sha256": "ff501112d0b196af137ec218d04c82ea11330ee32011178b59438b9a2440c675",
+   "mtime": "Tue Oct 20 15:19:05 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_39.mp4",
+   "bytes": 14021682,
+   "sha256": "dba15421eb47f7e6eea8af0b68cc840ebc559622d538817d03e2e493b52059ff",
+   "mtime": "Tue Oct 20 14:48:28 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_40.mp4",
+   "bytes": 2449619,
+   "sha256": "df48e9601a9e1f25fd8c73f3693f1aa6e12aa1be0f52de6047b89ac967805d42",
+   "mtime": "Tue Oct 20 15:19:09 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_41.mp4",
+   "bytes": 15835668,
+   "sha256": "7e729c66453c0e667d73ae6aef601268e16d8b53e9c37f86f4d3469be4d520e3",
+   "mtime": "Tue Oct 20 14:48:34 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_42.mp4",
+   "bytes": 8159920,
+   "sha256": "8ba7f8f8035c43339f221e1174b60812d242c9bbafdce39961083f1363314c26",
+   "mtime": "Tue Oct 20 14:48:39 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_43.mp4",
+   "bytes": 1352418,
+   "sha256": "33c8ddf6ee251421354bf42df02efa4a72d22012da8de7813e4550b70a718132",
+   "mtime": "Tue Oct 20 14:48:40 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_44.mp4",
+   "bytes": 2717044,
+   "sha256": "661b6848796c836aa14b83dd59250e9ddb4a3facb11a65e34ae3b527bcdbee24",
+   "mtime": "Tue Oct 20 14:48:43 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_45.mp4",
+   "bytes": 7368581,
+   "sha256": "05d35db360162abbae106fd35c5194a2479b7965d529c560782342a97eccb0df",
+   "mtime": "Tue Oct 20 15:19:13 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_46.mp4",
+   "bytes": 5064754,
+   "sha256": "0636c8fcc229510efa8002864a2bc5210ada12eaecb034c6631dbd4d076ffa35",
+   "mtime": "Tue Oct 20 14:48:52 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_47.mp4",
+   "bytes": 649316,
+   "sha256": "f4b65ccba5a2580854ff280ac522c90382f611e6dc5cbab39edf3e8c8d95f47e",
+   "mtime": "Tue Oct 20 14:48:53 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_48.mp4",
+   "bytes": 12735645,
+   "sha256": "4248d8d02d2a5ae5c0b2c0a906229e3c52f54941c883fd1e81935baaecb534fb",
+   "mtime": "Tue Oct 20 14:48:56 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_49.mp4",
+   "bytes": 6421617,
+   "sha256": "384962f2e284236dd9058e2e8b1f4d7879ccf2cbd8852163a68385af8aded30e",
+   "mtime": "Tue Oct 20 14:49:00 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_50.mp4",
+   "bytes": 3127426,
+   "sha256": "1692d4634590858e9849327c37421f5f3225a48e3ab9355f7776eadfbfdbd97b",
+   "mtime": "Tue Oct 20 14:49:03 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_51.mp4",
+   "bytes": 30715277,
+   "sha256": "cfe45cfcdceca97d3fe54461a7b3e6dc1ab0b6dd8a499c524afd99c624f857ab",
+   "mtime": "Tue Oct 20 14:49:07 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_52.mp4",
+   "bytes": 8446139,
+   "sha256": "d1294c3b2781742a3ff56477b987ae4ce9707c199bbea125d204ad672f4ed3cf",
+   "mtime": "Tue Oct 20 14:49:12 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_53.mp4",
+   "bytes": 4535253,
+   "sha256": "57d5985c1433d7e6d5bfe8af4e04197cdf52322663dc6e7a006eee4d444594fe",
+   "mtime": "Tue Oct 20 14:49:17 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_54.mp4",
+   "bytes": 3280958,
+   "sha256": "f15e8ab6fb5445a064944fd7d1d578a4eb34ede4d892fa45776ca4ea84f11961",
+   "mtime": "Tue Oct 20 14:49:20 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_55.mp4",
+   "bytes": 5385454,
+   "sha256": "1a73a9a5ac0773b24e141326846763545386799d31e34ffc0219fe4fe0337b8a",
+   "mtime": "Tue Oct 20 15:19:17 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_56.mp4",
+   "bytes": 4879977,
+   "sha256": "eb49df491e8af7c0fa829cdb41cfb02ebeb12e6723bcb04fdf06d1d337bfb69d",
+   "mtime": "Tue Oct 20 14:49:27 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_57.mp4",
+   "bytes": 17806643,
+   "sha256": "ce09acd256a59f9e3102a19feb9c0bb24c1b6a178a4d280d8264cd777d358898",
+   "mtime": "Tue Oct 20 14:49:31 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_58.mp4",
+   "bytes": 4474293,
+   "sha256": "de4946d17710115d9aa197150d7557bc168b77d1de0411c5c4e40d9b7e53441b",
+   "mtime": "Tue Oct 20 14:49:35 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_59.mp4",
+   "bytes": 5220463,
+   "sha256": "d551c41eebc8bc09aefea6a72a825b47176385f36987d385d3e5e41236646c87",
+   "mtime": "Tue Oct 20 14:49:38 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_60.mp4",
+   "bytes": 2436669,
+   "sha256": "0675a117b0b5c094dce89383e20c824f1063eff2b0edb1748a8f120b714d3dce",
+   "mtime": "Tue Oct 20 14:49:40 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_61.mp4",
+   "bytes": 7302870,
+   "sha256": "748fc986d335bcd2ac682d9990956aae6e2a68b97bc183a35f2579735d1d544c",
+   "mtime": "Tue Oct 20 14:49:47 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_62.mp4",
+   "bytes": 1458071,
+   "sha256": "871552d450fbe4fcc2f6fce63cda327152554d1063663bfc0212684d54a5e56d",
+   "mtime": "Tue Oct 20 14:49:49 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_63.mp4",
+   "bytes": 3252212,
+   "sha256": "c2a44cd18d364d482bac86f20701775a2d7cebe8b20e59dfd3eddae410bccd00",
+   "mtime": "Tue Oct 20 14:49:53 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_64.mp4",
+   "bytes": 1052960,
+   "sha256": "f556ab768e0183bce525c8f888cfc8ed32c584d1cac9a6955d039797f42586e2",
+   "mtime": "Tue Oct 20 14:49:54 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_65.mp4",
+   "bytes": 5740591,
+   "sha256": "079115dad405af32f960abc23c89169dd646fcc585e7dd53daceeda60e1662de",
+   "mtime": "Tue Oct 20 14:50:00 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_66.mp4",
+   "bytes": 5574919,
+   "sha256": "d762a9646abc646b4c719691a014468c13e1150a8b8ede64b4c8007b4d938fda",
+   "mtime": "Tue Oct 20 14:50:03 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_67.mp4",
+   "bytes": 4196697,
+   "sha256": "5c9a913e08218d6360976f5b88fe7afa98f52f9a79818688b2c9735205824545",
+   "mtime": "Tue Oct 20 14:50:06 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_68.mp4",
+   "bytes": 5534011,
+   "sha256": "55fa5db0198b10a72a02bb1de72d55b0c1c516c62e885030259d4433b60701fd",
+   "mtime": "Tue Oct 20 14:50:12 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_69.mp4",
+   "bytes": 7612564,
+   "sha256": "630b4fd3ab055196cc3bd7ab8794add5a4017eacf090eb8d97ee1b3b9dff2e99",
+   "mtime": "Tue Oct 20 14:50:15 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_70.mp4",
+   "bytes": 2055324,
+   "sha256": "f95671f17be6c8aab0ff49e4a37dda79baab1b37f7ca1733cadeb0bfd930f450",
+   "mtime": "Tue Oct 20 15:19:20 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_71.mp4",
+   "bytes": 4060184,
+   "sha256": "1f7af120d150eb4ad0fcbeecba879770a2bab0961566ad27128a2243af778801",
+   "mtime": "Tue Oct 20 14:50:22 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_72.mp4",
+   "bytes": 3172640,
+   "sha256": "e773429e3a29acce63289d4208be8d740716720f53b106b9b20bbb57b8c82ea9",
+   "mtime": "Tue Oct 20 14:50:26 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_73.mp4",
+   "bytes": 2778591,
+   "sha256": "98c6ffa0c62305ee66e18b1d648075e9bbfe13837d7f2fb2c224f1897f3a98ba",
+   "mtime": "Tue Oct 20 14:50:29 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_74.mp4",
+   "bytes": 14058884,
+   "sha256": "1dddca46adf0ef85a1bd4095fa24b26956d3353b26a8b5b00f1efca542fbe643",
+   "mtime": "Tue Oct 20 14:50:36 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_75.mp4",
+   "bytes": 3728762,
+   "sha256": "b56f507cb0fd204532301f0cba9488fb64a49c282a004a960d0fdc5a79f13912",
+   "mtime": "Tue Oct 20 14:50:39 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_76.mp4",
+   "bytes": 1014160,
+   "sha256": "05a3d3a55e5ba0c79fd12ebcbdc98beebb40ab8dfb35b754e498cbb41cc3489e",
+   "mtime": "Tue Oct 20 14:50:40 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_77.mp4",
+   "bytes": 2651495,
+   "sha256": "d4d25d2d84e40702c21041b56e46b59c5664282ca3987ff12b4848da4c17757d",
+   "mtime": "Tue Oct 20 14:50:43 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_78.mp4",
+   "bytes": 13548412,
+   "sha256": "f81026d71e629e73ca7d1a57fd2976bd762c22f8e23bf8750f2a3df825832c48",
+   "mtime": "Tue Oct 20 14:50:51 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_79.mp4",
+   "bytes": 15005229,
+   "sha256": "69c2e49b660e373e5dc34a3a0d811fdf9c3797fe004f916f82694b97dc6f24f0",
+   "mtime": "Tue Oct 20 14:50:53 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_80.mp4",
+   "bytes": 2357613,
+   "sha256": "47a1c85463de97df38f66402e4618ec48b1452a37c6469bd1071fe59baa512db",
+   "mtime": "Tue Oct 20 14:50:56 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_81.mp4",
+   "bytes": 5805921,
+   "sha256": "a30ce1d8a068424b0e05598258a9273410763d80935e244dd9aedacc874579ee",
+   "mtime": "Tue Oct 20 14:51:00 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_82.mp4",
+   "bytes": 4623920,
+   "sha256": "640e84a1c50e8ea36ee41eea9e9f04fa54c2d3ffd91f865a2185ff50f8603b4b",
+   "mtime": "Tue Oct 20 14:51:04 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_83.mp4",
+   "bytes": 9652312,
+   "sha256": "3bb291ed135fbafd235c798467ea3fe77fb7a80fe964c8703c59ffdc4078d049",
+   "mtime": "Tue Oct 20 14:51:09 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_84.mp4",
+   "bytes": 3298967,
+   "sha256": "1b9acec2d04d67f419fb653020688f946b196cc5661740d81ea6dcbfffaadc95",
+   "mtime": "Tue Oct 20 14:51:12 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_85.mp4",
+   "bytes": 6211666,
+   "sha256": "aaa728f398f71eb82d39e6dd4cc3f922b96f138a470e13ad1293104c65a28e68",
+   "mtime": "Tue Oct 20 14:51:15 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_86.mp4",
+   "bytes": 2476203,
+   "sha256": "f32eaac02a1b731ab683a480a336f312fbcc8512230eb1723b6ff8312f2dcbca",
+   "mtime": "Tue Oct 20 14:51:19 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_87.mp4",
+   "bytes": 2783645,
+   "sha256": "fde4d211fa89fc2e0aa4a788b238c381987a4c5eefe00fbe7577e510e19df7e8",
+   "mtime": "Tue Oct 20 14:51:21 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_88.mp4",
+   "bytes": 3314912,
+   "sha256": "d53d31c26ca32df7316cd01673ad1977f9f36955860baa9145b119be9a675c2e",
+   "mtime": "Tue Oct 20 14:51:25 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_89.mp4",
+   "bytes": 5015320,
+   "sha256": "4a063b45fa0cb52d4edfe568b2d41a73aab89bbfb50f4fb0c0b4482c9943b072",
+   "mtime": "Tue Oct 20 14:51:29 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_90.mp4",
+   "bytes": 3054503,
+   "sha256": "3126e14f9625e83a95eab5b2e3c965b0ebbca93526b388f8e854ef63fa720698",
+   "mtime": "Tue Oct 20 14:51:31 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_91.mp4",
+   "bytes": 2555182,
+   "sha256": "502f24be157d318b47b3a0c20ed28aa2105e1300f9781d04360aebbc25d259a5",
+   "mtime": "Tue Oct 20 14:51:33 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_92.mp4",
+   "bytes": 4644606,
+   "sha256": "fa7e3f58e6087bbc382338ed6909c719b1145fd44d3a4f8ac9cb0544ace413a3",
+   "mtime": "Tue Oct 20 14:51:38 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_93.mp4",
+   "bytes": 1433467,
+   "sha256": "270879315307690eeb1ddb4852e8eec0c4ccdb9ef6e7bd7ee6edf7740f0f8c77",
+   "mtime": "Tue Oct 20 14:51:39 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_94.mp4",
+   "bytes": 1725079,
+   "sha256": "ea7bb8231a4171fe8184151c64c651ec9875deec5c3d1d93e7d28b4781a9f9a0",
+   "mtime": "Tue Oct 20 14:51:40 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_95.mp4",
+   "bytes": 5424759,
+   "sha256": "c80b4e0eb31cfab79fcdec72d75e33548a8c2c3880f99aac93020dde98185116",
+   "mtime": "Tue Oct 20 14:51:45 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_96.mp4",
+   "bytes": 7087837,
+   "sha256": "1c7255aefcabc11ac93bf5be31536756bc8c2f5ac8c38accaced9691085892b2",
+   "mtime": "Tue Oct 20 14:51:51 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_97.mp4",
+   "bytes": 2215093,
+   "sha256": "3dcaacbbe2c43c188ae5f89799bb4cc57259eec48b432b7cfb6fe496dca5304b",
+   "mtime": "Tue Oct 20 14:51:53 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_98.mp4",
+   "bytes": 5481391,
+   "sha256": "ff2aa8476756181835eb6c9a79525d62dfdd748f0205c095e76d798f5ccd7133",
+   "mtime": "Tue Oct 20 14:51:56 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/finance_f4/k70_f4_bitcoin_ep01_cinematic/scene_99.mp4",
+   "bytes": 2720801,
+   "sha256": "00fb535737ff327b419cc380ed3a32c4699830074dd3db11f116223323e9e3b2",
+   "mtime": "Tue Oct 20 14:51:59 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/cache/52291465ce60fab116eec382d78dc885e99a8b73.webm",
+   "bytes": 252863535,
+   "sha256": "fc53fa21f3323f7409930cc9810a28e6f4ec8a2a6a003dbe7eb1349bd60252c1",
+   "mtime": "Tue Oct 20 14:26:59 2026"
+  },
+  {
+   "path": "/home/kadir70/shorts-factory/data/cache/897a9403356bd1f7159be63de4406ae25a3cc811.webm",
+   "bytes": 73269987,
+   "sha256": "84fa64b259aed3a12390ee86f835694804ea5adb48c7a4acc201e28792f80468",
+   "mtime": "Tue Oct 20 14:23:18 2026"
+  },
+  {
+   "path": "/home/kadir70/.cache/whisper/small.pt",
+   "bytes": 483617219,
+   "sha256": "9ecf779972d90ba49c06d968637d720dd632c55bbf19d441fb42bf17a411e794",
+   "mtime": "Fri Oct  9 04:14:50 2026"
+  }
+ ]
+}

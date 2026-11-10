@@ -1,0 +1,39 @@
+name: Automan Real Estate Reels QA
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/real_estate_ads/**'
+      - '.github/workflows/real-estate-reels-qa.yml'
+  push:
+    branches: [feat/automan-real-estate-reels]
+    paths:
+      - 'scripts/real_estate_ads/**'
+      - '.github/workflows/real-estate-reels-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    name: Claims / rights gate + offline render
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install render dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-lato
+          python -m pip install 'Pillow>=10,<13'
+      - name: Python compile and 8 policy tests
+        run: |
+          python -m py_compile scripts/real_estate_ads/render.py
+          python scripts/real_estate_ads/tests/test_real_estate_ads.py -v
+      - name: Render 15-second test with synthetic fixture images only
+        run: python scripts/real_estate_ads/tests/smoke_render.py

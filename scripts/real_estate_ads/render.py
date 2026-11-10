@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Consent-gated, fact-locked 9:16 real-estate Reels composer.
 
-Uses locally provided, appropriately licensed developer renders; never substitutes
-unrelated stock or generated property images. FFmpeg, Pillow, Python 3.10+.
+Images come only from the manifest's ``image_slots``. A slot with no supplied file is
+PENDING_ASSET: drafts show a neutral "IMAGE PENDING" frame, public exports are blocked.
+Never substitutes stock, placeholder property or synthetic images. FFmpeg, Pillow, Python 3.10+.
 """
 from __future__ import annotations
 
@@ -27,6 +28,14 @@ REGULAR = next((Path(p) for p in (
     "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
 ) if Path(p).is_file()), FONT)
 WIDTH, HEIGHT, FPS = 1080, 1920, 30
+PENDING, APPROVED = "PENDING_ASSET", "APPROVED"
+SLOT_STATUSES = {PENDING, "PROVIDED", APPROVED}
+SLOT_KINDS = {"developer_render", "ai_generated"}
+DISCLOSURE = {
+    None: "IMAGE PENDING · Draft placeholder, no property image",
+    "developer_render": "Developer render · Illustrative · Subject to change",
+    "ai_generated": "AI-generated illustration · Not a photo of Azizi Florence",
+}
 BANNED = re.compile(r"(guaranteed\s+(?:return|rental|roi)|last\s+\d+\s+units|payment\s+plan\s+(?:verified|confirmed)|handover\s+(?:guaranteed|confirmed)|villa\s+from\s+aed\s*2[.,]?09\s*m)", re.I)
 
 
@@ -46,6 +55,11 @@ def validate(manifest: dict, duration: int, public: bool, permit: str, rights: b
         raise ValueError("Starting price must match verified broker page; reconfirm before paid release")
     if public and (not rights or not price or not permit.strip()):
         raise ValueError("Paid/public output blocked: confirm commercial render rights, current price, and applicable ad/permit ID")
+    slots = manifest.get("image_slots")
+    if not isinstance(slots, dict) or not slots:
+        raise ValueError("Manifest needs an image_slots map")
+    for slot_id, slot in slots.items():
+        validate_slot(slot_id, slot)
     scenes = manifest.get("scenes", [])
     scenes = [s for s in scenes if duration in s.get("variants", [30])]
     if len(scenes) < 3 or sum(s["seconds"] for s in scenes) != duration:
@@ -54,9 +68,66 @@ def validate(manifest: dict, duration: int, public: bool, permit: str, rights: b
         combined = " ".join(str(s.get(k, "")) for k in ("headline", "sub", "narration"))
         if BANNED.search(combined):
             raise ValueError("Prohibited or unsupported real-estate claim: " + combined)
-        if not re.fullmatch(r"[\w-]+\.\w{3,5}", s.get("asset", "")):
-            raise ValueError("Asset must be a simple filename inside the supplied assets directory")
+        if s.get("slot") not in slots:
+            raise ValueError(f"Scene references unknown image slot: {s.get('slot')!r}")
+    if public:
+        blockers = slot_blockers(slots, scenes)
+        if blockers:
+            raise ValueError("Paid/public output blocked by image slots:\n  " + "\n  ".join(blockers))
     return scenes
+
+
+def validate_slot(slot_id: str, slot: dict) -> None:
+    file = slot.get("file")
+    if file is not None and not re.fullmatch(r"[\w-]+\.\w{3,5}", str(file)):
+        raise ValueError(f"Slot {slot_id}: file must be a simple filename inside the supplied assets directory")
+    if slot.get("kind") not in SLOT_KINDS | {None}:
+        raise ValueError(f"Slot {slot_id}: kind must be one of {sorted(SLOT_KINDS)}")
+    if slot.get("status") not in SLOT_STATUSES:
+        raise ValueError(f"Slot {slot_id}: status must be one of {sorted(SLOT_STATUSES)}")
+    if file is None and slot.get("status") != PENDING:
+        raise ValueError(f"Slot {slot_id}: a slot without a file must stay {PENDING}")
+    if file is not None and slot.get("kind") is None:
+        raise ValueError(f"Slot {slot_id}: set kind (developer_render or ai_generated) when supplying a file")
+
+
+def slot_blockers(slots: dict, scenes: list[dict]) -> list[str]:
+    """Reasons the slots used by these scenes are not cleared for public export."""
+    blockers = []
+    for slot_id in dict.fromkeys(s["slot"] for s in scenes):
+        slot = slots[slot_id]
+        if slot.get("file") is None or slot.get("status") == PENDING:
+            blockers.append(f"{slot_id}: {PENDING}")
+            continue
+        if slot.get("status") != APPROVED or not slot.get("approved"):
+            blockers.append(f"{slot_id}: image not approved")
+        if not slot.get("rights_cleared"):
+            blockers.append(f"{slot_id}: rights not cleared")
+        if slot.get("kind") == "ai_generated" and not slot.get("ai_disclosure"):
+            blockers.append(f"{slot_id}: AI-generated image needs ai_disclosure=true")
+    return blockers
+
+
+def resolve_slot(slot: dict, assets: Path | None) -> Path | None:
+    """Path of the supplied image, or None when the slot is still PENDING_ASSET."""
+    if slot.get("file") is None or slot.get("status") == PENDING or assets is None:
+        return None
+    path = assets / slot["file"]
+    return path if path.is_file() else None
+
+
+def placeholder(slot_id: str, description: str, output: Path) -> None:
+    """Neutral blank frame for a draft preview. Deliberately not a property image."""
+    image = Image.new("RGB", (WIDTH, HEIGHT), "#3B3F45")
+    d = ImageDraw.Draw(image)
+    d.rectangle((60, 60, WIDTH - 60, 1000), outline="#6E737A", width=4)
+    label = "IMAGE PENDING"
+    w = d.textbbox((0, 0), label, font=font(84))[2]
+    d.text(((WIDTH - w) // 2, 430), label, font=font(84), fill="#C9CCD1")
+    for i, line in enumerate((f"slot: {slot_id}", description)):
+        w = d.textbbox((0, 0), line, font=font(34, True))[2]
+        d.text(((WIDTH - w) // 2, 560 + i * 52), line, font=font(34, True), fill="#9A9EA5")
+    image.save(output)
 
 
 def wrap_text(draw: ImageDraw.ImageDraw, text: str, text_font, max_width: int) -> list[str]:
@@ -74,7 +145,8 @@ def wrap_text(draw: ImageDraw.ImageDraw, text: str, text_font, max_width: int) -
     return result
 
 
-def card(scene: dict, output: Path, is_public: bool, permit: str, duration: int) -> None:
+def card(scene: dict, output: Path, is_public: bool, permit: str, duration: int,
+         kind: str | None = None) -> None:
     canvas = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
     d = ImageDraw.Draw(canvas)
     # Custom premium navy vignette below the image. Keep property details visible.
@@ -100,7 +172,7 @@ def card(scene: dict, output: Path, is_public: bool, permit: str, duration: int)
             y += 55
     footer_y = 1665
     d.text((80, footer_y), "Azizi Florence  |  Um Fanain, Sharjah", font=font(28, True), fill="#F8F0E5")
-    d.text((80, footer_y + 43), "Developer renders · Illustrative · Subject to change", font=font(23, True), fill="#D9D0C2")
+    d.text((80, footer_y + 43), DISCLOSURE[kind], font=font(23, True), fill="#D9D0C2")
     if scene.get("price"):
         d.text((80, 1620), "*Current pricing and availability subject to confirmation", font=font(22, True), fill="#EEE2D2")
     if is_public:
@@ -153,17 +225,20 @@ def render_scene(image: Path, overlay: Path, seconds: int, output: Path,
           "-c:v", "libx264", "-preset", "veryfast", "-crf", "22", "-pix_fmt", "yuv420p", "-r", str(FPS), str(output)])
 
 
-def render(manifest: Path, assets: Path, output: Path, duration: int, public: bool,
+def render(manifest: Path, assets: Path | None, output: Path, duration: int, public: bool,
            permit: str, rights: bool, price: bool, voiceover: Path | None,
            preview_scale: float) -> None:
     if not shutil.which("ffmpeg") or not shutil.which("ffprobe"):
         raise RuntimeError("Install FFmpeg and ffprobe")
     data = json.loads(manifest.read_text(encoding="utf-8"))
     scenes = validate(data, duration, public, permit, rights, price)
-    for scene in scenes:
-        p = assets / scene["asset"]
-        if not p.is_file():
-            raise FileNotFoundError(f"Missing LICENSED project render: {p}. Do not substitute unrelated stock.")
+    slots = data["image_slots"]
+    images = {sid: resolve_slot(slots[sid], assets) for sid in dict.fromkeys(s["slot"] for s in scenes)}
+    missing = [sid for sid, path in images.items() if path is None]
+    if public and missing:
+        raise FileNotFoundError("Public export blocked, image files not found for slots: " + ", ".join(missing))
+    for sid, path in images.items():
+        print(f"  slot {sid:<22} {PENDING if path is None else slots[sid]['status'] + ' ' + path.name}")
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="realestate_reels_") as folder:
         temp = Path(folder)
@@ -171,8 +246,14 @@ def render(manifest: Path, assets: Path, output: Path, duration: int, public: bo
         for idx, scene in enumerate(scenes, start=1):
             overlay = temp / f"card_{idx}.png"
             clip = temp / f"clip_{idx}.mp4"
-            card(scene, overlay, public, permit, duration)
-            render_scene(assets / scene["asset"], overlay, scene["seconds"], clip,
+            image = images[scene["slot"]]
+            if image is None:
+                image = temp / f"pending_{scene['slot']}.png"
+                if not image.exists():
+                    placeholder(scene["slot"], slots[scene["slot"]].get("description", ""), image)
+            kind = slots[scene["slot"]].get("kind") if images[scene["slot"]] else None
+            card(scene, overlay, public, permit, duration, kind)
+            render_scene(image, overlay, scene["seconds"], clip,
                          preview_scale, bool(scene.get("price")))
             clips.append(clip)
         concat = temp / "concat.txt"
@@ -191,12 +272,14 @@ def render(manifest: Path, assets: Path, output: Path, duration: int, public: bo
         call(cmd)
     print("Created", output, f"({duration}s, {int(preview_scale * WIDTH)}px target width)")
     print("Mode:", "PUBLIC-CREATIVE-READY; platform/legal review still required" if public else "DRAFT ONLY")
+    if missing:
+        print(f"{len(missing)} image slot(s) {PENDING}: draft shows IMAGE PENDING frames")
 
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--manifest", type=Path, default=ROOT / "examples" / "azizi-florence.json")
-    p.add_argument("--assets-dir", type=Path, required=True, help="Local, commercially licensed developer renders")
+    p.add_argument("--assets-dir", type=Path, help="Folder holding the files named in image_slots; omit for an all-pending draft")
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--duration", type=int, choices=(15, 30), default=30)
     p.add_argument("--voiceover", type=Path)

@@ -4,10 +4,31 @@ This is an **additive, opt-in real-estate ad compositor** for the K70 shorts-fac
 
 The **live Automan property page** is the source of the broker-advertised facts: https://automanstarrealty.com/properties/azizi-florence . This project is in **Um Fanain, Sharjah**, not Dubai. **AED 2.09M refers to the broker's indicated project starting price; it is NOT a guaranteed price for a villa**. Developer rendering, pricing, availability and payment-plan information are expressly subject to confirmation. No unsupported ROI, payment plan, handover date, shortages, or guaranteed results are asserted.
 
+## Image slots (all blank for now)
+
+Every image the Reel uses comes from `image_slots` in `examples/azizi-florence.json`. **All slots ship empty
+(`"file": null`, `"status": "PENDING_ASSET"`).** Nothing is generated, downloaded or substituted.
+
+- **Draft render with no images:** each pending slot becomes a neutral grey frame labelled `IMAGE PENDING` plus the
+  slot id. Typography, navy/gold styling, the price counter and the CTA render normally. `--assets-dir` is optional.
+- **To add an approved image:** copy the file into your assets folder and edit only that slot:
+
+  ```json
+  "azizi_aerial": { "file": "aerial-v2.jpg", "kind": "developer_render", "status": "APPROVED",
+                    "approved": true, "rights_cleared": true, "ai_disclosure": false, ... }
+  ```
+
+  `kind` is `developer_render` or `ai_generated`. Use status `PROVIDED` while an image is in review.
+- **AI-generated images** are always captioned "AI-generated illustration · Not a photo of Azizi Florence" and need
+  `"ai_disclosure": true` before public export. Never mark an AI image as `developer_render`.
+- **Public export is blocked** unless every slot the chosen 15s/30s cut uses is `APPROVED`, `approved` and
+  `rights_cleared`, the file exists on disk, and the three operator clearance flags below are set.
+- The starting price stays **indicative, pending confirmation** (`price_status` in the manifest).
+
 ## Before using imagery in paid advertising
 
 1. Obtain written proof Automan is authorized to use and adapt the **nine developer renders in commercial social media ads**, including voiceover, text overlays and crops. The publicly readable image URLs are listed as provenance in `examples/azizi-florence.json` but **no image is downloaded automatically**, and **none are redistributed in this repo**.
-2. Place legitimately obtained/licensed files in `assets/` with the *exact filenames* in the manifest. Do not insert generic villa footage as though it depicts Azizi Florence.
+2. Place legitimately obtained/licensed files in your assets folder and reference them from the matching `image_slots` entry. Do not insert generic villa footage as though it depicts Azizi Florence.
 3. Have the broker confirm **latest unit-specific pricing and availability**, review the advertised *from* figure, and obtain the relevant **Sharjah real-estate advertising clearance and any UAE/Dubai permits or agency identifiers** required for this specific ad and account. No invented permit numbers.
 4. Confirm Automan has permission to use the brand name and project materials. Legal/regulatory checks must be done by the broker or qualified adviser.
 5. If voiceover is needed, supply a properly licensed/released master audio file. No third-party voice clone or copyrighted music is bundled.
@@ -18,17 +39,18 @@ Requires Python 3.10+, Pillow, FFmpeg + ffprobe, and a font such as Lato:
 
 ```bash
 python -m pip install Pillow
-# Place licensed source images into ./assets using the names from the manifest.
-python scripts/real_estate_ads/render.py \
-  --assets-dir ./assets --output ./previews/azizi-florence-30-draft.mp4
-python scripts/real_estate_ads/render.py \
-  --assets-dir ./assets --duration 15 --output ./previews/azizi-florence-15-draft.mp4
+# Blank-image drafts (all slots PENDING_ASSET):
+python scripts/real_estate_ads/render.py --output ./previews/azizi-florence-30-draft.mp4
+python scripts/real_estate_ads/render.py --duration 15 --output ./previews/azizi-florence-15-draft.mp4
+# Once approved files exist and the slots are filled in:
+python scripts/real_estate_ads/render.py --assets-dir ./assets --output ./previews/azizi-florence-30-draft.mp4
 ```
 
-**Dry-run quality smoke test** (only with synthetic fixture images, never as final marketing material):
+**Tests** (no images used; drafts render with IMAGE PENDING frames):
 
 ```bash
 python scripts/real_estate_ads/tests/test_real_estate_ads.py
+python scripts/real_estate_ads/tests/smoke_render.py   # 15s + 30s blank-image drafts
 ```
 
 For faster draft QA, pass `--preview-scale 0.5`. Normal mode exports 1080×1920 at 30 fps. Provide `--voiceover ./voiceover.wav` to embed narration; otherwise output includes silent AAC. Compositing is always offline and asset-provenance-locked.

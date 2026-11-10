@@ -1,79 +1,200 @@
 {
-  "schema_version": "real-estate-ad-1",
+  "schema_version": "real-estate-ad-2",
   "client": "Automan Star Real Estate",
   "project": "Azizi Florence",
   "developer": "Azizi Developments",
   "location": "Um Fanain, Sharjah",
   "starting_price_aed": 2090000,
+  "price_status": "indicative_pending_confirmation",
   "price_scope": "Indicative project starting price, not the price of every villa or townhouse",
   "landing_url": "https://automanstarrealty.com/properties/azizi-florence",
-  "artwork_disclosure": "Developer renders; illustrative. Pricing, availability and payment plans subject to confirmation",
+  "artwork_disclosure": "Images illustrative. Pricing, availability and payment plans subject to confirmation",
   "rights": "Client must confirm commercial social media use and alteration rights for each supplied render",
-  "source_urls": {
-    "azizi_villa_exterior.jpg": "https://automanstarrealty.com/api/media/e8efba07-cff5-4492-a40b-91987b1cdd06",
-    "azizi_townhouses.jpg": "https://automanstarrealty.com/api/media/294b81b8-39a2-467f-9ac2-8801ec1233f6",
-    "azizi_aerial.jpg": "https://automanstarrealty.com/api/media/34552e26-cc00-43ef-b0e7-fa6c00a51c37",
-    "azizi_villa_roof.jpg": "https://automanstarrealty.com/api/media/eee3f261-34f3-4af9-9663-dceda9c4b298",
-    "azizi_garden.jpg": "https://automanstarrealty.com/api/media/e54b9e8d-d86b-4f1e-ac1a-3f453bd0112a",
-    "azizi_living.jpg": "https://automanstarrealty.com/api/media/14596b39-b226-44f8-b002-9845f3d42b0a",
-    "azizi_dining.jpg": "https://automanstarrealty.com/api/media/0dd497b7-d5ac-43ea-88b4-110a855dd3ae",
-    "azizi_lounge.jpg": "https://automanstarrealty.com/api/media/5b2cbb8b-d5ad-4abe-a3c1-1276f22c1389",
-    "azizi_bedroom.jpg": "https://automanstarrealty.com/api/media/5caff861-c634-429d-981d-ccda66e98986"
+  "image_slot_policy": "Every slot starts as PENDING_ASSET. Fill 'file' (a filename inside --assets-dir) and 'kind' (developer_render | ai_generated). Public export needs status APPROVED, rights_cleared and approved true; ai_generated slots also need ai_disclosure true and are always labelled as AI illustrations, never as Azizi Florence photographs.",
+  "image_slots": {
+    "azizi_villa_exterior": {
+      "description": "Hero villa exterior",
+      "file": null,
+      "kind": null,
+      "status": "PENDING_ASSET",
+      "reference_url": "https://automanstarrealty.com/api/media/e8efba07-cff5-4492-a40b-91987b1cdd06",
+      "rights_cleared": false,
+      "approved": false,
+      "ai_disclosure": false
+    },
+    "azizi_townhouses": {
+      "description": "Townhouse row (price scene)",
+      "file": null,
+      "kind": null,
+      "status": "PENDING_ASSET",
+      "reference_url": "https://automanstarrealty.com/api/media/294b81b8-39a2-467f-9ac2-8801ec1233f6",
+      "rights_cleared": false,
+      "approved": false,
+      "ai_disclosure": false
+    },
+    "azizi_aerial": {
+      "description": "Aerial community view",
+      "file": null,
+      "kind": null,
+      "status": "PENDING_ASSET",
+      "reference_url": "https://automanstarrealty.com/api/media/34552e26-cc00-43ef-b0e7-fa6c00a51c37",
+      "rights_cleared": false,
+      "approved": false,
+      "ai_disclosure": false
+    },
+    "azizi_villa_roof": {
+      "description": "Villa exterior, closing CTA",
+      "file": null,
+      "kind": null,
+      "status": "PENDING_ASSET",
+      "reference_url": "https://automanstarrealty.com/api/media/eee3f261-34f3-4af9-9663-dceda9c4b298",
+      "rights_cleared": false,
+      "approved": false,
+      "ai_disclosure": false
+    },
+    "azizi_garden": {
+      "description": "Landscaped garden / green spaces",
+      "file": null,
+      "kind": null,
+      "status": "PENDING_ASSET",
+      "reference_url": "https://automanstarrealty.com/api/media/e54b9e8d-d86b-4f1e-ac1a-3f453bd0112a",
+      "rights_cleared": false,
+      "approved": false,
+      "ai_disclosure": false
+    },
+    "azizi_living": {
+      "description": "Living room interior",
+      "file": null,
+      "kind": null,
+      "status": "PENDING_ASSET",
+      "reference_url": "https://automanstarrealty.com/api/media/14596b39-b226-44f8-b002-9845f3d42b0a",
+      "rights_cleared": false,
+      "approved": false,
+      "ai_disclosure": false
+    },
+    "azizi_dining": {
+      "description": "Dining interior (spare)",
+      "file": null,
+      "kind": null,
+      "status": "PENDING_ASSET",
+      "reference_url": "https://automanstarrealty.com/api/media/0dd497b7-d5ac-43ea-88b4-110a855dd3ae",
+      "rights_cleared": false,
+      "approved": false,
+      "ai_disclosure": false
+    },
+    "azizi_lounge": {
+      "description": "Lounge interior (spare)",
+      "file": null,
+      "kind": null,
+      "status": "PENDING_ASSET",
+      "reference_url": "https://automanstarrealty.com/api/media/5b2cbb8b-d5ad-4abe-a3c1-1276f22c1389",
+      "rights_cleared": false,
+      "approved": false,
+      "ai_disclosure": false
+    },
+    "azizi_bedroom": {
+      "description": "Bedroom interior (spare)",
+      "file": null,
+      "kind": null,
+      "status": "PENDING_ASSET",
+      "reference_url": "https://automanstarrealty.com/api/media/5caff861-c634-429d-981d-ccda66e98986",
+      "rights_cleared": false,
+      "approved": false,
+      "ai_disclosure": false
+    }
   },
   "scenes": [
     {
-      "variants": [30], "seconds": 3, "asset": "azizi_villa_exterior.jpg",
+      "variants": [
+        30
+      ],
+      "seconds": 3,
       "headline": "A different kind of home",
       "sub": "A new community vision in Sharjah",
-      "narration": "Discover a different vision of home in Sharjah."
+      "narration": "Discover a different vision of home in Sharjah.",
+      "slot": "azizi_villa_exterior"
     },
     {
-      "variants": [30], "seconds": 4, "asset": "azizi_aerial.jpg",
+      "variants": [
+        30
+      ],
+      "seconds": 4,
       "headline": "Meet Azizi Florence",
       "sub": "Um Fanain, Sharjah · By Azizi Developments",
-      "narration": "Meet Azizi Florence by Azizi Developments in Um Fanain, Sharjah."
+      "narration": "Meet Azizi Florence by Azizi Developments in Um Fanain, Sharjah.",
+      "slot": "azizi_aerial"
     },
     {
-      "variants": [30], "seconds": 5, "asset": "azizi_townhouses.jpg", "price": true,
+      "variants": [
+        30
+      ],
+      "seconds": 5,
+      "price": true,
       "headline": "A new beginning",
       "sub": "From AED 2.09M* · Project starting price",
-      "narration": "Explore homes with an indicative starting price from two point zero nine million dirhams."
+      "narration": "Explore homes with an indicative starting price from two point zero nine million dirhams.",
+      "slot": "azizi_townhouses"
     },
     {
-      "variants": [30], "seconds": 6, "asset": "azizi_living.jpg",
+      "variants": [
+        30
+      ],
+      "seconds": 6,
       "headline": "Homes for every chapter",
       "sub": "Apartments · 3–4 BR townhouses · 4–6 BR villas",
-      "narration": "Choose from apartments, three and four bedroom townhouses, and four to six bedroom villas."
+      "narration": "Choose from apartments, three and four bedroom townhouses, and four to six bedroom villas.",
+      "slot": "azizi_living"
     },
     {
-      "variants": [30], "seconds": 6, "asset": "azizi_garden.jpg",
+      "variants": [
+        30
+      ],
+      "seconds": 6,
       "headline": "Space to live beautifully",
       "sub": "Planned parks · Walking trails · Lifestyle amenities",
-      "narration": "A planned green community with parks, walking tracks, and lifestyle amenities."
+      "narration": "A planned green community with parks, walking tracks, and lifestyle amenities.",
+      "slot": "azizi_garden"
     },
     {
-      "variants": [30], "seconds": 6, "asset": "azizi_villa_roof.jpg",
+      "variants": [
+        30
+      ],
+      "seconds": 6,
       "headline": "Discover your next home",
       "sub": "Register your interest · automanstarrealty.com",
-      "narration": "Ask Automan Star Real Estate about floor plans, availability, and the latest confirmed terms."
+      "narration": "Ask Automan Star Real Estate about floor plans, availability, and the latest confirmed terms.",
+      "slot": "azizi_villa_roof"
     },
     {
-      "variants": [15], "seconds": 3, "asset": "azizi_aerial.jpg",
+      "variants": [
+        15
+      ],
+      "seconds": 3,
       "headline": "Azizi Florence Sharjah",
       "sub": "By Azizi Developments · Um Fanain",
-      "narration": "Discover Azizi Florence in Sharjah."
+      "narration": "Discover Azizi Florence in Sharjah.",
+      "slot": "azizi_aerial"
     },
     {
-      "variants": [15], "seconds": 6, "asset": "azizi_townhouses.jpg", "price": true,
+      "variants": [
+        15
+      ],
+      "seconds": 6,
+      "price": true,
       "headline": "Explore your next home",
       "sub": "Project starting from AED 2.09M*",
-      "narration": "Apartments, townhouses and villas. Indicative project starting price from two point zero nine million dirhams."
+      "narration": "Apartments, townhouses and villas. Indicative project starting price from two point zero nine million dirhams.",
+      "slot": "azizi_townhouses"
     },
     {
-      "variants": [15], "seconds": 6, "asset": "azizi_villa_exterior.jpg",
+      "variants": [
+        15
+      ],
+      "seconds": 6,
       "headline": "Register your interest",
       "sub": "Automan Star Real Estate · automanstarrealty.com",
-      "narration": "Enquire with Automan Star Real Estate for verified availability and details."
+      "narration": "Enquire with Automan Star Real Estate for verified availability and details.",
+      "slot": "azizi_villa_exterior"
     }
   ]
 }

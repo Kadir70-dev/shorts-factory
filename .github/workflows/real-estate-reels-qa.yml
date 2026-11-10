@@ -31,9 +31,9 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg fonts-lato
           python -m pip install 'Pillow>=10,<13'
-      - name: Python compile and 8 policy tests
+      - name: Python compile and policy / missing-image tests
         run: |
           python -m py_compile scripts/real_estate_ads/render.py
           python scripts/real_estate_ads/tests/test_real_estate_ads.py -v
-      - name: Render 15-second test with synthetic fixture images only
+      - name: Render 15s and 30s blank-image drafts (no images supplied)
         run: python scripts/real_estate_ads/tests/smoke_render.py

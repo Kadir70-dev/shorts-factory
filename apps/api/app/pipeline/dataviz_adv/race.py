@@ -29,7 +29,7 @@ class BarRace:
     def __init__(self, th: ChartTheme, entities: list[Series], timeline: Timeline, *, top_n: int = 8,
                  rect=(60, 395, 1020, 1330), title: str = "", subtitle: str = "", value_fmt: Callable[[float], str] = lambda v: f"{v:.0f}",
                  source: str = "", colors: Optional[dict[str, tuple]] = None, icons: Optional[dict[str, Image.Image]] = None,
-                 camera_zoom: float = 1.0, panel: Optional[tuple] = (48, 225, 1032, 1480), tau_frac: float = 0.006):
+                 camera_zoom: float = 1.0, panel: Optional[tuple] = (48, 225, 1032, 1480), tau_frac: float = 0.016, smooth_periods: float = 4.0):
         if len(entities) < 2:
             raise DataError("a bar race needs at least two entities")
         for e in entities:
@@ -51,7 +51,7 @@ class BarRace:
         self.source = source or entities[0].source
         self.th, self.tl, self.top_n, self.rect = th, timeline, min(top_n, len(entities)), rect
         self.title, self.subtitle, self.value_fmt = title, subtitle, value_fmt
-        self.panel, self.cam, self.tau_frac = panel, camera_zoom, tau_frac
+        self.panel, self.cam, self.tau_frac, self.smooth = panel, camera_zoom, tau_frac, smooth_periods
         order = np.argsort(-self.vals[:, -1], kind="stable")          # final ranking decides the colour order
         self.colors = {self.names[j]: th.categories[k % len(th.categories)] for k, j in enumerate(order)}
         n = len(self.names)
@@ -68,16 +68,51 @@ class BarRace:
     def head(self, t: float) -> float:
         return clamp(self.tl.at(t), 0, self.T - 1)
 
-    def state(self, h: float):
+    def _soft(self, h: float):
         k = min(int(h), self.T - 2)
         f = h - k
         v = self.vals[:, k] * (1 - f) + self.vals[:, k + 1] * f
         ax = lerp(self.axis_max[k], self.axis_max[k + 1], f)
         tau = max(1e-9, self.tau_frac * ax)
-        vv = v + self._bias * tau           # exact/near ties (e.g. the Jan-2020 base month) fall back to the final ranking
+        spread = float(v.max() - v.min())
+        w = clamp(1.0 - spread / (6.0 * tau))      # tie-break only while all values are (nearly) equal, e.g. the base month
+        vv = v + self._bias * tau * w
         diff = (vv[None, :] - vv[:, None]) / tau                      # diff[e, j] = (v_j - v_e) / tau
         pos = (1.0 / (1.0 + np.exp(-np.clip(diff, -60, 60)))).sum(axis=1) - 0.5      # exclude self (sigmoid(0)=.5)
         return v, pos, ax
+
+    def state(self, h: float):
+        """(values, row positions, axis max) at fractional period h.  Row positions are a soft rank, pushed apart so
+        near-ties never overlap, then low-pass filtered over +-`smooth` periods: swaps and bursts of rank changes
+        glide through each other instead of jumping."""
+        v, _, ax = self._soft(h)
+        if self.smooth <= 0:
+            return self._soft(h)
+        offs = np.linspace(-self.smooth, self.smooth, 13)
+        wts = 1.0 - np.abs(offs) / (self.smooth * 1.25)
+        poss = np.stack([self._separate(self._soft(clamp(h + o, 0, self.T - 1))[1]) for o in offs])
+        pos = (poss * wts[:, None]).sum(axis=0) / wts.sum()
+        return v, pos, ax
+
+    @staticmethod
+    def _separate(pos: np.ndarray, gap: float = 1.0) -> np.ndarray:
+        """Near-tied bars must not sit on top of each other: least-squares projection of the rows onto 'at least `gap`
+        apart' (pool-adjacent-violators on pos_k - k*gap).  Continuous in time and mean-preserving, so the leader never
+        drifts above the first row."""
+        idx = np.argsort(pos, kind="stable")
+        sp = pos[idx]
+        y = sp - np.arange(len(sp)) * gap
+        blocks: list[list[float]] = []                  # [sum, count]
+        for val in y:
+            blocks.append([val, 1.0])
+            while len(blocks) > 1 and blocks[-2][0] / blocks[-2][1] > blocks[-1][0] / blocks[-1][1]:
+                s, c = blocks.pop()
+                blocks[-1][0] += s
+                blocks[-1][1] += c
+        iso = np.concatenate([np.full(int(c), s / c) for s, c in blocks])
+        out = np.empty_like(pos)
+        out[idx] = iso + np.arange(len(sp)) * gap
+        return out
 
     # -- frame --------------------------------------------------------------- #
     def draw(self, L: Image.Image, t: float, intro: bool = True) -> None:
@@ -130,8 +165,8 @@ class BarRace:
         # period indicator (the "year" counter)
         k = int(round(h))
         lab = month_label(self.periods[k])
-        put(L, text_tile(lab, th.display, 118, th.gold, th.gold, 16, 8), rx1 - 10, ry1 + 160, anchor="rb", alpha=a_in * 0.95,
-            tag="period", size=118)
+        put(L, text_tile(lab, th.display, 96, th.gold, th.gold, 14, 8), rx1 - 6, ry0 - 70, anchor="rb", alpha=a_in * 0.95,
+            tag="period", size=96)
         if self.source:
             source_block(L, th, self.source, px0 - 4, (self.panel[3] if self.panel else ry1 + 100) - 50, (self.panel[2] - self.panel[0]) - 68 if self.panel else 900, a_in)
 

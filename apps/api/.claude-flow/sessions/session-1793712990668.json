@@ -1,0 +1,14 @@
+{
+  "id": "session-1793712990668",
+  "startedAt": "2026-11-03T13:36:30.669Z",
+  "cwd": "/home/kadir70/shorts-factory/apps/api",
+  "context": {},
+  "metrics": {
+    "edits": 0,
+    "commands": 0,
+    "tasks": 0,
+    "errors": 0
+  },
+  "endedAt": "2026-11-03T13:36:43.473Z",
+  "duration": 12805
+}

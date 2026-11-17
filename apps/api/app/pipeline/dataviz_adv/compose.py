@@ -4,17 +4,15 @@
 
 `segments` hard-cut inside the scene (every cut is a real clip, never a generated filler).  `Bg` picks how the footage
 sits behind the graphics:
-    plain         graded footage
-    blur          blurred + darkened (chart/map panels)
-    ramp_to_blur  footage -> blurred between t0 and t0+dur   (footage-to-chart transition)
-    ramp_to_clear blurred -> footage                         (chart-to-footage transition)
+    plain  graded footage          blur  blurred + darkened (chart/map panels)
+    ramp   footage<->blurred ramps (footage-to-chart and chart-to-footage transitions), see `Bg`
 """
 from __future__ import annotations
 
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable
+from typing import Callable, Optional
 
 from PIL import Image
 
@@ -27,12 +25,15 @@ GRADE_BLUR = "gblur=sigma=16,eq=contrast=1.05:saturation=0.85:brightness=-0.24"
 
 @dataclass
 class Bg:
+    """How the footage sits behind the graphics.  mode: plain | blur | ramp.
+    ramp: `blur_in=(t0, dur)` fades footage -> blurred (footage-to-chart); `blur_out=(t0, dur)` fades blurred -> footage
+    (chart-to-footage).  With only `blur_out` the scene starts blurred."""
     mode: str = "plain"
-    t0: float = 0.0
-    dur: float = 0.6
+    blur_in: Optional[tuple[float, float]] = None
+    blur_out: Optional[tuple[float, float]] = None
 
     def __post_init__(self):
-        if self.mode not in ("plain", "blur", "ramp_to_blur", "ramp_to_clear"):
+        if self.mode not in ("plain", "blur", "ramp"):
             raise ValueError(f"unknown background mode {self.mode!r}")
 
 
@@ -49,11 +50,15 @@ def build_filter(n_seg: int, seg_durs: list[float], bg: Bg, first_scene: bool, z
     elif bg.mode == "blur":
         graded = f"[bg0]{GRADE_BLUR}[bg]"
     else:
-        p = f"min(1,max(0,(T-{bg.t0:.3f})/{bg.dur:.3f}))"
-        if bg.mode == "ramp_to_clear":
-            p = f"(1-{p})"
-        graded = (f"[bg0]split[ba][bb];[ba]{GRADE_PLAIN}[bc];[bb]{GRADE_BLUR}[bd];"
-                  f"[bc][bd]blend=all_expr='A*(1-{p})+B*{p}'[bg]")
+        # blurred copy fades in/out as an alpha layer over the clear copy (cheap: no per-pixel expressions)
+        fade = "format=yuva420p"
+        if bg.blur_in:
+            fade += f",fade=t=in:st={bg.blur_in[0]:.3f}:d={bg.blur_in[1]:.3f}:alpha=1"
+        elif not bg.blur_out:
+            fade += ",colorchannelmixer=aa=0"
+        if bg.blur_out:
+            fade += f",fade=t=out:st={bg.blur_out[0]:.3f}:d={bg.blur_out[1]:.3f}:alpha=1"
+        graded = (f"[bg0]split[ba][bb];[ba]{GRADE_PLAIN}[bc];[bb]{GRADE_BLUR},{fade}[bd];[bc][bd]overlay=format=auto[bg]")
     return ";".join(parts) + ";" + cat + ";" + graded + f";[bg][{n_seg}:v]overlay=0:0:format=auto,vignette=PI/4.6,noise=alls=6:allf=t+u,format=yuv420p[v]"
 
 

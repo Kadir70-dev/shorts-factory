@@ -91,9 +91,10 @@ class ChartTheme:
     @classmethod
     def from_brand(cls, theme) -> "ChartTheme":
         p = theme.palette
-        cats = [rgb(c) for c in (theme.chart.get("category_colors") or [])]
-        extra = [rgb(p["warn"]), rgb("#2DD4BF"), rgb("#93C5FD")]
-        pool = cats + [c for c in extra if c not in cats]
+        sem = {rgb(p["positive"]), rgb(p["negative"])}                 # red/green keep their data-direction meaning
+        cats = [c for c in (rgb(x) for x in (theme.chart.get("category_colors") or [])) if c not in sem]
+        extras = [rgb(p["warn"]), rgb("#2DD4BF"), rgb("#93C5FD"), rgb("#C4B5FD"), rgb("#F9A8D4"), rgb("#FDBA74"), rgb("#38BDF8")]
+        pool = cats + [c for c in extras if c not in cats and c not in sem]
         return cls(id=theme.id, bg=rgb(p["bg"]), bg_soft=rgb(p["bg_soft"]), ink=rgb(p["ink"]), dim=rgb(p["ink_dim"]),
                    primary=rgb(p["primary"]), secondary=rgb(p["secondary"]), gold=rgb(p["warn"]),
                    positive=rgb(p["positive"]), negative=rgb(p["negative"]), grid=rgb(p["grid"]),
@@ -311,6 +312,8 @@ def text_tile(text: str, face: str, size: int, fill, glow=None, glow_r: int = 14
         out.alpha_composite(gl.filter(ImageFilter.GaussianBlur(glow_r)))
     out.alpha_composite(body)
     out.info["ink_pad"] = pad          # padding around the real glyphs (used by the bounds checker)
+    out.info["text"] = text
+    out.info["ink_bbox"] = mask.getbbox() or (0, 0, 1, 1)      # real glyph extents (not the font line box)
     return out
 
 
@@ -334,9 +337,13 @@ def put(layer: Image.Image, tile: Image.Image, x: float, y: float, alpha: float 
     if alpha <= 0.003 or scale <= 0.01:
         return
     pad = tile.info.get("ink_pad", 0)
+    bb = tile.info.get("ink_bbox", (pad, pad, tile.width - pad, tile.height - pad))
+    text = tile.info.get("text", "")
     if scale != 1.0:
+        sc0 = tile
         tile = tile.resize((max(1, int(tile.width * scale)), max(1, int(tile.height * scale))), Image.BICUBIC)
-        pad = int(pad * scale)
+        bb = tuple(v * scale for v in bb)
+        tile.info.update({"ink_pad": int(pad * scale), "text": text})
     if alpha < 0.999:
         a = tile.getchannel("A").point(lambda v: int(v * alpha))
         tile = tile.copy()
@@ -347,8 +354,8 @@ def put(layer: Image.Image, tile: Image.Image, x: float, y: float, alpha: float 
     layer.alpha_composite(tile, (int(round(px)), int(round(py)))) if (
         -tile.width < px < layer.width and -tile.height < py < layer.height) else None
     if Recorder.active is not None and alpha > 0.5:
-        Recorder.active.append({"tag": tag, "x0": px + pad, "y0": py + pad, "x1": px + tile.width - pad,
-                                "y1": py + tile.height - pad, "size": size, "alpha": alpha})
+        Recorder.active.append({"tag": tag, "text": text, "x0": px + bb[0], "y0": py + bb[1], "x1": px + bb[2], "y1": py + bb[3],
+                                "size": size, "alpha": alpha})
 
 
 def source_block(layer: Image.Image, th: "ChartTheme", text: str, x: float, y: float, max_w: float, alpha: float = 1.0,

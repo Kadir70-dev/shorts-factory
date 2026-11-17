@@ -83,3 +83,25 @@ def frame_to_image(path: Path, t: float) -> Image.Image:
                        capture_output=True, check=True).stdout
     import io
     return Image.open(io.BytesIO(p)).convert("RGB")
+
+
+def speech_activity(wav: Path, frame_s: float = 0.05, thresh: float = 800.0) -> list[bool]:
+    """True per `frame_s` window where the voice track is louder than `thresh` (16-bit RMS)."""
+    pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", str(wav), "-f", "s16le", "-ar", "16000", "-ac", "1", "-"], capture_output=True, check=True).stdout
+    a = np.frombuffer(pcm, dtype=np.int16).astype(np.float32)
+    n = int(16000 * frame_s)
+    return [bool(np.sqrt(np.mean(a[i:i + n] ** 2)) > thresh) for i in range(0, len(a) - n, n)]
+
+
+def caption_sync(activity: list[bool], words: list[dict], frame_s: float = 0.05, tol: float = 0.15) -> dict:
+    """How well do caption word windows line up with real speech?  words = [{'w','s','e'}]."""
+    def active(t0: float, t1: float) -> float:
+        i0, i1 = int(max(0, t0) / frame_s), max(int(max(0, t1) / frame_s), int(max(0, t0) / frame_s) + 1)
+        seg = activity[i0:i1]
+        return sum(seg) / len(seg) if seg else 0.0
+    quiet = [w["w"] for w in words if active(w["s"], w["e"]) < 0.2]
+    cov = [(w["s"] - tol, w["e"] + tol) for w in words]
+    loud = [i for i, a in enumerate(activity) if a]
+    uncovered = [i for i in loud if not any(a <= i * frame_s <= b for a, b in cov)]
+    return {"words": len(words), "words_over_silence": len(quiet), "loud_frames": len(loud), "uncovered_loud_frames": len(uncovered),
+            "quiet_words": quiet[:10]}

@@ -96,13 +96,17 @@ class LineChart:
                     d.line([(x, y), (x + 11, y)], fill=(255, 255, 255, int(44 * a_panel)), width=2)
                 put(L, text_tile(self.y_fmt(yv), th.body, self.tick_size, th.dim, None, 0, 0), rx0 - 14, y, anchor="rm",
                     alpha=a_panel, tag="ytick", size=self.tick_size)
-        for xi, lab in x_tick_labels(s, v.x0, v.x1):                 # dynamic x labels
+        last_right = -1e9
+        for xi, lab in x_tick_labels(s, v.x0, v.x1):                 # dynamic x labels (skip any that would collide)
             x = X(xi)
             if rx0 - 2 <= x <= rx1 + 2:
                 tl = text_tile(lab.upper(), th.body, self.tick_size, th.dim, None, 0, 1, spacing=1)
                 half = (tl.width - 2 * tl.info["ink_pad"]) / 2
-                put(L, tl, min(max(x, rx0 + half - 6), rx1 + 40 - half), ry1 + 16, anchor="ct", alpha=a_panel, tag="xtick",
-                    size=self.tick_size)
+                cx = min(max(x, rx0 + half - 6), rx1 + 40 - half)
+                if cx - half < last_right + 14:
+                    continue
+                last_right = cx + half
+                put(L, tl, cx, ry1 + 16, anchor="ct", alpha=a_panel, tag="xtick", size=self.tick_size)
 
         pts = [(i, s.values[i]) for i in s.valid_idx if i <= h]
         if pts and any(i > h for i in s.valid_idx) and pts[-1][0] < h:

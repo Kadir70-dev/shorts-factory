@@ -210,6 +210,22 @@ def _point_color(theme: BrandTheme, p: DataPoint, is_highlight: bool,
     return theme.rgb("secondary")
 
 
+def _bar_category_color(theme: BrandTheme, p: DataPoint, index: int,
+                        is_highlight: bool, rising: bool | None
+                        ) -> tuple[int, int, int]:
+    """Optional category colorways for comparison bars only.
+
+    Separate neutral categories should not be interpreted as a time-series
+    direction. New K70 chart themes provide coordinated colors; classic K70
+    keeps its original colors. Explicit positive/negative emphasis still wins.
+    """
+    colors = theme.chart.get("category_colors") or []
+    if colors and p.emphasis in ("auto", "normal"):
+        role = "primary" if is_highlight else str(colors[index % len(colors)])
+        return theme.rgb(role)
+    return _point_color(theme, p, is_highlight, rising)
+
+
 def _readout_role(p: DataPoint, rising: bool | None) -> str:
     """Palette role for the big NUMBER a form prints beside its geometry.
 
@@ -294,7 +310,7 @@ def _bars(theme: BrandTheme, lay: Layout, viz: DataViz, frames: int, fps: int):
             full_h = (p.value - lo) / span * lay.plot_h
             top_full = lay.plot_bottom - full_h
             h = (zero_y - top_full) * prog
-            color = _point_color(theme, p, i == hi_idx, rising)
+            color = _bar_category_color(theme, p, i, i == hi_idx, rising)
             alpha = 1.0 if i == hi_idx else 0.82
             if h >= 0:
                 c.rect(x, zero_y - h, bw, max(h, 1.0), color, alpha, radius)
@@ -608,7 +624,11 @@ def _labels(theme: BrandTheme, lay: Layout, viz: DataViz, kind: str,
             # Only the highlighted datum carries its value: labelling every bar
             # turns a graphic into a spreadsheet.
             if i == hi_idx:
-                color = theme.ff(_readout_role(p, rising))
+                if (kind == "bar_compare" and theme.chart.get("category_colors")
+                        and p.emphasis in ("auto", "normal")):
+                    color = theme.ff("primary")
+                else:
+                    color = theme.ff(_readout_role(p, rising))
                 size = round(theme.size("stat_number", lay.h) * 0.34)
                 out += _counter_filters(
                     theme, lay, viz, p.value, f"{int(cx)}-text_w/2",

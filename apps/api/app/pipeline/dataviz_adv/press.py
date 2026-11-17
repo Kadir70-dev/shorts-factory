@@ -97,7 +97,8 @@ def draw_news_brief(layer: Image.Image, th: ChartTheme, news: NewsBrief, t: floa
     navy = (24, 35, 51)
     dim = (85, 89, 94)
     lines, size = _fit_lines(news.headline, th.display, 792)
-    y = y0 + 210
+    top, bottom = y0 + 210, y1 - 170
+    y = top + max(0, (bottom - top - (len(lines) * (size + 32) - 32)) // 2 - 40)   # centre short headlines between the rules
     for line in lines:
         put(card, text_tile(line, th.display, size, navy, None, 0, 0),
             x0 + 62, y, tag="press-headline", size=size)

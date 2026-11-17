@@ -1,0 +1,23 @@
+{
+ "retrieved": "2026-11-17",
+ "data": [
+  {
+   "what": "CPI-U all items, U.S. city average, NSA, 1982-84=100 (CUUR0000SA0); Jun 2021 271.696, Jun 2022 296.311, Jun 2023 305.109",
+   "publisher": "U.S. Bureau of Labor Statistics",
+   "url": "https://api.bls.gov/publicAPI/v1/timeseries/data/CUUR0000SA0",
+   "also_checked": "BLS Public Data API v1, re-queried live 2026-11-17: values identical to saved file"
+  },
+  {
+   "what": "12-month change: Jun 2022 9.06% -> 9.1%; Jun 2023 2.97% -> 3.0% (computed from the index; matches BLS release)",
+   "publisher": "U.S. Bureau of Labor Statistics"
+  }
+ ],
+ "newspaper_card": {
+  "headline": "U.S. Inflation Hits 9.1% (original K70 summary; no publisher masthead)",
+  "supporting_source": "BLS CPI news release USDL-22-1470, 'Consumer Price Index - June 2022'",
+  "published": "2022-07-13",
+  "url": "https://www.bls.gov/news.release/archives/cpi_07132022.htm"
+ },
+ "music_sfx": "Shorts Factory local generated/library assets (see job audio_manifest, graph.audio)",
+ "voice": "Kokoro stock American English voice (self-hosted)"
+}

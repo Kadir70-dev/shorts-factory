@@ -50,12 +50,13 @@ class LineChart:
                  pill_fmt: Optional[Callable[[float], str]] = None, big_fmt: Optional[Callable[[float], tuple[str, str]]] = None,
                  callouts: Optional[list[Callout]] = None, cols: Optional[tuple] = None, source: Optional[str] = None,
                  panel: Optional[tuple[int, int, int, int]] = (48, 225, 1032, 1300), y_floor: Optional[float] = None,
-                 y_pad: float = 0.12, tick_size: int = 34, show_big: bool = True, line_w: int = 12):
+                 y_pad: float = 0.12, tick_size: int = 34, show_big: bool = True, line_w: int = 12, snap: bool = False):
         self.th, self.s = th, series.validate()
         self.tl, self.rect, self.title, self.y_fmt = timeline, rect, title, y_fmt
         self.pill_fmt = pill_fmt or y_fmt
         self.big_fmt, self.callouts = big_fmt, callouts or []
         self.cols = cols or (th.secondary, th.primary)
+        self.snap = snap          # pill/readout show the nearest real data point, never an interpolated value
         self.source, self.panel, self.tick_size, self.show_big, self.line_w = (series.source if source is None else source), panel, tick_size, show_big, line_w
         vals = [v for v in series.values if v is not None]
         lo, hi = min(vals), max(vals)
@@ -113,11 +114,12 @@ class LineChart:
             pts.append((h, s.at(h)))
         if len(pts) >= 2:
             self._draw_line(L, pts, X, Y)
-            self._head(L, X(pts[-1][0]), Y(pts[-1][1]), pts[-1][1], t)
+            shown = s.at(float(round(pts[-1][0]))) if self.snap else pts[-1][1]
+            self._head(L, X(pts[-1][0]), Y(pts[-1][1]), shown, t)
         for c in self.callouts:
             self._callout(L, c, X, Y, t)
         if self.show_big and self.big_fmt and len(pts) >= 2:
-            self._big(L, pts[-1][1], h, t)
+            self._big(L, s.at(float(round(pts[-1][0]))) if self.snap else pts[-1][1], h, t)
         if self.source and self.panel:
             source_block(L, th, self.source, self.panel[0] + 34, self.panel[3] - 58, self.panel[2] - self.panel[0] - 68, a_panel)
 

@@ -12,7 +12,7 @@ from urllib.parse import urlparse
 
 from PIL import Image, ImageDraw
 
-from .core import ChartTheme, DataError, clamp, eo3, font, put, rrect, text_tile
+from .core import ChartTheme, DataError, clamp, eo3, font, put, text_tile
 
 
 @dataclass(frozen=True)
@@ -114,8 +114,8 @@ def draw_news_brief(layer: Image.Image, th: ChartTheme, news: NewsBrief, t: floa
     date_label = date.fromisoformat(news.published).strftime("%b %d, %Y").upper()
     put(card, text_tile("SOURCE: " + news.publisher.upper(), th.body, 30, dim, None, 0, 0),
         x0 + 52, y1 - 124, tag="press-source", size=30)
-    put(card, text_tile(date_label + "  •  K70 ORIGINAL SUMMARY", th.body, 29, dim, None, 0, 0),
-        x0 + 52, y1 - 76, tag="press-date", size=29)
+    put(card, text_tile(date_label + "  •  K70 ORIGINAL SUMMARY", th.body, 30, dim, None, 0, 0),
+        x0 + 52, y1 - 76, tag="press-date", size=30)
 
     if a < 1:
         alpha = card.getchannel("A").point(lambda v: int(v * a))

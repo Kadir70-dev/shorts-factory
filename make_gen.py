@@ -40,6 +40,14 @@ NICHE_CHANNEL = {
     "cyber": ("cybersecurity", "k70_cyber"),
 }
 
+# Chart-first K70 colorways. Classic preserves the Director-selected brand.
+CHART_COLORWAYS = {
+    "classic": None,
+    "aurora": "k70_chart_aurora",
+    "sunset": "k70_chart_sunset",
+    "ocean": "k70_chart_ocean",
+}
+
 _KW = {
     "history": ["history", "dark history", "scandal", "forgotten", "weird law",
                 "ancient", "war crime", "assassin", "conspiracy", "1800s", "century"],
@@ -66,7 +74,8 @@ def guess_niche(topic: str) -> str:
     return "economy"
 
 
-async def run(topic: str, niche: str, channel_id: str) -> None:
+async def run(topic: str, niche: str, channel_id: str,
+              colorway: str = "classic") -> None:
     from app.brand import load_theme
     from app.config import load_channel
     from app.director import get_director, structures
@@ -84,6 +93,10 @@ async def run(topic: str, niche: str, channel_id: str) -> None:
           f"research={os.getenv('DIRECTOR_RESEARCH','1')} niche={niche}")
     print(f"[director] topic: {topic!r}  (this calls Claude — ~10-40s)")
     graph = await get_director(channel).build_scene_graph(spec)
+    if colorway != "classic":
+        # Opt-in per-job brand; do not mutate the permanent K70 palette.
+        graph.brand_id = CHART_COLORWAYS[colorway]
+        print(f"[brand] K70 chart colorway: {colorway} ({graph.brand_id})")
     print(f"[director] OK — '{graph.meta.title}'")
 
     # Variety plan first: the visual engine, the music picker and the renderer all
@@ -208,6 +221,8 @@ def main() -> None:
     ap.add_argument("--niche", choices=list(NICHE_CHANNEL), default=None)
     ap.add_argument("--channel", default=None)
     ap.add_argument("--backend", choices=["cli", "api"], default="cli")
+    ap.add_argument("--colorway", choices=tuple(CHART_COLORWAYS), default="classic",
+                    help="K70 visual palette (default: existing channel brand)")
     ap.add_argument("--no-research", action="store_true")
     args = ap.parse_args()
 
@@ -218,7 +233,7 @@ def main() -> None:
     os.environ["DIRECTOR_BACKEND"] = args.backend
     os.environ["DIRECTOR_RESEARCH"] = "0" if args.no_research else "1"
 
-    asyncio.run(run(args.topic, niche, channel_id))
+    asyncio.run(run(args.topic, niche, channel_id, colorway=args.colorway))
 
 
 if __name__ == "__main__":

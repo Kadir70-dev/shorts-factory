@@ -50,13 +50,15 @@ class LineChart:
                  pill_fmt: Optional[Callable[[float], str]] = None, big_fmt: Optional[Callable[[float], tuple[str, str]]] = None,
                  callouts: Optional[list[Callout]] = None, cols: Optional[tuple] = None, source: Optional[str] = None,
                  panel: Optional[tuple[int, int, int, int]] = (48, 225, 1032, 1300), y_floor: Optional[float] = None,
-                 y_pad: float = 0.12, tick_size: int = 34, show_big: bool = True, line_w: int = 12):
+                 y_pad: float = 0.12, tick_size: int = 34, show_big: bool = True, line_w: int = 12,
+                 date_fmt: Optional[Callable[[str], str]] = None, snap_head: bool = True):
         self.th, self.s = th, series.validate()
         self.tl, self.rect, self.title, self.y_fmt = timeline, rect, title, y_fmt
         self.pill_fmt = pill_fmt or y_fmt
         self.big_fmt, self.callouts = big_fmt, callouts or []
         self.cols = cols or (th.secondary, th.primary)
         self.source, self.panel, self.tick_size, self.show_big, self.line_w = (series.source if source is None else source), panel, tick_size, show_big, line_w
+        self.date_fmt, self.snap = date_fmt, snap_head
         vals = [v for v in series.values if v is not None]
         lo, hi = min(vals), max(vals)
         if y_floor is not None:
@@ -73,6 +75,14 @@ class LineChart:
 
     def head(self, t: float) -> float:
         return clamp(self.tl.at(t), 0, len(self.s.periods) - 1)
+
+    def shown_index(self, h: float) -> int:
+        """Period whose value + date the readouts show.  Snapped to a PUBLISHED month (the nearest one at or below the
+        head) so the counter, the pill and the date label always describe the same real data point."""
+        i = max(0, min(len(self.s.periods) - 1, int(math.floor(h + 0.5))))
+        while i > 0 and self.s.values[i] is None:
+            i -= 1
+        return i
 
     # -- one frame ---------------------------------------------------------- #
     def draw(self, L: Image.Image, t: float, intro: bool = True) -> None:
@@ -111,13 +121,18 @@ class LineChart:
         pts = [(i, s.values[i]) for i in s.valid_idx if i <= h]
         if pts and any(i > h for i in s.valid_idx) and pts[-1][0] < h:
             pts.append((h, s.at(h)))
+        hs = self.shown_index(h)
+        shown = s.values[hs] if (self.snap and s.values[hs] is not None) else (pts[-1][1] if pts else None)
         if len(pts) >= 2:
             self._draw_line(L, pts, X, Y)
-            self._head(L, X(pts[-1][0]), Y(pts[-1][1]), pts[-1][1], t)
+            self._head(L, X(pts[-1][0]), Y(pts[-1][1]), shown, t)
         for c in self.callouts:
             self._callout(L, c, X, Y, t)
         if self.show_big and self.big_fmt and len(pts) >= 2:
-            self._big(L, pts[-1][1], h, t)
+            self._big(L, shown, h, t)
+            if self.date_fmt:
+                put(L, text_tile(self.date_fmt(s.periods[hs]), th.display, 66, th.gold, th.gold, 14, 6), self.panel[2] - 40 if self.panel else W - 60,
+                    (self.panel[1] if self.panel else 230) + 292, anchor="rt", alpha=eo3((t - 0.25) / 0.3), tag="date", size=66)
         if self.source and self.panel:
             source_block(L, th, self.source, self.panel[0] + 34, self.panel[3] - 58, self.panel[2] - self.panel[0] - 68, a_panel)
 

@@ -83,6 +83,13 @@ Run: `cd apps/api && ../../.venv/bin/python -m pytest tests/test_dataviz_adv.py 
 The full USA Inflation V2 Short (12 scenes, 1,243 frames: footage, blur ramps, graphics, grain) renders in about 5.5 minutes on
 top of TTS/music/SFX.  Charts are streamed to FFmpeg as raw RGBA, so no frame files are written to disk.
 
+## Chart samples (`scripts/k70_chart_samples.py`)
+
+Two 5-second previews from verified BLS data: a bar-chart race through the open-source `bar_chart_race` library (K70 Aurora styling,
+`pip install -r apps/api/requirements-charts.txt`; the script shims the library's removed `fillna(method=)` call and declutters
+value labels of crossing bars) and an animated line chart through `LineChart` with a head-synchronised date readout
+(counter, pill and date always show the same published month).  Output: `data/k70_chart_samples/`.
+
 ## Known limits
 
 * geographic maps use 110 m Natural Earth boundaries (story scale, not legal boundaries); only the US-state composite and a world equirectangular map are included

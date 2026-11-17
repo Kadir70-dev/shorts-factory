@@ -116,6 +116,27 @@ def test_year_value_synchronisation(th, yoy):
         assert pill["text"] == big["text"]
 
 
+def test_date_label_value_and_pill_describe_the_same_published_month(th, yoy):
+    """Fractional head positions must not mix months: counter, pill and date all show the SAME published period."""
+    ip = yoy.periods.index("2022-06")
+    ch = A.LineChart(th, yoy, A.Timeline([(0.0, 0), (4.0, len(yoy.periods) - 1)]), y_fmt=lambda v: f"{v:.0f}%", pill_fmt=lambda v: f"{v:.1f}%",
+                     big_fmt=lambda v: (f"{v:.1f}%", "year over year"), date_fmt=A.month_label)
+    for t in np.linspace(0.5, 3.9, 40):
+        h = ch.head(float(t))
+        i = ch.shown_index(h)
+        assert yoy.values[i] is not None and abs(i - h) <= 1.0 + 1e-9
+        _, boxes = qa.draw_and_record(lambda lay, tt: ch.draw(lay, tt), float(t))
+        big = next(b for b in boxes if b["tag"] == "big")["text"]
+        pill = next((b for b in boxes if b["tag"] == "pill"), None)
+        date = next(b for b in boxes if b["tag"] == "date")["text"]
+        assert big == f"{yoy.values[i]:.1f}%" and date == A.month_label(yoy.periods[i])
+        if pill:
+            assert pill["text"] == big
+    # across the unpublished month the readout holds the last published one instead of inventing a value
+    gap = yoy.periods.index("2025-10")
+    assert ch.shown_index(float(gap)) == gap - 1
+
+
 def test_axes_units_and_source_are_drawn(th, yoy):
     ch, _ = line(th, yoy)
     _, boxes = qa.draw_and_record(lambda lay, tt: ch.draw(lay, tt), 3.0)

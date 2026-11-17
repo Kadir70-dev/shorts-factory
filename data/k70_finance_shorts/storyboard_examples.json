@@ -1,0 +1,195 @@
+{
+  "format": "K70 finance storyboards v1 (editorial plans, NOT rendered or licensed footage)",
+  "output": "1080x1920, 30fps, 34 seconds, American English",
+  "visual_language": "K70 Aurora; licensed moving footage + original press-style headlines + 1–2 readable sourced charts",
+  "metrics_to_inspect": [
+    "Stayed to watch",
+    "Average percentage viewed",
+    "Audience retention by second",
+    "Engaged views",
+    "Shares/comments"
+  ],
+  "stories": [
+    {
+      "id": "usa_inflation_price_level",
+      "market": "USA Finance",
+      "status": "needs_selected_footage_and_render",
+      "title": "Inflation Fell. So Why Is Your Bill Still High?",
+      "fact_sources": [
+        "https://www.bls.gov/news.release/archives/cpi_07132022.htm"
+      ],
+      "news": {
+        "headline": "U.S. inflation reaches 9.1% in June 2022",
+        "publisher": "U.S. Bureau of Labor Statistics",
+        "published": "2022-07-13",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_07132022.htm",
+        "topic": "USA FINANCE"
+      },
+      "beats": [
+        {
+          "start": 0,
+          "end": 2.5,
+          "role": "hook",
+          "visual": "footage",
+          "narration": "Inflation fell. So why does your grocery bill still feel high?",
+          "asset": "real supermarket receipt or checkout; license review required"
+        },
+        {
+          "start": 2.5,
+          "end": 6,
+          "role": "setup",
+          "visual": "footage",
+          "narration": "Because the inflation rate and the price level are not the same.",
+          "asset": "real moving grocery price shelf; license review required"
+        },
+        {
+          "start": 6,
+          "end": 9,
+          "role": "evidence",
+          "visual": "newspaper",
+          "narration": "The inflation rate hit 9.1 percent in June 2022.",
+          "asset": "K70 original press card over licensed moving footage"
+        },
+        {
+          "start": 9,
+          "end": 13.5,
+          "role": "chart",
+          "visual": "line_chart",
+          "narration": "The rate later slowed. But the price index did not return to its old level.",
+          "asset": "BLS CPI-U line chart, separate rate versus price-level labels"
+        },
+        {
+          "start": 13.5,
+          "end": 17.5,
+          "role": "human_impact",
+          "visual": "footage",
+          "narration": "Slower price increases don't erase the increases you already paid.",
+          "asset": "grocery checkout close-up, rights cleared"
+        },
+        {
+          "start": 17.5,
+          "end": 22,
+          "role": "reveal",
+          "visual": "line_chart",
+          "narration": "Watch the cumulative price level, not only the inflation headline.",
+          "asset": "BLS CPI-U price index with correctly sourced base period"
+        },
+        {
+          "start": 22,
+          "end": 26,
+          "role": "context",
+          "visual": "footage",
+          "narration": "Rent, fuel, and groceries follow different price paths.",
+          "asset": "rent sign or gas pump, rights cleared"
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "role": "payoff",
+          "visual": "footage",
+          "narration": "The pace changed. The price level didn't reset.",
+          "asset": "grocery shopper receipt, rights cleared"
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "role": "engage",
+          "visual": "typography",
+          "narration": "Which expense changed the most for you?",
+          "asset": "large readable question over last licensed footage shot"
+        }
+      ]
+    },
+    {
+      "id": "world_debt_interest_2024",
+      "market": "World Finance",
+      "status": "needs_selected_footage_and_chart_data",
+      "title": "The $415 Billion Interest Bill",
+      "fact_sources": [
+        "https://www.worldbank.org/en/news/press-release/2025/12/03/developing-countries-debt-outflows-hit-50-year-high-during-2022-2024",
+        "https://www.worldbank.org/en/news/press-release/2024/12/03/developing-countries-paid-record-1-4-trillion-on-foreign-debt-in-2023"
+      ],
+      "news": {
+        "headline": "Developing economies paid $415B in external debt interest in 2024",
+        "publisher": "World Bank",
+        "published": "2025-12-03",
+        "source_url": "https://www.worldbank.org/en/news/press-release/2025/12/03/developing-countries-debt-outflows-hit-50-year-high-during-2022-2024",
+        "topic": "WORLD FINANCE"
+      },
+      "beats": [
+        {
+          "start": 0,
+          "end": 2.5,
+          "role": "hook",
+          "visual": "footage",
+          "narration": "Four hundred fifteen billion dollars. Just in interest.",
+          "asset": "rights-cleared banknotes / markets footage"
+        },
+        {
+          "start": 2.5,
+          "end": 6,
+          "role": "setup",
+          "visual": "footage",
+          "narration": "That's what low- and middle-income countries paid on external debt in 2024.",
+          "asset": "banking/payment footage, rights cleared"
+        },
+        {
+          "start": 6,
+          "end": 9,
+          "role": "evidence",
+          "visual": "newspaper",
+          "narration": "The World Bank reported that staggering interest bill.",
+          "asset": "original K70 newspaper-style card over footage"
+        },
+        {
+          "start": 9,
+          "end": 13.5,
+          "role": "chart",
+          "visual": "bar_chart",
+          "narration": "The reported bill rose from about 406 billion in 2023.",
+          "asset": "source-backed 2023 vs 2024 interest payment comparison; match coverage"
+        },
+        {
+          "start": 13.5,
+          "end": 17.5,
+          "role": "human_impact",
+          "visual": "footage",
+          "narration": "Interest absorbs funding that governments could use elsewhere.",
+          "asset": "public infrastructure footage with permission"
+        },
+        {
+          "start": 17.5,
+          "end": 22,
+          "role": "reveal",
+          "visual": "counter",
+          "narration": "And it pays for the cost of debt—not a new hospital or school.",
+          "asset": "big $415B counter; label it 2024 external debt interest"
+        },
+        {
+          "start": 22,
+          "end": 26,
+          "role": "context",
+          "visual": "footage",
+          "narration": "Borrowing costs make a huge difference.",
+          "asset": "licensed currency or city footage"
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "role": "payoff",
+          "visual": "footage",
+          "narration": "The shock isn't only what countries owe. It's the price of carrying it.",
+          "asset": "world city/economy footage, rights cleared"
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "role": "engage",
+          "visual": "typography",
+          "narration": "Which matters more: less debt or lower borrowing costs?",
+          "asset": "type on licensed final clip"
+        }
+      ]
+    }
+  ]
+}

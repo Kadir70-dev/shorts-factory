@@ -1,0 +1,50 @@
+[
+ {
+  "clip": "line_cinematic",
+  "seconds": 6.2,
+  "frames": 186,
+  "fps": 30.0,
+  "render_s": 20.9,
+  "ms_per_frame": 112
+ },
+ {
+  "clip": "bar_race",
+  "seconds": 6.8,
+  "frames": 204,
+  "fps": 30.0,
+  "render_s": 14.2,
+  "ms_per_frame": 69
+ },
+ {
+  "clip": "geo_map",
+  "seconds": 6.8,
+  "frames": 204,
+  "fps": 30.0,
+  "render_s": 33.3,
+  "ms_per_frame": 163
+ },
+ {
+  "clip": "story_before_after",
+  "seconds": 4.5,
+  "frames": 135,
+  "fps": 30.0,
+  "render_s": 6.2,
+  "ms_per_frame": 46
+ },
+ {
+  "clip": "split_screen",
+  "seconds": 5.6,
+  "frames": 168,
+  "fps": 30.0,
+  "render_s": 13.7,
+  "ms_per_frame": 81
+ },
+ {
+  "clip": "morph_line_to_bars",
+  "seconds": 4.2,
+  "frames": 126,
+  "fps": 30.0,
+  "render_s": 4.8,
+  "ms_per_frame": 38
+ }
+]

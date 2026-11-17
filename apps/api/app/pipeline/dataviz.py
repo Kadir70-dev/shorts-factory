@@ -35,7 +35,7 @@ from ..brand import text as tx
 from ..brand.raster import (Canvas, ease_in_out, ease_out_cubic, ease_out_expo,
                             write_video)
 from ..brand.theme import BrandTheme
-from ..schemas.scene import DataPoint, DataViz, Scene
+from ..schemas.scene import ADVANCED_KINDS, DataPoint, DataViz, Scene
 from .util import visual_cache_path, visual_cache_store
 
 # Bump when the drawing code changes shape: it namespaces every cache entry, so
@@ -319,6 +319,17 @@ def _bars(theme: BrandTheme, lay: Layout, viz: DataViz, frames: int, fps: int):
         yield c
 
 
+def _line_color(theme: BrandTheme, viz: DataViz) -> tuple[int, int, int]:
+    """Line colour: series direction by default; an explicit emphasis on the
+    highlighted point wins (rising inflation or prices is not "good news" green)."""
+    pts = viz.points
+    rising = pts[-1].value >= pts[0].value
+    hl = pts[viz.highlight if 0 <= viz.highlight < len(pts) else len(pts) - 1]
+    if hl.emphasis != "auto":
+        return _point_color(theme, hl, True, rising)
+    return theme.rgb("positive") if rising else theme.rgb("negative")
+
+
 def _line(theme: BrandTheme, lay: Layout, viz: DataViz, frames: int, fps: int):
     pts = viz.points
     n = len(pts)
@@ -326,8 +337,7 @@ def _line(theme: BrandTheme, lay: Layout, viz: DataViz, frames: int, fps: int):
     span = hi - lo or 1.0
     xs = [lay.pad + lay.plot_w * i / max(1, n - 1) for i in range(n)]
     ys = [lay.plot_bottom - (p.value - lo) / span * lay.plot_h for p in pts]
-    rising = pts[-1].value >= pts[0].value
-    color = theme.rgb("positive") if rising else theme.rgb("negative")
+    color = _line_color(theme, viz)
     lw = float(theme.chart.get("line_width_px", 9))
     dot = float(theme.chart.get("dot_radius_px", 16))
     anim = float(theme.chart.get("animate_sec", 1.6))
@@ -680,6 +690,9 @@ async def render(viz: DataViz, theme: BrandTheme, out: Path, width: int,
     """
     if not viz.valid():
         raise ValueError("refusing to render a chart with no real data")
+    if viz.kind in ADVANCED_KINDS:           # schema 2.1: advanced engine (cinematic line, bar race, map, morph)
+        from .dataviz_adv import render_viz
+        return await render_viz(viz, theme, out, width, height, fps, duration)
     kind = viz.kind if viz.kind in _GENERATORS else auto_kind(viz)
 
     cached = visual_cache_path(

@@ -1,0 +1,1403 @@
+{
+ "schema_version": "2.1",
+ "meta": {
+  "video_id": "k70-usa-inflation-aurora-v2-20261117",
+  "channel_id": "k70_economy",
+  "niche": "usa_finance",
+  "title": "Inflation Fell by Two Thirds. Prices Didn't.",
+  "hook": "Inflation fell by two thirds. Prices didn't.",
+  "description": "U.S. inflation fell from 9.1% (June 2022) to about 3%, but the price LEVEL never reset: CPI is up about 31% since January 2020. Data: U.S. Bureau of Labor Statistics CPI-U (not seasonally adjusted).",
+  "tags": [
+   "inflation",
+   "CPI",
+   "cost of living",
+   "BLS",
+   "prices",
+   "US economy"
+  ],
+  "hashtags": [
+   "#inflation",
+   "#CPI",
+   "#economy",
+   "#shorts"
+  ],
+  "thumbnail_text": "INFLATION FELL. PRICES DIDN'T.",
+  "structure_id": "one_number_story",
+  "disclaimer": "Educational purposes only. Not financial advice.",
+  "compliance_notes": [],
+  "requires_ai_disclosure": false,
+  "ai_disclosure_reasons": []
+ },
+ "fps": 30,
+ "width": 1080,
+ "height": 1920,
+ "scenes": [
+  {
+   "id": "s1",
+   "narration": "Inflation fell by two thirds. Prices didn't.",
+   "duration_sec": 3.385,
+   "visual": {
+    "type": "dataviz",
+    "query": "",
+    "broll_keywords": [],
+    "visual_intent": "",
+    "scene_visual_type": "real_footage",
+    "asset_path": null,
+    "motion": "none",
+    "camera_movement": "slow_zoom",
+    "fallback_color": "#15233a",
+    "strategy": "real",
+    "budget_channel": "",
+    "decision_reason": "authored: licensed Pexels footage (footage_manifest.json)",
+    "layers": [],
+    "evidence_card_path": null,
+    "evidence_card_rotate_deg": -6.0
+   },
+   "overlays": [],
+   "data": null,
+   "beat_role": "hook",
+   "transition_in": "cut",
+   "keywords": [],
+   "confidence": "confirmed"
+  },
+  {
+   "id": "s2",
+   "narration": "In June 2022, inflation hit 9.1 percent.",
+   "duration_sec": 4.367,
+   "visual": {
+    "type": "dataviz",
+    "query": "",
+    "broll_keywords": [],
+    "visual_intent": "",
+    "scene_visual_type": "data_viz",
+    "asset_path": null,
+    "motion": "none",
+    "camera_movement": "slow_zoom",
+    "fallback_color": "#15233a",
+    "strategy": "dataviz",
+    "budget_channel": "",
+    "decision_reason": "authored: advanced chart on blurred real footage, BLS series",
+    "layers": [],
+    "evidence_card_path": null,
+    "evidence_card_rotate_deg": -6.0
+   },
+   "overlays": [],
+   "data": null,
+   "beat_role": "context",
+   "transition_in": "whip",
+   "keywords": [],
+   "confidence": "confirmed"
+  },
+  {
+   "id": "s2b",
+   "narration": "By 2023, it was down to near 3.",
+   "duration_sec": 3.001,
+   "visual": {
+    "type": "dataviz",
+    "query": "",
+    "broll_keywords": [],
+    "visual_intent": "",
+    "scene_visual_type": "real_footage",
+    "asset_path": null,
+    "motion": "none",
+    "camera_movement": "slow_zoom",
+    "fallback_color": "#15233a",
+    "strategy": "real",
+    "budget_channel": "",
+    "decision_reason": "authored: licensed Pexels footage (footage_manifest.json)",
+    "layers": [],
+    "evidence_card_path": null,
+    "evidence_card_rotate_deg": -6.0
+   },
+   "overlays": [
+    {
+     "type": "stat",
+     "text": "x",
+     "sub": "x",
+     "y": 0.18,
+     "emphasis": "normal"
+    }
+   ],
+   "data": null,
+   "beat_role": "context",
+   "transition_in": "cut",
+   "keywords": [],
+   "confidence": "confirmed"
+  },
+  {
+   "id": "s3",
+   "narration": "But slower inflation isn't lower prices.",
+   "duration_sec": 3.023,
+   "visual": {
+    "type": "dataviz",
+    "query": "",
+    "broll_keywords": [],
+    "visual_intent": "",
+    "scene_visual_type": "real_footage",
+    "asset_path": null,
+    "motion": "none",
+    "camera_movement": "slow_zoom",
+    "fallback_color": "#15233a",
+    "strategy": "real",
+    "budget_channel": "",
+    "decision_reason": "authored: licensed Pexels footage (footage_manifest.json)",
+    "layers": [],
+    "evidence_card_path": null,
+    "evidence_card_rotate_deg": -6.0
+   },
+   "overlays": [],
+   "data": null,
+   "beat_role": "tension",
+   "transition_in": "cut",
+   "keywords": [],
+   "confidence": "confirmed"
+  },
+  {
+   "id": "s4",
+   "narration": "Think of it as speed and distance.",
+   "duration_sec": 2.169,
+   "visual": {
+    "type": "dataviz",
+    "query": "",
+    "broll_keywords": [],
+    "visual_intent": "",
+    "scene_visual_type": "real_footage",
+    "asset_path": null,
+    "motion": "none",
+    "camera_movement": "slow_zoom",
+    "fallback_color": "#15233a",
+    "strategy": "real",
+    "budget_channel": "",
+    "decision_reason": "authored: licensed Pexels footage (footage_manifest.json)",
+    "layers": [],
+    "evidence_card_path": null,
+    "evidence_card_rotate_deg": -6.0
+   },
+   "overlays": [],
+   "data": null,
+   "beat_role": "insight",
+   "transition_in": "cut",
+   "keywords": [],
+   "confidence": "confirmed"
+  },
+  {
+   "id": "s5",
+   "narration": "Inflation is the speed. Prices are the distance:",
+   "duration_sec": 3.364,
+   "visual": {
+    "type": "dataviz",
+    "query": "",
+    "broll_keywords": [],
+    "visual_intent": "",
+    "scene_visual_type": "data_viz",
+    "asset_path": null,
+    "motion": "none",
+    "camera_movement": "slow_zoom",
+    "fallback_color": "#15233a",
+    "strategy": "dataviz",
+    "budget_channel": "",
+    "decision_reason": "authored: advanced chart on blurred real footage, BLS series",
+    "layers": [],
+    "evidence_card_path": null,
+    "evidence_card_rotate_deg": -6.0
+   },
+   "overlays": [],
+   "data": null,
+   "beat_role": "insight",
+   "transition_in": "whip",
+   "keywords": [],
+   "confidence": "confirmed"
+  },
+  {
+   "id": "s5b",
+   "narration": "up more than 30 percent since 2020.",
+   "duration_sec": 2.831,
+   "visual": {
+    "type": "dataviz",
+    "query": "",
+    "broll_keywords": [],
+    "visual_intent": "",
+    "scene_visual_type": "real_footage",
+    "asset_path": null,
+    "motion": "none",
+    "camera_movement": "slow_zoom",
+    "fallback_color": "#15233a",
+    "strategy": "real",
+    "budget_channel": "",
+    "decision_reason": "authored: licensed Pexels footage (footage_manifest.json)",
+    "layers": [],
+    "evidence_card_path": null,
+    "evidence_card_rotate_deg": -6.0
+   },
+   "overlays": [
+    {
+     "type": "stat",
+     "text": "x",
+     "sub": "x",
+     "y": 0.18,
+     "emphasis": "normal"
+    }
+   ],
+   "data": null,
+   "beat_role": "evidence",
+   "transition_in": "cut",
+   "keywords": [],
+   "confidence": "confirmed"
+  },
+  {
+   "id": "s6",
+   "narration": "Since 2020, groceries are up 32 percent.",
+   "duration_sec": 3.577,
+   "visual": {
+    "type": "dataviz",
+    "query": "",
+    "broll_keywords": [],
+    "visual_intent": "",
+    "scene_visual_type": "data_viz",
+    "asset_path": null,
+    "motion": "none",
+    "camera_movement": "slow_zoom",
+    "fallback_color": "#15233a",
+    "strategy": "dataviz",
+    "budget_channel": "",
+    "decision_reason": "authored: advanced chart on blurred real footage, BLS series",
+    "layers": [],
+    "evidence_card_path": null,
+    "evidence_card_rotate_deg": -6.0
+   },
+   "overlays": [],
+   "data": null,
+   "beat_role": "evidence",
+   "transition_in": "whip",
+   "keywords": [],
+   "confidence": "confirmed"
+  },
+  {
+   "id": "s6b",
+   "narration": "Rent, up 33. Gasoline, up 69.",
+   "duration_sec": 3.321,
+   "visual": {
+    "type": "dataviz",
+    "query": "",
+    "broll_keywords": [],
+    "visual_intent": "",
+    "scene_visual_type": "real_footage",
+    "asset_path": null,
+    "motion": "none",
+    "camera_movement": "slow_zoom",
+    "fallback_color": "#15233a",
+    "strategy": "real",
+    "budget_channel": "",
+    "decision_reason": "authored: licensed Pexels footage (footage_manifest.json)",
+    "layers": [],
+    "evidence_card_path": null,
+    "evidence_card_rotate_deg": -6.0
+   },
+   "overlays": [
+    {
+     "type": "stat",
+     "text": "x",
+     "sub": "x",
+     "y": 0.18,
+     "emphasis": "normal"
+    }
+   ],
+   "data": null,
+   "beat_role": "evidence",
+   "transition_in": "cut",
+   "keywords": [],
+   "confidence": "confirmed"
+  },
+  {
+   "id": "s7",
+   "narration": "Each year's increase stacks on top of the last.",
+   "duration_sec": 2.831,
+   "visual": {
+    "type": "dataviz",
+    "query": "",
+    "broll_keywords": [],
+    "visual_intent": "",
+    "scene_visual_type": "real_footage",
+    "asset_path": null,
+    "motion": "none",
+    "camera_movement": "slow_zoom",
+    "fallback_color": "#15233a",
+    "strategy": "real",
+    "budget_channel": "",
+    "decision_reason": "authored: licensed Pexels footage (footage_manifest.json)",
+    "layers": [],
+    "evidence_card_path": null,
+    "evidence_card_rotate_deg": -6.0
+   },
+   "overlays": [],
+   "data": null,
+   "beat_role": "consequence",
+   "transition_in": "cut",
+   "keywords": [],
+   "confidence": "confirmed"
+  },
+  {
+   "id": "s8",
+   "narration": "September: 3.7 percent. Up from 2.4 in January.",
+   "duration_sec": 5.049,
+   "visual": {
+    "type": "dataviz",
+    "query": "",
+    "broll_keywords": [],
+    "visual_intent": "",
+    "scene_visual_type": "real_footage",
+    "asset_path": null,
+    "motion": "none",
+    "camera_movement": "slow_zoom",
+    "fallback_color": "#15233a",
+    "strategy": "real",
+    "budget_channel": "",
+    "decision_reason": "authored: licensed Pexels footage (footage_manifest.json)",
+    "layers": [],
+    "evidence_card_path": null,
+    "evidence_card_rotate_deg": -6.0
+   },
+   "overlays": [
+    {
+     "type": "stat",
+     "text": "x",
+     "sub": "x",
+     "y": 0.18,
+     "emphasis": "normal"
+    }
+   ],
+   "data": null,
+   "beat_role": "reveal",
+   "transition_in": "cut",
+   "keywords": [],
+   "confidence": "confirmed"
+  },
+  {
+   "id": "s9",
+   "narration": "So cooling doesn't mean cheap. Watch the price level, not just the rate.",
+   "duration_sec": 4.516,
+   "visual": {
+    "type": "dataviz",
+    "query": "",
+    "broll_keywords": [],
+    "visual_intent": "",
+    "scene_visual_type": "real_footage",
+    "asset_path": null,
+    "motion": "none",
+    "camera_movement": "slow_zoom",
+    "fallback_color": "#15233a",
+    "strategy": "real",
+    "budget_channel": "",
+    "decision_reason": "authored: licensed Pexels footage (footage_manifest.json)",
+    "layers": [],
+    "evidence_card_path": null,
+    "evidence_card_rotate_deg": -6.0
+   },
+   "overlays": [],
+   "data": null,
+   "beat_role": "cta",
+   "transition_in": "cut",
+   "keywords": [],
+   "confidence": "confirmed"
+  }
+ ],
+ "audio": {
+  "voiceover_path": "/home/kadir70/shorts-factory/data/jobs/k70-usa-inflation-aurora-v2-20261117/vo/voiceover.wav",
+  "music_path": "/home/kadir70/shorts-factory/data/assets/music/beds/documentary_b.wav",
+  "music_gain_db": -22.5,
+  "voiceover_gain_db": 0.0,
+  "duck_music": true,
+  "duck_amount_db": -9.0,
+  "music_mood": "warm documentary · patient and human [documentary_b]",
+  "music_envelope": [
+   {
+    "at": 0.45,
+    "gain_db": -16.5,
+    "role": "hook"
+   },
+   {
+    "at": 2.935,
+    "gain_db": -16.5,
+    "role": "hook"
+   },
+   {
+    "at": 3.835,
+    "gain_db": -23.5,
+    "role": "middle"
+   },
+   {
+    "at": 7.302,
+    "gain_db": -23.5,
+    "role": "middle"
+   },
+   {
+    "at": 8.202,
+    "gain_db": -23.5,
+    "role": "middle"
+   },
+   {
+    "at": 10.303,
+    "gain_db": -23.5,
+    "role": "middle"
+   },
+   {
+    "at": 11.203,
+    "gain_db": -22.5,
+    "role": "middle"
+   },
+   {
+    "at": 13.326,
+    "gain_db": -22.5,
+    "role": "middle"
+   },
+   {
+    "at": 14.226,
+    "gain_db": -22.5,
+    "role": "middle"
+   },
+   {
+    "at": 15.495,
+    "gain_db": -22.5,
+    "role": "middle"
+   },
+   {
+    "at": 16.395,
+    "gain_db": -22.5,
+    "role": "middle"
+   },
+   {
+    "at": 18.859,
+    "gain_db": -22.5,
+    "role": "middle"
+   },
+   {
+    "at": 19.759,
+    "gain_db": -19.5,
+    "role": "reveal"
+   },
+   {
+    "at": 21.69,
+    "gain_db": -19.5,
+    "role": "reveal"
+   },
+   {
+    "at": 22.59,
+    "gain_db": -19.5,
+    "role": "reveal"
+   },
+   {
+    "at": 25.267,
+    "gain_db": -19.5,
+    "role": "reveal"
+   },
+   {
+    "at": 26.167,
+    "gain_db": -19.5,
+    "role": "reveal"
+   },
+   {
+    "at": 28.588,
+    "gain_db": -19.5,
+    "role": "reveal"
+   },
+   {
+    "at": 29.488,
+    "gain_db": -22.5,
+    "role": "middle"
+   },
+   {
+    "at": 31.419,
+    "gain_db": -22.5,
+    "role": "middle"
+   },
+   {
+    "at": 32.319,
+    "gain_db": -19.5,
+    "role": "reveal"
+   },
+   {
+    "at": 36.468,
+    "gain_db": -19.5,
+    "role": "reveal"
+   },
+   {
+    "at": 37.368,
+    "gain_db": -18.5,
+    "role": "cta"
+   },
+   {
+    "at": 40.984,
+    "gain_db": -18.5,
+    "role": "cta"
+   }
+  ],
+  "music_fade_in_sec": 1.5,
+  "music_fade_out_sec": 2.0
+ },
+ "captions": [
+  {
+   "start": 0.102,
+   "end": 1.101,
+   "text": "Inflation fell by",
+   "words": [
+    {
+     "w": "Inflation",
+     "s": 0.102,
+     "e": 0.701
+    },
+    {
+     "w": "fell",
+     "s": 0.701,
+     "e": 0.968
+    },
+    {
+     "w": "by",
+     "s": 0.968,
+     "e": 1.101
+    }
+   ]
+  },
+  {
+   "start": 1.101,
+   "end": 1.3,
+   "text": "two",
+   "words": [
+    {
+     "w": "two",
+     "s": 1.101,
+     "e": 1.3
+    }
+   ]
+  },
+  {
+   "start": 1.3,
+   "end": 2.587,
+   "text": "thirds. Prices",
+   "words": [
+    {
+     "w": "thirds.",
+     "s": 1.3,
+     "e": 1.7
+    },
+    {
+     "w": "Prices",
+     "s": 1.833,
+     "e": 2.587
+    }
+   ]
+  },
+  {
+   "start": 2.587,
+   "end": 2.92,
+   "text": "didn't.",
+   "words": [
+    {
+     "w": "didn't.",
+     "s": 2.587,
+     "e": 2.92
+    }
+   ]
+  },
+  {
+   "start": 3.385,
+   "end": 4.473,
+   "text": "In June 2022,",
+   "words": [
+    {
+     "w": "In",
+     "s": 3.385,
+     "e": 3.603
+    },
+    {
+     "w": "June",
+     "s": 3.603,
+     "e": 4.038
+    },
+    {
+     "w": "2022,",
+     "s": 4.038,
+     "e": 4.473
+    }
+   ]
+  },
+  {
+   "start": 4.473,
+   "end": 5.918,
+   "text": "inflation",
+   "words": [
+    {
+     "w": "inflation",
+     "s": 4.473,
+     "e": 5.918
+    }
+   ]
+  },
+  {
+   "start": 5.918,
+   "end": 7.224,
+   "text": "hit 9.1 percent.",
+   "words": [
+    {
+     "w": "hit",
+     "s": 5.918,
+     "e": 6.245
+    },
+    {
+     "w": "9.1",
+     "s": 6.245,
+     "e": 6.462
+    },
+    {
+     "w": "percent.",
+     "s": 6.462,
+     "e": 7.224
+    }
+   ]
+  },
+  {
+   "start": 7.752,
+   "end": 8.814,
+   "text": "By 2023, it was",
+   "words": [
+    {
+     "w": "By",
+     "s": 7.752,
+     "e": 7.945
+    },
+    {
+     "w": "2023,",
+     "s": 7.945,
+     "e": 8.331
+    },
+    {
+     "w": "it",
+     "s": 8.331,
+     "e": 8.525
+    },
+    {
+     "w": "was",
+     "s": 8.525,
+     "e": 8.814
+    }
+   ]
+  },
+  {
+   "start": 8.814,
+   "end": 10.273,
+   "text": "down to near 3.",
+   "words": [
+    {
+     "w": "down",
+     "s": 8.814,
+     "e": 9.5
+    },
+    {
+     "w": "to",
+     "s": 9.5,
+     "e": 9.693
+    },
+    {
+     "w": "near",
+     "s": 9.693,
+     "e": 10.08
+    },
+    {
+     "w": "3.",
+     "s": 10.08,
+     "e": 10.273
+    }
+   ]
+  },
+  {
+   "start": 10.753,
+   "end": 11.403,
+   "text": "But slower",
+   "words": [
+    {
+     "w": "But",
+     "s": 10.753,
+     "e": 10.97
+    },
+    {
+     "w": "slower",
+     "s": 10.97,
+     "e": 11.403
+    }
+   ]
+  },
+  {
+   "start": 11.403,
+   "end": 12.631,
+   "text": "inflation isn't",
+   "words": [
+    {
+     "w": "inflation",
+     "s": 11.403,
+     "e": 12.343
+    },
+    {
+     "w": "isn't",
+     "s": 12.343,
+     "e": 12.631
+    }
+   ]
+  },
+  {
+   "start": 12.631,
+   "end": 13.425,
+   "text": "lower prices.",
+   "words": [
+    {
+     "w": "lower",
+     "s": 12.631,
+     "e": 12.992
+    },
+    {
+     "w": "prices.",
+     "s": 12.992,
+     "e": 13.425
+    }
+   ]
+  },
+  {
+   "start": 13.776,
+   "end": 14.445,
+   "text": "Think of it as",
+   "words": [
+    {
+     "w": "Think",
+     "s": 13.776,
+     "e": 14.08
+    },
+    {
+     "w": "of",
+     "s": 14.08,
+     "e": 14.202
+    },
+    {
+     "w": "it",
+     "s": 14.202,
+     "e": 14.324
+    },
+    {
+     "w": "as",
+     "s": 14.324,
+     "e": 14.445
+    }
+   ]
+  },
+  {
+   "start": 14.445,
+   "end": 14.932,
+   "text": "speed and",
+   "words": [
+    {
+     "w": "speed",
+     "s": 14.445,
+     "e": 14.75
+    },
+    {
+     "w": "and",
+     "s": 14.75,
+     "e": 14.932
+    }
+   ]
+  },
+  {
+   "start": 14.932,
+   "end": 15.419,
+   "text": "distance.",
+   "words": [
+    {
+     "w": "distance.",
+     "s": 14.932,
+     "e": 15.419
+    }
+   ]
+  },
+  {
+   "start": 15.945,
+   "end": 16.854,
+   "text": "Inflation is the",
+   "words": [
+    {
+     "w": "Inflation",
+     "s": 15.945,
+     "e": 16.529
+    },
+    {
+     "w": "is",
+     "s": 16.529,
+     "e": 16.659
+    },
+    {
+     "w": "the",
+     "s": 16.659,
+     "e": 16.854
+    }
+   ]
+  },
+  {
+   "start": 16.854,
+   "end": 17.178,
+   "text": "speed.",
+   "words": [
+    {
+     "w": "speed.",
+     "s": 16.854,
+     "e": 17.178
+    }
+   ]
+  },
+  {
+   "start": 17.308,
+   "end": 18.466,
+   "text": "Prices are the",
+   "words": [
+    {
+     "w": "Prices",
+     "s": 17.308,
+     "e": 18.077
+    },
+    {
+     "w": "are",
+     "s": 18.077,
+     "e": 18.272
+    },
+    {
+     "w": "the",
+     "s": 18.272,
+     "e": 18.466
+    }
+   ]
+  },
+  {
+   "start": 18.466,
+   "end": 18.985,
+   "text": "distance:",
+   "words": [
+    {
+     "w": "distance:",
+     "s": 18.466,
+     "e": 18.985
+    }
+   ]
+  },
+  {
+   "start": 19.432,
+   "end": 20.401,
+   "text": "up more than 30",
+   "words": [
+    {
+     "w": "up",
+     "s": 19.432,
+     "e": 19.594
+    },
+    {
+     "w": "more",
+     "s": 19.594,
+     "e": 19.917
+    },
+    {
+     "w": "than",
+     "s": 19.917,
+     "e": 20.24
+    },
+    {
+     "w": "30",
+     "s": 20.24,
+     "e": 20.401
+    }
+   ]
+  },
+  {
+   "start": 20.401,
+   "end": 21.37,
+   "text": "percent since",
+   "words": [
+    {
+     "w": "percent",
+     "s": 20.401,
+     "e": 20.966
+    },
+    {
+     "w": "since",
+     "s": 20.966,
+     "e": 21.37
+    }
+   ]
+  },
+  {
+   "start": 21.37,
+   "end": 21.693,
+   "text": "2020.",
+   "words": [
+    {
+     "w": "2020.",
+     "s": 21.37,
+     "e": 21.693
+    }
+   ]
+  },
+  {
+   "start": 22.14,
+   "end": 22.918,
+   "text": "Since 2020,",
+   "words": [
+    {
+     "w": "Since",
+     "s": 22.14,
+     "e": 22.572
+    },
+    {
+     "w": "2020,",
+     "s": 22.572,
+     "e": 22.918
+    }
+   ]
+  },
+  {
+   "start": 22.918,
+   "end": 24.297,
+   "text": "groceries are",
+   "words": [
+    {
+     "w": "groceries",
+     "s": 22.918,
+     "e": 24.038
+    },
+    {
+     "w": "are",
+     "s": 24.038,
+     "e": 24.297
+    }
+   ]
+  },
+  {
+   "start": 24.297,
+   "end": 25.248,
+   "text": "up 32 percent.",
+   "words": [
+    {
+     "w": "up",
+     "s": 24.297,
+     "e": 24.47
+    },
+    {
+     "w": "32",
+     "s": 24.47,
+     "e": 24.643
+    },
+    {
+     "w": "percent.",
+     "s": 24.643,
+     "e": 25.248
+    }
+   ]
+  },
+  {
+   "start": 25.717,
+   "end": 26.595,
+   "text": "Rent, up 33.",
+   "words": [
+    {
+     "w": "Rent,",
+     "s": 25.717,
+     "e": 26.156
+    },
+    {
+     "w": "up",
+     "s": 26.156,
+     "e": 26.376
+    },
+    {
+     "w": "33.",
+     "s": 26.376,
+     "e": 26.595
+    }
+   ]
+  },
+  {
+   "start": 26.815,
+   "end": 28.042,
+   "text": "Gasoline,",
+   "words": [
+    {
+     "w": "Gasoline,",
+     "s": 26.815,
+     "e": 28.042
+    }
+   ]
+  },
+  {
+   "start": 28.042,
+   "end": 28.481,
+   "text": "up 69.",
+   "words": [
+    {
+     "w": "up",
+     "s": 28.042,
+     "e": 28.262
+    },
+    {
+     "w": "69.",
+     "s": 28.262,
+     "e": 28.481
+    }
+   ]
+  },
+  {
+   "start": 29.038,
+   "end": 29.594,
+   "text": "Each year's",
+   "words": [
+    {
+     "w": "Each",
+     "s": 29.038,
+     "e": 29.285
+    },
+    {
+     "w": "year's",
+     "s": 29.285,
+     "e": 29.594
+    }
+   ]
+  },
+  {
+   "start": 29.594,
+   "end": 30.459,
+   "text": "increase stacks",
+   "words": [
+    {
+     "w": "increase",
+     "s": 29.594,
+     "e": 30.088
+    },
+    {
+     "w": "stacks",
+     "s": 30.088,
+     "e": 30.459
+    }
+   ]
+  },
+  {
+   "start": 30.459,
+   "end": 31.077,
+   "text": "on top of the",
+   "words": [
+    {
+     "w": "on",
+     "s": 30.459,
+     "e": 30.583
+    },
+    {
+     "w": "top",
+     "s": 30.583,
+     "e": 30.768
+    },
+    {
+     "w": "of",
+     "s": 30.768,
+     "e": 30.892
+    },
+    {
+     "w": "the",
+     "s": 30.892,
+     "e": 31.077
+    }
+   ]
+  },
+  {
+   "start": 31.077,
+   "end": 31.324,
+   "text": "last.",
+   "words": [
+    {
+     "w": "last.",
+     "s": 31.077,
+     "e": 31.324
+    }
+   ]
+  },
+  {
+   "start": 31.869,
+   "end": 33.217,
+   "text": "September: 3.7",
+   "words": [
+    {
+     "w": "September:",
+     "s": 31.869,
+     "e": 32.802
+    },
+    {
+     "w": "3.7",
+     "s": 33.01,
+     "e": 33.217
+    }
+   ]
+  },
+  {
+   "start": 33.217,
+   "end": 34.907,
+   "text": "percent. Up",
+   "words": [
+    {
+     "w": "percent.",
+     "s": 33.217,
+     "e": 33.943
+    },
+    {
+     "w": "Up",
+     "s": 34.699,
+     "e": 34.907
+    }
+   ]
+  },
+  {
+   "start": 34.907,
+   "end": 35.737,
+   "text": "from 2.4 in",
+   "words": [
+    {
+     "w": "from",
+     "s": 34.907,
+     "e": 35.322
+    },
+    {
+     "w": "2.4",
+     "s": 35.322,
+     "e": 35.529
+    },
+    {
+     "w": "in",
+     "s": 35.529,
+     "e": 35.737
+    }
+   ]
+  },
+  {
+   "start": 35.737,
+   "end": 36.463,
+   "text": "January.",
+   "words": [
+    {
+     "w": "January.",
+     "s": 35.737,
+     "e": 36.463
+    }
+   ]
+  },
+  {
+   "start": 36.918,
+   "end": 37.825,
+   "text": "So cooling doesn't",
+   "words": [
+    {
+     "w": "So",
+     "s": 36.918,
+     "e": 37.039
+    },
+    {
+     "w": "cooling",
+     "s": 37.039,
+     "e": 37.462
+    },
+    {
+     "w": "doesn't",
+     "s": 37.462,
+     "e": 37.825
+    }
+   ]
+  },
+  {
+   "start": 37.825,
+   "end": 38.067,
+   "text": "mean",
+   "words": [
+    {
+     "w": "mean",
+     "s": 37.825,
+     "e": 38.067
+    }
+   ]
+  },
+  {
+   "start": 38.067,
+   "end": 39.543,
+   "text": "cheap. Watch the",
+   "words": [
+    {
+     "w": "cheap.",
+     "s": 38.067,
+     "e": 38.369
+    },
+    {
+     "w": "Watch",
+     "s": 38.49,
+     "e": 39.362
+    },
+    {
+     "w": "the",
+     "s": 39.362,
+     "e": 39.543
+    }
+   ]
+  },
+  {
+   "start": 39.543,
+   "end": 39.846,
+   "text": "price",
+   "words": [
+    {
+     "w": "price",
+     "s": 39.543,
+     "e": 39.846
+    }
+   ]
+  },
+  {
+   "start": 39.846,
+   "end": 40.571,
+   "text": "level, not just",
+   "words": [
+    {
+     "w": "level,",
+     "s": 39.846,
+     "e": 40.148
+    },
+    {
+     "w": "not",
+     "s": 40.148,
+     "e": 40.329
+    },
+    {
+     "w": "just",
+     "s": 40.329,
+     "e": 40.571
+    }
+   ]
+  },
+  {
+   "start": 40.571,
+   "end": 40.753,
+   "text": "the",
+   "words": [
+    {
+     "w": "the",
+     "s": 40.571,
+     "e": 40.753
+    }
+   ]
+  },
+  {
+   "start": 40.753,
+   "end": 40.995,
+   "text": "rate.",
+   "words": [
+    {
+     "w": "rate.",
+     "s": 40.753,
+     "e": 40.995
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "sound": "bass",
+   "at": 0.06,
+   "gain_db": -7.0,
+   "role": "hook"
+  },
+  {
+   "sound": "swipe",
+   "at": 3.285,
+   "gain_db": -13.0,
+   "role": "transition"
+  },
+  {
+   "sound": "hit",
+   "at": 7.872,
+   "gain_db": -13.0,
+   "role": "stat"
+  },
+  {
+   "sound": "ring",
+   "at": 7.932,
+   "gain_db": -15.0,
+   "role": "stat"
+  },
+  {
+   "sound": "swipe",
+   "at": 15.845,
+   "gain_db": -13.0,
+   "role": "transition"
+  },
+  {
+   "sound": "hit",
+   "at": 19.429,
+   "gain_db": -13.0,
+   "role": "stat"
+  },
+  {
+   "sound": "ring",
+   "at": 19.489,
+   "gain_db": -15.0,
+   "role": "stat"
+  },
+  {
+   "sound": "swipe",
+   "at": 22.04,
+   "gain_db": -13.0,
+   "role": "transition"
+  },
+  {
+   "sound": "hit",
+   "at": 25.837,
+   "gain_db": -13.0,
+   "role": "stat"
+  },
+  {
+   "sound": "ring",
+   "at": 25.897,
+   "gain_db": -15.0,
+   "role": "stat"
+  },
+  {
+   "sound": "hit",
+   "at": 31.989,
+   "gain_db": -13.0,
+   "role": "stat"
+  },
+  {
+   "sound": "ring",
+   "at": 32.049,
+   "gain_db": -15.0,
+   "role": "stat"
+  },
+  {
+   "sound": "riser",
+   "at": 36.118,
+   "gain_db": -15.0,
+   "role": "cta"
+  }
+ ],
+ "storyboard": null,
+ "asset_provenance": [],
+ "threejs_provenance": [],
+ "motion_graphics_provenance": [],
+ "ai_broll_provenance": [],
+ "paperima_provenance": [],
+ "brand_identity_provenance": null,
+ "variety": {
+  "caption_animation": "keyword_flash",
+  "transitions": "hard_doc",
+  "motion": "observational",
+  "zoom": "assertive",
+  "grade": "neutral_doc",
+  "cta_style": "callback",
+  "music_family": "documentary",
+  "scene_count": "6"
+ },
+ "brand_id": "k70_chart_aurora"
+}

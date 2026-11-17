@@ -1,0 +1,4 @@
+# optional: only for scripts/k70_chart_samples.py (bar-chart race sample)
+bar_chart_race==0.1.0   # MIT; predates pandas 3 -> the script shims fillna(method=)
+pandas>=2.2
+matplotlib>=3.8

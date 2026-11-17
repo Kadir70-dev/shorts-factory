@@ -81,7 +81,7 @@ def main() -> None:
             ents.append(Series(names[sid].replace(" (all types)", "").replace(" of primary residence", ""), periods,
                                [lv[p] / b * 100 if p in lv else None for p in periods], "index (Jan 2020 = 100)",
                                f"U.S. Bureau of Labor Statistics, CPI-U {sid}, NSA", RET))
-        race = A.BarRace(th, ents, A.Timeline([(0.3, 0), (6.2, len(periods) - 2)]), top_n=8, title="Price level by category",
+        race = A.BarRace(th, ents, A.Timeline([(0.3, 0), (6.0, len(periods) - 2 + 2.5)]), top_n=8, title="Price level by category",
                          subtitle="index, Jan 2020 = 100", value_fmt=lambda x: f"{x:.0f}")
         print("race dropped periods:", race.dropped, "final:", [(n, round(v)) for n, v in race.final_ranking()[:3]])
         rows.append(render("bar_race", race, 6.8, th, [1.5, 3.5, 6.6]))
@@ -143,7 +143,12 @@ def main() -> None:
             bg.alpha_composite(L)
             OUT.mkdir(parents=True, exist_ok=True)
             bg.convert("RGB").save(OUT / f"theme_{bid.replace('k70_chart_', '')}.png")
-    (OUT / "render_times.json").write_text(json.dumps(rows, indent=1))
+    prev = {}
+    tf = OUT / "render_times.json"
+    if tf.exists():
+        prev = {r["clip"]: r for r in json.loads(tf.read_text())}
+    prev.update({r["clip"]: r for r in rows})
+    tf.write_text(json.dumps(list(prev.values()), indent=1))
 
 
 if __name__ == "__main__":

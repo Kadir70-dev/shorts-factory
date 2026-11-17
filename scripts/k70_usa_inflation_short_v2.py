@@ -74,7 +74,7 @@ def build(f: dict):
 
 
 # --------------------------------------------------------------------------- #
-def render_scenes(graph, f: dict, theme) -> Path:
+def render_scenes(graph, f: dict, theme, qa_only: bool = False):
     from app.pipeline import dataviz_adv as A
     from app.pipeline.dataviz_adv import compose, story
     from app.pipeline.dataviz_adv.core import FPS, new_layer
@@ -127,7 +127,7 @@ def render_scenes(graph, f: dict, theme) -> Path:
                              [lvl[p] / lvl["2020-01"] * 100 if p in lvl else None for p in periods], "index (Jan 2020 = 100)",
                              f"U.S. BLS CPI-U {sid}, NSA", RET))
     d6 = dur["s6"]
-    race = A.BarRace(th, ents, A.Timeline([(0.2, 0), (d6 - 0.9, 78)]), top_n=5, title="Price level by category", subtitle="labels: % change since Jan 2020",
+    race = A.BarRace(th, ents, A.Timeline([(0.2, 0), (d6 - 0.7, len(periods) - 2 + 2.5)]), top_n=5, title="Price level by category", subtitle="change since Jan 2020",
                      value_fmt=lambda v: f"+{v - 100:.0f}%", source="U.S. BLS CPI-U (NSA); index Jan 2020 = 100", panel=(48, 225, 1032, 1480),
                      rect=(60, 500, 1020, 1330))
     assert race.dropped == ["2025-10"]
@@ -210,7 +210,7 @@ def render_scenes(graph, f: dict, theme) -> Path:
         "s8": ([(F(9046227), 6.0, 0.5), (F(8541111), 1.0, 0.5)], A.compose.Bg("plain"), with_shade(ov_s8)),
         "s9": ([(F(8960334), 1.0, 1.0)], A.compose.Bg("blur"), with_shade(ov_s9)),
     }
-    cum, clips = 0.0, []
+    cum, clips, qa_issues = 0.0, [], []
     for i, sc in enumerate(graph.scenes):
         segs, bg, ov = plan[sc.id]
         n = round((cum + sc.duration_sec) * FPS) - round(cum * FPS)
@@ -221,10 +221,27 @@ def render_scenes(graph, f: dict, theme) -> Path:
             seg_list.append((clip, start, sd))
             off += sd
         o = out_dir / f"{sc.id}.mp4"
+        # frame-level QA of the graphics layer (safe area, min text size) at start / middle / end of the scene
+        for tq in (0.45, total * 0.5, total - 0.2):
+            A.Recorder.start()
+            ov(tq)
+            boxes = list(A.Recorder.active or [])
+            A.Recorder.stop()
+            for msg in A.qa.text_issues(boxes):
+                qa_issues.append(f"{sc.id}@{tq:.2f}s: {msg}")
+        if qa_only:
+            cum += sc.duration_sec
+            continue
         print(f"[motion] {sc.id} {n}f {sc.visual.strategy}", flush=True)
         compose.render_video(o, n, seg_list, ov, bg, first_scene=(i == 0))
         clips.append(o)
         cum += sc.duration_sec
+    (WORK / "qa_text_issues_v2.json").write_text(json.dumps(qa_issues, indent=1))
+    print(f"[qa] text issues in graphics layer: {len(qa_issues)}")
+    for m in qa_issues[:12]:
+        print("   ", m)
+    if qa_only:
+        return None
     lst = out_dir / "scenes.txt"
     lst.write_text("\n".join(f"file '{c}'" for c in clips))
     silent = Path(graph.audio.voiceover_path).parents[1] / "silent.mp4"
@@ -301,5 +318,19 @@ async def run(check_only: bool) -> None:
     print("MP4:", final["mp4"])
 
 
+
+
+
+def qa_only() -> None:
+    """Re-run only the frame-level text QA on the saved V2 scene graph (no rendering)."""
+    from app.brand import load_theme
+    from app.schemas.scene import SceneGraph
+    g = SceneGraph.model_validate_json((WORK / "scene_graph_v2.json").read_text())
+    render_scenes(g, V1.facts(), load_theme(BRAND), qa_only=True)
+
+
 if __name__ == "__main__":
-    asyncio.run(run("--check" in sys.argv))
+    if "--qa" in sys.argv:
+        qa_only()
+    else:
+        asyncio.run(run("--check" in sys.argv))

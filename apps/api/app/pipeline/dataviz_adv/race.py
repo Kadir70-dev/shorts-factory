@@ -62,7 +62,8 @@ class BarRace:
 
     # -- time-dependent state ----------------------------------------------- #
     def head(self, t: float) -> float:
-        return clamp(self.tl.at(t), 0, self.T - 1)
+        """Fractional period index; may run `swap/2` past the last period so the final overtakes finish and hold."""
+        return clamp(self.tl.at(t), 0, self.T - 1 + self.swap / 2)
 
     def _ranks(self, start_order, hyst: float) -> np.ndarray:
         """R[e, k] = row of entity e in period k (0 = top), with hysteresis; strictly value-ordered at the last period."""
@@ -86,8 +87,9 @@ class BarRace:
     def state(self, h: float):
         """(values, row positions, axis max) at fractional period h; positions are box-filtered ranks so an overtake
         takes `swap_periods` periods and is continuous in time."""
-        k = min(int(h), self.T - 2)
-        f = h - k
+        hv = min(h, self.T - 1)                         # values stop at the last published period
+        k = min(int(hv), self.T - 2)
+        f = hv - k
         v = self.vals[:, k] * (1 - f) + self.vals[:, k + 1] * f
         ax = lerp(self.axis_max[k], self.axis_max[k + 1], f)
         offs = np.linspace(-self.swap / 2, self.swap / 2, 9)
@@ -147,9 +149,9 @@ class BarRace:
             put(L, text_tile(self.value_fmt(v[e]), th.display, 46, th.ink, None, 0, 5), bar_x0 + w + 16,
                 yrow + rh * 0.54 + bar_h / 2, anchor="lm", alpha=fade, tag="value", size=46)
         # period indicator (the "year" counter)
-        k = int(round(h))
+        k = min(int(round(h)), self.T - 1)
         lab = month_label(self.periods[k])
-        put(L, text_tile(lab, th.display, 96, th.gold, th.gold, 14, 8), rx1 - 6, ry0 - 70, anchor="rb", alpha=a_in * 0.95,
+        put(L, text_tile(lab, th.display, 96, th.gold, th.gold, 14, 8), rx1 - 6, ry0 - 14, anchor="rb", alpha=a_in * 0.95,
             tag="period", size=96)
         if self.source:
             source_block(L, th, self.source, px0 - 4, (self.panel[3] if self.panel else ry1 + 100) - 50, (self.panel[2] - self.panel[0]) - 68 if self.panel else 900, a_in)

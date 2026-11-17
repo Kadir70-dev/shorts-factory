@@ -168,7 +168,7 @@ def test_bar_race_drops_unpublished_periods_and_validates(th, cats):
 
 
 def test_bar_race_ranking_swaps_are_smooth_and_correct(th, cats):
-    race = A.BarRace(th, race_entities(cats), A.Timeline([(0.0, 0), (6.8, 78)]))
+    race = A.BarRace(th, race_entities(cats), A.Timeline([(0.0, 0), (6.8, 79 + 2.5)]))
     prev, worst = None, 0.0
     for k in range(int(6.8 * FPS) + 1):
         h = race.head(k / FPS)
@@ -178,8 +178,9 @@ def test_bar_race_ranking_swaps_are_smooth_and_correct(th, cats):
             worst = max(worst, float(np.abs(pos - prev).max()))
         prev = pos
     assert worst < 1.0, f"ranking jumps by {worst:.2f} rows in one frame"
-    # at the last period the vertical order is exactly the value order
-    v, pos, _ = race.state(race.T - 1)
+    # once the race has finished (head past the last period) rows are on integer rows in exact value order
+    v, pos, _ = race.state(race.T - 1 + race.swap / 2)
+    assert sorted(np.round(pos, 3)) == list(range(len(pos)))
     assert list(np.argsort(pos)) == list(np.argsort(-v))
     assert race.final_ranking()[0][0].startswith("Gasoline")
 

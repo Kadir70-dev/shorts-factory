@@ -72,7 +72,7 @@ def stat(L: Image.Image, th: ChartTheme, t: float, target: float, *, prefix: str
     val = counter_value(start, target, t, t_in, dur)
     txt = f"{prefix}{val:.{decimals}f}{suffix}"
     tile = text_tile(txt, th.display, size, th.gold, th.gold, 26, 8)
-    fit = min(1.0, 0.86 * W / max(1, tile.width - 2 * tile.info["ink_pad"]))      # long strings ("+30.6%") shrink to fit the frame
+    fit = min(1.0, 0.78 * W / max(1, tile.width - 2 * tile.info["ink_pad"]))      # long strings ("+30.6%") shrink to fit the frame
     pop = lerp(1.22, 1.0, eback((t - t_in) / 0.35)) * fit
     cx = W / 2 + 28
     put(L, tile, cx, y + size * 0.55, alpha=eo3((t - t_in) / 0.2), scale=pop, anchor="cm", tag="stat", size=int(size * fit))

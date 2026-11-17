@@ -140,6 +140,8 @@ grade:
 # ── Charts / data visualisation ─────────────────────────────────────────────
 chart:
   series_colors: [primary, secondary, positive, negative, ink_dim]
+  # Neutral ranking categories get distinct colors; red/green keep direction semantics.
+  category_colors: ["#FFB86B", "#C084FC", "#FB7185", "#67D9CA", "#60A5FA", "#E8A6C9"]
   grid_opacity: 0.5
   bar_radius_px: 8
   line_width_px: 9

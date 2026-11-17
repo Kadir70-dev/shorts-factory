@@ -35,7 +35,7 @@ from ..brand import text as tx
 from ..brand.raster import (Canvas, ease_in_out, ease_out_cubic, ease_out_expo,
                             write_video)
 from ..brand.theme import BrandTheme
-from ..schemas.scene import DataPoint, DataViz, Scene
+from ..schemas.scene import ADVANCED_KINDS, DataPoint, DataViz, Scene
 from .util import visual_cache_path, visual_cache_store
 
 # Bump when the drawing code changes shape: it namespaces every cache entry, so
@@ -690,6 +690,9 @@ async def render(viz: DataViz, theme: BrandTheme, out: Path, width: int,
     """
     if not viz.valid():
         raise ValueError("refusing to render a chart with no real data")
+    if viz.kind in ADVANCED_KINDS:           # schema 2.1: advanced engine (cinematic line, bar race, map, morph)
+        from .dataviz_adv import render_viz
+        return await render_viz(viz, theme, out, width, height, fps, duration)
     kind = viz.kind if viz.kind in _GENERATORS else auto_kind(viz)
 
     cached = visual_cache_path(

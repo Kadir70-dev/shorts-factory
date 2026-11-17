@@ -16,7 +16,7 @@ from __future__ import annotations
 from typing import Literal, Optional
 from pydantic import BaseModel, Field, model_validator
 
-SCHEMA_VERSION = "2.0"
+SCHEMA_VERSION = "2.1"   # 2.1: additive -- DataViz.series/config + advanced chart kinds (older 2.0 graphs still validate)
 
 
 # --------------------------------------------------------------------------- #
@@ -40,6 +40,20 @@ class DataPoint(BaseModel):
     emphasis: Literal["auto", "normal", "primary", "positive", "negative"] = "auto"
 
 
+class DataSeries(BaseModel):
+    """A sourced time series for the advanced chart engine (pipeline/dataviz_adv). `source` is mandatory there:
+    the engine refuses to draw numbers that do not say where they came from."""
+    name: str
+    periods: list[str]                      # "2026-09" ...
+    values: list[Optional[float]]           # None = not published (drawn as a gap, never filled)
+    units: str = ""
+    source: str = ""
+    retrieved: str = ""
+
+
+ADVANCED_KINDS = ("line_cinematic", "bar_race", "geo_map", "morph_bars")
+
+
 class DataViz(BaseModel):
     kind: Literal[
         "counter",       # one hero figure, rolled up from zero
@@ -48,7 +62,14 @@ class DataViz(BaseModel):
         "delta",         # before → after, with the change between them
         "donut",         # one share of a whole
         "meter",         # a percentage as a filling bar
+        # advanced engine (schema 2.1) -- see docs/K70_ADVANCED_DATAVIZ.md
+        "line_cinematic",  # camera-following line chart with dynamic axes
+        "bar_race",        # ranked bars racing through time
+        "geo_map",         # choropleth with a moving timeline
+        "morph_bars",      # line over categories morphing into bars
     ] = "counter"
+    series: list[DataSeries] = []     # advanced kinds only
+    config: dict = {}                 # advanced kinds only: timeline / camera / labels (see dataviz_adv.build_chart)
     title: str = ""                   # what the number measures
     points: list[DataPoint] = []
     prefix: str = ""                  # "$"
@@ -61,6 +82,9 @@ class DataViz(BaseModel):
 
     def valid(self) -> bool:
         """A chart is only worth rendering when it has real numbers behind it."""
+        if self.kind in ADVANCED_KINDS:
+            return bool(self.series) and all(x.source.strip() and x.units.strip() and len(x.periods) == len(x.values) >= 2
+                                              for x in self.series)
         if not self.points:
             return False
         if self.kind in ("counter", "meter", "donut"):

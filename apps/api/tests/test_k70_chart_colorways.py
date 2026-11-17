@@ -10,8 +10,8 @@ import re
 import pytest
 
 from app.brand.theme import load_theme
-from app.pipeline.dataviz import _bar_category_color, _point_color
-from app.schemas.scene import DataPoint
+from app.pipeline.dataviz import _bar_category_color, _line_color, _point_color
+from app.schemas.scene import DataPoint, DataViz
 
 
 @pytest.mark.parametrize("colorway", ["aurora", "sunset", "ocean"])
@@ -50,3 +50,15 @@ def test_classic_k70_still_uses_original_bar_colors() -> None:
         assert _bar_category_color(theme, p, index, False, True) == (
             _point_color(theme, p, False, True)
         )
+
+
+def test_line_color_follows_highlight_emphasis_but_defaults_to_direction() -> None:
+    theme = load_theme("k70_chart_aurora")
+    auto = DataViz(kind="line_trend", points=[DataPoint(label="a", value=1), DataPoint(label="b", value=2)])
+    assert _line_color(theme, auto) == theme.rgb("positive")          # unchanged default: rising = up
+    falling = DataViz(kind="line_trend", points=[DataPoint(label="a", value=2), DataPoint(label="b", value=1)])
+    assert _line_color(theme, falling) == theme.rgb("negative")
+    cost = DataViz(kind="line_trend", points=[DataPoint(label="a", value=1), DataPoint(label="b", value=2, emphasis="negative")])
+    assert _line_color(theme, cost) == theme.rgb("negative")          # rising prices are not green
+    level = DataViz(kind="line_trend", highlight=0, points=[DataPoint(label="a", value=1, emphasis="primary"), DataPoint(label="b", value=2)])
+    assert _line_color(theme, level) == theme.rgb("primary")

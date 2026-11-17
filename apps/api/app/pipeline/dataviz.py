@@ -319,6 +319,17 @@ def _bars(theme: BrandTheme, lay: Layout, viz: DataViz, frames: int, fps: int):
         yield c
 
 
+def _line_color(theme: BrandTheme, viz: DataViz) -> tuple[int, int, int]:
+    """Line colour: series direction by default; an explicit emphasis on the
+    highlighted point wins (rising inflation or prices is not "good news" green)."""
+    pts = viz.points
+    rising = pts[-1].value >= pts[0].value
+    hl = pts[viz.highlight if 0 <= viz.highlight < len(pts) else len(pts) - 1]
+    if hl.emphasis != "auto":
+        return _point_color(theme, hl, True, rising)
+    return theme.rgb("positive") if rising else theme.rgb("negative")
+
+
 def _line(theme: BrandTheme, lay: Layout, viz: DataViz, frames: int, fps: int):
     pts = viz.points
     n = len(pts)
@@ -326,8 +337,7 @@ def _line(theme: BrandTheme, lay: Layout, viz: DataViz, frames: int, fps: int):
     span = hi - lo or 1.0
     xs = [lay.pad + lay.plot_w * i / max(1, n - 1) for i in range(n)]
     ys = [lay.plot_bottom - (p.value - lo) / span * lay.plot_h for p in pts]
-    rising = pts[-1].value >= pts[0].value
-    color = theme.rgb("positive") if rising else theme.rgb("negative")
+    color = _line_color(theme, viz)
     lw = float(theme.chart.get("line_width_px", 9))
     dot = float(theme.chart.get("dot_radius_px", 16))
     anim = float(theme.chart.get("animate_sec", 1.6))

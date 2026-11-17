@@ -110,7 +110,9 @@ def build(f: dict):
                                    SceneMeta, Visual)
 
     def real(sid: str, kw: list[str], intent: str) -> Visual:
-        return Visual(type="broll", strategy="real", scene_visual_type="real_footage", motion="none",
+        # type "dataviz" = prerendered by scripts/k70_motion.py (real footage + live graphics layer): the renderer keeps
+        # captions on and skips its own overlays
+        return Visual(type="dataviz", strategy="real", scene_visual_type="real_footage", motion="none",
                       query=FOOTAGE[sid][0], broll_keywords=kw, visual_intent=intent,
                       decision_reason="authored: licensed Pexels footage, see footage_manifest.json")
 
@@ -160,7 +162,7 @@ def build(f: dict):
         S("s10", "reveal", "September: 3.7 percent. Up from 2.4 in January.", chart(), duration_sec=4.6, data=y26_chart,
           transition_in="push_up"),
         S("s11", "cta", "So cooling doesn't mean cheap. Watch the price level, not just the rate.",
-          Visual(type="motion_gfx", strategy="motion_gfx", scene_visual_type="abstract", motion="none",
+          Visual(type="dataviz", strategy="motion_gfx", scene_visual_type="abstract", motion="none", query="pexels_8960334.mp4",
                  decision_reason="authored: closing typography over dimmed licensed footage"), duration_sec=4.4),
     ]
     meta = SceneMeta(
@@ -173,50 +175,6 @@ def build(f: dict):
         hashtags=["#inflation", "#CPI", "#economy", "#shorts"], thumbnail_text="COOLING ≠ CHEAP".replace("≠", "IS NOT"),
         structure_id="one_number_story")
     return SceneGraph(meta=meta, scenes=scenes, audio=AudioTrack(), brand_id=BRAND, fps=30, width=1080, height=1920)
-
-
-def prepare_footage(graph, f: dict) -> None:
-    """Trim + crop each real clip to 1080x1920/30fps at its scene length with a slow push-in."""
-    out = WORK / "prepared"
-    out.mkdir(exist_ok=True)
-    for sc in graph.scenes:
-        if sc.id not in FOOTAGE:
-            continue
-        name, start = FOOTAGE[sc.id]
-        src = WORK / "footage" / name
-        dur = sc.duration_sec
-        dst = out / f"{sc.id}.mp4"
-        zoom = f"1+0.07*t/{max(dur, 0.1):.3f}"
-        vf = (f"scale=w='ceil(1080*({zoom})/2)*2':h='ceil(1920*({zoom})/2)*2':eval=frame:force_original_aspect_ratio=increase,"
-              f"crop=1080:1920,fps=30,setsar=1")
-        # Landscape sources: pre-scale to cover 1920 height first so the push-in has resolution.
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(start), "-t", f"{dur + 0.2:.3f}", "-i", str(src),
-                        "-vf", vf, "-t", f"{dur:.3f}", "-an", "-c:v", "libx264", "-preset", "fast", "-crf", "17",
-                        "-pix_fmt", "yuv420p", str(dst)], check=True)
-        sc.visual.asset_path = str(dst)
-
-
-
-def closing_plate(theme, dst: Path, dur: float, footage: Path, start: float) -> Path:
-    """Big animated type over the dimmed real clip (hook-style 'rate vs level' sign-off)."""
-    tdir = WORK / "graphics"
-    lines = [("COOLING", 175, "ink", 0.15, 480), ("ISN\u2019T", 175, "ink", 0.45, 665), ("CHEAP.", 175, "warn", 0.75, 850),
-             ("WATCH THE PRICE LEVEL,", 58, "secondary", 1.45, 1135), ("NOT JUST THE RATE.", 58, "secondary", 1.7, 1215)]
-    chain = ["scale=w='ceil(1080*(1+0.05*t/%.2f)/2)*2':h='ceil(1920*(1+0.05*t/%.2f)/2)*2':eval=frame:force_original_aspect_ratio=increase" % (dur, dur),
-             "crop=1080:1920", "fps=30", "gblur=sigma=5", "eq=brightness=-0.22:saturation=0.55",
-             f"drawbox=x=0:y=0:w=iw:h=ih:color={theme.hex('bg', '#081525')}@0.62:t=fill"]
-    for i, (text, size, role, t0, y) in enumerate(lines):
-        tf = tdir / f"close_{i}.txt"
-        tf.write_text(text, encoding="utf-8")
-        font = theme.display.path if size > 100 else theme.body.path
-        a = f"if(lt(t,{t0}),0,min(1,(t-{t0})/0.35))"
-        chain.append(f"drawtext=fontfile='{font}':textfile='{tf}':fontsize={size}:fontcolor={theme.hex(role, '#FFFFFF')}:"
-                     f"x=(w-text_w)/2:y='{y}+(1-min(1,max(0,(t-{t0})/0.35)))*36':alpha='{a}':shadowx=3:shadowy=3:shadowcolor=black@0.6")
-    chain.append(f"drawbox=x=(iw-420)/2:y=1085:w='420*min(1,max(0,(t-1.2)/0.5))':h=5:color={theme.hex('primary', '#A78BFA')}:t=fill")
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(start), "-t", f"{dur + 0.2:.3f}", "-i", str(footage),
-                    "-vf", ",".join(chain), "-t", f"{dur:.3f}", "-an", "-c:v", "libx264", "-preset", "fast", "-crf", "18",
-                    "-pix_fmt", "yuv420p", str(dst)], check=True)
-    return dst
 
 
 def fix_dropped_audio(graph, raw: str) -> None:
@@ -245,21 +203,6 @@ def fix_dropped_audio(graph, raw: str) -> None:
                     "-c:v", "copy", "-c:a", "aac", "-b:a", "256k", "-t", f"{graph.total_duration_sec:.3f}", str(fixed)], check=True)
     fixed.replace(raw)
     mix.unlink()
-
-
-async def render_graphics(graph) -> None:
-    from app.brand import load_theme
-    from app.pipeline import dataviz, motiongfx
-    theme = load_theme(BRAND)
-    gdir = WORK / "graphics"
-    gdir.mkdir(exist_ok=True)
-    for sc in graph.scenes:
-        if sc.visual.type == "dataviz":
-            p = await dataviz.render(sc.data, theme, gdir / f"{sc.id}_chart.mp4", graph.width, graph.height, graph.fps, sc.duration_sec)
-            sc.visual.asset_path = str(p)
-        elif sc.visual.type == "motion_gfx":
-            sc.visual.asset_path = str(closing_plate(theme, gdir / f"{sc.id}_close.mp4", sc.duration_sec,
-                                                     WORK / "footage" / "pexels_8960334.mp4", 1.0))
 
 
 def aligned_captions(graph, theme):
@@ -312,6 +255,157 @@ def aligned_captions(graph, theme):
     return C._fit_to_safe_width(caps, theme, graph.width, graph.height)
 
 
+
+def _keys(a: tuple[int, int], b: tuple[int, int]) -> list[str]:
+    out, (y, m) = [], a
+    while (y, m) <= b:
+        out.append(f"{y}-{m:02d}")
+        m += 1
+        if m > 12:
+            y, m = y + 1, 1
+    return out
+
+
+def render_v2(graph, f: dict, theme) -> Path:
+    """Render every scene with the K70 motion engine (real graded footage + live graphics), concat -> silent.mp4."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import k70_motion as M
+    d = load_series()
+    allc = d["CUUR0000SA0"]
+    pal = {k: M.rgb(theme.palette[v]) for k, v in dict(bg="bg", ink="ink", dim="ink_dim", primary="primary", secondary="secondary",
+                                                       gold="warn", red="negative", green="positive").items()}
+    pal["glow"] = pal["primary"]
+    FOOT = WORK / "footage"
+    OUT = WORK / "scenes_v2"
+    OUT.mkdir(exist_ok=True)
+    SRCU = "SOURCE: U.S. BUREAU OF LABOR STATISTICS · CPI-U, NOT SEASONALLY ADJUSTED"
+    mname = lambda key: label(key).upper()
+
+    k_a = _keys((2021, 1), (2023, 6))
+    v_a = [yoy(allc, k) if k in allc and f"{int(k[:4]) - 1}-{k[5:]}" in allc else None for k in k_a]
+    k_b = _keys((2020, 1), (2026, 9))
+    v_b = [allc.get(k) for k in k_b]
+    k_c = _keys((2026, 1), (2026, 9))
+    v_c = [yoy(allc, k) for k in k_c]
+    base = allc[BASE]
+    assert k_a.index("2022-06") == 17 and v_b.count(None) == 1 and round(v_a[17], 1) == 9.1
+
+    def chart_a():
+        return M.Chart(pal, "U.S. inflation rate, year over year", v_a, [(0.0, 0), (2.45, 17), (4.1, len(v_a) - 1)],
+                       {0: "Jan 2021", 12: "Jan 2022", 24: "Jan 2023"}, [0, 3, 6, 9], 0, 10.4, lambda v: f"{v:.0f}%",
+                       lambda val, h: (f"{val:.1f}%", f"{mname(k_a[int(round(h))])} · year over year"), SRCU,
+                       callouts=[(17, "PEAK 9.1%", "June 2022", pal["red"], 2.5)], pill_fmt=lambda v: f"{v:.1f}%")
+
+    def chart_b():
+        return M.Chart(pal, "Consumer price level · CPI-U (1982-84 = 100)", v_b, [(0.15, 0), (3.0, len(v_b) - 1)],
+                       {0: "Jan 2020", 24: "Jan 2022", 48: "Jan 2024", 80: "Sep 2026"}, [250, 275, 300, 325], 245, 345,
+                       lambda v: f"{v:.0f}", lambda val, h: (f"+{(val / base - 1) * 100:.1f}%", "price level since Jan 2020"), SRCU,
+                       pill_fmt=lambda v: f"{v:.1f}", line_cols=(pal["primary"], pal["secondary"]))
+
+    def chart_c():
+        return M.Chart(pal, "U.S. inflation rate in 2026, year over year", v_c, [(0.1, 0), (2.0, 8)],
+                       {i: k_c[i][5:].replace("01", "Jan").replace("02", "Feb").replace("03", "Mar").replace("04", "Apr").replace("05", "May")
+                        .replace("06", "Jun").replace("07", "Jul").replace("08", "Aug").replace("09", "Sep") for i in range(9)},
+                       [0, 1, 2, 3, 4], 0, 5.0, lambda v: f"{v:.0f}%",
+                       lambda val, h: (f"{val:.1f}%", f"{mname(k_c[int(round(h))])} · year over year"), SRCU,
+                       callouts=[(0, "JAN 2.4%", "start of 2026", pal["gold"], 3.2)], pill_fmt=lambda v: f"{v:.1f}%")
+
+    ink, gold, cyan, vio = pal["ink"], pal["gold"], pal["secondary"], pal["primary"]
+    srcs = "SOURCE: BLS · CPI-U (NSA) · JAN 2020 TO SEP 2026"
+
+    def stat_scene(val, label_, sub=""):
+        def ov(t):
+            L = M.base_layer(t, True)
+            M.stat(L, t, pal, val, "+", "%", label_, sub, "up", y=400, count=0.8)
+            M.source_line(L, srcs, t, 0.4, y=1395, pal=pal)
+            M.add_flash(L, t)
+            return L
+        return ov
+
+    def head_scene(blocks, size=118, align="left", y0=270, first=False):
+        """blocks = [(t_start, t_end, [(text, colour, t_in)])]"""
+        def ov(t):
+            L = M.base_layer(t, True)
+            for a, b, lines in blocks:
+                if a <= t < b:
+                    M.headline(L, lines, t - a, pal, size=size, y0=y0, align=align)
+            if not first:
+                M.add_flash(L, t)
+            return L
+        return ov
+
+    def chart_scene(make):
+        c = make()
+
+        def ov(t):
+            L = c.frame(t)
+            M.add_flash(L, t, 0.22)
+            return L
+        return ov
+
+    def closing(t):
+        L = M.base_layer(t, True, shade=False)
+        M.headline(L, [("COOLING", ink, 0.15), ("ISN'T", ink, 0.45), ("CHEAP.", gold, 0.8)], t, pal, size=196, y0=430, align="center")
+        for txt, t0, y in (("WATCH THE PRICE LEVEL,", 1.55, 1180), ("NOT JUST THE RATE.", 1.8, 1250)):
+            tile = M.text_tile(txt, str(M.BODY), 62, cyan, None, 0, 5, spacing=3)
+            M.put(L, tile, M.W / 2, y + (1 - M.eo3((t - t0) / 0.4)) * 24, alpha=M.eo3((t - t0) / 0.4), anchor="cm")
+        ln = int(M.lerp(0, 420, M.eo3((t - 1.4) / 0.5)))
+        if ln > 2:
+            M.ImageDraw.Draw(L).rectangle([M.W / 2 - ln / 2, 1128, M.W / 2 + ln / 2, 1133], fill=vio + (235,))
+        M.add_flash(L, t)
+        return L
+
+    F = lambda n: FOOT / f"pexels_{n}.mp4"
+    plan = {   # scene -> (mode, [(clip, start, share_of_scene)], overlay builder)
+        "s1": ("plain", [(F(29369224), 0.0, 0.5), (F(8801848), 5.0, 0.5)],
+               head_scene([(0, 99, [("INFLATION IS", ink, 0.10), ("COOLING.", ink, 0.38), ("PRICES", gold, 1.0), ("AREN'T.", gold, 1.22)])],
+                          size=112, first=True)),
+        "s2": ("chart", [(F(8799885), 8.0, 1.0)], chart_scene(chart_a)),
+        "s2b": ("plain", [(F(8799885), 18.0, 1.0)],
+                lambda t: _stat_down(M, pal, t, f["jun2023"])),
+        "s3": ("plain", [(F(9046227), 0.5, 1.0)],
+               head_scene([(0, 99, [("SLOWING", ink, 0.10), ("ISN'T", ink, 0.34), ("FALLING.", gold, 0.62)])], size=132)),
+        "s4": ("plain", [(F(32536402), 1.0, 0.5), (F(32536402), 6.0, 0.5)],
+               head_scene([(0, 2.2, [("INFLATION", cyan, 0.10), ("= SPEED", ink, 0.40)]),
+                           (2.2, 99, [("PRICES", vio, 0.05), ("= DISTANCE", ink, 0.35)])], size=128)),
+        "s5": ("chart", [(F(29576549), 6.0, 1.0)], chart_scene(chart_b)),
+        "s6": ("plain", [(F(8801848), 1.5, 1.0)], stat_scene(round(f["food"]), "Food at home", "Jan 2020 to Sep 2026")),
+        "s7": ("plain", [(F(8960335), 0.0, 1.0)], stat_scene(round(f["rent"]), "Rent", "Jan 2020 to Sep 2026")),
+        "s8": ("plain", [(F(29576549), 2.0, 1.0)], stat_scene(round(f["gas"]), "Gasoline", "Jan 2020 to Sep 2026")),
+        "s9": ("plain", [(F(8799885), 4.0, 0.5), (F(8541111), 2.0, 0.5)],
+               head_scene([(0, 2.4, [("IT STACKS.", gold, 0.10)]), (2.4, 99, [("THE CLIMB", ink, 0.05), ("SLOWS.", cyan, 0.30)])], size=134)),
+        "s10": ("chart", [(F(9046227), 6.0, 1.0)], chart_scene(chart_c)),
+        "s11": ("chart", [(F(8960334), 1.0, 1.0)], closing),
+    }
+    cum, clips = 0.0, []
+    for i, sc in enumerate(graph.scenes):
+        mode, segs, ov = plan[sc.id]
+        n = round((cum + sc.duration_sec) * 30) - round(cum * 30)
+        total = n / 30
+        seg_list, off = [], 0.0
+        for k, (clip, start, share) in enumerate(segs):
+            dur = total * share if k < len(segs) - 1 else total - off
+            seg_list.append((clip, start, dur))
+            off += dur
+        out = OUT / f"{sc.id}.mp4"
+        print(f"[motion] {sc.id} {n}f {mode}", flush=True)
+        M.render_scene(out, n, seg_list, ov, mode, first_scene=(i == 0))
+        clips.append(out)
+        cum += sc.duration_sec
+    lst = OUT / "scenes.txt"
+    lst.write_text("\n".join(f"file '{c}'" for c in clips))
+    silent = Path(graph.audio.voiceover_path).parents[1] / "silent.mp4"
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(silent)], check=True)
+    return silent
+
+
+def _stat_down(M, pal, t, value):
+    L = M.base_layer(t, True)
+    M.stat(L, t, pal, value, "", "%", "June 2023", "down from the 9.1% peak", "down", y=400, count=1.1, decimals=1, start=9.1)
+    M.source_line(L, "SOURCE: BLS · CPI-U (NSA) · 12-MONTH CHANGE", t, 0.4, y=1395, pal=pal)
+    M.add_flash(L, t)
+    return L
+
 async def run(check_only: bool) -> None:
     f = facts()
     print("[facts] " + json.dumps({k: (round(v, 2) if isinstance(v, float) else v) for k, v in f.items()
@@ -342,8 +436,6 @@ async def run(check_only: bool) -> None:
 
     graph = await tts.synthesize(graph, spec, channel)          # real durations
     print(f"[tts] total {graph.total_duration_sec:.2f}s")
-    prepare_footage(graph, f)
-    await render_graphics(graph)
     graph = await captions.transcribe(graph, load_theme(BRAND))
     graph.captions = aligned_captions(graph, load_theme(BRAND))
     graph = await music.add_music(graph, channel, family=plan.music_family)
@@ -352,7 +444,15 @@ async def run(check_only: bool) -> None:
     print("[compliance] " + compliance.apply(graph, strict=False).format().replace("\n", "\n[compliance] "))
     assert before == [s.narration for s in graph.scenes], "compliance rewrote narration after voicing"
     (WORK / "scene_graph_final.json").write_text(graph.model_dump_json(indent=1))
-    raw = await render.render_remotion(graph)
+    from app.brand import theme_for
+    from app.pipeline import render_ffmpeg
+    th = theme_for(graph, "compositor")
+    th.intro["enabled"] = False                         # no brand stamp over the hook; the watermark stays
+    work = Path(graph.audio.voiceover_path).parents[1]
+    (work / "scene_graph.json").write_text(graph.model_dump_json())
+    silent = render_v2(graph, f, load_theme(BRAND))
+    raw = str(work / "raw.mp4")
+    await render_ffmpeg._finish(graph, silent, Path(raw), th)
     fix_dropped_audio(graph, raw)
     final = await postprocess.finalize(graph, raw, channel)
     print("MP4:", final["mp4"])

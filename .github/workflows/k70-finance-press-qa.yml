@@ -1,0 +1,32 @@
+name: K70 Finance Shorts Press QA
+on:
+  pull_request:
+    paths:
+      - 'apps/api/app/pipeline/dataviz_adv/press.py'
+      - 'apps/api/app/pipeline/dataviz_adv/__init__.py'
+      - 'apps/api/tests/test_finance_press.py'
+      - 'scripts/k70_finance_*'
+      - 'data/k70_finance_shorts/**'
+      - '.github/workflows/k70-finance-press-qa.yml'
+  push:
+    branches:
+      - 'feature/k70-usa-world-finance-shorts-20261117'
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install small chart QA dependencies
+        run: python -m pip install -q pillow numpy pyyaml pydantic pydantic-settings pytest
+      - name: Validate storyboard and Python syntax
+        run: |
+          python -m py_compile apps/api/app/pipeline/dataviz_adv/press.py scripts/k70_finance_news_preview.py scripts/k70_finance_storyboard_check.py
+          python scripts/k70_finance_storyboard_check.py
+      - name: Source/card rendering and overlap tests
+        working-directory: apps/api
+        run: python -m pytest tests/test_finance_press.py -q

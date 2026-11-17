@@ -1,8 +1,9 @@
 """Animated bar-chart race.
 
-Rank positions are a *soft rank* -- pos_e = sum_j sigmoid((v_j - v_e) / tau) -- so two bars slide past each other
-exactly while their (interpolated) values cross, with no velocity jumps at period boundaries.  Values interpolate
-linearly between published periods; periods where ANY entity is unpublished are dropped, never filled.
+Row positions come from a per-period ranking with HYSTERESIS (a bar only overtakes another when it leads by more than
+`hysteresis` of the axis, so near-ties do not flip-flop and rows never stack on top of each other), box-filtered over
+`swap_periods` so every overtake is a smooth slide.  Values interpolate linearly between published periods; periods
+where ANY entity is unpublished are dropped, never filled; the last period is always strictly value-ordered.
 """
 from __future__ import annotations
 
@@ -29,7 +30,7 @@ class BarRace:
     def __init__(self, th: ChartTheme, entities: list[Series], timeline: Timeline, *, top_n: int = 8,
                  rect=(60, 395, 1020, 1330), title: str = "", subtitle: str = "", value_fmt: Callable[[float], str] = lambda v: f"{v:.0f}",
                  source: str = "", colors: Optional[dict[str, tuple]] = None, icons: Optional[dict[str, Image.Image]] = None,
-                 camera_zoom: float = 1.0, panel: Optional[tuple] = (48, 225, 1032, 1480), tau_frac: float = 0.016, smooth_periods: float = 4.0):
+                 camera_zoom: float = 1.0, panel: Optional[tuple] = (48, 225, 1032, 1480), hysteresis: float = 0.006, swap_periods: float = 5.0):
         if len(entities) < 2:
             raise DataError("a bar race needs at least two entities")
         for e in entities:
@@ -51,68 +52,51 @@ class BarRace:
         self.source = source or entities[0].source
         self.th, self.tl, self.top_n, self.rect = th, timeline, min(top_n, len(entities)), rect
         self.title, self.subtitle, self.value_fmt = title, subtitle, value_fmt
-        self.panel, self.cam, self.tau_frac, self.smooth = panel, camera_zoom, tau_frac, smooth_periods
+        self.panel, self.cam, self.swap = panel, camera_zoom, swap_periods
         order = np.argsort(-self.vals[:, -1], kind="stable")          # final ranking decides the colour order
         self.colors = {self.names[j]: th.categories[k % len(th.categories)] for k, j in enumerate(order)}
-        n = len(self.names)
-        self._bias = np.zeros(n)
-        for k, j in enumerate(order):
-            self._bias[j] = 1.5 * (n - 1 - k)             # in units of tau: resolves ties only (<= ~1% of the axis)
-        if colors:
-            self.colors.update(colors)
         self.icons = icons or {}
         self.T = len(self.periods)
         self.axis_max = self.vals.max(axis=0) * 1.12
+        self.R = self._ranks(order, hysteresis)
 
     # -- time-dependent state ----------------------------------------------- #
     def head(self, t: float) -> float:
         return clamp(self.tl.at(t), 0, self.T - 1)
 
-    def _soft(self, h: float):
+    def _ranks(self, start_order, hyst: float) -> np.ndarray:
+        """R[e, k] = row of entity e in period k (0 = top), with hysteresis; strictly value-ordered at the last period."""
+        N, T = self.vals.shape
+        order = list(start_order)                      # ties in the base month fall back to the final ranking
+        R = np.zeros((N, T))
+        for k in range(T):
+            delta = hyst * self.axis_max[k] if k < T - 1 else 0.0
+            changed = True
+            while changed:
+                changed = False
+                for i in range(N - 1):
+                    a, b = order[i], order[i + 1]
+                    if self.vals[b, k] - self.vals[a, k] > delta:
+                        order[i], order[i + 1] = b, a
+                        changed = True
+            for row, e in enumerate(order):
+                R[e, k] = row
+        return R
+
+    def state(self, h: float):
+        """(values, row positions, axis max) at fractional period h; positions are box-filtered ranks so an overtake
+        takes `swap_periods` periods and is continuous in time."""
         k = min(int(h), self.T - 2)
         f = h - k
         v = self.vals[:, k] * (1 - f) + self.vals[:, k + 1] * f
         ax = lerp(self.axis_max[k], self.axis_max[k + 1], f)
-        tau = max(1e-9, self.tau_frac * ax)
-        spread = float(v.max() - v.min())
-        w = clamp(1.0 - spread / (6.0 * tau))      # tie-break only while all values are (nearly) equal, e.g. the base month
-        vv = v + self._bias * tau * w
-        diff = (vv[None, :] - vv[:, None]) / tau                      # diff[e, j] = (v_j - v_e) / tau
-        pos = (1.0 / (1.0 + np.exp(-np.clip(diff, -60, 60)))).sum(axis=1) - 0.5      # exclude self (sigmoid(0)=.5)
-        return v, pos, ax
+        offs = np.linspace(-self.swap / 2, self.swap / 2, 9)
+        samples = np.stack([self._rank_at(clamp(h + o, 0, self.T - 1)) for o in offs])
+        return v, samples.mean(axis=0), ax
 
-    def state(self, h: float):
-        """(values, row positions, axis max) at fractional period h.  Row positions are a soft rank, pushed apart so
-        near-ties never overlap, then low-pass filtered over +-`smooth` periods: swaps and bursts of rank changes
-        glide through each other instead of jumping."""
-        v, _, ax = self._soft(h)
-        if self.smooth <= 0:
-            return self._soft(h)
-        offs = np.linspace(-self.smooth, self.smooth, 13)
-        wts = 1.0 - np.abs(offs) / (self.smooth * 1.25)
-        poss = np.stack([self._separate(self._soft(clamp(h + o, 0, self.T - 1))[1]) for o in offs])
-        pos = (poss * wts[:, None]).sum(axis=0) / wts.sum()
-        return v, pos, ax
-
-    @staticmethod
-    def _separate(pos: np.ndarray, gap: float = 1.0) -> np.ndarray:
-        """Near-tied bars must not sit on top of each other: least-squares projection of the rows onto 'at least `gap`
-        apart' (pool-adjacent-violators on pos_k - k*gap).  Continuous in time and mean-preserving, so the leader never
-        drifts above the first row."""
-        idx = np.argsort(pos, kind="stable")
-        sp = pos[idx]
-        y = sp - np.arange(len(sp)) * gap
-        blocks: list[list[float]] = []                  # [sum, count]
-        for val in y:
-            blocks.append([val, 1.0])
-            while len(blocks) > 1 and blocks[-2][0] / blocks[-2][1] > blocks[-1][0] / blocks[-1][1]:
-                s, c = blocks.pop()
-                blocks[-1][0] += s
-                blocks[-1][1] += c
-        iso = np.concatenate([np.full(int(c), s / c) for s, c in blocks])
-        out = np.empty_like(pos)
-        out[idx] = iso + np.arange(len(sp)) * gap
-        return out
+    def _rank_at(self, x: float) -> np.ndarray:
+        """Rank at fractional period x: ranks are held until the midpoint between two periods (nearest period)."""
+        return self.R[:, int(round(x))]
 
     # -- frame --------------------------------------------------------------- #
     def draw(self, L: Image.Image, t: float, intro: bool = True) -> None:

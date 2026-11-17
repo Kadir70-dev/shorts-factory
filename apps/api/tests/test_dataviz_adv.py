@@ -184,15 +184,19 @@ def test_bar_race_ranking_swaps_are_smooth_and_correct(th, cats):
     assert race.final_ranking()[0][0].startswith("Gasoline")
 
 
-def test_bar_race_rows_keep_a_minimum_gap_in_steady_state(th, cats):
-    """Near-tied bars are pushed apart (min row gap) so labels stay legible; rows only overlap while two bars swap."""
+def test_bar_race_rows_never_stack_outside_a_swap(th, cats):
+    """Hysteresis: near-tied bars do not flip-flop, so away from an overtake every bar sits on its own row."""
     race = A.BarRace(th, race_entities(cats), A.Timeline([(0.0, 0), (6.8, 78)]))
-    for h in (25, 40, 60, 78):
-        _, pos, _ = race.state(float(h))
-        gaps = np.diff(np.sort(pos))
-        assert gaps.min() > 0.4, f"rows overlap at period {h}: gaps {gaps.round(2)}"
-    _, pos, _ = race.state(0.0)                                   # every value is 100 in the base month: rows are still inside the list
-    assert pos.min() > -0.7 and pos.max() < len(pos) + 0.7
+    checked = 0
+    for h in range(4, race.T - 4):
+        win = race.R[:, h - 3:h + 4]
+        if (win == win[:, :1]).all():                              # no rank change within +-3 periods
+            _, pos, _ = race.state(float(h))
+            assert sorted(np.round(pos, 3)) == list(range(len(pos))), f"period {h}: {np.round(pos, 2)}"
+            checked += 1
+    assert checked >= 3
+    _, pos, _ = race.state(0.0)                                   # base month (all values equal): distinct rows from the final ranking
+    assert len(set(np.round(pos, 2))) == len(pos)
 
 
 @pytest.mark.parametrize("t", [0.5, 2.5, 4.5, 6.6])

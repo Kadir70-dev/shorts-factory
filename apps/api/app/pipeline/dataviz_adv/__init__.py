@@ -10,7 +10,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from . import compose, qa, story, transitions
+from . import compose, press, qa, story, transitions
+from .press import NewsBrief, draw_news_brief
 from .core import (ChartTheme, DataError, Recorder, Series, Timeline, View, ViewTrack, cumulative_series, fmt_number, month_label, nice_ticks,
                    yoy_series)
 from .geo import CENSUS_REGIONS, GeoMap, MapTrack, MapView, load_us_states, load_world, region_of
@@ -21,7 +22,7 @@ from .transitions import CameraTrack, MorphLineBars, apply_camera
 __all__ = ["ChartTheme", "DataError", "Series", "Timeline", "View", "ViewTrack", "LineChart", "Callout", "BarRace", "GeoMap", "MapTrack",
            "MapView", "MorphLineBars", "CameraTrack", "apply_camera", "story", "compose", "qa", "transitions", "build_chart", "render_viz",
            "yoy_series", "cumulative_series", "month_label", "nice_ticks", "fmt_number", "load_us_states", "load_world", "CENSUS_REGIONS",
-           "region_of", "Recorder"]
+           "region_of", "Recorder", "press", "NewsBrief", "draw_news_brief"]
 
 
 def _series(viz) -> list[Series]:
